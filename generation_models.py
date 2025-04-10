@@ -17,9 +17,9 @@ from typing_extensions import override
 from openai import AssistantEventHandler
 
 # Access the keys safely
-openai_api_key = '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'
-claude_api_key = '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'
-mixtral_api_key = "o8RvU1VQablwXwAuNDCnBOfmH1fGbQwe"
+openai_api_key = 'sk-..'
+claude_api_key = 'sk-..'
+mixtral_api_key = ".."
 
 deepseek_api_key = ''
 
