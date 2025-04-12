@@ -588,6 +588,17 @@ def load_task_dataset(task_name, model_name):
                         question_list.append(question)
                         word_list.append(word)
                         letter_list.append(letter)
+    elif task_name == 'number_multiply':
+        dataset_input_dir = 'dataset_gather/number_multiply'
+        save_input_dir = 'results_gather/number_multiply'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        puzzles = read_dataset_number_multipy(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzles['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
 
     return solution_list, question_list, target_list, puzzles, solution_data_list, question_constrained_list, question_matrix_list, number_list, word_list, letter_list, save_input_dir
 
@@ -1282,7 +1293,29 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
 
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
+    elif task_name == 'number_multiply':
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_letters(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+        extracted_text_1 = extracted_text_1.strip()
+        print(f'extracted_text_1: {extracted_text_1}')
+        True_false_result_1, explanation_1 = validate_solution_number_multiply(extracted_text_1, solution)
 
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_letters(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+        extracted_text_2 = extracted_text_2.strip()
+        print(f'extracted_text_2: {extracted_text_2}')
+        True_false_result_2, explanation_2 = validate_solution_number_multiply(extracted_text_2, solution)
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
 
 
     print(f'True_false_result from response: {True_false_result_1}')
@@ -3646,3 +3679,55 @@ def read_words_from_file_letters(filename):
         words = json.load(f)
     #print(f"Words read from {filename}")
     return words
+
+#####Number Multipy#######
+def read_dataset_number_multipy(dataset_dir: str) -> List[Dict]:
+    """Read all puzzle instances from the dataset directory in sample_i order"""
+    puzzles = []
+    sample_id = 0
+
+    for digit_num_list in [[1, 2, 4], [1, 3, 4], [1, 2, 2, 4]]:
+        dir_digit_name = f'digit'
+        for digit_num in digit_num_list:
+            dataset_base_dir = os.path.join(dataset_dir, f'{dir_digit_name}')
+            for i in range(0, 20):
+                dataset_base_dir_sample = os.path.join(dataset_base_dir, f'sample_{i}')
+                generated_num_list = read_value_list(dataset_base_dir_sample + f"/input_value_list.txt")
+                target_answer = read_answer(dataset_base_dir_sample + f"/target_answer.txt")
+
+                equation_prompt = f'{generated_num_list[0]}'
+                for generated_num in generated_num_list[1:]:
+                    equation_prompt += f'*{generated_num}'
+                question = f'What is the result of ' + equation_prompt + '?'
+                puzzles.append({
+                    'digit_num': digit_num,
+                    'sample_id': sample_id,
+                    'question': question,
+                    'solution_data': target_answer
+                })
+    return puzzles
+
+def extract_equation_with_GPT4_number_multiply(response):
+    prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+             'Note that the final answer should follow strictly the format as a number like: 233343443 \n' \
+             'Here is the response, return your answer with the format <<<final answer>>>, like <<<233343443>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer are answered, then directly answer <<<0>>>.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs=False)
+    return extract_equation
+
+def validate_solution_number_multiply(llm_response, target_answer):
+    if int(llm_response) == target_answer:
+        return True
+    return False
+def read_value_list(file_path):
+    with open(file_path, 'r') as f:
+        value_list = f.read()
+    return ast.literal_eval(value_list)
+
+def read_answer(file_path):
+    with open(file_path, 'r') as f:
+        answer = f.read()
+    return int(answer)
