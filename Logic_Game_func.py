@@ -653,6 +653,17 @@ def load_task_dataset(task_name, model_name):
             question_list.append(question)
             solution = puzzle['pg_dict']
             solution_list.append(solution)
+    elif task_name == 'BoxLift':
+        dataset_input_dir = 'dataset_gather/BoxLift_dataset'
+        save_input_dir = 'results_gather/BoxLift'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+            puzzles = read_dataset_boxlift(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzles['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
 
     return solution_list, question_list, target_list, puzzles, solution_data_list, question_constrained_list, question_matrix_list, number_list, word_list, letter_list, save_input_dir
 
@@ -1488,6 +1499,29 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
 
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
+    elif task_name == 'BoxLift':
+        solution_data = solution_list[i]
+        boxes, lifters, estimated_steps = solution_data['boxes'], solution_data['lifters'], solution_data['estimated_steps']
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_boxlift(response)
+
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_boxlift(original_response)
+        is_correct1, remaining1, success_failure_list1 = verify_solution_boxlift(boxes, lifters, output_1,
+                                                                      estimated_steps)
+        is_correct2, remaining2, success_failure_list2 = verify_solution_boxlift(boxes, lifters, output_2,
+                                                                      estimated_steps)
+        True_false_result_1 = is_correct1
+        True_false_result_2 = is_correct2
+
+        solution_1 = output_1;
+        solution_2 = output_2
 
     print(f'True_false_result from response: {True_false_result_1}')
     print(f'True_false_result from original_response: {True_false_result_2}')
@@ -4130,7 +4164,7 @@ def read_dataset_boxnet1(dataset_dir: str) -> List[Dict]:
             file.close()
 
             pg_dict_initial = copy.deepcopy(pg_dict)
-            prompt = create_prompt(pg_row_num, pg_column_num, pg_dict)
+            prompt = create_prompt_boxnet1(pg_row_num, pg_column_num, pg_dict)
             question = prompt
             puzzles.append({
                 'pg_dict': pg_dict,
@@ -4139,7 +4173,7 @@ def read_dataset_boxnet1(dataset_dir: str) -> List[Dict]:
             })
     return puzzles
 
-def create_prompt(pg_row_num, pg_column_num, pg_dict):
+def create_prompt_boxnet1(pg_row_num, pg_column_num, pg_dict):
     state_update_prompt = state_update_func(pg_row_num, pg_column_num, pg_dict)
     prompt = '''
 You are a central planner tasked with directing agents in a grid-like field to move colored boxes to their corresponding color-coded targets. Each agent occupies a 1x1 square and can only interact with objects within its square. Agents can move a box to an adjacent square or directly to a target square of the same color. A square may contain multiple boxes and targets.
@@ -4203,6 +4237,31 @@ Include an agent in the action plan only if it has a task to perform next.
     Your answer:\n
     '''
     return prompt
+
+def state_update_func(pg_row_num, pg_column_num, pg_dict):
+  pg_dict_copy = copy.deepcopy(pg_dict)
+  state_update_prompt = ''
+  for i in range(pg_row_num):
+    for j in range(pg_column_num):
+      square_item_list = pg_dict_copy[str(i+0.5)+'_'+str(j+0.5)]
+      square_item_only_box = [item for item in square_item_list if item[:3]=='box']
+      surround_index_list = surround_index_func(pg_row_num, pg_column_num, i, j)
+      state_update_prompt += f'Agent[{i+0.5}, {j+0.5}]: I am in square[{i+0.5}, {j+0.5}], I can observe {square_item_list}, I can do '
+      action_list = []
+      for box in square_item_only_box:
+        for surround_index in surround_index_list:
+          action_list.append(f'move({box}, square{surround_index})')
+        if 'target'+box[3:] in square_item_list:
+          action_list.append(f'move({box}, target{box[3:]})')
+      state_update_prompt += f'{action_list}\n'
+  return state_update_prompt
+
+def surround_index_func(row_num, coloum_num, row_index, coloum_index):
+  surround_index_list = []
+  for i, j in ([row_index-1, coloum_index], [row_index+1, coloum_index], [row_index, coloum_index-1], [row_index, coloum_index+1]):
+    if i>=0 and i<=row_num-1 and j>=0 and j<=coloum_num-1 and not (i == row_index and j == coloum_index):
+      surround_index_list.append([i+0.5,j+0.5])
+  return surround_index_list
 
 def score_in_training_set(pg_dict, response):
     success_failure = ''
@@ -4279,3 +4338,164 @@ def extract_equation_with_GPT4_boxnet1(response):
 
     extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list=[prompt + response], response_total_list=[], logprobs=False)
     return extract_equation
+
+######BoxLift######
+def read_dataset_boxlift(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+    for num_boxes, num_lifters, min_box_weight, max_box_weight, min_lifter_capacity, max_lifter_capacity in \
+            [(10, 3, 10, 100, 40, 80), (15, 4, 20, 200, 30, 120), (20, 5, 30, 300, 40, 160), (25, 6, 40, 400, 50, 200)]:
+        #for iteration_num in range(10):
+        for iteration_num in range(5):
+            print(f'\n\nNum_boxes = {num_boxes}, Num_lifters = {num_lifters}, Iteration_num = {iteration_num}')
+
+            boxes, lifters = read_test_case(dataset_dir + f'/BoxLift_{num_boxes}_{num_lifters}/BoxLift{iteration_num}/BoxLift.json')
+            print(f"Initial boxes: {boxes}")
+            print(f"Initial lifters: {lifters}")
+
+            estimated_steps = estimate_steps(boxes, lifters)
+            print(f"Estimated number of steps: {estimated_steps}")
+            question = create_prompt_boxlift(boxes, lifters, estimated_steps)
+            puzzles.append({
+                'solution_data': {
+                    'boxes': boxes,
+                    'lifters': lifters,
+                    'estimated_steps': estimated_steps,
+                },
+                'question': question
+            })
+
+    return puzzles
+
+def read_test_case(filename: str) -> Tuple[List[int], List[int]]:
+    """
+    Read the test case (boxes and lifters) from a JSON file.
+
+    :param filename: Name of the file to read from.
+    :return: A tuple containing a list of box weights and a list of lifter capacities.
+    """
+    with open(filename, 'r') as f:
+        data = json.load(f)
+    return data["boxes"], data["lifters"]
+
+def estimate_steps(boxes: List[int], lifters: List[int]) -> int:
+    remaining_boxes = sorted(boxes, reverse=True)  # Sort boxes in descending order
+    steps = 0
+
+    while remaining_boxes:
+        steps += 1
+        available_lifters = lifters.copy()
+
+        i = 0
+        while i < len(remaining_boxes) and available_lifters:
+            box = remaining_boxes[i]
+            combined_strength = sum(available_lifters)
+
+            if combined_strength >= box:
+                # Lift the box using as many lifters as needed
+                lift_strength = 0
+                used_lifters = []
+                for j, lifter in enumerate(available_lifters):
+                    lift_strength += lifter
+                    used_lifters.append(j)
+                    if lift_strength >= box:
+                        break
+
+                # Remove the used lifters and the lifted box
+                for j in reversed(used_lifters):
+                    available_lifters.pop(j)
+                remaining_boxes.pop(i)
+            else:
+                i += 1  # Move to the next box if we can't lift this one
+
+    return steps
+
+def create_prompt_boxlift(boxes: List[int], lifters: List[int], estimated_steps) -> str:
+    prompt = f"""Task: BoxLift
+
+You are given a list of boxes with the following weights: {boxes}
+And a list of lifters with the following maximum lifting capacities: {lifters}
+
+Your task is to assign the lifters to lift all the boxes in multiple steps, following these rules:
+1. Multiple boxes can be lifted in each step.
+2. Each lifter can only lift one box at a time.
+3. Each lifting agent can be used only once in each step.
+4. Multiple lifters can combine together to lift one box if the box is too heavy for a single lifter.
+5. Try to lift all the boxes using the minimum number of steps possible.
+6. You need to lift all the boxes in less than or equal to {estimated_steps} steps.
+
+Please provide your solution in the following format:
+Step 1: [(Box weight, [Lifter indices]), (Box weight, [Lifter indices]), ...]
+Step 2: [(Box weight, [Lifter indices]), (Box weight, [Lifter indices]), ...]
+...
+
+For example:
+Step 1: [(50, [0, 2]), (30, [1]), (20, [3])]
+This means in Step 1, lifters 0 and 2 are lifting a box weighing 50, lifter 1 is lifting a box weighing 30, and lifter 3 is lifting a box weighing 20.
+
+Surround the answer with <<<content>>>.
+
+For example, <<<Step 1: [(50, [0, 2]), (30, [1]), (20, [3])]\nStep 2: [(40, [0, 1]), (20, [2]), (20, [3])]\nStep 3:...>>>
+
+Ensure all boxes are lifted and provide the most efficient solution possible.
+
+Your answer:\n
+"""
+    return prompt
+
+def extract_equation_with_GPT4_boxlift(response):
+    prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+             'Note that the equation should be in the form like <<<answer>>>, <<<Step 1: [(185, [0, 1]), (108, [0, 1])]\nStep 2: [(184, [0, 1]), (75, [0, 1])]\nStep 3: [(174, [0, 1]), (70, [0, 1])]\nStep 4: [(171, [0, 1]), (63, [0]), (34, [0])]\nStep 5: [(157, [0, 1]), (32, [0]), (31, [0])]>>>, \n' \
+             'Here is the reponse, return your answer with the format <<<equation>>>, like <<<Step 1: [(185, [0, 1]), (108, [0, 1])]\nStep 2: [(184, [0, 1]), (75, [0, 1])]>>>. ' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list=[prompt + response], response_total_list=[], logprobs=False)
+    return extract_equation
+
+def verify_solution_boxlift(boxes: List[int], lifters: List[int], solution: str, estimated_steps) -> Tuple[bool, List[int]]:
+    remaining_boxes = boxes.copy()
+    success_failure_list = []
+
+    steps = solution.split("Step")[1:]  # Split the solution into steps
+    if len(steps) > estimated_steps:
+        success_failure = 'Too many steps'
+        success_failure_list.append(success_failure)
+        #return False, remaining_boxes, success_failure
+
+    for index in range(min(estimated_steps, len(steps))):
+        step = steps[index]
+        used_lifters = set()
+        try:
+            assignments = eval(step.split(":")[1].strip())
+            for box_weight, lifter_indices in assignments:
+                # Check if the box weight is valid
+                if box_weight not in remaining_boxes:
+                    success_failure = 'Invalid box weight'
+                    success_failure_list.append(success_failure)
+                    #return False, remaining_boxes, success_failure
+
+                elif any(index >= len(lifters) for index in lifter_indices):
+                    success_failure = 'Invalid lifter index'
+                    success_failure_list.append(success_failure)
+                    #return False, remaining_boxes, success_failure
+
+                # Check if lifters are used only once per step
+                elif any(index in used_lifters for index in lifter_indices):
+                    success_failure = 'Lifter used more than once'
+                    success_failure_list.append(success_failure)
+                    #return False, remaining_boxes, success_failure
+
+                # Check if lifters can lift the box
+                elif sum(lifters[i] for i in lifter_indices) < box_weight:
+                    success_failure = 'Insufficient lifter strength'
+                    success_failure_list.append(success_failure)
+                    # return False, remaining_boxes, success_failure
+                    #pass
+                else:
+                    remaining_boxes.remove(box_weight)
+                    used_lifters.update(lifter_indices)
+        except:
+            success_failure = 'Invalid format'
+            success_failure_list.append(success_failure)
+            return False, remaining_boxes, success_failure
+
+    return len(remaining_boxes) == 0, remaining_boxes, success_failure_list
