@@ -597,7 +597,7 @@ def load_task_dataset(task_name, model_name):
             os.makedirs(save_input_dir)
         puzzles = read_dataset_number_multipy(dataset_input_dir)
         for puzzle in puzzles:
-            question = puzzles['question']
+            question = puzzle['question']
             question_list.append(question)
             solution = puzzle['solution_data']
             solution_list.append(solution)
@@ -608,7 +608,7 @@ def load_task_dataset(task_name, model_name):
             os.makedirs(save_input_dir)
         puzzles = read_dataset_big_bench_hard(dataset_input_dir)
         for puzzle in puzzles:
-            question = puzzles['question']
+            question = puzzle['question']
             question_list.append(question)
             solution = puzzle['solution_data']
             solution_list.append(solution)
@@ -619,7 +619,7 @@ def load_task_dataset(task_name, model_name):
             os.makedirs(save_input_dir)
             puzzles = read_dataset_gsm(dataset_input_dir)
         for puzzle in puzzles:
-            question = puzzles['question']
+            question = puzzle['question']
             question_list.append(question)
             solution = puzzle['solution_data']
             solution_list.append(solution)
@@ -630,7 +630,7 @@ def load_task_dataset(task_name, model_name):
             os.makedirs(save_input_dir)
             puzzles = read_dataset_math_geometry(dataset_input_dir)
         for puzzle in puzzles:
-            question = puzzles['question']
+            question = puzzle['question']
             question_list.append(question)
             solution = puzzle['solution_data']
             solution_list.append(solution)
@@ -641,7 +641,7 @@ def load_task_dataset(task_name, model_name):
             os.makedirs(save_input_dir)
             puzzles = read_dataset_math_counting_and_probability(dataset_input_dir)
         for puzzle in puzzles:
-            question = puzzles['question']
+            question = puzzle['question']
             question_list.append(question)
             solution = puzzle['solution_data']
             solution_list.append(solution)
@@ -652,7 +652,7 @@ def load_task_dataset(task_name, model_name):
             os.makedirs(save_input_dir)
             puzzles = read_dataset_boxnet1(dataset_input_dir)
         for puzzle in puzzles:
-            question = puzzles['question']
+            question = puzzle['question']
             question_list.append(question)
             solution = puzzle['pg_dict']
             solution_list.append(solution)
@@ -663,7 +663,7 @@ def load_task_dataset(task_name, model_name):
             os.makedirs(save_input_dir)
             puzzles = read_dataset_boxlift(dataset_input_dir)
         for puzzle in puzzles:
-            question = puzzles['question']
+            question = puzzle['question']
             question_list.append(question)
             solution = puzzle['solution_data']
             solution_list.append(solution)
@@ -674,7 +674,7 @@ def load_task_dataset(task_name, model_name):
             os.makedirs(save_input_dir)
             puzzles = read_dataset_blocksworld(dataset_input_dir)
         for puzzle in puzzles:
-            question = puzzles['question']
+            question = puzzle['question']
             question_list.append(question)
             solution = puzzle['solution_data']
             solution_list.append(solution)
@@ -3930,22 +3930,23 @@ def read_dataset_number_multipy(dataset_dir: str) -> List[Dict]:
     for digit_num_list in [[1, 2, 4], [1, 3, 4], [1, 2, 2, 4]]:
         dir_digit_name = f'digit'
         for digit_num in digit_num_list:
+            dir_digit_name += f'_{digit_num}'
             dataset_base_dir = os.path.join(dataset_dir, f'{dir_digit_name}')
-            for i in range(0, 20):
-                dataset_base_dir_sample = os.path.join(dataset_base_dir, f'sample_{i}')
-                generated_num_list = read_value_list(dataset_base_dir_sample + f"/input_value_list.txt")
-                target_answer = read_answer(dataset_base_dir_sample + f"/target_answer.txt")
+        for i in range(0, 20):
+            dataset_base_dir_sample = os.path.join(dataset_base_dir, f'sample_{i}')
+            generated_num_list = read_value_list(dataset_base_dir_sample + f"/input_value_list.txt")
+            target_answer = read_answer(dataset_base_dir_sample + f"/target_answer.txt")
 
-                equation_prompt = f'{generated_num_list[0]}'
-                for generated_num in generated_num_list[1:]:
-                    equation_prompt += f'*{generated_num}'
-                question = f'What is the result of ' + equation_prompt + '?'
-                puzzles.append({
-                    'digit_num': digit_num,
-                    'sample_id': sample_id,
-                    'question': question,
-                    'solution_data': target_answer
-                })
+            equation_prompt = f'{generated_num_list[0]}'
+            for generated_num in generated_num_list[1:]:
+                equation_prompt += f'*{generated_num}'
+            question = f'What is the result of ' + equation_prompt + '?'
+            puzzles.append({
+                'digit_num': digit_num,
+                'sample_id': sample_id,
+                'question': question,
+                'solution_data': target_answer
+            })
     return puzzles
 
 def extract_equation_with_GPT4_number_multiply(response):
