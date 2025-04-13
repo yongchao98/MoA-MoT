@@ -599,6 +599,28 @@ def load_task_dataset(task_name, model_name):
             question_list.append(question)
             solution = puzzle['solution_data']
             solution_list.append(solution)
+    elif task_name == 'big_bench_hard':
+        dataset_input_dir = 'dataset_gather/BIG-Bench-Hard/bbh'
+        save_input_dir = 'results_gather/big_bench_hard'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        puzzles = read_dataset_big_bench_hard(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzles['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    elif task_name == 'gsm':
+        dataset_input_dir = 'dataset_gather/gsmhardv2.jsonl'
+        save_input_dir = 'results_gather/gsm'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+            puzzles = read_dataset_gsm(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzles['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
 
     return solution_list, question_list, target_list, puzzles, solution_data_list, question_constrained_list, question_matrix_list, number_list, word_list, letter_list, save_input_dir
 
@@ -1294,29 +1316,77 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
     elif task_name == 'number_multiply':
+        solution_data = solution_list[i]
         output_1 = None;
         iteration_num_1 = 0
         while output_1 == None and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_letters(response)
+            output_1 = extract_equation_with_GPT4_number_multiply(response)
         extracted_text_1, _ = extract_and_check(output_1)
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
-        True_false_result_1, explanation_1 = validate_solution_number_multiply(extracted_text_1, solution)
 
         output_2 = None;
         iteration_num_2 = 0
         while output_2 == None and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_letters(original_response)
+            output_2 = extract_equation_with_GPT4_number_multiply(original_response)
         extracted_text_2, _ = extract_and_check(output_2)
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
-        True_false_result_2, explanation_2 = validate_solution_number_multiply(extracted_text_2, solution)
+
+        True_false_result_1 = str(solution_data) in extracted_text_1 or str(
+            format_number_with_commas(int(solution_data))) in extracted_text_1
+        True_false_result_2 = str(solution_data) in extracted_text_2 or str(
+            format_number_with_commas(int(solution_data))) in extracted_text_2
 
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
+    elif task_name == 'big_bench_hard':
+        solution_data = solution_list[i]
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = is_equiv_func_big_bench_hard(question, solution_data, response)
+        extracted_text_1, _ = extract_and_check(output_1)
+        extracted_text_1 = extracted_text_1.strip()
+        print(f'extracted_text_1: {extracted_text_1}')
 
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = is_equiv_func_big_bench_hard(question, solution_data, original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+        extracted_text_2 = extracted_text_2.strip()
+        print(f'extracted_text_2: {extracted_text_2}')
+
+        True_false_result_1 = 'Correct' in extracted_text_1 or 'correct' in extracted_text_1
+        True_false_result_2 = 'Correct' in extracted_text_2 or 'correct' in extracted_text_2
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'gsm':
+        solution_data = solution_list[i]
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_gsm(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_gsm(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+
+        True_false_result_1 = is_equiv_func_gsm(solution_data, extracted_text_1)
+        True_false_result_1, _ = extract_and_check(True_false_result_1)
+        True_false_result_2 = is_equiv_func_gsm(solution_data, extracted_text_2)
+        True_false_result_2, _ = extract_and_check(True_false_result_2)
 
     print(f'True_false_result from response: {True_false_result_1}')
     print(f'True_false_result from original_response: {True_false_result_2}')
@@ -3708,11 +3778,11 @@ def read_dataset_number_multipy(dataset_dir: str) -> List[Dict]:
     return puzzles
 
 def extract_equation_with_GPT4_number_multiply(response):
-    prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
-             'Note that the final answer should follow strictly the format as a number like: 233343443 \n' \
-             'Here is the response, return your answer with the format <<<final answer>>>, like <<<233343443>>>.\n' \
+    prompt = 'Your task is to extract the final numerical answer of the given answer by another LLM:\n' \
+             'Here is the response, return your answer with the format <<<number>>>, like <<<43243.4>>>.\n' \
              'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
-             'Note that if you find no final answer are answered, then directly answer <<<0>>>.\n' \
+             'Note that if you find no final answer is answered, then directly answer <<<No answer found>>>.\n' \
+             'If there is equation in the answer but no final numbers, do not calculate the number by yourself.\n' \
              'Input text: ' \
 
     extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs=False)
@@ -3722,6 +3792,8 @@ def validate_solution_number_multiply(llm_response, target_answer):
     if int(llm_response) == target_answer:
         return True
     return False
+def format_number_with_commas(number):
+    return f"{number:,}"
 def read_value_list(file_path):
     with open(file_path, 'r') as f:
         value_list = f.read()
@@ -3731,3 +3803,93 @@ def read_answer(file_path):
     with open(file_path, 'r') as f:
         answer = f.read()
     return int(answer)
+
+#####Big Bench Hard#######
+def read_dataset_big_bench_hard(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+    for env_name in ['date_understanding', 'web_of_lies',
+                   'logical_deduction_seven_objects', 'navigate']:
+        DATA_PATH = dataset_dir + f'/{env_name}.json'
+        question_json_list = []
+        with open(DATA_PATH, 'r') as file:
+            for line in file:
+                question_json_list.append(json.loads(line))
+
+        for i in range(0, len(question_json_list[0]['examples']), 4):
+            print(f'Sample num: {i} in {env_name}, total is: {len(question_json_list[0]["examples"])}')
+
+            data = question_json_list[0]['examples'][i]
+            question = data['input'] + f'\n' + f'\nOutput final answer with the format <<<answer>>>.'
+            target_answer = data['target']
+
+            puzzles.append({
+                # 'digit_num': digit_num,
+                # 'sample_id': sample_id,
+                'example_data': data,
+                'question': question,
+                'solution_data': target_answer
+            })
+
+    return puzzles
+def is_equiv_func_big_bench_hard(question, target_answer, response):
+    input_prompt_equiv_func = r'Evaluate whether the answer given by another LLM is correct. ' \
+                              r'I will give you the question, the answer from another LLM, and the target answer. ' \
+                              r'Then you need to extract the final answer from the tested LLM response and evaluate the correctness of the answer. ' \
+                              r'In the end of your response, answer with the list of both extracted answer and Correct/Wrong judgement surrounded by <<<>>>. ' \
+                              r'The examples are: <<<[No clear answer, Wrong]>>>, <<<[Yes, Wrong]>>>, <<<[No, Wrong]>>>, <<<[(C) 03/07/2017, Correct]>>>, <<<[(F) 01/24/1947, Wrong]>>>, ' \
+                              r'<<<[(D) The motorcyle is the oldest, Wrong]>>>, <<<[(F) The quail is the fourth from the left, Correct]>>>, ' \
+                              r'<<<[True, Correct]>>>, <<<[True, Wrong]>>>, <<<[False, Correct]>>>. ' \
+                              f'\nMost of the time, the final answer is displayed at the end of the LLM response. However, if there is no clear answer, just answer <<<[No clear answer, Wrong]>>>. ' \
+                              f'Do not change or summarize the answer by yourself. Just compare tested LLM answer with the target answer. Especially whether the options are matching! ' \
+                              f'For instance, A and D options are not matching, which is judged as wrong! ' \
+                              f'Now the question is: {question}; the tested answer is: {response}; the target answer is: {target_answer}. Your evaluation answer: '
+
+    response = GPT_response('', input_prompt_equiv_func, model_name='gpt-4o',
+                            code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
+    return response
+
+
+
+#####Big Bench Hard#######
+def read_dataset_gsm(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+    question_json_list = []
+    with open(dataset_dir, 'r') as file:
+        for line in file:
+            question_json_list.append(json.loads(line))
+    for i in range(1, len(question_json_list), 25):
+        data = question_json_list[i]
+        target_answer = data['target']
+        question = data[
+                       'input'] + f'\n' + f'\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: '
+        puzzles.append({
+            'example_data': data,
+            'question': question,
+            'solution_data': target_answer
+        })
+
+    return puzzles
+def extract_equation_with_GPT4_gsm(response):
+    prompt = 'Your task is to extract the final numerical answer of the given answer by another LLM:\n' \
+             'Here is the response, return your answer with the format <<<list>>>, like <<<43243.4>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer is answered, then directly answer <<<No answer found>>>.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs = False)
+    return extract_equation
+
+def is_equiv_func_gsm(target_answer, extracted_text):
+    input_prompt_equiv_func = r'Evaluate whether the following numerical pair has the same values.' \
+                              r'Neglect the format difference and the extra text like units and names and equations.' \
+                              r'The value can be regarded as the same if they are < 1e-3 relative difference.' \
+                              r'The examples are: ("12", "12.0", True), ("5*sqrt(13)", "15.97112779602377", False),' \
+                              r'("10\text{ inches}", "10.0", True), ("42", "41.99999999999998", True), ("frac{63}{64}", "0.984375", True),' \
+                              r'("frac{5\sqrt{5}}{3}", "5\sqrt{5}/3", True), (\tfrac34, "3/4", True), ("frac{1033}{4}+30\sqrt{3}", "169.0", False), ("AB=12+12\sqrt{3}", "12(\sqrt{3} + 1)", True),' \
+                              r'((18, -18), (18, -18), True). ' \
+                              r'In the end of your response, answer <<<True>>> or <<<False>>>'
+    input_prompt_equiv_func = input_prompt_equiv_func + f'\n({target_answer}, {extracted_text}), Your answer:'
+    response = GPT_response('Your are a helpful checker for math expressions.', input_prompt_equiv_func, model_name='gpt-4o',
+                            code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
+    return response
+
