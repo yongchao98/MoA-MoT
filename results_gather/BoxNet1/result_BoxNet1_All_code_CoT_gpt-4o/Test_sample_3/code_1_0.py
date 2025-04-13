@@ -1,0 +1,8 @@
+action_plan = [
+    {
+        "Agent[0.5, 0.5]": "move(box_blue, target_blue)",
+        "Agent[0.5, 1.5]": "move(box_red, target_red)"
+    }
+]
+
+print(action_plan)

@@ -1467,8 +1467,11 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
 
         True_false_result_1 = is_equiv_func_math_geometry(target_answer, extracted_text_1)
         True_false_result_1, _ = extract_and_check(True_false_result_1)
+        True_false_result_1 = True_false_result_1 == 'True'
         True_false_result_2 = is_equiv_func_math_geometry(target_answer, extracted_text_2)
         True_false_result_2, _ = extract_and_check(True_false_result_2)
+        True_false_result_2 = True_false_result_2 == 'True'
+
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
     elif task_name == 'math_counting_and_probability':
@@ -1489,8 +1492,11 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
 
         True_false_result_1 = is_equiv_func_math_counting_and_probability(target_answer, extracted_text_1)
         True_false_result_1, _ = extract_and_check(True_false_result_1)
+        True_false_result_1 = True_false_result_1 == 'True'
         True_false_result_2 = is_equiv_func_math_counting_and_probability(target_answer, extracted_text_2)
         True_false_result_2, _ = extract_and_check(True_false_result_2)
+        True_false_result_2 = True_false_result_2 == 'True'
+
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
     elif task_name == 'BoxNet1':
@@ -1510,6 +1516,8 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         extracted_text_2, _ = extract_and_check(output_2)
 
         remaining_box_dict_1, success_failure_1 = score_in_training_set(pg_dict, extracted_text_1)
+        # print("pg_dict:")
+        # print(pg_dict)
         remaining_box_dict_2, success_failure_2 = score_in_training_set(pg_dict, extracted_text_2)
         True_false_result_1 = success_failure_1 == 'success'
         True_false_result_2 = success_failure_2 == 'success'
@@ -1524,14 +1532,16 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         while output_1 == None and iteration_num_1 < 3:
             iteration_num_1 += 1
             output_1 = extract_equation_with_GPT4_boxlift(response)
+        extracted_text_1, _ = extract_and_check(output_1)
 
         output_2 = None;
         iteration_num_2 = 0
         while output_2 == None and iteration_num_2 < 3:
             iteration_num_2 += 1
             output_2 = extract_equation_with_GPT4_boxlift(original_response)
-        is_correct1, remaining1, success_failure_list1 = verify_solution_boxlift(boxes, lifters, output_1, estimated_steps)
-        is_correct2, remaining2, success_failure_list2 = verify_solution_boxlift(boxes, lifters, output_2, estimated_steps)
+        extracted_text_2, _ = extract_and_check(output_2)
+        is_correct1, remaining1, success_failure_list1 = verify_solution_boxlift(boxes, lifters, extracted_text_1, estimated_steps)
+        is_correct2, remaining2, success_failure_list2 = verify_solution_boxlift(boxes, lifters, extracted_text_2, estimated_steps)
         True_false_result_1 = is_correct1
         True_false_result_2 = is_correct2
 
