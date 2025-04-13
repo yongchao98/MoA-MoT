@@ -642,6 +642,17 @@ def load_task_dataset(task_name, model_name):
             question_list.append(question)
             solution = puzzle['solution_data']
             solution_list.append(solution)
+    elif task_name == 'BoxNet1':
+        dataset_input_dir = 'dataset_gather/BoxNet1_dataset'
+        save_input_dir = 'results_gather/BoxNet1'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+            puzzles = read_dataset_boxnet1(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzles['question']
+            question_list.append(question)
+            solution = puzzle['pg_dict']
+            solution_list.append(solution)
 
     return solution_list, question_list, target_list, puzzles, solution_data_list, question_constrained_list, question_matrix_list, number_list, word_list, letter_list, save_input_dir
 
@@ -1452,6 +1463,29 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         True_false_result_1, _ = extract_and_check(True_false_result_1)
         True_false_result_2 = is_equiv_func_math_counting_and_probability(target_answer, extracted_text_2)
         True_false_result_2, _ = extract_and_check(True_false_result_2)
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'BoxNet1':
+        pg_dict = solution_list[i]
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_boxnet1(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_boxnet1(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+
+        remaining_box_dict_1, success_failure_1 = score_in_training_set(pg_dict, extracted_text_1)
+        remaining_box_dict_2, success_failure_2 = score_in_training_set(pg_dict, extracted_text_2)
+        True_false_result_1 = success_failure_1 == 'success'
+        True_false_result_2 = success_failure_2 == 'success'
+
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
 
@@ -3960,7 +3994,7 @@ def is_equiv_func_gsm(target_answer, extracted_text):
                             code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
     return response
 
-#####Math Geometry#######t
+#####Math Geometry#######
 def read_dataset_math_geometry(dataset_dir: str) -> List[Dict]:
     puzzles = []
     for i in range(0, 1000):
@@ -4040,7 +4074,7 @@ def is_equiv_func_math_geometry(target_answer, extracted_text):
                             code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
     return response
 
-#####Math Counting and Probability#######t
+#####Math Counting and Probability#######
 def read_dataset_math_counting_and_probability(dataset_dir: str) -> List[Dict]:
     puzzles = []
     for i in range(0, 1000):
@@ -4082,3 +4116,166 @@ def is_equiv_func_math_counting_and_probability(target_answer, extracted_text):
     response = GPT_response('Your are a helpful checker for math expressions.', input_prompt_equiv_func, model_name='gpt-4o',
                             code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
     return response
+
+######BoxNet1######
+def read_dataset_boxnet1(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+    for pg_row_num, pg_column_num in [(1, 2), (2, 2), (2, 4)]:
+        for iteration_num in range(10):
+            print(f'Row num is: {pg_row_num}, Column num is: {pg_column_num}, Iteration num is: {iteration_num}\n\n')
+            with open(
+                    dataset_dir + f'/env_pg_state_{pg_row_num}_{pg_column_num}/pg_state{iteration_num}/pg_state{iteration_num}.json',
+                    'r') as file:
+                pg_dict = json.load(file)
+            file.close()
+
+            pg_dict_initial = copy.deepcopy(pg_dict)
+            prompt = create_prompt(pg_row_num, pg_column_num, pg_dict)
+            question = prompt
+            puzzles.append({
+                'pg_dict': pg_dict,
+                'pg_dict_initial': pg_dict_initial,
+                'question': question
+            })
+    return puzzles
+
+def create_prompt(pg_row_num, pg_column_num, pg_dict):
+    state_update_prompt = state_update_func(pg_row_num, pg_column_num, pg_dict)
+    prompt = '''
+You are a central planner tasked with directing agents in a grid-like field to move colored boxes to their corresponding color-coded targets. Each agent occupies a 1x1 square and can only interact with objects within its square. Agents can move a box to an adjacent square or directly to a target square of the same color. A square may contain multiple boxes and targets.
+
+
+
+The squares are identified by their center coordinates (e.g., square[0.5, 0.5]). Actions are formatted as: move(box_color, destination), where box_color is the color of the box and destination is either a target of the same color or an adjacent square.
+
+
+
+Your objective is to create a sequence of action plans that instructs each agent to match all boxes to their color-coded targets in the most efficient manner.
+
+
+
+Please adhere to the following rules when specifying your action plan:
+
+
+
+1. **Single Action per Agent**: Assign only one action to each agent at a time. However, the final answer shoule be a list of action plans for multiple steps.
+
+
+
+2. **Unique Agent Keys**: Use unique keys for each agent in the JSON format action plan. The key should be the agent's coordinates in the format "Agent[x, y]".
+
+
+
+3. **Prioritize Matching Boxes to Targets**: Always prioritize actions that will match a box to its target over moving a box to an adjacent square.
+
+
+
+4. **Sequential Action Planning**: The whole returned answer should be a list of action plans for multiple steps, do not just return one step plan.
+
+
+
+5. **Clear Formatting**: Ensure the action plan is clearly formatted in JSON, with each agent's action specified as a key-value pair.
+
+
+
+6. **Conflict Resolution**: Ensure that no two agents are assigned actions that would interfere with each other.
+
+
+
+7. **Optimize Efficiency**: Aim to minimize the number of moves required to match all boxes with their targets.
+
+
+
+Here is the format for your action plan:
+```json
+[{"Agent[0.5, 0.5]":"move(box_blue, square[0.5, 1.5])", "Agent[1.5, 0.5]":"move(box_red, target_red)"}, {"Agent[0.5, 1.5]":"move(box_blue, target_blue)", "Agent[2.5, 0.5]":"move...}, {...}...]
+```
+Include an agent in the action plan only if it has a task to perform next.
+
+'''
+    prompt += "Surround the answer with <<<content>>>. \n"
+    prompt += f'''
+    The current left boxes and agents are:
+    {state_update_prompt}\n
+    '''
+    prompt += '''
+    Please respond in the format: <<<list of action dictionary>>>, such as <<<[{"Agent[0.5, 0.5]":"move(box_blue, square[0.5, 1.5])", "Agent[1.5, 0.5]":"move...}, {"Agent[0.5, 1.5]":"move(box_blue, target_blue)"}, {...}...]>>>.\n
+    Your answer:\n
+    '''
+    return prompt
+
+def score_in_training_set(pg_dict, response):
+    success_failure = ''
+    try:
+        original_response_dict_list = json.loads(response)
+        for original_response_dict in original_response_dict_list:
+            for key, value in original_response_dict.items():
+                coordinates = tuple(map(float, re.findall(r"\d+\.?\d*", key)))
+                # match the item and location in the value
+                match = re.match(r"move\((.*?),\s(.*?)\)", value)
+    except:
+        success_failure = 'response in the wrong format'
+
+    if success_failure == 'response in the wrong format':
+        print('\nResponse in the wrong format!\n')
+        return pg_dict, success_failure
+    elif success_failure == '':
+        pg_dict_returned = action_from_response(pg_dict, original_response_dict_list)
+        count = 0
+        for key, value in pg_dict_returned.items():
+            count += len(value)
+        if count == 0:
+            success_failure = 'success'
+        elif success_failure == '':
+            success_failure = 'failure after full execution'
+        return pg_dict_returned, success_failure
+def action_from_response(pg_dict_input, original_response_dict_list):
+    pg_dict_current = copy.deepcopy(pg_dict_input)
+
+    for original_response_dict in original_response_dict_list:
+        transformed_dict = {}
+        for key, value in original_response_dict.items():
+            coordinates = tuple(map(float, re.findall(r"\d+\.?\d*", key)))
+            match = re.match(r"move\((.*?),\s(.*?)\)", value)
+            if match:
+                item, location = match.groups()
+                if "square" in location:
+                    location = tuple(map(float, re.findall(r"\d+\.?\d*", location)))
+                transformed_dict[coordinates] = [item, location]
+
+        # Process each move with the current state
+        for key, value in transformed_dict.items():
+            current_pos = f"{key[0]}_{key[1]}"
+
+            # Check if this is a box-target matching move
+            if (value[0] in pg_dict_current[current_pos] and
+                    isinstance(value[1], str) and
+                    value[1] in pg_dict_current[current_pos] and
+                    value[0].startswith('box_') and
+                    value[1].startswith('target_') and
+                    value[0][4:] == value[1][7:]):
+                # Remove both box and target when matched
+                pg_dict_current[current_pos].remove(value[0])
+                pg_dict_current[current_pos].remove(value[1])
+
+            # Check if this is a movement to another square
+            elif (value[0] in pg_dict_current[current_pos] and
+                  isinstance(value[1], tuple)):  # Only check coordinates for square movements
+                # Calculate if move is to adjacent square
+                if ((np.abs(key[0] - value[1][0]) == 0 and np.abs(key[1] - value[1][1]) == 1) or
+                        (np.abs(key[0] - value[1][0]) == 1 and np.abs(key[1] - value[1][1]) == 0)):
+                    # Move box to new location
+                    target_pos = f"{value[1][0]}_{value[1][1]}"
+                    pg_dict_current[current_pos].remove(value[0])
+                    pg_dict_current[target_pos].append(value[0])
+
+    return pg_dict_current
+
+def extract_equation_with_GPT4_boxnet1(response):
+    prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+             'Note that the equation should be in the form like <<<answer>>>, <<<[{"Agent[0.5, 0.5]":"move(box_blue, square[0.5, 1.5])", "Agent[1.5, 0.5]":"move...}, {"Agent[0.5, 1.5]":"move(box_blue, target_blue)}, {...}...]>>>, \n' \
+             'Here is the reponse, return your answer with the format <<<equation>>>, like <<<[{"Agent[0.5, 0.5]":"move(box_blue, square[0.5, 1.5])", "Agent[1.5, 0.5]":"move...}, {"Agent[0.5, 1.5]":"move(box_blue, target_blue)}, {...}...]>>>. ' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list=[prompt + response], response_total_list=[], logprobs=False)
+    return extract_equation
