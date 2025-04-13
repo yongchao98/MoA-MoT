@@ -399,7 +399,6 @@ def load_task_dataset(task_name, model_name):
             question_list.append(question)
             solution_data_list.append(solution_data)
             target_list.append(target)
-
     elif task_name == 'pattern_recognition':
         dataset_input_dir = 'dataset_gather/pattern_recognition'
         save_input_dir = 'results_gather/pattern_recognition'
@@ -616,6 +615,28 @@ def load_task_dataset(task_name, model_name):
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
             puzzles = read_dataset_gsm(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzles['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    elif task_name == 'math_geometry':
+        dataset_input_dir = 'dataset_gather/MATH/train/geometry'
+        save_input_dir = 'results_gather/math_geometry'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+            puzzles = read_dataset_math_geometry(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzles['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    elif task_name == 'math_counting_and_probability':
+        dataset_input_dir = 'dataset_gather/MATH/train/counting_and_probability'
+        save_input_dir = 'results_gather/math_counting_and_probability'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+            puzzles = read_dataset_math_counting_and_probability(dataset_input_dir)
         for puzzle in puzzles:
             question = puzzles['question']
             question_list.append(question)
@@ -1387,6 +1408,52 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         True_false_result_1, _ = extract_and_check(True_false_result_1)
         True_false_result_2 = is_equiv_func_gsm(solution_data, extracted_text_2)
         True_false_result_2, _ = extract_and_check(True_false_result_2)
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'math_geometry':
+        target_answer = solution_list[i]
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_math_geometry(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_math_geometry(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+
+        True_false_result_1 = is_equiv_func_math_geometry(target_answer, extracted_text_1)
+        True_false_result_1, _ = extract_and_check(True_false_result_1)
+        True_false_result_2 = is_equiv_func_math_geometry(target_answer, extracted_text_2)
+        True_false_result_2, _ = extract_and_check(True_false_result_2)
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'math_counting_and_probability':
+        target_answer = solution_list[i]
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_math_counting_and_probability(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_math_counting_and_probability(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+
+        True_false_result_1 = is_equiv_func_math_counting_and_probability(target_answer, extracted_text_1)
+        True_false_result_1, _ = extract_and_check(True_false_result_1)
+        True_false_result_2 = is_equiv_func_math_counting_and_probability(target_answer, extracted_text_2)
+        True_false_result_2, _ = extract_and_check(True_false_result_2)
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
 
     print(f'True_false_result from response: {True_false_result_1}')
     print(f'True_false_result from original_response: {True_false_result_2}')
@@ -3893,3 +3960,125 @@ def is_equiv_func_gsm(target_answer, extracted_text):
                             code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
     return response
 
+#####Math Geometry#######t
+def read_dataset_math_geometry(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+    for i in range(0, 1000):
+        problem_path = dataset_dir + f'/{i}.json'
+        if os.path.exists(problem_path):
+            with open(problem_path, 'r') as file:
+                data = json.load(file)
+            question = data[
+                           'problem'] + f'\n' + f'\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: '
+            target = data['solution']
+            target_answer = remove_boxed(last_boxed_only_string(target))
+            puzzles.append({
+                'example_data': data,
+                'question': question,
+                'solution_data': target_answer
+            })
+
+    return puzzles
+
+def last_boxed_only_string(string):
+    idx = string.rfind("\\boxed")
+    if idx < 0:
+        idx = string.rfind("\\fbox")
+        if idx < 0:
+            return None
+
+    i = idx
+    right_brace_idx = None
+    num_left_braces_open = 0
+    while i < len(string):
+        if string[i] == "{":
+            num_left_braces_open += 1
+        if string[i] == "}":
+            num_left_braces_open -= 1
+            if num_left_braces_open == 0:
+                right_brace_idx = i
+                break
+        i += 1
+
+    if right_brace_idx == None:
+        retval = None
+    else:
+        retval = string[idx:right_brace_idx + 1]
+
+    return retval
+
+def remove_boxed(s):
+    left = "\\boxed{"
+    try:
+        assert s[:len(left)] == left
+        assert s[-1] == "}"
+        return s[len(left):-1]
+    except:
+        return None
+
+def extract_equation_with_GPT4_math_geometry(response):
+    prompt = 'Your task is to extract the final numerical answer of the given answer by another LLM:\n' \
+             'Here is the response, return your answer with the format <<<list>>>, like <<<43243.4>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer is answered, then directly answer <<<No answer found>>>.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs = False)
+    return extract_equation
+
+def is_equiv_func_math_geometry(target_answer, extracted_text):
+    input_prompt_equiv_func = r'Evaluate whether the following numerical pair has the same values.' \
+                              r'Neglect the format difference and the extra text like units and names and equations.' \
+                              r'The value can be regarded as the same if they are < 1e-3 relative difference.' \
+                              r'The examples are: ("12", "12.0", True), ("5*sqrt(13)", "15.97112779602377", False),' \
+                              r'("10\text{ inches}", "10.0", True), ("42", "41.99999999999998", True), ("frac{63}{64}", "0.984375", True),' \
+                              r'("frac{5\sqrt{5}}{3}", "5\sqrt{5}/3", True), (\tfrac34, "3/4", True), ("frac{1033}{4}+30\sqrt{3}", "169.0", False), ("AB=12+12\sqrt{3}", "12(\sqrt{3} + 1)", True),' \
+                              r'((18, -18), (18, -18), True). ' \
+                              r'In the end of your response, answer <<<True>>> or <<<False>>>'
+    input_prompt_equiv_func = input_prompt_equiv_func + f'\n({target_answer}, {extracted_text}), Your answer:'
+    response = GPT_response('Your are a helpful checker for math expressions.', input_prompt_equiv_func, model_name='gpt-4o',
+                            code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
+    return response
+
+#####Math Counting and Probability#######t
+def read_dataset_math_counting_and_probability(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+    for i in range(0, 1000):
+        problem_path = dataset_dir + f'/{i}.json'
+        if os.path.exists(problem_path):
+            with open(problem_path, 'r') as file:
+                data = json.load(file)
+            question = data[
+                           'problem'] + f'\n' + f'\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: '
+            target = data['solution']
+            target_answer = remove_boxed(last_boxed_only_string(target))
+            puzzles.append({
+                'example_data': data,
+                'question': question,
+                'solution_data': target_answer
+            })
+    return puzzles
+
+def extract_equation_with_GPT4_math_counting_and_probability(response):
+    prompt = 'Your task is to extract the final numerical answer of the given answer by another LLM:\n' \
+             'Here is the response, return your answer with the format <<<list>>>, like <<<43243.4>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer is answered, then directly answer <<<No answer found>>>.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs = False)
+    return extract_equation
+
+def is_equiv_func_math_counting_and_probability(target_answer, extracted_text):
+    input_prompt_equiv_func = r'Evaluate whether the following numerical pair has the same values.' \
+                              r'Neglect the format difference and the extra text like units and names and equations.' \
+                              r'The value can be regarded as the same if they are < 1e-3 relative difference.' \
+                              r'The examples are: ("12", "12.0", True), ("5*sqrt(13)", "15.97112779602377", False),' \
+                              r'("10\text{ inches}", "10.0", True), ("42", "41.99999999999998", True), ("frac{63}{64}", "0.984375", True),' \
+                              r'("frac{5\sqrt{5}}{3}", "5\sqrt{5}/3", True), (\tfrac34, "3/4", True), ("frac{1033}{4}+30\sqrt{3}", "169.0", False), ("AB=12+12\sqrt{3}", "12(\sqrt{3} + 1)", True),' \
+                              r'((18, -18), (18, -18), True). ' \
+                              r'In the end of your response, answer <<<True>>> or <<<False>>>'
+    input_prompt_equiv_func = input_prompt_equiv_func + f'\n({target_answer}, {extracted_text}), Your answer:'
+    response = GPT_response('Your are a helpful checker for math expressions.', input_prompt_equiv_func, model_name='gpt-4o',
+                            code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
+    return response
