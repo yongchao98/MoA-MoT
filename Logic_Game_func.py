@@ -20,6 +20,9 @@ from prompt import *
 from symbolic_code_check import analyze_computational_approach, analyze_code_and_explain
 #from LLaMA_Factory.src.llamafactory.chat.chat_model import run_response
 
+State = List[List[str]]
+Action = Tuple[str, str, str]  # (block, from, to)
+
 ##### Logic Game #####
 ### All the related functions for each task are listed in order below.
 
@@ -659,6 +662,17 @@ def load_task_dataset(task_name, model_name):
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
             puzzles = read_dataset_boxlift(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzles['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    elif task_name == 'Blocksworld':
+        dataset_input_dir = 'dataset_gather/Blocksworld_dataset'
+        save_input_dir = 'results_gather/Blocksworld_dataset'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+            puzzles = read_dataset_blocksworld(dataset_input_dir)
         for puzzle in puzzles:
             question = puzzles['question']
             question_list.append(question)
@@ -1513,15 +1527,37 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         while output_2 == None and iteration_num_2 < 3:
             iteration_num_2 += 1
             output_2 = extract_equation_with_GPT4_boxlift(original_response)
-        is_correct1, remaining1, success_failure_list1 = verify_solution_boxlift(boxes, lifters, output_1,
-                                                                      estimated_steps)
-        is_correct2, remaining2, success_failure_list2 = verify_solution_boxlift(boxes, lifters, output_2,
-                                                                      estimated_steps)
+        is_correct1, remaining1, success_failure_list1 = verify_solution_boxlift(boxes, lifters, output_1, estimated_steps)
+        is_correct2, remaining2, success_failure_list2 = verify_solution_boxlift(boxes, lifters, output_2, estimated_steps)
         True_false_result_1 = is_correct1
         True_false_result_2 = is_correct2
 
         solution_1 = output_1;
         solution_2 = output_2
+    elif task_name == 'Blocksworld':
+        solution_data = solution_list[i]
+        initial_state, goal_state = solution_data['initial_state'], solution_data['goal_state']
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_boxnet1(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_boxnet1(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+
+        is_valid_1, message_1 = validate_response_blocksworld(initial_state, goal_state, extracted_text_1)
+        is_valid_2, message_2 = validate_response_blocksworld(initial_state, goal_state, extracted_text_2)
+        True_false_result_1 = is_valid_1
+        True_false_result_2 = is_valid_2
+
+        solution_1 = extracted_text_1;
+        solution_2 = True_false_result_2
 
     print(f'True_false_result from response: {True_false_result_1}')
     print(f'True_false_result from original_response: {True_false_result_2}')
@@ -4499,3 +4535,134 @@ def verify_solution_boxlift(boxes: List[int], lifters: List[int], solution: str,
             return False, remaining_boxes, success_failure
 
     return len(remaining_boxes) == 0, remaining_boxes, success_failure_list
+
+#####Blocksworld#######
+def read_dataset_blocksworld(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+
+    for num_blocks, initial_stacks, goal_stacks in [
+        (2, 3, 2), (2, 3, 3), (2, 4, 2), (2, 4, 3), (2, 4, 4), (2, 5, 2), (2, 5, 3), (2, 5, 4),
+        (3, 3, 2), (3, 3, 3), (3, 4, 2), (3, 4, 3), (3, 4, 4), (3, 5, 2), (3, 5, 3), (3, 5, 4),
+        (4, 3, 2), (4, 3, 3), (4, 4, 2), (4, 4, 3), (4, 4, 4), (4, 5, 2), (4, 5, 3), (4, 5, 4)
+    ]:
+        # for index in range(5):
+        for index in range(2):
+            dataset_base_dir_sample = os.path.join(dataset_dir,
+                                                   f"{num_blocks}_{initial_stacks}_{goal_stacks}_{index}/")
+            # Read states from file
+            initial_state, goal_state = read_state_from_file(dataset_base_dir_sample + f"blocksworld_task.txt")
+            print(
+                f'num_blocks: {num_blocks}, initial_stacks: {initial_stacks}, goal_stacks: {goal_stacks}, index: {index}')
+            # Generate prompt from the read states
+            question = state_to_prompt(initial_state, goal_state)
+            puzzles.append({
+                'solution_data': {
+                    'initial_state': initial_state,
+                    'goal_state': goal_state,
+                },
+                'question': question
+            })
+
+    return puzzles
+
+def extract_equation_with_GPT4_blocksworld(response):
+    prompt = 'Your task is to extract the final answer of the given answer by another LLM:\n' \
+             'Here is the response, return your answer with the format <<<list>>>, like <<<Yes>>>, <<<No>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer is answered, then directly answer <<<No answer found>>>.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs=False)
+    return extract_equation
+
+
+def read_state_from_file(filename: str) -> Tuple[State, State]:
+    """
+    Read the initial and goal states from a text file.
+    """
+    initial_state = {}
+    goal_state = {}
+    current_state = initial_state
+
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+
+    for line in lines:
+        line = line.strip()
+        if line == "Initial State:":
+            current_state = initial_state
+        elif line == "Goal State:":
+            current_state = goal_state
+        elif line:
+            parts = line.split(': ')
+            stack = parts[0] if len(parts) > 1 else parts[0][:-1]
+            blocks = parts[1].split() if len(parts) > 1 else []
+            current_state[stack] = blocks
+
+    return initial_state, goal_state
+
+def state_to_prompt(state: State, goal: State) -> str:
+    """
+    Convert a Blocksworld state to a prompt description for the LLM.
+    """
+    prompt = "Blocksworld Task:\n\nInitial State:\n"
+    for stack, blocks in state.items():
+        prompt += f"{stack}: {' '.join(blocks)}\n"
+
+    prompt += "\nGoal State:\n"
+    for stack, blocks in goal.items():
+        prompt += f"{stack}: {' '.join(blocks)}\n"
+
+    prompt += "\nPlease provide a series of moves to reach the goal state. " \
+              "You can only move one block at a time. And that box should be the top box of the stack. " \
+              "Note that from the left to the right in each stack is the order from the bottom to the top of boxes. " \
+              "For example, in stack A B C D, A is the bottom box and D is the top box so that you can only move D in this case. "
+    prompt += "***Be careful that you can only pick up the top box in each stack. Check this rule before your move!***. "
+    prompt += "\nEach move should be in the format: 'Move [block] from [source] to [destination]'. "
+    prompt += "You cannot create new stacks but only move among the existing stacks. "
+    prompt += "Separate each move with a newline. Surround the answer with <<<content>>>. "
+    prompt += "Answer with the required format like the example: <<<Move B from 2 to table\nMove A from 1 to 2\nMove C from 3 to 1\nMove D from 3 to 2\nMove B from 1 to 2>>>\n"
+    prompt += "Each action should be separated by separate line. Your answer: \n"
+
+    return prompt
+
+def validate_response_blocksworld(initial_state: State, goal_state: State, response: str) -> Tuple[bool, str]:
+    """
+    Validate the LLM's response and check if it reaches the goal state.
+    """
+    current_state = {stack: blocks.copy() for stack, blocks in initial_state.items()}
+    #print('current_state:', current_state)
+    moves = response.strip().split('\n')
+    #print('goal state:', goal_state)
+    for move in moves:
+        parts = move.split()
+        if len(parts) != 6 or parts[0] != "Move" or parts[2] != "from" or parts[4] != "to":
+            return False, f"Invalid move format: {move}"
+
+        block, source, destination = parts[1], parts[3], parts[5]
+        if 'stack' not in source:
+            source = 'stack' + source
+        if 'stack' not in destination:
+            destination = 'stack' + destination
+
+        if source not in current_state or destination not in current_state:
+            return False, f"Invalid source or destination stack: {move}"
+
+        if not current_state[source] or current_state[source][-1] != block:
+            return False, f"Invalid move: {move}. Block {block} is not at the top of the source stack."
+
+        # Move the block
+        moved_block = current_state[source].pop()
+        current_state[destination].append(moved_block)
+        #print('current_state:', current_state)
+
+    def compare_states(state1, state2):
+        state1_non_empty = {k: v for k, v in state1.items() if v}
+        state2_non_empty = {k: v for k, v in state2.items() if v}
+        return state1_non_empty == state2_non_empty
+
+    # Check if the final state matches the goal state
+    if compare_states(current_state, goal_state):
+        return True, "Goal state reached successfully!"
+    else:
+        return False, "The final state does not match the goal state."
