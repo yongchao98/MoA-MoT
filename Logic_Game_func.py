@@ -4001,6 +4001,7 @@ def read_dataset_big_bench_hard(dataset_dir: str) -> List[Dict]:
                      'multistep_arithmetic_two', 'object_counting', 'penguins_in_a_table', 'word_sorting', 'tracking_shuffled_objects_three_objects',
                      'tracking_shuffled_objects_seven_objects','tracking_shuffled_objects_five_objects', 'temporal_sequences',
                      'sports_understanding', 'snarks', 'salient_translation_error_detection', 'ruin_names', 'reasoning_about_colored_objects']:
+    # for env_name in ['reasoning_about_colored_objects']:
         DATA_PATH = dataset_dir + f'/{env_name}.json'
         question_json_list = []
         with open(DATA_PATH, 'r') as file:
@@ -4028,6 +4029,7 @@ def is_equiv_func_big_bench_hard(question, target_answer, response):
                               r'The examples are: <<<[No clear answer, Wrong]>>>, <<<[Yes, Wrong]>>>, <<<[No, Wrong]>>>, <<<[(C) 03/07/2017, Correct]>>>, <<<[(F) 01/24/1947, Wrong]>>>, ' \
                               r'<<<[(D) The motorcyle is the oldest, Wrong]>>>, <<<[(F) The quail is the fourth from the left, Correct]>>>, ' \
                               r'<<<[True, Correct]>>>, <<<[True, Wrong]>>>, <<<[False, Correct]>>>. ' \
+                              r'<<<[]]]]))), Correct]>>>, <<<[]]>>>, Wrong]>>>, <<<[))))]]]>, Correct]>>>. ' \
                               f'\nMost of the time, the final answer is displayed at the end of the LLM response. However, if there is no clear answer, just answer <<<[No clear answer, Wrong]>>>. ' \
                               f'Do not change or summarize the answer by yourself. Just compare tested LLM answer with the target answer. Especially whether the options are matching! ' \
                               f'For instance, A and D options are not matching, which is judged as wrong! ' \
