@@ -3995,15 +3995,19 @@ def read_answer(file_path):
 #####Big Bench Hard#######
 def read_dataset_big_bench_hard(dataset_dir: str) -> List[Dict]:
     puzzles = []
-    for env_name in ['date_understanding', 'web_of_lies',
-                   'logical_deduction_seven_objects', 'navigate']:
+    for env_name in ['date_understanding', 'web_of_lies', 'disambiguation_qa', 'formal_fallacies', 'geometric_shapes',
+                     'logical_deduction_seven_objects', 'navigate', 'dyck_languages', 'boolean_expressions', 'causal_judgement',
+                     'hyperbaton', 'logical_deduction_five_objects', 'logical_deduction_three_objects', 'movie_recommendation',
+                     'multistep_arithmetic_two', 'object_counting', 'penguins_in_a_table', 'word_sorting', 'tracking_shuffled_objects_three_objects',
+                     'tracking_shuffled_objects_seven_objects','tracking_shuffled_objects_five_objects', 'temporal_sequences',
+                     'sports_understanding', 'snarks', 'salient_translation_error_detection', 'ruin_names', 'reasoning_about_colored_objects']:
         DATA_PATH = dataset_dir + f'/{env_name}.json'
         question_json_list = []
         with open(DATA_PATH, 'r') as file:
             for line in file:
                 question_json_list.append(json.loads(line))
 
-        for i in range(0, len(question_json_list[0]['examples']), 4):
+        for i in range(0, len(question_json_list[0]['examples'])):
             # print(f'Sample num: {i} in {env_name}, total is: {len(question_json_list[0]["examples"])}')
             data = question_json_list[0]['examples'][i]
             question = data['input'] + f'\n' + f'\nOutput final answer with the format <<<answer>>>.'
