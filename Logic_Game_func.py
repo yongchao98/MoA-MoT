@@ -18,6 +18,7 @@ import math
 from dataclasses import dataclass
 from prompt import *
 from symbolic_code_check import analyze_computational_approach, analyze_code_and_explain
+import reasoning_gym
 #from LLaMA_Factory.src.llamafactory.chat.chat_model import run_response
 
 ##### Logic Game #####
@@ -588,6 +589,14 @@ def load_task_dataset(task_name, model_name):
                         question_list.append(question)
                         word_list.append(word)
                         letter_list.append(letter)
+    elif task_name.startswith('reasoning_gym_'):
+        dataset_name = task_name.split('reasoning_gym_')[1]
+        save_input_dir = os.path.join('results_gather', 'reasoning_gym', dataset_name)
+
+        dataset_path= os.path.join('dataset_gather', 'reasoning_gym', f'{dataset_name}.csv')
+        data_list = pd.read_csv(dataset_path)
+        question_list = data_list['question'].tolist()
+        solution_list = data_list['full_data'].tolist()
 
     return solution_list, question_list, target_list, puzzles, solution_data_list, question_constrained_list, question_matrix_list, number_list, word_list, letter_list, save_input_dir
 
@@ -1282,7 +1291,34 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
 
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
+    elif task_name.startswith('reasoning_gym_'):
+        dataset_name = task_name.split('reasoning_gym_')[1]
+        solution = json.loads(solution)
+        target = solution['answer']
 
+        output_1 = None
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_reasoning_gym(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+        extracted_text_1 = extracted_text_1.strip()
+        # print(f'response: {response}')
+        print(f'extracted_text_1: {extracted_text_1}')
+        True_false_result_1 = validate_solution_reasoning_gym(dataset_name, extracted_text_1, solution)
+
+        output_2 = None
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_reasoning_gym(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+        extracted_text_2 = extracted_text_2.strip()
+        # print(f'original_response: {original_response}')
+        print(f'extracted_text_2: {extracted_text_2}')
+        True_false_result_2 = validate_solution_reasoning_gym(dataset_name, extracted_text_2, solution)
+        solution_1 = extracted_text_1
+        solution_2 = extracted_text_2
 
 
     print(f'True_false_result from response: {True_false_result_1}')
@@ -3646,3 +3682,25 @@ def read_words_from_file_letters(filename):
         words = json.load(f)
     #print(f"Words read from {filename}")
     return words
+
+##### Reasoning Gym #####
+def extract_equation_with_GPT4_reasoning_gym(response):
+    prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+             'Note that the final answer should follow strictly the format like <<<final answer>>>\n' \
+             'Here is the response, return your answer with the format <<<final answer>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer are answered, then directly answer <<<>>>.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs=False)
+    return extract_equation
+
+def validate_solution_reasoning_gym(dataset_name, answer, full_data):
+    data = reasoning_gym.create_dataset(dataset_name, size=1, seed=1)
+    score = data.score_answer(answer=answer, entry=full_data)
+    # print(f"answer: {answer}, full_data: {full_data['answer']}, score: {score}")
+
+    if score == 1:
+        return True
+    else:
+        return False
