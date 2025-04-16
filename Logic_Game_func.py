@@ -601,12 +601,13 @@ def load_task_dataset(task_name, model_name):
             question_list.append(question)
             solution = puzzle['solution_data']
             solution_list.append(solution)
-    elif task_name == 'big_bench_hard':
+    if task_name.startswith('big_bench_hard'):
         dataset_input_dir = 'dataset_gather/BIG-Bench-Hard/bbh'
+        bbh_task_name = task_name.split(":", 1)[1]
         save_input_dir = 'results_gather/big_bench_hard'
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
-        puzzles = read_dataset_big_bench_hard(dataset_input_dir)
+        puzzles = read_dataset_big_bench_hard(dataset_input_dir, bbh_task_name)
         for puzzle in puzzles:
             question = puzzle['question']
             question_list.append(question)
@@ -1399,7 +1400,7 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
 
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
-    elif task_name == 'big_bench_hard':
+    elif task_name.startswith('big_bench_hard'):
         solution_data = solution_list[i]
         output_1 = None;
         iteration_num_1 = 0
@@ -3993,32 +3994,32 @@ def read_answer(file_path):
     return int(answer)
 
 #####Big Bench Hard#######
-def read_dataset_big_bench_hard(dataset_dir: str) -> List[Dict]:
+def read_dataset_big_bench_hard(dataset_dir: str, bbh_task_name:str) -> List[Dict]:
     puzzles = []
-    for env_name in ['date_understanding', 'web_of_lies', 'disambiguation_qa', 'formal_fallacies', 'geometric_shapes',
-                     'logical_deduction_seven_objects', 'navigate', 'dyck_languages', 'boolean_expressions', 'causal_judgement',
-                     'hyperbaton', 'logical_deduction_five_objects', 'logical_deduction_three_objects', 'movie_recommendation',
-                     'multistep_arithmetic_two', 'object_counting', 'penguins_in_a_table', 'word_sorting', 'tracking_shuffled_objects_three_objects',
-                     'tracking_shuffled_objects_seven_objects','tracking_shuffled_objects_five_objects', 'temporal_sequences',
-                     'sports_understanding', 'snarks', 'salient_translation_error_detection', 'ruin_names', 'reasoning_about_colored_objects']:
-    # for env_name in ['reasoning_about_colored_objects']:
-        DATA_PATH = dataset_dir + f'/{env_name}.json'
-        question_json_list = []
-        with open(DATA_PATH, 'r') as file:
-            for line in file:
-                question_json_list.append(json.loads(line))
+    # for env_name in ['date_understanding', 'web_of_lies', 'disambiguation_qa', 'formal_fallacies', 'geometric_shapes',
+    #                  'logical_deduction_seven_objects', 'navigate', 'dyck_languages', 'boolean_expressions', 'causal_judgement',
+    #                  'hyperbaton', 'logical_deduction_five_objects', 'logical_deduction_three_objects', 'movie_recommendation',
+    #                  'multistep_arithmetic_two', 'object_counting', 'penguins_in_a_table', 'word_sorting', 'tracking_shuffled_objects_three_objects',
+    #                  'tracking_shuffled_objects_seven_objects','tracking_shuffled_objects_five_objects', 'temporal_sequences',
+    #                  'sports_understanding', 'snarks', 'salient_translation_error_detection', 'ruin_names', 'reasoning_about_colored_objects']:
+    # # for env_name in ['reasoning_about_colored_objects']:
+    DATA_PATH = dataset_dir + f'/{bbh_task_name}.json'
+    question_json_list = []
+    with open(DATA_PATH, 'r') as file:
+        for line in file:
+            question_json_list.append(json.loads(line))
 
-        for i in range(0, len(question_json_list[0]['examples'])):
-            # print(f'Sample num: {i} in {env_name}, total is: {len(question_json_list[0]["examples"])}')
-            data = question_json_list[0]['examples'][i]
-            question = data['input'] + f'\n' + f'\nOutput final answer with the format <<<answer>>>.'
-            target_answer = data['target']
+    for i in range(0, len(question_json_list[0]['examples'])):
+        # print(f'Sample num: {i} in {env_name}, total is: {len(question_json_list[0]["examples"])}')
+        data = question_json_list[0]['examples'][i]
+        question = data['input'] + f'\n' + f'\nOutput final answer with the format <<<answer>>>.'
+        target_answer = data['target']
 
-            puzzles.append({
-                'example_data': data,
-                'question': question,
-                'solution_data': target_answer
-            })
+        puzzles.append({
+            'example_data': data,
+            'question': question,
+            'solution_data': target_answer
+        })
 
     return puzzles
 def is_equiv_func_big_bench_hard(question, target_answer, response):
