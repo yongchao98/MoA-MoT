@@ -19,7 +19,7 @@ from argparse import ArgumentParser
 from symbolic_code_check import analyze_computational_approach, analyze_code_and_explain
 import random
 import string
-#from LLaMA_Factory.src.llamafactory.chat.chat_model import run_response
+from LLaMA_Factory.src.llamafactory.chat.chat_model import run_response
 
 ### To do, add tasks to import related functions
 from Logic_Game_func import load_task_dataset, verify_solution_func_gather, multi_round_answer_sampling
