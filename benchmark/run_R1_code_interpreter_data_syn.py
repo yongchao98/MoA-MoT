@@ -294,9 +294,9 @@ def run_logic_game_baselines(task_name, gather_save_input_dir, model_name, basel
             save_file_func_baselines(save_code_dir, response_list, user_prompt_list, question, system_message)
 
         response = response_list[-1]
-        if count_total_tokens([response], []) > 6000:
-            response = response[:6000]
-
+        response = response[:10000]
+        token_len_response = count_total_tokens([response], [])
+        print(f'token_len_response: {token_len_response}')
         True_false_result_1, True_false_result_2 = verify_solution_func_gather(i, task_name, response,
                                                                                save_code_dir, question, solution,
                                                                                target, puzzles, solution_data_list,
