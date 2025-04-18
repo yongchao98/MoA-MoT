@@ -19,7 +19,7 @@ import math
 from dataclasses import dataclass
 from prompt import *
 from symbolic_code_check import analyze_code_and_explain
-import reasoning_gym
+# import reasoning_gym
 
 
 # from LLaMA_Factory.src.llamafactory.chat.chat_model import run_response
@@ -717,8 +717,6 @@ def load_task_dataset(task_name, model_name):
 
     return solution_list, question_list, target_list, puzzles, solution_data_list, question_constrained_list, question_matrix_list, number_list, word_list, letter_list, save_input_dir
 
-
-### Todo
 def verify_solution_func_gather(i, task_name, response, save_code_dir, question, solution, target, puzzles,
                                 solution_data_list, solution_list, question_constrained_list, question_matrix_list,
                                 number_list_item, word, letter):
@@ -1123,7 +1121,6 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         print(f'extracted_text_2: {extracted_text_2}')
         True_false_result_2, message_2 = validate_solution_logic_puzzle(extracted_text_2, solution_data,
                                                                         solution_data['complexity'])
-
     elif task_name == 'pattern_recognition':
         solution_data = solution_list[i]
         output_1 = None;
@@ -1272,28 +1269,27 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
                                                                                          question_data)
     elif task_name == 'string_deletion_and_modification':
         solution_data = solution_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_string_deletion_and_modification(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_string_deletion_and_modification(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
-        extracted_text_1 = extracted_text_1.strip()
+        extracted_text_1 = extracted_text_1.strip().strip('"')
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_string_deletion_and_modification(extracted_text_1,
                                                                                             solution_data)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_string_deletion_and_modification(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_string_deletion_and_modification(response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
-        extracted_text_2 = extracted_text_2.strip()
+        extracted_text_2 = extracted_text_2.strip().strip('"')
         print(f'extracted_text_2: {extracted_text_2}')
-        # print(f'original_response: {original_response}')
         True_false_result_2, message_2 = validate_solution_string_deletion_and_modification(extracted_text_2,
                                                                                             solution_data)
     elif task_name == 'minesweeper':
@@ -1341,27 +1337,29 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         True_false_result_2, message_2 = validate_solution_cryptanalysis(extracted_text_2, solution_data)
     elif task_name == 'string_splitting':
         solution_data = solution_list[i]
-        output_1 = None;
+
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_string_splitting(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_string_splitting(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
+
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_string_splitting(extracted_text_1, solution_data)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_string_splitting(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_string_splitting(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
+
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
-        # print(f'original_response: {original_response}')
         True_false_result_2, message_2 = validate_solution_string_splitting(extracted_text_2, solution_data)
     elif task_name == 'game24':
         output_1 = None;
@@ -3606,7 +3604,8 @@ def  validate_solution_string_deletion_and_modification(
         solution_data: str
 ) -> Tuple[bool, str]:
     try:
-        print("response" + response)
+        response = ast.literal_eval(response)
+        print("response:" + response)
         print("solution_data" + solution_data)
         if response == "[]" or response == "":
             return False, "Empty answer"
@@ -3899,7 +3898,7 @@ def read_dataset_string_splitting(dataset_dir: str) -> List[Dict]:
 
 def extract_equation_with_GPT4_string_splitting(response):
     prompt = 'Your task is to extract the final numerical answer of the given answer by another LLM:\n' \
-             'Here is the response, return your answer with the format <<< a string representing the outcome in the order of machines A, B, C, ... parts X, Y, Z, ...>>>, like <<<112...>>>,.\n' \
+             'Here is the response, return your answer with the format <<< a number string representing the outcome in the order of machines A, B, C, ... parts X, Y, Z, ...>>>, like <<<112...>>>,.\n' \
              'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
              'Note that if you find no final answer is answered, then directly answer <<<>>>. If the initial answer follows wrong format, then correct it.\n' \
              'Input text: ' \
