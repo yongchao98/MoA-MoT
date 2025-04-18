@@ -3685,21 +3685,51 @@ def read_words_from_file_letters(filename):
 
 ##### Reasoning Gym #####
 def extract_equation_with_GPT4_reasoning_gym(response, dataset_name):
+    pure_answer = ''
+    if dataset_name in ['arc_agi']:
+        pure_answer = 'an integer grid like "2 6 6 1\n6 3 0 1\n1 0 2 4\n9 3 8 0", the number of rows and columns might be very large'
+    elif dataset_name == 'basic_arithmetic':
+        pure_answer = 'a number'
+    elif dataset_name == 'binary_matrix':
+        pure_answer = 'an integer grid like "3 2 1\n2 1 0\n3 5 6" or a 2D list (matrix) of integers like [[3, 2, 1], [2, 1, 0], [3, 5, 6]], where both the number of rows and columns can be large'
+    elif dataset_name == 'boxnet':
+        pure_answer = """
+a json str like
+[
+    {"Agent[0.5, 1.5]": "move(box_red, square[1.5, 1.5])"},
+    {"Agent[1.5, 0.5]": "move(box_blue, square[2.5, 0.5])"},
+    {"Agent[2.5, 1.5]": "move(box_green, square[2.5, 0.5])"}
+]
+"""
+    elif dataset_name == 'caesar_cipher':
+        pure_answer = 'decrypted Caesar cipher text'
+    elif dataset_name == 'calendar_arithmetic':
+        pure_answer = 'day of the week, integer or Yes/No'
+    elif dataset_name == 'circuit_logic':
+        pure_answer = '0 or 1'
+
+    pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
+
     prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+             + pure_answer_prompt + \
              'Note that the final answer should follow strictly the format like <<<final answer>>>\n' \
              'If the input text contains a final answer in the format like <<<final answer>>>, return your answer with the format <<<final answer>>>.\n' \
-             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
-             'If the input text does not have <<<>>> and is not the pure answer, directly return <<<>>>.' \
-             'Note that if you find no final answer are answered, then directly answer <<<>>>.\n' \
+             'If the input text does not have <<<final answer>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'If the input text does not have <<<final answer>>> and is not the pure answer, directly return <<<>>>.\n' \
+             'Note that if you find no **final answer** are answered, then directly answer <<<>>>.\n' \
+             'If the input text only contains code without **final answer**, do not run/analyze/understand the code in the input text to get an answer. You should directly answer <<<>>>.\n' \
+             'Do not generate an answer that is not explicitly contained within the input text.\n' \
              'Input text: ' \
 
-    if dataset_name == 'arc_agi':
+    if dataset_name == 'binary_matrix':
         prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+                 + pure_answer_prompt + \
                  'Note that the final answer should follow strictly the format like <<<final answer>>>\n' \
                  'If the input text contains a final answer in the format like <<<final answer>>>, return your answer with the format <<<final answer>>>.\n' \
-                 'If the input text does not have <<<>>> and is already the pure answer (an integer grid like "2 6 6 1\n6 3 0 1\n1 0 2 4\n9 3 8 0"), add <<<>>> and return your answer.\n' \
-                 'If the input text does not have <<<>>> and is not the pure answer, directly return <<<>>>.' \
-                 'Note that if you find no final answer are answered, then directly answer <<<>>>.\n' \
+                 'If the input text does not have <<<final answer>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+                 'If the input text does not have <<<final answer>>> and is not the pure answer, directly return <<<>>>.\n' \
+                 'If the input text has string like "<<<answer>>>" followed by the final answer, add <<<>>> to the final answer and return it.\n' \
+                 'Note that if you find no final answer are answered, then directly answer <<<>>>. Do not run the code in the input text or give an irrelevant answer.\n' \
                  'Input text: ' \
 
 
@@ -3709,12 +3739,36 @@ def extract_equation_with_GPT4_reasoning_gym(response, dataset_name):
 def validate_solution_reasoning_gym(dataset_name, answer, full_data):
     if dataset_name == 'arc_agi':
         full_data['metadata']['output'] = tuple(tuple(inner) for inner in full_data['metadata']['output'])
+    # elif dataset_name == 'binary_matrix':
+    #     answer = str_to_list_of_lists(answer)
+    #     print(f'binary_matrix answer: {answer}')
+    #     print("\n".join(" ".join(str(x) for x in row) for row in answer))
 
     data = reasoning_gym.create_dataset(dataset_name, size=1, seed=1)
     score = data.score_answer(answer=answer, entry=full_data)
-    # print(f"answer: {answer}, full_data: {full_data['answer']}, score: {score}")
+    print(f"answer: {answer}, full_data: {full_data['answer']}, score: {score}")
 
-    if score == 1:
+    if dataset_name == 'binary_matrix' and abs(score - 0.1) < 1e-6:
+        return True
+
+    if abs(score - 1.0) < 1e-6:
         return True
     else:
         return False
+
+def str_to_list_of_lists(s: str) -> list[list[int]] | str:
+    """
+    Convert a string representation of a 2D list into an actual list of lists of integers.
+    Strips whitespace and uses safe parsing.
+    """
+    s = s.strip()  # Remove leading/trailing whitespace
+    try:
+        result = ast.literal_eval(s)  # Safely parse the string
+        if isinstance(result, list) and all(isinstance(row, list) for row in result):
+            return result
+        else:
+            print(f'str_to_list_of_lists failed for {s}')
+            return s
+    except Exception as e:
+        print(f'str_to_list_of_lists failed for {s}')
+        return s

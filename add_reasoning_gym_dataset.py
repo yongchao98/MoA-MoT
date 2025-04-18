@@ -13,7 +13,17 @@ available_datasets = [
     # 'advanced_geometry',
     # 'aiw',
     # 'arc_1d',
-    'arc_agi',
+    # 'arc_agi',
+    # 'base_conversion',
+    # 'basic_arithmetic',
+    # 'bf',
+    # 'binary_alternation',
+    # 'binary_matrix',
+    # 'bitwise_arithmetic',
+    # 'caesar_cipher',
+    # 'calendar_arithmetic',
+    # 'chain_sum',
+    'circuit_logic',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -48,6 +58,11 @@ for dataset in available_datasets:
             if dataset == 'arc_agi':
                 question = x['question'].replace('Your final answer should just be the text output grid itself.',
                                                  'Your final answer should be the output grid enclosed in triple angle brackets, like this: <<<output grid>>>')
+            elif dataset == 'bf':
+                question = x['question'].replace('Respond only with the exact output of the program.',
+                                                 'Respond only with the exact output of the program enclosed in triple angle brackets, like this: <<<output>>>.')
+            elif dataset == 'boxnet':
+                question = x['question'] + '\nOutput action plan enclosed in triple angle brackets, like this <<<action plan>>>'
 
             writer.writerow({
                 'ID': i,
