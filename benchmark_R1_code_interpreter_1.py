@@ -32,17 +32,15 @@ if __name__ == '__main__':
                           ['qwen2_7B_R1_CI_1', 'qwen2_7B_R1_CI_1.yaml'], ['llama3_8B_R1_CI_1', 'llama3_8B_R1_CI_1.yaml'],
                           ['qwen2_7B_R1_CI_2', 'qwen2_7B_R1_CI_2.yaml'], ['llama3_8B_R1_CI_2', 'llama3_8B_R1_CI_2.yaml']]
 
-    for model_name, LLM_path in [['claude-3-5-sonnet-20241022', '']]:
+    for model_name, LLM_path in [['gpt-4o', '']]:
         #model_name = 'gpt-4o'  # Qwen2.5-14B-1M, Qwen2.5-7B-1M, DeepSeek-R1-7B, DeepSeek-R1-8B, Llama3-8B
         # o3-mini-2025-01-31, gpt-4o, gpt-3.5-turbo, "claude-3-5-sonnet-20241022", o1, o1-preview, gpt-4o, qwen2_QwQ_32B-preview, 'DeepSeek-R1'
 
         args_path = os.path.join(infer_base_path, LLM_path)
 
         gather_save_input_dir = 'results_gather'
-        baseline_method_name = '1_only_ques' # 1_only_ques, All_code_CoT, All_text,
-        # R1_code_interpreter_test, R1_code_interpreter_data_syn_1, R1_code_interpreter_data_syn_hint, CodeSteer
-        start_index = 20
-        max_sample_num = 30
+        start_index = 5
+        max_sample_num = 10
         max_round_num = 3
         ### Test baseline methods
         # filtered tasks: string_synthesis, letter_logic_diagram
@@ -50,11 +48,11 @@ if __name__ == '__main__':
         ### 33 tasks from SymBench
         env_name_list1 = ['eight_queens', 'pooling', 'reversi', 'light_puzzles', 'new_operator', 'mahjong_pattern', 'statistical_counting', 'synthesis_decomposition', '2048', 'matrix_transformation']
 
-        env_name_list2 = ['pattern_recognition', 'constrained_linear_arrangement', 'string_synthesis', 'logic_puzzle', 'string_insertion', 'letter_logic_diagram', 'standard_sudoku', 'string_deletion_and_modification', 'string_splitting', 'cryptanalysis']
+        env_name_list2 = ['pattern_recognition', 'constrained_linear_arrangement', 'string_synthesis', 'logic_puzzle', 'string_insertion', 'letter_logic_diagram', 'standard_sudoku', 'string_deletion_and_modification']
 
-        env_name_list3 = ['permutations_and_combinations', 'logical_equation', 'combinatorial_calculation', 'game24', 'letters', 'number_multiply', 'gsm', 'math_geometry', 'math_counting_and_probability', 'BoxNet_v2']
+        env_name_list3 = ['string_splitting', 'permutations_and_combinations', 'logical_equation', 'combinatorial_calculation', 'cryptanalysis', 'game24', 'BoxLift', 'Blocksworld', 'gsm', 'math_geometry']
 
-        env_name_list4 = ['BoxLift', 'Blocksworld', 'Gridworld']
+        env_name_list4 = ['letters', 'number_multiply', 'math_counting_and_probability', 'BoxNet_v2', 'Gridworld']
 
         ### 27 tasks from BigBench Hard
         env_name_big_bench_hard = ['big_bench_hard:' + task for task in ['date_understanding', 'web_of_lies', 'disambiguation_qa', 'formal_fallacies', 'geometric_shapes',
@@ -65,20 +63,26 @@ if __name__ == '__main__':
                       'sports_understanding', 'snarks', 'salient_translation_error_detection', 'ruin_names', 'reasoning_about_colored_objects']]
 
         ### 100 Reasoning Gym tasks
-        reasoning_gym_datasets = ['reasoning_gym_' + task for task in ['ab', 'acre', 'advanced_geometry', 'aiw', 'arc_1d', 'arc_agi']]
+        reasoning_gym_available_datasets = [
+        'ab', 'acre', 'advanced_geometry', 'aiw', 'arc_1d', 'arc_agi', 'base_conversion', 'basic_arithmetic', 'bf',
+        'binary_alternation', 'binary_matrix', 'bitwise_arithmetic', 'caesar_cipher', 'calendar_arithmetic', 'chain_sum', 'circuit_logic',
+        ]
+        reasoning_gym_datasets = ['reasoning_gym_' + task for task in reasoning_gym_available_datasets]
 
         base_path = 'results_gather'
         runtime_list = []
-        for task_name in ['cryptanalysis']:
-            start_time = time.time()
-            run_logic_game_baselines(task_name, gather_save_input_dir, model_name, baseline_method_name, args_path, start_index, max_sample_num, max_round_num)
-            end_time = time.time()
-            runtime = end_time - start_time
-            runtime_list.append(runtime/max_sample_num)
+        #baseline_method_name: 1_only_ques, All_code_CoT, All_text, R1_code_interpreter_test, R1_code_interpreter_data_syn_1, R1_code_interpreter_data_syn_hint, CodeSteer
+        for baseline_method_name in ['All_text']:
+            for task_name in env_name_list3:
+                start_time = time.time()
+                run_logic_game_baselines(task_name, gather_save_input_dir, model_name, baseline_method_name, args_path, start_index, max_sample_num, max_round_num)
+                end_time = time.time()
+                runtime = end_time - start_time
+                runtime_list.append(runtime/max_sample_num)
 
-            output_path = base_path + f'/Cost_runtime_gather_{model_name}_{baseline_method_name}.txt'
-            os.makedirs(os.path.dirname(output_path), exist_ok=True)
-            with open(output_path, 'a') as f:
-                f.write(f"{runtime/max_sample_num}\n")
-            print(f'Mean time cost: {np.mean(runtime_list)}')
-            print(f'\nDataset saved to: {output_path}')
+                output_path = base_path + f'/Cost_runtime_gather_{model_name}_{baseline_method_name}.txt'
+                os.makedirs(os.path.dirname(output_path), exist_ok=True)
+                with open(output_path, 'a') as f:
+                    f.write(f"{runtime/max_sample_num}\n")
+                print(f'Mean time cost: {np.mean(runtime_list)}')
+                print(f'\nDataset saved to: {output_path}')
