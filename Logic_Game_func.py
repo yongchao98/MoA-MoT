@@ -5,7 +5,7 @@ import pandas as pd
 import subprocess
 import sys
 from openai import OpenAI
-from generation_models import message_construct_func, message_construct_llama_func, GPT_response, count_total_tokens, extract_code, extract_and_check, LLM_answer_code_checker, save_file_func, paraphrase_with_GPT4, log_run_info, load_conversation_data
+from generation_models import message_construct_func, message_construct_llama_func, GPT_response, count_total_tokens, extract_code, extract_and_check, LLM_answer_code_checker, save_file_func, paraphrase_with_GPT4, log_run_info
 import random
 from typing import List, Tuple, Dict
 import time
@@ -17,7 +17,8 @@ import re
 import math
 from dataclasses import dataclass
 from prompt import *
-from symbolic_code_check import analyze_computational_approach, analyze_code_and_explain
+from symbolic_code_check import analyze_code_and_explain
+import reasoning_gym
 #from LLaMA_Factory.src.llamafactory.chat.chat_model import run_response
 
 ##### Logic Game #####
@@ -157,7 +158,9 @@ def multi_round_answer_sampling(save_code_dir, question, response_list_input, Co
     return response_list_input
 
 
+### Todo, load questions
 def load_task_dataset(task_name, model_name):
+    ### question_list is necessary
     solution_list = []
     question_list = []
     target_list = []
@@ -575,7 +578,7 @@ def load_task_dataset(task_name, model_name):
             question_list.append(question)
             number_list.append(number_list_item)
     elif task_name == 'letters':
-        dataset_input_dir = 'dataset_gather'
+        dataset_input_dir = 'dataset_gather/Letters'
         save_input_dir = 'results_gather/letters'
         for min_length, max_length in [(10, 15), (15, 20), (20, 25)]:
             base_dir = dataset_input_dir + f'/Letters_dataset_min_length_{min_length}_max_length_{max_length}/'
@@ -588,11 +591,124 @@ def load_task_dataset(task_name, model_name):
                         question_list.append(question)
                         word_list.append(word)
                         letter_list.append(letter)
+    elif task_name == 'number_multiply':
+        dataset_input_dir = 'dataset_gather/number_multiply'
+        save_input_dir = 'results_gather/number_multiply'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        puzzles = read_dataset_number_multipy(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzle['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    if task_name.startswith('big_bench_hard'):
+        dataset_input_dir = 'dataset_gather/BIG-Bench-Hard/bbh'
+        bbh_task_name = task_name.split(":", 1)[1]
+        save_input_dir = 'results_gather/big_bench_hard'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        puzzles = read_dataset_big_bench_hard(dataset_input_dir, bbh_task_name)
+        for puzzle in puzzles:
+            question = puzzle['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    elif task_name == 'gsm':
+        dataset_input_dir = 'dataset_gather/gsmhardv2.jsonl'
+        save_input_dir = 'results_gather/gsm'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        puzzles = read_dataset_gsm(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzle['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    elif task_name == 'math_geometry':
+        dataset_input_dir = 'dataset_gather/MATH/train/geometry'
+        save_input_dir = 'results_gather/math_geometry'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        puzzles = read_dataset_math_geometry(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzle['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    elif task_name == 'math_counting_and_probability':
+        dataset_input_dir = 'dataset_gather/MATH/train/counting_and_probability'
+        save_input_dir = 'results_gather/math_counting_and_probability'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        puzzles = read_dataset_math_counting_and_probability(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzle['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    elif task_name == 'BoxNet_v2':
+        dataset_input_dir = 'dataset_gather/BoxNet1_v2_dataset'
+        save_input_dir = 'results_gather/BoxNet_v2'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        grid_sizes = [(2, 6, 3, 5), (2, 8, 3, 5), (3, 6, 4, 6), (4, 8, 4, 6), (4, 6, 4, 6), (2, 8, 4, 6), (5, 5, 4, 8)]
+        for iteration_num in range(20):
+            for rows, cols, num_box_low, num_box_high in grid_sizes:
+                samples = read_samples_BoxNet_V2(dataset_input_dir + f'/question_samples_{rows}_{cols}_{iteration_num}.json')
+                sample = samples[0]
+                puzzles.append(sample)
+                question = generate_prompt_BoxNet_V2(sample)
+                question_list.append(question)
+    elif task_name == 'BoxLift':
+        dataset_input_dir = 'dataset_gather/BoxLift_dataset'
+        save_input_dir = 'results_gather/BoxLift'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        puzzles = read_dataset_boxlift(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzle['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    elif task_name == 'Blocksworld':
+        dataset_input_dir = 'dataset_gather/Blocksworld_dataset'
+        save_input_dir = 'results_gather/Blocksworld_dataset'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        puzzles = read_dataset_blocksworld(dataset_input_dir)
+        for puzzle in puzzles:
+            question = puzzle['question']
+            question_list.append(question)
+            solution = puzzle['solution_data']
+            solution_list.append(solution)
+    elif task_name == 'Gridworld':
+        dataset_input_dir = 'dataset_gather/GridWorld1_dataset'
+        save_input_dir = 'results_gather/GridWorld1'
+        if not os.path.exists(save_input_dir):
+            os.makedirs(save_input_dir)
+        grid_sizes = [(4, 4, 4, 5), (4, 5, 4, 5), (5, 5, 4, 5), (5, 5, 6, 8), (5, 6, 7, 10), (6, 6, 7, 10), (6, 7, 7, 10)]
+        for iteration_num in range(20):
+            for rows, cols, num_goals, num_obstacles in grid_sizes:
+                sample = read_samples_gridworld(dataset_input_dir + f'/gridworld_sample_{rows}x{cols}_{iteration_num + 1}.json')
+                puzzles.append(sample)
+                question = generate_prompt_gridworld(sample)
+                question_list.append(question)
+    elif task_name.startswith('reasoning_gym_'):
+        dataset_name = task_name.split('reasoning_gym_')[1]
+        save_input_dir = os.path.join('results_gather', 'reasoning_gym', dataset_name)
+
+        dataset_path= os.path.join('dataset_gather', 'reasoning_gym', f'{dataset_name}.csv')
+        data_list = pd.read_csv(dataset_path)
+        question_list = data_list['question'].tolist()
+        solution_list = data_list['full_data'].tolist()
 
     return solution_list, question_list, target_list, puzzles, solution_data_list, question_constrained_list, question_matrix_list, number_list, word_list, letter_list, save_input_dir
 
+### Todo
 def verify_solution_func_gather(i, task_name, response, save_code_dir, question, solution, target, puzzles, solution_data_list, solution_list, question_constrained_list, question_matrix_list, number_list_item, word, letter):
     # Verify solution based on task type
+    ### Unchanged
     original_response = response
 
     code_block_list = extract_code(response)
@@ -1115,7 +1231,6 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         True_false_result_2, message_2 = validate_solution_standard_sudoku(extracted_text_2, question_data)
     elif task_name == 'permutations_and_combinations':
         question_data = question_constrained_list[i]
-        # solution_data = solution_list[i]
         output_1 = None;
         iteration_num_1 = 0
         while output_1 == None and iteration_num_1 < 3:
@@ -1188,31 +1303,26 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
-        # print(f'original_response: {original_response}')
         True_false_result_2, message_2 = validate_solution_minesweeper(extracted_text_2, solution_data)
     elif task_name == 'cryptanalysis':
         solution_data = solution_list[i]
-        output_1 = None;
-        iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
-            iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_cryptanalysis(response)
-        extracted_text_1, _ = extract_and_check(output_1)
-        solution_1 = extracted_text_1
-        extracted_text_1 = extracted_text_1.strip()
-        print(f'extracted_text_1: {extracted_text_1}')
-        True_false_result_1, message_1 = validate_solution_cryptanalysis(extracted_text_1, solution_data)
 
-        output_2 = None;
+        extracted_text_1, _ = extract_and_check(response)
+        iteration_num_1 = 0
+        while extracted_text_1 == '' and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            extracted_text_1 = extract_equation_with_GPT4_cryptanalysis(response)
+
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_cryptanalysis(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_cryptanalysis(original_response)
+        solution_1 = extracted_text_1
         solution_2 = extracted_text_2
-        extracted_text_2 = extracted_text_2.strip()
+        print(f'extracted_text_1: {extracted_text_1}')
         print(f'extracted_text_2: {extracted_text_2}')
-        # print(f'original_response: {original_response}')
+        True_false_result_1, message_1 = validate_solution_cryptanalysis(extracted_text_1, solution_data)
         True_false_result_2, message_2 = validate_solution_cryptanalysis(extracted_text_2, solution_data)
     elif task_name == 'string_splitting':
         solution_data = solution_list[i]
@@ -1282,7 +1392,244 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
 
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
+    elif task_name == 'number_multiply':
+        solution_data = solution_list[i]
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_number_multiply(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+        extracted_text_1 = extracted_text_1.strip()
+        print(f'extracted_text_1: {extracted_text_1}')
 
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_number_multiply(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+        extracted_text_2 = extracted_text_2.strip()
+        print(f'extracted_text_2: {extracted_text_2}')
+
+        True_false_result_1 = str(solution_data) in extracted_text_1 or str(
+            format_number_with_commas(int(solution_data))) in extracted_text_1
+        True_false_result_2 = str(solution_data) in extracted_text_2 or str(
+            format_number_with_commas(int(solution_data))) in extracted_text_2
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name.startswith('big_bench_hard'):
+        solution_data = solution_list[i]
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = is_equiv_func_big_bench_hard(question, solution_data, response)
+        extracted_text_1, _ = extract_and_check(output_1)
+        extracted_text_1 = extracted_text_1.strip()
+        print(f'extracted_text_1: {extracted_text_1}')
+
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = is_equiv_func_big_bench_hard(question, solution_data, original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+        extracted_text_2 = extracted_text_2.strip()
+        print(f'extracted_text_2: {extracted_text_2}')
+
+        True_false_result_1 = 'Correct' in extracted_text_1 or 'correct' in extracted_text_1
+        True_false_result_2 = 'Correct' in extracted_text_2 or 'correct' in extracted_text_2
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'gsm':
+        solution_data = solution_list[i]
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_gsm(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_gsm(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+
+        True_false_result_1 = is_equiv_func_gsm(solution_data, extracted_text_1)
+        True_false_result_1, _ = extract_and_check(True_false_result_1)
+        True_false_result_1 = True_false_result_1 == 'True'
+        True_false_result_2 = is_equiv_func_gsm(solution_data, extracted_text_2)
+        True_false_result_2, _ = extract_and_check(True_false_result_2)
+        True_false_result_2 = True_false_result_2 == 'True'
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'math_geometry':
+        target_answer = solution_list[i]
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_math_geometry(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_math_geometry(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+
+        True_false_result_1 = is_equiv_func_math_geometry(target_answer, extracted_text_1)
+        True_false_result_1, _ = extract_and_check(True_false_result_1)
+        True_false_result_1 = True_false_result_1 == 'True'
+        True_false_result_2 = is_equiv_func_math_geometry(target_answer, extracted_text_2)
+        True_false_result_2, _ = extract_and_check(True_false_result_2)
+        True_false_result_2 = True_false_result_2 == 'True'
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'math_counting_and_probability':
+        target_answer = solution_list[i]
+        output_1 = None;
+        iteration_num_1 = 0
+        while output_1 == None and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            output_1 = extract_equation_with_GPT4_math_counting_and_probability(response)
+        extracted_text_1, _ = extract_and_check(output_1)
+
+        output_2 = None;
+        iteration_num_2 = 0
+        while output_2 == None and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            output_2 = extract_equation_with_GPT4_math_counting_and_probability(original_response)
+        extracted_text_2, _ = extract_and_check(output_2)
+
+        True_false_result_1 = is_equiv_func_math_counting_and_probability(target_answer, extracted_text_1)
+        True_false_result_1, _ = extract_and_check(True_false_result_1)
+        True_false_result_1 = True_false_result_1 == 'True'
+        True_false_result_2 = is_equiv_func_math_counting_and_probability(target_answer, extracted_text_2)
+        True_false_result_2, _ = extract_and_check(True_false_result_2)
+        True_false_result_2 = True_false_result_2 == 'True'
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'BoxNet_v2':
+        sample = puzzles[i]
+
+        extracted_text_1, _ = extract_and_check(response)
+        iteration_num_1 = 0
+        while extracted_text_1 == '' and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            extracted_text_1 = extract_equation_with_GPT4_BoxNet_V2(response)
+
+        extracted_text_2, _ = extract_and_check(original_response)
+        iteration_num_2 = 0
+        while extracted_text_2 == '' and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            extracted_text_2 = extract_equation_with_GPT4_BoxNet_V2(original_response)
+
+        True_false_result_1, message_1 = check_llm_response_BoxNet_V2(extracted_text_1, sample)
+        True_false_result_2, message_2 = check_llm_response_BoxNet_V2(extracted_text_2, sample)
+        print(f'\nMessage from response: {message_1}')
+        print(f'\nMessage from original_response: {message_2}')
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'BoxLift':
+        solution_data = solution_list[i]
+        boxes, lifters, estimated_steps = solution_data['boxes'], solution_data['lifters'], solution_data['estimated_steps']
+
+        extracted_text_1, _ = extract_and_check(response)
+        iteration_num_1 = 0
+        while extracted_text_1 == '' and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            extracted_text_1 = extract_equation_with_GPT4_boxlift(response)
+
+        extracted_text_2, _ = extract_and_check(original_response)
+        iteration_num_2 = 0
+        while extracted_text_2 == '' and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            extracted_text_2 = extract_equation_with_GPT4_boxlift(original_response)
+
+        True_false_result_1, remaining1, success_failure_list1 = verify_solution_boxlift(boxes, lifters, extracted_text_1, estimated_steps)
+        True_false_result_2, remaining2, success_failure_list2 = verify_solution_boxlift(boxes, lifters, extracted_text_2, estimated_steps)
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'Blocksworld':
+        solution_data = puzzles[i]['solution_data']
+        initial_state, goal_state = solution_data['initial_state'], solution_data['goal_state']
+
+        extracted_text_1, _ = extract_and_check(response)
+        iteration_num_1 = 0
+        while extracted_text_1 == '' and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            extracted_text_1 = extract_equation_with_GPT4_blocksworld(response)
+
+        extracted_text_2, _ = extract_and_check(original_response)
+        iteration_num_2 = 0
+        while extracted_text_2 == '' and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            extracted_text_2 = extract_equation_with_GPT4_blocksworld(original_response)
+
+        True_false_result_1, message_1 = validate_response_blocksworld(initial_state, goal_state, extracted_text_1)
+        True_false_result_2, message_2 = validate_response_blocksworld(initial_state, goal_state, extracted_text_2)
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name == 'Gridworld':
+        sample = puzzles[i]
+
+        extracted_text_1, _ = extract_and_check(response)
+        iteration_num_1 = 0
+        while extracted_text_1 == '' and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            extracted_text_1 = extract_equation_with_GPT4_gridworld(response)
+
+        extracted_text_2, _ = extract_and_check(original_response)
+        iteration_num_2 = 0
+        while extracted_text_2 == '' and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            extracted_text_2 = extract_equation_with_GPT4_gridworld(original_response)
+
+        True_false_result_1, message_1 = check_llm_response_gridworld(extracted_text_1, sample)
+        True_false_result_2, message_2 = check_llm_response_gridworld(extracted_text_2, sample)
+        print(f'\nMessage from response: {message_1}')
+        print(f'\nMessage from original_response: {message_2}')
+
+        solution_1 = extracted_text_1;
+        solution_2 = extracted_text_2
+    elif task_name.startswith('reasoning_gym_'):
+        dataset_name = task_name.split('reasoning_gym_')[1]
+        solution = json.loads(solution)
+        target = solution['answer']
+
+        extracted_text_1, _ = extract_and_check(response)
+        iteration_num_1 = 0
+        while extracted_text_1 == '' and iteration_num_1 < 3:
+            iteration_num_1 += 1
+            extracted_text_1 = extract_equation_with_GPT4_reasoning_gym(response, dataset_name)
+
+        extracted_text_2, _ = extract_and_check(original_response)
+        iteration_num_2 = 0
+        while extracted_text_2 == '' and iteration_num_2 < 3:
+            iteration_num_2 += 1
+            extracted_text_2 = extract_equation_with_GPT4_reasoning_gym(original_response, dataset_name)
+
+        True_false_result_1 = validate_solution_reasoning_gym(dataset_name, extracted_text_1, solution)
+        True_false_result_2 = validate_solution_reasoning_gym(dataset_name, extracted_text_2, solution)
+        solution_1 = extracted_text_1
+        solution_2 = extracted_text_2
+        print(f'\nresponse: {response}')
+        print(f'\nextracted_text_1: {extracted_text_1}')
+        print(f'\noriginal_response: {original_response}')
+        print(f'\nextracted_text_2: {extracted_text_2}')
 
 
     print(f'True_false_result from response: {True_false_result_1}')
@@ -1314,6 +1661,7 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
     return True_false_result_1, True_false_result_2
 
 
+### Todo
 ##### Combinatorial Calculation #####
 @dataclass
 class PuzzleInstance:
@@ -3437,17 +3785,38 @@ def  validate_solution_cryptanalysis(
         response: str,
         solution_data: List[str]
 ) -> Tuple[bool, str]:
-    print("response" + response)
-    print("solution_data")
-    print(solution_data)
+    print("response: " + response)
+    print(f'solution_data: {solution_data}')
 
+    input_prompt_equiv_func = r'Evaluate whether the following list pair has the same values.' \
+                              r'Neglect the format difference and the extra text. The order of the numbers matter! Different order same numbers are still False!' \
+                              r'The examples are: ([\'5\', \'6\', Z, V], [5, 6, Z, V], True), ([5, 6, Z, V], [6, 5, Z, V], False), (, [6, 5, Z, V], False), (<<<>>>, [6, 5, Z, V], False)' \
+                              r'(51XH, [5, 1, X, H], True), (87YS, [\'7\', \'8\', \'Y\', \'S\'], False)' \
+                              r'In the end of your response, answer <<<True>>> or <<<False>>>'
+
+    input_prompt_equiv_func = input_prompt_equiv_func + f'\n({solution_data}, {response}), Your answer:'
+    check_response = GPT_response('Your are a helpful checker for list comparison.', input_prompt_equiv_func,
+                            model_name='gpt-4o',
+                            code_interpreter=False, user_prompt_list=[input_prompt_equiv_func],
+                            response_total_list=[], logprobs=False)
+    while 'True' not in check_response and 'False' not in check_response:
+        check_response = GPT_response('Your are a helpful checker for list comparison.', input_prompt_equiv_func,
+                                      model_name='gpt-4o',
+                                      code_interpreter=False, user_prompt_list=[input_prompt_equiv_func],
+                                      response_total_list=[], logprobs=False)
+    if 'True' in check_response:
+        return True, ''
+    else:
+        return False, ''
+
+    '''
     try:
         if response == "[]" or response == "":
             return False, "Empty answer"
         solution_str = ''.join(solution_data)
-        print(solution_str)
+        print(f'solution_str: {solution_str}')
 
-        if response == solution_str:
+        if response == solution_str or response == str(solution_data):
             print("The strings are the same.")
             return True, "Correct Answer"
         else:
@@ -3455,6 +3824,7 @@ def  validate_solution_cryptanalysis(
             return False, "False"
     except:
         return False, f"answer format is not correct"
+    '''
 
 
 #####String Splitting#######
@@ -3512,7 +3882,6 @@ def  validate_solution_string_splitting(
     print("response" + response)
     print("solution_data")
     print(solution_data)
-
     try:
         if response == "[]" or response == "":
             return False, "Empty answer"
@@ -3646,3 +4015,920 @@ def read_words_from_file_letters(filename):
         words = json.load(f)
     #print(f"Words read from {filename}")
     return words
+
+#####Number Multipy#######
+def read_dataset_number_multipy(dataset_dir: str) -> List[Dict]:
+    """Read all puzzle instances from the dataset directory in sample_i order"""
+    puzzles = []
+    sample_id = 0
+    # count_total_sample = 0
+
+    for digit_num_list in [[1, 2, 4], [1, 3, 4], [1, 2, 2, 4]]:
+        dir_digit_name = f'digit'
+        for digit_num in digit_num_list:
+            dir_digit_name += f'_{digit_num}'
+            dataset_base_dir = os.path.join(dataset_dir, f'{dir_digit_name}')
+        for i in range(0, 20):
+            # count_total_sample += 1
+            dataset_base_dir_sample = os.path.join(dataset_base_dir, f'sample_{i}')
+            generated_num_list = read_value_list(dataset_base_dir_sample + f"/input_value_list.txt")
+            target_answer = read_answer(dataset_base_dir_sample + f"/target_answer.txt")
+
+            equation_prompt = f'{generated_num_list[0]}'
+            for generated_num in generated_num_list[1:]:
+                equation_prompt += f'*{generated_num}'
+            question = f'What is the result of ' + equation_prompt + '?'
+            puzzles.append({
+                'digit_num': digit_num,
+                'sample_id': sample_id,
+                'question': question,
+                'solution_data': target_answer
+            })
+    # print("count_total_sample:" + str(count_total_sample))
+    return puzzles
+
+def extract_equation_with_GPT4_number_multiply(response):
+    prompt = 'Your task is to extract the final numerical answer of the given answer by another LLM:\n' \
+             'Here is the response, return your answer with the format <<<number>>>, like <<<43243.4>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer is answered, then directly answer <<<No answer found>>>.\n' \
+             'If there is equation in the answer but no final numbers, do not calculate the number by yourself.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs=False)
+    return extract_equation
+
+def validate_solution_number_multiply(llm_response, target_answer):
+    if int(llm_response) == target_answer:
+        return True
+    return False
+def format_number_with_commas(number):
+    return f"{number:,}"
+def read_value_list(file_path):
+    with open(file_path, 'r') as f:
+        value_list = f.read()
+    return ast.literal_eval(value_list)
+
+def read_answer(file_path):
+    with open(file_path, 'r') as f:
+        answer = f.read()
+    return int(answer)
+
+#####Big Bench Hard#######
+def read_dataset_big_bench_hard(dataset_dir: str, bbh_task_name:str) -> List[Dict]:
+    puzzles = []
+    DATA_PATH = dataset_dir + f'/{bbh_task_name}.json'
+    question_json_list = []
+    with open(DATA_PATH, 'r') as file:
+        for line in file:
+            question_json_list.append(json.loads(line))
+
+    for i in range(0, len(question_json_list[0]['examples'])):
+        # print(f'Sample num: {i} in {env_name}, total is: {len(question_json_list[0]["examples"])}')
+        data = question_json_list[0]['examples'][i]
+        question = data['input'] + f'\n' + f'\nOutput final answer with the format <<<answer>>>.'
+        target_answer = data['target']
+
+        puzzles.append({
+            'example_data': data,
+            'question': question,
+            'solution_data': target_answer
+        })
+
+    return puzzles
+def is_equiv_func_big_bench_hard(question, target_answer, response):
+    input_prompt_equiv_func = r'Evaluate whether the answer given by another LLM is correct. ' \
+                              r'I will give you the question, the answer from another LLM, and the target answer. ' \
+                              r'Then you need to extract the final answer from the tested LLM response and evaluate the correctness of the answer. ' \
+                              r'In the end of your response, answer with the list of both extracted answer and Correct/Wrong judgement surrounded by <<<>>>. ' \
+                              r'The examples are: <<<[No clear answer, Wrong]>>>, <<<[Yes, Wrong]>>>, <<<[No, Wrong]>>>, <<<[(C) 03/07/2017, Correct]>>>, <<<[(F) 01/24/1947, Wrong]>>>, ' \
+                              r'<<<[(D) The motorcyle is the oldest, Wrong]>>>, <<<[(F) The quail is the fourth from the left, Correct]>>>, ' \
+                              r'<<<[True, Correct]>>>, <<<[True, Wrong]>>>, <<<[False, Correct]>>>. ' \
+                              r'<<<[]]]]))), Correct]>>>, <<<[]]>>>, Wrong]>>>, <<<[))))]]]>, Correct]>>>. ' \
+                              f'\nMost of the time, the final answer is displayed at the end of the LLM response. However, if there is no clear answer, just answer <<<[No clear answer, Wrong]>>>. ' \
+                              f'Do not change or summarize the answer by yourself. Just compare tested LLM answer with the target answer. Especially whether the options are matching! ' \
+                              f'For instance, A and D options are not matching, which is judged as wrong! ' \
+                              f'Now the question is: {question}; the tested answer is: {response}; the target answer is: {target_answer}. Your evaluation answer: '
+
+    response = GPT_response('', input_prompt_equiv_func, model_name='gpt-4o',
+                            code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
+    return response
+
+
+
+#####Big Bench Hard#######
+def read_dataset_gsm(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+    question_json_list = []
+    with open(dataset_dir, 'r') as file:
+        for line in file:
+            question_json_list.append(json.loads(line))
+    for i in range(1, len(question_json_list), 25):
+        data = question_json_list[i]
+        target_answer = data['target']
+        question = data[
+                       'input'] + f'\n' + f'\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: '
+        puzzles.append({
+            'example_data': data,
+            'question': question,
+            'solution_data': target_answer
+        })
+    return puzzles
+def extract_equation_with_GPT4_gsm(response):
+    prompt = 'Your task is to extract the final numerical answer of the given answer by another LLM:\n' \
+             'Here is the response, return your answer with the format <<<list>>>, like <<<43243.4>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer is answered, then directly answer <<<No answer found>>>.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs = False)
+    return extract_equation
+
+def is_equiv_func_gsm(target_answer, extracted_text):
+    input_prompt_equiv_func = r'Evaluate whether the following numerical pair has the same values.' \
+                              r'Neglect the format difference and the extra text like units and names and equations.' \
+                              r'The value can be regarded as the same if they are < 1e-3 relative difference.' \
+                              r'The examples are: ("12", "12.0", True), ("5*sqrt(13)", "15.97112779602377", False),' \
+                              r'("10\text{ inches}", "10.0", True), ("42", "41.99999999999998", True), ("frac{63}{64}", "0.984375", True),' \
+                              r'("frac{5\sqrt{5}}{3}", "5\sqrt{5}/3", True), (\tfrac34, "3/4", True), ("frac{1033}{4}+30\sqrt{3}", "169.0", False), ("AB=12+12\sqrt{3}", "12(\sqrt{3} + 1)", True),' \
+                              r'((18, -18), (18, -18), True). ' \
+                              r'In the end of your response, answer <<<True>>> or <<<False>>>'
+    input_prompt_equiv_func = input_prompt_equiv_func + f'\n({target_answer}, {extracted_text}), Your answer:'
+    response = GPT_response('Your are a helpful checker for math expressions.', input_prompt_equiv_func, model_name='gpt-4o',
+                            code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
+    return response
+
+#####Math Geometry#######
+def read_dataset_math_geometry(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+    for i in range(0, 1000):
+        problem_path = dataset_dir + f'/{i}.json'
+        if os.path.exists(problem_path):
+            with open(problem_path, 'r') as file:
+                data = json.load(file)
+            question = data[
+                           'problem'] + f'\n' + f'\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: '
+            target = data['solution']
+            target_answer = remove_boxed(last_boxed_only_string(target))
+            puzzles.append({
+                'example_data': data,
+                'question': question,
+                'solution_data': target_answer
+            })
+
+    return puzzles
+
+def last_boxed_only_string(string):
+    idx = string.rfind("\\boxed")
+    if idx < 0:
+        idx = string.rfind("\\fbox")
+        if idx < 0:
+            return None
+
+    i = idx
+    right_brace_idx = None
+    num_left_braces_open = 0
+    while i < len(string):
+        if string[i] == "{":
+            num_left_braces_open += 1
+        if string[i] == "}":
+            num_left_braces_open -= 1
+            if num_left_braces_open == 0:
+                right_brace_idx = i
+                break
+        i += 1
+
+    if right_brace_idx == None:
+        retval = None
+    else:
+        retval = string[idx:right_brace_idx + 1]
+
+    return retval
+
+def remove_boxed(s):
+    left = "\\boxed{"
+    try:
+        assert s[:len(left)] == left
+        assert s[-1] == "}"
+        return s[len(left):-1]
+    except:
+        return None
+
+def extract_equation_with_GPT4_math_geometry(response):
+    prompt = 'Your task is to extract the final numerical answer of the given answer by another LLM:\n' \
+             'Here is the response, return your answer with the format <<<list>>>, like <<<43243.4>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer is answered, then directly answer <<<No answer found>>>.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs = False)
+    return extract_equation
+
+def is_equiv_func_math_geometry(target_answer, extracted_text):
+    input_prompt_equiv_func = r'Evaluate whether the following numerical pair has the same values.' \
+                              r'Neglect the format difference and the extra text like units and names and equations.' \
+                              r'The value can be regarded as the same if they are < 1e-3 relative difference.' \
+                              r'The examples are: ("12", "12.0", True), ("5*sqrt(13)", "15.97112779602377", False),' \
+                              r'("10\text{ inches}", "10.0", True), ("42", "41.99999999999998", True), ("frac{63}{64}", "0.984375", True),' \
+                              r'("frac{5\sqrt{5}}{3}", "5\sqrt{5}/3", True), (\tfrac34, "3/4", True), ("frac{1033}{4}+30\sqrt{3}", "169.0", False), ("AB=12+12\sqrt{3}", "12(\sqrt{3} + 1)", True),' \
+                              r'((18, -18), (18, -18), True). ' \
+                              r'In the end of your response, answer <<<True>>> or <<<False>>>'
+    input_prompt_equiv_func = input_prompt_equiv_func + f'\n({target_answer}, {extracted_text}), Your answer:'
+    response = GPT_response('Your are a helpful checker for math expressions.', input_prompt_equiv_func, model_name='gpt-4o',
+                            code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
+    return response
+
+#####Math Counting and Probability#######
+def read_dataset_math_counting_and_probability(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+    for i in range(0, 1000):
+        problem_path = dataset_dir + f'/{i}.json'
+        if os.path.exists(problem_path):
+            with open(problem_path, 'r') as file:
+                data = json.load(file)
+            question = data[
+                           'problem'] + f'\n' + f'\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: '
+            target = data['solution']
+            target_answer = remove_boxed(last_boxed_only_string(target))
+            puzzles.append({
+                'example_data': data,
+                'question': question,
+                'solution_data': target_answer
+            })
+    return puzzles
+
+def extract_equation_with_GPT4_math_counting_and_probability(response):
+    prompt = 'Your task is to extract the final numerical answer of the given answer by another LLM:\n' \
+             'Here is the response, return your answer with the format <<<list>>>, like <<<43243.4>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer is answered, then directly answer <<<No answer found>>>.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs = False)
+    return extract_equation
+
+def is_equiv_func_math_counting_and_probability(target_answer, extracted_text):
+    input_prompt_equiv_func = r'Evaluate whether the following numerical pair has the same values.' \
+                              r'Neglect the format difference and the extra text like units and names and equations.' \
+                              r'The value can be regarded as the same if they are < 1e-3 relative difference.' \
+                              r'The examples are: ("12", "12.0", True), ("5*sqrt(13)", "15.97112779602377", False),' \
+                              r'("10\text{ inches}", "10.0", True), ("42", "41.99999999999998", True), ("frac{63}{64}", "0.984375", True),' \
+                              r'("frac{5\sqrt{5}}{3}", "5\sqrt{5}/3", True), (\tfrac34, "3/4", True), ("frac{1033}{4}+30\sqrt{3}", "169.0", False), ("AB=12+12\sqrt{3}", "12(\sqrt{3} + 1)", True),' \
+                              r'((18, -18), (18, -18), True). ' \
+                              r'In the end of your response, answer <<<True>>> or <<<False>>>'
+    input_prompt_equiv_func = input_prompt_equiv_func + f'\n({target_answer}, {extracted_text}), Your answer:'
+    response = GPT_response('Your are a helpful checker for math expressions.', input_prompt_equiv_func, model_name='gpt-4o',
+                            code_interpreter=False, user_prompt_list = [input_prompt_equiv_func], response_total_list = [], logprobs = False)
+    return response
+
+
+#####BoxNet_V2#######
+def read_samples_BoxNet_V2(filename="question_samples.json"):
+    """Read and return samples from the saved file."""
+    if not os.path.exists(filename):
+        raise FileNotFoundError(f"File {filename} not found.")
+    with open(filename, "r") as f:
+        samples = json.load(f)
+    return samples
+
+########################################
+# 2. Prompt Generation for LLM Testing
+########################################
+
+def generate_prompt_BoxNet_V2(sample):
+    prompt = f"""You are given the following planning problem:
+
+Grid dimensions: {sample['grid']['rows']} x {sample['grid']['cols']}
+Cells: {sample['grid']['cells']}
+Adjacency: {json.dumps(sample['grid']['adjacency'], indent=2)}
+
+There is one robot arm in each cell: {sample['arms']}
+
+Boxes: {sample['boxes']}
+Initial state: {json.dumps(sample['initial_state'], indent=2)}
+Goal locations: {json.dumps(sample['goal_locations'], indent=2)}
+
+Task: Generate a plan as a JSON-formatted list representing the states at successive time steps.
+Each state is a dictionary mapping each box to its current cell location.
+The plan must satisfy the following:
+  1. The first state equals the initial state.
+  2. The final state equals the goal state (i.e. each box is located in the same cell as its goal).
+  3. Between successive states, a box may either remain in its current cell or move to an adjacent cell (as defined in the adjacency list).
+  4. Each cell contains only one arm. Hence, in each cell at most one box can be moved at a time to the adjacent cell.
+  5. If a box is at its goal cell, no further action needed for this box. Just keeping it at the goal cell.
+  6. Represent each cell state as its current cell location.
+
+In the end of your answer return a list of states and surround it with <<<>>>, such as
+<<<[{{"box1": "C1,2", "box2": "C2,3"}}, {{"box1": "C1,3", "box2": "C2,3"}}, ...]>>>.
+
+Your answer:
+"""
+    return prompt
+
+########################################
+# 3. LLM Response Extraction and Correctness Check
+########################################
+
+def extract_json_from_response_BoxNet_V2(response):
+    """
+    Extract the JSON output that is surrounded by markers <<< and >>>.
+    Returns the JSON string (without the markers).
+    """
+    pattern = r"<<<(.*?)>>>"
+    matches = re.findall(pattern, response, re.DOTALL)
+    if not matches:
+        raise ValueError("Could not find markers <<< and >>> in the response.")
+    json_str = matches[0].strip()
+    return json_str
+
+def extract_equation_with_GPT4_BoxNet_V2(response):
+    prompt = ('Your task is to extract the final answer from the given answer by another LLM:\n'
+              'The final answer should be in the format <<<answer>>>, like <<<[{{"box1": "C1,2", "box2": "C2,3"}}, {{"box1": "C1,3", "box2": "C2,3"}}, ...]>>>.\n'
+              'Return only the answer in that format.\n'
+              'Input text: ')
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False,
+                                    user_prompt_list=[prompt + response], response_total_list=[], logprobs=False)
+    return extract_equation
+
+
+def check_plan_legality_BoxNet_V2(plan, sample):
+    """
+    Check that for each pair of consecutive states, every box moves legally.
+    A legal move is defined as:
+      - If a box does not change its position, that's allowed.
+      - If a box moves from one cell to another, the new cell must be adjacent to the previous cell.
+      - In a single transition, at most one box may move from the same source cell.
+    Returns (True, message) if all transitions are legal; otherwise (False, error message).
+    """
+    adjacency = sample["grid"]["adjacency"]
+    goal_locations = sample["goal_locations"]
+    boxes = sample["boxes"]
+
+    for step_idx in range(len(plan) - 1):
+        state_curr = plan[step_idx]
+        state_next = plan[step_idx + 1]
+
+        # Dictionary to track how many boxes are moved from each cell in this step.
+        moved_from_counts = {}
+
+        for box in boxes:
+            pos_curr = state_curr.get(box)
+            pos_next = state_next.get(box)
+
+            # Once a box is marked "goal", it should remain there.
+            if pos_curr == "goal":
+                if pos_next != "goal":
+                    return False, f"Box '{box}' was marked 'goal' in step {step_idx} but changed in step {step_idx + 1}."
+
+            # Check if the box moved (including moves to "goal")
+            if pos_curr != pos_next:
+                # Increment the counter for the source cell.
+                moved_from_counts[pos_curr] = moved_from_counts.get(pos_curr, 0) + 1
+
+                # Check specific move conditions.
+                if pos_next == "goal":
+                    if pos_curr != goal_locations[box]:
+                        return False, (f"Box '{box}' moved to 'goal' in step {step_idx + 1} but was in {pos_curr}, "
+                                       f"not in its goal cell {goal_locations[box]}.")
+                else:
+                    if pos_curr not in adjacency:
+                        return False, f"Invalid current cell {pos_curr} for box '{box}' in step {step_idx}."
+                    if pos_next not in adjacency.get(pos_curr, []):
+                        return False, (f"Box '{box}' moved from {pos_curr} to {pos_next} in step {step_idx + 1}, "
+                                       "which are not adjacent.")
+
+        # Verify that at most one box moved from each cell in this transition.
+        for cell, count in moved_from_counts.items():
+            if count > 1:
+                return False, f"More than one box moved from cell {cell} in step {step_idx + 1}."
+
+    return True, "All moves are legal."
+
+
+def check_llm_response_BoxNet_V2(response, sample):
+    """
+    Check the correctness of the LLM response.
+
+    Steps:
+      1. Extract the JSON output from between <<< and >>>.
+      2. Parse the JSON into a plan (a list of states).
+      3. Verify that:
+         - The plan is a list with at least 2 steps.
+         - Each step is a dictionary containing all boxes.
+         - The first step equals the initial state.
+         - The final step equals the goal state (each box is at its goal cell or marked as 'goal').
+         - Every transition between consecutive states is legal.
+    Returns a tuple (is_correct, message).
+    """
+    try:
+        json_str = extract_json_from_response(response)
+        plan = json.loads(json_str)
+        print('1')
+    except Exception as e:
+        try:
+            plan = json.loads(response)
+            print('2')
+        except Exception as e2:
+            try:
+                modify_response = extract_equation_with_GPT4(response)
+                json_str = extract_json_from_response(modify_response)
+                plan = json.loads(json_str)
+                print('3')
+            except:
+                plan = []
+
+    print(f'plan: {plan}')
+    print(f'Length of plan: {len(plan)}')
+
+    if not isinstance(plan, list):
+        return False, "The extracted JSON is not a list of states."
+    if len(plan) < 2:
+        return False, f"The plan should have at least 2 steps, but got {len(plan)} steps."
+
+    required_boxes = set(sample["boxes"])
+    for i, state in enumerate(plan):
+        if not isinstance(state, dict):
+            return False, f"Step {i} is not a dictionary."
+        if set(state.keys()) != required_boxes:
+            return False, (f"Step {i} does not contain the correct boxes. Expected: {required_boxes}, got: {set(state.keys())}")
+
+    if plan[0] != sample["initial_state"]:
+        return False, "The first step does not match the initial state."
+
+    if plan[-1] != sample["goal_locations"]:
+        return False, f"The final state does not match the goal state. Expected: {sample['goal_locations']}, got: {plan[-1]}"
+
+    legal, message = check_plan_legality_BoxNet_V2(plan, sample)
+    if not legal:
+        return False, message
+
+    return True, "The LLM response is correctly formatted and all moves are legal."
+
+
+######BoxLift######
+def read_dataset_boxlift(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+    for iteration_num in range(20):
+        for num_boxes, num_lifters, min_box_weight, max_box_weight, min_lifter_capacity, max_lifter_capacity in \
+            [(8, 3, 10, 100, 40, 80), (12, 4, 20, 200, 30, 120), (16, 5, 30, 300, 40, 160), (20, 6, 40, 400, 50, 200), (24, 6, 40, 400, 50, 200),
+             (8, 4, 10, 100, 40, 80), (12, 5, 20, 200, 30, 120), (16, 6, 30, 300, 40, 160), (20, 7, 40, 400, 50, 200), (24, 7, 40, 400, 50, 200)]:
+            print(f'\n\nNum_boxes = {num_boxes}, Num_lifters = {num_lifters}, Iteration_num = {iteration_num}')
+
+            boxes, lifters = read_test_case(dataset_dir + f'/BoxLift_{num_boxes}_{num_lifters}/BoxLift{iteration_num}/BoxLift.json')
+            print(f"Initial boxes: {boxes}")
+            print(f"Initial lifters: {lifters}")
+
+            estimated_steps = estimate_steps(boxes, lifters)
+            print(f"Estimated number of steps: {estimated_steps}")
+            question = create_prompt_boxlift(boxes, lifters, estimated_steps)
+            puzzles.append({
+                'solution_data': {
+                    'boxes': boxes,
+                    'lifters': lifters,
+                    'estimated_steps': estimated_steps,
+                },
+                'question': question
+            })
+
+    return puzzles
+
+def read_test_case(filename: str) -> Tuple[List[int], List[int]]:
+    """
+    Read the test case (boxes and lifters) from a JSON file.
+
+    :param filename: Name of the file to read from.
+    :return: A tuple containing a list of box weights and a list of lifter capacities.
+    """
+    with open(filename, 'r') as f:
+        data = json.load(f)
+    return data["boxes"], data["lifters"]
+
+def estimate_steps(boxes: List[int], lifters: List[int]) -> int:
+    remaining_boxes = sorted(boxes, reverse=True)  # Sort boxes in descending order
+    steps = 0
+
+    while remaining_boxes:
+        steps += 1
+        available_lifters = lifters.copy()
+
+        i = 0
+        while i < len(remaining_boxes) and available_lifters:
+            box = remaining_boxes[i]
+            combined_strength = sum(available_lifters)
+
+            if combined_strength >= box:
+                # Lift the box using as many lifters as needed
+                lift_strength = 0
+                used_lifters = []
+                for j, lifter in enumerate(available_lifters):
+                    lift_strength += lifter
+                    used_lifters.append(j)
+                    if lift_strength >= box:
+                        break
+
+                # Remove the used lifters and the lifted box
+                for j in reversed(used_lifters):
+                    available_lifters.pop(j)
+                remaining_boxes.pop(i)
+            else:
+                i += 1  # Move to the next box if we can't lift this one
+
+    return steps
+
+def create_prompt_boxlift(boxes: List[int], lifters: List[int], estimated_steps) -> str:
+    prompt = f"""Task: BoxLift
+
+You are given a list of boxes with the following weights: {boxes}
+And a list of lifters with the following maximum lifting capacities: {lifters}
+
+Your task is to assign the lifters to lift all the boxes in multiple steps, following these rules:
+1. Multiple boxes can be lifted in each step.
+2. Each lifter can only lift one box at a time.
+3. Each lifting agent can be used only once in each step.
+4. Multiple lifters can combine together to lift one box if the box is too heavy for a single lifter.
+5. Try to lift all the boxes using the minimum number of steps possible.
+6. You need to lift all the boxes in less than or equal to {estimated_steps} steps.
+
+Please provide your solution in the following format:
+Step 1: [(Box weight, [Lifter indices]), (Box weight, [Lifter indices]), ...]
+Step 2: [(Box weight, [Lifter indices]), (Box weight, [Lifter indices]), ...]
+...
+
+For example:
+Step 1: [(50, [0, 2]), (30, [1]), (20, [3])]
+This means in Step 1, lifters 0 and 2 are lifting a box weighing 50, lifter 1 is lifting a box weighing 30, and lifter 3 is lifting a box weighing 20.
+
+Surround the answer with <<<content>>>.
+
+For example, <<<Step 1: [(50, [0, 2]), (30, [1]), (20, [3])]\nStep 2: [(40, [0, 1]), (20, [2]), (20, [3])]\nStep 3:...>>>
+
+Ensure all boxes are lifted and provide the most efficient solution possible.
+
+Your answer:\n
+"""
+    return prompt
+
+def extract_equation_with_GPT4_boxlift(response):
+    prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+             'Note that the equation should be in the form like <<<answer>>>, <<<Step 1: [(185, [0, 1]), (108, [0, 1])]\nStep 2: [(184, [0, 1]), (75, [0, 1])]\nStep 3: [(174, [0, 1]), (70, [0, 1])]\nStep 4: [(171, [0, 1]), (63, [0]), (34, [0])]\nStep 5: [(157, [0, 1]), (32, [0]), (31, [0])]>>>, \n' \
+             'Here is the reponse, return your answer with the format <<<equation>>>, like <<<Step 1: [(185, [0, 1]), (108, [0, 1])]\nStep 2: [(184, [0, 1]), (75, [0, 1])]>>>. ' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list=[prompt + response], response_total_list=[], logprobs=False)
+    return extract_equation
+
+def verify_solution_boxlift(boxes: List[int], lifters: List[int], solution: str, estimated_steps) -> Tuple[bool, List[int]]:
+    remaining_boxes = boxes.copy()
+    success_failure_list = []
+
+    steps = solution.split("Step")[1:]  # Split the solution into steps
+    if len(steps) > estimated_steps:
+        success_failure = 'Too many steps'
+        success_failure_list.append(success_failure)
+        #return False, remaining_boxes, success_failure
+
+    for index in range(min(estimated_steps, len(steps))):
+        step = steps[index]
+        used_lifters = set()
+        try:
+            assignments = eval(step.split(":")[1].strip())
+            for box_weight, lifter_indices in assignments:
+                # Check if the box weight is valid
+                if box_weight not in remaining_boxes:
+                    success_failure = 'Invalid box weight'
+                    success_failure_list.append(success_failure)
+                    #return False, remaining_boxes, success_failure
+
+                elif any(index >= len(lifters) for index in lifter_indices):
+                    success_failure = 'Invalid lifter index'
+                    success_failure_list.append(success_failure)
+                    #return False, remaining_boxes, success_failure
+
+                # Check if lifters are used only once per step
+                elif any(index in used_lifters for index in lifter_indices):
+                    success_failure = 'Lifter used more than once'
+                    success_failure_list.append(success_failure)
+                    #return False, remaining_boxes, success_failure
+
+                # Check if lifters can lift the box
+                elif sum(lifters[i] for i in lifter_indices) < box_weight:
+                    success_failure = 'Insufficient lifter strength'
+                    success_failure_list.append(success_failure)
+                    # return False, remaining_boxes, success_failure
+                    #pass
+                else:
+                    remaining_boxes.remove(box_weight)
+                    used_lifters.update(lifter_indices)
+        except:
+            success_failure = 'Invalid format'
+            success_failure_list.append(success_failure)
+            return False, remaining_boxes, success_failure
+
+    return len(remaining_boxes) == 0, remaining_boxes, success_failure_list
+
+#####Blocksworld#######
+def read_dataset_blocksworld(dataset_dir: str) -> List[Dict]:
+    puzzles = []
+
+    for index in range(20):
+        for num_blocks, initial_stacks, goal_stacks in [
+        (5, 3, 3), (5, 4, 3), (6, 3, 3), (6, 4, 3), (7, 3, 3), (7, 4, 3), (8, 3, 3), (8, 4, 3), (9, 3, 3), (9, 4, 3),
+                (10, 3, 3), (10, 4, 3), (11, 3, 3), (11, 4, 3)
+    ]:
+            dataset_base_dir_sample = os.path.join(dataset_dir,
+                                                   f"{num_blocks}_{initial_stacks}_{goal_stacks}_{index}/")
+            # Read states from file
+            initial_state, goal_state = read_state_from_file(dataset_base_dir_sample + f"blocksworld_task.txt")
+            print(
+                f'num_blocks: {num_blocks}, initial_stacks: {initial_stacks}, goal_stacks: {goal_stacks}, index: {index}')
+            # Generate prompt from the read states
+            question = state_to_prompt(initial_state, goal_state)
+            puzzles.append({
+                'solution_data': {
+                    'initial_state': initial_state,
+                    'goal_state': goal_state,
+                },
+                'question': question
+            })
+
+    return puzzles
+
+def extract_equation_with_GPT4_blocksworld(response):
+    prompt = 'Your task is to extract the final answer of the given answer by another LLM:\n' \
+             'Here is the response, return your answer with the format <<<list>>>, like <<<Yes>>>, <<<No>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'Note that if you find no final answer is answered, then directly answer <<<No answer found>>>.\n' \
+             'Input text: ' \
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs=False)
+    return extract_equation
+
+
+def read_state_from_file(filename: str):
+    """
+    Read the initial and goal states from a text file.
+    """
+    initial_state = {}
+    goal_state = {}
+    current_state = initial_state
+
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+
+    for line in lines:
+        line = line.strip()
+        if line == "Initial State:":
+            current_state = initial_state
+        elif line == "Goal State:":
+            current_state = goal_state
+        elif line:
+            parts = line.split(': ')
+            stack = parts[0] if len(parts) > 1 else parts[0][:-1]
+            blocks = parts[1].split() if len(parts) > 1 else []
+            current_state[stack] = blocks
+
+    return initial_state, goal_state
+
+def state_to_prompt(state, goal):
+    """
+    Convert a Blocksworld state to a prompt description for the LLM.
+    """
+    prompt = "Blocksworld Task:\n\nInitial State:\n"
+    for stack, blocks in state.items():
+        prompt += f"{stack}: {' '.join(blocks)}\n"
+
+    prompt += "\nGoal State:\n"
+    for stack, blocks in goal.items():
+        prompt += f"{stack}: {' '.join(blocks)}\n"
+
+    prompt += "\nPlease provide a series of moves to reach the goal state. " \
+              "You can only move one block at a time. And that box should be the top box of the stack. " \
+              "Note that from the left to the right in each stack is the order from the bottom to the top of boxes. " \
+              "For example, in stack A B C D, A is the bottom box and D is the top box so that you can only move D in this case. "
+    prompt += "***Be careful that you can only pick up the top box in each stack. Check this rule before your move!***. "
+    prompt += "\nEach move should be in the format: 'Move [block] from [source] to [destination]'. "
+    prompt += "You cannot create new stacks but only move among the existing stacks. "
+    prompt += "Separate each move with a newline. Surround the answer with <<<content>>>. "
+    prompt += "Answer with the required format like the example: <<<Move B from 2 to table\nMove A from 1 to 2\nMove C from 3 to 1\nMove D from 3 to 2\nMove B from 1 to 2>>>\n"
+    prompt += "Each action should be separated by separate line. Your answer: \n"
+
+    return prompt
+
+def validate_response_blocksworld(initial_state, goal_state, response):
+    """
+    Validate the LLM's response and check if it reaches the goal state.
+    """
+    current_state = {stack: blocks.copy() for stack, blocks in initial_state.items()}
+    #print('current_state:', current_state)
+    moves = response.strip().split('\n')
+    #print('goal state:', goal_state)
+    for move in moves:
+        parts = move.split()
+        if len(parts) != 6 or parts[0] != "Move" or parts[2] != "from" or parts[4] != "to":
+            return False, f"Invalid move format: {move}"
+
+        block, source, destination = parts[1], parts[3], parts[5]
+        if 'stack' not in source:
+            source = 'stack' + source
+        if 'stack' not in destination:
+            destination = 'stack' + destination
+
+        if source not in current_state or destination not in current_state:
+            return False, f"Invalid source or destination stack: {move}"
+
+        if not current_state[source] or current_state[source][-1] != block:
+            return False, f"Invalid move: {move}. Block {block} is not at the top of the source stack."
+
+        # Move the block
+        moved_block = current_state[source].pop()
+        current_state[destination].append(moved_block)
+        #print('current_state:', current_state)
+
+    def compare_states(state1, state2):
+        state1_non_empty = {k: v for k, v in state1.items() if v}
+        state2_non_empty = {k: v for k, v in state2.items() if v}
+        return state1_non_empty == state2_non_empty
+
+    # Check if the final state matches the goal state
+    if compare_states(current_state, goal_state):
+        return True, "Goal state reached successfully!"
+    else:
+        return False, "The final state does not match the goal state."
+
+
+#####Gridworld#######
+def generate_prompt_gridworld(sample: dict) -> str:
+    """
+    Given a gridworld sample, generate a prompt instructing the LLM
+    to output a valid path in JSON format enclosed in <<<>>>.
+    """
+    rows = sample['grid']['rows']
+    cols = sample['grid']['cols']
+    obstacles = sample['obstacles']
+    goals = sample['goals']
+    initial = sample['initial_robot']
+    adjacency_str = json.dumps(sample['grid']['adjacency'], indent=2)
+
+    prompt = f"""
+You are given the following Gridworld planning problem:
+
+Grid dimensions: {rows} x {cols}
+Obstacles: {obstacles}
+Goals: {goals}
+Initial robot position: {initial}
+Adjacency:
+{adjacency_str}
+
+Task:
+- The robot must start at {initial}.
+- The robot must visit all goals at least once (in any order).
+- The robot must NOT pass through any obstacle cells.
+- At each step, the robot can move to an adjacent cell (up, down, left, or right).
+- Output your plan as a JSON list of robot positions (cells), from the initial position
+  to the final position after all goals have been visited.
+- The first position in your list must be the initial position.
+- Enclose your final JSON list in <<< >>>. For example:
+  <<<["C1,1", "C2,1", "C2,2", ...]>>>
+
+Now provide your plan (a valid path):
+"""
+    return prompt.strip()
+
+
+#####################################################
+# 3. Extracting and Checking LLM Responses
+#####################################################
+
+def extract_json_from_response_gridworld(response: str) -> str:
+    """
+    Extract the JSON string between <<< and >>> from the LLM response.
+    Raises an error if not found.
+    """
+    pattern = r"<<<(.*?)>>>"
+    matches = re.findall(pattern, response, re.DOTALL)
+    if not matches:
+        return '[]'
+        raise ValueError("Could not find JSON enclosed by <<< and >>> in the response.")
+    return matches[0].strip()
+
+def extract_equation_with_GPT4_gridworld(response):
+    prompt = ('Your task is to extract the final answer from the given answer by another LLM:\n'
+              'The final answer should be in the format <<<answer>>>, like <<<["C2,1","C3,1", ...]>>>.\n'
+              'Return only the answer in that format.\n'
+              'Input text: ')
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False,
+                                    user_prompt_list=[prompt + response], response_total_list=[], logprobs=False)
+    return extract_equation
+
+def check_gridworld_plan_legality(plan: List[str],
+                                  sample: dict) -> Tuple[bool, str]:
+    """
+    Check if the given path 'plan' is valid:
+      1. The path starts at sample['initial_robot'].
+      2. The path only moves in adjacency steps (up, down, left, right).
+      3. The path never enters an obstacle.
+      4. The path visits all goals at least once.
+    Returns (True, "OK") if valid, or (False, "Error message") otherwise.
+    """
+    adjacency = sample['grid']['adjacency']
+    obstacles = set(sample['obstacles'])
+    goals = set(sample['goals'])
+    initial = sample['initial_robot']
+
+    # 1. Check start
+    if not plan:
+        return False, "Empty plan."
+    if plan[0] != initial:
+        return False, f"Plan does not start at initial position {initial}."
+
+    # 2. Check adjacency and obstacle avoidance
+    for i in range(len(plan) - 1):
+        curr = plan[i]
+        nxt = plan[i + 1]
+        if nxt not in adjacency[curr]:
+            return False, f"Invalid move from {curr} to {nxt} (not adjacent)."
+        if nxt in obstacles:
+            return False, f"Path enters an obstacle cell {nxt}."
+
+    # 3. Check that all goals are visited at least once
+    visited_goals = set(plan).intersection(goals)
+    if visited_goals != goals:
+        return False, f"Not all goals visited. Visited {visited_goals}, needed {goals}."
+
+    return True, "OK"
+
+
+def check_llm_response_gridworld(response: str, sample: dict) -> Tuple[bool, str]:
+    """
+    1. Extract the JSON list from the LLM response.
+    2. Parse it as a list of grid cells (strings).
+    3. Check the plan for legality.
+    """
+    print('response:', response)
+    try:
+        # First try to parse the entire response
+        plan = ast.literal_eval(response)
+    except (ValueError, SyntaxError):
+        # If that fails, extract the JSON part and try again
+        json_str = extract_json_from_response_gridworld(response)
+        try:
+            plan = ast.literal_eval(json_str)
+        except (ValueError, SyntaxError):
+            return False, "Extracted content is not valid JSON."
+
+    if not isinstance(plan, list):
+        return False, "The extracted JSON is not a list."
+    if any(not isinstance(pos, str) for pos in plan):
+        return False, "Some elements in the path list are not strings (cells)."
+
+    is_valid, message = check_gridworld_plan_legality(plan, sample)
+    return is_valid, message
+
+def read_samples_gridworld(filename="gridworld_sample_6x7_7.json"):
+    """
+    Read a Gridworld sample from the specified JSON file and return it as a Python dictionary.
+    """
+    if not os.path.exists(filename):
+        raise FileNotFoundError(f"File {filename} not found.")
+
+    with open(filename, "r") as f:
+        sample = json.load(f)
+
+    return sample
+
+
+##### Reasoning Gym #####
+def extract_equation_with_GPT4_reasoning_gym(response, dataset_name):
+    prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+             'Note that the final answer should follow strictly the format like <<<final answer>>>\n' \
+             'If the input text contains a final answer in the format like <<<final answer>>>, return your answer with the format <<<final answer>>>.\n' \
+             'If the input text does not have <<<>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+             'If the input text does not have <<<>>> and is not the pure answer, directly return <<<>>>.' \
+             'Note that if you find no final answer are answered, then directly answer <<<>>>.\n' \
+             'Input text: ' \
+
+    if dataset_name == 'arc_agi':
+        prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+                 'Note that the final answer should follow strictly the format like <<<final answer>>>\n' \
+                 'If the input text contains a final answer in the format like <<<final answer>>>, return your answer with the format <<<final answer>>>.\n' \
+                 'If the input text does not have <<<>>> and is already the pure answer (an integer grid like "2 6 6 1\n6 3 0 1\n1 0 2 4\n9 3 8 0"), add <<<>>> and return your answer.\n' \
+                 'If the input text does not have <<<>>> and is not the pure answer, directly return <<<>>>.' \
+                 'Note that if you find no final answer are answered, then directly answer <<<>>>.\n' \
+                 'Input text: ' \
+
+
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs=False)
+    return extract_equation
+
+def validate_solution_reasoning_gym(dataset_name, answer, full_data):
+    if dataset_name == 'arc_agi':
+        full_data['metadata']['output'] = tuple(tuple(inner) for inner in full_data['metadata']['output'])
+
+    data = reasoning_gym.create_dataset(dataset_name, size=1, seed=1)
+    score = data.score_answer(answer=answer, entry=full_data)
+    # print(f"answer: {answer}, full_data: {full_data['answer']}, score: {score}")
+
+    if score == 1:
+        return True
+    else:
+        return False
