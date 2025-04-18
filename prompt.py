@@ -1,3 +1,49 @@
+R1_code_interpreter_data_syn_prompt1 = r'''
+The User asks a question, and you solve it. 
+You first generate the reasoning and thinking process and then provide the User with the final answer.
+During the thinking process, **you can generate python code** for efficient searching, optimization, and computing with the format of starting the python block with ```python. 
+**A code query must involve only a single script that uses 'print' function for the output.**. 
+Once the code script is complete, stop the generation. Then, the code interpreter platform will execute the code and return the execution output and error.
+Once you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response.
+Otherwise, you can continue your reasoning process and possibly generate more code query to solve the problem.
+
+    '''
+
+R1_code_interpreter_data_syn_prompt2 = r'''
+The User asks a question, and you solve it. 
+You first generate the reasoning and thinking process and then provide the User with the final answer.
+During the thinking process, **you can generate python code** for efficient searching, optimization, and computing with the format of starting the python block with ```python. 
+**A code query must involve only a single script that uses 'print' function for the output.**. 
+Once the code script is complete, stop the generation. Then, the code interpreter platform will execute the code and return the execution output and error.
+Once you feel you are ready for the final answer, directly return the answer with the format <<<'answer'>>> at the end of your response.
+Otherwise, you can continue your reasoning process or possibly generate more code query to solve the problem.
+Some tasks do not need code generation, but only reasoning and thinking. In this case, you can directly output the answer without code generation.
+
+    '''
+
+R1_code_interpreter_data_syn_intermediate_step = r'''
+**Many tasks require highly complex code with symbolic computing, but the TaskLLM generated codes are usually trivial and simple, without any symbolic computing and efficient searching. In this case, try to generate better code.**
+**If you think the current answer iteration is helpless, then you can switch into another mode, for example, switching from code generation to textual reasoning, or from textual reasoning to code generation.**
+Once you feel you are ready for the final answer, directly return the answer with the format <<<'answer'>>> at the end of your response.
+Otherwise, you can continue your reasoning process or possibly generate more code query to solve the problem.
+Here is the code execution result from the last response:
+
+    '''
+
+with_COT_code_output_prompt = r'''You are a helpful AI assistant. Solve tasks using your coding skills.
+    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.
+    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.
+    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.
+    Remember in the final code you still need to output each number in the final equation!
+    Start the python block with ```python
+
+    '''
+
+text_output_prompt = r'''
+Analyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.
+In the end of your response, directly output the answer to the question. Do not output the code for execution.
+    '''
+
 #### Agent Prompt ####
 code_text_choice_prompt = f'''
     You are guiding another TaskLLM to solve a task. You will be presented with a task that can potentially be solved using either pure textual reasoning or coding.
@@ -58,20 +104,6 @@ decision_prompt = f'''
     Now, here is the task:\n
     
 '''
-
-with_COT_code_output_prompt = r'''You are a helpful AI assistant. Solve tasks using your coding skills.
-    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.
-    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.
-    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.
-    Remember in the final code you still need to output each number in the final equation!
-    Start the python block with ```python
-
-    '''
-
-text_output_prompt = r'''
-Analyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.
-In the end of your response, directly output the answer to the question. Do not output the code for execution.
-    '''
 
 Code_checker_prompt = r'''
 Given the following question and the answer from other LLMs, write a python code block to check the correctness of the answer.
