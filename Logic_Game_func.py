@@ -755,24 +755,25 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
     ### To do, add tasks to extract the solution from the generated response and verify the correctness, here we check both response and original_response
     ### Take care the names of variables to be the same as other tasks since we need to save several variables in the following process.
     if task_name == 'logical_equation':
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        # print("response" + response)
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_logical_equation(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_logical_equation(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         extracted_text_1 = extracted_text_1.strip()
         try:
             solution_1 = eval(extracted_text_1)
         except:
             solution_1 = []
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_logical_equation(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_logical_equation(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         extracted_text_2 = extracted_text_2.strip()
         try:
             solution_2 = eval(extracted_text_2)
@@ -819,23 +820,24 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         print('Feedback2: ', message_2)
     elif task_name == 'eight_queens':
         solution_data = solution_data_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        # print("response" + response)
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_eight_queens(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_eight_queens(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_eight_queens(extracted_text_1, solution_data)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_eight_queens(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_eight_queens(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -867,24 +869,25 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
                                                                      solution_data['complexity'])
     elif task_name == 'mahjong_pattern':
         solution_data = solution_data_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        # print("response" + response)
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_mahjong(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_mahjong(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_mahjong(extracted_text_1, solution_data,
                                                                    solution_data['complexity'])
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_mahjong(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_mahjong(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -892,24 +895,25 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
                                                                    solution_data['complexity'])
     elif task_name == 'statistical_counting':
         solution_data = solution_data_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        # print("response" + response)
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_stat_counting(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_stat_counting(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_stat_counting(extracted_text_1, solution_data,
                                                                          solution_data['complexity'])
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_stat_counting(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_stat_counting(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -942,24 +946,25 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
                                                                   solution_data['complexity'])
     elif task_name == 'light_puzzles':
         solution_data = solution_data_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        # print("response" + response)
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_light(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_light(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_light(extracted_text_1, solution_data,
                                                                  solution_data['complexity'])
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_light(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_light(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -968,24 +973,25 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
     elif task_name == 'reversi':
         # import pdb; pdb.set_trace()
         solution_data = solution_data_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        # print("response" + response)
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_reversi(response.replace('\n', ''))
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_reversi(response.replace('\n', ''))
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_reversi(extracted_text_1, solution_data,
                                                                    solution_data['complexity'])
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_reversi(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_reversi(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -994,24 +1000,25 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
     elif task_name == 'matrix_transformation':
         # import pdb; pdb.set_trace()
         solution_data = solution_data_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        # print("response" + response)
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_matrix_trans(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_matrix_trans(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_matrix_trans(extracted_text_1, solution_data,
                                                                         solution_data['complexity'])
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_matrix_trans(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_matrix_trans(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -1046,24 +1053,25 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
     elif task_name == 'pooling':
         # import pdb; pdb.set_trace()
         solution_data = solution_data_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        # print("response" + response)
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_pooling(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_pooling(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_pooling(extracted_text_1, solution_data,
                                                                    solution_data['complexity'])
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_pooling(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_pooling(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -1072,24 +1080,24 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
     elif task_name == 'constrained_linear_arrangement':
         # import pdb; pdb.set_trace()
         solution_data = solution_data_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_constrained(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_constrained(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_constrained(extracted_text_1, solution_data,
                                                                        solution_data['complexity'])
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_constrained(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_constrained(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -1098,24 +1106,24 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
     elif task_name == 'logic_puzzle':
         # import pdb; pdb.set_trace()
         solution_data = solution_data_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_logic_puzzle(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_logic_puzzle(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_logic_puzzle(extracted_text_1, solution_data,
                                                                         solution_data['complexity'])
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_logic_puzzle(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_logic_puzzle(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -1123,46 +1131,46 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
                                                                         solution_data['complexity'])
     elif task_name == 'pattern_recognition':
         solution_data = solution_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_pattern_recognition(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_pattern_recognition(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_pattern_recognition(extracted_text_1, solution_data)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_pattern_recognition(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_pattern_recognition(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
         True_false_result_2, message_2 = validate_solution_pattern_recognition(extracted_text_2, solution_data)
     elif task_name == 'string_insertion':
         solution_data = solution_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_string_insertion(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_string_insertion(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, message_1 = validate_solution_string_insertion(extracted_text_1, solution_data)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_string_insertion(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_string_insertion(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -1192,24 +1200,24 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         True_false_result_2, message_2 = validate_solution_letter_logic_diagram(extracted_text_2, solution_data)
     elif task_name == 'string_synthesis':
         solution_data = solution_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_string_synthesis(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_string_synthesis(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         # print(f'response: {response}')
         True_false_result_1, message_1 = validate_solution_string_synthesis(extracted_text_1, solution_data)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_string_synthesis(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_string_synthesis(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -1218,24 +1226,24 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
     elif task_name == 'standard_sudoku':
         question_data = question_matrix_list[i]
         solution_data = solution_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_standard_sudoku(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_standard_sudoku(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         # print(f'response: {response}')
         True_false_result_1, message_1 = validate_solution_standard_sudoku(extracted_text_1, question_data)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_standard_sudoku(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_standard_sudoku(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -1243,12 +1251,12 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         True_false_result_2, message_2 = validate_solution_standard_sudoku(extracted_text_2, question_data)
     elif task_name == 'permutations_and_combinations':
         question_data = question_constrained_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_permutations_and_combinations(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_permutations_and_combinations(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         solution_1 = extracted_text_1
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
@@ -1256,12 +1264,12 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         True_false_result_1, message_1 = validate_solution_permutations_and_combinations(extracted_text_1,
                                                                                          question_data)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_permutations_and_combinations(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_string_deletion_and_modification(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
@@ -1285,7 +1293,7 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         iteration_num_2 = 0
         while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            extracted_text_2 = extract_equation_with_GPT4_string_deletion_and_modification(response)
+            extracted_text_2 = extract_equation_with_GPT4_string_deletion_and_modification(original_response)
             extracted_text_2, _ = extract_and_check(extracted_text_2)
         solution_2 = extracted_text_2
         extracted_text_2 = extracted_text_2.strip().strip('"')
@@ -1362,44 +1370,44 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         print(f'extracted_text_2: {extracted_text_2}')
         True_false_result_2, message_2 = validate_solution_string_splitting(extracted_text_2, solution_data)
     elif task_name == 'game24':
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_game24(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_game24(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1 = validate_solution_game24(number_list_item, extracted_text_1)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_game24(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_game24(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
         True_false_result_2 = validate_solution_game24(number_list_item, extracted_text_2)
         solution_1 = extracted_text_1;
         solution_2 = extracted_text_2
     elif task_name == 'letters':
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_letters(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_letters(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
         True_false_result_1, explanation_1 = evaluate_response_letters(word, letter, extracted_text_1)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_letters(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_letters(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
         True_false_result_2, explanation_2 = evaluate_response_letters(word, letter, extracted_text_2)
@@ -1408,21 +1416,22 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         solution_2 = extracted_text_2
     elif task_name == 'number_multiply':
         solution_data = solution_list[i]
-        output_1 = None;
+
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_number_multiply(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_number_multiply(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
         extracted_text_1 = extracted_text_1.strip()
         print(f'extracted_text_1: {extracted_text_1}')
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_number_multiply(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_number_multiply(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
         extracted_text_2 = extracted_text_2.strip()
         print(f'extracted_text_2: {extracted_text_2}')
 
@@ -1460,19 +1469,19 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         solution_2 = extracted_text_2
     elif task_name == 'gsm':
         solution_data = solution_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_gsm(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_gsm(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_gsm(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_gsm(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
 
         True_false_result_1 = is_equiv_func_gsm(solution_data, extracted_text_1)
         True_false_result_1, _ = extract_and_check(True_false_result_1)
@@ -1485,19 +1494,19 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         solution_2 = extracted_text_2
     elif task_name == 'math_geometry':
         target_answer = solution_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_math_geometry(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_math_geometry(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_math_geometry(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_math_geometry(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
 
         True_false_result_1 = is_equiv_func_math_geometry(target_answer, extracted_text_1)
         True_false_result_1, _ = extract_and_check(True_false_result_1)
@@ -1510,19 +1519,19 @@ def verify_solution_func_gather(i, task_name, response, save_code_dir, question,
         solution_2 = extracted_text_2
     elif task_name == 'math_counting_and_probability':
         target_answer = solution_list[i]
-        output_1 = None;
+        extracted_text_1, _ = extract_and_check(response)
         iteration_num_1 = 0
-        while output_1 == None and iteration_num_1 < 3:
+        while extracted_text_1 == '' and iteration_num_1 < 3:
             iteration_num_1 += 1
-            output_1 = extract_equation_with_GPT4_math_counting_and_probability(response)
-        extracted_text_1, _ = extract_and_check(output_1)
+            extracted_text_1 = extract_equation_with_GPT4_math_counting_and_probability(response)
+            extracted_text_1, _ = extract_and_check(extracted_text_1)
 
-        output_2 = None;
+        extracted_text_2, _ = extract_and_check(original_response)
         iteration_num_2 = 0
-        while output_2 == None and iteration_num_2 < 3:
+        while extracted_text_2 == '' and iteration_num_2 < 3:
             iteration_num_2 += 1
-            output_2 = extract_equation_with_GPT4_math_counting_and_probability(original_response)
-        extracted_text_2, _ = extract_and_check(output_2)
+            extracted_text_2 = extract_equation_with_GPT4_math_counting_and_probability(original_response)
+            extracted_text_2, _ = extract_and_check(extracted_text_2)
 
         True_false_result_1 = is_equiv_func_math_counting_and_probability(target_answer, extracted_text_1)
         True_false_result_1, _ = extract_and_check(True_false_result_1)
@@ -2131,11 +2140,14 @@ def validate_solution_mahjong(response: str, solution: Dict[str, Union[List[str]
     # answer_parts = [part.strip() for part in response.split(',')]
     if response == '':
         return False, f"answer cannot be empty"
-
-    elif int(response) != solution['solution']:
-        return False, f"answer is not correct"
-
-    return True, "Valid solution"
+    try:
+        response_int = int(response.strip())   # 去掉首尾空白再尝试转 int
+        if response_int != solution['solution']:
+            return False, f"answer is not correct"
+        else:
+            return True, "Valid solution"
+    except ValueError:
+        return False, "Not a valid integer"
 
 
 def read_dataset_mahjong(dataset_dir: str) -> List[Dict]:
@@ -2197,10 +2209,14 @@ def validate_solution_stat_counting(response: str, solution: Dict[str, Union[Lis
     if response == '':
         return False, f"answer cannot be empty"
 
-    elif int(response) != solution['solution']:
-        return False, f"answer is not correct"
-
-    return True, "Valid solution"
+    try:
+        response_int = int(response.strip())   # 去掉首尾空白再尝试转 int
+        if response_int != solution['solution']:
+            return False, f"answer is not correct"
+        else:
+            return True, "Valid solution"
+    except ValueError:
+        return False, "Not a valid integer"
 
 
 def read_dataset_stat_counting(dataset_dir: str) -> List[Dict]:
@@ -2326,7 +2342,7 @@ def extract_equation_with_GPT4_new_op(response):
 def validate_solution_light(response: str, solution: Dict[str, Union[List[str], List[List[str]]]], complexity: int) -> \
         Tuple[bool, str]:
     try:
-        answer_parts = [int(part.strip()) for part in response.split(',')]
+        answer_parts = [int(ch) for ch in re.findall(r'[01]', response)]
         # import pdb; pdb.set_trace()
 
         if len(answer_parts) != solution['n'] ** 2:
@@ -2950,8 +2966,9 @@ def extract_equation_with_GPT4_pattern_recognition(response):
 def validate_solution_pattern_recognition(response: str, solution_data: list) -> Tuple[bool, str]:
     try:
         # Parse response into position
-        pos = response.split(',')
-        row, col = pos[0].strip(), pos[1].strip()
+        # print(repr(response), type(response))
+        response_solution = json.loads(response)
+        row, col = response_solution[0], response_solution[1]
         print(row, col)
 
         row1, col1 = solution_data[0], solution_data[1]
@@ -3018,10 +3035,10 @@ def validate_solution_string_insertion(response: str, solution_data: str) -> Tup
     try:
         # Parse response into position
         str1 = str(response.strip())
-        print(str1)
+        # print(str1)
 
         str2 = solution_data
-        print(str2)
+        # print(str2)
 
         # Check for conflicts
         if str1 != str2:
@@ -3540,7 +3557,15 @@ def validate_solution_permutations_and_combinations(
         if response == "[]" or response == "":
             return False, "Empty answer"
 
-        response_solution = json.loads(response)
+        try:
+            response_solution = ast.literal_eval(response.strip())
+        except Exception as e:
+            raise ValueError(f"can not convert to list: {e}") from None
+
+        if not (isinstance(response_solution, list) and all(isinstance(x, str) for x in response_solution)):
+            raise ValueError("response_solution is not a string list")
+
+        # response_solution = json.loads(response)
         result, message = check_solution(question_data, response_solution)
 
         if result:
@@ -3998,6 +4023,8 @@ def evaluate_response_letters(word, target_letter, llm_response):
     :return: A tuple (is_correct, explanation)
     """
     # Extract count and positions from LLM response
+    print("word:" + word)
+    print("target_letter:" + target_letter)
     match = re.search(r"Count: (\d+), Positions: \[([\d, ]+)\]", llm_response)
     if not match:
         return False, "Response format is incorrect"
