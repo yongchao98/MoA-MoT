@@ -3686,12 +3686,15 @@ def read_words_from_file_letters(filename):
 ##### Reasoning Gym #####
 def extract_equation_with_GPT4_reasoning_gym(response, dataset_name):
     pure_answer = ''
+    notes = ''
+
     if dataset_name in ['arc_agi']:
         pure_answer = 'an integer grid like "2 6 6 1\n6 3 0 1\n1 0 2 4\n9 3 8 0", the number of rows and columns might be very large'
     elif dataset_name == 'basic_arithmetic':
         pure_answer = 'a number'
     elif dataset_name == 'binary_matrix':
         pure_answer = 'an integer grid like "3 2 1\n2 1 0\n3 5 6" or a 2D list (matrix) of integers like [[3, 2, 1], [2, 1, 0], [3, 5, 6]], where both the number of rows and columns can be large'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
     elif dataset_name == 'boxnet':
         pure_answer = """
 a json str like
@@ -3707,8 +3710,21 @@ a json str like
         pure_answer = 'day of the week, integer or Yes/No'
     elif dataset_name == 'circuit_logic':
         pure_answer = '0 or 1'
+    elif dataset_name == 'codeio':
+        pure_answer = ('a JSON object or a str in JSON format, or a str in ```json\n<str>\n```, or a single str\n'
+                       "For example: {'value': 12}, or ```json\n{'a': 1, 'bb': np.float32(3.2)}\n```, or \"Correct\"")
+        notes = f'If the input text does not have <<<final answer>>>, but you find {pure_answer}, add <<<>>> around it and return your answer. For a str in ```json\n<str>\n```, only return str without ```json and ```.\n'
+    elif dataset_name == 'color_cube_rotation':
+        pure_answer = 'name of a color'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'complex_arithmetic':
+        pure_answer = 'a complex number (which may contain only a real or imaginary part)'
+    elif dataset_name in ['count_bits', 'count_primes']:
+        pure_answer = 'an integer'
+
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
+
 
     prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
              + pure_answer_prompt + \
@@ -3719,19 +3735,19 @@ a json str like
              'Note that if you find no **final answer** are answered, then directly answer <<<>>>.\n' \
              'If the input text only contains code without **final answer**, do not run/analyze/understand the code in the input text to get an answer. You should directly answer <<<>>>.\n' \
              'Do not generate an answer that is not explicitly contained within the input text.\n' \
-             'Input text: ' \
+             + notes + \
+             'Input text: '
 
-    if dataset_name == 'binary_matrix':
-        prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
-                 + pure_answer_prompt + \
-                 'Note that the final answer should follow strictly the format like <<<final answer>>>\n' \
-                 'If the input text contains a final answer in the format like <<<final answer>>>, return your answer with the format <<<final answer>>>.\n' \
-                 'If the input text does not have <<<final answer>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
-                 'If the input text does not have <<<final answer>>> and is not the pure answer, directly return <<<>>>.\n' \
-                 'If the input text has string like "<<<answer>>>" followed by the final answer, add <<<>>> to the final answer and return it.\n' \
-                 'Note that if you find no final answer are answered, then directly answer <<<>>>. Do not run the code in the input text or give an irrelevant answer.\n' \
-                 'Input text: ' \
-
+    # if dataset_name == 'binary_matrix':
+    #     prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+    #              + pure_answer_prompt + \
+    #              'Note that the final answer should follow strictly the format like <<<final answer>>>\n' \
+    #              'If the input text contains a final answer in the format like <<<final answer>>>, return your answer with the format <<<final answer>>>.\n' \
+    #              'If the input text does not have <<<final answer>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+    #              'If the input text does not have <<<final answer>>> and is not the pure answer, directly return <<<>>>.\n' \
+    #              'If the input text has string like "<<<answer>>>" followed by the final answer, add <<<>>> to the final answer and return it.\n' \
+    #              'Note that if you find no final answer are answered, then directly answer <<<>>>. Do not run the code in the input text or give an irrelevant answer.\n' \
+    #              'Input text: '
 
     extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs=False)
     return extract_equation
@@ -3743,6 +3759,13 @@ def validate_solution_reasoning_gym(dataset_name, answer, full_data):
     #     answer = str_to_list_of_lists(answer)
     #     print(f'binary_matrix answer: {answer}')
     #     print("\n".join(" ".join(str(x) for x in row) for row in answer))
+    elif dataset_name == 'codeio':
+        try:
+            answer_dict = ast.literal_eval(answer)
+            if isinstance(answer_dict, dict):
+                answer = json.dumps(answer_dict)
+        except:
+            pass
 
     data = reasoning_gym.create_dataset(dataset_name, size=1, seed=1)
     score = data.score_answer(answer=answer, entry=full_data)

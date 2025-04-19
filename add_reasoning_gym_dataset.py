@@ -23,7 +23,12 @@ available_datasets = [
     # 'caesar_cipher',
     # 'calendar_arithmetic',
     # 'chain_sum',
-    'circuit_logic',
+    # 'circuit_logic',
+    # 'codeio',
+    # 'color_cube_rotation',
+    # 'complex_arithmetic',
+    # 'count_bits',
+    'count_primes',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -54,15 +59,19 @@ for dataset in available_datasets:
             # Optional: validate that the answer is correct
             # assert data.score_answer(answer=x['answer'], entry=x) == 1.0
 
-            question = x['question'] + '\nOutput final answer with the format <<<answer>>>'
+            question = x['question'] + '\nOutput final answer with the format <<<answer>>>.'
             if dataset == 'arc_agi':
                 question = x['question'].replace('Your final answer should just be the text output grid itself.',
-                                                 'Your final answer should be the output grid enclosed in triple angle brackets, like this: <<<output grid>>>')
+                                                 'Your final answer should be the output grid enclosed in triple angle brackets, like this: <<<output grid>>>.')
             elif dataset == 'bf':
                 question = x['question'].replace('Respond only with the exact output of the program.',
                                                  'Respond only with the exact output of the program enclosed in triple angle brackets, like this: <<<output>>>.')
+            elif dataset == 'binary_matrix':
+                question = x['question'] + '\nYour final answer should be the output matrix enclosed in triple angle brackets, like this <<<output matrix>>>.'
             elif dataset == 'boxnet':
-                question = x['question'] + '\nOutput action plan enclosed in triple angle brackets, like this <<<action plan>>>'
+                question = x['question'] + '\nOutput action plan enclosed in triple angle brackets, like this <<<action plan>>>.'
+            elif dataset == 'codeio':
+                question = x['question'].replace(' without writing any code', '').replace('in the form of a JSON object', 'in the form of a JSON object enclosed in triple angle brackets, like this <<<JSON object>>>')
 
             writer.writerow({
                 'ID': i,
