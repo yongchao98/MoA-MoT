@@ -28,7 +28,17 @@ available_datasets = [
     # 'color_cube_rotation',
     # 'complex_arithmetic',
     # 'count_bits',
-    'count_primes',
+    # 'count_primes',
+    # 'countdown',
+    # 'course_schedule',
+    # 'cryptarithm',
+    # 'decimal_arithmetic',
+    # 'decimal_chain_sum',
+    # 'dice',
+    # 'emoji_mystery',
+    # 'family_relationships',
+    # 'figlet_font',
+    'fraction_simplification',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -50,7 +60,7 @@ for dataset in available_datasets:
     data = reasoning_gym.create_dataset(dataset, size=task_size, seed=seed)
     output_path = os.path.join(output_dir, f'{dataset}.csv')
 
-    with open(output_path, 'w', newline='', encoding='utf-8') as csvfile:
+    with (open(output_path, 'w', newline='', encoding='utf-8') as csvfile):
         writer = csv.DictWriter(csvfile, fieldnames=['ID', 'dataset', 'question', 'answer', 'full_data'])
         writer.writeheader()
 
@@ -72,6 +82,9 @@ for dataset in available_datasets:
                 question = x['question'] + '\nOutput action plan enclosed in triple angle brackets, like this <<<action plan>>>.'
             elif dataset == 'codeio':
                 question = x['question'].replace(' without writing any code', '').replace('in the form of a JSON object', 'in the form of a JSON object enclosed in triple angle brackets, like this <<<JSON object>>>')
+            elif dataset == 'cryptarithm':
+                question = x['question'].replace('Output format: "', 'Output format: <<<'
+                                                 ).replace('" (without quotes)', '>>>')
 
             writer.writerow({
                 'ID': i,

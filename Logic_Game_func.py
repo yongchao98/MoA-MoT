@@ -3721,6 +3721,27 @@ a json str like
         pure_answer = 'a complex number (which may contain only a real or imaginary part)'
     elif dataset_name in ['count_bits', 'count_primes']:
         pure_answer = 'an integer'
+    elif dataset_name == 'countdown':
+        pure_answer = 'a mathematical formula'
+    elif dataset_name == 'course_schedule':
+        pure_answer = 'a boolean value (True or False)'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'cryptarithm':
+        pure_answer = 'a comma separated mapping from letters to digits, for example A=1,B=2,C=3'
+    elif dataset_name in ['decimal_arithmetic', 'decimal_chain_sum']:
+        pure_answer = 'a float number'
+    elif dataset_name == 'dice':
+        pure_answer = 'a fraction (e.g. 7/10, 161/302)'
+    elif dataset_name == 'emoji_mystery':
+        pure_answer = 'a sentence in natural language'
+        notes = 'Return any sentence you find enclosed with <<<>>>.\n'
+    elif dataset_name == 'family_relationships':
+        pure_answer = 'a single word that represents a family relationship, e.g., father, wife, mother-in-law'
+    elif dataset_name == 'figlet_font':
+        pure_answer = 'a word'
+        notes = 'Return any word you find enclosed with <<<>>>.\n'
+    elif dataset_name == 'fraction_simplification':
+        pure_answer = 'a fraction (e.g. 7/10, $\\frac{261}{316}$, $\\dfrac{1062}{2579}$)'
 
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
