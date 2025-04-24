@@ -38,7 +38,13 @@ available_datasets = [
     # 'emoji_mystery',
     # 'family_relationships',
     # 'figlet_font',
-    'fraction_simplification',
+    # 'fraction_simplification',
+    # 'futoshiki',
+    # 'game_of_life',
+    # 'game_of_life_halting',
+    # 'gcd',
+    # 'graph_color',
+    'group_anagrams',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -56,6 +62,14 @@ def convert_to_serializable(obj):
     else:
         return str(obj)  # fallback for unknown types
 
+def convert_keys_to_str(obj):
+    if isinstance(obj, dict):
+        return {str(k): convert_keys_to_str(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_keys_to_str(item) for item in obj]
+    else:
+        return obj
+
 for dataset in available_datasets:
     data = reasoning_gym.create_dataset(dataset, size=task_size, seed=seed)
     output_path = os.path.join(output_dir, f'{dataset}.csv')
@@ -70,6 +84,10 @@ for dataset in available_datasets:
             # assert data.score_answer(answer=x['answer'], entry=x) == 1.0
 
             question = x['question'] + '\nOutput final answer with the format <<<answer>>>.'
+
+            if dataset not in ['futoshiki']:
+                full_data = json.dumps(x, indent=4, ensure_ascii=False, default=convert_to_serializable)  # serialize full x dictionary as string
+
             if dataset == 'arc_agi':
                 question = x['question'].replace('Your final answer should just be the text output grid itself.',
                                                  'Your final answer should be the output grid enclosed in triple angle brackets, like this: <<<output grid>>>.')
@@ -85,13 +103,31 @@ for dataset in available_datasets:
             elif dataset == 'cryptarithm':
                 question = x['question'].replace('Output format: "', 'Output format: <<<'
                                                  ).replace('" (without quotes)', '>>>')
+            elif dataset == 'futoshiki':
+                question = x['question'].replace('Ensure your answer follows the same format as the puzzle above, just replace blanks (_) with the correct value for the cell.',
+                                                 'Ensure your answer follows the same format as the puzzle above, just replace blanks (_) with the correct value for the cell and put the answer in triple angle brackets, like this <<<answer to the puzzle>>>.')
+                full_data = json.dumps(convert_keys_to_str(x), indent=4, ensure_ascii=False, default=convert_to_serializable)  # serialize full x dictionary as string
+            elif dataset == 'game_of_life':
+                question = x['question'] + '\nOutput grid in JSON format enclosed in triple angle brackets, like this <<<grid in JSON format>>>.'
+            elif dataset == 'game_of_life_halting':
+                question = x['question'] + '\nOutput final answer with the format <<<answer>>>, i.e. <<<True>>> or <<<False>>>.'
+            elif dataset == 'gcd':
+                question = x['question'].replace('Give only the GCD as your final answer.',
+                                                 'Give only the GCD enclosed in triple angle brackets as your final answer, like <<<GCD>>>.')
+            elif dataset == 'graph_color':
+                question = x['question'].replace('Return your solution as a JSON map of vertices to colors. (For example: {"0": 1, "1": 2, "2": 3}.)',
+                                                 'Return your solution as a JSON map of vertices to colors enclosed in triple angle brackets, like this <<<JSON map of vertices to colors>>>. (For example: <<<{"0": 1, "1": 2, "2": 3}>>>.)')
+            elif dataset == 'group_anagrams':
+                question = x['question'].replace('The output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [["eat", "tea"], ["tan", "nat"]].',
+                                                 'The output is a list of lists of strings enclosed in triple angle brackets, where each outer list contains a group of anagrams, e.g. <<<[["eat", "tea"], ["tan", "nat"]]>>>.')
+
 
             writer.writerow({
                 'ID': i,
                 'dataset': dataset,
                 'question': question,
                 'answer': x['answer'],
-                'full_data': json.dumps(x, indent=4, ensure_ascii=False, default=convert_to_serializable)  # serialize full x dictionary as string
+                'full_data': full_data
             })
 
     print(f"Saved {task_size} tasks from '{dataset}' to '{output_path}'")

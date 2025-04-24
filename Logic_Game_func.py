@@ -3742,7 +3742,39 @@ a json str like
         notes = 'Return any word you find enclosed with <<<>>>.\n'
     elif dataset_name == 'fraction_simplification':
         pure_answer = 'a fraction (e.g. 7/10, $\\frac{261}{316}$, $\\dfrac{1062}{2579}$)'
-
+    elif dataset_name == 'futoshiki':
+        pure_answer = """n x n Futoshiki puzzle, e.g.
+4   3   2   6   5   1
+                     
+1   4   5   2   3   6
+                     
+3   1   4   5   6 > 2
+            ∨       ∧
+5   6   1   4   2   3
+                     
+6 > 2   3   1   4   5
+    ∧                
+2   5   6   3   1   4
+"""
+    elif dataset_name == 'game_of_life':
+        pure_answer = """grid in JSON format, e.g.
+[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,1,1,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]
+"""
+    elif dataset_name == 'game_of_life_halting':
+        pure_answer = 'a boolean value (True or False)'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'gcd':
+        pure_answer = 'an integer'
+    elif dataset_name == 'graph_color':
+        pure_answer = 'JSON map of vertices to colors'
+    elif dataset_name == 'group_anagrams':
+        pure_answer = "a list of lists of strings, e.g. [['eat', 'tea'], ['tan', 'nat'], ['apple']]"
+        notes = 'If the input contains two identical lists—either as separate lists or one wrapped in triple brackets—return only the first list.'
+        # notes = ("Return any list of lists of strings you find enclosed with <<<>>>.\n"
+        #          "When extracting, do not omit any brackets from either the inner or outer lists. For example, "
+        #          "for <<<[['eat', 'tea'], ['tan', 'nat']]>>>, you should return [['eat', 'tea'], ['tan', 'nat']], "
+        #          "but do not return [['eat', 'tea'], ['tan', 'nat'] (omitted the second bracket of outer list) or "
+        #          "['eat', 'tea'], ['tan', 'nat']] (omitted the first bracket of outer list).\n")
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
 
@@ -3780,11 +3812,15 @@ def validate_solution_reasoning_gym(dataset_name, answer, full_data):
     #     answer = str_to_list_of_lists(answer)
     #     print(f'binary_matrix answer: {answer}')
     #     print("\n".join(" ".join(str(x) for x in row) for row in answer))
-    elif dataset_name == 'codeio':
+    elif dataset_name in ['codeio', 'group_anagrams']:
+        if dataset_name == 'group_anagrams':
+            if answer.endswith("']") or answer.endswith('"]'):
+                answer += ']'
+
         try:
-            answer_dict = ast.literal_eval(answer)
-            if isinstance(answer_dict, dict):
-                answer = json.dumps(answer_dict)
+            answer_literal_eval = ast.literal_eval(answer)
+            if isinstance(answer_literal_eval, dict) or isinstance(answer_literal_eval, list):
+                answer = json.dumps(answer_literal_eval)
         except:
             pass
 
