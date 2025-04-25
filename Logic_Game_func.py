@@ -3775,6 +3775,26 @@ a json str like
         #          "for <<<[['eat', 'tea'], ['tan', 'nat']]>>>, you should return [['eat', 'tea'], ['tan', 'nat']], "
         #          "but do not return [['eat', 'tea'], ['tan', 'nat'] (omitted the second bracket of outer list) or "
         #          "['eat', 'tea'], ['tan', 'nat']] (omitted the first bracket of outer list).\n")
+    elif dataset_name == 'gsm_symbolic':
+        pure_answer = 'an integer or a float'
+    elif dataset_name == 'intermediate_integration':
+        pure_answer = 'a mathematical formula'
+    elif dataset_name == 'isomorphic_strings':
+        pure_answer = 'a boolean value (True or False)'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'jugs':
+        pure_answer = 'a JSON-parsable list'
+    elif dataset_name == 'knights_knaves':
+        pure_answer = 'a string'
+    elif dataset_name in ['largest_island', 'lcm', 'leg_counting', 'letter_counting']:
+        pure_answer = 'an integer'
+    elif dataset_name == 'letter_jumble':
+        pure_answer = 'a sentence'
+        notes = '1. Return any sentence you find enclosed with <<<>>>.\n2. Do not alter the sequence of letters in the sentence found within the input text.'
+    elif dataset_name == 'list_functions':
+        pure_answer = 'a list of integer/integers, e.g. [12], [60, 25, 327]'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
 

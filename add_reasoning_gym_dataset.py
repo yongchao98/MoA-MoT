@@ -44,7 +44,19 @@ available_datasets = [
     # 'game_of_life_halting',
     # 'gcd',
     # 'graph_color',
-    'group_anagrams',
+    # 'group_anagrams',
+    # 'gsm_symbolic',
+    # 'intermediate_integration',
+    # 'isomorphic_strings',
+    # 'jugs',
+    # 'knight_swap',
+    # 'knights_knaves',
+    # 'largest_island',
+    # 'lcm',
+    # 'leg_counting',
+    # 'letter_counting',
+    # 'letter_jumble',
+    'list_functions',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -120,7 +132,21 @@ for dataset in available_datasets:
             elif dataset == 'group_anagrams':
                 question = x['question'].replace('The output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [["eat", "tea"], ["tan", "nat"]].',
                                                  'The output is a list of lists of strings enclosed in triple angle brackets, where each outer list contains a group of anagrams, e.g. <<<[["eat", "tea"], ["tan", "nat"]]>>>.')
-
+            elif dataset == 'jugs':
+                question = x['question'].replace('Reply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.',
+                                                 'Reply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount, and enclose the JSON-parsable list in triple angle brackets, like <<<JSON-parsable list>>>.')
+            elif dataset == 'knight_swap':
+                question = x['question'] + '- Output final answer with the format <<<answer>>>'
+            elif dataset == 'knights_knaves':
+                question = x['question'].replace('(Format your answer like: "',
+                                                 '(Enclose your answer in triple angle brackets like: <<<')
+                question = question[:-2] + '>>>)'
+            elif dataset == 'letter_jumble':
+                question = x['question'].replace('Your output should be a sentence with the words unscrambled.',
+                                                 'Your output should be a sentence with the words unscrambled, and enclose the sentence in triple angle brackets, like <<<sentence>>>.')
+            elif dataset == 'list_functions':
+                question = x['question'].replace('Your answer should be a list of element/elements',
+                                                 'Your answer should be a list of element/elements enclosed in triple angle brackets, like <<<list of element/elements>>>')
 
             writer.writerow({
                 'ID': i,
