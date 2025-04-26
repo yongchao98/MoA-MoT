@@ -56,7 +56,18 @@ available_datasets = [
     # 'leg_counting',
     # 'letter_counting',
     # 'letter_jumble',
-    'list_functions',
+    # 'list_functions',
+    # 'mahjong_puzzle',
+    # 'manipulate_matrix',
+    # 'maze',
+    # 'mini_sudoku',
+    # 'modulo_grid',
+    # 'n_queens',
+    # 'needle_haystack',
+    # 'number_filtering',
+    # 'number_format',
+    # 'number_sequence',
+    'number_sorting',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -147,6 +158,31 @@ for dataset in available_datasets:
             elif dataset == 'list_functions':
                 question = x['question'].replace('Your answer should be a list of element/elements',
                                                  'Your answer should be a list of element/elements enclosed in triple angle brackets, like <<<list of element/elements>>>')
+            # elif dataset == 'mahjong_puzzle':
+            #     question = x['question'].replace('Your output should be one of the following: "Peng", "Chi", or "Pass" (without quotes).',
+            #                                      'Your output should be one of the following: "<<<Peng>>>", "<<<Chi>>>", or "<<<Pass>>>" (without quotes).')
+            elif dataset == 'manipulate_matrix':
+                question = x['question'] + '\nOutput the final matrix after performing all the operations, ensuring it matches the input matrix format and is enclosed within triple angle brackets, like <<<0 1 2 7\n6 3 5 2\n9 0 2 7>>>.'
+            elif dataset == 'maze':
+                question = x['question'].replace('Give only the number of steps as your final answer, no other text or formatting.',
+                                                 'Give only the number of steps as your final answer, and enclose it within triple angle brackets, like <<<10>>>.')
+            elif dataset == 'mini_sudoku':
+                question = x['question'] + 'Enclose your response within triple angle brackets, like <<<1 2 3 4\n2 3 4 1\n3 4 1 2\n4 1 2 3>>>.'
+            elif dataset == 'modulo_grid':
+                question = x['question'].replace('Return the entire completed grid as your answer.',
+                                                 'Return the entire completed grid as your answer and enclose it within triple angle brackets, like <<<the entire completed grid>>>.')
+            elif dataset == 'n_queens':
+                question = x['question'] + '\nEnclose the output board within triple angle brackets, like <<<output board>>>.'
+            elif dataset == 'needle_haystack':
+                question = x['question'].replace('Reply only with a name.', 'Reply with a name enclosed within triple angle brackets, like <<<name>>>.')
+            elif dataset == 'number_filtering':
+                question = x['question'].replace('Return the new list in the same format.', 'Return the new list in the same format enclosed within triple angle brackets, like <<<the new list>>>.')
+            elif dataset == 'number_format':
+                question = x['question'].replace('Your output should be only the number of interest.', 'Your output should be only the number of interest enclosed within triple angle brackets, like <<<the number of interest>>>.')
+            elif dataset == 'number_sequence':
+                question = x['question'] + '\nOutput the value of "?" enclosed within triple angle brackets, like <<<the value of "?">>>.'
+            elif dataset == 'number_sorting':
+                question = x['question'].replace("['-69', '-13', '1', '7', '11', '43', '59', '61']", "<<<['-69', '-13', '1', '7', '11', '43', '59', '61']>>>")
 
             writer.writerow({
                 'ID': i,

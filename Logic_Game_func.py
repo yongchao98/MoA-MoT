@@ -3794,7 +3794,65 @@ a json str like
     elif dataset_name == 'list_functions':
         pure_answer = 'a list of integer/integers, e.g. [12], [60, 25, 327]'
         notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
-
+    elif dataset_name == 'mahjong_puzzle':
+        pure_answer = 'one of the following: "Peng", "Chi", or "Pass" (without quotes)'
+        notes = 'Return any word you find enclosed with <<<>>>.\n'
+        # notes = 'If there are more than one "<<<Peng>>>", "<<<Chi>>>", or "<<<Pass>>>" (without quotes), return <<<>>>.\n'
+    elif dataset_name == 'manipulate_matrix':
+        pure_answer = 'an integer matrix, e.g. 1 3 3\n1 6 2, the number of rows and columns might be very large'
+        notes = 'Return any matrix you find enclosed within <<<>>>. Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'maze':
+        pure_answer = 'an integer'
+    elif dataset_name == 'mini_sudoku':
+        pure_answer = 'a 4x4 integer matrix, e.g. 1 2 3 4\n2 3 4 1\n3 4 1 2\n4 1 2 3'
+    elif dataset_name == 'modulo_grid':
+        pure_answer = """a grid composed of '✅' and '❌', like this:
+❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅
+❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌
+❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌
+✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌
+❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌
+"""
+        notes = "Return any grid you find composed of '✅' and '❌' or any grid you find enclosed within <<<>>>. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"
+    elif dataset_name == 'n_queens':
+        pure_answer = """a grid composed of 'Q' and '_', like this:
+_ _ Q _ _ _ _ _
+_ _ _ _ _ Q _ _
+_ Q _ _ _ _ _ _
+_ _ _ _ Q _ _ _
+_ _ _ _ _ _ _ Q
+Q _ _ _ _ _ _ _
+_ _ _ _ _ _ Q _
+_ _ _ Q _ _ _ _
+"""
+        notes = "Return any grid you find composed of 'Q' and '_' or any grid you find enclosed within <<<>>>. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"
+    elif dataset_name == 'needle_haystack':
+        pure_answer = 'a name (string)'
+    elif dataset_name == 'number_filtering':
+        pure_answer = 'a list of numbers (integers and floats)'
+    elif dataset_name == 'number_format':
+        pure_answer = 'a number'
+    elif dataset_name == 'number_sequence':
+        pure_answer = 'an integer'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'number_sorting':
+        pure_answer = 'a list of numbers'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
 
