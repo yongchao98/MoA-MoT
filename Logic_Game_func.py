@@ -3853,6 +3853,33 @@ _ _ _ Q _ _ _ _
     elif dataset_name == 'number_sorting':
         pure_answer = 'a list of numbers'
         notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'palindrome_generation':
+        pure_answer = 'a string which is a palindrome'
+    elif dataset_name == 'palindrome_partitioning':
+        pure_answer = """A list of lists of strings, where each string is a palindrome, e.g. <<<[["x", "h", "x", "w", "k", "l", "k", "i"], ["x", "h", "x", "w", "klk", "i"], ["xhx", "w", "k", "l", "k", "i"], ["xhx", "w", "klk", "i"]]>>>. The list may be very long."""
+        notes = 'If you find any list enclosed within <<<>>>, return it, and do not return <<<>>>. The list may be very long.\n'
+    elif dataset_name == 'polynomial_equations':
+        pure_answer = 'a decimal number or comma-separated decimal numbers'
+    elif dataset_name == 'polynomial_multiplication':
+        pure_answer = 'a polynomial, e.g. -1220*x**4 + 4130*x**3 - 73*x**2 + 12506*x + 2'
+    elif dataset_name == 'pool_matrix':
+        pure_answer = """an integer matrix or a float matrix, e.g. 
+5 7
+3 9
+0 8
+, or
+[[5 7], [3 9], [0 8]]
+, or
+5.0 3.25 3.75 2.5 7.0
+4.0 3.25 3.75 4.75 6.0
+, or
+[[5.0 3.25 3.75 2.5 7.0], [4.0 3.25 3.75 4.75 6.0]]
+, the number of rows and columns might be very large
+"""
+        notes = 'Preserve the original format of the matrix in the input text.\n'
+    elif dataset_name == 'power_function':
+        pure_answer = 'a float'
+
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
 
@@ -3890,11 +3917,13 @@ def validate_solution_reasoning_gym(dataset_name, answer, full_data):
     #     answer = str_to_list_of_lists(answer)
     #     print(f'binary_matrix answer: {answer}')
     #     print("\n".join(" ".join(str(x) for x in row) for row in answer))
-    elif dataset_name in ['codeio', 'group_anagrams']:
-        if dataset_name == 'group_anagrams':
+    elif dataset_name in ['codeio', 'group_anagrams', 'palindrome_partitioning']:
+        if dataset_name in ['group_anagrams', 'palindrome_partitioning']:
             if answer.endswith("']") or answer.endswith('"]'):
                 answer += ']'
-
+        if dataset_name in ['palindrome_partitioning']:
+            if answer.endswith("']]]") or answer.endswith('"]]]'):
+                answer = answer[:-1]
         try:
             answer_literal_eval = ast.literal_eval(answer)
             if isinstance(answer_literal_eval, dict) or isinstance(answer_literal_eval, list):

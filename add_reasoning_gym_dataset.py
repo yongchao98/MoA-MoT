@@ -67,7 +67,13 @@ available_datasets = [
     # 'number_filtering',
     # 'number_format',
     # 'number_sequence',
-    'number_sorting',
+    # 'number_sorting',
+    # 'palindrome_generation',
+    # 'palindrome_partitioning',
+    # 'polynomial_equations',
+    # 'polynomial_multiplication',
+    # 'pool_matrix',
+    'power_function',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -183,6 +189,19 @@ for dataset in available_datasets:
                 question = x['question'] + '\nOutput the value of "?" enclosed within triple angle brackets, like <<<the value of "?">>>.'
             elif dataset == 'number_sorting':
                 question = x['question'].replace("['-69', '-13', '1', '7', '11', '43', '59', '61']", "<<<['-69', '-13', '1', '7', '11', '43', '59', '61']>>>")
+            elif dataset == 'palindrome_generation':
+                question = x['question'].replace('Your output should be a single string, with no spaces or punctuation.',
+                                                 'Your output should be a single string, with no spaces or punctuation, and enclose it within triple angle brackets, like <<<single string>>>.')
+            elif dataset == 'palindrome_partitioning':
+                question = x['question'].replace('Your output should be a list of lists, where each list represents a palindrome partition, e.g. [["a","a","b"],["aa","b"]].',
+                                                 'Your output should be a list of lists enclosed within triple angle brackets, where each list represents a palindrome partition, e.g. <<<[["a","a","b"],["aa","b"]]>>>.')
+            elif dataset == 'polynomial_equations':
+                question = x['question'].replace('- For 3 or more solutions: all values as comma-separated decimal numbers',
+                                                 '- For 3 or more solutions: all values as comma-separated decimal numbers\n   - Enclose the answer within triple angle brackets, like <<<number/numbers>>>.')
+            elif dataset == 'pool_matrix':
+                question = x['question'].replace('Your output should be a matrix in the same format as the input matrix.',
+                                                 'Your output should be a matrix in the same format as the input matrix, enclosed within triple angle brackets, like <<<output matrix>>>.')
+
 
             writer.writerow({
                 'ID': i,
