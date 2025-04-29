@@ -3879,6 +3879,33 @@ _ _ _ Q _ _ _ _
         notes = 'Preserve the original format of the matrix in the input text.\n'
     elif dataset_name == 'power_function':
         pure_answer = 'a float'
+    elif dataset_name == 'prime_factorization':
+        pure_answer = 'a mathematical formula'
+    elif dataset_name == 'products':
+        pure_answer = 'an integer'
+    elif dataset_name == 'puzzle24':
+        pure_answer = 'a mathematical formula'
+    elif dataset_name == 'quantum_lock':
+        pure_answer = "a sequence of letters separated by '→', for example: A → B → C"
+    elif dataset_name == 'ransom_note':
+        pure_answer = 'a boolean value (True or False)'
+        notes = 'Return any boolean value you find enclosed with <<<>>>. Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'rearc':
+        pure_answer = 'an integer grid, e.g. 1 3 2\n1 1 0\n7 6 3\n2 5 1\n5 9 2, the number of rows and columns might be very large.'
+        notes = """# Notes 
+1. Return any integer grid you find, whether or not it is enclosed within <<<>>>. 
+2. Do not return <<<>>> if input text is not empty. 
+3. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"""
+    elif dataset_name == 'rectangle_count':
+        pure_answer = 'an integer'
+    elif dataset_name == 'rotate_matrix':
+        pure_answer = 'an integer grid, e.g. 1 3 2\n1 1 0\n7 6 3\n2 5 1\n5 9 2, [[1, 3, 2], [1, 1, 0], [7, 6, 3], [2, 5, 1], [5, 9, 2]], the number of rows and columns might be very large.'
+        notes = """# Notes
+1. Return any integer grid you find, whether or not it is enclosed within <<<>>>. 
+2. Do not return <<<>>> if input text is not empty. 
+3. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"""
+    elif dataset_name == 'rotten_oranges':
+        pure_answer = 'an integer'
 
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
@@ -3911,7 +3938,7 @@ _ _ _ Q _ _ _ _
     return extract_equation
 
 def validate_solution_reasoning_gym(dataset_name, answer, full_data):
-    if dataset_name == 'arc_agi':
+    if dataset_name in ['arc_agi', 'rearc']:
         full_data['metadata']['output'] = tuple(tuple(inner) for inner in full_data['metadata']['output'])
     # elif dataset_name == 'binary_matrix':
     #     answer = str_to_list_of_lists(answer)
@@ -3930,6 +3957,13 @@ def validate_solution_reasoning_gym(dataset_name, answer, full_data):
                 answer = json.dumps(answer_literal_eval)
         except:
             pass
+    elif dataset_name == 'prime_factorization':
+        if not answer or answer.strip() == '':
+            return False
+
+        for factor in answer.split("×"):
+            if not factor or factor.strip() == '':
+                return False
 
     data = reasoning_gym.create_dataset(dataset_name, size=1, seed=1)
     score = data.score_answer(answer=answer, entry=full_data)

@@ -73,7 +73,17 @@ available_datasets = [
     # 'polynomial_equations',
     # 'polynomial_multiplication',
     # 'pool_matrix',
-    'power_function',
+    # 'power_function',
+    # 'prime_factorization',
+    # 'products',
+    # 'propositional_logic',
+    # 'puzzle24',
+    # 'quantum_lock',
+    # 'ransom_note',
+    # 'rearc',
+    # 'rectangle_count',
+    # 'rotate_matrix',
+    'rotten_oranges',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -201,7 +211,34 @@ for dataset in available_datasets:
             elif dataset == 'pool_matrix':
                 question = x['question'].replace('Your output should be a matrix in the same format as the input matrix.',
                                                  'Your output should be a matrix in the same format as the input matrix, enclosed within triple angle brackets, like <<<output matrix>>>.')
-
+            elif dataset == 'prime_factorization':
+                question = x['question'].replace('Write the factors separated by × (Example: for 12 the answer would be: 2 × 2 × 3)',
+                                                 'Write the factors separated by × and enclose the result within triple angle brackets (Example: for 12 the answer would be: <<<2 × 2 × 3>>>)')
+            elif dataset == 'products':
+                question = x['question'].replace('Give only the result as your final answer',
+                                                 'Give the result enclosed within triple angle brackets as your final answer, like <<<result>>>.')
+            elif dataset == 'propositional_logic':
+                question = x['question'].replace('Return the conclusion logic statement, as your final answer.',
+                                                 'Return the conclusion logic statement enclosed within triple angle brackets, as your final answer, like <<<the conclusion logic statement>>>.')
+            elif dataset == 'puzzle24':
+                question = x['question'] + '5. Enclose the final answer within triple angle brackets, like <<<the final answer>>>.'
+            elif dataset == 'quantum_lock':
+                question = x['question'].replace("Your answer should be a sequence of buttons separated by '→', for example: A → B → C",
+                                                 "Your answer should be a sequence of buttons separated by '→' enclosed within triple angle brackets, for example: <<<A → B → C>>>")
+            elif dataset == 'ransom_note':
+                question = x['question'].replace('return True if you can construct the ransom note using the letters in the magazine, and False otherwise.',
+                                                 'return True if you can construct the ransom note using the letters in the magazine, and False otherwise. Make sure to enclose the answer within triple angle brackets, i.e. "<<<True>>>"/"<<<False>>>".')
+            elif dataset == 'rearc':
+                question = x['question'].replace('Your final answer should just be the text output grid itself.',
+                                                 'Your final answer should be the text output grid enclosed within triple angle brackets, like <<<the text output grid>>>.')
+            elif dataset == 'rectangle_count':
+                question = x['question'].replace('Your output should be a single number, representing the total count of rectangles.',
+                                                 'Your output should be a single number, representing the total count of rectangles, enclosed within triple angle brackets, like <<<the total count of rectangles>>>.')
+            elif dataset == 'rotate_matrix':
+                question = x['question'].replace('Your output should be a matrix in the same format as the input.',
+                                                 'Your output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.')
+            elif dataset == 'rotten_oranges':
+                question = x['question'] + '\nEnclose final answer within triple angle brackets, i.e. <<<number of minutes>>> or <<<-1>>>.'
 
             writer.writerow({
                 'ID': i,
