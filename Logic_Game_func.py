@@ -3906,6 +3906,9 @@ _ _ _ Q _ _ _ _
 3. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"""
     elif dataset_name == 'rotten_oranges':
         pure_answer = 'an integer'
+    elif dataset_name == 'rubiks_cube':
+        pure_answer = 'a string formatted in Singmaster notation'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
 
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''

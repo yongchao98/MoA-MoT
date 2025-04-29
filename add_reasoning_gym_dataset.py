@@ -83,7 +83,8 @@ available_datasets = [
     # 'rearc',
     # 'rectangle_count',
     # 'rotate_matrix',
-    'rotten_oranges',
+    # 'rotten_oranges',
+    'rubiks_cube',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -239,6 +240,8 @@ for dataset in available_datasets:
                                                  'Your output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.')
             elif dataset == 'rotten_oranges':
                 question = x['question'] + '\nEnclose final answer within triple angle brackets, i.e. <<<number of minutes>>> or <<<-1>>>.'
+            elif dataset == 'rubiks_cube':
+                question = x['question'] + '\nEnclose the solution within triple angle brackets, i.e. <<<the solution>>>.'
 
             writer.writerow({
                 'ID': i,
