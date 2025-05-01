@@ -100,7 +100,12 @@ available_datasets = [
     # 'sudoku',
     # 'syllogism',
     # 'time_intervals',
-    'tower_of_hanoi',
+    # 'tower_of_hanoi',
+    # 'tsumego',
+    # 'word_ladder',
+    # 'word_sequence_reversal',
+    # 'word_sorting',
+    'zebra_puzzles',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -312,7 +317,21 @@ For example <<<1 0 3 0 2 0 0 0 1>>> means that you have 1 [A] 0 [B] 3 [C] 0 {A} 
             elif dataset == 'tower_of_hanoi':
                 question = x['question'].replace('Do not include any other text or formatting.',
                                                  'Enclose final answer within triple angle brackets, like <<<the sequence of moves>>>.')
-
+            elif dataset == 'tsumego':
+                question = x['question'].replace("Specify your move in coordinates (e.g. 'C4' for column C, row 4)",
+                                                 "Specify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)")
+            elif dataset == 'word_ladder':
+                question = x['question'].replace('Provide your answer as a comma-separated sequence of uppercase letters without spaces.',
+                                                 'Provide your answer as a comma-separated sequence of uppercase letters without spaces, enclosed within triple angle brackets, like <<<your answer>>>.')
+            elif dataset == 'word_sequence_reversal':
+                question = x['question'].replace('Provide you answer as a comma-separated list of words with a space after the comma.',
+                                                 'Provide your answer as a comma-separated list of words with a space after the comma, enclosed within triple angle brackets, like <<<your answer>>>.')
+            elif dataset == 'word_sorting':
+                question = x['question'].replace('Your output should be a comma-separated list of words, e.g. word_1, word_2, word_3',
+                                                 'Your output should be a comma-separated list of words, enclosed within triple angle brackets, e.g. <<<word_1, word_2, word_3>>>.')
+            elif dataset == 'zebra_puzzles':
+                question = x['question'].replace('Provide only the name of the person as your final answer.',
+                                                 'Provide the name of the person enclosed within triple angle brackets as your final answer, like <<<the name of the person>>>.')
 
             writer.writerow({
                 'ID': i,

@@ -3972,8 +3972,16 @@ Move disk 1 from Peg 1 to Peg 3
 1. Return any sequence of steps describing disk moves you find, whether or not it is enclosed within <<<>>>.
 2. Do not return <<<>>> if input text is not empty.\n
 """
-
-
+    elif dataset_name == 'tsumego':
+        pure_answer = 'coordinates, e.g. D3, H12, K6'
+    elif dataset_name == 'word_ladder':
+        pure_answer = 'a comma-separated sequence of uppercase letters without spaces, e.g. CELL,CALL,PALL,PALS,PATS,PITS,ZITS,ZITI'
+    elif dataset_name == 'word_sequence_reversal':
+        pure_answer = 'a comma-separated list of words with a space after the comma, e.g. "separated, were, place, way, The, condense"'
+    elif dataset_name == 'word_sorting':
+        pure_answer = 'a comma-separated list of words, e.g. "000, 365, exclaimed, _mode, observation, projectors, telephones, turning"'
+    elif dataset_name == 'zebra_puzzles':
+        pure_answer = "A string that represents a person’s name"
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
 
