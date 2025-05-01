@@ -73,7 +73,6 @@ available_datasets = [
     # 'polynomial_equations',
     # 'polynomial_multiplication',
     # 'pool_matrix',
-    # 'power_function',
     # 'prime_factorization',
     # 'products',
     # 'propositional_logic',
@@ -84,7 +83,24 @@ available_datasets = [
     # 'rectangle_count',
     # 'rotate_matrix',
     # 'rotten_oranges',
-    'rubiks_cube',
+    # 'rubiks_cube',
+    # 'rush_hour',
+    # 'self_reference',
+    # 'shortest_path',
+    # 'simple_equations',
+    # 'simple_geometry',
+    # 'simple_integration',
+    # 'sokoban',
+    # 'spell_backward',
+    # 'spiral_matrix',
+    # 'string_insertion',
+    # 'string_manipulation',
+    # 'string_splitting',
+    # 'string_synthesis',
+    # 'sudoku',
+    # 'syllogism',
+    # 'time_intervals',
+    'tower_of_hanoi',
 ]
 
 output_dir = './dataset_gather/reasoning_gym'
@@ -242,6 +258,61 @@ for dataset in available_datasets:
                 question = x['question'] + '\nEnclose final answer within triple angle brackets, i.e. <<<number of minutes>>> or <<<-1>>>.'
             elif dataset == 'rubiks_cube':
                 question = x['question'] + '\nEnclose the solution within triple angle brackets, i.e. <<<the solution>>>.'
+            elif dataset == 'rush_hour':
+                question = x['question'].replace("Specify moves in the format: 'F+1 K+1 M-1 C+3 H+2 ...'",
+                                                 "Specify moves in the format: '<<<F+1 K+1 M-1 C+3 H+2 ...>>>'")
+            elif dataset == 'self_reference':
+                question = x['question'] + '\nEnclose final answer within triple angle brackets, i.e. <<<the number of possible solutions>>>.'
+            # elif dataset == 'sentence_reordering':
+            #     question = x['question'] + '\nEnclose final answer within triple angle brackets, i.e. <<<the restored sentence>>>.'
+            elif dataset == 'shortest_path':
+                question = x['question'].replace('Your output should be a sequence of directions that leads from * to #, e.g. right right down down up left',
+                                                 'Your output should be a sequence of directions that leads from * to #, enclosed within triple angle brackets, e.g. <<<right right down down up left>>>')
+            elif dataset == 'simple_geometry':
+                question = x['question'].replace('Return only the angle as your answer.',
+                                                 'Return only the angle enclosed within triple angle brackets as your answer, like <<<the angle>>>. ')
+            elif dataset == 'simple_integration':
+                question = x['question'] + '\nEnclose final answer within triple angle brackets, i.e. <<<the result of calculation>>>'
+            elif dataset == 'sokoban':
+                question = x['question'].replace('Your solution must be a string of characters',
+                                                 'Your solution must be a string of characters enclosed within triple angle brackets, like <<<a string of characters>>>.')
+            elif dataset == 'spell_backward':
+                question = x['question'] + '\nEnclose final answer within triple angle brackets, i.e. <<<the answer>>>'
+            elif dataset == 'spiral_matrix':
+                question = x['question'].replace('Your output should be a space-separated list of integers, e.g. 1 2 3 4 5 6',
+                                                 'Your output should be a space-separated list of integers enclosed within triple angle brackets, e.g. <<<1 2 3 4 5 6>>>')
+            elif dataset == 'string_insertion':
+                question = x['question'].replace('Your output should be a string that has been modified according to the pattern.',
+                                                 'Your output should be a string that has been modified according to the pattern, enclosed within triple angle brackets, like <<<the string that has been modified>>>.')
+            elif dataset == 'string_manipulation':
+                question = x['question'].replace('Your output should be the final transformed string after applying all the rules.',
+                                                 'Your output should be the final transformed string after applying all the rules, enclosed within triple angle brackets, like <<<the final transformed string>>>.')
+            elif dataset == 'string_splitting':
+                question = x['question'].replace(
+                    """The output should be the count of each machine and part type after the rules have been exhaustively applied in the following order: A B C X Y Z.
+For example 1 0 1 5 4 3 means that you have 1 machine A, 0 machine B, 1 machine C, 5 part X, 4 part Y, and 3 part Z.""",
+                    """The output should be the count of each machine and part type after the rules have been exhaustively applied in the following order: A B C X Y Z.
+Enclose final answer within triple angle brackets, i.e. <<<the count of each machine and part type>>>.
+For example <<<1 0 1 5 4 3>>> means that you have 1 machine A, 0 machine B, 1 machine C, 5 part X, 4 part Y, and 3 part Z."""
+                )
+            elif dataset == 'string_synthesis':
+                question = x['question'].replace(
+                    """The output should be the count of each block type after the rules have been applied in the order they are listed above.
+For example 1 0 3 0 2 0 0 0 1 means that you have 1 [A] 0 [B] 3 [C] 0 {A} 2 {B} 0 {C} 0 (A) 0 (B) 1 (C).""",
+                    """The output should be the count of each block type after the rules have been applied in the order they are listed above.
+Enclose final answer within triple angle brackets, i.e. <<<the count of each block type>>>.
+For example <<<1 0 3 0 2 0 0 0 1>>> means that you have 1 [A] 0 [B] 3 [C] 0 {A} 2 {B} 0 {C} 0 (A) 0 (B) 1 (C)."""
+                )
+            elif dataset == 'sudoku':
+                question = x['question'] + '\nEnclose final answer within triple angle brackets, i.e. <<<the 9x9 grid>>>.'
+            elif dataset == 'syllogism':
+                question = x['question'] + '\n\nEnclose final answer within triple angle brackets, i.e. <<<Yes>>> or <<<No>>>.'
+            elif dataset == 'time_intervals':
+                question = x['question'] + '\nEnclose final answer within triple angle brackets, like <<<the answer>>>.'
+            elif dataset == 'tower_of_hanoi':
+                question = x['question'].replace('Do not include any other text or formatting.',
+                                                 'Enclose final answer within triple angle brackets, like <<<the sequence of moves>>>.')
+
 
             writer.writerow({
                 'ID': i,

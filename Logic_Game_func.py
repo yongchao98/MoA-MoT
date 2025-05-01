@@ -3877,8 +3877,8 @@ _ _ _ Q _ _ _ _
 , the number of rows and columns might be very large
 """
         notes = 'Preserve the original format of the matrix in the input text.\n'
-    elif dataset_name == 'power_function':
-        pure_answer = 'a float'
+    # elif dataset_name == 'power_function':
+    #     pure_answer = 'a float'
     elif dataset_name == 'prime_factorization':
         pure_answer = 'a mathematical formula'
     elif dataset_name == 'products':
@@ -3909,6 +3909,70 @@ _ _ _ Q _ _ _ _
     elif dataset_name == 'rubiks_cube':
         pure_answer = 'a string formatted in Singmaster notation'
         notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'rush_hour':
+        pure_answer = 'A sequence of letter-integer deltas, each formatted as a letter or letters followed by a signed integer, e.g. J+2 AA+1, or F+1 K+1 M-1 C+3 H+2'
+    elif dataset_name == 'self_reference':
+        pure_answer = 'an integer'
+    # elif dataset_name == 'sentence_reordering':
+    #     pure_answer = 'A complete or incomplete sentence (the word order of this sentence might not be quite right)'
+    elif dataset_name == 'shortest_path':
+        pure_answer = 'A sequence composed of the four strings "left", "right", "up", "down", or the single string "infeasible", e.g. "up up", "left up down right right up", "infeasible"'
+        # notes = 'Return any sequence you find, whether or not it is enclosed within <<<>>>.\n'
+    elif dataset_name in ['simple_equations', 'simple_geometry']:
+        pure_answer = 'a number'
+    elif dataset_name == 'simple_integration':
+        pure_answer = 'a mathematical formula, e.g. -5*x**19/2 - 13*x**7 + 6*x + C'
+    elif dataset_name == 'sokoban':
+        pure_answer = 'a string of characters, e.g. URLUURD, UDRRRRRLUUURLURRDUULLLLULDRDRDLUUURRRDRRULLLL'
+    elif dataset_name == 'spell_backward':
+        pure_answer = 'a string'
+    elif dataset_name == 'spiral_matrix':
+        pure_answer = 'a space-separated list of integers, e.g. 7 4 8 2 1 4 1 2 7 9 0 1 8 2 2 9 9 9 6 4 6 0 8 5 9 1 1 9 4 6 0 7 9 5 3 8 4 9 2 5 0 5 1 1 2 1 0 2 7 2 6 1 9 9 3 7 6 9 4 3 2 2 6 9'
+    elif dataset_name in ['string_insertion', 'string_manipulation']:
+        pure_answer = 'a string'
+    elif dataset_name == 'string_splitting':
+        pure_answer = 'a space-separated list of integers, e.g. 1 1 2 1 0 2'
+    elif dataset_name == 'string_synthesis':
+        pure_answer = 'a space-separated list of integers, e.g. 2 2 0 1 0 0 2 1 0'
+    elif dataset_name == 'sudoku':
+        pure_answer = """a 9x9 grid with numbers separated by spaces, and rows separated by newlines, e.g.
+1 5 4 2 9 7 3 8 6
+7 3 6 8 1 4 9 2 5
+8 2 9 3 6 5 4 7 1
+2 8 5 1 7 3 6 4 9
+4 6 1 5 2 9 7 3 8
+3 9 7 4 8 6 5 1 2
+5 7 2 6 3 8 1 9 4
+6 1 3 9 4 2 8 5 7
+9 4 8 7 5 1 2 6 3
+"""
+    elif dataset_name == 'syllogism':
+        pure_answer = 'A string with the value either "Yes" or "No"'
+    elif dataset_name == 'time_intervals':
+        pure_answer = 'A string representing a time duration, such as "2 days, 17:15", "07:21:16", "03:29:15.532", "12 days"'
+    elif dataset_name == 'tower_of_hanoi':
+        pure_answer = """A sequence of steps describing disk moves (potentially containing a very large number of steps), e.g.
+Move disk 1 from Peg 2 to Peg 1
+Move disk 2 from Peg 2 to Peg 3
+Move disk 1 from Peg 1 to Peg 3
+Move disk 3 from Peg 2 to Peg 1
+Move disk 1 from Peg 3 to Peg 2
+Move disk 2 from Peg 3 to Peg 1
+Move disk 1 from Peg 2 to Peg 1
+Move disk 4 from Peg 2 to Peg 3
+Move disk 1 from Peg 1 to Peg 3
+Move disk 2 from Peg 1 to Peg 2
+Move disk 1 from Peg 3 to Peg 2
+Move disk 3 from Peg 1 to Peg 3
+Move disk 1 from Peg 2 to Peg 1
+Move disk 2 from Peg 2 to Peg 3
+Move disk 1 from Peg 1 to Peg 3
+"""
+        notes = """
+1. Return any sequence of steps describing disk moves you find, whether or not it is enclosed within <<<>>>.
+2. Do not return <<<>>> if input text is not empty.\n
+"""
+
 
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
@@ -3967,6 +4031,9 @@ def validate_solution_reasoning_gym(dataset_name, answer, full_data):
         for factor in answer.split("×"):
             if not factor or factor.strip() == '':
                 return False
+    elif dataset_name in ['simple_equations', 'simple_geometry']:
+        answer = convert_str_if_integer(answer)
+
 
     data = reasoning_gym.create_dataset(dataset_name, size=1, seed=1)
     score = data.score_answer(answer=answer, entry=full_data)
@@ -3996,3 +4063,13 @@ def str_to_list_of_lists(s: str) -> list[list[int]] | str:
     except Exception as e:
         print(f'str_to_list_of_lists failed for {s}')
         return s
+
+def convert_str_if_integer(s):
+    try:
+        num = float(s)
+        if num.is_integer():
+            return str(int(num))
+        else:
+            return s  # keep as-is if not integer
+    except ValueError:
+        return s  # keep as-is if not a number
