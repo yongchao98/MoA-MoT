@@ -1,9 +1,8 @@
 # R1-Code-Interpreter
 
 ```
-git clone https://github.com/yongchao98/CodeSteer-v1.0.git
-cd CodeSteer-v1.0
-
+git clone https://github.com/yongchao98/R1-Code-Interpreter.git
+cd R1-Code-Interpreter
 conda create -n R1_code_inter python=3.11
 conda activate R1_code_inter
 pip install reasoning-gym
