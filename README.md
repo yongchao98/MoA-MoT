@@ -9,6 +9,12 @@ pip install reasoning-gym
 pip install -r requirements.txt
 ```
 
+You need to change train_grpo_0_model_base_model.sh so that it requests 8 H100 GPUs or better GPUs.
+```
+cd Search-R1
+sh train_grpo_0_model_base_model.sh
+```
+
 python benchmark_test_baseline_new_1.py
 
 In generation_models.py, set the API keys, do not spread to others.
