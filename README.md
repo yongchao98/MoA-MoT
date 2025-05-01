@@ -1,5 +1,15 @@
 # R1-Code-Interpreter
 
+```
+git clone https://github.com/yongchao98/CodeSteer-v1.0.git
+cd CodeSteer-v1.0
+
+conda create -n R1_code_inter python=3.11
+conda activate R1_code_inter
+pip install reasoning-gym
+pip install -r requirements.txt
+```
+
 python benchmark_test_baseline_new_1.py
 
 In generation_models.py, set the API keys, do not spread to others.
