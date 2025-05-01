@@ -304,7 +304,7 @@ def load_task_dataset(task_name, model_name):
         save_input_dir = 'results_gather/letter_logic_diagram'
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
-        print(f'Letter_logic_diagram, Model_name: {model_name}, CodeSteer\n')
+        print(f'Letter_logic_diagram, Model_name: {model_name}\n')
         puzzles = read_dataset_letter_logic_diagram(dataset_input_dir)
         for puzzle in puzzles:
             question = puzzle['question']
@@ -319,7 +319,7 @@ def load_task_dataset(task_name, model_name):
         save_input_dir = 'results_gather/string_synthesis'
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
-        print(f'String Synthesis, Model_name: {model_name}, CodeSteer\n')
+        print(f'String Synthesis, Model_name: {model_name}\n')
         puzzles = read_dataset_string_synthesis(dataset_input_dir)
         for puzzle in puzzles:
             question = puzzle['question']
@@ -334,7 +334,7 @@ def load_task_dataset(task_name, model_name):
         save_input_dir = 'results_gather/standard_sudoku'
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
-        print(f'Standard Sudoku, Model_name: {model_name}, CodeSteer\n')
+        print(f'Standard Sudoku, Model_name: {model_name}\n')
         puzzles = read_dataset_standard_sudoku(dataset_input_dir)
         question_matrix_list = []
         for puzzle in puzzles:
@@ -352,7 +352,7 @@ def load_task_dataset(task_name, model_name):
         save_input_dir = 'results_gather/permutations_and_combinations'
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
-        print(f'permutations_and_combinations, Model_name: {model_name}, CodeSteer\n')
+        print(f'permutations_and_combinations, Model_name: {model_name}\n')
         puzzles = read_dataset_permutations_and_combinations(dataset_input_dir)
         question_constrained_list = []
         for puzzle in puzzles:
@@ -370,7 +370,7 @@ def load_task_dataset(task_name, model_name):
         save_input_dir = 'results_gather/string_deletion_and_modification'
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
-        print(f'String Deletion And Modification, Model_name: {model_name}, CodeSteer\n')
+        print(f'String Deletion And Modification, Model_name: {model_name}\n')
         puzzles = read_dataset_string_deletion_and_modification(dataset_input_dir)
         for puzzle in puzzles:
             question = puzzle['question']
@@ -385,7 +385,7 @@ def load_task_dataset(task_name, model_name):
         save_input_dir = 'results_gather/minesweeper'
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
-        print(f'Minesweeper, Model_name: {model_name}, CodeSteer\n')
+        print(f'Minesweeper, Model_name: {model_name}\n')
         puzzles = read_dataset_minesweeper(dataset_input_dir)
         for puzzle in puzzles:
             question = puzzle['question']
@@ -400,7 +400,7 @@ def load_task_dataset(task_name, model_name):
         save_input_dir = 'results_gather/cryptanalysis'
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
-        print(f'Cryptanalysis, Model_name: {model_name}, CodeSteer\n')
+        print(f'Cryptanalysis, Model_name: {model_name}\n')
         puzzles = read_dataset_cryptanalysis(dataset_input_dir)
         for puzzle in puzzles:
             question = puzzle['question']
@@ -415,7 +415,7 @@ def load_task_dataset(task_name, model_name):
         save_input_dir = 'results_gather/string_splitting'
         if not os.path.exists(save_input_dir):
             os.makedirs(save_input_dir)
-        print(f'String Splitting, Model_name: {model_name}, CodeSteer\n')
+        print(f'String Splitting, Model_name: {model_name}\n')
         puzzles = read_dataset_string_splitting(dataset_input_dir)
         for puzzle in puzzles:
             question = puzzle['question']
@@ -593,10 +593,14 @@ def code_interpreter_func(response):
         output = result.stdout
         errors = result.stderr
     except subprocess.TimeoutExpired as e:
-        output = e.stdout or ""
-        errors = (e.stderr or "") + (
-            f"\nTimeoutExpired: Command '{e.cmd}' timed out after {e.timeout} seconds"
-        )
+        try:
+            output = e.stdout or ""
+            errors = (e.stderr or "") + (
+                f"\nTimeoutExpired: Command '{e.cmd}' timed out after {e.timeout} seconds"
+            )
+        except:
+            output = ""
+            errors = f"TimeoutExpired: Command timed out after 60 seconds"
     return output[:1000], errors[:1000]
 
 
@@ -604,8 +608,16 @@ def code_interpreter_func(response):
 def verify_solution_func_gather(i, task_name, response, question, solution, target, puzzles, solution_data_list, solution_list, question_constrained_list, question_matrix_list, number_list_item, word, letter):
     # Verify solution based on task type
     ### Unchanged
+    if not isinstance(response, str):
+        print(f"Error: response is not a string, but {type(response)}")
+        return False, False
+
     original_response = response
     response, errors = code_interpreter_func(response)
+
+    if not isinstance(response, str):
+        print(f"Error: response is not a string, but {type(response)}")
+        return False, False
 
     ### To do, add tasks to extract the solution from the generated response and verify the correctness, here we check both response and original_response
     ### Take care the names of variables to be the same as other tasks since we need to save several variables in the following process.
@@ -656,7 +668,6 @@ def verify_solution_func_gather(i, task_name, response, question, solution, targ
         parsed_solution_1 = [elem.strip().strip('"\'') for elem in solution_1.split(',')]
         puzzle = puzzles[i]
         True_false_result_1, message_1 = evaluator.verify_solution(puzzle, parsed_solution_1)
-        print('Feedback1: ', message_1)
 
         output_2 = None;
         iteration_num_2 = 0
@@ -671,7 +682,6 @@ def verify_solution_func_gather(i, task_name, response, question, solution, targ
         extracted_text_2 = solution_2
         parsed_solution_2 = [elem.strip().strip('"\'') for elem in solution_2.split(',')]
         True_false_result_2, message_2 = evaluator.verify_solution(puzzle, parsed_solution_2)
-        print('Feedback2: ', message_2)
     elif task_name == 'eight_queens':
         solution_data = solution_data_list[i]
         output_1 = None;
@@ -1541,7 +1551,7 @@ class ArithmeticPuzzleEvaluator:
                 sample_id += 1
                 
             except Exception as e:
-                print(f"Error reading sample_{sample_id}: {e}")
+                #print(f"Error reading sample_{sample_id}: {e}")
                 break
         
         return puzzles
@@ -1574,7 +1584,7 @@ class ArithmeticPuzzleEvaluator:
             return elements
             
         except Exception as e:
-            print(f"Error parsing LLM answer: {e}")
+            #print(f"Error parsing LLM answer: {e}")
             return None
 
     def verify_solution(self, puzzle: PuzzleInstance, parsed_solution) -> Tuple[bool, str]:
@@ -1800,7 +1810,7 @@ def read_dataset_eight_queens(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -1822,7 +1832,7 @@ def read_dataset_eight_queens(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -1895,7 +1905,7 @@ def read_dataset_syn_decom(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -1917,7 +1927,7 @@ def read_dataset_syn_decom(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -1957,7 +1967,7 @@ def read_dataset_mahjong(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -1979,7 +1989,7 @@ def read_dataset_mahjong(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -2022,7 +2032,7 @@ def read_dataset_stat_counting(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2044,7 +2054,7 @@ def read_dataset_stat_counting(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -2089,7 +2099,7 @@ def read_dataset_new_op(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2111,7 +2121,7 @@ def read_dataset_new_op(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -2159,7 +2169,7 @@ def read_dataset_light(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2181,7 +2191,7 @@ def read_dataset_light(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -2230,7 +2240,7 @@ def read_dataset_reversi(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2252,7 +2262,7 @@ def read_dataset_reversi(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -2301,7 +2311,7 @@ def read_dataset_matrix_trans(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2323,7 +2333,7 @@ def read_dataset_matrix_trans(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -2373,7 +2383,7 @@ def read_dataset_2048(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2395,7 +2405,7 @@ def read_dataset_2048(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -2445,7 +2455,7 @@ def read_dataset_pooling(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2467,7 +2477,7 @@ def read_dataset_pooling(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -2568,7 +2578,7 @@ def read_dataset_constrained(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2590,7 +2600,7 @@ def read_dataset_constrained(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
     #random.shuffle(shuffled_puzzles)
@@ -2666,7 +2676,7 @@ def read_dataset_logic_puzzle(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2688,7 +2698,7 @@ def read_dataset_logic_puzzle(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
     #random.shuffle(shuffled_puzzles)
@@ -2715,7 +2725,7 @@ def read_dataset_pattern_recognition(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2737,7 +2747,7 @@ def read_dataset_pattern_recognition(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -2782,7 +2792,7 @@ def read_dataset_string_insertion(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2804,7 +2814,7 @@ def read_dataset_string_insertion(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -2848,7 +2858,7 @@ def read_dataset_letter_logic_diagram(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2870,7 +2880,7 @@ def read_dataset_letter_logic_diagram(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
     #random.shuffle(shuffled_puzzles)
@@ -2930,7 +2940,7 @@ def read_dataset_string_synthesis(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -2952,7 +2962,7 @@ def read_dataset_string_synthesis(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -3004,7 +3014,7 @@ def read_dataset_standard_sudoku(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -3026,7 +3036,7 @@ def read_dataset_standard_sudoku(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -3110,7 +3120,7 @@ def read_dataset_permutations_and_combinations(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -3132,7 +3142,7 @@ def read_dataset_permutations_and_combinations(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -3247,7 +3257,7 @@ def parse_constraints(constraints_text: str) -> List[Tuple]:
             continue
 
         # If no known pattern matched:
-        print(f"[Warning] Unrecognized constraint format:\n  {line}")
+        #print(f"[Warning] Unrecognized constraint format:\n  {line}")
 
     return parsed_constraints
 
@@ -3365,7 +3375,7 @@ def read_dataset_string_deletion_and_modification(dataset_dir: str) -> List[Dict
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -3387,7 +3397,7 @@ def read_dataset_string_deletion_and_modification(dataset_dir: str) -> List[Dict
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -3431,7 +3441,7 @@ def read_dataset_minesweeper(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -3453,7 +3463,7 @@ def read_dataset_minesweeper(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -3510,7 +3520,7 @@ def read_dataset_string_deletion_and_modification(dataset_dir: str) -> List[Dict
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -3532,7 +3542,7 @@ def read_dataset_string_deletion_and_modification(dataset_dir: str) -> List[Dict
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -3576,7 +3586,7 @@ def read_dataset_cryptanalysis(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -3598,7 +3608,7 @@ def read_dataset_cryptanalysis(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -3644,23 +3654,6 @@ def  validate_solution_cryptanalysis(
     else:
         return False, ''
 
-    '''
-    try:
-        if response == "[]" or response == "":
-            return False, "Empty answer"
-        solution_str = ''.join(solution_data)
-        print(f'solution_str: {solution_str}')
-
-        if response == solution_str or response == str(solution_data):
-            print("The strings are the same.")
-            return True, "Correct Answer"
-        else:
-            print("The strings are different.")
-            return False, "False"
-    except:
-        return False, f"answer format is not correct"
-    '''
-
 
 #####String Splitting#######
 def read_dataset_string_splitting(dataset_dir: str) -> List[Dict]:
@@ -3671,7 +3664,7 @@ def read_dataset_string_splitting(dataset_dir: str) -> List[Dict]:
     while True:
         sample_dir = os.path.join(dataset_dir, f'sample_{sample_id}')
         if not os.path.exists(sample_dir):
-            print(f'No sample_{sample_dir} found')
+            #print(f'No sample_{sample_dir} found')
             break
 
         try:
@@ -3693,7 +3686,7 @@ def read_dataset_string_splitting(dataset_dir: str) -> List[Dict]:
             sample_id += 1
 
         except Exception as e:
-            print(f"Error reading sample_{sample_id}: {e}")
+            #print(f"Error reading sample_{sample_id}: {e}")
             break
 
     shuffled_puzzles = puzzles.copy()  # Create a copy to avoid modifying original
@@ -4258,22 +4251,16 @@ def check_llm_response_BoxNet_V2(response, sample):
     try:
         json_str = extract_json_from_response(response)
         plan = json.loads(json_str)
-        print('1')
     except Exception as e:
         try:
             plan = json.loads(response)
-            print('2')
         except Exception as e2:
             try:
                 modify_response = extract_equation_with_GPT4(response)
                 json_str = extract_json_from_response(modify_response)
                 plan = json.loads(json_str)
-                print('3')
             except:
                 plan = []
-
-    print(f'plan: {plan}')
-    print(f'Length of plan: {len(plan)}')
 
     if not isinstance(plan, list):
         return False, "The extracted JSON is not a list of states."
@@ -4307,14 +4294,14 @@ def read_dataset_boxlift(dataset_dir: str) -> List[Dict]:
         for num_boxes, num_lifters, min_box_weight, max_box_weight, min_lifter_capacity, max_lifter_capacity in \
             [(8, 3, 10, 100, 40, 80), (12, 4, 20, 200, 30, 120), (16, 5, 30, 300, 40, 160), (20, 6, 40, 400, 50, 200), (24, 6, 40, 400, 50, 200),
              (8, 4, 10, 100, 40, 80), (12, 5, 20, 200, 30, 120), (16, 6, 30, 300, 40, 160), (20, 7, 40, 400, 50, 200), (24, 7, 40, 400, 50, 200)]:
-            print(f'\n\nNum_boxes = {num_boxes}, Num_lifters = {num_lifters}, Iteration_num = {iteration_num}')
+            #print(f'\n\nNum_boxes = {num_boxes}, Num_lifters = {num_lifters}, Iteration_num = {iteration_num}')
 
             boxes, lifters = read_test_case(dataset_dir + f'/BoxLift_{num_boxes}_{num_lifters}/BoxLift{iteration_num}/BoxLift.json')
-            print(f"Initial boxes: {boxes}")
-            print(f"Initial lifters: {lifters}")
+            #print(f"Initial boxes: {boxes}")
+            #print(f"Initial lifters: {lifters}")
 
             estimated_steps = estimate_steps(boxes, lifters)
-            print(f"Estimated number of steps: {estimated_steps}")
+            #print(f"Estimated number of steps: {estimated_steps}")
             question = create_prompt_boxlift(boxes, lifters, estimated_steps)
             puzzles.append({
                 'solution_data': {
@@ -4474,8 +4461,8 @@ def read_dataset_blocksworld(dataset_dir: str) -> List[Dict]:
                                                    f"{num_blocks}_{initial_stacks}_{goal_stacks}_{index}/")
             # Read states from file
             initial_state, goal_state = read_state_from_file(dataset_base_dir_sample + f"blocksworld_task.txt")
-            print(
-                f'num_blocks: {num_blocks}, initial_stacks: {initial_stacks}, goal_stacks: {goal_stacks}, index: {index}')
+            #print(
+            #    f'num_blocks: {num_blocks}, initial_stacks: {initial_stacks}, goal_stacks: {goal_stacks}, index: {index}')
             # Generate prompt from the read states
             question = state_to_prompt(initial_state, goal_state)
             puzzles.append({
@@ -4699,7 +4686,7 @@ def check_llm_response_gridworld(response: str, sample: dict) -> Tuple[bool, str
     2. Parse it as a list of grid cells (strings).
     3. Check the plan for legality.
     """
-    print('response:', response)
+    #print('response:', response)
     try:
         # First try to parse the entire response
         plan = ast.literal_eval(response)
@@ -4795,7 +4782,7 @@ def validate_solution_reasoning_gym(dataset_name, answer, full_data):
 
     data = reasoning_gym.create_dataset(dataset_name, size=1, seed=1)
     score = data.score_answer(answer=answer, entry=full_data)
-    print(f"answer: {answer}, full_data: {full_data['answer']}, score: {score}")
+    #print(f"answer: {answer}, full_data: {full_data['answer']}, score: {score}")
 
     if dataset_name == 'binary_matrix' and abs(score - 0.1) < 1e-6:
         return True
@@ -4816,8 +4803,8 @@ def str_to_list_of_lists(s: str) -> list[list[int]] | str:
         if isinstance(result, list) and all(isinstance(row, list) for row in result):
             return result
         else:
-            print(f'str_to_list_of_lists failed for {s}')
+            #print(f'str_to_list_of_lists failed for {s}')
             return s
     except Exception as e:
-        print(f'str_to_list_of_lists failed for {s}')
+        #print(f'str_to_list_of_lists failed for {s}')
         return s

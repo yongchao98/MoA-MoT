@@ -128,6 +128,13 @@ def save_file_func(save_code_dir, response_list, user_prompt_list, question,
         print(f"Error saving data: {str(e)}")
 
 def extract_and_check(response):
+    if isinstance(response, (bytes, bytearray)):
+        response = response.decode('utf-8', errors='ignore')
+
+    if type(response) != str:
+        print(f"Error: response is not a string, but {type(response)}")
+        return '', False
+
     matches = re.findall(r'<<<(.*?)>>>', response, re.DOTALL)
     extracted_text = matches[-1] if matches else ''
     itertools_present = 'code_interpreter' in response or '\n```python' in response
@@ -257,6 +264,10 @@ def GPT_response(system_message, question, model_name, code_interpreter, user_pr
     for iteration_num in range(25):
         try:
             response = GPT_response_once(system_message, question, model_name, code_interpreter, user_prompt_list, response_total_list, logprobs=logprobs, max_tokens_num=max_tokens_num, temperature=temperature)
+            if response == None:
+                print(f"Iteration {iteration_num + 1}: Received None response, retrying...")
+                time.sleep(1)
+                continue
             return response
         except Exception as e:
             print(f"Error on iteration {iteration_num + 1}: {e}")

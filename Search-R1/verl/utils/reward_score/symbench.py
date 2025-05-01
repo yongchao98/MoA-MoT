@@ -38,10 +38,23 @@ def compute_score_symbench(solution_str, ground_truth, method='strict', format_s
 
     question = R1_code_interpreter_data_syn_prompt1 + 'question: ' + question + '\n'
 
-    True_false_result_1, True_false_result_2 = verify_solution_func_gather(i, task_name, response, question,
+    if isinstance(response, (bytes, bytearray)):
+        response = response.decode('utf-8', errors='ignore')
+
+    if not isinstance(response, str):
+        print(f"Error: response is not a string, but {type(response)}")
+        return 0
+
+    if type(response) != str:
+        print(f"Error: response is not a string, but {type(response)}")
+        return 0
+    try:
+        True_false_result_1, True_false_result_2 = verify_solution_func_gather(i, task_name, response, question,
                                                                            solution, target, puzzles, solution_data_list,
-                                                                           solution_list, question_constrained_list, question_matrix_list,
-                                                                           number_list_item, word, letter)
+                                                                           solution_list, question_constrained_list, question_matrix_list, number_list_item, word, letter)
+    except:
+        print(f"Error: verify_solution_func_gather failed for task {task_name} with index {i}")
+        return 0
 
     ### Remain unchanged
     if True_false_result_1 == False and True_false_result_2 == False:

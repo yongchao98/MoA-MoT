@@ -29,15 +29,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     ### 33 tasks from SymBench
-    env_name_list1 = ['eight_queens', 'pooling', 'reversi', 'light_puzzles', 'new_operator', 'mahjong_pattern',
+    env_name_list1 = ['pooling', 'reversi', 'light_puzzles', 'new_operator', 'mahjong_pattern',
                       'statistical_counting', 'synthesis_decomposition', '2048', 'matrix_transformation']
     env_name_list2 = ['pattern_recognition', 'constrained_linear_arrangement', 'string_synthesis', 'logic_puzzle',
                       'string_insertion', 'letter_logic_diagram', 'standard_sudoku', 'string_deletion_and_modification']
     env_name_list3 = ['string_splitting', 'permutations_and_combinations', 'logical_equation',
-                      'combinatorial_calculation', 'cryptanalysis', 'game24', 'BoxLift', 'Blocksworld', 'gsm',
-                      'math_geometry']
-    env_name_list4 = ['BoxLift', 'Blocksworld', 'letters', 'number_multiply', 'math_counting_and_probability',
-                      'BoxNet_v2', 'Gridworld']
+                      'combinatorial_calculation', 'cryptanalysis', 'BoxLift', 'Blocksworld', 'gsm', 'math_geometry']
+    env_name_list4 = ['eight_queens', 'game24', 'letters', 'number_multiply', 'math_counting_and_probability', 'BoxNet_v2', 'Gridworld']
 
     ### 27 tasks from BigBench Hard
     env_name_big_bench_hard = ['big_bench_hard:' + task for task in
@@ -82,7 +80,7 @@ if __name__ == '__main__':
         task_train_count = 0
         task_test_count = 0
 
-        for i in range(min(150, question_num_total)):
+        for i in range(min(5, question_num_total)):
             solution = '';
             number_list_item = '';
             target = '';
@@ -164,8 +162,8 @@ if __name__ == '__main__':
 
     train_ds = Dataset.from_list(train_dataset_list)  # Changed from train_list to train_dataset_list
     test_ds = Dataset.from_list(test_dataset_list)  # Changed from test_list to test_dataset_list
-    train_ds.to_parquet(os.path.join(local_dir, 'train_symbench.parquet'))
-    test_ds.to_parquet(os.path.join(local_dir, 'test_symbench.parquet'))
+    train_ds.to_parquet(os.path.join(local_dir, 'train_symbench_3_simple.parquet'))
+    test_ds.to_parquet(os.path.join(local_dir, 'test_symbench_3_simple.parquet'))
 
     '''
     # Save datasets as JSON Lines
