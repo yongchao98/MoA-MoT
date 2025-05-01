@@ -3695,15 +3695,15 @@ def extract_equation_with_GPT4_reasoning_gym(response, dataset_name):
     elif dataset_name == 'binary_matrix':
         pure_answer = 'an integer grid like "3 2 1\n2 1 0\n3 5 6" or a 2D list (matrix) of integers like [[3, 2, 1], [2, 1, 0], [3, 5, 6]], where both the number of rows and columns can be large'
         notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
-    elif dataset_name == 'boxnet':
-        pure_answer = """
-a json str like
-[
-    {"Agent[0.5, 1.5]": "move(box_red, square[1.5, 1.5])"},
-    {"Agent[1.5, 0.5]": "move(box_blue, square[2.5, 0.5])"},
-    {"Agent[2.5, 1.5]": "move(box_green, square[2.5, 0.5])"}
-]
-"""
+#     elif dataset_name == 'boxnet':
+#         pure_answer = """
+# a json str like
+# [
+#     {"Agent[0.5, 1.5]": "move(box_red, square[1.5, 1.5])"},
+#     {"Agent[1.5, 0.5]": "move(box_blue, square[2.5, 0.5])"},
+#     {"Agent[2.5, 1.5]": "move(box_green, square[2.5, 0.5])"}
+# ]
+# """
     elif dataset_name == 'caesar_cipher':
         pure_answer = 'decrypted Caesar cipher text'
     elif dataset_name == 'calendar_arithmetic':

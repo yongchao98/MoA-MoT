@@ -157,8 +157,8 @@ for dataset in available_datasets:
                                                  'Respond only with the exact output of the program enclosed in triple angle brackets, like this: <<<output>>>.')
             elif dataset == 'binary_matrix':
                 question = x['question'] + '\nYour final answer should be the output matrix enclosed in triple angle brackets, like this <<<output matrix>>>.'
-            elif dataset == 'boxnet':
-                question = x['question'] + '\nOutput action plan enclosed in triple angle brackets, like this <<<action plan>>>.'
+            # elif dataset == 'boxnet':
+            #     question = x['question'] + '\nOutput action plan enclosed in triple angle brackets, like this <<<action plan>>>.'
             elif dataset == 'codeio':
                 question = x['question'].replace(' without writing any code', '').replace('in the form of a JSON object', 'in the form of a JSON object enclosed in triple angle brackets, like this <<<JSON object>>>')
             elif dataset == 'cryptarithm':
