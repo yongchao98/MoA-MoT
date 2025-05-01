@@ -1,3 +1,15 @@
+#!/bin/bash
+#SBATCH --job-name=GRPO-1
+#SBATCH --partition=seas_gpu,gpu_requeue,serial_requeue,gpu
+#SBATCH -n 16 # Number of cores
+#SBATCH --gres=gpu:8
+#SBATCH --constraint="h100"
+#SBATCH -N 1 # Ensure that all cores are on one machine
+#SBATCH -t 0-72:00 # Runtime in D-HH:MM
+#SBATCH --mem=200G # Memory pool for all cores in MB
+#SBATCH -o Qwen-7B-1M-GRPO-1.out   # File to which STDOUT will be written, %j inserts jobid
+#SBATCH -e Qwen-7B-1M-GRPO-1.err   # File to which STDERR will be written, %j inserts jobid
+
 export WANDB_API_KEY="59d0bd7f2a4b1cb79ab415de0ec89c0bd3d5dc0d"
 export PYTHONPATH=/proj/long-multi/kqian/speech_2/R1-Code-Interpreter/Search-R1/r1_code_inter:$PYTHONPATH
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
