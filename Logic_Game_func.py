@@ -3732,7 +3732,8 @@ def extract_equation_with_GPT4_reasoning_gym(response, dataset_name):
         notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
     elif dataset_name == 'cryptarithm':
         pure_answer = 'a comma separated mapping from letters to digits, for example A=1,B=2,C=3'
-    elif dataset_name in ['decimal_arithmetic', 'decimal_chain_sum']:
+    # elif dataset_name in ['decimal_arithmetic', 'decimal_chain_sum']:
+    elif dataset_name in ['decimal_arithmetic']:
         pure_answer = 'a float number'
     elif dataset_name == 'dice':
         pure_answer = 'a fraction (e.g. 7/10, 161/302)'

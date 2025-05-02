@@ -33,7 +33,6 @@ available_datasets = [
     'course_schedule',
     'cryptarithm',
     'decimal_arithmetic',
-    'decimal_chain_sum',
     'dice',
     'emoji_mystery',
     'family_relationships',
