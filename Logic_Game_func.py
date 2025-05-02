@@ -3690,6 +3690,10 @@ def extract_equation_with_GPT4_reasoning_gym(response, dataset_name):
 
     if dataset_name in ['arc_agi']:
         pure_answer = 'an integer grid like "2 6 6 1\n6 3 0 1\n1 0 2 4\n9 3 8 0", the number of rows and columns might be very large'
+        notes = """# Notes
+1. Return any integer grid you find, whether or not it is enclosed within <<<>>>. 
+2. Do not return <<<>>> if input text is not empty. 
+3. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"""
     elif dataset_name == 'basic_arithmetic':
         pure_answer = 'a number'
     elif dataset_name == 'binary_matrix':
