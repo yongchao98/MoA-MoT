@@ -4722,27 +4722,307 @@ def read_samples_gridworld(filename="gridworld_sample_6x7_7.json"):
 ##### Reasoning Gym #####
 def extract_equation_with_GPT4_reasoning_gym(response, dataset_name):
     pure_answer = ''
+    notes = ''
+
     if dataset_name in ['arc_agi']:
         pure_answer = 'an integer grid like "2 6 6 1\n6 3 0 1\n1 0 2 4\n9 3 8 0", the number of rows and columns might be very large'
+        notes = """# Notes
+1. Return any integer grid you find, whether or not it is enclosed within <<<>>>. 
+2. Do not return <<<>>> if input text is not empty. 
+3. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"""
     elif dataset_name == 'basic_arithmetic':
         pure_answer = 'a number'
     elif dataset_name == 'binary_matrix':
         pure_answer = 'an integer grid like "3 2 1\n2 1 0\n3 5 6" or a 2D list (matrix) of integers like [[3, 2, 1], [2, 1, 0], [3, 5, 6]], where both the number of rows and columns can be large'
-    elif dataset_name == 'boxnet':
-        pure_answer = """
-a json str like
-[
-    {"Agent[0.5, 1.5]": "move(box_red, square[1.5, 1.5])"},
-    {"Agent[1.5, 0.5]": "move(box_blue, square[2.5, 0.5])"},
-    {"Agent[2.5, 1.5]": "move(box_green, square[2.5, 0.5])"}
-]
-"""
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    #     elif dataset_name == 'boxnet':
+    #         pure_answer = """
+    # a json str like
+    # [
+    #     {"Agent[0.5, 1.5]": "move(box_red, square[1.5, 1.5])"},
+    #     {"Agent[1.5, 0.5]": "move(box_blue, square[2.5, 0.5])"},
+    #     {"Agent[2.5, 1.5]": "move(box_green, square[2.5, 0.5])"}
+    # ]
+    # """
     elif dataset_name == 'caesar_cipher':
         pure_answer = 'decrypted Caesar cipher text'
     elif dataset_name == 'calendar_arithmetic':
         pure_answer = 'day of the week, integer or Yes/No'
     elif dataset_name == 'circuit_logic':
         pure_answer = '0 or 1'
+    elif dataset_name == 'codeio':
+        pure_answer = ('a JSON object or a str in JSON format, or a str in ```json\n<str>\n```, or a single str\n'
+                       "For example: {'value': 12}, or ```json\n{'a': 1, 'bb': np.float32(3.2)}\n```, or \"Correct\"")
+        notes = f'If the input text does not have <<<final answer>>>, but you find {pure_answer}, add <<<>>> around it and return your answer. For a str in ```json\n<str>\n```, only return str without ```json and ```.\n'
+    elif dataset_name == 'color_cube_rotation':
+        pure_answer = 'name of a color'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'complex_arithmetic':
+        pure_answer = 'a complex number (which may contain only a real or imaginary part)'
+    elif dataset_name in ['count_bits', 'count_primes']:
+        pure_answer = 'an integer'
+    elif dataset_name == 'countdown':
+        pure_answer = 'a mathematical formula'
+    elif dataset_name == 'course_schedule':
+        pure_answer = 'a boolean value (True or False)'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'cryptarithm':
+        pure_answer = 'a comma separated mapping from letters to digits, for example A=1,B=2,C=3'
+    # elif dataset_name in ['decimal_arithmetic', 'decimal_chain_sum']:
+    elif dataset_name in ['decimal_arithmetic']:
+        pure_answer = 'a float number'
+    elif dataset_name == 'dice':
+        pure_answer = 'a fraction (e.g. 7/10, 161/302)'
+    elif dataset_name == 'emoji_mystery':
+        pure_answer = 'a sentence in natural language'
+        notes = 'Return any sentence you find enclosed with <<<>>>.\n'
+    elif dataset_name == 'family_relationships':
+        pure_answer = 'a single word that represents a family relationship, e.g., father, wife, mother-in-law'
+    elif dataset_name == 'figlet_font':
+        pure_answer = 'a word'
+        notes = 'Return any word you find enclosed with <<<>>>.\n'
+    elif dataset_name == 'fraction_simplification':
+        pure_answer = 'a fraction (e.g. 7/10, $\\frac{261}{316}$, $\\dfrac{1062}{2579}$)'
+    elif dataset_name == 'futoshiki':
+        pure_answer = """n x n Futoshiki puzzle, e.g.
+4   3   2   6   5   1
+
+1   4   5   2   3   6
+
+3   1   4   5   6 > 2
+            ∨       ∧
+5   6   1   4   2   3
+
+6 > 2   3   1   4   5
+    ∧                
+2   5   6   3   1   4
+"""
+    elif dataset_name == 'game_of_life':
+        pure_answer = """grid in JSON format, e.g.
+[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,1,1,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]
+"""
+    elif dataset_name == 'game_of_life_halting':
+        pure_answer = 'a boolean value (True or False)'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'gcd':
+        pure_answer = 'an integer'
+    elif dataset_name == 'graph_color':
+        pure_answer = 'JSON map of vertices to colors'
+    elif dataset_name == 'group_anagrams':
+        pure_answer = "a list of lists of strings, e.g. [['eat', 'tea'], ['tan', 'nat'], ['apple']]"
+        notes = 'If the input contains two identical lists—either as separate lists or one wrapped in triple brackets—return only the first list.'
+        # notes = ("Return any list of lists of strings you find enclosed with <<<>>>.\n"
+        #          "When extracting, do not omit any brackets from either the inner or outer lists. For example, "
+        #          "for <<<[['eat', 'tea'], ['tan', 'nat']]>>>, you should return [['eat', 'tea'], ['tan', 'nat']], "
+        #          "but do not return [['eat', 'tea'], ['tan', 'nat'] (omitted the second bracket of outer list) or "
+        #          "['eat', 'tea'], ['tan', 'nat']] (omitted the first bracket of outer list).\n")
+    elif dataset_name == 'gsm_symbolic':
+        pure_answer = 'an integer or a float'
+    elif dataset_name == 'intermediate_integration':
+        pure_answer = 'a mathematical formula'
+    elif dataset_name == 'isomorphic_strings':
+        pure_answer = 'a boolean value (True or False)'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'jugs':
+        pure_answer = 'a JSON-parsable list'
+    elif dataset_name == 'knights_knaves':
+        pure_answer = 'a string'
+    elif dataset_name in ['largest_island', 'lcm', 'leg_counting', 'letter_counting']:
+        pure_answer = 'an integer'
+    elif dataset_name == 'letter_jumble':
+        pure_answer = 'a sentence'
+        notes = '1. Return any sentence you find enclosed with <<<>>>.\n2. Do not alter the sequence of letters in the sentence found within the input text.'
+    elif dataset_name == 'list_functions':
+        pure_answer = 'a list of integer/integers, e.g. [12], [60, 25, 327]'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'mahjong_puzzle':
+        pure_answer = 'one of the following: "Peng", "Chi", or "Pass" (without quotes)'
+        notes = 'Return any word you find enclosed with <<<>>>.\n'
+        # notes = 'If there are more than one "<<<Peng>>>", "<<<Chi>>>", or "<<<Pass>>>" (without quotes), return <<<>>>.\n'
+    elif dataset_name == 'manipulate_matrix':
+        pure_answer = 'an integer matrix, e.g. 1 3 3\n1 6 2, the number of rows and columns might be very large'
+        notes = 'Return any matrix you find enclosed within <<<>>>. Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'maze':
+        pure_answer = 'an integer'
+    elif dataset_name == 'mini_sudoku':
+        pure_answer = 'a 4x4 integer matrix, e.g. 1 2 3 4\n2 3 4 1\n3 4 1 2\n4 1 2 3'
+    elif dataset_name == 'modulo_grid':
+        pure_answer = """a grid composed of '✅' and '❌', like this:
+❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅
+❌❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌
+❌✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌
+✅❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌
+❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌
+❌❌❌❌❌❌❌❌✅❌❌❌❌❌❌❌❌❌❌❌
+"""
+        notes = "Return any grid you find composed of '✅' and '❌' or any grid you find enclosed within <<<>>>. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"
+    elif dataset_name == 'n_queens':
+        pure_answer = """a grid composed of 'Q' and '_', like this:
+_ _ Q _ _ _ _ _
+_ _ _ _ _ Q _ _
+_ Q _ _ _ _ _ _
+_ _ _ _ Q _ _ _
+_ _ _ _ _ _ _ Q
+Q _ _ _ _ _ _ _
+_ _ _ _ _ _ Q _
+_ _ _ Q _ _ _ _
+"""
+        notes = "Return any grid you find composed of 'Q' and '_' or any grid you find enclosed within <<<>>>. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"
+    elif dataset_name == 'needle_haystack':
+        pure_answer = 'a name (string)'
+    elif dataset_name == 'number_filtering':
+        pure_answer = 'a list of numbers (integers and floats)'
+    elif dataset_name == 'number_format':
+        pure_answer = 'a number'
+    elif dataset_name == 'number_sequence':
+        pure_answer = 'an integer'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'number_sorting':
+        pure_answer = 'a list of numbers'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'palindrome_generation':
+        pure_answer = 'a string which is a palindrome'
+    elif dataset_name == 'palindrome_partitioning':
+        pure_answer = """A list of lists of strings, where each string is a palindrome, e.g. <<<[["x", "h", "x", "w", "k", "l", "k", "i"], ["x", "h", "x", "w", "klk", "i"], ["xhx", "w", "k", "l", "k", "i"], ["xhx", "w", "klk", "i"]]>>>. The list may be very long."""
+        notes = 'If you find any list enclosed within <<<>>>, return it, and do not return <<<>>>. The list may be very long.\n'
+    elif dataset_name == 'polynomial_equations':
+        pure_answer = 'a decimal number or comma-separated decimal numbers'
+    elif dataset_name == 'polynomial_multiplication':
+        pure_answer = 'a polynomial, e.g. -1220*x**4 + 4130*x**3 - 73*x**2 + 12506*x + 2'
+    elif dataset_name == 'pool_matrix':
+        pure_answer = """an integer matrix or a float matrix, e.g. 
+5 7
+3 9
+0 8
+, or
+[[5 7], [3 9], [0 8]]
+, or
+5.0 3.25 3.75 2.5 7.0
+4.0 3.25 3.75 4.75 6.0
+, or
+[[5.0 3.25 3.75 2.5 7.0], [4.0 3.25 3.75 4.75 6.0]]
+, the number of rows and columns might be very large
+"""
+        notes = 'Preserve the original format of the matrix in the input text.\n'
+    # elif dataset_name == 'power_function':
+    #     pure_answer = 'a float'
+    elif dataset_name == 'prime_factorization':
+        pure_answer = 'a mathematical formula'
+    elif dataset_name == 'products':
+        pure_answer = 'an integer'
+    elif dataset_name == 'puzzle24':
+        pure_answer = 'a mathematical formula'
+    elif dataset_name == 'quantum_lock':
+        pure_answer = "a sequence of letters separated by '→', for example: A → B → C"
+    elif dataset_name == 'ransom_note':
+        pure_answer = 'a boolean value (True or False)'
+        notes = 'Return any boolean value you find enclosed with <<<>>>. Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'rearc':
+        pure_answer = 'an integer grid, e.g. 1 3 2\n1 1 0\n7 6 3\n2 5 1\n5 9 2, the number of rows and columns might be very large.'
+        notes = """# Notes 
+1. Return any integer grid you find, whether or not it is enclosed within <<<>>>. 
+2. Do not return <<<>>> if input text is not empty. 
+3. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"""
+    elif dataset_name == 'rectangle_count':
+        pure_answer = 'an integer'
+    elif dataset_name == 'rotate_matrix':
+        pure_answer = 'an integer grid, e.g. 1 3 2\n1 1 0\n7 6 3\n2 5 1\n5 9 2, [[1, 3, 2], [1, 1, 0], [7, 6, 3], [2, 5, 1], [5, 9, 2]], the number of rows and columns might be very large.'
+        notes = """# Notes
+1. Return any integer grid you find, whether or not it is enclosed within <<<>>>. 
+2. Do not return <<<>>> if input text is not empty. 
+3. Do not return answer like <<<final answer>>> or <<<answer>>>.\n"""
+    elif dataset_name == 'rotten_oranges':
+        pure_answer = 'an integer'
+    elif dataset_name == 'rubiks_cube':
+        pure_answer = 'a string formatted in Singmaster notation'
+        notes = 'Do not return answer like <<<final answer>>> or <<<answer>>>.\n'
+    elif dataset_name == 'rush_hour':
+        pure_answer = 'A sequence of letter-integer deltas, each formatted as a letter or letters followed by a signed integer, e.g. J+2 AA+1, or F+1 K+1 M-1 C+3 H+2'
+    elif dataset_name == 'self_reference':
+        pure_answer = 'an integer'
+    # elif dataset_name == 'sentence_reordering':
+    #     pure_answer = 'A complete or incomplete sentence (the word order of this sentence might not be quite right)'
+    elif dataset_name == 'shortest_path':
+        pure_answer = 'A sequence composed of the four strings "left", "right", "up", "down", or the single string "infeasible", e.g. "up up", "left up down right right up", "infeasible"'
+        # notes = 'Return any sequence you find, whether or not it is enclosed within <<<>>>.\n'
+    elif dataset_name in ['simple_equations', 'simple_geometry']:
+        pure_answer = 'a number'
+    elif dataset_name == 'simple_integration':
+        pure_answer = 'a mathematical formula, e.g. -5*x**19/2 - 13*x**7 + 6*x + C'
+    elif dataset_name == 'sokoban':
+        pure_answer = 'a string of characters, e.g. URLUURD, UDRRRRRLUUURLURRDUULLLLULDRDRDLUUURRRDRRULLLL'
+    elif dataset_name == 'spell_backward':
+        pure_answer = 'a string'
+    elif dataset_name == 'spiral_matrix':
+        pure_answer = 'a space-separated list of integers, e.g. 7 4 8 2 1 4 1 2 7 9 0 1 8 2 2 9 9 9 6 4 6 0 8 5 9 1 1 9 4 6 0 7 9 5 3 8 4 9 2 5 0 5 1 1 2 1 0 2 7 2 6 1 9 9 3 7 6 9 4 3 2 2 6 9'
+    elif dataset_name in ['string_insertion', 'string_manipulation']:
+        pure_answer = 'a string'
+    elif dataset_name == 'string_splitting':
+        pure_answer = 'a space-separated list of integers, e.g. 1 1 2 1 0 2'
+    elif dataset_name == 'string_synthesis':
+        pure_answer = 'a space-separated list of integers, e.g. 2 2 0 1 0 0 2 1 0'
+    elif dataset_name == 'sudoku':
+        pure_answer = """a 9x9 grid with numbers separated by spaces, and rows separated by newlines, e.g.
+1 5 4 2 9 7 3 8 6
+7 3 6 8 1 4 9 2 5
+8 2 9 3 6 5 4 7 1
+2 8 5 1 7 3 6 4 9
+4 6 1 5 2 9 7 3 8
+3 9 7 4 8 6 5 1 2
+5 7 2 6 3 8 1 9 4
+6 1 3 9 4 2 8 5 7
+9 4 8 7 5 1 2 6 3
+"""
+    elif dataset_name == 'syllogism':
+        pure_answer = 'A string with the value either "Yes" or "No"'
+    elif dataset_name == 'time_intervals':
+        pure_answer = 'A string representing a time duration, such as "2 days, 17:15", "07:21:16", "03:29:15.532", "12 days"'
+    elif dataset_name == 'tower_of_hanoi':
+        pure_answer = """A sequence of steps describing disk moves (potentially containing a very large number of steps), e.g.
+Move disk 1 from Peg 2 to Peg 1
+Move disk 2 from Peg 2 to Peg 3
+Move disk 1 from Peg 1 to Peg 3
+Move disk 3 from Peg 2 to Peg 1
+Move disk 1 from Peg 3 to Peg 2
+Move disk 2 from Peg 3 to Peg 1
+Move disk 1 from Peg 2 to Peg 1
+Move disk 4 from Peg 2 to Peg 3
+Move disk 1 from Peg 1 to Peg 3
+Move disk 2 from Peg 1 to Peg 2
+Move disk 1 from Peg 3 to Peg 2
+Move disk 3 from Peg 1 to Peg 3
+Move disk 1 from Peg 2 to Peg 1
+Move disk 2 from Peg 2 to Peg 3
+Move disk 1 from Peg 1 to Peg 3
+"""
+        notes = """
+1. Return any sequence of steps describing disk moves you find, whether or not it is enclosed within <<<>>>.
+2. Do not return <<<>>> if input text is not empty.\n
+"""
+    elif dataset_name == 'tsumego':
+        pure_answer = 'coordinates, e.g. D3, H12, K6'
+    elif dataset_name == 'word_ladder':
+        pure_answer = 'a comma-separated sequence of uppercase letters without spaces, e.g. CELL,CALL,PALL,PALS,PATS,PITS,ZITS,ZITI'
+    elif dataset_name == 'word_sequence_reversal':
+        pure_answer = 'a comma-separated list of words with a space after the comma, e.g. "separated, were, place, way, The, condense"'
+    elif dataset_name == 'word_sorting':
+        pure_answer = 'a comma-separated list of words, e.g. "000, 365, exclaimed, _mode, observation, projectors, telephones, turning"'
+    elif dataset_name == 'zebra_puzzles':
+        pure_answer = "A string that represents a person’s name"
 
     pure_answer_prompt = f'The **final answer** is in the format: {pure_answer}\n' if len(pure_answer) > 0 else ''
 
@@ -4755,34 +5035,58 @@ a json str like
              'Note that if you find no **final answer** are answered, then directly answer <<<>>>.\n' \
              'If the input text only contains code without **final answer**, do not run/analyze/understand the code in the input text to get an answer. You should directly answer <<<>>>.\n' \
              'Do not generate an answer that is not explicitly contained within the input text.\n' \
-             'Input text: ' \
+             + notes + \
+             'Input text: '
 
-    if dataset_name == 'binary_matrix':
-        prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
-                 + pure_answer_prompt + \
-                 'Note that the final answer should follow strictly the format like <<<final answer>>>\n' \
-                 'If the input text contains a final answer in the format like <<<final answer>>>, return your answer with the format <<<final answer>>>.\n' \
-                 'If the input text does not have <<<final answer>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
-                 'If the input text does not have <<<final answer>>> and is not the pure answer, directly return <<<>>>.\n' \
-                 'If the input text has string like "<<<answer>>>" followed by the final answer, add <<<>>> to the final answer and return it.\n' \
-                 'Note that if you find no final answer are answered, then directly answer <<<>>>. Do not run the code in the input text or give an irrelevant answer.\n' \
-                 'Input text: ' \
+    # if dataset_name == 'binary_matrix':
+    #     prompt = 'Your task is to extract the final answer from the given answer by another LLM:\n' \
+    #              + pure_answer_prompt + \
+    #              'Note that the final answer should follow strictly the format like <<<final answer>>>\n' \
+    #              'If the input text contains a final answer in the format like <<<final answer>>>, return your answer with the format <<<final answer>>>.\n' \
+    #              'If the input text does not have <<<final answer>>> and is already the pure answer, add <<<>>> and return your answer.\n' \
+    #              'If the input text does not have <<<final answer>>> and is not the pure answer, directly return <<<>>>.\n' \
+    #              'If the input text has string like "<<<answer>>>" followed by the final answer, add <<<>>> to the final answer and return it.\n' \
+    #              'Note that if you find no final answer are answered, then directly answer <<<>>>. Do not run the code in the input text or give an irrelevant answer.\n' \
+    #              'Input text: '
 
-
-    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False, user_prompt_list = [prompt + response], response_total_list = [], logprobs=False)
+    extract_equation = GPT_response('', prompt + response, model_name='gpt-4o', code_interpreter=False,
+                                    user_prompt_list=[prompt + response], response_total_list=[], logprobs=False)
     return extract_equation
 
 def validate_solution_reasoning_gym(dataset_name, answer, full_data):
-    if dataset_name == 'arc_agi':
+    if dataset_name in ['arc_agi', 'rearc']:
         full_data['metadata']['output'] = tuple(tuple(inner) for inner in full_data['metadata']['output'])
     # elif dataset_name == 'binary_matrix':
     #     answer = str_to_list_of_lists(answer)
     #     print(f'binary_matrix answer: {answer}')
     #     print("\n".join(" ".join(str(x) for x in row) for row in answer))
+    elif dataset_name in ['codeio', 'group_anagrams', 'palindrome_partitioning']:
+        if dataset_name in ['group_anagrams', 'palindrome_partitioning']:
+            if answer.endswith("']") or answer.endswith('"]'):
+                answer += ']'
+        if dataset_name in ['palindrome_partitioning']:
+            if answer.endswith("']]]") or answer.endswith('"]]]'):
+                answer = answer[:-1]
+        try:
+            answer_literal_eval = ast.literal_eval(answer)
+            if isinstance(answer_literal_eval, dict) or isinstance(answer_literal_eval, list):
+                answer = json.dumps(answer_literal_eval)
+        except:
+            pass
+    elif dataset_name == 'prime_factorization':
+        if not answer or answer.strip() == '':
+            return False
+
+        for factor in answer.split("×"):
+            if not factor or factor.strip() == '':
+                return False
+    elif dataset_name in ['simple_equations', 'simple_geometry']:
+        answer = convert_str_if_integer(answer)
+
 
     data = reasoning_gym.create_dataset(dataset_name, size=1, seed=1)
     score = data.score_answer(answer=answer, entry=full_data)
-    #print(f"answer: {answer}, full_data: {full_data['answer']}, score: {score}")
+    print(f"answer: {answer}, full_data: {full_data['answer']}, score: {score}")
 
     if dataset_name == 'binary_matrix' and abs(score - 0.1) < 1e-6:
         return True
@@ -4808,3 +5112,13 @@ def str_to_list_of_lists(s: str) -> list[list[int]] | str:
     except Exception as e:
         #print(f'str_to_list_of_lists failed for {s}')
         return s
+
+def convert_str_if_integer(s):
+    try:
+        num = float(s)
+        if num.is_integer():
+            return str(int(num))
+        else:
+            return s  # keep as-is if not integer
+    except ValueError:
+        return s  # keep as-is if not a number
