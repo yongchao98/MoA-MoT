@@ -62,7 +62,7 @@ def _select_rm_score_fn(data_source):
     elif data_source in env_name_list1 + env_name_list2 + env_name_list3 + env_name_list4 + env_name_big_bench_hard + reasoning_gym_datasets:
         return symbench.compute_score_symbench
     else:
-        raise NotImplementedError
+        return symbench.compute_score_symbench
 
 
 class RewardManager():
