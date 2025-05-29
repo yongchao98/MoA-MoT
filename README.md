@@ -13,6 +13,11 @@ R1-Code-Interpreter is the first framework to train LLMs for step-by-step code r
   <img src="Open-images/result1.png" width="86%">
 </p>
 
+### GRPO Training
+<p align="center">
+  <img src="Open-images/GRPO.png" width="86%">
+</p>
+
 ## 🤖 Model
 R1-CI-14B/7B/3B are now available on huggingface-hub:
 | Model Name | HF Checkpoint                                                | Size                                                    |
