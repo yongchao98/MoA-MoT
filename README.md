@@ -2,7 +2,15 @@
 
 Our code is based on [Llama-factory](https://github.com/hiyouga/LLaMA-Factory), [VeRL](https://github.com/volcengine/verl), and [Search-R1](https://github.com/PeterGriffinJin/Search-R1?tab=readme-ov-file) for the SFT and RL training and inference on multiple GPUs.
 
-## Environment_Setup
+## 📝 Introduction
+R1-Code-Interpreter is the first framework to train LLMs for step-by-step code reasoning using multi-turn supervised fine-tuning and reinforcement learning. By curating 144 diverse reasoning and planning tasks, we enable Qwen-2.5 models (3B/7B/14B) to autonomously decide when and how to invoke code. Our best model, R1-CI-14B, outperforms GPT-4o (text-only) and approaches GPT-4o with Code Interpreter, showing emergent self-checking behavior via code generation.
+
+## 🚀 Get Started
+
+### Package Installation
+
+To begin using this repo, you need to install the required dependencies. You can do this by running the following command:
+
 ```
 git clone https://github.com/yongchao98/R1-Code-Interpreter.git
 cd R1-Code-Interpreter
@@ -21,18 +29,19 @@ pip install --upgrade huggingface_hub
 huggingface-cli login
 ```
 
-SFT training:
+### SFT training:
 ```
 cd LLaMA-Factory
 sh finetune_qwen_7b_1M.sh
 ```
 
-GRPO training (In train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2):
+### GRPO training
+(In train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2):
 ```
 sh train_grpo_3B.sh
 ```
 
-## Citation
+## ✍️ Citation
 ```md
 @misc{chen2025r1codeinterpretertrainingllmsreason,
       title={R1-Code-Interpreter: Training LLMs to Reason with Code via Supervised and Reinforcement Learning}, 
