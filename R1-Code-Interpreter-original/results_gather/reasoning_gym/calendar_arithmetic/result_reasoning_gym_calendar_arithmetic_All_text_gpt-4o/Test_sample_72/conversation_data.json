@@ -1,0 +1,10 @@
+{
+  "question": "Starting from Sunday, April 24, 2022, which weekday was it 99 days before? Write out the full weekday name.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To determine which weekday it was 99 days before Sunday, April 24, 2022, we need to follow these steps:\n\n1. **Identify the Day of the Week for the Given Date:**\n   - We are given that April 24, 2022, is a Sunday.\n\n2. **Calculate the Number of Weeks and Remaining Days:**\n   - We need to find the weekday 99 days before this date.\n   - First, calculate how many full weeks are in 99 days: \n     \\[\n     99 \\div 7 = 14 \\text{ weeks and } 1 \\text{ day}\n     \\]\n   - This means 99 days is equivalent to 14 weeks and 1 additional day.\n\n3. **Determine the Day of the Week 99 Days Before:**\n   - Since 14 weeks is a complete cycle of weeks, it will bring us back to the same day of the week, which is Sunday.\n   - We then need to go back 1 more day to account for the additional day.\n   - Going back 1 day from Sunday takes us to Saturday.\n\n4. **Conclusion:**\n   - Therefore, 99 days before Sunday, April 24, 2022, was a Saturday.\n\nThe final answer is: <<<Saturday>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Starting from Sunday, April 24, 2022, which weekday was it 99 days before? Write out the full weekday name.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

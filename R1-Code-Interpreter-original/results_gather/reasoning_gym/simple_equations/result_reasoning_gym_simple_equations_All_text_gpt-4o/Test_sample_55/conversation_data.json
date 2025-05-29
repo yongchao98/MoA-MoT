@@ -1,0 +1,10 @@
+{
+  "question": "Solve for e: 83*e - 81 = 1247\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the equation \\( 83e - 81 = 1247 \\) for \\( e \\), we will follow these steps:\n\n1. **Understand the Equation**: The equation is a linear equation in the form of \\( ax + b = c \\), where \\( a = 83 \\), \\( b = -81 \\), and \\( c = 1247 \\).\n\n2. **Isolate the Term with the Variable**: We need to isolate the term that contains the variable \\( e \\). To do this, we will add 81 to both sides of the equation to eliminate the constant term on the left side.\n\n   \\[\n   83e - 81 + 81 = 1247 + 81\n   \\]\n\n   Simplifying both sides, we get:\n\n   \\[\n   83e = 1328\n   \\]\n\n3. **Solve for the Variable**: Now that we have isolated the term with \\( e \\), we need to solve for \\( e \\) by dividing both sides of the equation by 83.\n\n   \\[\n   e = \\frac{1328}{83}\n   \\]\n\n4. **Perform the Division**: Calculate the division to find the value of \\( e \\).\n\n   \\[\n   e = 16\n   \\]\n\n5. **Verify the Solution**: To ensure the solution is correct, substitute \\( e = 16 \\) back into the original equation and check if both sides are equal.\n\n   \\[\n   83 \\times 16 - 81 = 1247\n   \\]\n\n   Calculate the left side:\n\n   \\[\n   1328 - 81 = 1247\n   \\]\n\n   Since both sides are equal, the solution is verified.\n\nThe final answer is:\n\n<<<16>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Solve for e: 83*e - 81 = 1247\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

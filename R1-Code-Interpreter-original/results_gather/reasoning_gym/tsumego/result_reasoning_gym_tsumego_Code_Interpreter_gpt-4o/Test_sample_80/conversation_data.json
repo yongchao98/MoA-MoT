@@ -1,0 +1,10 @@
+{
+  "question": "Tsumego time. Black to play and capture some stones.\nFind the key move.\n\n```\n   A B C D E F G H I J K L\n12 . . . . . . . . . . . .\n11 . . . . . . . . . . X .\n10 . . . . . . . . . . . .\n 9 . . . . . . . . . . . O\n 8 . . . . . . . . . . . .\n 7 . . X . . . . . . . . .\n 6 . X . X X . . . . . . .\n 5 X O O O X . . . . . . .\n 4 . X O X . X . X . . . .\n 3 . . X O . . . . . . . .\n 2 . . X . . . . . . O . .\n 1 . . O . . . . O . . . .\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)",
+  "response_list": [
+    "\nassistant > To solve this tsumego, we need to find a move for Black that will capture some White stones. Let's analyze the position:\n\n- The group of White stones at D5, E5, F5, and D4 is surrounded by Black stones.\n- The White stone at C1 is isolated and can be captured if Black plays at B1.\n\nThe key move for Black is to play at `<<<C4>>>`. This move will put pressure on the White stones at D5, E5, and F5, and potentially lead to their capture."
+  ],
+  "user_prompt_list": [
+    "Tsumego time. Black to play and capture some stones.\nFind the key move.\n\n```\n   A B C D E F G H I J K L\n12 . . . . . . . . . . . .\n11 . . . . . . . . . . X .\n10 . . . . . . . . . . . .\n 9 . . . . . . . . . . . O\n 8 . . . . . . . . . . . .\n 7 . . X . . . . . . . . .\n 6 . X . X X . . . . . . .\n 5 X O O O X . . . . . . .\n 4 . X O X . X . X . . . .\n 3 . . X O . . . . . . . .\n 2 . . X . . . . . . O . .\n 1 . . O . . . . O . . . .\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)"
+  ],
+  "system_message": ""
+}

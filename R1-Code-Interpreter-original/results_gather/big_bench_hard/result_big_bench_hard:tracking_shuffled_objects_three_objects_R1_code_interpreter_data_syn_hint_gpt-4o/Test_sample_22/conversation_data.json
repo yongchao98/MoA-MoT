@@ -1,0 +1,10 @@
+{
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Helga, Bob is dancing with Patrick, and Claire is dancing with Sam.\nThroughout the song, the dancers often trade partners. First, Claire and Alice switch partners. Then, Claire and Bob switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Helga\n(B) Patrick\n(C) Sam\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to track the partner changes step by step:\n\n1. **Initial Pairings:**\n   - Alice is with Helga.\n   - Bob is with Patrick.\n   - Claire is with Sam.\n\n2. **First Switch (Claire and Alice switch partners):**\n   - Alice is now with Sam (Claire's original partner).\n   - Claire is now with Helga (Alice's original partner).\n   - Bob is still with Patrick.\n\n3. **Second Switch (Claire and Bob switch partners):**\n   - Claire is now with Patrick (Bob's original partner).\n   - Bob is now with Helga (Claire's original partner).\n   - Alice is still with Sam.\n\n4. **Third Switch (Alice and Bob switch partners):**\n   - Alice is now with Helga (Bob's current partner).\n   - Bob is now with Sam (Alice's current partner).\n   - Claire is still with Patrick.\n\nAt the end of the dance, Alice is dancing with Helga.\n\nTherefore, the correct answer is:\n\n<<<answer>>> A"
+  ],
+  "user_prompt_list": [
+    "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Helga, Bob is dancing with Patrick, and Claire is dancing with Sam.\nThroughout the song, the dancers often trade partners. First, Claire and Alice switch partners. Then, Claire and Bob switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Helga\n(B) Patrick\n(C) Sam\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

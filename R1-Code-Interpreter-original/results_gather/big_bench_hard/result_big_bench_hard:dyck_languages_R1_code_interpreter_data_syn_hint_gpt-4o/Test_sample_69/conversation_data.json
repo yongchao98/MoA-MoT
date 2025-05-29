@@ -1,0 +1,10 @@
+{
+  "question": "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: { ( { { < { < > } > } < { } > < < < [ < [ ] > ] > > >\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to ensure that all the opening brackets have corresponding closing brackets in the correct order. The sequence consists of different types of brackets: curly braces `{}`, parentheses `()`, angle brackets `<>`, and square brackets `[]`.\n\nLet's break down the sequence:\n\n1. `{` - Open curly brace\n2. `(` - Open parenthesis\n3. `{` - Open curly brace\n4. `{` - Open curly brace\n5. `<` - Open angle bracket\n6. `{` - Open curly brace\n7. `<` - Open angle bracket\n8. `>` - Close angle bracket\n9. `}` - Close curly brace\n10. `>` - Close angle bracket\n11. `}` - Close curly brace\n12. `<` - Open angle bracket\n13. `{` - Open curly brace\n14. `}` - Close curly brace\n15. `>` - Close angle bracket\n16. `<` - Open angle bracket\n17. `<` - Open angle bracket\n18. `<` - Open angle bracket\n19. `[` - Open square bracket\n20. `<` - Open angle bracket\n21. `[` - Open square bracket\n22. `]` - Close square bracket\n23. `>` - Close angle bracket\n24. `]` - Close square bracket\n25. `>` - Close angle bracket\n26. `>` - Close angle bracket\n\nNow, let's determine the missing closing brackets:\n\n- The sequence starts with `{` and `(`, so we need to close these at the end.\n- The sequence ends with `>`, which closes the last opened angle bracket.\n- We need to close the remaining open brackets in the reverse order of their opening.\n\nThe sequence of closing brackets should be: `)}`\n\nTherefore, the complete sequence is:\n\n`{ ( { { < { < > } > } < { } > < < < [ < [ ] > ] > > > ) }`\n\nThe final answer is:\n\n<<<answer>>>"
+  ],
+  "user_prompt_list": [
+    "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: { ( { { < { < > } > } < { } > < < < [ < [ ] > ] > > >\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

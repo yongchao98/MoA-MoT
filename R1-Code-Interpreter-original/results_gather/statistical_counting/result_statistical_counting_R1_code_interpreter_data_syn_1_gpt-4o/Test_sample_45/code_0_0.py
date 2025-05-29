@@ -1,0 +1,27 @@
+def calculate_score(s):
+    total_score = 0
+    i = 0
+    n = len(s)
+    
+    while i < n:
+        count = 1
+        while i + 1 < n and s[i] == s[i + 1]:
+            count += 1
+            i += 1
+        
+        if count >= 2:
+            if s[i] == 'A':
+                total_score += 1
+            elif s[i] == 'B':
+                total_score += 2
+            elif s[i] == 'C':
+                total_score += 3
+        
+        i += 1
+    
+    return total_score
+
+# Given string
+s = "BACCCBBACAABABBAACCBBAACCBBABCBACBB"
+# Calculate and print the total score
+print(calculate_score(s))

@@ -1,0 +1,10 @@
+{
+  "question": "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \nI V\nJ D.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array.",
+  "response_list": [
+    "To solve the problem of rotating a 2D array of strings 90 degrees clockwise, we need to understand the transformation that occurs during this rotation. \n\nGiven the matrix:\n```\nI V\nJ D\n```\n\nThe rotation process involves:\n1. Taking the first column from the bottom to the top and making it the first row.\n2. Taking the second column from the bottom to the top and making it the second row.\n\nLet's break it down:\n- The first column is `I, J`. After rotation, it becomes the first row: `J, I`.\n- The second column is `V, D`. After rotation, it becomes the second row: `D, V`.\n\nThus, the rotated matrix is:\n```\nJ I\nD V\n```\n\nNow, let's format the result as requested: <<<J,D,I,V>>>.\n\nTherefore, the final answer is:\n<<<J,D,I,V>>>"
+  ],
+  "user_prompt_list": [
+    "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \nI V\nJ D.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array."
+  ],
+  "system_message": ""
+}

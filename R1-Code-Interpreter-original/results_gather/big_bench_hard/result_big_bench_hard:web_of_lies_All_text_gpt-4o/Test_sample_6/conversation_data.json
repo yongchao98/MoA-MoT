@@ -1,0 +1,10 @@
+{
+  "question": "Question: Shalonda lies. Teressa says Shalonda tells the truth. Tamika says Teressa lies. Lorine says Tamika tells the truth. Jaymie says Lorine lies. Does Jaymie tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine whether Jaymie tells the truth, we need to analyze the statements made by each person and their implications. Let's break it down step by step:\n\n1. **Shalonda lies.**\n   - This is a given fact.\n\n2. **Teressa says Shalonda tells the truth.**\n   - Since Shalonda lies, Teressa's statement is false. Therefore, Teressa lies.\n\n3. **Tamika says Teressa lies.**\n   - We have established that Teressa lies. Therefore, Tamika's statement is true. Tamika tells the truth.\n\n4. **Lorine says Tamika tells the truth.**\n   - Since Tamika tells the truth, Lorine's statement is true. Therefore, Lorine tells the truth.\n\n5. **Jaymie says Lorine lies.**\n   - We have established that Lorine tells the truth. Therefore, Jaymie's statement is false. Jaymie lies.\n\nBased on the analysis, Jaymie does not tell the truth.\n\nFinal answer: <<<no>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Shalonda lies. Teressa says Shalonda tells the truth. Tamika says Teressa lies. Lorine says Tamika tells the truth. Jaymie says Lorine lies. Does Jaymie tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

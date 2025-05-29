@@ -1,0 +1,15 @@
+moves = [
+    "fill C",
+    "pour C->B",
+    "fill C",
+    "pour C->B",
+    "empty B",
+    "pour C->B",
+    "fill C",
+    "pour C->B",
+    "empty B",
+    "pour C->B",
+    "fill C",
+    "pour C->B"
+]
+print(moves)

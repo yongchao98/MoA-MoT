@@ -1,0 +1,10 @@
+{
+  "question": "Calculate ( ( 141 + 906 ) - 691 ) + -612 + 992.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(( ( 141 + 906 ) - 691 ) + -612 + 992\\), we will break it down step by step:\n\n1. **Calculate the expression inside the first set of parentheses:**\n   - \\(141 + 906\\)\n   - \\(141 + 906 = 1047\\)\n\n2. **Subtract 691 from the result of step 1:**\n   - \\(1047 - 691\\)\n   - \\(1047 - 691 = 356\\)\n\n3. **Add \\(-612\\) to the result of step 2:**\n   - \\(356 + (-612)\\)\n   - \\(356 - 612 = -256\\)\n\n4. **Add 992 to the result of step 3:**\n   - \\(-256 + 992\\)\n   - \\(-256 + 992 = 736\\)\n\nAfter following these steps, the final answer to the expression is:\n\n<<<736>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate ( ( 141 + 906 ) - 691 ) + -612 + 992.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

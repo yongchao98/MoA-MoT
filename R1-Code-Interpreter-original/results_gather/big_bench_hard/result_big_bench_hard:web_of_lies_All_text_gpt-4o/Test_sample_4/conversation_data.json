@@ -1,0 +1,10 @@
+{
+  "question": "Question: Tamika lies. Raymond says Tamika tells the truth. Willian says Raymond tells the truth. Shaunda says Willian lies. Elanor says Shaunda tells the truth. Does Elanor tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine if Elanor tells the truth, we need to analyze the statements made by each person step by step:\n\n1. **Tamika lies.**\n   - This is a given fact.\n\n2. **Raymond says Tamika tells the truth.**\n   - Since Tamika lies, Raymond's statement that Tamika tells the truth is false. Therefore, Raymond lies.\n\n3. **Willian says Raymond tells the truth.**\n   - Since Raymond lies, Willian's statement that Raymond tells the truth is false. Therefore, Willian lies.\n\n4. **Shaunda says Willian lies.**\n   - Since Willian lies, Shaunda's statement that Willian lies is true. Therefore, Shaunda tells the truth.\n\n5. **Elanor says Shaunda tells the truth.**\n   - Since Shaunda tells the truth, Elanor's statement that Shaunda tells the truth is true. Therefore, Elanor tells the truth.\n\nBased on the analysis, Elanor tells the truth.\n\nFinal answer: <<<true>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Tamika lies. Raymond says Tamika tells the truth. Willian says Raymond tells the truth. Shaunda says Willian lies. Elanor says Shaunda tells the truth. Does Elanor tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

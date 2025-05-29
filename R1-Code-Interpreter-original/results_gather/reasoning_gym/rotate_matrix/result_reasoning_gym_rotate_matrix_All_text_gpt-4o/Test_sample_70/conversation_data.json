@@ -1,0 +1,10 @@
+{
+  "question": "Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 720 degrees clockwise:\n9 5 2 8\n9 2 6 4\n9 6 9 9\n0 8 8 9\n",
+  "response_list": [
+    "To solve the problem of rotating a square matrix by 720 degrees clockwise, we need to follow a series of steps. Let's break it down:\n\n1. **Understand the Rotation**: \n   - A 90-degree clockwise rotation of a matrix involves transforming the matrix such that the first row becomes the last column, the second row becomes the second last column, and so on.\n   - A 360-degree rotation brings the matrix back to its original orientation.\n   - Therefore, a 720-degree rotation, which is equivalent to two full 360-degree rotations, will also bring the matrix back to its original orientation.\n\n2. **Matrix Representation**:\n   - The given matrix is:\n     ```\n     9 5 2 8\n     9 2 6 4\n     9 6 9 9\n     0 8 8 9\n     ```\n\n3. **Rotation Analysis**:\n   - Since 720 degrees is equivalent to two full rotations (2 x 360 degrees), the matrix will remain unchanged after the rotation.\n\n4. **Final Output**:\n   - The matrix after a 720-degree clockwise rotation will be the same as the original matrix.\n\n5. **Format the Output**:\n   - The output should be enclosed within triple angle brackets.\n\nBased on the above analysis, the final answer is:\n\n<<<\n9 5 2 8\n9 2 6 4\n9 6 9 9\n0 8 8 9\n>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 720 degrees clockwise:\n9 5 2 8\n9 2 6 4\n9 6 9 9\n0 8 8 9\n"
+  ],
+  "system_message": ""
+}

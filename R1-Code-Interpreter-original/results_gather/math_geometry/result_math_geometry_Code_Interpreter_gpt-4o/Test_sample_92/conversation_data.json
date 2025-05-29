@@ -1,0 +1,10 @@
+{
+  "question": "In right triangle $ABC$, shown below, $\\cos{C}=\\frac{9\\sqrt{130}}{130}$.  Find $AC$.\n\n[asy]\ndraw((0,0)--(7,0)--(0,9)--cycle,black+linewidth(1));\ndraw(rightanglemark((7,0),(0,0),(0,9),20),black+linewidth(1));\nlabel(\"$A$\",(0,0),W);\nlabel(\"$B$\",(7,0),E);\nlabel(\"$C$\",(0,9),W);\nlabel(\"$\\sqrt{130}$\",(7,0)--(0,9),NE);\n[/asy]\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "\nassistant > In the right triangle \\(ABC\\), we are given that \\(\\cos{C} = \\frac{9\\sqrt{130}}{130}\\) and the hypotenuse \\(AB = \\sqrt{130}\\).\n\nThe cosine of angle \\(C\\) is defined as the ratio of the adjacent side to the hypotenuse. In this triangle, the adjacent side to angle \\(C\\) is \\(AC\\), and the hypotenuse is \\(AB\\).\n\nThus, we have:\n\\[\n\\cos{C} = \\frac{AC}{AB}\n\\]\n\nSubstituting the given values:\n\\[\n\\frac{9\\sqrt{130}}{130} = \\frac{AC}{\\sqrt{130}}\n\\]\n\nTo find \\(AC\\), we solve for it by multiplying both sides by \\(\\sqrt{130}\\):\n\\[\nAC = \\frac{9\\sqrt{130}}{130} \\times \\sqrt{130}\n\\]\n\nSimplifying the expression:\n\\[\nAC = \\frac{9 \\times 130}{130}\n\\]\n\n\\[\nAC = 9\n\\]\n\nThus, the length of \\(AC\\) is \\(\\boxed{9}\\).\n\nThe final answer is <<<9>>>."
+  ],
+  "user_prompt_list": [
+    "In right triangle $ABC$, shown below, $\\cos{C}=\\frac{9\\sqrt{130}}{130}$.  Find $AC$.\n\n[asy]\ndraw((0,0)--(7,0)--(0,9)--cycle,black+linewidth(1));\ndraw(rightanglemark((7,0),(0,0),(0,9),20),black+linewidth(1));\nlabel(\"$A$\",(0,0),W);\nlabel(\"$B$\",(7,0),E);\nlabel(\"$C$\",(0,9),W);\nlabel(\"$\\sqrt{130}$\",(7,0)--(0,9),NE);\n[/asy]\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

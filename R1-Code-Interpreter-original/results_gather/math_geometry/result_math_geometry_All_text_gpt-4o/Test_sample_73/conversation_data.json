@@ -1,0 +1,10 @@
+{
+  "question": "Compute $\\sin 225^\\circ$.\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "To compute \\(\\sin 225^\\circ\\), we can follow these steps:\n\n1. **Identify the Reference Angle:**\n   - The angle \\(225^\\circ\\) is in the third quadrant of the unit circle.\n   - The reference angle for \\(225^\\circ\\) is found by subtracting \\(180^\\circ\\) from \\(225^\\circ\\):\n     \\[\n     225^\\circ - 180^\\circ = 45^\\circ\n     \\]\n\n2. **Determine the Sign of the Sine Function:**\n   - In the third quadrant, the sine function is negative.\n\n3. **Compute the Sine of the Reference Angle:**\n   - The sine of \\(45^\\circ\\) is \\(\\frac{\\sqrt{2}}{2}\\).\n\n4. **Apply the Sign to the Reference Angle's Sine:**\n   - Since the sine function is negative in the third quadrant, we have:\n     \\[\n     \\sin 225^\\circ = -\\frac{\\sqrt{2}}{2}\n     \\]\n\nTherefore, the final answer is:\n\n<<<-0.70710678118>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Compute $\\sin 225^\\circ$.\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

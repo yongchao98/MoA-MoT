@@ -1,0 +1,10 @@
+{
+  "question": "Question: Crista lies. Michael says Crista tells the truth. Audrie says Michael lies. Sherrie says Audrie lies. Michaela says Sherrie tells the truth. Does Michaela tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine whether Michaela tells the truth, we need to analyze the statements made by each person and their implications. Let's break it down step by step:\n\n1. **Crista lies.**\n   - This is a given statement. If Crista lies, then any statement she makes is false.\n\n2. **Michael says Crista tells the truth.**\n   - If Michael says Crista tells the truth, and we know Crista lies, then Michael's statement is false. Therefore, Michael lies.\n\n3. **Audrie says Michael lies.**\n   - We have determined that Michael lies. Therefore, Audrie's statement is true.\n\n4. **Sherrie says Audrie lies.**\n   - Since Audrie's statement is true, Sherrie's statement that Audrie lies is false. Therefore, Sherrie lies.\n\n5. **Michaela says Sherrie tells the truth.**\n   - We have determined that Sherrie lies. Therefore, Michaela's statement that Sherrie tells the truth is false. Thus, Michaela lies.\n\nBased on the analysis, Michaela does not tell the truth.\n\nFinal answer: <<<no>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Crista lies. Michael says Crista tells the truth. Audrie says Michael lies. Sherrie says Audrie lies. Michaela says Sherrie tells the truth. Does Michaela tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

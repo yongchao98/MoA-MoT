@@ -1,0 +1,10 @@
+{
+  "question": "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: < [ ] { < ( ) > } [ ] ( { }\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to ensure that all the opening brackets have corresponding closing brackets in the correct order. The sequence given is:\n\n`< [ ] { < ( ) > } [ ] ( { }`\n\nLet's break it down:\n\n1. `<` is opened and not yet closed.\n2. `[` is opened and closed with `]`.\n3. `{` is opened and not yet closed.\n4. `<` is opened and closed with `>`.\n5. `(` is opened and closed with `)`.\n6. `}` is closed, matching the previously opened `{`.\n7. `[` is opened and closed with `]`.\n8. `(` is opened and not yet closed.\n9. `{` is opened and closed with `}`.\n\nNow, we need to close the remaining open brackets:\n\n- The first `<` needs to be closed with `>`.\n- The last `(` needs to be closed with `)`.\n\nThus, the completed sequence is:\n\n`< [ ] { < ( ) > } [ ] ( { } ) >`\n\n<<<answer>>>"
+  ],
+  "user_prompt_list": [
+    "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: < [ ] { < ( ) > } [ ] ( { }\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

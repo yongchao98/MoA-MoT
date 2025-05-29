@@ -1,0 +1,10 @@
+{
+  "question": "Subtract the complex numbers: (-2.0 + 4.0i) - (10.0 + 4.0i)\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\n# Define the complex numbers\nz1 = complex(-2.0, 4.0)\nz2 = complex(10.0, 4.0)\n\n# Subtract the complex numbers\nresult = z1 - z2\nresult\nassistant > <<<-12.0>>>"
+  ],
+  "user_prompt_list": [
+    "Subtract the complex numbers: (-2.0 + 4.0i) - (10.0 + 4.0i)\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

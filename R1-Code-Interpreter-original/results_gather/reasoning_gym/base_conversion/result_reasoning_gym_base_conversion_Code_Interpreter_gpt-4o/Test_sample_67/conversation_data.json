@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-8 number 635 to base-5\n\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "\nassistant > code_interpreter\n\n# Function to convert a number from one base to another\ndef convert_base(number, from_base, to_base):\n    # Convert the number to base 10\n    base_10_number = int(str(number), from_base)\n    \n    # Convert the base 10 number to the target base\n    if base_10_number == 0:\n        return \"0\"\n    \n    digits = []\n    while base_10_number:\n        digits.append(int(base_10_number % to_base))\n        base_10_number //= to_base\n    \n    # Map digits above 9 to letters\n    for i in range(len(digits)):\n        if digits[i] >= 10:\n            digits[i] = chr(digits[i] - 10 + ord('a'))\n    \n    # Return the number in the target base\n    return ''.join(str(x) for x in digits[::-1])\n\n# Convert the base-8 number 635 to base-5\nresult = convert_base(635, 8, 5)\nresult\nassistant > The base-8 number 635 converted to base-5 is <<<3123>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-8 number 635 to base-5\n\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

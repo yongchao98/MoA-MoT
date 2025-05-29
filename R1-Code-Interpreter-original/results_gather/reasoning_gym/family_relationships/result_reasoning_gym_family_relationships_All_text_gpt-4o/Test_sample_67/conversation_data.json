@@ -1,0 +1,10 @@
+{
+  "question": "Jacob is married to Anna. They have a child called Andrew. Andrew is married to Isabella. They have a child called David. Atlas is married to Lisa. They have a child called Isabella.\n\nWhat relation is Isabella to Lisa? Answer with a single word.\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine the relationship between Isabella and Lisa, let's analyze the given information step by step:\n\n1. **Identify the family connections:**\n   - Jacob is married to Anna.\n   - They have a child called Andrew.\n   - Andrew is married to Isabella.\n   - Andrew and Isabella have a child called David.\n   - Atlas is married to Lisa.\n   - Atlas and Lisa have a child called Isabella.\n\n2. **Focus on Isabella's family:**\n   - Isabella is married to Andrew.\n   - Isabella and Andrew have a child named David.\n\n3. **Focus on Lisa's family:**\n   - Lisa is married to Atlas.\n   - Lisa and Atlas have a child named Isabella.\n\n4. **Determine the relationship between Isabella and Lisa:**\n   - From the information, we know that Lisa and Atlas are the parents of Isabella.\n   - Therefore, Isabella is the daughter of Lisa.\n\n5. **Conclusion:**\n   - The relationship between Isabella and Lisa is that of a daughter to her mother.\n\nThus, the relationship of Isabella to Lisa is:\n\n<<<daughter>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Jacob is married to Anna. They have a child called Andrew. Andrew is married to Isabella. They have a child called David. Atlas is married to Lisa. They have a child called Isabella.\n\nWhat relation is Isabella to Lisa? Answer with a single word.\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

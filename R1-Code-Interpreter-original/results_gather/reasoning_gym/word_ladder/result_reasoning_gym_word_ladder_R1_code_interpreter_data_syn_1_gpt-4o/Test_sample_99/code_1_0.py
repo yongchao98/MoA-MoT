@@ -1,0 +1,42 @@
+from collections import deque
+
+def is_valid_word(word, word_list):
+    return word in word_list
+
+def get_neighbors(word, word_list):
+    neighbors = []
+    for i in range(len(word)):
+        for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+            if c != word[i]:
+                new_word = word[:i] + c + word[i+1:]
+                if is_valid_word(new_word, word_list):
+                    neighbors.append(new_word)
+    return neighbors
+
+def word_ladder(start, end, word_list):
+    queue = deque([(start, [start])])
+    visited = set([start])
+    
+    while queue:
+        current_word, path = queue.popleft()
+        
+        if current_word == end:
+            return path
+        
+        for neighbor in get_neighbors(current_word, word_list):
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append((neighbor, path + [neighbor]))
+    
+    return []
+
+# Expanded dictionary of words for demonstration purposes
+word_list = {
+    "MORE", "BORE", "CORE", "CONE", "BONE", "BING", "SING", "SINE", "SANE", "SAGE", "PAGE", "PINE",
+    "MINE", "MIRE", "MIRE", "MORN", "BORN", "BURN", "TURN", "TUNE", "TINE", "TONE", "HONE", "HONE",
+    "HONG", "SONG", "LONG", "LING", "RING", "RUNG", "RANG", "RING", "PING", "PANG", "PONG", "PUNG"
+}
+
+# Find the word ladder
+ladder = word_ladder("MORE", "SING", word_list)
+print(",".join(ladder))

@@ -1,0 +1,10 @@
+{
+  "question": "((1 + 1 + -7 * -6) - (4 * 2 * -5 + -5)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\((1 + 1 + -7 * -6) - (4 * 2 * -5 + -5)\\), we need to follow the order of operations, which is often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Evaluate the multiplication inside the parentheses:**\n   - \\(-7 * -6 = 42\\)\n   - \\(4 * 2 * -5 = -40\\)\n\n2. **Substitute these values back into the expression:**\n   - The expression becomes \\((1 + 1 + 42) - (-40 + -5)\\).\n\n3. **Evaluate the addition inside the parentheses:**\n   - \\(1 + 1 + 42 = 44\\)\n   - \\(-40 + -5 = -45\\)\n\n4. **Substitute these values back into the expression:**\n   - The expression becomes \\(44 - (-45)\\).\n\n5. **Evaluate the subtraction:**\n   - Subtracting a negative is the same as adding the positive, so \\(44 - (-45) = 44 + 45 = 89\\).\n\nThus, the final result of the expression is 89.\n\n<<<answer>>>"
+  ],
+  "user_prompt_list": [
+    "((1 + 1 + -7 * -6) - (4 * 2 * -5 + -5)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

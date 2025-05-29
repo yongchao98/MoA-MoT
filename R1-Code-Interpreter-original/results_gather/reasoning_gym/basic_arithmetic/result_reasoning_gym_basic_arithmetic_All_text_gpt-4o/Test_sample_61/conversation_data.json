@@ -1,0 +1,10 @@
+{
+  "question": "Calculate -811 * -750 + 192 + 391 * 858.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(-811 \\times -750 + 192 + 391 \\times 858\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Identify the operations**: The expression involves multiplication and addition.\n\n2. **Perform the multiplications first**:\n   - Calculate \\(-811 \\times -750\\):\n     - Multiplying two negative numbers results in a positive number.\n     - \\(-811 \\times -750 = 811 \\times 750\\).\n     - Break it down: \\(811 \\times 750 = 811 \\times (700 + 50)\\).\n     - \\(811 \\times 700 = 567,700\\).\n     - \\(811 \\times 50 = 40,550\\).\n     - Add these results: \\(567,700 + 40,550 = 608,250\\).\n\n   - Calculate \\(391 \\times 858\\):\n     - Break it down: \\(391 \\times 858 = 391 \\times (800 + 58)\\).\n     - \\(391 \\times 800 = 312,800\\).\n     - \\(391 \\times 58 = 22,678\\).\n     - Add these results: \\(312,800 + 22,678 = 335,478\\).\n\n3. **Substitute the multiplication results back into the expression**:\n   - The expression now becomes \\(608,250 + 192 + 335,478\\).\n\n4. **Perform the additions**:\n   - Add \\(608,250 + 192\\):\n     - \\(608,250 + 192 = 608,442\\).\n   - Add the result to \\(335,478\\):\n     - \\(608,442 + 335,478 = 943,920\\).\n\n5. **Final result**: The final answer to the expression is \\(943,920\\).\n\nTherefore, the final answer is:\n\n<<<943920>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate -811 * -750 + 192 + 391 * 858.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

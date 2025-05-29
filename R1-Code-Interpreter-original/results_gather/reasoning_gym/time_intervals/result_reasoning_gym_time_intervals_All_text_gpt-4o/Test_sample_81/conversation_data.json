@@ -1,0 +1,10 @@
+{
+  "question": "What is the duration between 20:55 and 22:10? Please answer in HH:MM.\nEnclose final answer within triple angle brackets, like <<<the answer>>>.",
+  "response_list": [
+    "To determine the duration between two times, 20:55 and 22:10, we need to follow these steps:\n\n1. **Understand the Time Format**: The times are given in a 24-hour format. This means 20:55 is 8:55 PM and 22:10 is 10:10 PM.\n\n2. **Break Down the Times**:\n   - Start Time: 20:55\n   - End Time: 22:10\n\n3. **Calculate the Difference in Hours**:\n   - The hour part of the start time is 20, and the hour part of the end time is 22.\n   - The difference in hours is 22 - 20 = 2 hours.\n\n4. **Calculate the Difference in Minutes**:\n   - The minute part of the start time is 55, and the minute part of the end time is 10.\n   - Since 10 is less than 55, we need to adjust the hour difference by borrowing 1 hour (60 minutes) from the hour difference.\n   - Adjusted hour difference: 2 hours - 1 hour = 1 hour.\n   - Adjusted minute calculation: 10 + 60 (borrowed minutes) - 55 = 15 minutes.\n\n5. **Combine the Differences**:\n   - The total duration is 1 hour and 15 minutes.\n\n6. **Format the Answer**:\n   - The duration in HH:MM format is 01:15.\n\nTherefore, the duration between 20:55 and 22:10 is <<<01:15>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    What is the duration between 20:55 and 22:10? Please answer in HH:MM.\nEnclose final answer within triple angle brackets, like <<<the answer>>>."
+  ],
+  "system_message": ""
+}

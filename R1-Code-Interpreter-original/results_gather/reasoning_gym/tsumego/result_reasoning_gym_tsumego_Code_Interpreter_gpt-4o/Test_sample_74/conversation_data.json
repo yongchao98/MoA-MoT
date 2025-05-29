@@ -1,0 +1,10 @@
+{
+  "question": "Here's a Go challenge. Playing as Black, how can you capture as many white stones as possible?\n\n```\n   A B C D E F G H I J K L\n12 . . . . . . . . O . . .\n11 X . . . . . . . . . . .\n10 . . . . X . X X . . . .\n 9 . . . . O X O O X . . X\n 8 . X . . . X O . . . . .\n 7 . X X . . . X . . . . .\n 6 . . . . . . . . . . . .\n 5 O . . . . X . . . . . .\n 4 . . . . . . . . . . . .\n 3 . . . . . . . . . . . .\n 2 . . . . . . . . . . . .\n 1 . . . . . . . O . . X .\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)",
+  "response_list": [
+    "\nassistant > To capture as many white stones as possible, Black should look for a move that surrounds a group of white stones, cutting off their liberties. Let's analyze the board:\n\n```\n   A B C D E F G H I J K L\n12 . . . . . . . . O . . .\n11 X . . . . . . . . . . .\n10 . . . . X . X X . . . .\n 9 . . . . O X O O X . . X\n 8 . X . . . X O . . . . .\n 7 . X X . . . X . . . . .\n 6 . . . . . . . . . . . .\n 5 O . . . . X . . . . . .\n 4 . . . . . . . . . . . .\n 3 . . . . . . . . . . . .\n 2 . . . . . . . . . . . .\n 1 . . . . . . . O . . X .\n```\n\nThe group of white stones at G9, H9, and G8 is surrounded on three sides by black stones. Placing a black stone at G7 will capture these white stones by removing their last liberty.\n\nTherefore, the move is: <<<G7>>>."
+  ],
+  "user_prompt_list": [
+    "Here's a Go challenge. Playing as Black, how can you capture as many white stones as possible?\n\n```\n   A B C D E F G H I J K L\n12 . . . . . . . . O . . .\n11 X . . . . . . . . . . .\n10 . . . . X . X X . . . .\n 9 . . . . O X O O X . . X\n 8 . X . . . X O . . . . .\n 7 . X X . . . X . . . . .\n 6 . . . . . . . . . . . .\n 5 O . . . . X . . . . . .\n 4 . . . . . . . . . . . .\n 3 . . . . . . . . . . . .\n 2 . . . . . . . . . . . .\n 1 . . . . . . . O . . X .\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)"
+  ],
+  "system_message": ""
+}

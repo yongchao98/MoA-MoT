@@ -1,0 +1,10 @@
+{
+  "question": "Linda has 2 male friends and she also has 1 female friends. They all are friends with each other and have no other friends aside. How many female friends does Bob, a male friend of Linda, have?\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve this problem, we need to understand the relationships between Linda and her friends. Here's the breakdown:\n\n1. Linda has 2 male friends and 1 female friend.\n2. All of Linda's friends are friends with each other.\n3. Bob is one of the male friends of Linda.\n\nSince all of Linda's friends are friends with each other, Bob, being one of the male friends, will also be friends with Linda's female friend. Therefore, Bob has 1 female friend.\n\nNow, let's write the Python code to output the answer in the required format.\n\n```python\n# Bob has 1 female friend, who is also Linda's female friend.\nfemale_friends_of_bob = 1\n\n# Output the answer in the required format\nprint(f\"<<<{female_friends_of_bob}>>>\")\n```"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    Linda has 2 male friends and she also has 1 female friends. They all are friends with each other and have no other friends aside. How many female friends does Bob, a male friend of Linda, have?\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

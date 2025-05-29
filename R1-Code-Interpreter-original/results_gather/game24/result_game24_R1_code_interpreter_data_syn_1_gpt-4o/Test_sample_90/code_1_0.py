@@ -1,0 +1,27 @@
+from itertools import permutations, product
+
+numbers = [4, 6, 6, 8]
+target = 24
+operations = ['+', '-', '*', '/']
+
+def evaluate_expression(nums, ops):
+    try:
+        # Try different parenthesis placements
+        expr1 = f"(({nums[0]}{ops[0]}{nums[1]}){ops[1]}{nums[2]}){ops[2]}{nums[3]}"
+        expr2 = f"({nums[0]}{ops[0]}({nums[1]}{ops[1]}{nums[2]})){ops[2]}{nums[3]}"
+        expr3 = f"{nums[0]}{ops[0]}(({nums[1]}{ops[1]}{nums[2]}){ops[2]}{nums[3]})"
+        expr4 = f"{nums[0]}{ops[0]}({nums[1]}{ops[1]}({nums[2]}{ops[2]}{nums[3]}))"
+        
+        for expr in [expr1, expr2, expr3, expr4]:
+            if eval(expr) == target:
+                return expr
+    except ZeroDivisionError:
+        return None
+    return None
+
+for num_perm in permutations(numbers):
+    for ops in product(operations, repeat=3):
+        result = evaluate_expression(num_perm, ops)
+        if result:
+            print(result)
+            break

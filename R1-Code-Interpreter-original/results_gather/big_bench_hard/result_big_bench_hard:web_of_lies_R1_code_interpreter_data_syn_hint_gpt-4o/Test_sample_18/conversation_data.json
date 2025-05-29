@@ -1,0 +1,10 @@
+{
+  "question": "Question: Shalonda tells the truth. Alexis says Shalonda tells the truth. Christie says Alexis lies. Inga says Christie tells the truth. Crista says Inga tells the truth. Does Crista tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to analyze the statements and determine the truthfulness of each person based on the logical implications of their statements.\n\n1. **Shalonda tells the truth.**\n   - This is a given statement.\n\n2. **Alexis says Shalonda tells the truth.**\n   - If Alexis is telling the truth, then Shalonda is indeed telling the truth, which is consistent with the given statement.\n\n3. **Christie says Alexis lies.**\n   - If Christie is telling the truth, then Alexis is lying, which would mean Shalonda is not telling the truth. This contradicts the given statement that Shalonda tells the truth. Therefore, Christie must be lying.\n\n4. **Inga says Christie tells the truth.**\n   - Since Christie is lying, Inga must also be lying because she claims Christie tells the truth.\n\n5. **Crista says Inga tells the truth.**\n   - Since Inga is lying, Crista must also be lying because she claims Inga tells the truth.\n\nTherefore, Crista does not tell the truth.\n\n<<<answer>>>No, Crista does not tell the truth."
+  ],
+  "user_prompt_list": [
+    "Question: Shalonda tells the truth. Alexis says Shalonda tells the truth. Christie says Alexis lies. Inga says Christie tells the truth. Crista says Inga tells the truth. Does Crista tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

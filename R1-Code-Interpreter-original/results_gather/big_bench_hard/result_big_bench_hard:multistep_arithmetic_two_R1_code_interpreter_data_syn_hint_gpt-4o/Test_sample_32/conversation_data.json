@@ -1,0 +1,10 @@
+{
+  "question": "((-7 + -2 * 1 - 6) + (3 + 9 * 7 + -7)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\(((-7 + -2 \\times 1 - 6) + (3 + 9 \\times 7 + -7))\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Evaluate inside the parentheses**:\n   - For the first set of parentheses: \\(-7 + -2 \\times 1 - 6\\)\n     - Perform the multiplication: \\(-2 \\times 1 = -2\\)\n     - Substitute back: \\(-7 + -2 - 6\\)\n     - Perform the addition and subtraction from left to right: \\(-7 - 2 = -9\\), then \\(-9 - 6 = -15\\)\n\n   - For the second set of parentheses: \\(3 + 9 \\times 7 + -7\\)\n     - Perform the multiplication: \\(9 \\times 7 = 63\\)\n     - Substitute back: \\(3 + 63 - 7\\)\n     - Perform the addition and subtraction from left to right: \\(3 + 63 = 66\\), then \\(66 - 7 = 59\\)\n\n2. **Combine the results from both parentheses**:\n   - \\((-15) + (59)\\)\n   - Perform the addition: \\(-15 + 59 = 44\\)\n\nThus, the final result of the expression is 44.\n\n<<<answer>>> 44"
+  ],
+  "user_prompt_list": [
+    "((-7 + -2 * 1 - 6) + (3 + 9 * 7 + -7)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,32 @@
+def apply_rule(input_str):
+    # Convert input to list of integers
+    grid = [int(x) for x in input_str.split()]
+    n = len(grid)
+    result = [0] * n
+    
+    # Find non-zero sequences
+    nonzero_nums = []
+    for x in grid:
+        if x != 0:
+            nonzero_nums.append(x)
+    
+    if not nonzero_nums:
+        return ' '.join(map(str, result))
+    
+    # Find first non-zero position
+    first_pos = next(i for i, x in enumerate(grid) if x != 0)
+    
+    # If there's a single number at position 15
+    if len(nonzero_nums) == 1 and first_pos == 15:
+        result[0] = nonzero_nums[0]
+    else:
+        # Move all numbers 3 positions to the right
+        new_start = (first_pos + 3) % n
+        for i, num in enumerate(nonzero_nums):
+            result[(new_start + i) % n] = num
+    
+    return ' '.join(map(str, result))
+
+# Test input
+test_input = "8 1 2 0 0 0 0 0 0 0 8 7 2 8 4 5 1 8 2"
+print(apply_rule(test_input))

@@ -1,0 +1,10 @@
+{
+  "question": "-6, -14, -28, -50, -86, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>.",
+  "response_list": [
+    "\nassistant > To find the next number in the sequence, we need to identify the pattern or rule that governs the sequence. Let's examine the differences between consecutive terms:\n\n- The difference between -6 and -14 is \\(-14 - (-6) = -8\\).\n- The difference between -14 and -28 is \\(-28 - (-14) = -14\\).\n- The difference between -28 and -50 is \\(-50 - (-28) = -22\\).\n- The difference between -50 and -86 is \\(-86 - (-50) = -36\\).\n\nThe differences are: -8, -14, -22, -36.\n\nLet's examine the differences between these differences:\n\n- The difference between -8 and -14 is \\(-14 - (-8) = -6\\).\n- The difference between -14 and -22 is \\(-22 - (-14) = -8\\).\n- The difference between -22 and -36 is \\(-36 - (-22) = -14\\).\n\nThe second-level differences are: -6, -8, -14.\n\nIt seems that the second-level differences are also following a pattern. Let's check the differences between these second-level differences:\n\n- The difference between -6 and -8 is \\(-8 - (-6) = -2\\).\n- The difference between -8 and -14 is \\(-14 - (-8) = -6\\).\n\nThe third-level differences are: -2, -6.\n\nThe third-level differences are decreasing by 4. If this pattern continues, the next third-level difference would be \\(-6 - 4 = -10\\).\n\nLet's use this information to find the next second-level difference, first-level difference, and finally the next term in the sequence.\n\n1. Next third-level difference: \\(-10\\).\n2. Next second-level difference: \\(-14 - 10 = -24\\).\n3. Next first-level difference: \\(-86 - 24 = -110\\).\n\nTherefore, the next term in the sequence is -110.\n\nThe value of \"?\" is \\(-110\\).\n\nSo, the output is: <<<-110>>>."
+  ],
+  "user_prompt_list": [
+    "-6, -14, -28, -50, -86, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>."
+  ],
+  "system_message": ""
+}

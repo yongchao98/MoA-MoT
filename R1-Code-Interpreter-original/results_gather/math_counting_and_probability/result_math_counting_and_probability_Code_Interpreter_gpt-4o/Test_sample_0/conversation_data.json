@@ -1,0 +1,10 @@
+{
+  "question": "What is the value of $9^3 + 3(9^2) + 3(9) + 1$?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "\nassistant > code_interpreter\n\n# Calculate the value of the expression\nvalue = 9**3 + 3*(9**2) + 3*9 + 1\nvalue\nassistant > The value of the expression is <<<1000>>>."
+  ],
+  "user_prompt_list": [
+    "What is the value of $9^3 + 3(9^2) + 3(9) + 1$?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

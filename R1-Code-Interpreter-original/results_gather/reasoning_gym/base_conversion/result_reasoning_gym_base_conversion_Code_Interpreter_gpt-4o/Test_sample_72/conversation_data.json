@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the binary number 1111010110 to base-15\n\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "\nassistant > code_interpreter\n\ndef convert_base(number: str, from_base: int, to_base: int) -> str:\n    # Convert the number from the original base to base 10\n    base_10_number = int(number, from_base)\n    \n    # Characters for digits in bases greater than 10\n    digits = \"0123456789abcdefghijklmnopqrstuvwxyz\"\n    \n    # Convert the base 10 number to the target base\n    if base_10_number == 0:\n        return \"0\"\n    \n    result = \"\"\n    while base_10_number > 0:\n        remainder = base_10_number % to_base\n        result = digits[remainder] + result\n        base_10_number //= to_base\n    \n    return result\n\n# Convert the binary number 1111010110 to base-15\nbinary_number = \"1111010110\"\nbase_15_number = convert_base(binary_number, 2, 15)\nbase_15_number\nassistant > The binary number 1111010110 converted to base-15 is <<<457>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the binary number 1111010110 to base-15\n\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

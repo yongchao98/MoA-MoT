@@ -1,0 +1,10 @@
+{
+  "question": "Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 180 degrees clockwise:\n3 9 6\n2 9 8\n2 5 4\n",
+  "response_list": [
+    "To rotate a square matrix by 180 degrees clockwise, we need to follow these steps:\n\n1. **Understand the Matrix Dimensions**: \n   - The given matrix is a 3x3 matrix:\n     ```\n     3 9 6\n     2 9 8\n     2 5 4\n     ```\n\n2. **Rotation by 180 Degrees**:\n   - Rotating a matrix by 180 degrees clockwise is equivalent to flipping it upside down and then reversing each row.\n   - This can also be thought of as rotating it twice by 90 degrees clockwise.\n\n3. **Step-by-Step Transformation**:\n   - **Flip the Matrix Upside Down**:\n     - Swap the first row with the last row, and the second row remains in place (since it's a 3x3 matrix):\n     ```\n     2 5 4\n     2 9 8\n     3 9 6\n     ```\n\n   - **Reverse Each Row**:\n     - Reverse the elements in each row:\n     ```\n     4 5 2\n     8 9 2\n     6 9 3\n     ```\n\n4. **Final Output**:\n   - The matrix after a 180-degree clockwise rotation is:\n     ```\n     4 5 2\n     8 9 2\n     6 9 3\n     ```\n\n5. **Format the Output**:\n   - Enclose the final matrix within triple angle brackets as specified:\n     - <<<4 5 2\n         8 9 2\n         6 9 3>>>\n\nTherefore, the rotated matrix is:\n\n<<<4 5 2\n8 9 2\n6 9 3>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 180 degrees clockwise:\n3 9 6\n2 9 8\n2 5 4\n"
+  ],
+  "system_message": ""
+}

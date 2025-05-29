@@ -1,0 +1,10 @@
+{
+  "question": "1, -2, -6, -10, -14, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>.",
+  "response_list": [
+    "\nassistant > The sequence given is: 1, -2, -6, -10, -14, ...\n\nTo find the pattern, let's look at the differences between consecutive terms:\n\n- The difference between -2 and 1 is -3.\n- The difference between -6 and -2 is -4.\n- The difference between -10 and -6 is -4.\n- The difference between -14 and -10 is -4.\n\nThe first difference is -3, and the subsequent differences are -4. This suggests that after the first term, each term is obtained by subtracting 4 from the previous term.\n\nLet's calculate the next term in the sequence:\n\n- The difference between the last known term (-14) and the next term should be -4.\n\nSo, the next term is -14 - 4 = -18.\n\nTherefore, the value of \"?\" is <<<-18>>>."
+  ],
+  "user_prompt_list": [
+    "1, -2, -6, -10, -14, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>."
+  ],
+  "system_message": ""
+}

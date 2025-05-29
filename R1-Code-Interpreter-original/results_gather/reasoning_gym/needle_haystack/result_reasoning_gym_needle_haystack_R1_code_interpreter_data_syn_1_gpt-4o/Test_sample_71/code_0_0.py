@@ -1,0 +1,11 @@
+text = """
+Findlie loves literacy. Bezalel rejoices in dusting the furniture. Wiktor rails against making the bed. Chiron craves the color maroon. Lochlan endorses recycling. Oran gripes about filmmaking. Keo begrudges dusting the furniture. Charley enjoys electric bikes. Reace resents social media trends. Bo is neutral toward the color violet. Cole deifies convertible cars. Frazer reveres washing the dishes. Torin ridicules art. Alexander complains about astronomy hobby. Arann prizes the color periwinkle. Gareth bemoans horses. Callan savors playing water polo. Clayton idolizes sailing. Yadgor disdains eagles. Rylay glories in motorhomes. Jock curses making coffee. Douglas glories in lobsters. Martin esteems playing cricket. Toby begrudges the color teal. Matthew-William is nuts about motorcycles. Gavin-Lee ignores simplicity. Teodor bemoans jet skis. Zakaria is passionate about origami. Havila respects religion. Bradley is devoted to the color cyan. Layne covets chocolate. Eric yearns blogging. Tobie appreciates mythology. Flyn regrets reading mystery novels. Zaki is apathetic about wine. Rocco revels in anthropology. Piotr dismisses social media trends. Heini supports ostriches. Jaxon overlooks dancing tango. Finn resents playing board games. Salman is committed to cleaning the windows. Oluwafikunayomi yearns the color black. Salvador admires scuba diving. Ehsen laments crocodiles. Rylay damns recording music. Johnjay idolizes philosophy. Antoni reviles embroidery. Rahil overlooks butterflies. Cruiz scorns geology. Coel can’t stand the color peach. Meko execrates manga. Ronald embraces knitting. Hishaam loves the color beige. Caedan commends listening to folk music. Raheem bears skateboards. Kiyonari scorns philosophy. Bryson loves optimism. Breandan savors listening to folk music. Jubin finds fulfillment in elephants. Ranolph pines for cleaning the microwave. Chu scorns writing journals. Taegen is committed to all-terrain vehicles. Bryan is neutral toward playing drums. Logan worships washing the car. Jia is keen on recycling. Ala respects boats. Silas applauds sharks. Prinay accepts vintage cars.
+"""
+
+# Find the name associated with "execrates manga"
+import re
+
+match = re.search(r"(\w+) execrates manga", text)
+name = match.group(1) if match else None
+
+print(name)

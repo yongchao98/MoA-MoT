@@ -1,0 +1,10 @@
+{
+  "question": "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: { [ < [ { < ( ) > } ] >\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to ensure that all the opening brackets have corresponding closing brackets in the correct order. The sequence given is:\n\nInput: { [ < [ { < ( ) > } ] >\n\nLet's break it down:\n\n1. `{` is opened and needs a `}` to close.\n2. `[` is opened and needs a `]` to close.\n3. `<` is opened and needs a `>` to close.\n4. Another `[` is opened and needs a `]` to close.\n5. `{` is opened and needs a `}` to close.\n6. `<` is opened and needs a `>` to close.\n7. `(` is opened and needs a `)` to close.\n8. `)` is closed, matching the last opened `(`.\n9. `>` is closed, matching the last opened `<`.\n10. `}` is closed, matching the last opened `{`.\n11. `]` is closed, matching the last opened `[`.\n12. `>` is closed, matching the last opened `<`.\n\nNow, we need to close the remaining open brackets in the reverse order of their opening:\n\n- `]` to close the second `[`.\n- `}` to close the first `{`.\n\nThus, the completed sequence is:\n\n{ [ < [ { < ( ) > } ] > ] }\n\nThe final answer is:\n\n<<<'{ [ < [ { < ( ) > } ] > ] }'>>>"
+  ],
+  "user_prompt_list": [
+    "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: { [ < [ { < ( ) > } ] >\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

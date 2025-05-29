@@ -1,0 +1,10 @@
+{
+  "question": "Matthew is married to Emily. They have a child called James. James is married to Nova. They have a child called Jacob. Daniel is married to Sky. They have a child called Nova.\n\nWhat is Emily to Jacob? Respond only with the word that describes their relationship.\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine the relationship between Emily and Jacob, we need to analyze the family connections step by step:\n\n1. **Identify the family members and their relationships:**\n   - Matthew is married to Emily.\n   - Matthew and Emily have a child named James.\n   - James is married to Nova.\n   - James and Nova have a child named Jacob.\n   - Daniel is married to Sky.\n   - Daniel and Sky have a child named Nova.\n\n2. **Trace the lineage from Jacob to Emily:**\n   - Jacob is the child of James and Nova.\n   - James is the child of Matthew and Emily.\n\n3. **Determine Emily's relationship to Jacob:**\n   - Since James is the child of Emily, and Jacob is the child of James, Emily is Jacob's grandmother.\n\nTherefore, the relationship between Emily and Jacob is that of a grandmother.\n\nThe final answer is: <<<grandmother>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Matthew is married to Emily. They have a child called James. James is married to Nova. They have a child called Jacob. Daniel is married to Sky. They have a child called Nova.\n\nWhat is Emily to Jacob? Respond only with the word that describes their relationship.\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

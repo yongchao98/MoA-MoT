@@ -1,0 +1,10 @@
+{
+  "question": "((-1 - 9 + -9 * -9) - (1 + -3 - 5 - 5)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\(((-1 - 9 + -9 \\times -9) - (1 + -3 - 5 - 5))\\), we need to follow the order of operations, which is parentheses, exponents, multiplication and division (from left to right), and addition and subtraction (from left to right).\n\n1. **Evaluate inside the parentheses**:\n   - The first set of parentheses: \\(-1 - 9 + (-9 \\times -9)\\)\n     - Calculate the multiplication: \\(-9 \\times -9 = 81\\)\n     - Substitute back: \\(-1 - 9 + 81\\)\n     - Perform the operations from left to right:\n       - \\(-1 - 9 = -10\\)\n       - \\(-10 + 81 = 71\\)\n\n   - The second set of parentheses: \\(1 + -3 - 5 - 5\\)\n     - Perform the operations from left to right:\n       - \\(1 + (-3) = -2\\)\n       - \\(-2 - 5 = -7\\)\n       - \\(-7 - 5 = -12\\)\n\n2. **Subtract the results of the two parentheses**:\n   - \\(71 - (-12)\\)\n   - Subtracting a negative is the same as adding the positive: \\(71 + 12 = 83\\)\n\nThus, the final result of the expression is 83.\n\n<<<'83'>>>"
+  ],
+  "user_prompt_list": [
+    "((-1 - 9 + -9 * -9) - (1 + -3 - 5 - 5)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Simplify the fraction $\\frac{2992}{8960}$ to its lowest terms. Give only the simplified fraction as your final answer.\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom sympy import Rational\n\n# Simplify the fraction\nsimplified_fraction = Rational(2992, 8960)\nsimplified_fraction\nassistant > <<<187/560>>>"
+  ],
+  "user_prompt_list": [
+    "Simplify the fraction $\\frac{2992}{8960}$ to its lowest terms. Give only the simplified fraction as your final answer.\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

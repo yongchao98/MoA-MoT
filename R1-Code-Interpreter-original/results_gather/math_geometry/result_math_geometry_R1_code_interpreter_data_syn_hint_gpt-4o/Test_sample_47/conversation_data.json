@@ -1,0 +1,10 @@
+{
+  "question": "In the diagram below, $WXYZ$ is a trapezoid such that $\\overline{WX}\\parallel \\overline{ZY}$ and $\\overline{WY}\\perp\\overline{ZY}$.  If $YZ = 12$, $\\tan Z = 1.5$, and $\\tan X = 2$, then what is $XY$?\n\n[asy]\n\npair WW,X,Y,Z;\n\nZ = (0,0);\n\nY = (12,0);\n\nWW = (12,18);\n\nX= (18,18);\n\ndraw(WW--X--Y--Z--WW);\n\nlabel(\"$W$\",WW,N);\n\nlabel(\"$X$\",X,N);\n\nlabel(\"$Y$\",Y,S);\n\nlabel(\"$Z$\",Z,S);\n\n[/asy]\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "To solve this problem, we need to find the length of \\( XY \\) in the trapezoid \\( WXYZ \\) where \\( \\overline{WX} \\parallel \\overline{ZY} \\) and \\( \\overline{WY} \\perp \\overline{ZY} \\).\n\nGiven:\n- \\( YZ = 12 \\)\n- \\( \\tan Z = 1.5 \\)\n- \\( \\tan X = 2 \\)\n\nSince \\( \\overline{WY} \\perp \\overline{ZY} \\), \\( WY \\) is the height of the trapezoid. We can use the tangent values to find the height \\( WY \\).\n\n1. **Calculate \\( WY \\) using \\( \\tan Z \\):**\n\n   \\[\n   \\tan Z = \\frac{WY}{YZ} = 1.5 \\implies WY = 1.5 \\times 12 = 18\n   \\]\n\n2. **Calculate \\( WX \\) using \\( \\tan X \\):**\n\n   \\[\n   \\tan X = \\frac{WY}{WX - YZ} = 2 \\implies WX - YZ = \\frac{WY}{2} = \\frac{18}{2} = 9\n   \\]\n\n   Since \\( WX = XY + YZ \\), we have:\n\n   \\[\n   WX = XY + 12\n   \\]\n\n   Substituting \\( WX - YZ = 9 \\):\n\n   \\[\n   XY + 12 - 12 = 9 \\implies XY = 9\n   \\]\n\nThus, the length of \\( XY \\) is 9.\n\n<<<9>>>"
+  ],
+  "user_prompt_list": [
+    "In the diagram below, $WXYZ$ is a trapezoid such that $\\overline{WX}\\parallel \\overline{ZY}$ and $\\overline{WY}\\perp\\overline{ZY}$.  If $YZ = 12$, $\\tan Z = 1.5$, and $\\tan X = 2$, then what is $XY$?\n\n[asy]\n\npair WW,X,Y,Z;\n\nZ = (0,0);\n\nY = (12,0);\n\nWW = (12,18);\n\nX= (18,18);\n\ndraw(WW--X--Y--Z--WW);\n\nlabel(\"$W$\",WW,N);\n\nlabel(\"$X$\",X,N);\n\nlabel(\"$Y$\",Y,S);\n\nlabel(\"$Z$\",Z,S);\n\n[/asy]\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

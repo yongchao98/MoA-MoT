@@ -1,0 +1,10 @@
+{
+  "question": "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: { [ < [ < { < { } > } > ( ( < { [ ] } > { { } } ) { } ) ] > ]\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to ensure that each opening bracket has a corresponding closing bracket in the correct order. The sequence consists of different types of brackets: curly braces `{}`, square brackets `[]`, angle brackets `<>`, and parentheses `()`. \n\nThe input sequence is: `{ [ < [ < { < { } > } > ( ( < { [ ] } > { { } } ) { } ) ] > ]`\n\nLet's break down the sequence step by step:\n\n1. `{` - Open curly brace\n2. `[` - Open square bracket\n3. `<` - Open angle bracket\n4. `[` - Open square bracket\n5. `<` - Open angle bracket\n6. `{` - Open curly brace\n7. `<` - Open angle bracket\n8. `{` - Open curly brace\n9. `}` - Close curly brace\n10. `>` - Close angle bracket\n11. `}` - Close curly brace\n12. `>` - Close angle bracket\n13. `(` - Open parenthesis\n14. `(` - Open parenthesis\n15. `<` - Open angle bracket\n16. `{` - Open curly brace\n17. `[` - Open square bracket\n18. `]` - Close square bracket\n19. `}` - Close curly brace\n20. `>` - Close angle bracket\n21. `{` - Open curly brace\n22. `{` - Open curly brace\n23. `}` - Close curly brace\n24. `}` - Close curly brace\n25. `)` - Close parenthesis\n26. `{` - Open curly brace\n27. `}` - Close curly brace\n28. `)` - Close parenthesis\n29. `]` - Close square bracket\n30. `>` - Close angle bracket\n31. `]` - Close square bracket\n\nThe sequence is already complete and properly closed. Therefore, the output is the same as the input.\n\n<<<'{ [ < [ < { < { } > } > ( ( < { [ ] } > { { } } ) { } ) ] > ]'>>>"
+  ],
+  "user_prompt_list": [
+    "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: { [ < [ < { < { } > } > ( ( < { [ ] } > { { } } ) { } ) ] > ]\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

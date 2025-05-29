@@ -1,0 +1,10 @@
+{
+  "question": "Simplify the fraction $\\frac{180}{1011}$ to its lowest terms. Give only the simplified fraction as your final answer.\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nimport math\n\n# Given fraction\nnumerator = 180\ndenominator = 1011\n\n# Calculate the greatest common divisor\ngcd = math.gcd(numerator, denominator)\n\n# Simplify the fraction\nsimplified_numerator = numerator // gcd\nsimplified_denominator = denominator // gcd\n\nsimplified_fraction = f\"{simplified_numerator}/{simplified_denominator}\"\nsimplified_fraction\nassistant > <<<60/337>>>"
+  ],
+  "user_prompt_list": [
+    "Simplify the fraction $\\frac{180}{1011}$ to its lowest terms. Give only the simplified fraction as your final answer.\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

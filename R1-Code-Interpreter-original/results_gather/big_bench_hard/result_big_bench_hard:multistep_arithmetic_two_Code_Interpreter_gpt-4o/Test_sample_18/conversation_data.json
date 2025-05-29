@@ -1,0 +1,10 @@
+{
+  "question": "((-6 - 6 + 7 - 7) - (5 + 3 - 9 * -8)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > Let's simplify the expression step by step:\n\n1. Simplify inside the first parentheses: \\((-6 - 6 + 7 - 7)\\)\n   \\[\n   = -6 - 6 + 7 - 7 = -12 + 7 - 7 = -12\n   \\]\n\n2. Simplify inside the second parentheses: \\((5 + 3 - 9 \\times -8)\\)\n   \\[\n   = 5 + 3 - 9 \\times -8 = 5 + 3 + 72 = 8 + 72 = 80\n   \\]\n\n3. Subtract the results of the two parentheses:\n   \\[\n   (-12) - (80) = -12 - 80 = -92\n   \\]\n\nThus, the final answer is \\(-92\\).\n\nThe final answer is <<<-92>>>."
+  ],
+  "user_prompt_list": [
+    "((-6 - 6 + 7 - 7) - (5 + 3 - 9 * -8)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

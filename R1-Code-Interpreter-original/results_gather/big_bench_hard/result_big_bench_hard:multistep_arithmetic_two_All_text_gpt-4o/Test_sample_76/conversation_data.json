@@ -1,0 +1,10 @@
+{
+  "question": "((-8 - -6 * 7 * 0) * (0 + -5 * -8 - 0)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\(((-8 - -6 * 7 * 0) * (0 + -5 * -8 - 0))\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Evaluate inside the parentheses**:\n   - The expression is \\((-8 - -6 * 7 * 0)\\) and \\((0 + -5 * -8 - 0)\\).\n\n2. **Evaluate the first set of parentheses \\((-8 - -6 * 7 * 0)\\)**:\n   - Inside the parentheses, perform multiplication first: \\(-6 * 7 * 0\\).\n   - \\(-6 * 7 = -42\\).\n   - \\(-42 * 0 = 0\\).\n   - Now substitute back into the expression: \\(-8 - 0\\).\n   - \\(-8 - 0 = -8\\).\n\n3. **Evaluate the second set of parentheses \\((0 + -5 * -8 - 0)\\)**:\n   - Inside the parentheses, perform multiplication first: \\(-5 * -8\\).\n   - \\(-5 * -8 = 40\\).\n   - Now substitute back into the expression: \\(0 + 40 - 0\\).\n   - \\(0 + 40 = 40\\).\n   - \\(40 - 0 = 40\\).\n\n4. **Combine the results from the parentheses**:\n   - Now we have \\((-8) * (40)\\).\n\n5. **Perform the multiplication**:\n   - \\(-8 * 40 = -320\\).\n\nThus, the final answer to the expression is:\n\n<<<-320>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    ((-8 - -6 * 7 * 0) * (0 + -5 * -8 - 0)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

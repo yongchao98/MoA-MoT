@@ -1,0 +1,10 @@
+{
+  "question": "Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 900 degrees clockwise:\n6 8 6 5 5 8\n6 5 0 8 6 3\n9 0 6 3 2 8\n9 0 2 7 9 2\n2 3 5 5 9 2\n3 4 4 1 5 1\n",
+  "response_list": [
+    "\nassistant > Rotating a matrix by 900 degrees clockwise is equivalent to rotating it by 0 degrees, as 900 degrees is a multiple of 360 degrees (900 % 360 = 180). Therefore, the matrix remains unchanged. \n\nHere is the original matrix:\n\n```\n6 8 6 5 5 8\n6 5 0 8 6 3\n9 0 6 3 2 8\n9 0 2 7 9 2\n2 3 5 5 9 2\n3 4 4 1 5 1\n```\n\nThe output matrix is:\n\n<<<\n6 8 6 5 5 8\n6 5 0 8 6 3\n9 0 6 3 2 8\n9 0 2 7 9 2\n2 3 5 5 9 2\n3 4 4 1 5 1\n>>>"
+  ],
+  "user_prompt_list": [
+    "Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 900 degrees clockwise:\n6 8 6 5 5 8\n6 5 0 8 6 3\n9 0 6 3 2 8\n9 0 2 7 9 2\n2 3 5 5 9 2\n3 4 4 1 5 1\n"
+  ],
+  "system_message": ""
+}

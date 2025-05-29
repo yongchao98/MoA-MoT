@@ -1,0 +1,10 @@
+{
+  "question": "((8 + 3 * -8 - -8) - (2 + 2 * -9 - 6)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\(((8 + 3 \\times -8 - -8) - (2 + 2 \\times -9 - 6))\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Evaluate the expression inside the first set of parentheses:**\n   \\[\n   8 + 3 \\times -8 - -8\n   \\]\n   - First, perform the multiplication:\n     \\[\n     3 \\times -8 = -24\n     \\]\n   - Substitute back into the expression:\n     \\[\n     8 + (-24) - -8\n     \\]\n   - Simplify the addition and subtraction:\n     \\[\n     8 - 24 + 8\n     \\]\n   - Perform the operations from left to right:\n     \\[\n     (8 - 24) + 8 = -16 + 8 = -8\n     \\]\n\n2. **Evaluate the expression inside the second set of parentheses:**\n   \\[\n   2 + 2 \\times -9 - 6\n   \\]\n   - First, perform the multiplication:\n     \\[\n     2 \\times -9 = -18\n     \\]\n   - Substitute back into the expression:\n     \\[\n     2 + (-18) - 6\n     \\]\n   - Simplify the addition and subtraction:\n     \\[\n     2 - 18 - 6\n     \\]\n   - Perform the operations from left to right:\n     \\[\n     (2 - 18) - 6 = -16 - 6 = -22\n     \\]\n\n3. **Subtract the results of the two parentheses:**\n   \\[\n   (-8) - (-22)\n   \\]\n   - Subtracting a negative is equivalent to adding:\n     \\[\n     -8 + 22\n     \\]\n   - Perform the addition:\n     \\[\n     22 - 8 = 14\n     \\]\n\nThe final answer is \\(\\boxed{14}\\).\n\n<<<14>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    ((8 + 3 * -8 - -8) - (2 + 2 * -9 - 6)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

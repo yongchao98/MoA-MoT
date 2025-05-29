@@ -1,0 +1,10 @@
+{
+  "question": "Tsumego time. Black to play and capture some stones.\nFind the key move.\n\n```\n   A B C D E F G H I\n 9 . X . . . . . . .\n 8 X O X . . . . . .\n 7 O O . X . . . . .\n 6 X O X . . . . . .\n 5 . X . O . . . . .\n 4 X . . . . O . . O\n 3 . X . . . . . O .\n 2 . . X . . . . . .\n 1 . . . X . . X . .\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)",
+  "response_list": [
+    "\nassistant > To solve this tsumego, we need to find a move for Black that will capture some White stones. Let's analyze the position:\n\n- The White stones at B7, B8, and C8 are in a precarious position.\n- Black can potentially capture these stones by playing a move that reduces their liberties.\n\nThe key move for Black is to play at C7. This move will reduce the liberties of the White stones at B7, B8, and C8, leading to their capture.\n\nThe move is: <<<C7>>>"
+  ],
+  "user_prompt_list": [
+    "Tsumego time. Black to play and capture some stones.\nFind the key move.\n\n```\n   A B C D E F G H I\n 9 . X . . . . . . .\n 8 X O X . . . . . .\n 7 O O . X . . . . .\n 6 X O X . . . . . .\n 5 . X . O . . . . .\n 4 X . . . . O . . O\n 3 . X . . . . . O .\n 2 . . X . . . . . .\n 1 . . . X . . X . .\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)"
+  ],
+  "system_message": ""
+}

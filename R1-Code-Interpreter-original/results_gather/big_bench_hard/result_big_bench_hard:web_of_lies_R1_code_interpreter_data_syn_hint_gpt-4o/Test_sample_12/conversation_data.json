@@ -1,0 +1,10 @@
+{
+  "question": "Question: Millie tells the truth. Millicent says Millie lies. Phoebe says Millicent tells the truth. Sherrie says Phoebe lies. Raymond says Sherrie tells the truth. Does Raymond tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to analyze the statements and determine the truthfulness of each person based on the given information.\n\n1. **Millie tells the truth.**\n   - This is our starting point. If Millie tells the truth, then her statement is true.\n\n2. **Millicent says Millie lies.**\n   - If Millie tells the truth, then Millicent's statement must be false because she claims Millie lies.\n\n3. **Phoebe says Millicent tells the truth.**\n   - Since Millicent's statement is false, Phoebe's statement must also be false because she claims Millicent tells the truth.\n\n4. **Sherrie says Phoebe lies.**\n   - Since Phoebe's statement is false, Sherrie's statement is true because she correctly identifies Phoebe as lying.\n\n5. **Raymond says Sherrie tells the truth.**\n   - Since Sherrie's statement is true, Raymond's statement is also true because he correctly identifies Sherrie as telling the truth.\n\nTherefore, Raymond tells the truth.\n\n<<<answer>>>Yes, Raymond tells the truth.<<<answer>>>"
+  ],
+  "user_prompt_list": [
+    "Question: Millie tells the truth. Millicent says Millie lies. Phoebe says Millicent tells the truth. Sherrie says Phoebe lies. Raymond says Sherrie tells the truth. Does Raymond tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

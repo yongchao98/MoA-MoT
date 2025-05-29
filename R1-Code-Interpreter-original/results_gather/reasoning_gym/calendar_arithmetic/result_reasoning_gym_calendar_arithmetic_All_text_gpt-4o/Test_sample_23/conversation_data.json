@@ -1,0 +1,10 @@
+{
+  "question": "If today is Tuesday, April 5, 2022, what day of the week will it be in 95 days? State the weekday (Monday through Sunday).\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To determine what day of the week it will be in 95 days from Tuesday, April 5, 2022, we can follow these steps:\n\n1. **Understand the Problem**: We need to find the day of the week 95 days after a given date, which is Tuesday, April 5, 2022.\n\n2. **Days of the Week Cycle**: The days of the week cycle every 7 days. This means that every 7 days, the same day of the week repeats.\n\n3. **Calculate Full Weeks**: First, determine how many full weeks are in 95 days. This is done by dividing 95 by 7.\n   \\[\n   95 \\div 7 = 13 \\text{ full weeks with a remainder of } 4 \\text{ days}\n   \\]\n\n4. **Determine the Day of the Week**: Since 95 days is 13 full weeks plus 4 additional days, we need to find the day of the week 4 days after Tuesday.\n\n5. **Count Forward from Tuesday**:\n   - 1 day after Tuesday is Wednesday.\n   - 2 days after Tuesday is Thursday.\n   - 3 days after Tuesday is Friday.\n   - 4 days after Tuesday is Saturday.\n\n6. **Conclusion**: Therefore, 95 days from Tuesday, April 5, 2022, will be a Saturday.\n\nThe final answer is:\n<<<Saturday>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    If today is Tuesday, April 5, 2022, what day of the week will it be in 95 days? State the weekday (Monday through Sunday).\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

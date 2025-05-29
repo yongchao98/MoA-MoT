@@ -1,0 +1,10 @@
+{
+  "question": "Two chords, $AB$ and $CD,$ meet inside a circle at $P.$  If $AP = 3$ and $CP = 8,$ then what is $\\frac{BP}{DP}$?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "To solve this problem, we can use the Power of a Point theorem. According to this theorem, if two chords \\(AB\\) and \\(CD\\) intersect at a point \\(P\\) inside a circle, then the products of the segments of each chord are equal. That is:\n\n\\[ AP \\cdot PB = CP \\cdot PD \\]\n\nWe are given:\n- \\( AP = 3 \\)\n- \\( CP = 8 \\)\n\nWe need to find the ratio \\(\\frac{BP}{DP}\\).\n\nLet's denote:\n- \\( BP = x \\)\n- \\( DP = y \\)\n\nAccording to the Power of a Point theorem:\n\n\\[ 3 \\cdot x = 8 \\cdot y \\]\n\nWe need to find \\(\\frac{x}{y}\\). Rearranging the equation gives:\n\n\\[ x = \\frac{8}{3} \\cdot y \\]\n\nThus, the ratio \\(\\frac{x}{y}\\) is:\n\n\\[ \\frac{x}{y} = \\frac{8}{3} \\]\n\nTherefore, the ratio \\(\\frac{BP}{DP}\\) is \\(\\frac{8}{3}\\).\n\n<<<answer>>> <<<\\frac{8}{3}>>>"
+  ],
+  "user_prompt_list": [
+    "Two chords, $AB$ and $CD,$ meet inside a circle at $P.$  If $AP = 3$ and $CP = 8,$ then what is $\\frac{BP}{DP}$?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

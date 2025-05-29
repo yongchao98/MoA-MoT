@@ -1,0 +1,10 @@
+{
+  "question": "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \nH C\nR U.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array.",
+  "response_list": [
+    "To solve the problem of rotating a 2D array of strings 90 degrees clockwise, we need to understand the transformation that occurs during this rotation. \n\nGiven the matrix:\n```\nH C\nR U\n```\n\nThe transformation involves:\n- The first column of the original matrix becomes the first row of the rotated matrix, but in reverse order.\n- The second column of the original matrix becomes the second row of the rotated matrix, also in reverse order.\n\nLet's break it down:\n- The first column is `H, R`. After rotation, it becomes the first row `R, H`.\n- The second column is `C, U`. After rotation, it becomes the second row `U, C`.\n\nThus, the rotated matrix is:\n```\nR H\nU C\n```\n\nNow, let's represent this in the required format. The matrix after rotation is:\n```\nR, H\nU, C\n```\n\nSo, the final answer in the specified format is:\n<<<R,H,U,C>>>"
+  ],
+  "user_prompt_list": [
+    "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \nH C\nR U.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array."
+  ],
+  "system_message": ""
+}

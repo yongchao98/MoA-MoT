@@ -1,0 +1,32 @@
+# Predefined set of words for the word ladder
+word_set = {
+    "WOLF", "GOLF", "GULF", "GULP", "GUMP", "GAMP", "GAMP", "GARN", "GRAN"
+}
+
+def is_valid_word(word):
+    return word in word_set
+
+def find_word_ladder(start, end):
+    from collections import deque
+    
+    # Queue for BFS
+    queue = deque([(start, [start])])
+    
+    while queue:
+        current_word, path = queue.popleft()
+        
+        if current_word == end:
+            return path
+        
+        for i in range(len(current_word)):
+            for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+                if c != current_word[i]:
+                    next_word = current_word[:i] + c + current_word[i+1:]
+                    if is_valid_word(next_word) and next_word not in path:
+                        queue.append((next_word, path + [next_word]))
+    
+    return None
+
+# Find the word ladder
+ladder = find_word_ladder('WOLF', 'GRAN')
+print(ladder)

@@ -1,0 +1,10 @@
+{
+  "question": "((-9 - 1 * 5 * -5) - (6 + -3 - -1 * -7)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > Let's break down the expression step by step:\n\n1. Calculate the first part: \\((-9 - 1 \\times 5 \\times -5)\\)\n   - First, calculate \\(1 \\times 5 = 5\\)\n   - Then, calculate \\(5 \\times -5 = -25\\)\n   - Finally, calculate \\(-9 - (-25) = -9 + 25 = 16\\)\n\n2. Calculate the second part: \\((6 + -3 - -1 \\times -7)\\)\n   - First, calculate \\(-1 \\times -7 = 7\\)\n   - Then, calculate \\(6 + (-3) = 3\\)\n   - Finally, calculate \\(3 - 7 = -4\\)\n\n3. Subtract the second part from the first part: \\(16 - (-4) = 16 + 4 = 20\\)\n\nSo, the final answer is:\n\n\\[\n\\text{<<<20>>>}\n\\]"
+  ],
+  "user_prompt_list": [
+    "((-9 - 1 * 5 * -5) - (6 + -3 - -1 * -7)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Find the value of c in the equation: 20 - 11*c = -409\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To find the value of \\( c \\) in the equation \\( 20 - 11c = -409 \\), we will solve the equation step by step.\n\n1. **Understand the equation**: The equation given is \\( 20 - 11c = -409 \\). Our goal is to isolate \\( c \\) on one side of the equation.\n\n2. **Move the constant term to the other side**: \n   - We have \\( 20 \\) on the left side of the equation. To isolate the term with \\( c \\), subtract \\( 20 \\) from both sides of the equation.\n   - This gives us: \n     \\[\n     20 - 11c - 20 = -409 - 20\n     \\]\n   - Simplifying both sides, we get:\n     \\[\n     -11c = -429\n     \\]\n\n3. **Isolate \\( c \\)**:\n   - Now, we need to solve for \\( c \\) by dividing both sides of the equation by \\(-11\\).\n   - This gives us:\n     \\[\n     c = \\frac{-429}{-11}\n     \\]\n\n4. **Calculate the division**:\n   - Perform the division:\n     \\[\n     c = 39\n     \\]\n\n5. **Verify the solution**:\n   - Substitute \\( c = 39 \\) back into the original equation to ensure it satisfies the equation:\n     \\[\n     20 - 11 \\times 39 = 20 - 429 = -409\n     \\]\n   - The left side equals the right side, confirming that our solution is correct.\n\nThe value of \\( c \\) is \\( 39 \\).\n\nFinal answer: <<<39>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Find the value of c in the equation: 20 - 11*c = -409\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Multiply the complex numbers: (9.0 + 7.0i) × (-1.0 - 10.0i)\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To multiply two complex numbers, we use the distributive property, similar to multiplying two binomials. The complex numbers given are (9.0 + 7.0i) and (-1.0 - 10.0i). Let's break down the multiplication step by step:\n\n1. **Identify the components**: \n   - The first complex number is (9.0 + 7.0i), where 9.0 is the real part and 7.0i is the imaginary part.\n   - The second complex number is (-1.0 - 10.0i), where -1.0 is the real part and -10.0i is the imaginary part.\n\n2. **Apply the distributive property**:\n   - Multiply each part of the first complex number by each part of the second complex number:\n     - (9.0) × (-1.0) = -9.0\n     - (9.0) × (-10.0i) = -90.0i\n     - (7.0i) × (-1.0) = -7.0i\n     - (7.0i) × (-10.0i) = -70.0i²\n\n3. **Simplify the expression**:\n   - Combine the real parts: -9.0\n   - Combine the imaginary parts: -90.0i - 7.0i = -97.0i\n   - Simplify the i² term: Since i² = -1, -70.0i² becomes 70.0 (because -70.0 × -1 = 70.0).\n\n4. **Combine all parts**:\n   - Add the real parts: -9.0 + 70.0 = 61.0\n   - The imaginary part remains: -97.0i\n\n5. **Write the final result**:\n   - The result of the multiplication is a complex number with a real part of 61.0 and an imaginary part of -97.0i.\n\nTherefore, the final answer is:\n\n<<<61.0 - 97.0i>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Multiply the complex numbers: (9.0 + 7.0i) × (-1.0 - 10.0i)\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

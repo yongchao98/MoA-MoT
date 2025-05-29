@@ -1,0 +1,10 @@
+{
+  "question": "Question: Phoebe tells the truth. Christie says Phoebe tells the truth. Fletcher says Christie tells the truth. Amberly says Fletcher lies. Raymond says Amberly tells the truth. Does Raymond tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine whether Raymond tells the truth, we need to analyze the statements made by each person and their implications step by step.\n\n1. **Phoebe tells the truth.**\n   - This is a given statement. We assume Phoebe always tells the truth.\n\n2. **Christie says Phoebe tells the truth.**\n   - Since Phoebe tells the truth, Christie's statement is true. Therefore, Christie tells the truth.\n\n3. **Fletcher says Christie tells the truth.**\n   - Since Christie tells the truth, Fletcher's statement is true. Therefore, Fletcher tells the truth.\n\n4. **Amberly says Fletcher lies.**\n   - Since Fletcher tells the truth, Amberly's statement is false. Therefore, Amberly lies.\n\n5. **Raymond says Amberly tells the truth.**\n   - Since Amberly lies, Raymond's statement is false. Therefore, Raymond lies.\n\nBased on the analysis, Raymond does not tell the truth.\n\nFinal answer: <<<no>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Phoebe tells the truth. Christie says Phoebe tells the truth. Fletcher says Christie tells the truth. Amberly says Fletcher lies. Raymond says Amberly tells the truth. Does Raymond tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

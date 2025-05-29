@@ -1,0 +1,12 @@
+moves = [
+    "Move B from stack4 to stack2",
+    "Move F from stack4 to stack3",
+    "Move G from stack2 to stack3",
+    "Move D from stack1 to stack2",
+    "Move C from stack1 to stack3",
+    "Move E from stack3 to stack1",
+    "Move A from stack3 to stack1"
+]
+
+for move in moves:
+    print(move)

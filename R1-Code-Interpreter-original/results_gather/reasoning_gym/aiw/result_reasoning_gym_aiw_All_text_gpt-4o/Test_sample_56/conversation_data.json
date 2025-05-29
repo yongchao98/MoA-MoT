@@ -1,0 +1,10 @@
+{
+  "question": "Linda has 2 male friends and she also has 6 female friends. They all are friends with each other and have no other friends aside. How many female friends does David, a male friend of Linda, have?\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve this problem, let's break it down step by step:\n\n1. **Identify the Total Number of Friends:**\n   - Linda has 2 male friends and 6 female friends.\n   - Therefore, the total number of friends Linda has is 2 (male) + 6 (female) = 8 friends.\n\n2. **Understand the Relationship:**\n   - All of Linda's friends are friends with each other.\n   - This means each of Linda's friends, including David, is friends with the other 7 people (since there are 8 friends in total).\n\n3. **Determine David's Female Friends:**\n   - David is one of the 2 male friends.\n   - Since all friends are friends with each other, David is friends with the remaining 7 people.\n   - Out of these 7 people, 6 are female (since Linda has 6 female friends).\n\n4. **Conclusion:**\n   - Therefore, David, being one of the male friends, is friends with all 6 of Linda's female friends.\n\nBy following these steps, we can conclude that David has 6 female friends.\n\nFinal answer: <<<6>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Linda has 2 male friends and she also has 6 female friends. They all are friends with each other and have no other friends aside. How many female friends does David, a male friend of Linda, have?\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

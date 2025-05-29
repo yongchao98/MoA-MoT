@@ -1,0 +1,12 @@
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+# Given numbers
+num1 = 416
+num2 = 362
+
+# Calculate GCD
+result = gcd(num1, num2)
+print(result)

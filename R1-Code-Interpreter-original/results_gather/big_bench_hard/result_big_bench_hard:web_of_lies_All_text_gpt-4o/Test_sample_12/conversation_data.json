@@ -1,0 +1,10 @@
+{
+  "question": "Question: Millie tells the truth. Millicent says Millie lies. Phoebe says Millicent tells the truth. Sherrie says Phoebe lies. Raymond says Sherrie tells the truth. Does Raymond tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine whether Raymond tells the truth, we need to analyze the statements made by each person and their implications step by step.\n\n1. **Millie's Statement**: Millie tells the truth.\n   - This is a given fact.\n\n2. **Millicent's Statement**: Millicent says Millie lies.\n   - If Millie tells the truth, then Millicent's statement that Millie lies must be false. Therefore, Millicent is lying.\n\n3. **Phoebe's Statement**: Phoebe says Millicent tells the truth.\n   - Since Millicent is lying, Phoebe's statement that Millicent tells the truth must also be false. Therefore, Phoebe is lying.\n\n4. **Sherrie's Statement**: Sherrie says Phoebe lies.\n   - Since Phoebe is lying, Sherrie's statement that Phoebe lies is true. Therefore, Sherrie is telling the truth.\n\n5. **Raymond's Statement**: Raymond says Sherrie tells the truth.\n   - Since Sherrie is telling the truth, Raymond's statement that Sherrie tells the truth is also true. Therefore, Raymond is telling the truth.\n\nBased on the analysis of each person's statements, we conclude that Raymond tells the truth.\n\nFinal answer: <<<true>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Millie tells the truth. Millicent says Millie lies. Phoebe says Millicent tells the truth. Sherrie says Phoebe lies. Raymond says Sherrie tells the truth. Does Raymond tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

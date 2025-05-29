@@ -1,0 +1,10 @@
+{
+  "question": "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: { < <\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to complete the sequence of brackets and ensure that all the parentheses are closed properly. The input sequence is `{ < <`. \n\nLet's analyze the sequence:\n\n1. `{` is an opening curly brace, so it needs a corresponding closing curly brace `}`.\n2. `<` is an opening angle bracket, so it needs a corresponding closing angle bracket `>`.\n3. The second `<` is another opening angle bracket, so it also needs a corresponding closing angle bracket `>`.\n\nTo properly close all the opened brackets, we need to add the corresponding closing brackets in the reverse order of their opening:\n\n- The last opened bracket is `<`, so we close it with `>`.\n- The next opened bracket is another `<`, so we close it with another `>`.\n- The first opened bracket is `{`, so we close it with `}`.\n\nThus, the completed sequence is `{ < < > > }`.\n\n<<<answer>>>"
+  ],
+  "user_prompt_list": [
+    "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: { < <\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

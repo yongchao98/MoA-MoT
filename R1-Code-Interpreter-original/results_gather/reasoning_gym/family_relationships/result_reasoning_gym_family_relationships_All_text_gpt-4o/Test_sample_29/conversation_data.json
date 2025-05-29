@@ -1,0 +1,10 @@
+{
+  "question": "Daniel is married to Aria. They have a child called Alexander. Alexander is married to Emily. They have a child called Aiden. Andrew is married to Mia. They have a child called Emily.\n\nHow is Mia related to Aiden? Provide the relationship in one word.\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine how Mia is related to Aiden, we need to analyze the family relationships step by step:\n\n1. **Identify the family members and their relationships:**\n   - Daniel is married to Aria.\n   - They have a child named Alexander.\n   - Alexander is married to Emily.\n   - Alexander and Emily have a child named Aiden.\n   - Andrew is married to Mia.\n   - Andrew and Mia have a child named Emily.\n\n2. **Determine the relationship between Mia and Aiden:**\n   - Aiden is the child of Alexander and Emily.\n   - Emily is the child of Andrew and Mia.\n   - Therefore, Emily is Aiden's mother.\n   - Since Emily is Mia's daughter, Mia is Aiden's grandmother.\n\n3. **Conclusion:**\n   - Mia is the maternal grandmother of Aiden.\n\nBased on the analysis, the relationship between Mia and Aiden is that Mia is Aiden's grandmother.\n\n<<<grandmother>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Daniel is married to Aria. They have a child called Alexander. Alexander is married to Emily. They have a child called Aiden. Andrew is married to Mia. They have a child called Emily.\n\nHow is Mia related to Aiden? Provide the relationship in one word.\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Calculate 94 - 66 * 81.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(94 - 66 \\times 81\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Identify the operations**: The expression contains subtraction and multiplication.\n2. **Apply the order of operations**:\n   - According to PEMDAS, multiplication should be performed before subtraction.\n3. **Perform the multiplication**:\n   - Calculate \\(66 \\times 81\\).\n   - Break it down for easier calculation:\n     - \\(66 \\times 81 = 66 \\times (80 + 1)\\).\n     - Use the distributive property: \\(66 \\times 80 + 66 \\times 1\\).\n     - Calculate \\(66 \\times 80\\):\n       - \\(66 \\times 80 = 66 \\times (8 \\times 10)\\).\n       - First, calculate \\(66 \\times 8\\):\n         - Break it down further: \\(66 \\times 8 = (60 + 6) \\times 8\\).\n         - Calculate \\(60 \\times 8 = 480\\).\n         - Calculate \\(6 \\times 8 = 48\\).\n         - Add the results: \\(480 + 48 = 528\\).\n       - Multiply by 10: \\(528 \\times 10 = 5280\\).\n     - Calculate \\(66 \\times 1 = 66\\).\n     - Add the results: \\(5280 + 66 = 5346\\).\n4. **Perform the subtraction**:\n   - Now, substitute back into the original expression: \\(94 - 5346\\).\n   - Calculate \\(94 - 5346\\):\n     - Since 5346 is larger than 94, the result will be negative.\n     - Subtract 94 from 5346: \\(5346 - 94 = 5252\\).\n     - Therefore, \\(94 - 5346 = -5252\\).\n\nThe final answer is:\n\n<<<-5252>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate 94 - 66 * 81.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

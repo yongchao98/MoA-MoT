@@ -1,0 +1,10 @@
+{
+  "question": "Calculate -530 + 807 - -253 + -131 - -301 + -802.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(-530 + 807 - -253 + -131 - -301 + -802\\), we need to carefully follow the order of operations and pay attention to the signs of each number. Let's break it down step by step:\n\n1. **Identify the terms and their signs:**\n   - \\(-530\\)\n   - \\(+ 807\\)\n   - \\(- -253\\) which is equivalent to \\(+ 253\\)\n   - \\(+ -131\\) which is equivalent to \\(- 131\\)\n   - \\(- -301\\) which is equivalent to \\(+ 301\\)\n   - \\(+ -802\\) which is equivalent to \\(- 802\\)\n\n2. **Re-write the expression with simplified signs:**\n   \\[\n   -530 + 807 + 253 - 131 + 301 - 802\n   \\]\n\n3. **Perform the addition and subtraction from left to right:**\n\n   - Start with the first two terms: \n     \\[\n     -530 + 807 = 277\n     \\]\n\n   - Add the next term:\n     \\[\n     277 + 253 = 530\n     \\]\n\n   - Subtract the next term:\n     \\[\n     530 - 131 = 399\n     \\]\n\n   - Add the next term:\n     \\[\n     399 + 301 = 700\n     \\]\n\n   - Subtract the last term:\n     \\[\n     700 - 802 = -102\n     \\]\n\n4. **Final result:**\n   - The final result of the expression is \\(-102\\).\n\nTherefore, the answer to the expression is:\n\n\\[\n\\text{<<<-102>>>}\n\\]"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate -530 + 807 - -253 + -131 - -301 + -802.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

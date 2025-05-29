@@ -1,0 +1,10 @@
+{
+  "question": "Question: Tamika tells the truth. Sima says Tamika tells the truth. Rashida says Sima lies. Delfina says Rashida lies. Jerry says Delfina lies. Does Jerry tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to analyze the statements made by each person and determine the truthfulness of each statement. Let's break it down step by step:\n\n1. **Tamika tells the truth.**\n   - This is our starting point. If Tamika tells the truth, then her statement is true.\n\n2. **Sima says Tamika tells the truth.**\n   - If Sima is telling the truth, then Tamika indeed tells the truth. This is consistent with Tamika's statement.\n\n3. **Rashida says Sima lies.**\n   - If Rashida is telling the truth, then Sima is lying. This would mean Tamika does not tell the truth, which contradicts our assumption that Tamika tells the truth.\n\n4. **Delfina says Rashida lies.**\n   - If Delfina is telling the truth, then Rashida is lying. This would mean Sima tells the truth, which is consistent with Tamika telling the truth.\n\n5. **Jerry says Delfina lies.**\n   - If Jerry is telling the truth, then Delfina is lying. This would mean Rashida tells the truth, which implies Sima is lying, contradicting the assumption that Tamika tells the truth.\n\nFrom this analysis, we can see that if Jerry tells the truth, it leads to a contradiction because it implies that Tamika does not tell the truth. Therefore, Jerry must be lying.\n\nThus, Jerry does not tell the truth.\n\n<<<answer>>>No, Jerry does not tell the truth."
+  ],
+  "user_prompt_list": [
+    "Question: Tamika tells the truth. Sima says Tamika tells the truth. Rashida says Sima lies. Delfina says Rashida lies. Jerry says Delfina lies. Does Jerry tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,7 @@
+"
+if solution:
+    for i, step in enumerate(solution):
+        output += f"Step {i+1}: {step}\n"
+else:
+    output += "No solution found within 4 steps.\n"
+output += "

@@ -1,0 +1,78 @@
+def try_method_1(blocks):
+    # [A] + [B] + [C] -> {A}
+    if blocks['[A]'] >= 1 and blocks['[B]'] >= 1 and blocks['[C]'] >= 1:
+        blocks['[A]'] -= 1
+        blocks['[B]'] -= 1
+        blocks['[C]'] -= 1
+        blocks['{A}'] += 1
+        return True
+    return False
+
+def try_method_2(blocks):
+    # [A] + [B] -> {C}
+    if blocks['[A]'] >= 1 and blocks['[B]'] >= 1:
+        blocks['[A]'] -= 1
+        blocks['[B]'] -= 1
+        blocks['{C}'] += 1
+        return True
+    return False
+
+def try_method_3(blocks):
+    # [B] + [C] -> {B}
+    if blocks['[B]'] >= 1 and blocks['[C]'] >= 1:
+        blocks['[B]'] -= 1
+        blocks['[C]'] -= 1
+        blocks['{B}'] += 1
+        return True
+    return False
+
+def try_method_4(blocks):
+    # [C] + [C] -> {C}
+    if blocks['[C]'] >= 2:
+        blocks['[C]'] -= 2
+        blocks['{C}'] += 1
+        return True
+    return False
+
+def try_method_5(blocks):
+    # {A} + {C} -> (A) + (B)
+    if blocks['{A}'] >= 1 and blocks['{C}'] >= 1:
+        blocks['{A}'] -= 1
+        blocks['{C}'] -= 1
+        blocks['(A)'] += 1
+        blocks['(B)'] += 1
+        return True
+    return False
+
+def try_method_6(blocks):
+    # {B} + {B} -> (C)
+    if blocks['{B}'] >= 2:
+        blocks['{B}'] -= 2
+        blocks['(C)'] += 1
+        return True
+    return False
+
+# Initialize blocks
+blocks = {
+    '[A]': 4, '[B]': 1, '[C]': 3,
+    '{A}': 0, '{B}': 0, '{C}': 0,
+    '(A)': 0, '(B)': 0, '(C)': 0
+}
+
+# Keep trying methods until no more changes
+while True:
+    changes_made = False
+    for method in [try_method_1, try_method_2, try_method_3, try_method_4, try_method_5, try_method_6]:
+        if method(blocks):
+            changes_made = True
+            break
+    if not changes_made:
+        break
+
+# Print final result
+result = ""
+for block_type in ['[A]', '[B]', '[C]', '{A}', '{B}', '{C}', '(A)', '(B)', '(C)']:
+    if blocks[block_type] > 0:
+        result += f"{blocks[block_type]} {block_type}, "
+result = result.rstrip(", ")
+print(result)

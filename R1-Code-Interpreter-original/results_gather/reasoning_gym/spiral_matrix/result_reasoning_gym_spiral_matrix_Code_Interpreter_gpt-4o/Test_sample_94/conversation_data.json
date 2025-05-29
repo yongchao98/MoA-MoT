@@ -1,0 +1,10 @@
+{
+  "question": "Given a matrix, your job is to generate a list of elements in spiral order, starting from the top-left element.\n\nThe spiral order is clockwise, starting from the top-left corner. More precisely:\n- Start from the top-left corner and move right.\n- Move down towards the bottom-right corner.\n- Move left towards the bottom-left corner.\n- Move up towards the top-right corner.\n- Repeat the steps for the inner elements of the matrix until every entry is visited.\n\nYour output should be a space-separated list of integers enclosed within triple angle brackets, e.g. <<<1 2 3 4 5 6>>>\n\nFor the matrix below, what is the list of elements in spiral order?\n9 7\n3 9\n",
+  "response_list": [
+    "\nassistant > To generate the list of elements in spiral order for the given matrix, we can follow the steps outlined in the problem statement. Let's first represent the matrix:\n\n```\n9 7\n3 9\n```\n\nNow, let's generate the spiral order:\n\n1. Start from the top-left corner and move right: `9, 7`\n2. Move down towards the bottom-right corner: `9`\n3. Move left towards the bottom-left corner: `3`\n4. Move up towards the top-right corner: (No elements left to move up)\n\nThe spiral order for the given matrix is: `9, 7, 9, 3`\n\nLet's format this as a space-separated list of integers enclosed within triple angle brackets: `<<<9 7 9 3>>>`"
+  ],
+  "user_prompt_list": [
+    "Given a matrix, your job is to generate a list of elements in spiral order, starting from the top-left element.\n\nThe spiral order is clockwise, starting from the top-left corner. More precisely:\n- Start from the top-left corner and move right.\n- Move down towards the bottom-right corner.\n- Move left towards the bottom-left corner.\n- Move up towards the top-right corner.\n- Repeat the steps for the inner elements of the matrix until every entry is visited.\n\nYour output should be a space-separated list of integers enclosed within triple angle brackets, e.g. <<<1 2 3 4 5 6>>>\n\nFor the matrix below, what is the list of elements in spiral order?\n9 7\n3 9\n"
+  ],
+  "system_message": ""
+}

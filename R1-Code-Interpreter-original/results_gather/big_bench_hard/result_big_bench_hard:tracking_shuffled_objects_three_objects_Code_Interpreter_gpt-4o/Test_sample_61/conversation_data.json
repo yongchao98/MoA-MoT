@@ -1,0 +1,10 @@
+{
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Sam, Bob is dancing with Lola, and Claire is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Bob and Claire switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Sam\n(B) Lola\n(C) Karl\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > Let's track the partner changes step by step:\n\n1. Initial partners:\n   - Alice is with Sam\n   - Bob is with Lola\n   - Claire is with Karl\n\n2. Bob and Alice switch partners:\n   - Alice is with Lola\n   - Bob is with Sam\n   - Claire is with Karl\n\n3. Bob and Claire switch partners:\n   - Alice is with Lola\n   - Bob is with Karl\n   - Claire is with Sam\n\n4. Alice and Bob switch partners:\n   - Alice is with Karl\n   - Bob is with Lola\n   - Claire is with Sam\n\nAt the end of the dance, Claire is dancing with Sam.\n\nThe correct answer is:\n<<<A>>>"
+  ],
+  "user_prompt_list": [
+    "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Sam, Bob is dancing with Lola, and Claire is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Bob and Claire switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Sam\n(B) Lola\n(C) Karl\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

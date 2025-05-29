@@ -1,0 +1,10 @@
+{
+  "question": "Jayden is married to Jennifer. They have a child called Jack. Jack is married to Lucy. They have children called Theodore and Liam.\n\nWhat relation is Lucy to Jayden? Answer with a single word.\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine the relationship between Lucy and Jayden, let's break down the family relationships step by step:\n\n1. **Jayden and Jennifer**: Jayden is married to Jennifer.\n2. **Jayden and Jack**: Jayden and Jennifer have a child named Jack. Therefore, Jack is Jayden's son.\n3. **Jack and Lucy**: Jack is married to Lucy.\n4. **Lucy and Jack's children**: Jack and Lucy have children named Theodore and Liam.\n\nNow, let's determine Lucy's relationship to Jayden:\n\n- Since Jack is Jayden's son, and Lucy is married to Jack, Lucy is Jayden's daughter-in-law.\n\nTherefore, the relationship of Lucy to Jayden is:\n\n<<<daughter-in-law>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Jayden is married to Jennifer. They have a child called Jack. Jack is married to Lucy. They have children called Theodore and Liam.\n\nWhat relation is Lucy to Jayden? Answer with a single word.\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "((1 + 7 * -9 + -5) + (3 + -5 * 2 - 6)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\((1 + 7 \\times -9 + -5) + (3 + -5 \\times 2 - 6)\\), we need to follow the order of operations, which is parentheses, exponents, multiplication and division (from left to right), and addition and subtraction (from left to right).\n\nLet's break it down step by step:\n\n1. **Evaluate the first set of parentheses**: \n   \\((1 + 7 \\times -9 + -5)\\)\n   - First, perform the multiplication: \\(7 \\times -9 = -63\\)\n   - Then, perform the addition and subtraction from left to right: \n     - \\(1 + (-63) = -62\\)\n     - \\(-62 + (-5) = -67\\)\n\n2. **Evaluate the second set of parentheses**: \n   \\((3 + -5 \\times 2 - 6)\\)\n   - First, perform the multiplication: \\(-5 \\times 2 = -10\\)\n   - Then, perform the addition and subtraction from left to right:\n     - \\(3 + (-10) = -7\\)\n     - \\(-7 - 6 = -13\\)\n\n3. **Combine the results of the two parentheses**:\n   - \\((-67) + (-13) = -80\\)\n\nThus, the final result of the expression is \\(-80\\).\n\n<<<answer>>>-80<<<answer>>>"
+  ],
+  "user_prompt_list": [
+    "((1 + 7 * -9 + -5) + (3 + -5 * 2 - 6)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

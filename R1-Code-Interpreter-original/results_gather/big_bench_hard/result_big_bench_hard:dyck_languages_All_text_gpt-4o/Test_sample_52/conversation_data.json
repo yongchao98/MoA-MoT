@@ -1,0 +1,10 @@
+{
+  "question": "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: < < ( < >\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the problem of completing the sequence \"< < ( < >\", we need to ensure that all the parentheses and angle brackets are properly closed. Let's analyze the sequence step by step:\n\n1. **Initial Sequence**: `< < ( < >`\n\n2. **Understanding the Sequence**:\n   - The sequence starts with two opening angle brackets: `< <`.\n   - This is followed by an opening parenthesis: `(`.\n   - Then, there is another opening angle bracket: `<`.\n   - Finally, there is a closing angle bracket: `>`.\n\n3. **Closing the Sequence**:\n   - The closing angle bracket `>` matches the last opening angle bracket `<`. So, the sequence now looks like: `< < ( < >`.\n   - Next, we need to close the opening parenthesis `(`. We add a closing parenthesis `)` after the `>`. The sequence becomes: `< < ( < > )`.\n   - Finally, we need to close the two initial opening angle brackets `< <`. We add two closing angle brackets `>>` at the end. The sequence becomes: `< < ( < > ) >>`.\n\n4. **Final Sequence**:\n   - The complete sequence with all parentheses and angle brackets properly closed is: `< < ( < > ) >>`.\n\nTherefore, the final answer is:\n\n<<< < < ( < > ) >> >>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: < < ( < >\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

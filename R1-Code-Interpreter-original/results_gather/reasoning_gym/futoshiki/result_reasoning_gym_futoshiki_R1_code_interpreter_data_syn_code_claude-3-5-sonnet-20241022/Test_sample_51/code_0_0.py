@@ -1,0 +1,118 @@
+def is_valid(grid, row, col, num, h_constraints, v_constraints):
+    # Check row
+    if num in grid[row]:
+        return False
+    
+    # Check column
+    if num in [grid[i][col] for i in range(7) if grid[i][col] != 0]:
+        return False
+    
+    # Check horizontal constraints
+    for (r, c1, c2, greater) in h_constraints:
+        if r == row:
+            if c1 == col and grid[r][c2] != 0:
+                if greater and not (num > grid[r][c2]):
+                    return False
+                if not greater and not (num < grid[r][c2]):
+                    return False
+            if c2 == col and grid[r][c1] != 0:
+                if greater and not (grid[r][c1] > num):
+                    return False
+                if not greater and not (grid[r][c1] < num):
+                    return False
+
+    # Check vertical constraints
+    for (r1, r2, c, greater) in v_constraints:
+        if c == col:
+            if r1 == row and grid[r2][c] != 0:
+                if greater and not (num > grid[r2][c]):
+                    return False
+                if not greater and not (num < grid[r2][c]):
+                    return False
+            if r2 == row and grid[r1][c] != 0:
+                if greater and not (grid[r1][c] > num):
+                    return False
+                if not greater and not (grid[r1][c] < num):
+                    return False
+    
+    return True
+
+def find_empty(grid):
+    for i in range(7):
+        for j in range(7):
+            if grid[i][j] == 0:
+                return i, j
+    return None
+
+def solve_futoshiki(grid, h_constraints, v_constraints):
+    empty = find_empty(grid)
+    if not empty:
+        return True
+    
+    row, col = empty
+    for num in range(1, 8):
+        if is_valid(grid, row, col, num, h_constraints, v_constraints):
+            grid[row][col] = num
+            if solve_futoshiki(grid, h_constraints, v_constraints):
+                return True
+            grid[row][col] = 0
+    
+    return False
+
+# Initial grid (0 represents empty cells)
+grid = [
+    [0, 3, 0, 7, 4, 0, 0],
+    [5, 0, 4, 1, 0, 0, 0],
+    [0, 0, 0, 0, 2, 6, 0],
+    [3, 1, 6, 0, 0, 0, 7],
+    [2, 0, 0, 5, 0, 0, 0],
+    [0, 2, 3, 0, 0, 0, 0],
+    [0, 0, 2, 0, 6, 1, 0]
+]
+
+# Horizontal constraints: (row, col1, col2, True if col1 > col2)
+h_constraints = [
+    (1, 2, 3, True),
+    (1, 5, 6, True),
+    (2, 2, 3, True),
+    (2, 4, 5, False),
+    (3, 0, 1, True),
+    (4, 1, 2, True),
+    (4, 4, 5, True),
+    (6, 5, 6, False)
+]
+
+# Vertical constraints: (row1, row2, col, True if row1 > row2)
+v_constraints = [
+    (0, 1, 0, True),
+    (1, 2, 0, True),
+    (3, 4, 0, False),
+    (4, 5, 0, True),
+    (5, 6, 0, True),
+    (2, 3, 4, True),
+    (3, 4, 4, True),
+    (4, 5, 5, True),
+    (3, 4, 6, True),
+    (5, 6, 6, False)
+]
+
+if solve_futoshiki(grid, h_constraints, v_constraints):
+    # Print the solution in the required format
+    result = ""
+    for i in range(7):
+        row = "   ".join(str(grid[i][j]) for j in range(7))
+        result += row
+        if i < 6:
+            v_row = ""
+            for j in range(7):
+                if any(r1 == i and r2 == i+1 and c == j and g for r1, r2, c, g in v_constraints):
+                    v_row += "∨   "
+                elif any(r1 == i and r2 == i+1 and c == j and not g for r1, r2, c, g in v_constraints):
+                    v_row += "∧   "
+                else:
+                    v_row += "    "
+            result += "\n" + v_row.rstrip()
+        result += "\n"
+    print(result)
+else:
+    print("No solution exists")

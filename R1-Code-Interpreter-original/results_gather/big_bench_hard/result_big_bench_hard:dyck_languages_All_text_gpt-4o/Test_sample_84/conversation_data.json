@@ -1,0 +1,10 @@
+{
+  "question": "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: ( { } ) < { < { } >\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To complete the sequence, we need to ensure that all the parentheses, brackets, and angle brackets are properly closed. Let's analyze the given sequence step by step:\n\n1. **Input Sequence**: ( { } ) < { < { } >\n\n2. **Analyze the Sequence**:\n   - The sequence starts with a parenthesis `(`, which is closed by `)`.\n   - Inside the parenthesis, there is a pair of curly braces `{ }`, which are already closed.\n   - After the parenthesis, there is an angle bracket `<`, which needs to be closed.\n   - Inside the angle bracket, there is a pair of curly braces `{ }`, which are already closed.\n   - After the curly braces, there is another angle bracket `<`, which needs to be closed.\n   - Inside this angle bracket, there is a pair of curly braces `{ }`, which are already closed.\n\n3. **Determine the Missing Closures**:\n   - The first angle bracket `<` is not closed in the sequence.\n   - The second angle bracket `<` is also not closed in the sequence.\n\n4. **Complete the Sequence**:\n   - Close the second angle bracket with `>`.\n   - Close the first angle bracket with `>`.\n\n5. **Final Sequence**:\n   - The completed sequence should be: ( { } ) < { < { } > >\n\nTherefore, the final answer is:\n\n<<<( { } ) < { < { } > >>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: ( { } ) < { < { } >\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

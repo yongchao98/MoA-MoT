@@ -1,0 +1,10 @@
+{
+  "question": "In November 2022, if an event recurs on the last Friday, what is the date (day of the month) of the event? Express your answer as a number. Answer with -1 if the ordinal does not exist in the month.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom datetime import date, timedelta\n\n# Function to find the last Friday of a given month and year\ndef last_friday(year, month):\n    # Start from the last day of the month\n    last_day = date(year, month + 1, 1) - timedelta(days=1)\n    # Calculate the last Friday\n    last_friday = last_day - timedelta(days=(last_day.weekday() - 4) % 7)\n    return last_friday.day\n\n# Get the last Friday of November 2022\nlast_friday_november_2022 = last_friday(2022, 11)\nlast_friday_november_2022\nassistant > The date of the event on the last Friday of November 2022 is <<<25>>>."
+  ],
+  "user_prompt_list": [
+    "In November 2022, if an event recurs on the last Friday, what is the date (day of the month) of the event? Express your answer as a number. Answer with -1 if the ordinal does not exist in the month.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

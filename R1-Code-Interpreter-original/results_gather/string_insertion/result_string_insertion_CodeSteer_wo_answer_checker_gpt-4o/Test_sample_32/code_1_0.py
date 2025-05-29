@@ -1,0 +1,35 @@
+def apply_t_operation(s):
+    i = 0
+    result = []
+    while i < len(s):
+        if s[i:i+4] == "ABCD":
+            result.append("ABCD")
+            result.append("A")
+            i += 1  # Move one character forward after insertion
+        elif s[i:i+4] == "BCDE":
+            result.append("BCDE")
+            result.append("B")
+            i += 1
+        elif s[i:i+4] == "CDEA":
+            result.append("CDEA")
+            result.append("C")
+            i += 1
+        elif s[i:i+4] == "DEAB":
+            result.append("DEAB")
+            result.append("D")
+            i += 1
+        elif s[i:i+4] == "EABC":
+            result.append("EABC")
+            result.append("E")
+            i += 1
+        else:
+            result.append(s[i])
+            i += 1
+    return "<<<" + "".join(result) + ">>>"
+
+# Given string
+input_string = "DBCDEBABCDDDEABAB"
+# Apply the T operation
+output_string = apply_t_operation(input_string)
+# Print the result
+print(output_string)

@@ -1,0 +1,10 @@
+{
+  "question": "10, 2, -6, -14, -22, -30, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>.",
+  "response_list": [
+    "To solve this problem, we need to identify the pattern in the sequence of numbers: 10, 2, -6, -14, -22, -30, and determine the next number in the sequence.\n\n1. **Identify the Pattern:**\n   - First, we calculate the differences between consecutive terms to see if there is a consistent pattern.\n   - Difference between 10 and 2: \\(2 - 10 = -8\\)\n   - Difference between 2 and -6: \\(-6 - 2 = -8\\)\n   - Difference between -6 and -14: \\(-14 - (-6) = -8\\)\n   - Difference between -14 and -22: \\(-22 - (-14) = -8\\)\n   - Difference between -22 and -30: \\(-30 - (-22) = -8\\)\n\n2. **Recognize the Pattern:**\n   - The differences between consecutive terms are consistent and equal to -8. This indicates that the sequence is an arithmetic sequence with a common difference of -8.\n\n3. **Determine the Next Term:**\n   - To find the next term in the sequence, we subtract 8 from the last known term, which is -30.\n   - Next term: \\(-30 - 8 = -38\\)\n\n4. **Conclusion:**\n   - The sequence follows a simple arithmetic pattern where each term is 8 less than the previous term.\n\nTherefore, the next number in the sequence is -38.\n\nThe value of \"?\" is enclosed within triple angle brackets as requested:\n\n<<<-38>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    10, 2, -6, -14, -22, -30, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>."
+  ],
+  "system_message": ""
+}

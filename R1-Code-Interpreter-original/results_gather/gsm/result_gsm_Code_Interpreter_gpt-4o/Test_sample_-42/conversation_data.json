@@ -1,0 +1,10 @@
+{
+  "question": "A company bought $4326221 worth of equipment from a retailer business, but pieces of equipment worth 40% of the total number were faulty. If they returned the faulty pieces of equipment to the seller, calculate the total amount of money spent on functioning pieces of equipment.\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "\nassistant > To find the total amount of money spent on functioning pieces of equipment, we need to calculate the value of the faulty equipment and subtract it from the total amount spent.\n\n1. Calculate the value of the faulty equipment:\n   - Faulty equipment percentage = 40%\n   - Value of faulty equipment = 40% of $4,326,221\n\n2. Subtract the value of the faulty equipment from the total amount to get the value of the functioning equipment.\n\nLet's perform these calculations.\nassistant > code_interpreter\n\n# Total amount spent on equipment\ntotal_amount = 4326221\n\n# Percentage of faulty equipment\nfaulty_percentage = 40 / 100\n\n# Calculate the value of the faulty equipment\nfaulty_value = total_amount * faulty_percentage\n\n# Calculate the value of the functioning equipment\nfunctioning_value = total_amount - faulty_value\n\nfunctioning_value\nassistant > The total amount of money spent on functioning pieces of equipment is approximately <<<2595732.6>>>."
+  ],
+  "user_prompt_list": [
+    "A company bought $4326221 worth of equipment from a retailer business, but pieces of equipment worth 40% of the total number were faulty. If they returned the faulty pieces of equipment to the seller, calculate the total amount of money spent on functioning pieces of equipment.\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Find the value of i in the equation: 93 - 48*i = -771\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom sympy import symbols, Eq, solve\n\n# Define the variable\ni = symbols('i')\n\n# Define the equation\nequation = Eq(93 - 48*i, -771)\n\n# Solve the equation\nsolution = solve(equation, i)\nsolution\nassistant > The value of \\( i \\) in the equation is <<<18>>>."
+  ],
+  "user_prompt_list": [
+    "Find the value of i in the equation: 93 - 48*i = -771\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "((-9 + -3 + 6 - 8) - (-7 * -2 * -6 + -6)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\(((-9 + -3 + 6 - 8) - (-7 * -2 * -6 + -6))\\), we need to follow the order of operations, which is parentheses, exponents, multiplication and division (from left to right), and addition and subtraction (from left to right).\n\n1. **Evaluate the innermost parentheses:**\n   - \\(-9 + -3 + 6 - 8\\)\n   - Calculate step by step:\n     - \\(-9 + -3 = -12\\)\n     - \\(-12 + 6 = -6\\)\n     - \\(-6 - 8 = -14\\)\n\n2. **Evaluate the multiplication inside the parentheses:**\n   - \\(-7 * -2 * -6\\)\n   - Calculate step by step:\n     - \\(-7 * -2 = 14\\)\n     - \\(14 * -6 = -84\\)\n\n3. **Evaluate the expression inside the parentheses:**\n   - \\(-84 + -6 = -90\\)\n\n4. **Substitute back into the main expression:**\n   - \\((-14) - (-90)\\)\n\n5. **Simplify the expression:**\n   - \\(-14 + 90 = 76\\)\n\nThus, the final result of the expression is 76.\n\n<<<answer>>> 76"
+  ],
+  "user_prompt_list": [
+    "((-9 + -3 + 6 - 8) - (-7 * -2 * -6 + -6)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

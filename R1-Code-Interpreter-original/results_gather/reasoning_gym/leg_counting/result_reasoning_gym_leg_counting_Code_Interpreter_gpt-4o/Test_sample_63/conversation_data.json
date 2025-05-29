@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 11 spiders, 5 sea slugs, 13 ducks, 4 snakes, 1 chicken?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To calculate the total number of legs, we need to know the number of legs each type of animal has:\n\n- Spiders have 8 legs.\n- Sea slugs have 0 legs.\n- Ducks have 2 legs.\n- Snakes have 0 legs.\n- Chickens have 2 legs.\n\nNow, we can calculate the total number of legs:\n\n- Total legs from spiders = 11 spiders * 8 legs/spider\n- Total legs from sea slugs = 5 sea slugs * 0 legs/sea slug\n- Total legs from ducks = 13 ducks * 2 legs/duck\n- Total legs from snakes = 4 snakes * 0 legs/snake\n- Total legs from chickens = 1 chicken * 2 legs/chicken\n\nLet's compute the total number of legs.\nassistant > code_interpreter\n\n# Number of animals\nspiders = 11\nsea_slugs = 5\nducks = 13\nsnakes = 4\nchickens = 1\n\n# Legs per animal\nlegs_per_spider = 8\nlegs_per_sea_slug = 0\nlegs_per_duck = 2\nlegs_per_snake = 0\nlegs_per_chicken = 2\n\n# Total legs calculation\ntotal_legs = (spiders * legs_per_spider +\n              sea_slugs * legs_per_sea_slug +\n              ducks * legs_per_duck +\n              snakes * legs_per_snake +\n              chickens * legs_per_chicken)\n\ntotal_legs\nassistant > The total number of legs is <<<116>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 11 spiders, 5 sea slugs, 13 ducks, 4 snakes, 1 chicken?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

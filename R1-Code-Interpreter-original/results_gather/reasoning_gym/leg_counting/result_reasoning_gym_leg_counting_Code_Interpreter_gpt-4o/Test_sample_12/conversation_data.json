@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 2 crabs, 10 lobsters, 1 human, 2 cows, 3 bees, 13 elephants, 9 dogs, 12 snakes, 5 shrimps?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To calculate the total number of legs, we need to know the number of legs each type of animal has:\n\n- Crabs: 10 legs each\n- Lobsters: 10 legs each\n- Humans: 2 legs each\n- Cows: 4 legs each\n- Bees: 6 legs each\n- Elephants: 4 legs each\n- Dogs: 4 legs each\n- Snakes: 0 legs each\n- Shrimps: 10 legs each\n\nNow, we can calculate the total number of legs for each type of animal and sum them up. Let's do the calculation.\nassistant > code_interpreter\n\n# Number of legs for each type of animal\nlegs_per_animal = {\n    \"crab\": 10,\n    \"lobster\": 10,\n    \"human\": 2,\n    \"cow\": 4,\n    \"bee\": 6,\n    \"elephant\": 4,\n    \"dog\": 4,\n    \"snake\": 0,\n    \"shrimp\": 10\n}\n\n# Number of each type of animal\nanimal_counts = {\n    \"crab\": 2,\n    \"lobster\": 10,\n    \"human\": 1,\n    \"cow\": 2,\n    \"bee\": 3,\n    \"elephant\": 13,\n    \"dog\": 9,\n    \"snake\": 12,\n    \"shrimp\": 5\n}\n\n# Calculate total number of legs\ntotal_legs = sum(legs_per_animal[animal] * count for animal, count in animal_counts.items())\ntotal_legs\nassistant > The total number of legs is <<<286>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 2 crabs, 10 lobsters, 1 human, 2 cows, 3 bees, 13 elephants, 9 dogs, 12 snakes, 5 shrimps?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

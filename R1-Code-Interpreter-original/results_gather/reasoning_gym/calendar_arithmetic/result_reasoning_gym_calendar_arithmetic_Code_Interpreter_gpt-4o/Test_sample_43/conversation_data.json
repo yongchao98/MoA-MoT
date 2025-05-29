@@ -1,0 +1,10 @@
+{
+  "question": "If a meeting is scheduled on the fourth Thursday of October 2022, on which day of the month does it occur? Express your answer as a number. Answer with -1 if the ordinal does not exist in the month.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom datetime import date, timedelta\n\n# Function to find the nth weekday of a given month and year\ndef nth_weekday_of_month(year, month, weekday, n):\n    # Start from the first day of the month\n    first_day = date(year, month, 1)\n    # Find the first occurrence of the weekday in the month\n    first_weekday = first_day + timedelta(days=(weekday - first_day.weekday() + 7) % 7)\n    # Calculate the nth occurrence\n    nth_weekday = first_weekday + timedelta(weeks=n-1)\n    # Check if the nth occurrence is within the same month\n    if nth_weekday.month == month:\n        return nth_weekday.day\n    else:\n        return -1\n\n# October 2022, fourth Thursday\nyear = 2022\nmonth = 10\nweekday = 3  # Thursday (0=Monday, 1=Tuesday, ..., 6=Sunday)\nn = 4\n\n# Find the day of the month\nday_of_month = nth_weekday_of_month(year, month, weekday, n)\nday_of_month\nassistant > The meeting scheduled on the fourth Thursday of October 2022 occurs on the <<<27>>>."
+  ],
+  "user_prompt_list": [
+    "If a meeting is scheduled on the fourth Thursday of October 2022, on which day of the month does it occur? Express your answer as a number. Answer with -1 if the ordinal does not exist in the month.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

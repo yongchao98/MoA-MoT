@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 6 cows, 6 shrimps, 2 lions, 7 insects, 8 sheeps, 6 crabs, 3 wasps, 6 butterflys, 11 snakes, 1 giraffe?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To calculate the total number of legs, we need to know the number of legs each type of animal has:\n\n- Cows: 4 legs\n- Shrimps: 10 legs (decapods)\n- Lions: 4 legs\n- Insects: 6 legs\n- Sheep: 4 legs\n- Crabs: 10 legs (decapods)\n- Wasps: 6 legs\n- Butterflies: 6 legs\n- Snakes: 0 legs\n- Giraffes: 4 legs\n\nNow, we can calculate the total number of legs for each type of animal and sum them up. Let's do the calculation.\nassistant > code_interpreter\n\n# Number of animals\ncows = 6\nshrimps = 6\nlions = 2\ninsects = 7\nsheep = 8\ncrabs = 6\nwasps = 3\nbutterflies = 6\nsnakes = 11\ngiraffe = 1\n\n# Number of legs per animal\nlegs_per_cow = 4\nlegs_per_shrimp = 10\nlegs_per_lion = 4\nlegs_per_insect = 6\nlegs_per_sheep = 4\nlegs_per_crab = 10\nlegs_per_wasp = 6\nlegs_per_butterfly = 6\nlegs_per_snake = 0\nlegs_per_giraffe = 4\n\n# Total number of legs\ntotal_legs = (cows * legs_per_cow +\n              shrimps * legs_per_shrimp +\n              lions * legs_per_lion +\n              insects * legs_per_insect +\n              sheep * legs_per_sheep +\n              crabs * legs_per_crab +\n              wasps * legs_per_wasp +\n              butterflies * legs_per_butterfly +\n              snakes * legs_per_snake +\n              giraffe * legs_per_giraffe)\n\ntotal_legs\nassistant > The total number of legs is <<<284>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 6 cows, 6 shrimps, 2 lions, 7 insects, 8 sheeps, 6 crabs, 3 wasps, 6 butterflys, 11 snakes, 1 giraffe?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

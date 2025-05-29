@@ -1,0 +1,10 @@
+{
+  "question": "Question: Christie tells the truth. Jamey says Christie tells the truth. Michael says Jamey lies. Rashida says Michael tells the truth. Teressa says Rashida tells the truth. Does Teressa tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to analyze the statements and determine the truthfulness of each person based on the given information.\n\n1. **Christie tells the truth.**  \n   - This is a given statement. Let's assume it's true.\n\n2. **Jamey says Christie tells the truth.**  \n   - If Jamey is telling the truth, then Christie is indeed telling the truth, which is consistent with our assumption.\n\n3. **Michael says Jamey lies.**  \n   - If Michael is telling the truth, then Jamey is lying. But if Jamey is lying, then Christie is not telling the truth, which contradicts our assumption that Christie tells the truth. Therefore, Michael must be lying.\n\n4. **Rashida says Michael tells the truth.**  \n   - Since we determined that Michael is lying, Rashida must be lying because she claims Michael tells the truth.\n\n5. **Teressa says Rashida tells the truth.**  \n   - Since Rashida is lying, Teressa must also be lying because she claims Rashida tells the truth.\n\nTherefore, Teressa does not tell the truth.\n\n<<<'answer'>>>"
+  ],
+  "user_prompt_list": [
+    "Question: Christie tells the truth. Jamey says Christie tells the truth. Michael says Jamey lies. Rashida says Michael tells the truth. Teressa says Rashida tells the truth. Does Teressa tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

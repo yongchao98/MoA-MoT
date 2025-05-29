@@ -1,0 +1,10 @@
+{
+  "question": "((-8 + -6 * 9 - 7) + (8 + 2 * -9 * -7)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > Let's solve the expression step by step:\n\nThe expression is:\n\\[\n((-8 + -6 \\times 9 - 7) + (8 + 2 \\times -9 \\times -7))\n\\]\n\nFirst, we solve the multiplication inside the parentheses:\n\n1. \\(-6 \\times 9 = -54\\)\n2. \\(2 \\times -9 \\times -7 = 2 \\times 63 = 126\\)\n\nNow substitute these values back into the expression:\n\n\\[\n((-8 + -54 - 7) + (8 + 126))\n\\]\n\nNext, perform the addition and subtraction inside each set of parentheses:\n\n1. \\(-8 + -54 - 7 = -69\\)\n2. \\(8 + 126 = 134\\)\n\nNow substitute these values back into the expression:\n\n\\[\n(-69 + 134)\n\\]\n\nFinally, perform the addition:\n\n\\[\n-69 + 134 = 65\n\\]\n\nThus, the final answer is:\n\n\\[\n\\text{<<<65>>>}\n\\]"
+  ],
+  "user_prompt_list": [
+    "((-8 + -6 * 9 - 7) + (8 + 2 * -9 * -7)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

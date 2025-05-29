@@ -1,0 +1,10 @@
+{
+  "question": "Question: Jamey tells the truth. Delfina says Jamey lies. Vina says Delfina tells the truth. Teressa says Vina tells the truth. Conception says Teressa lies. Does Conception tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine whether Conception tells the truth, we need to analyze the statements made by each person and their implications step by step.\n\n1. **Jamey tells the truth.**\n   - This is a given statement. If Jamey tells the truth, then any statement made by Jamey is true.\n\n2. **Delfina says Jamey lies.**\n   - If Delfina is telling the truth, then Jamey lies. However, this contradicts the given statement that Jamey tells the truth. Therefore, Delfina must be lying.\n\n3. **Vina says Delfina tells the truth.**\n   - Since we have established that Delfina is lying, Vina's statement that Delfina tells the truth must be false. Therefore, Vina is lying.\n\n4. **Teressa says Vina tells the truth.**\n   - Since Vina is lying, Teressa's statement that Vina tells the truth is false. Therefore, Teressa is lying.\n\n5. **Conception says Teressa lies.**\n   - We have established that Teressa is lying. Therefore, Conception's statement that Teressa lies is true.\n\nSince Conception's statement is true, Conception tells the truth.\n\nFinal answer: <<<yes>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Jamey tells the truth. Delfina says Jamey lies. Vina says Delfina tells the truth. Teressa says Vina tells the truth. Conception says Teressa lies. Does Conception tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,29 @@
+from itertools import combinations
+
+# Define the grid
+grid = [
+    [7, -2, 4, 2],
+    [2, 4, 3, 8],
+    [1, 5, -3, -3],
+    [2, 7, -4, 6]
+]
+
+# Pre-select the given number
+selected_positions = [(0, 3)]
+
+# Function to check if the product of numbers in a list is positive
+def is_positive_product(positions):
+    row_products = [1] * 4
+    col_products = [1] * 4
+    for r, c in positions:
+        row_products[r] *= grid[r][c]
+        col_products[c] *= grid[r][c]
+    return all(p > 0 for p in row_products) and all(p > 0 for p in col_products)
+
+# Generate all possible combinations of 5 additional positions
+all_positions = [(r, c) for r in range(4) for c in range(4) if (r, c) != (0, 3)]
+for additional_positions in combinations(all_positions, 5):
+    current_selection = selected_positions + list(additional_positions)
+    if is_positive_product(current_selection):
+        print(current_selection)
+        break

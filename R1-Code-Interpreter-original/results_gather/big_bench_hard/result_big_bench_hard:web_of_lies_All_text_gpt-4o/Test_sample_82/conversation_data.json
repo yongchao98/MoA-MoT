@@ -1,0 +1,10 @@
+{
+  "question": "Question: Elanor lies. Tamika says Elanor lies. Ka says Tamika tells the truth. Shaunda says Ka lies. Conception says Shaunda lies. Does Conception tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine whether Conception tells the truth, we need to analyze the statements made by each person and their implications. Let's break it down step by step:\n\n1. **Elanor lies.**\n   - This is a given statement. If Elanor lies, then any statement she makes is false.\n\n2. **Tamika says Elanor lies.**\n   - If Tamika tells the truth, then Elanor indeed lies, which is consistent with the given statement. If Tamika lies, then Elanor does not lie, which contradicts the given statement. Therefore, Tamika must be telling the truth.\n\n3. **Ka says Tamika tells the truth.**\n   - Since we have established that Tamika tells the truth, Ka's statement is true. Therefore, Ka tells the truth.\n\n4. **Shaunda says Ka lies.**\n   - Since Ka tells the truth, Shaunda's statement that Ka lies is false. Therefore, Shaunda lies.\n\n5. **Conception says Shaunda lies.**\n   - Since Shaunda lies, Conception's statement that Shaunda lies is true. Therefore, Conception tells the truth.\n\nBy analyzing each statement and its implications, we conclude that Conception tells the truth.\n\nFinal answer: <<<true>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Elanor lies. Tamika says Elanor lies. Ka says Tamika tells the truth. Shaunda says Ka lies. Conception says Shaunda lies. Does Conception tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

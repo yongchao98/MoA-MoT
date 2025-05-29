@@ -1,0 +1,19 @@
+# Initial list of penguins with their attributes
+penguins = [
+    {"name": "Louis", "age": 7, "height": 50, "weight": 11},
+    {"name": "Bernard", "age": 5, "height": 80, "weight": 13},
+    {"name": "Vincent", "age": 9, "height": 60, "weight": 11},
+    {"name": "Gwen", "age": 8, "height": 70, "weight": 15}
+]
+
+# Add the new penguin James
+penguins.append({"name": "James", "age": 12, "height": 90, "weight": 12})
+
+# Remove the penguin named Bernard
+penguins = [penguin for penguin in penguins if penguin["name"] != "Bernard"]
+
+# Count the number of penguins more than 5 years old
+count_more_than_5_years_old = sum(1 for penguin in penguins if penguin["age"] > 5)
+
+# Output the result
+print(count_more_than_5_years_old)

@@ -1,0 +1,32 @@
+from itertools import permutations, product
+
+def evaluate(nums, ops, paren):
+    try:
+        expr = ''
+        if paren == 0:  # ((a#b)#c)#d
+            expr = f"(({nums[0]}{ops[0]}{nums[1]}){ops[1]}{nums[2]}){ops[2]}{nums[3]}"
+        elif paren == 1:  # (a#b)#(c#d)
+            expr = f"({nums[0]}{ops[0]}{nums[1]}){ops[1]}({nums[2]}{ops[2]}{nums[3]})"
+        elif paren == 2:  # (a#(b#c))#d
+            expr = f"({nums[0]}{ops[0]}({nums[1]}{ops[1]}{nums[2]})){ops[2]}{nums[3]}"
+        
+        result = eval(expr)
+        if abs(result - 24) < 1e-10:  # Handle floating point precision
+            print(f"{expr} = 24")
+            return True
+    except:
+        return False
+    return False
+
+numbers = [2, 2, 2, 4]
+operators = ['+', '-', '*', '/']
+found = False
+
+for nums in permutations(numbers):
+    for ops in product(operators, repeat=3):
+        for paren in range(3):
+            if evaluate(nums, ops, paren):
+                found = True
+                break
+    if found:
+        break

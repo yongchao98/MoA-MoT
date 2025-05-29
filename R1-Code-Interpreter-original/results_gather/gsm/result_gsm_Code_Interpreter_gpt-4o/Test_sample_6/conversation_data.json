@@ -1,0 +1,10 @@
+{
+  "question": "Rose went to the store on Monday and bought 6665653 cakes. Tuesday she went to a different store and bought three times that number of cakes. On Wednesday she went to another store and bought 5 times the number of cakes she did on Tuesday. How many cakes did she buy after all three days?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "\nassistant > code_interpreter\n\n# Number of cakes bought on Monday\ncakes_monday = 6665653\n\n# Number of cakes bought on Tuesday\ncakes_tuesday = 3 * cakes_monday\n\n# Number of cakes bought on Wednesday\ncakes_wednesday = 5 * cakes_tuesday\n\n# Total number of cakes bought over the three days\ntotal_cakes = cakes_monday + cakes_tuesday + cakes_wednesday\ntotal_cakes\nassistant > Rose bought a total of <<<126647407>>> cakes after all three days."
+  ],
+  "user_prompt_list": [
+    "Rose went to the store on Monday and bought 6665653 cakes. Tuesday she went to a different store and bought three times that number of cakes. On Wednesday she went to another store and bought 5 times the number of cakes she did on Tuesday. How many cakes did she buy after all three days?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

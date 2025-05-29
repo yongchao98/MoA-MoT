@@ -1,0 +1,10 @@
+{
+  "question": "Margaret has 2 sisters and she also has 1 brothers. How many sisters does Charles's brother have?\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve this problem, we need to determine how many sisters Charles's brother has. \n\n1. Margaret has 2 sisters and 1 brother. This means Margaret's brother has 2 sisters (Margaret and her other sister).\n2. Since Charles is Margaret's brother, Charles's brother is also Margaret's brother.\n3. Therefore, Charles's brother has the same number of sisters as Margaret's brother, which is 2.\n\nNow, let's write the Python code to output the answer in the specified format.\n\n```python\nsisters_of_charles_brother = 2\nprint(f\"<<<{sisters_of_charles_brother}>>>\")\n```"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    Margaret has 2 sisters and she also has 1 brothers. How many sisters does Charles's brother have?\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

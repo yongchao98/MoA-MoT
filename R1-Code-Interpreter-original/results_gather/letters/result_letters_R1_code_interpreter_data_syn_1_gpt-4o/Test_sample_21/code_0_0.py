@@ -1,0 +1,4 @@
+word = "synonymous"
+positions = [i + 1 for i, letter in enumerate(word) if letter == 'y']
+count = len(positions)
+print(f"Count: {count}, Positions: {positions}")

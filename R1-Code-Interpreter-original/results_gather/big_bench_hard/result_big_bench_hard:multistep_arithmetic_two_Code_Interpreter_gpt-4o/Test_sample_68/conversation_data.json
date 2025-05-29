@@ -1,0 +1,10 @@
+{
+  "question": "((-4 + -5 * 7 + 7) + (3 * -3 - -4 + 4)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > Let's break down the expression step by step:\n\n1. Evaluate the first part: \\(-4 + -5 \\times 7 + 7\\)\n   - \\(-5 \\times 7 = -35\\)\n   - \\(-4 + (-35) + 7 = -32\\)\n\n2. Evaluate the second part: \\(3 \\times -3 - -4 + 4\\)\n   - \\(3 \\times -3 = -9\\)\n   - \\(-9 - (-4) + 4 = -9 + 4 + 4 = -1\\)\n\n3. Add the results of the two parts: \\(-32 + (-1) = -33\\)\n\nSo, the final answer is \\(-33\\).\n\n<<<-33>>>"
+  ],
+  "user_prompt_list": [
+    "((-4 + -5 * 7 + 7) + (3 * -3 - -4 + 4)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

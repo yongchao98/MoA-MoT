@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 7 snakes, 15 humans, 10 ducks, 7 fireflys, 14 crabs, 15 giraffes, 10 lobsters?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To calculate the total number of legs, we need to know the number of legs each type of animal has:\n\n- Snakes have 0 legs.\n- Humans have 2 legs.\n- Ducks have 2 legs.\n- Fireflies have 6 legs.\n- Crabs have 10 legs.\n- Giraffes have 4 legs.\n- Lobsters have 10 legs.\n\nNow, we can calculate the total number of legs for each type of animal and sum them up. Let's do the calculation.\nassistant > code_interpreter\n\n# Number of animals\nsnakes = 7\nhumans = 15\nducks = 10\nfireflies = 7\ncrabs = 14\ngiraffes = 15\nlobsters = 10\n\n# Number of legs per animal\nlegs_per_snake = 0\nlegs_per_human = 2\nlegs_per_duck = 2\nlegs_per_firefly = 6\nlegs_per_crab = 10\nlegs_per_giraffe = 4\nlegs_per_lobster = 10\n\n# Total number of legs\ntotal_legs = (snakes * legs_per_snake +\n              humans * legs_per_human +\n              ducks * legs_per_duck +\n              fireflies * legs_per_firefly +\n              crabs * legs_per_crab +\n              giraffes * legs_per_giraffe +\n              lobsters * legs_per_lobster)\n\ntotal_legs\nassistant > The total number of legs is <<<392>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 7 snakes, 15 humans, 10 ducks, 7 fireflys, 14 crabs, 15 giraffes, 10 lobsters?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

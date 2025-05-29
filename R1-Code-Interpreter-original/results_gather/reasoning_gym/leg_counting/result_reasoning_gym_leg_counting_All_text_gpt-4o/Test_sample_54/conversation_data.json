@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 13 shrimps, 2 insects, 12 snakes?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to determine the number of legs each type of animal has and then calculate the total number of legs based on the given quantities of each animal. Let's break it down step by step:\n\n1. **Identify the number of legs for each type of animal:**\n   - **Shrimps:** Typically, shrimps have 10 legs. They are decapods, which means they have ten limbs.\n   - **Insects:** Most insects have 6 legs. This is a standard characteristic of insects.\n   - **Snakes:** Snakes do not have legs. They are legless reptiles.\n\n2. **Calculate the total number of legs for each type of animal:**\n   - For shrimps: \n     - Number of shrimps = 13\n     - Legs per shrimp = 10\n     - Total legs from shrimps = 13 * 10 = 130\n   - For insects:\n     - Number of insects = 2\n     - Legs per insect = 6\n     - Total legs from insects = 2 * 6 = 12\n   - For snakes:\n     - Number of snakes = 12\n     - Legs per snake = 0\n     - Total legs from snakes = 12 * 0 = 0\n\n3. **Sum the total number of legs from all animals:**\n   - Total legs = Legs from shrimps + Legs from insects + Legs from snakes\n   - Total legs = 130 + 12 + 0 = 142\n\nTherefore, the total number of legs for the given animals is 142.\n\nFinal answer: <<<142>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 13 shrimps, 2 insects, 12 snakes?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Calculate -146 * 663 - 430.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(-146 \\times 663 - 430\\), we need to follow the order of operations, which is multiplication before subtraction. Let's break it down step by step:\n\n1. **Multiplication**: Calculate \\(-146 \\times 663\\).\n   - First, multiply 146 by 663.\n   - Break down the multiplication for easier calculation:\n     - \\(146 \\times 663 = 146 \\times (600 + 60 + 3)\\).\n     - Calculate each part separately:\n       - \\(146 \\times 600 = 87600\\).\n       - \\(146 \\times 60 = 8760\\).\n       - \\(146 \\times 3 = 438\\).\n     - Add these results together:\n       - \\(87600 + 8760 + 438 = 96898\\).\n   - Since the original number was \\(-146\\), the result of the multiplication is \\(-96898\\).\n\n2. **Subtraction**: Now subtract 430 from \\(-96898\\).\n   - \\(-96898 - 430 = -97328\\).\n\nTherefore, the final answer to the expression \\(-146 \\times 663 - 430\\) is:\n\n<<<-97328>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate -146 * 663 - 430.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

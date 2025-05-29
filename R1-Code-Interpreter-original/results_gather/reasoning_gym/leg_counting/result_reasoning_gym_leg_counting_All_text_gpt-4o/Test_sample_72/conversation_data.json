@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 6 horses, 1 elephant, 12 wasps?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine the total number of legs for the given animals, we need to consider the number of legs each type of animal typically has and then multiply that by the number of each animal provided. Let's break it down step by step:\n\n1. **Identify the number of legs per animal:**\n   - Horses typically have 4 legs.\n   - Elephants also have 4 legs.\n   - Wasps have 6 legs, as they are insects.\n\n2. **Calculate the total number of legs for each type of animal:**\n   - For horses: \n     - Number of horses = 6\n     - Legs per horse = 4\n     - Total legs from horses = 6 horses * 4 legs/horse = 24 legs\n   - For the elephant:\n     - Number of elephants = 1\n     - Legs per elephant = 4\n     - Total legs from the elephant = 1 elephant * 4 legs/elephant = 4 legs\n   - For wasps:\n     - Number of wasps = 12\n     - Legs per wasp = 6\n     - Total legs from wasps = 12 wasps * 6 legs/wasp = 72 legs\n\n3. **Sum the total number of legs from all animals:**\n   - Total legs = Legs from horses + Legs from the elephant + Legs from wasps\n   - Total legs = 24 legs (horses) + 4 legs (elephant) + 72 legs (wasps)\n   - Total legs = 100 legs\n\nTherefore, the total number of legs for the given animals is 100.\n\n<<<100>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 6 horses, 1 elephant, 12 wasps?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

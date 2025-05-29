@@ -1,0 +1,41 @@
+boxes = [356, 292, 240, 155, 142, 223, 178, 231, 254, 315, 236, 328, 203, 397, 44, 200, 80, 131, 175, 216]
+lifters = [155, 116, 53, 98, 96, 156, 167]
+
+# Sort boxes and lifters in descending order
+boxes.sort(reverse=True)
+lifters.sort(reverse=True)
+
+steps = []
+max_steps = 7
+
+while boxes and len(steps) < max_steps:
+    step = []
+    used_lifters = [False] * len(lifters)
+    
+    for box in boxes[:]:
+        lifter_indices = []
+        total_capacity = 0
+        
+        for i, capacity in enumerate(lifters):
+            if not used_lifters[i] and total_capacity + capacity <= box:
+                total_capacity += capacity
+                lifter_indices.append(i)
+                used_lifters[i] = True
+            if total_capacity >= box:
+                break
+        
+        if total_capacity >= box:
+            step.append((box, lifter_indices))
+            boxes.remove(box)
+    
+    if step:
+        steps.append(step)
+    else:
+        break
+
+# Print the steps
+output = []
+for i, step in enumerate(steps):
+    output.append(f"Step {i + 1}: {step}")
+
+print("<<<" + "\n".join(output) + ">>>")

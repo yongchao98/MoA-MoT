@@ -1,0 +1,10 @@
+{
+  "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nYour output should be a matrix in the same format as the input matrix, enclosed within triple angle brackets, like <<<output matrix>>>.\nThe output matrix is smaller than the input matrix when the kernel size is greater than 1, and its elements may be floating-point numbers.\nGive elements in the output matrix correct to 2 decimal places.\n\nPerform max pooling on the following matrix with a kernel size of 2:\n4 9\n1 4\n7 6\n9 2\n7 2\n9 9\n5 2\n",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nimport numpy as np\n\n# Define the input matrix\ninput_matrix = np.array([\n    [4, 9],\n    [1, 4],\n    [7, 6],\n    [9, 2],\n    [7, 2],\n    [9, 9],\n    [5, 2]\n])\n\n# Define the kernel size\nkernel_size = 2\n\n# Perform max pooling\noutput_matrix = []\nfor i in range(0, input_matrix.shape[0] - kernel_size + 1, kernel_size):\n    row = []\n    for j in range(0, input_matrix.shape[1] - kernel_size + 1, kernel_size):\n        window = input_matrix[i:i+kernel_size, j:j+kernel_size]\n        max_value = np.max(window)\n        row.append(max_value)\n    output_matrix.append(row)\n\noutput_matrix = np.array(output_matrix)\noutput_matrix\nassistant > The result of max pooling on the given matrix with a kernel size of 2 is:\n\n<<<\n9\n9\n9\n>>>"
+  ],
+  "user_prompt_list": [
+    "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nYour output should be a matrix in the same format as the input matrix, enclosed within triple angle brackets, like <<<output matrix>>>.\nThe output matrix is smaller than the input matrix when the kernel size is greater than 1, and its elements may be floating-point numbers.\nGive elements in the output matrix correct to 2 decimal places.\n\nPerform max pooling on the following matrix with a kernel size of 2:\n4 9\n1 4\n7 6\n9 2\n7 2\n9 9\n5 2\n"
+  ],
+  "system_message": ""
+}

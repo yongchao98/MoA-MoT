@@ -1,0 +1,10 @@
+{
+  "question": "Triangle $ABC$ with vertices $A(-2, 0)$, $B(1, 4)$ and $C(-3, 2)$ is reflected over the $y$-axis to form triangle $A'B'C'$. What is the length of a segment drawn from $C$ to $C'$?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "To solve this problem, we need to reflect the point \\( C(-3, 2) \\) over the \\( y \\)-axis to find the coordinates of \\( C' \\). When a point \\((x, y)\\) is reflected over the \\( y \\)-axis, its \\( x \\)-coordinate changes sign, while the \\( y \\)-coordinate remains the same. Therefore, the coordinates of \\( C' \\) will be \\((3, 2)\\).\n\nNext, we need to find the length of the segment \\( CC' \\). The distance between two points \\((x_1, y_1)\\) and \\((x_2, y_2)\\) is given by the formula:\n\n\\[\nd = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\n\\]\n\nSubstituting the coordinates of \\( C(-3, 2) \\) and \\( C'(3, 2) \\) into the formula, we get:\n\n\\[\nd = \\sqrt{(3 - (-3))^2 + (2 - 2)^2} = \\sqrt{(3 + 3)^2 + 0^2} = \\sqrt{6^2} = \\sqrt{36} = 6\n\\]\n\nThus, the length of the segment \\( CC' \\) is 6.\n\n<<<6>>>"
+  ],
+  "user_prompt_list": [
+    "Triangle $ABC$ with vertices $A(-2, 0)$, $B(1, 4)$ and $C(-3, 2)$ is reflected over the $y$-axis to form triangle $A'B'C'$. What is the length of a segment drawn from $C$ to $C'$?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

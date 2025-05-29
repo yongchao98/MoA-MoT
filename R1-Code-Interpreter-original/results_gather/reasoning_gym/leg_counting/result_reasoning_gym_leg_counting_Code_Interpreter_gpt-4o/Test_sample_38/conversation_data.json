@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 6 sheeps, 2 praying mantiss, 3 cockroachs, 14 ducks?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To calculate the total number of legs, we need to know the number of legs each type of animal has:\n\n- Sheep: 4 legs\n- Praying mantis: 6 legs\n- Cockroach: 6 legs\n- Duck: 2 legs\n\nNow, we can calculate the total number of legs for each type of animal and sum them up:\n\n- Total legs from sheep: \\(6 \\times 4\\)\n- Total legs from praying mantises: \\(2 \\times 6\\)\n- Total legs from cockroaches: \\(3 \\times 6\\)\n- Total legs from ducks: \\(14 \\times 2\\)\n\nLet's calculate the total number of legs.\nassistant > code_interpreter\n\n# Number of legs for each type of animal\nlegs_per_sheep = 4\nlegs_per_praying_mantis = 6\nlegs_per_cockroach = 6\nlegs_per_duck = 2\n\n# Number of each type of animal\nnum_sheep = 6\nnum_praying_mantis = 2\nnum_cockroach = 3\nnum_duck = 14\n\n# Calculate total number of legs\ntotal_legs = (num_sheep * legs_per_sheep +\n              num_praying_mantis * legs_per_praying_mantis +\n              num_cockroach * legs_per_cockroach +\n              num_duck * legs_per_duck)\n\ntotal_legs\nassistant > The total number of legs is <<<82>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 6 sheeps, 2 praying mantiss, 3 cockroachs, 14 ducks?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

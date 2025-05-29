@@ -1,0 +1,10 @@
+{
+  "question": "Tsumego time. Black to play and capture some stones.\nFind the key move.\n\n```\n   A B C D E F G H I J\n10 . . . . . . . X . .\n 9 . . . . X O . X . .\n 8 . . . . . . . . O .\n 7 . O . . . . . . . .\n 6 O . . X . . . . . .\n 5 . . X . X . . . . .\n 4 . X O O O X . . . .\n 3 . . X O X . . . . .\n 2 . . . X O . . . . .\n 1 . . . . . O . . . X\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)",
+  "response_list": [
+    "\nassistant > To solve this tsumego, we need to find a move for Black that will capture some White stones. Let's analyze the board position:\n\n```\n   A B C D E F G H I J\n10 . . . . . . . X . .\n 9 . . . . X O . X . .\n 8 . . . . . . . . O .\n 7 . O . . . . . . . .\n 6 O . . X . . . . . .\n 5 . . X . X . . . . .\n 4 . X O O O X . . . .\n 3 . . X O X . . . . .\n 2 . . . X O . . . . .\n 1 . . . . . O . . . X\n```\n\nThe group of White stones at D4, E4, and F4 is surrounded by Black stones. The key move for Black is to play at E3, which will capture the White stones at D4, E4, and F4.\n\nTherefore, the key move is: <<<E3>>>."
+  ],
+  "user_prompt_list": [
+    "Tsumego time. Black to play and capture some stones.\nFind the key move.\n\n```\n   A B C D E F G H I J\n10 . . . . . . . X . .\n 9 . . . . X O . X . .\n 8 . . . . . . . . O .\n 7 . O . . . . . . . .\n 6 O . . X . . . . . .\n 5 . . X . X . . . . .\n 4 . X O O O X . . . .\n 3 . . X O X . . . . .\n 2 . . . X O . . . . .\n 1 . . . . . O . . . X\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)"
+  ],
+  "system_message": ""
+}

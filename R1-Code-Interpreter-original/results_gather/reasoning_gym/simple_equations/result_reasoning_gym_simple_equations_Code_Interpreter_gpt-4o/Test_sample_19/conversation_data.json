@@ -1,0 +1,10 @@
+{
+  "question": "Determine the value of h that satisfies: 20 - 51*h = -3448\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom sympy import symbols, Eq, solve\n\n# Define the variable\nh = symbols('h')\n\n# Define the equation\nequation = Eq(20 - 51*h, -3448)\n\n# Solve the equation\nsolution = solve(equation, h)\nsolution\nassistant > The value of \\( h \\) that satisfies the equation is <<<68>>>."
+  ],
+  "user_prompt_list": [
+    "Determine the value of h that satisfies: 20 - 51*h = -3448\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

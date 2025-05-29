@@ -1,0 +1,10 @@
+{
+  "question": "The following question is a propositional logic reasoning question.\n\nIn the question we provide a list of premises. The task is to infer a correct conclusion from the premise.\n\nFORMAT INSTRUCTIONS:\n- Return the conclusion logic statement enclosed within triple angle brackets, as your final answer, like <<<the conclusion logic statement>>>.\n- Use the following notation to denote symbols\n    - OR = ∨\n    - AND = ∧\n    - IMPLIES = →\n    - IFF = ↔\n    - NOT = ¬\n\nHere is the question:\nGiven:\n1. Q\n.2. P\n.What can we conclude from the above statements?",
+  "response_list": [
+    "\nassistant > Given the premises:\n\n1. \\( Q \\)\n2. \\( P \\)\n\nWe can conclude that both \\( Q \\) and \\( P \\) are true. Therefore, the conclusion is the conjunction of these two statements:\n\n\\[\nQ \\land P\n\\]\n\nThus, the conclusion is:\n\n<<<Q ∧ P>>>"
+  ],
+  "user_prompt_list": [
+    "The following question is a propositional logic reasoning question.\n\nIn the question we provide a list of premises. The task is to infer a correct conclusion from the premise.\n\nFORMAT INSTRUCTIONS:\n- Return the conclusion logic statement enclosed within triple angle brackets, as your final answer, like <<<the conclusion logic statement>>>.\n- Use the following notation to denote symbols\n    - OR = ∨\n    - AND = ∧\n    - IMPLIES = →\n    - IFF = ↔\n    - NOT = ¬\n\nHere is the question:\nGiven:\n1. Q\n.2. P\n.What can we conclude from the above statements?"
+  ],
+  "system_message": ""
+}

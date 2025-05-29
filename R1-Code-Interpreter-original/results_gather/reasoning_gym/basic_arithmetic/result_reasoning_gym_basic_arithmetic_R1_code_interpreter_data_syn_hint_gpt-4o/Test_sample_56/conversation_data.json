@@ -1,0 +1,10 @@
+{
+  "question": "Calculate -( ( ( 77 - 14 ) / 3 ) ) / 21 + -21.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(-\\left(\\frac{(77 - 14)}{3}\\right) / 21 + (-21)\\), we need to follow the order of operations, which is parentheses first, then division, and finally addition/subtraction.\n\n1. **Parentheses**: Calculate \\(77 - 14\\).\n2. **Division**: Divide the result by 3.\n3. **Negation**: Apply the negative sign to the result.\n4. **Division**: Divide the result by 21.\n5. **Addition**: Add \\(-21\\) to the result.\n\nLet's calculate this step-by-step:\n\n1. \\(77 - 14 = 63\\)\n2. \\(\\frac{63}{3} = 21\\)\n3. \\(-21\\)\n4. \\(-21 / 21 = -1\\)\n5. \\(-1 + (-21) = -22\\)\n\nThus, the final result of the expression is \\(-22\\).\n\n<<<answer>>>-22<<<answer>>>"
+  ],
+  "user_prompt_list": [
+    "Calculate -( ( ( 77 - 14 ) / 3 ) ) / 21 + -21.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

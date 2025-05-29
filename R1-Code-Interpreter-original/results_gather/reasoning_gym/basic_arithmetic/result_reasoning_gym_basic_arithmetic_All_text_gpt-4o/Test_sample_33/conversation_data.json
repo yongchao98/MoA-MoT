@@ -1,0 +1,10 @@
+{
+  "question": "Calculate ( -( ( -852 / 3 ) ) - 277 ) + 83 * 759.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\( ( -( ( -852 / 3 ) ) - 277 ) + 83 \\times 759 \\), we will break it down step by step:\n\n1. **Calculate the division inside the parentheses:**\n   \\[\n   -852 / 3 = -284\n   \\]\n\n2. **Negate the result from step 1:**\n   \\[\n   -(-284) = 284\n   \\]\n\n3. **Subtract 277 from the result of step 2:**\n   \\[\n   284 - 277 = 7\n   \\]\n\n4. **Calculate the multiplication:**\n   \\[\n   83 \\times 759 = 62997\n   \\]\n\n5. **Add the results from step 3 and step 4:**\n   \\[\n   7 + 62997 = 63004\n   \\]\n\nThus, the final answer is:\n\n\\[\n\\text{<<<63004>>>}\n\\]"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate ( -( ( -852 / 3 ) ) - 277 ) + 83 * 759.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

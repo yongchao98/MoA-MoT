@@ -1,0 +1,10 @@
+{
+  "question": "Susan has 2 sisters and she also has 2 brothers. How many sisters does James's brother have?\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve this problem, we need to understand the relationships described. \n\n1. Susan has 2 sisters and 2 brothers. This means there are 5 siblings in total: Susan, her 2 sisters, and her 2 brothers.\n2. James is one of Susan's brothers. Therefore, James has the same siblings as Susan.\n3. Since Susan has 2 sisters, James also has 2 sisters.\n\nNow, let's write a Python code to output the answer in the required format.\n\n```python\n# Number of sisters Susan has\nsisters_of_susan = 2\n\n# Since James is Susan's brother, he has the same number of sisters\nsisters_of_james = sisters_of_susan\n\n# Output the answer in the required format\nprint(f\"<<<{sisters_of_james}>>>\")\n```"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    Susan has 2 sisters and she also has 2 brothers. How many sisters does James's brother have?\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

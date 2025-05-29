@@ -1,0 +1,10 @@
+{
+  "question": "State the final answer to the following arithmetic problem: 812 + 880 =\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the arithmetic problem 812 + 880, we will break it down step by step:\n\n1. **Identify the numbers involved**: The two numbers we need to add are 812 and 880.\n\n2. **Align the numbers for addition**: \n   - Write the numbers one below the other, aligning them by their rightmost digits (units place).\n   ```\n     812\n   + 880\n   ```\n\n3. **Add the digits starting from the rightmost column (units place)**:\n   - Units place: 2 + 0 = 2\n   - Write 2 in the units place of the result.\n\n4. **Move to the next column to the left (tens place)**:\n   - Tens place: 1 + 8 = 9\n   - Write 9 in the tens place of the result.\n\n5. **Move to the next column to the left (hundreds place)**:\n   - Hundreds place: 8 + 8 = 16\n   - Since the sum is 16, write 6 in the hundreds place and carry over 1 to the next column (thousands place).\n\n6. **Add the carry to the next column (thousands place)**:\n   - Thousands place: 0 (since there are no thousands in the original numbers) + 1 (carry) = 1\n   - Write 1 in the thousands place of the result.\n\n7. **Combine the results from each column**:\n   - The final result is 1692.\n\nTherefore, the final answer to the arithmetic problem 812 + 880 is:\n\n<<<1692>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    State the final answer to the following arithmetic problem: 812 + 880 =\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

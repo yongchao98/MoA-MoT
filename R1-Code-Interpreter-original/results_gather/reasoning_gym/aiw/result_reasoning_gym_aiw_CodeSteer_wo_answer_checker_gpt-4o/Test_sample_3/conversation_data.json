@@ -1,0 +1,10 @@
+{
+  "question": "Jennifer has 2 male friends and she also has 3 female friends. They all are friends with each other and have no other friends aside. How many female friends does David, a male friend of Jennifer, have?\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve this problem, we need to determine how many female friends David, one of Jennifer's male friends, has. \n\n1. Jennifer has 2 male friends and 3 female friends.\n2. All of Jennifer's friends are friends with each other.\n3. David is one of the male friends.\n\nSince all of Jennifer's friends are friends with each other, David, being one of the male friends, is friends with all of Jennifer's friends, including the 3 female friends.\n\nTherefore, David has 3 female friends.\n\nNow, let's write the Python code to output the answer in the specified format.\n\n```python\n# Number of female friends David has\nfemale_friends_of_david = 3\n\n# Output the answer in the specified format\nprint(f\"<<<{female_friends_of_david}>>>\")\n```"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    Jennifer has 2 male friends and she also has 3 female friends. They all are friends with each other and have no other friends aside. How many female friends does David, a male friend of Jennifer, have?\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

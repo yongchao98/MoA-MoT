@@ -1,0 +1,10 @@
+{
+  "question": "Question: Phoebe tells the truth. Jamey says Phoebe lies. Audrie says Jamey tells the truth. Michaela says Audrie lies. Vina says Michaela lies. Does Vina tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to analyze the statements and determine the truthfulness of each person based on logical consistency.\n\n1. **Phoebe tells the truth.**\n2. **Jamey says Phoebe lies.**\n3. **Audrie says Jamey tells the truth.**\n4. **Michaela says Audrie lies.**\n5. **Vina says Michaela lies.**\n\nLet's break it down:\n\n- If Phoebe tells the truth, then Jamey's statement that Phoebe lies is false. Therefore, Jamey is lying.\n- If Jamey is lying, then Audrie's statement that Jamey tells the truth is also false. Therefore, Audrie is lying.\n- If Audrie is lying, then Michaela's statement that Audrie lies is true. Therefore, Michaela is telling the truth.\n- If Michaela is telling the truth, then Vina's statement that Michaela lies is false. Therefore, Vina is lying.\n\nThus, Vina does not tell the truth.\n\n<<<answer>>>No, Vina does not tell the truth."
+  ],
+  "user_prompt_list": [
+    "Question: Phoebe tells the truth. Jamey says Phoebe lies. Audrie says Jamey tells the truth. Michaela says Audrie lies. Vina says Michaela lies. Does Vina tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

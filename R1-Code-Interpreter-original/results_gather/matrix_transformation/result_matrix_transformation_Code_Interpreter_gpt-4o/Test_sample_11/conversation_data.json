@@ -1,0 +1,10 @@
+{
+  "question": "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \nZ Z\nR R.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array.",
+  "response_list": [
+    "\nassistant > To rotate a 2D matrix 90 degrees clockwise, you can follow these steps:\n\n1. Transpose the matrix: Convert rows to columns.\n2. Reverse each row of the transposed matrix.\n\nLet's apply this to the given matrix:\n\nOriginal matrix:\n```\nZ Z\nR R\n```\n\nAfter transposing:\n```\nZ R\nZ R\n```\n\nAfter reversing each row:\n```\nR Z\nR Z\n```\n\nSo, the rotated matrix is:\n```\nR Z\nR Z\n```\n\nIn the required format, the result is: <<<R,Z,R,Z>>>."
+  ],
+  "user_prompt_list": [
+    "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \nZ Z\nR R.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array."
+  ],
+  "system_message": ""
+}

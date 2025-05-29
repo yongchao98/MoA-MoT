@@ -1,0 +1,10 @@
+{
+  "question": "False or not True and True or True is\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression `False or not True and True or True`, we need to follow the order of operations for logical operators, which is:\n\n1. `not`\n2. `and`\n3. `or`\n\nLet's break it down step by step:\n\n1. Evaluate `not True`: This becomes `False`.\n2. The expression now is `False or False and True or True`.\n3. Evaluate `False and True`: This becomes `False`.\n4. The expression now is `False or False or True`.\n5. Evaluate `False or False`: This becomes `False`.\n6. The expression now is `False or True`.\n7. Evaluate `False or True`: This becomes `True`.\n\nTherefore, the final result of the expression is `True`.\n\n<<<answer>>>True"
+  ],
+  "user_prompt_list": [
+    "False or not True and True or True is\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

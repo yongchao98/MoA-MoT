@@ -1,0 +1,31 @@
+def rewrite_program(program):
+    i = 0
+    while i < len(program) - 1:
+        if program[i] == 'A#' and program[i + 1] == '#A':
+            # A# #A becomes nothing
+            program = program[:i] + program[i + 2:]
+            i = max(i - 1, 0)  # Move back one step to check for new pairs
+        elif program[i] == 'A#' and program[i + 1] == '#B':
+            # A# #B becomes #B A#
+            program[i], program[i + 1] = program[i + 1], program[i]
+            i += 1
+        elif program[i] == 'B#' and program[i + 1] == '#A':
+            # B# #A becomes #A B#
+            program[i], program[i + 1] = program[i + 1], program[i]
+            i += 1
+        elif program[i] == 'B#' and program[i + 1] == '#B':
+            # B# #B becomes nothing
+            program = program[:i] + program[i + 2:]
+            i = max(i - 1, 0)  # Move back one step to check for new pairs
+        else:
+            i += 1
+    return program
+
+# Initial program
+program = ['B#', '#A', '#B', 'B#', '#B', '#B', 'B#', 'B#', '#B', 'B#']
+
+# Compute the final state
+final_state = rewrite_program(program)
+
+# Print the final state
+print(final_state)

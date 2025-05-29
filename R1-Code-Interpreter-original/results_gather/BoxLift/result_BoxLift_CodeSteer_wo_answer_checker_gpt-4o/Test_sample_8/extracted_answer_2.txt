@@ -1,0 +1,5 @@
+"
+for i, step in enumerate(steps):
+    if step:
+        output += f"Step {i+1}: {step}\n"
+output += "

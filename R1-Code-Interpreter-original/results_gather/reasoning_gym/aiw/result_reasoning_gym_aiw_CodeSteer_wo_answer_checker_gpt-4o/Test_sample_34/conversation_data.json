@@ -1,0 +1,10 @@
+{
+  "question": "Susan has 3 sisters and she also has 4 brothers. How many sisters does Michael's brother have?\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve this problem, we need to determine how many sisters Michael's brother has. \n\n1. Susan has 3 sisters and 4 brothers. This means Susan is one of the sisters, so there are 4 sisters in total (Susan + 3 sisters).\n2. Michael is one of Susan's brothers. Therefore, Michael's brother is also one of Susan's brothers.\n3. Since Susan has 4 sisters, Michael's brother also has 4 sisters.\n\nNow, let's write the Python code to output the answer in the required format.\n\n```python\n# Number of sisters Susan has\nsisters_of_susan = 3\n\n# Including Susan herself, total number of sisters\ntotal_sisters = sisters_of_susan + 1\n\n# Output the answer in the required format\nprint(f\"<<<{total_sisters}>>>\")\n```"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    Susan has 3 sisters and she also has 4 brothers. How many sisters does Michael's brother have?\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

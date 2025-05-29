@@ -1,0 +1,27 @@
+# Simulating the Brainf*ck program
+memory = [0] * 30000
+pointer = 0
+
+# Executing the program
+pointer += 1
+memory[pointer] = 0
+pointer += 1
+memory[pointer] = 0
+pointer -= 1
+pointer += 1
+memory[pointer] += 8
+while memory[pointer] != 0:
+    pointer -= 1
+    memory[pointer] += 14
+    pointer += 1
+    memory[pointer] -= 1
+pointer -= 1
+output = chr(memory[pointer])
+memory[pointer] -= 3
+output += chr(memory[pointer])
+memory[pointer] += 13
+output += chr(memory[pointer])
+memory[pointer] -= 9
+output += chr(memory[pointer])
+
+print(output)

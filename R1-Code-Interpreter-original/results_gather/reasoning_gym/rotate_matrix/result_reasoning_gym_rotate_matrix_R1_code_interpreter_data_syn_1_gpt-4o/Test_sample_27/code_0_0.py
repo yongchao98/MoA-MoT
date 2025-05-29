@@ -1,0 +1,11 @@
+# Define the matrix
+matrix = [
+    [1, 7, 0, 2, 4],
+    [0, 9, 0, 7, 6],
+    [7, 8, 4, 2, 9],
+    [5, 2, 8, 1, 1],
+    [5, 0, 5, 4, 1]
+]
+
+# Print the matrix as it is, since 0 degree rotation means no change
+print(matrix)

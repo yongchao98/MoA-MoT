@@ -1,0 +1,10 @@
+{
+  "question": "Solve for t: 28*t - 41 = 967\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom sympy import symbols, Eq, solve\n\n# Define the variable\nt = symbols('t')\n\n# Define the equation\nequation = Eq(28*t - 41, 967)\n\n# Solve the equation\nsolution = solve(equation, t)\nsolution\nassistant > The solution for \\( t \\) is <<<36>>>."
+  ],
+  "user_prompt_list": [
+    "Solve for t: 28*t - 41 = 967\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

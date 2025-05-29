@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 10 humans, 7 grasshoppers, 8 praying mantiss, 10 deers?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To calculate the total number of legs, we need to know the number of legs each type of animal has:\n\n- Humans have 2 legs.\n- Grasshoppers have 6 legs.\n- Praying mantises have 6 legs.\n- Deers have 4 legs.\n\nNow, we can calculate the total number of legs:\n\n- Total legs from humans = 10 humans × 2 legs/human\n- Total legs from grasshoppers = 7 grasshoppers × 6 legs/grasshopper\n- Total legs from praying mantises = 8 praying mantises × 6 legs/praying mantis\n- Total legs from deers = 10 deers × 4 legs/deer\n\nLet's compute the total number of legs.\nassistant > code_interpreter\n\n# Number of animals\nnum_humans = 10\nnum_grasshoppers = 7\nnum_praying_mantises = 8\nnum_deers = 10\n\n# Legs per animal\nlegs_per_human = 2\nlegs_per_grasshopper = 6\nlegs_per_praying_mantis = 6\nlegs_per_deer = 4\n\n# Total legs calculation\ntotal_legs = (num_humans * legs_per_human +\n              num_grasshoppers * legs_per_grasshopper +\n              num_praying_mantises * legs_per_praying_mantis +\n              num_deers * legs_per_deer)\n\ntotal_legs\nassistant > The total number of legs is <<<150>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 10 humans, 7 grasshoppers, 8 praying mantiss, 10 deers?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

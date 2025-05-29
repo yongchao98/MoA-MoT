@@ -1,0 +1,10 @@
+{
+  "question": "Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 450 degrees clockwise:\n1 2\n1 9\n",
+  "response_list": [
+    "\nassistant > To rotate a matrix by 450 degrees clockwise, we first need to determine how many 90-degree rotations are equivalent to 450 degrees. Since 450 divided by 90 is 5, we need to perform 5 clockwise rotations. However, since a full 360-degree rotation returns the matrix to its original orientation, we can simplify this by performing just one 90-degree clockwise rotation (450 - 360 = 90).\n\nLet's rotate the given matrix:\n\nOriginal matrix:\n```\n1 2\n1 9\n```\n\nAfter a 90-degree clockwise rotation, the matrix becomes:\n```\n1 1\n9 2\n```\n\nThus, the rotated matrix is:\n\n<<<\n1 1\n9 2\n>>>"
+  ],
+  "user_prompt_list": [
+    "Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 450 degrees clockwise:\n1 2\n1 9\n"
+  ],
+  "system_message": ""
+}

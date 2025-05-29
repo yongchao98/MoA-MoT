@@ -1,0 +1,10 @@
+{
+  "question": "Question: Maybelle tells the truth. Bernita says Maybelle tells the truth. Inga says Bernita tells the truth. Tamika says Inga lies. Helene says Tamika tells the truth. Does Helene tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to analyze the statements and determine the truthfulness of each person based on the logical consistency of their statements.\n\n1. **Maybelle**: Tells the truth.\n2. **Bernita**: Says Maybelle tells the truth. Since Maybelle tells the truth, Bernita's statement is true.\n3. **Inga**: Says Bernita tells the truth. Since Bernita's statement is true, Inga's statement is also true.\n4. **Tamika**: Says Inga lies. Since Inga's statement is true, Tamika's statement is false.\n5. **Helene**: Says Tamika tells the truth. Since Tamika's statement is false, Helene's statement is false.\n\nTherefore, Helene does not tell the truth.\n\n<<<'answer'>>> Helene does not tell the truth."
+  ],
+  "user_prompt_list": [
+    "Question: Maybelle tells the truth. Bernita says Maybelle tells the truth. Inga says Bernita tells the truth. Tamika says Inga lies. Helene says Tamika tells the truth. Does Helene tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

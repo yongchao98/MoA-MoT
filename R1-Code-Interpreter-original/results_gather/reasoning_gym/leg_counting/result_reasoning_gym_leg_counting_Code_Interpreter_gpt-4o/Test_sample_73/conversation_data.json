@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 6 birds, 3 snakes, 13 starfishs, 15 crabs, 3 ants, 2 sheeps, 11 chickens, 7 crickets?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To find the total number of legs, we need to know the number of legs each type of animal has:\n\n- Birds typically have 2 legs.\n- Snakes have 0 legs.\n- Starfish have 0 legs.\n- Crabs typically have 10 legs.\n- Ants have 6 legs.\n- Sheep have 4 legs.\n- Chickens have 2 legs.\n- Crickets have 6 legs.\n\nNow, we can calculate the total number of legs for each type of animal and sum them up:\n\n- Birds: \\(6 \\times 2\\)\n- Snakes: \\(3 \\times 0\\)\n- Starfish: \\(13 \\times 0\\)\n- Crabs: \\(15 \\times 10\\)\n- Ants: \\(3 \\times 6\\)\n- Sheep: \\(2 \\times 4\\)\n- Chickens: \\(11 \\times 2\\)\n- Crickets: \\(7 \\times 6\\)\n\nLet's calculate the total number of legs.\nassistant > code_interpreter\n\n# Number of animals\nbirds = 6\nsnakes = 3\nstarfish = 13\ncrabs = 15\nants = 3\nsheep = 2\nchickens = 11\ncrickets = 7\n\n# Number of legs per animal\nlegs_per_bird = 2\nlegs_per_snake = 0\nlegs_per_starfish = 0\nlegs_per_crab = 10\nlegs_per_ant = 6\nlegs_per_sheep = 4\nlegs_per_chicken = 2\nlegs_per_cricket = 6\n\n# Total number of legs\ntotal_legs = (birds * legs_per_bird +\n              snakes * legs_per_snake +\n              starfish * legs_per_starfish +\n              crabs * legs_per_crab +\n              ants * legs_per_ant +\n              sheep * legs_per_sheep +\n              chickens * legs_per_chicken +\n              crickets * legs_per_cricket)\n\ntotal_legs\nassistant > The total number of legs is <<<252>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 6 birds, 3 snakes, 13 starfishs, 15 crabs, 3 ants, 2 sheeps, 11 chickens, 7 crickets?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

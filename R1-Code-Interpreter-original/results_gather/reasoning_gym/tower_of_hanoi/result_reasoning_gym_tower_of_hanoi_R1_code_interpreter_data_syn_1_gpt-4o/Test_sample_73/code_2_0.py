@@ -1,0 +1,44 @@
+def hanoi_4_pegs(n, source, target, auxiliary1, auxiliary2):
+    if n == 0:
+        return []
+    if n == 1:
+        return [(1, source, target)]
+    
+    # Find the optimal k
+    min_moves = float('inf')
+    best_k = 0
+    for k in range(1, n):
+        moves1 = hanoi_4_pegs(k, source, auxiliary1, auxiliary2, target)
+        moves2 = hanoi_4_pegs(n - k, source, target, auxiliary1, auxiliary2)
+        moves3 = hanoi_4_pegs(k, auxiliary1, target, source, auxiliary2)
+        total_moves = len(moves1) + len(moves2) + len(moves3)
+        if total_moves < min_moves:
+            min_moves = total_moves
+            best_k = k
+    
+    # Perform the moves
+    moves = []
+    moves += hanoi_4_pegs(best_k, source, auxiliary1, auxiliary2, target)
+    moves += hanoi_3_pegs(n - best_k, source, target, auxiliary2)
+    moves += hanoi_4_pegs(best_k, auxiliary1, target, source, auxiliary2)
+    
+    return moves
+
+def hanoi_3_pegs(n, source, target, auxiliary):
+    if n == 0:
+        return []
+    if n == 1:
+        return [(n, source, target)]
+    moves = []
+    moves += hanoi_3_pegs(n - 1, source, auxiliary, target)
+    moves.append((n, source, target))
+    moves += hanoi_3_pegs(n - 1, auxiliary, target, source)
+    return moves
+
+def format_moves(moves):
+    return [f"Move disk {disk} from Peg {src} to Peg {dst}" for disk, src, dst in moves]
+
+# Solve the problem
+moves = hanoi_4_pegs(7, 1, 4, 2, 3)
+formatted_moves = format_moves(moves)
+print("\n".join(formatted_moves))

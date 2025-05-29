@@ -1,0 +1,10 @@
+{
+  "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Avery, and Aiden. \"Avery is a hero,\" Avery mentioned. Aiden expressed that if Aiden is a hero then Avery is a hero. So who is a hero and who is a villain? (Enclose your answer in triple angle brackets like: <<<Avery is a hero/villain, and Aiden is a hero/villain>>>)",
+  "response_list": [
+    "\nassistant > To solve this problem, we need to analyze the statements made by Avery and Aiden.\n\n1. Avery says, \"Avery is a hero.\"\n   - If Avery is a hero, then this statement is true.\n   - If Avery is a villain, then this statement is false.\n\n2. Aiden says, \"If Aiden is a hero, then Avery is a hero.\"\n   - This is a conditional statement. The only way this statement is false is if Aiden is a hero and Avery is not a hero.\n\nLet's consider the possibilities:\n\n- **Case 1**: Assume Avery is a hero.\n  - Avery's statement is true (since heroes always tell the truth).\n  - Aiden's statement must also be true. If Aiden is a hero, then Avery is a hero, which is consistent with our assumption.\n\n- **Case 2**: Assume Avery is a villain.\n  - Avery's statement is false (since villains always lie).\n  - Aiden's statement must be false. For Aiden's statement to be false, Aiden must be a hero and Avery must not be a hero, which contradicts our assumption that Avery is a villain.\n\nFrom this analysis, Case 1 is consistent and Case 2 leads to a contradiction. Therefore, Avery is a hero and Aiden is also a hero.\n\nThus, the solution is:\n\n<<<Avery is a hero, and Aiden is a hero>>>"
+  ],
+  "user_prompt_list": [
+    "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Avery, and Aiden. \"Avery is a hero,\" Avery mentioned. Aiden expressed that if Aiden is a hero then Avery is a hero. So who is a hero and who is a villain? (Enclose your answer in triple angle brackets like: <<<Avery is a hero/villain, and Aiden is a hero/villain>>>)"
+  ],
+  "system_message": ""
+}

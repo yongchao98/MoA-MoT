@@ -1,0 +1,10 @@
+{
+  "question": "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \nZ K\nY L.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array.",
+  "response_list": [
+    "To solve the problem of rotating a 2D array of strings 90 degrees clockwise, we need to understand the transformation that occurs during this rotation. \n\nGiven the matrix:\n```\nZ K\nY L\n```\n\nThe rotation process involves:\n1. Taking the first column from the original matrix and making it the first row of the new matrix.\n2. Taking the second column from the original matrix and making it the second row of the new matrix.\n\nFor the given matrix, the transformation would be:\n- The first column `Z Y` becomes the first row `Y Z` in the rotated matrix.\n- The second column `K L` becomes the second row `L K` in the rotated matrix.\n\nThus, the rotated matrix will be:\n```\nY Z\nL K\n```\n\nNow, let's represent this rotated matrix in the required format. The matrix is:\n```\nY Z\nL K\n```\n\nIn the format requested, this would be represented as:\n<<<Y,L,Z,K>>>"
+  ],
+  "user_prompt_list": [
+    "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \nZ K\nY L.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array."
+  ],
+  "system_message": ""
+}

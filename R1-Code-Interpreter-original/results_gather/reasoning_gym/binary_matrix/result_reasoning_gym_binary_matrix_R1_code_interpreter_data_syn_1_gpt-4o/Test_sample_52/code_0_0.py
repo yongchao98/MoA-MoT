@@ -1,0 +1,45 @@
+from collections import deque
+
+def nearest_zero_distance(matrix):
+    rows, cols = len(matrix), len(matrix[0])
+    distances = [[float('inf')] * cols for _ in range(rows)]
+    queue = deque()
+
+    # Enqueue all 0s in the matrix
+    for r in range(rows):
+        for c in range(cols):
+            if matrix[r][c] == 0:
+                distances[r][c] = 0
+                queue.append((r, c))
+
+    # Directions for moving up, down, left, right
+    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+    # Perform BFS
+    while queue:
+        r, c = queue.popleft()
+        for dr, dc in directions:
+            nr, nc = r + dr, c + dc
+            if 0 <= nr < rows and 0 <= nc < cols:
+                if distances[nr][nc] > distances[r][c] + 1:
+                    distances[nr][nc] = distances[r][c] + 1
+                    queue.append((nr, nc))
+
+    return distances
+
+# Input matrix
+matrix = [
+    [1, 1, 0, 1, 0, 1, 1],
+    [1, 1, 1, 1, 0, 0, 1],
+    [1, 0, 1, 1, 1, 1, 1],
+    [0, 1, 0, 1, 1, 1, 1],
+    [1, 0, 1, 1, 0, 1, 1],
+    [1, 1, 0, 0, 1, 1, 1],
+    [1, 0, 1, 0, 0, 1, 1]
+]
+
+# Calculate distances
+output_matrix = nearest_zero_distance(matrix)
+
+# Print the output matrix
+print(output_matrix)

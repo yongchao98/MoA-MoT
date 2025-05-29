@@ -1,0 +1,25 @@
+# Let's try different combinations to find a valid equation
+from itertools import permutations, product
+
+numbers = [2, 2, 10, 13]
+target = 24
+operations = ['+', '-', '*', '/']
+
+def evaluate_expression(nums, ops):
+    try:
+        # Form the expression as a string
+        expression = f"(({nums[0]}{ops[0]}{nums[1]}){ops[1]}({nums[2]}{ops[2]}{nums[3]}))"
+        # Evaluate the expression
+        if eval(expression) == target:
+            return expression
+    except ZeroDivisionError:
+        return None
+    return None
+
+# Try all permutations of numbers and operations
+for num_perm in permutations(numbers):
+    for ops in product(operations, repeat=3):
+        result = evaluate_expression(num_perm, ops)
+        if result:
+            print(result)
+            break

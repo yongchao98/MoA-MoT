@@ -1,0 +1,10 @@
+{
+  "question": "3, 6, 12, 24, 48, 96, 192, 384, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>.",
+  "response_list": [
+    "To solve this problem, we need to identify the pattern in the sequence and determine the next number.\n\n1. **Examine the Sequence:**\n   The given sequence is: 3, 6, 12, 24, 48, 96, 192, 384, ?\n\n2. **Identify the Pattern:**\n   Let's look at the relationship between consecutive terms:\n   - 6 is 2 times 3\n   - 12 is 2 times 6\n   - 24 is 2 times 12\n   - 48 is 2 times 24\n   - 96 is 2 times 48\n   - 192 is 2 times 96\n   - 384 is 2 times 192\n\n   From this, we can see that each term is obtained by multiplying the previous term by 2.\n\n3. **Apply the Pattern:**\n   To find the next term in the sequence, we multiply the last known term (384) by 2:\n   - 384 * 2 = 768\n\n4. **Conclusion:**\n   The next number in the sequence is 768.\n\nTherefore, the value of \"?\" is:\n\n<<<768>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    3, 6, 12, 24, 48, 96, 192, 384, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>."
+  ],
+  "system_message": ""
+}

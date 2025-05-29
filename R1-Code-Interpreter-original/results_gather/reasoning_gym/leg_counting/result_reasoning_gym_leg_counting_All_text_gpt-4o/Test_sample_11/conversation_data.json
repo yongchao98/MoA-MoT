@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 6 sheeps, 11 dogs, 12 praying mantiss?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to determine the total number of legs for each type of animal and then sum them up. Let's break down the problem step by step:\n\n1. **Identify the number of legs per animal:**\n   - Sheep: Typically, a sheep has 4 legs.\n   - Dog: A dog also has 4 legs.\n   - Praying Mantis: A praying mantis has 6 legs.\n\n2. **Calculate the total number of legs for each type of animal:**\n   - For sheep: \n     - Number of sheep = 6\n     - Legs per sheep = 4\n     - Total legs for sheep = 6 sheep * 4 legs/sheep = 24 legs\n\n   - For dogs:\n     - Number of dogs = 11\n     - Legs per dog = 4\n     - Total legs for dogs = 11 dogs * 4 legs/dog = 44 legs\n\n   - For praying mantises:\n     - Number of praying mantises = 12\n     - Legs per praying mantis = 6\n     - Total legs for praying mantises = 12 mantises * 6 legs/mantis = 72 legs\n\n3. **Sum the total number of legs from all animals:**\n   - Total legs = Total legs for sheep + Total legs for dogs + Total legs for praying mantises\n   - Total legs = 24 legs (sheep) + 44 legs (dogs) + 72 legs (praying mantises)\n   - Total legs = 140 legs\n\nTherefore, the total number of legs for all the animals combined is 140.\n\nThe final answer is: <<<140>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 6 sheeps, 11 dogs, 12 praying mantiss?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

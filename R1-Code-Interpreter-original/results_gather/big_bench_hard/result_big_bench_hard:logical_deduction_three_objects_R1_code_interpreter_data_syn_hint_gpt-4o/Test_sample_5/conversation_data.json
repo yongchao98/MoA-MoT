@@ -1,0 +1,10 @@
+{
+  "question": "The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells three fruits: apples, peaches, and mangoes. The mangoes are less expensive than the peaches. The apples are less expensive than the mangoes.\nOptions:\n(A) The apples are the second-most expensive\n(B) The peaches are the second-most expensive\n(C) The mangoes are the second-most expensive\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to determine the order of the fruits based on their prices. We have three fruits: apples, peaches, and mangoes. The given conditions are:\n\n1. Mangoes are less expensive than peaches.\n2. Apples are less expensive than mangoes.\n\nLet's analyze these conditions:\n\n- From condition 1, we know that peaches are more expensive than mangoes.\n- From condition 2, we know that mangoes are more expensive than apples.\n\nBased on these conditions, we can deduce the following order from least expensive to most expensive:\n\n1. Apples (least expensive)\n2. Mangoes\n3. Peaches (most expensive)\n\nNow, let's determine which fruit is the second-most expensive:\n\n- The least expensive is apples.\n- The most expensive is peaches.\n- Therefore, the second-most expensive must be mangoes.\n\nThus, the correct option is (C) The mangoes are the second-most expensive.\n\n<<<answer>>>"
+  ],
+  "user_prompt_list": [
+    "The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells three fruits: apples, peaches, and mangoes. The mangoes are less expensive than the peaches. The apples are less expensive than the mangoes.\nOptions:\n(A) The apples are the second-most expensive\n(B) The peaches are the second-most expensive\n(C) The mangoes are the second-most expensive\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

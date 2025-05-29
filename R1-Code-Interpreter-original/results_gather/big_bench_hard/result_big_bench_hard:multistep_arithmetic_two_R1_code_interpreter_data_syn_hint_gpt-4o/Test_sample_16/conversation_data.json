@@ -1,0 +1,10 @@
+{
+  "question": "((8 + 9 - 4 - -9) + (8 + 7 - 6 * 1)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\(((8 + 9 - 4 - -9) + (8 + 7 - 6 \\times 1))\\), we need to follow the order of operations, which is parentheses, exponents, multiplication and division (from left to right), and addition and subtraction (from left to right).\n\n1. Start with the first set of parentheses: \\(8 + 9 - 4 - -9\\).\n   - Calculate \\(8 + 9 = 17\\).\n   - Then, \\(17 - 4 = 13\\).\n   - Finally, \\(13 - -9 = 13 + 9 = 22\\).\n\n2. Move to the second set of parentheses: \\(8 + 7 - 6 \\times 1\\).\n   - First, perform the multiplication: \\(6 \\times 1 = 6\\).\n   - Then, calculate \\(8 + 7 = 15\\).\n   - Finally, \\(15 - 6 = 9\\).\n\n3. Add the results of the two parentheses: \\(22 + 9 = 31\\).\n\nThus, the value of the expression is 31.\n\n<<<answer>>> 31"
+  ],
+  "user_prompt_list": [
+    "((8 + 9 - 4 - -9) + (8 + 7 - 6 * 1)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

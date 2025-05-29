@@ -1,0 +1,10 @@
+{
+  "question": "Simplify the fraction 625/3150 to its lowest terms. Give only the simplified fraction as your final answer.\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom fractions import Fraction\n\n# Simplify the fraction 625/3150\nsimplified_fraction = Fraction(625, 3150)\n\nsimplified_fraction\nassistant > <<<25/126>>>"
+  ],
+  "user_prompt_list": [
+    "Simplify the fraction 625/3150 to its lowest terms. Give only the simplified fraction as your final answer.\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "State the final answer to the following arithmetic problem: 78 + 95 + 80 - 65 =\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the arithmetic problem \\(78 + 95 + 80 - 65\\), we will break it down step by step:\n\n1. **Addition of the first two numbers:**\n   - Start with the first two numbers: \\(78 + 95\\).\n   - Add them together: \n     \\[\n     78 + 95 = 173\n     \\]\n\n2. **Addition of the next number:**\n   - Take the result from the first step and add the next number: \\(173 + 80\\).\n   - Add them together:\n     \\[\n     173 + 80 = 253\n     \\]\n\n3. **Subtraction of the last number:**\n   - Take the result from the second step and subtract the last number: \\(253 - 65\\).\n   - Subtract them:\n     \\[\n     253 - 65 = 188\n     \\]\n\nBy following these steps, we have carefully calculated the result of the arithmetic problem.\n\nThe final answer to the problem \\(78 + 95 + 80 - 65\\) is:\n\n<<<188>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    State the final answer to the following arithmetic problem: 78 + 95 + 80 - 65 =\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

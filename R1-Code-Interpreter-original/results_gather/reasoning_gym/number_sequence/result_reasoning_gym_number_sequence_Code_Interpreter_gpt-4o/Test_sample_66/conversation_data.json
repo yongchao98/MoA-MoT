@@ -1,0 +1,10 @@
+{
+  "question": "-10, -10, -20, -30, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>.",
+  "response_list": [
+    "\nassistant > The sequence given is \\(-10, -10, -20, -30, ?\\).\n\nLet's analyze the pattern:\n\n1. The first term is \\(-10\\).\n2. The second term is also \\(-10\\).\n3. The third term is \\(-20\\), which is \\(10\\) less than the second term.\n4. The fourth term is \\(-30\\), which is \\(10\\) less than the third term.\n\nIt appears that starting from the second term, each subsequent term decreases by \\(10\\).\n\nFollowing this pattern, the next term after \\(-30\\) would be \\(-30 - 10 = -40\\).\n\nTherefore, the value of \"?\" is \\(-40\\).\n\nThe value of \"?\" is enclosed within triple angle brackets: <<<-40>>>."
+  ],
+  "user_prompt_list": [
+    "-10, -10, -20, -30, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>."
+  ],
+  "system_message": ""
+}

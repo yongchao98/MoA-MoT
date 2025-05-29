@@ -1,0 +1,10 @@
+{
+  "question": "Question: Michaela lies. Millicent says Michaela lies. Delbert says Millicent lies. Bernita says Delbert lies. Teressa says Bernita tells the truth. Does Teressa tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine if Teressa tells the truth, we need to analyze the chain of statements and determine the truthfulness of each person involved.\n\n1. **Michaela lies.** - This is a given statement. Let's assume it is true for now.\n\n2. **Millicent says Michaela lies.** - If Millicent is telling the truth, then Michaela indeed lies, which is consistent with our assumption.\n\n3. **Delbert says Millicent lies.** - If Delbert is telling the truth, then Millicent is lying. However, if Millicent is lying, then Michaela does not lie, which contradicts our assumption that Michaela lies.\n\n4. **Bernita says Delbert lies.** - If Bernita is telling the truth, then Delbert is lying. If Delbert is lying, then Millicent is telling the truth, which means Michaela lies, consistent with our assumption.\n\n5. **Teressa says Bernita tells the truth.** - If Teressa is telling the truth, then Bernita is telling the truth, which means Delbert is lying, Millicent is telling the truth, and Michaela lies.\n\nBased on this analysis, if Teressa is telling the truth, then the entire chain of statements is consistent with the assumption that Michaela lies. Therefore, Teressa is indeed telling the truth.\n\n<<<'answer'>>>"
+  ],
+  "user_prompt_list": [
+    "Question: Michaela lies. Millicent says Michaela lies. Delbert says Millicent lies. Bernita says Delbert lies. Teressa says Bernita tells the truth. Does Teressa tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

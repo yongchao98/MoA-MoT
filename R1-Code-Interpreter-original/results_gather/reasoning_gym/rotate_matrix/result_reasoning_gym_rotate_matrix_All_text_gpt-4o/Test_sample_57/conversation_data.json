@@ -1,0 +1,10 @@
+{
+  "question": "Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 360 degrees clockwise:\n9 4 2\n5 1 2\n6 5 3\n",
+  "response_list": [
+    "To solve the problem of rotating a square matrix by 360 degrees clockwise, we need to understand the implications of a 360-degree rotation. Let's break down the steps:\n\n1. **Understanding 360-degree Rotation**: \n   - A 360-degree rotation means that the matrix will be rotated all the way around back to its original position. Therefore, the matrix will look exactly the same after a 360-degree rotation as it did initially.\n\n2. **Matrix Representation**:\n   - The given matrix is:\n     ```\n     9 4 2\n     5 1 2\n     6 5 3\n     ```\n\n3. **Analyzing the Rotation**:\n   - Since a 360-degree rotation results in the matrix returning to its original orientation, we do not need to change the positions of any elements. The matrix remains unchanged.\n\n4. **Output Format**:\n   - The output should be enclosed within triple angle brackets as specified: <<<the output matrix>>>.\n\n5. **Final Output**:\n   - The matrix after a 360-degree rotation is the same as the input matrix.\n\nTherefore, the final answer is:\n\n<<<\n9 4 2\n5 1 2\n6 5 3\n>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 360 degrees clockwise:\n9 4 2\n5 1 2\n6 5 3\n"
+  ],
+  "system_message": ""
+}

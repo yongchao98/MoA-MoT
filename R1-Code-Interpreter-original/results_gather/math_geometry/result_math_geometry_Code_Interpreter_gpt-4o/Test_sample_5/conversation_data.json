@@ -1,0 +1,10 @@
+{
+  "question": "In an isosceles triangle, one of the angles opposite an equal side is $40^{\\circ}$. How many degrees are in the measure of the triangle's largest angle? [asy] draw((0,0)--(6,0)--(3,2)--(0,0)); label(\"$\\backslash$\",(1.5,1)); label(\"{/}\",(4.5,1));\nlabel(\"$40^{\\circ}$\",(.5,0),dir(45));\n[/asy]\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "\nassistant > In an isosceles triangle, two sides are equal, and the angles opposite these sides are also equal. Let's denote the angles of the triangle as \\( A \\), \\( B \\), and \\( C \\), where \\( A = B = 40^\\circ \\) because they are opposite the equal sides.\n\nThe sum of the angles in any triangle is \\( 180^\\circ \\). Therefore, we can find the measure of the third angle \\( C \\) as follows:\n\n\\[\nC = 180^\\circ - A - B = 180^\\circ - 40^\\circ - 40^\\circ = 100^\\circ\n\\]\n\nThus, the largest angle in the triangle is \\( 100^\\circ \\).\n\nThe final answer is:\n\n\\[\n\\boxed{100}\n\\]\n\nSo, the measure of the triangle's largest angle is <<<100>>>."
+  ],
+  "user_prompt_list": [
+    "In an isosceles triangle, one of the angles opposite an equal side is $40^{\\circ}$. How many degrees are in the measure of the triangle's largest angle? [asy] draw((0,0)--(6,0)--(3,2)--(0,0)); label(\"$\\backslash$\",(1.5,1)); label(\"{/}\",(4.5,1));\nlabel(\"$40^{\\circ}$\",(.5,0),dir(45));\n[/asy]\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

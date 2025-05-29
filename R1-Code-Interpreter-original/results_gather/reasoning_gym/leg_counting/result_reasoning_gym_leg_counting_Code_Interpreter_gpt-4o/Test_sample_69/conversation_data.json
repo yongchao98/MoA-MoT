@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 10 lobsters, 4 butterflys, 15 praying mantiss, 5 flatworms, 8 scorpions, 12 lions?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To calculate the total number of legs, we need to know the number of legs each type of animal has:\n\n- Lobsters have 10 legs.\n- Butterflies have 6 legs.\n- Praying mantises have 6 legs.\n- Flatworms have 0 legs.\n- Scorpions have 8 legs.\n- Lions have 4 legs.\n\nNow, we can calculate the total number of legs for each type of animal and sum them up:\n\n- Lobsters: \\(10 \\times 10\\)\n- Butterflies: \\(4 \\times 6\\)\n- Praying mantises: \\(15 \\times 6\\)\n- Flatworms: \\(5 \\times 0\\)\n- Scorpions: \\(8 \\times 8\\)\n- Lions: \\(12 \\times 4\\)\n\nLet's calculate the total number of legs.\nassistant > code_interpreter\n\n# Number of animals\nlobsters = 10\nbutterflies = 4\npraying_mantises = 15\nflatworms = 5\nscorpions = 8\nlions = 12\n\n# Number of legs per animal\nlegs_per_lobster = 10\nlegs_per_butterfly = 6\nlegs_per_praying_mantis = 6\nlegs_per_flatworm = 0\nlegs_per_scorpion = 8\nlegs_per_lion = 4\n\n# Total number of legs\ntotal_legs = (lobsters * legs_per_lobster +\n              butterflies * legs_per_butterfly +\n              praying_mantises * legs_per_praying_mantis +\n              flatworms * legs_per_flatworm +\n              scorpions * legs_per_scorpion +\n              lions * legs_per_lion)\n\ntotal_legs\nassistant > The total number of legs is <<<326>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 10 lobsters, 4 butterflys, 15 praying mantiss, 5 flatworms, 8 scorpions, 12 lions?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

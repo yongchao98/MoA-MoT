@@ -1,0 +1,10 @@
+{
+  "question": "Using all the numbers 50, 60, 99, 12, 87, 96, create an expression that equals 112.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To solve this problem, we need to find a combination of the numbers 50, 60, 99, 12, 87, and 96 using basic arithmetic operations (addition, subtraction, multiplication, and division) that results in 112. Let's try to find such an expression.\nassistant > code_interpreter\n\nfrom itertools import permutations, product\n\n# Define the numbers and target\nnumbers = [50, 60, 99, 12, 87, 96]\ntarget = 112\noperations = ['+', '-', '*', '/']\n\n# Function to evaluate an expression\ndef evaluate_expression(nums, ops):\n    expression = f\"{nums[0]}\"\n    for i in range(len(ops)):\n        expression += f\" {ops[i]} {nums[i+1]}\"\n    try:\n        return eval(expression)\n    except ZeroDivisionError:\n        return None\n\n# Try all permutations of numbers and operations\nfor num_perm in permutations(numbers):\n    for ops in product(operations, repeat=5):\n        if evaluate_expression(num_perm, ops) == target:\n            expression = f\"{num_perm[0]} {ops[0]} {num_perm[1]} {ops[1]} {num_perm[2]} {ops[2]} {num_perm[3]} {ops[3]} {num_perm[4]} {ops[4]} {num_perm[5]}\"\n            break\n\nexpression\nassistant > <<<87 - 96 + 12 + 99 + 60 - 50>>>"
+  ],
+  "user_prompt_list": [
+    "Using all the numbers 50, 60, 99, 12, 87, 96, create an expression that equals 112.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

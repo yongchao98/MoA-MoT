@@ -1,0 +1,2 @@
+books = ["E", "D", "F", "G", "B", "C", "A"]
+print(books)

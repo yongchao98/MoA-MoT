@@ -1,0 +1,10 @@
+{
+  "question": "Determine the value of h that satisfies: 20 - 51*h = -3448\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine the value of \\( h \\) that satisfies the equation \\( 20 - 51h = -3448 \\), we will solve the equation step by step.\n\n### Step-by-Step Analysis:\n\n1. **Understand the Equation:**\n   - The given equation is \\( 20 - 51h = -3448 \\).\n   - We need to isolate \\( h \\) on one side of the equation to find its value.\n\n2. **Isolate the Term with \\( h \\):**\n   - Start by moving the constant term (20) to the other side of the equation.\n   - Subtract 20 from both sides:\n     \\[\n     20 - 51h - 20 = -3448 - 20\n     \\]\n   - Simplifying both sides gives:\n     \\[\n     -51h = -3468\n     \\]\n\n3. **Solve for \\( h \\):**\n   - Now, divide both sides by -51 to solve for \\( h \\):\n     \\[\n     h = \\frac{-3468}{-51}\n     \\]\n   - Simplify the division:\n     \\[\n     h = 68\n     \\]\n\n4. **Verify the Solution:**\n   - Substitute \\( h = 68 \\) back into the original equation to verify:\n     \\[\n     20 - 51 \\times 68 = -3448\n     \\]\n   - Calculate \\( 51 \\times 68 \\):\n     \\[\n     51 \\times 68 = 3468\n     \\]\n   - Substitute back:\n     \\[\n     20 - 3468 = -3448\n     \\]\n   - Simplify:\n     \\[\n     -3448 = -3448\n     \\]\n   - The left-hand side equals the right-hand side, confirming that \\( h = 68 \\) is correct.\n\n### Final Answer:\nThe value of \\( h \\) that satisfies the equation is \\(\\boxed{68}\\).\n\n<<<68>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Determine the value of h that satisfies: 20 - 51*h = -3448\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

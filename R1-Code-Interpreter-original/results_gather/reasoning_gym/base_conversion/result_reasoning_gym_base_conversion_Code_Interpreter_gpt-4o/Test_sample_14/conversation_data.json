@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 1020200 to base-8\n\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "\nassistant > code_interpreter\n\ndef base_n_to_decimal(number, base):\n    \"\"\"Convert a number from a given base to decimal.\"\"\"\n    decimal = 0\n    for index, digit in enumerate(reversed(str(number))):\n        decimal += int(digit) * (base ** index)\n    return decimal\n\ndef decimal_to_base_n(decimal, base):\n    \"\"\"Convert a decimal number to a given base.\"\"\"\n    if decimal == 0:\n        return \"0\"\n    digits = []\n    while decimal:\n        digits.append(int(decimal % base))\n        decimal //= base\n    return ''.join(str(x) for x in reversed(digits))\n\n# Convert base-3 number 1020200 to base-8\nbase_3_number = 1020200\ndecimal_number = base_n_to_decimal(base_3_number, 3)\nbase_8_number = decimal_to_base_n(decimal_number, 8)\nbase_8_number\nassistant > The base-3 number 1020200 converted to base-8 is <<<1615>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 1020200 to base-8\n\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

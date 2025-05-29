@@ -1,0 +1,10 @@
+{
+  "question": "If a meeting is scheduled on the third Saturday of May 2022, on which day of the month does it occur? Express your answer as a number. Answer with -1 if the ordinal does not exist in the month.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom datetime import date, timedelta\n\n# Function to find the nth occurrence of a specific weekday in a given month and year\ndef nth_weekday_of_month(year, month, weekday, n):\n    # Start from the first day of the month\n    first_day = date(year, month, 1)\n    # Find the first occurrence of the weekday in the month\n    first_occurrence = first_day + timedelta(days=(weekday - first_day.weekday() + 7) % 7)\n    # Calculate the nth occurrence\n    nth_occurrence = first_occurrence + timedelta(weeks=n-1)\n    # Check if the nth occurrence is within the same month\n    if nth_occurrence.month == month:\n        return nth_occurrence.day\n    else:\n        return -1\n\n# May 2022, third Saturday\nyear = 2022\nmonth = 5\nweekday = 5  # Saturday\nn = 3\n\n# Get the day of the month for the third Saturday\nday_of_month = nth_weekday_of_month(year, month, weekday, n)\nday_of_month\nassistant > The third Saturday of May 2022 occurs on the <<<21>>>."
+  ],
+  "user_prompt_list": [
+    "If a meeting is scheduled on the third Saturday of May 2022, on which day of the month does it occur? Express your answer as a number. Answer with -1 if the ordinal does not exist in the month.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

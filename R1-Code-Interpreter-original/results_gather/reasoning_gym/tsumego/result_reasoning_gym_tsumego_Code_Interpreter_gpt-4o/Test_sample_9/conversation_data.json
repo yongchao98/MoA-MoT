@@ -1,0 +1,10 @@
+{
+  "question": "Tsumego time. Black to play and capture some stones.\nFind the key move.\n\n```\n   A B C D E F G H I J K L\n12 . X O X . . . O . . . .\n11 X O O . O . . . . . . .\n10 . X O X . . . . . . . X\n 9 . . X . . . . . . . O .\n 8 . . . . . . . . X . O X\n 7 . . . O . . . . . . . .\n 6 . . . . . . . . . O . .\n 5 . . . . . . . . . . . .\n 4 . . . . . . . . . . . .\n 3 X . . . . . . . . . . .\n 2 . . . . . . . . . . . .\n 1 . . . . . O . . . X . .\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)",
+  "response_list": [
+    "\nassistant > To solve this tsumego, we need to find a move for Black that will capture some White stones. Let's analyze the position:\n\n- The White stones at B11, C11, and C10 are in a vulnerable position.\n- Black can potentially capture these stones by playing a move that reduces their liberties.\n\nThe key move for Black is to play at D11, which will reduce the liberties of the White stones and lead to their capture.\n\nThe move is: <<<D11>>>."
+  ],
+  "user_prompt_list": [
+    "Tsumego time. Black to play and capture some stones.\nFind the key move.\n\n```\n   A B C D E F G H I J K L\n12 . X O X . . . O . . . .\n11 X O O . O . . . . . . .\n10 . X O X . . . . . . . X\n 9 . . X . . . . . . . O .\n 8 . . . . . . . . X . O X\n 7 . . . O . . . . . . . .\n 6 . . . . . . . . . O . .\n 5 . . . . . . . . . . . .\n 4 . . . . . . . . . . . .\n 3 X . . . . . . . . . . .\n 2 . . . . . . . . . . . .\n 1 . . . . . O . . . X . .\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)"
+  ],
+  "system_message": ""
+}

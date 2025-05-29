@@ -1,0 +1,10 @@
+{
+  "question": "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \n^ & @ %\n* ! ! #\n! # * %\n* $ ^ @.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\ndef rotate_matrix_90_clockwise(matrix):\n    # Transpose the matrix\n    transposed_matrix = list(zip(*matrix))\n    # Reverse each row to get the 90 degree rotated matrix\n    rotated_matrix = [list(reversed(row)) for row in transposed_matrix]\n    return rotated_matrix\n\n# Given matrix\nmatrix = [\n    ['^', '&', '@', '%'],\n    ['*', '!', '!', '#'],\n    ['!', '#', '*', '%'],\n    ['*', '$', '^', '@']\n]\n\n# Rotate the matrix 90 degrees clockwise\nrotated_matrix = rotate_matrix_90_clockwise(matrix)\n\n# Format the result as requested\nformatted_result = f\"<<<{','.join([','.join(row) for row in rotated_matrix])}>>>\"\nformatted_result\nassistant > The rotated matrix, 90 degrees clockwise, is represented as: <<<*,!,*,^,$,#,!,&,^,*,!,@,@,%,#,%>>>."
+  ],
+  "user_prompt_list": [
+    "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \n^ & @ %\n* ! ! #\n! # * %\n* $ ^ @.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array."
+  ],
+  "system_message": ""
+}

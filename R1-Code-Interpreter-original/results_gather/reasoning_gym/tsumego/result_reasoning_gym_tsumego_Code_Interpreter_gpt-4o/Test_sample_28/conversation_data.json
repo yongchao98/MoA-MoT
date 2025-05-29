@@ -1,0 +1,10 @@
+{
+  "question": "Here's a Go challenge. Playing as Black, how can you capture as many white stones as possible?\n\n```\n   A B C D E F G H I J K\n11 . . . . . . . . . O .\n10 . . . . . . . . . . O\n 9 . . X . . X X . . . .\n 8 . . . . X O X X . . .\n 7 . . X X O O . . . X .\n 6 O . . . X O X . . . .\n 5 . . . . . X . . . . .\n 4 . . . . . . . . . . .\n 3 . . . . . . . . . . .\n 2 . . . . . . . . O . .\n 1 X . . . . . . . . . X\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)",
+  "response_list": [
+    "\nassistant > To capture as many white stones as possible, we need to identify a move that will surround and capture the maximum number of white stones. Let's analyze the board:\n\n```\n   A B C D E F G H I J K\n11 . . . . . . . . . O .\n10 . . . . . . . . . . O\n 9 . . X . . X X . . . .\n 8 . . . . X O X X . . .\n 7 . . X X O O . . . X .\n 6 O . . . X O X . . . .\n 5 . . . . . X . . . . .\n 4 . . . . . . . . . . .\n 3 . . . . . . . . . . .\n 2 . . . . . . . . O . .\n 1 X . . . . . . . . . X\n```\n\nThe group of white stones at E8, F8, F7, and F6 is surrounded on three sides by black stones. Placing a black stone at G7 would capture these white stones. Let's make this move:\n\nMove: <<<G7>>>"
+  ],
+  "user_prompt_list": [
+    "Here's a Go challenge. Playing as Black, how can you capture as many white stones as possible?\n\n```\n   A B C D E F G H I J K\n11 . . . . . . . . . O .\n10 . . . . . . . . . . O\n 9 . . X . . X X . . . .\n 8 . . . . X O X X . . .\n 7 . . X X O O . . . X .\n 6 O . . . X O X . . . .\n 5 . . . . . X . . . . .\n 4 . . . . . . . . . . .\n 3 . . . . . . . . . . .\n 2 . . . . . . . . O . .\n 1 X . . . . . . . . . X\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)"
+  ],
+  "system_message": ""
+}

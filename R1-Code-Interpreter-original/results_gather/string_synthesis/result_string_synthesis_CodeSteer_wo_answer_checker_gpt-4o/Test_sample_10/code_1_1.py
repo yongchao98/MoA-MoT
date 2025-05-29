@@ -1,0 +1,1 @@
+result = f"{blocks['[A]']}[A], {blocks['[B]']}[B], {blocks['[C]']}[C], {blocks['{A}']}{{A}}, {blocks['{B}']}{{B}}, {blocks['{C}']}{{C}}, {blocks['(A)']}({blocks['(A)']}), {blocks['(B)']}({blocks['(B)']}), {blocks['(C)']}({blocks['(C)']})"

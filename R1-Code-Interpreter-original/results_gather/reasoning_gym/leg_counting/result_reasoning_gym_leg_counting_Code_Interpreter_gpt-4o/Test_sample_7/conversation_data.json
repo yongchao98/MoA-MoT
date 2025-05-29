@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 12 tigers, 10 bees, 1 sea slug, 11 horses, 13 elephants, 5 wasps?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To find the total number of legs, we need to consider the number of legs each type of animal has:\n\n- Tigers: 4 legs each\n- Bees: 6 legs each\n- Sea slugs: 0 legs\n- Horses: 4 legs each\n- Elephants: 4 legs each\n- Wasps: 6 legs each\n\nNow, we can calculate the total number of legs for each type of animal and sum them up. Let's do the calculation.\nassistant > code_interpreter\n\n# Number of animals\ntigers = 12\nbees = 10\nsea_slugs = 1\nhorses = 11\nelephants = 13\nwasps = 5\n\n# Number of legs per animal\nlegs_per_tiger = 4\nlegs_per_bee = 6\nlegs_per_sea_slug = 0\nlegs_per_horse = 4\nlegs_per_elephant = 4\nlegs_per_wasp = 6\n\n# Total number of legs\ntotal_legs = (tigers * legs_per_tiger +\n              bees * legs_per_bee +\n              sea_slugs * legs_per_sea_slug +\n              horses * legs_per_horse +\n              elephants * legs_per_elephant +\n              wasps * legs_per_wasp)\n\ntotal_legs\nassistant > The total number of legs is <<<234>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 12 tigers, 10 bees, 1 sea slug, 11 horses, 13 elephants, 5 wasps?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

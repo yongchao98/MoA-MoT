@@ -1,0 +1,10 @@
+{
+  "question": "((-5 - 4 * -8 + 8) * (4 + 3 - 9 * 7)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\(((-5 - 4 \\times -8 + 8) \\times (4 + 3 - 9 \\times 7))\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Evaluate the expression inside the first set of parentheses: \\((-5 - 4 \\times -8 + 8)\\)**\n\n   - First, handle the multiplication: \\(4 \\times -8 = -32\\).\n   - Substitute back into the expression: \\((-5 - (-32) + 8)\\).\n   - Simplify the subtraction of a negative number: \\(-5 + 32 + 8\\).\n   - Perform the addition and subtraction from left to right:\n     - \\(-5 + 32 = 27\\).\n     - \\(27 + 8 = 35\\).\n\n   So, the expression inside the first parentheses evaluates to \\(35\\).\n\n2. **Evaluate the expression inside the second set of parentheses: \\((4 + 3 - 9 \\times 7)\\)**\n\n   - First, handle the multiplication: \\(9 \\times 7 = 63\\).\n   - Substitute back into the expression: \\((4 + 3 - 63)\\).\n   - Perform the addition and subtraction from left to right:\n     - \\(4 + 3 = 7\\).\n     - \\(7 - 63 = -56\\).\n\n   So, the expression inside the second parentheses evaluates to \\(-56\\).\n\n3. **Multiply the results of the two evaluated expressions:**\n\n   - Multiply the results from step 1 and step 2: \\(35 \\times -56\\).\n\n4. **Calculate the final multiplication:**\n\n   - \\(35 \\times -56 = -1960\\).\n\nTherefore, the final answer to the expression is:\n\n<<<-1960>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    ((-5 - 4 * -8 + 8) * (4 + 3 - 9 * 7)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

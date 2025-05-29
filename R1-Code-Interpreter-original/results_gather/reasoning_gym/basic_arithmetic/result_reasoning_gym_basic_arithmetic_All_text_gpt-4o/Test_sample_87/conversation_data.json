@@ -1,0 +1,10 @@
+{
+  "question": "Calculate 10 * -37 + -35 - -46.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(10 \\times -37 + -35 - -46\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Multiplication**: \n   - First, calculate the multiplication part of the expression: \n     \\[\n     10 \\times -37 = -370\n     \\]\n\n2. **Subtraction and Addition**:\n   - Now, substitute the result of the multiplication back into the expression:\n     \\[\n     -370 + -35 - -46\n     \\]\n   - Simplify the double negative in the expression:\n     \\[\n     -370 + -35 + 46\n     \\]\n\n3. **Addition and Subtraction**:\n   - Perform the addition and subtraction from left to right:\n     - First, add \\(-370\\) and \\(-35\\):\n       \\[\n       -370 + (-35) = -405\n       \\]\n     - Then, add \\(-405\\) and \\(46\\):\n       \\[\n       -405 + 46 = -359\n       \\]\n\nThus, the final answer to the expression \\(10 \\times -37 + -35 - -46\\) is:\n\n\\[\n\\boxed{-359}\n\\]\n\nOutput in the required format:\n\n<<<-359>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate 10 * -37 + -35 - -46.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

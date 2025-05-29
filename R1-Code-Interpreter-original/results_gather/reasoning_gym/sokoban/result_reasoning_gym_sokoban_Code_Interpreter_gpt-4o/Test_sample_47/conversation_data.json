@@ -1,0 +1,10 @@
+{
+  "question": "You are going to solve a 'sokoban' puzzle.\n\n* - The player\n% - The player on a goal\n@ - A box\nX - A goal\n$ - A box on a goal\n+ - A wall\n- - An empty position\n\nYour solution must be a string of characters enclosed within triple angle brackets, like <<<a string of characters>>>., ex: LDURRUDL.\n\nHere is your puzzle:\n+ + + + + + +  \n+ + - - - - +  \n+ $ $ - $ - +  \n+ X - - - - +  \n+ * - - - - +  \n+ @ @ - - + +  \n+ - @ X X + +  \n+ - - - - - +  \n+ + + + + + +  \n\n",
+  "response_list": [
+    "\nassistant > To solve the Sokoban puzzle, we need to move the player (*) to push all the boxes (@) onto the goals (X). The player can move up (U), down (D), left (L), or right (R), and can only push one box at a time. The goal is to find a sequence of moves that results in all boxes being placed on the goals.\n\nLet's analyze the given puzzle and find a solution.\nassistant > Here's a step-by-step solution to the puzzle:\n\n1. Move the player down to push the box below it.\n2. Move the player right to push the box to the right.\n3. Move the player up to push the box up.\n4. Move the player left to push the box to the left.\n5. Move the player down to push the box down.\n6. Move the player right to push the box to the right.\n7. Move the player up to push the box up.\n8. Move the player left to push the box to the left.\n\nThe sequence of moves is: DRULDRUL\n\nLet's represent this solution in the required format. \n\nThe solution is: <<<DRULDRUL>>>"
+  ],
+  "user_prompt_list": [
+    "You are going to solve a 'sokoban' puzzle.\n\n* - The player\n% - The player on a goal\n@ - A box\nX - A goal\n$ - A box on a goal\n+ - A wall\n- - An empty position\n\nYour solution must be a string of characters enclosed within triple angle brackets, like <<<a string of characters>>>., ex: LDURRUDL.\n\nHere is your puzzle:\n+ + + + + + +  \n+ + - - - - +  \n+ $ $ - $ - +  \n+ X - - - - +  \n+ * - - - - +  \n+ @ @ - - + +  \n+ - @ X X + +  \n+ - - - - - +  \n+ + + + + + +  \n\n"
+  ],
+  "system_message": ""
+}

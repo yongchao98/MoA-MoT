@@ -1,0 +1,10 @@
+{
+  "question": "Calculate -85 + -41 * 28 - 45.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(-85 + -41 \\times 28 - 45\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Identify operations**: The expression contains addition, multiplication, and subtraction.\n\n2. **Perform multiplication first**: According to the order of operations, we perform multiplication before addition and subtraction.\n   - Calculate \\(-41 \\times 28\\):\n     \\[\n     -41 \\times 28 = -1148\n     \\]\n\n3. **Substitute the result back into the expression**: Replace \\(-41 \\times 28\\) with \\(-1148\\) in the original expression.\n   - The expression now becomes: \\(-85 + (-1148) - 45\\).\n\n4. **Perform addition and subtraction from left to right**:\n   - First, calculate \\(-85 + (-1148)\\):\n     \\[\n     -85 + (-1148) = -85 - 1148 = -1233\n     \\]\n   - Next, calculate \\(-1233 - 45\\):\n     \\[\n     -1233 - 45 = -1278\n     \\]\n\n5. **Final result**: The final result of the expression is \\(-1278\\).\n\nTherefore, the answer to the expression \\(-85 + -41 \\times 28 - 45\\) is:\n\n<<<-1278>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate -85 + -41 * 28 - 45.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

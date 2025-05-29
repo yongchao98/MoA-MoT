@@ -1,0 +1,10 @@
+{
+  "question": "Calculate -( ( ( 77 - 14 ) / 3 ) ) / 21 + -21.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(-( ( ( 77 - 14 ) / 3 ) ) / 21 + -21\\), we will break it down step by step:\n\n1. **Calculate the expression inside the innermost parentheses:**\n   \\[\n   77 - 14 = 63\n   \\]\n\n2. **Divide the result by 3:**\n   \\[\n   63 / 3 = 21\n   \\]\n\n3. **Apply the negative sign to the result:**\n   \\[\n   -(21) = -21\n   \\]\n\n4. **Divide the result by 21:**\n   \\[\n   -21 / 21 = -1\n   \\]\n\n5. **Add -21 to the result:**\n   \\[\n   -1 + (-21) = -1 - 21 = -22\n   \\]\n\nThus, the final answer is:\n\n\\[\n\\text{<<<-22>>>}\n\\]"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate -( ( ( 77 - 14 ) / 3 ) ) / 21 + -21.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

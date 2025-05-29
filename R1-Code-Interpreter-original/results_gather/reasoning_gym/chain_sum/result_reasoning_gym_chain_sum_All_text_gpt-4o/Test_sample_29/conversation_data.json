@@ -1,0 +1,10 @@
+{
+  "question": "State the final answer to the following arithmetic problem: 81 + 37 - 51 - 47 - 51 =\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the arithmetic problem \\(81 + 37 - 51 - 47 - 51\\), we will break it down step by step:\n\n1. **Initial Addition:**\n   - Start with the first two numbers: \\(81 + 37\\).\n   - Calculate \\(81 + 37 = 118\\).\n\n2. **First Subtraction:**\n   - Subtract the next number from the result: \\(118 - 51\\).\n   - Calculate \\(118 - 51 = 67\\).\n\n3. **Second Subtraction:**\n   - Subtract the next number: \\(67 - 47\\).\n   - Calculate \\(67 - 47 = 20\\).\n\n4. **Third Subtraction:**\n   - Subtract the final number: \\(20 - 51\\).\n   - Calculate \\(20 - 51 = -31\\).\n\nAfter performing all the operations step by step, the final result of the arithmetic problem is \\(-31\\).\n\nTherefore, the final answer is:\n\n<<<-31>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    State the final answer to the following arithmetic problem: 81 + 37 - 51 - 47 - 51 =\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

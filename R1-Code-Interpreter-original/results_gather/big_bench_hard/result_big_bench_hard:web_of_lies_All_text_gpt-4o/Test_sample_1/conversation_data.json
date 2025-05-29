@@ -1,0 +1,10 @@
+{
+  "question": "Question: Kristian lies. Sherrie says Kristian lies. Delbert says Sherrie lies. Jerry says Delbert tells the truth. Shalonda says Jerry tells the truth. Does Shalonda tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine if Shalonda tells the truth, we need to analyze the statements step by step, considering the implications of each person's statement being true or false.\n\n1. **Kristian lies.**\n   - This is a given statement. If Kristian lies, then any statement he makes is false.\n\n2. **Sherrie says Kristian lies.**\n   - If Sherrie tells the truth, then Kristian indeed lies, which is consistent with the given statement. If Sherrie lies, then Kristian does not lie, which contradicts the given statement. Therefore, Sherrie must be telling the truth.\n\n3. **Delbert says Sherrie lies.**\n   - Since we have established that Sherrie tells the truth, Delbert's statement that Sherrie lies must be false. Therefore, Delbert is lying.\n\n4. **Jerry says Delbert tells the truth.**\n   - Since Delbert is lying, Jerry's statement that Delbert tells the truth is false. Therefore, Jerry is lying.\n\n5. **Shalonda says Jerry tells the truth.**\n   - Since Jerry is lying, Shalonda's statement that Jerry tells the truth is false. Therefore, Shalonda is lying.\n\nBased on this step-by-step analysis, we conclude that Shalonda does not tell the truth.\n\nFinal answer: <<<no>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Kristian lies. Sherrie says Kristian lies. Delbert says Sherrie lies. Jerry says Delbert tells the truth. Shalonda says Jerry tells the truth. Does Shalonda tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

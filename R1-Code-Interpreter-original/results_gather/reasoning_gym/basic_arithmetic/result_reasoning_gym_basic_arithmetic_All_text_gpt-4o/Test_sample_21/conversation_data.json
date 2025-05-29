@@ -1,0 +1,10 @@
+{
+  "question": "Calculate ( -( -56 * -33 + -87 ) * 13 ) - -67 - 30.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(( -( -56 * -33 + -87 ) * 13 ) - -67 - 30\\), we will break it down step by step:\n\n1. **Calculate the multiplication inside the parentheses:**\n   - The expression inside the parentheses is \\(-56 * -33\\).\n   - Multiplying two negative numbers results in a positive number: \n     \\[\n     -56 * -33 = 1848\n     \\]\n\n2. **Add the result to \\(-87\\):**\n   - The expression now becomes \\(1848 + -87\\).\n   - Adding a negative number is the same as subtracting the positive equivalent:\n     \\[\n     1848 - 87 = 1761\n     \\]\n\n3. **Multiply the result by 13:**\n   - The expression now becomes \\(-(1761) * 13\\).\n   - First, calculate \\(1761 * 13\\):\n     \\[\n     1761 * 13 = 22893\n     \\]\n   - Since the expression is \\(-(1761 * 13)\\), it becomes:\n     \\[\n     -22893\n     \\]\n\n4. **Subtract \\(-67\\) from the result:**\n   - The expression now becomes \\(-22893 - -67\\).\n   - Subtracting a negative number is the same as adding the positive equivalent:\n     \\[\n     -22893 + 67 = -22826\n     \\]\n\n5. **Subtract 30 from the result:**\n   - The expression now becomes \\(-22826 - 30\\).\n   - Subtracting 30 gives:\n     \\[\n     -22826 - 30 = -22856\n     \\]\n\nThus, the final answer to the expression is:\n\n\\[\n\\boxed{-22856}\n\\]\n\nOutputting the final answer in the required format:\n\n<<<-22856>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate ( -( -56 * -33 + -87 ) * 13 ) - -67 - 30.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

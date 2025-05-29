@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-10 number 418 to base-13\n\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "\nassistant > code_interpreter\n\ndef convert_base(number, base):\n    if number == 0:\n        return \"0\"\n    \n    digits = []\n    while number:\n        remainder = number % base\n        if remainder >= 10:\n            # Convert remainder to corresponding letter for bases > 10\n            digits.append(chr(remainder - 10 + ord('a')))\n        else:\n            digits.append(str(remainder))\n        number //= base\n    \n    # The digits are in reverse order\n    return ''.join(reversed(digits))\n\n# Convert the base-10 number 418 to base-13\nbase_10_number = 418\nbase_13_number = convert_base(base_10_number, 13)\nbase_13_number\nassistant > The base-10 number 418 converted to base-13 is <<<262>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-10 number 418 to base-13\n\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

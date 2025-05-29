@@ -1,0 +1,10 @@
+{
+  "question": "((-5 + 6 - -5 + -6) + (-4 + -6 - 3 - 7)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\(((-5 + 6 - -5 + -6) + (-4 + -6 - 3 - 7))\\), we need to evaluate it step by step:\n\n1. **Evaluate the first part**: \\((-5 + 6 - -5 + -6)\\)\n   - \\(-5 + 6 = 1\\)\n   - \\(- -5\\) is equivalent to \\(+5\\), so \\(1 + 5 = 6\\)\n   - \\(6 - 6 = 0\\)\n\n2. **Evaluate the second part**: \\((-4 + -6 - 3 - 7)\\)\n   - \\(-4 + -6 = -10\\)\n   - \\(-10 - 3 = -13\\)\n   - \\(-13 - 7 = -20\\)\n\n3. **Combine the results**: \\(0 + (-20) = -20\\)\n\nThus, the final result of the expression is \\(-20\\).\n\n<<<answer>>> -20"
+  ],
+  "user_prompt_list": [
+    "((-5 + 6 - -5 + -6) + (-4 + -6 - 3 - 7)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

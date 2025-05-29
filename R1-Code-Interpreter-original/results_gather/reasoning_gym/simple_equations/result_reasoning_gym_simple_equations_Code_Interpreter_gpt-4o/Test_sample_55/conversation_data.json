@@ -1,0 +1,10 @@
+{
+  "question": "Solve for e: 83*e - 81 = 1247\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom sympy import symbols, Eq, solve\n\n# Define the variable\ne = symbols('e')\n\n# Define the equation\nequation = Eq(83*e - 81, 1247)\n\n# Solve the equation\nsolution = solve(equation, e)\nsolution\nassistant > The solution for \\( e \\) is <<<16>>>."
+  ],
+  "user_prompt_list": [
+    "Solve for e: 83*e - 81 = 1247\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

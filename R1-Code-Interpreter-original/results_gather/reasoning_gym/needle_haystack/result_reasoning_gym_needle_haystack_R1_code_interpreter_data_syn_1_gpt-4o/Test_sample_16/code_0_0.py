@@ -1,0 +1,14 @@
+text = """
+Kajetan laments cheese making. Colby finds fulfillment in off-road vehicles. Stewarty mocks playing lacrosse. Sayeed rejects linguistics. Jorge spurns sailing. Rio longs for kayaks. Ehsan yearns travel blogging. Munmair adores marathon running. Declyn waves away ducks. Danys dismisses off-road vehicles. Callan-Adam extols chickens. Reily hates compassion. Francis loves playing handball. Flint exults preparing breakfast. Rohan prefers cleaning the carpets. Stewart approves of stargazing. Robby begrudges pancakes. Dara yearns balloons. Peregrine spurns ethics. Fintan rejoices in the color lilac. Alihaider waves away playing drums. Bayley cherishes playing the oboe. Mikee adores noodles. Ayden dislikes the color tan. Coll yearns modern dancing. Rhuaridh is partial to innovation. Dawud lusts after submarines. Coban welcomes weeding the garden. Ashwin appreciates robotics. Shreeram can’t bear skateboarding. Jia adores imagination. Kevin enjoys playing billiards. Kenzy detests candy. Bruno dismisses playing squash. Gytis celebrates wisdom. Jagat rails against gardening. Isaiah glorifies pruning the bushes. Ahmed-Aziz basks in visiting historical sites. Tegan complains about chopping vegetables. Jayden-Paul damns sailboats. Conner covets the color chartreuse. Konrad admires monkeys. Musse is addicted to dancing salsa. Dharam is keen on psychology. Enis derides sketching. Malcolm is passionate about cinema. Yang desires chopping vegetables. James-Paul craves bird watching. Alhaji exalts composting. Lasse prefers ice cream. Burak disdains ice skating. Jensyn can’t stand playing water polo. Teos approves of playing the cello. Jeyun scoffs at bread. Tymoteusz prizes performing magic. Rhett admires kangaroos. Ceiron scorns listening to blues. Cayden-Robert favors metaphysics. Garry commends geese. Cyrus despises fishing. Keenan-Lee loathes muffins. Peni is apathetic about the color aquamarine. Sayf savors emptying the dishwasher. Kamron is crazy about technology. Montague is crazy about philosophy. Camron begrudges helicopters. Addison curses the color magenta. Laughlan brushes off cybersecurity. Micheal disdains vegetable soup. Mehraz stomachs biology. Kal-el is crazy about attending concerts. Aarman approves of jet skis. Tommi-Lee puts up with the color purple. Marcello scoffs at ice skating. Pearce overlooks modern dance. Modoulamin champions lasagna. Woyenbrakemi exalts candy. Ibrahim champions kangaroos. Dara begrudges simplicity. Lawrie is keen on wildlife conservation.
+"""
+
+# Split the text into sentences
+sentences = text.split('. ')
+
+# Search for the sentence containing "yearns modern dancing"
+for sentence in sentences:
+    if "yearns modern dancing" in sentence:
+        # Extract the name
+        name = sentence.split()[0]
+        print(name)
+        break

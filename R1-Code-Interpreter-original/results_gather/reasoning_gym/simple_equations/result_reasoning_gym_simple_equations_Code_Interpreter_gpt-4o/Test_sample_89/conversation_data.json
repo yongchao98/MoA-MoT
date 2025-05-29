@@ -1,0 +1,10 @@
+{
+  "question": "Solve for c: 79*c - 51 = 1766\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom sympy import symbols, Eq, solve\n\n# Define the variable\nc = symbols('c')\n\n# Define the equation\nequation = Eq(79*c - 51, 1766)\n\n# Solve the equation\nsolution = solve(equation, c)\nsolution\nassistant > The solution for \\( c \\) is <<<23>>>."
+  ],
+  "user_prompt_list": [
+    "Solve for c: 79*c - 51 = 1766\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

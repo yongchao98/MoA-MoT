@@ -1,0 +1,10 @@
+{
+  "question": "Question: Jamey tells the truth. Raymond says Jamey lies. Audrie says Raymond lies. Michaela says Audrie lies. Rashida says Michaela lies. Does Rashida tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to determine the truthfulness of each person's statement based on the given chain of statements. Let's analyze the statements step by step:\n\n1. **Jamey tells the truth.**\n   - This is our starting point. If Jamey tells the truth, then his statement is true.\n\n2. **Raymond says Jamey lies.**\n   - If Jamey tells the truth, then Raymond's statement must be false because he claims Jamey lies.\n\n3. **Audrie says Raymond lies.**\n   - Since Raymond's statement is false (as determined in step 2), Audrie's statement is true because she says Raymond lies.\n\n4. **Michaela says Audrie lies.**\n   - Since Audrie's statement is true (as determined in step 3), Michaela's statement must be false because she claims Audrie lies.\n\n5. **Rashida says Michaela lies.**\n   - Since Michaela's statement is false (as determined in step 4), Rashida's statement is true because she says Michaela lies.\n\nTherefore, Rashida tells the truth.\n\n<<<'answer'>>>"
+  ],
+  "user_prompt_list": [
+    "Question: Jamey tells the truth. Raymond says Jamey lies. Audrie says Raymond lies. Michaela says Audrie lies. Rashida says Michaela lies. Does Rashida tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

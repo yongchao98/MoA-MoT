@@ -1,0 +1,10 @@
+{
+  "question": "Determine the value of r that satisfies: 61 - 99*r = -5285\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom sympy import symbols, Eq, solve\n\n# Define the variable\nr = symbols('r')\n\n# Define the equation\nequation = Eq(61 - 99*r, -5285)\n\n# Solve the equation\nsolution = solve(equation, r)\nsolution\nassistant > The value of \\( r \\) that satisfies the equation is <<<54>>>."
+  ],
+  "user_prompt_list": [
+    "Determine the value of r that satisfies: 61 - 99*r = -5285\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

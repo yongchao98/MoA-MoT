@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 12 horses, 3 dogs, 5 starfishs, 2 chickens?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To calculate the total number of legs, we need to know the number of legs each type of animal has:\n\n- Horses have 4 legs.\n- Dogs have 4 legs.\n- Starfish have 0 legs.\n- Chickens have 2 legs.\n\nNow, we can calculate the total number of legs:\n\n- Total legs from horses = 12 horses × 4 legs/horse\n- Total legs from dogs = 3 dogs × 4 legs/dog\n- Total legs from starfish = 5 starfish × 0 legs/starfish\n- Total legs from chickens = 2 chickens × 2 legs/chicken\n\nLet's compute the total number of legs.\nassistant > code_interpreter\n\n# Number of animals\nhorses = 12\ndogs = 3\nstarfish = 5\nchickens = 2\n\n# Number of legs per animal\nlegs_per_horse = 4\nlegs_per_dog = 4\nlegs_per_starfish = 0\nlegs_per_chicken = 2\n\n# Total number of legs\ntotal_legs = (horses * legs_per_horse) + (dogs * legs_per_dog) + (starfish * legs_per_starfish) + (chickens * legs_per_chicken)\ntotal_legs\nassistant > The total number of legs is <<<64>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 12 horses, 3 dogs, 5 starfishs, 2 chickens?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

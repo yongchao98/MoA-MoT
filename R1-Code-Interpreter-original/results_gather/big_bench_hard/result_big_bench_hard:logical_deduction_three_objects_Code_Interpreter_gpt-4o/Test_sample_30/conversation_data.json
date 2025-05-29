@@ -1,0 +1,10 @@
+{
+  "question": "The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells three fruits: watermelons, apples, and mangoes. The apples are less expensive than the mangoes. The mangoes are less expensive than the watermelons.\nOptions:\n(A) The watermelons are the second-most expensive\n(B) The apples are the second-most expensive\n(C) The mangoes are the second-most expensive\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > Given the information:\n\n1. Apples are less expensive than mangoes.\n2. Mangoes are less expensive than watermelons.\n\nWe can deduce the order of the fruits from least to most expensive:\n\n- Apples < Mangoes < Watermelons\n\nFrom this order, we can see that the mangoes are the second-most expensive.\n\nTherefore, the correct option is:\n\n<<<C>>>"
+  ],
+  "user_prompt_list": [
+    "The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells three fruits: watermelons, apples, and mangoes. The apples are less expensive than the mangoes. The mangoes are less expensive than the watermelons.\nOptions:\n(A) The watermelons are the second-most expensive\n(B) The apples are the second-most expensive\n(C) The mangoes are the second-most expensive\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

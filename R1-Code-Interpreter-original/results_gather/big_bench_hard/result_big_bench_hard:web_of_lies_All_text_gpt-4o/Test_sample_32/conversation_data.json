@@ -1,0 +1,10 @@
+{
+  "question": "Question: Delfina tells the truth. Willian says Delfina tells the truth. Crista says Willian lies. Shalonda says Crista lies. Shenna says Shalonda tells the truth. Does Shenna tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine if Shenna tells the truth, we need to analyze the statements made by each person and their implications step by step.\n\n1. **Delfina tells the truth.**\n   - This is a given statement. Delfina is truthful.\n\n2. **Willian says Delfina tells the truth.**\n   - Since Delfina tells the truth, Willian's statement is true. Therefore, Willian is also truthful.\n\n3. **Crista says Willian lies.**\n   - Since Willian is truthful, Crista's statement is false. Therefore, Crista lies.\n\n4. **Shalonda says Crista lies.**\n   - Since Crista lies, Shalonda's statement is true. Therefore, Shalonda is truthful.\n\n5. **Shenna says Shalonda tells the truth.**\n   - Since Shalonda is truthful, Shenna's statement is true. Therefore, Shenna tells the truth.\n\nBased on the analysis, Shenna tells the truth.\n\nFinal answer: <<<true>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Delfina tells the truth. Willian says Delfina tells the truth. Crista says Willian lies. Shalonda says Crista lies. Shenna says Shalonda tells the truth. Does Shenna tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

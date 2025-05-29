@@ -1,0 +1,10 @@
+{
+  "question": "Simplify the fraction $200/250$ to its lowest terms. Give only the simplified fraction as your final answer.\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom fractions import Fraction\n\n# Simplify the fraction 200/250\nsimplified_fraction = Fraction(200, 250)\nsimplified_fraction\nassistant > <<<4/5>>>"
+  ],
+  "user_prompt_list": [
+    "Simplify the fraction $200/250$ to its lowest terms. Give only the simplified fraction as your final answer.\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

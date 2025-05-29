@@ -1,0 +1,10 @@
+{
+  "question": "Solve for p: 119*p + 49 = 2786\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the equation \\(119p + 49 = 2786\\) for \\(p\\), we will follow these steps:\n\n1. **Understand the Equation**: The equation is a linear equation in the form of \\(ax + b = c\\), where \\(a = 119\\), \\(b = 49\\), and \\(c = 2786\\). We need to solve for \\(p\\).\n\n2. **Isolate the Term with \\(p\\)**: \n   - Subtract 49 from both sides of the equation to isolate the term with \\(p\\).\n   \\[\n   119p + 49 - 49 = 2786 - 49\n   \\]\n   Simplifying both sides gives:\n   \\[\n   119p = 2737\n   \\]\n\n3. **Solve for \\(p\\)**:\n   - Divide both sides of the equation by 119 to solve for \\(p\\).\n   \\[\n   p = \\frac{2737}{119}\n   \\]\n\n4. **Perform the Division**:\n   - Calculate \\(\\frac{2737}{119}\\).\n   - Perform the division: 2737 divided by 119 equals 23.\n\n5. **Verify the Solution**:\n   - Substitute \\(p = 23\\) back into the original equation to ensure it satisfies the equation.\n   \\[\n   119 \\times 23 + 49 = 2786\n   \\]\n   - Calculate \\(119 \\times 23 = 2737\\).\n   - Add 49 to 2737, which gives 2786, confirming the solution is correct.\n\nThe final answer is:\n\\[\n\\boxed{23}\n\\]\n\nTherefore, the solution to the equation is:\n<<<23>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Solve for p: 119*p + 49 = 2786\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

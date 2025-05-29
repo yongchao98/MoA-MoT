@@ -1,0 +1,78 @@
+import json
+from collections import deque, defaultdict
+import heapq
+
+def find_shortest_path(adj, start, end, obstacles):
+    if start in obstacles or end in obstacles:
+        return None
+    
+    queue = [(0, start, [start])]
+    visited = set()
+    
+    while queue:
+        (cost, current, path) = heapq.heappop(queue)
+        
+        if current == end:
+            return path
+            
+        if current in visited:
+            continue
+            
+        visited.add(current)
+        
+        for next_pos in adj[current]:
+            if next_pos not in visited and next_pos not in obstacles:
+                new_path = path + [next_pos]
+                heapq.heappush(queue, (cost + 1, next_pos, new_path))
+    
+    return None
+
+def find_complete_path(adj, start, goals, obstacles):
+    current_pos = start
+    remaining_goals = set(goals)
+    final_path = [start]
+    visited_goals = set()
+    
+    while remaining_goals:
+        # Find the nearest unvisited goal
+        best_path = None
+        best_goal = None
+        best_length = float('inf')
+        
+        for goal in remaining_goals:
+            path = find_shortest_path(adj, current_pos, goal, obstacles)
+            if path and (len(path) < best_length):
+                best_length = len(path)
+                best_path = path
+                best_goal = goal
+        
+        if best_path is None:
+            return None  # No valid path found
+            
+        # Add the path to the goal (excluding the start position)
+        final_path.extend(best_path[1:])
+        current_pos = best_goal
+        remaining_goals.remove(best_goal)
+        visited_goals.add(best_goal)
+    
+    return final_path
+
+# Main execution
+initial_pos = "C3,3"
+goals = ['C2,1', 'C4,3', 'C2,5', 'C5,3', 'C5,4', 'C6,4', 'C6,1']
+obstacles = ['C4,4', 'C2,2', 'C1,3', 'C2,6', 'C4,2', 'C4,6', 'C6,3', 'C1,1', 'C1,5', 'C6,2']
+
+# Load adjacency data
+adjacency = {
+    # ... (using the provided adjacency dictionary)
+}
+
+# Find the complete path
+path = find_complete_path(adjacency, initial_pos, goals, obstacles)
+
+# Format and print the result
+if path:
+    result = json.dumps(path)
+    print(f"<<<{result}>>>")
+else:
+    print("No valid path found!")

@@ -1,0 +1,38 @@
+def is_goal(state, goal):
+    return state == goal
+
+def get_possible_moves(state):
+    moves = []
+    for i, stack in enumerate(state):
+        if stack:  # If the stack is not empty
+            block = stack[-1]  # Get the top block
+            for j in range(len(state)):
+                if i != j:  # Move to a different stack
+                    new_state = list(map(list, state))
+                    new_state[i].pop()
+                    new_state[j].append(block)
+                    moves.append((tuple(map(tuple, new_state)), f"Move {block} from {i+1} to {j+1}"))
+    return moves
+
+def dfs(initial_state, goal_state):
+    stack = [(initial_state, [])]
+    visited = set()
+
+    while stack:
+        current_state, path = stack.pop()
+        if is_goal(current_state, goal_state):
+            return path
+        visited.add(current_state)
+        for new_state, move in get_possible_moves(current_state):
+            if new_state not in visited:
+                stack.append((new_state, path + [move]))
+    return None
+
+initial_state = (('E', 'C', 'J'), ('H', 'D'), ('G', 'I', 'A', 'B', 'F'))
+goal_state = (('A', 'C', 'D', 'E', 'F', 'G'), ('B', 'H', 'J'), ('I',))
+
+solution = dfs(initial_state, goal_state)
+if solution:
+    print("<<<" + "\n".join(solution) + ">>>")
+else:
+    print("No solution found.")

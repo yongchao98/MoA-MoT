@@ -1,0 +1,16 @@
+def solve_blocks():
+    moves = [
+        "Move C from 2 to 3",
+        "Move A from 2 to 3",
+        "Move B from 2 to 1",
+        "Move C from 3 to 2",
+        "Move D from 3 to 3",
+        "Move E from 3 to 1",
+        "Move D from 3 to 2",
+        "Move A from 3 to 3",
+        "Move D from 2 to 3"
+    ]
+    
+    print("\n".join(moves))
+
+solve_blocks()

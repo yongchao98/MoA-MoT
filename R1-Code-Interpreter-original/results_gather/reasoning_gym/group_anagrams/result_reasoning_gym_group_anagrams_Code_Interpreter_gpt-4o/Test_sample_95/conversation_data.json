@@ -1,0 +1,10 @@
+{
+  "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings enclosed in triple angle brackets, where each outer list contains a group of anagrams, e.g. <<<[[\"eat\", \"tea\"], [\"tan\", \"nat\"]]>>>.\n\nGroup the following list of words into anagrams:\n[\"upwork\", \"workup\", \"laron\", \"loran\"]\n",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom collections import defaultdict\n\ndef group_anagrams(words):\n    anagrams = defaultdict(list)\n    for word in words:\n        # Sort the word into a tuple of characters\n        sorted_word = tuple(sorted(word))\n        # Append the original word to the list of its anagram group\n        anagrams[sorted_word].append(word)\n    return list(anagrams.values())\n\nwords = [\"upwork\", \"workup\", \"laron\", \"loran\"]\ngrouped_anagrams = group_anagrams(words)\ngrouped_anagrams\nassistant > The grouped anagrams are: <<<[['upwork', 'workup'], ['laron', 'loran']]>>>."
+  ],
+  "user_prompt_list": [
+    "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings enclosed in triple angle brackets, where each outer list contains a group of anagrams, e.g. <<<[[\"eat\", \"tea\"], [\"tan\", \"nat\"]]>>>.\n\nGroup the following list of words into anagrams:\n[\"upwork\", \"workup\", \"laron\", \"loran\"]\n"
+  ],
+  "system_message": ""
+}

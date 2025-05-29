@@ -1,0 +1,10 @@
+{
+  "question": "Count forward 15 days from Tuesday, June 14, 2022 - what's the weekday? Name the day of the week in full.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom datetime import datetime, timedelta\n\n# Starting date\nstart_date = datetime(2022, 6, 14)\n\n# Add 15 days\nend_date = start_date + timedelta(days=15)\n\n# Get the day of the week\nday_of_week = end_date.strftime('%A')\nday_of_week\nassistant > <<<Wednesday>>>"
+  ],
+  "user_prompt_list": [
+    "Count forward 15 days from Tuesday, June 14, 2022 - what's the weekday? Name the day of the week in full.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

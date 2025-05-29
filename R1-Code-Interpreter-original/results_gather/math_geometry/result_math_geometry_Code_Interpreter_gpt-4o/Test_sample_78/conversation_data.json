@@ -1,0 +1,10 @@
+{
+  "question": "Suppose $\\cos Q = 0.4$ in the diagram below.  What is $QR$?\n\n\n\n[asy]\npair P,Q,R;\nP = (0,0);\nQ = (6,0);\nR = (0,6*tan(acos(0.4)));\ndraw(P--Q--R--P);\ndraw(rightanglemark(Q,P,R,18));\nlabel(\"$P$\",P,SW);\nlabel(\"$Q$\",Q,SE);\nlabel(\"$R$\",R,N);\nlabel(\"$12$\",Q/2,S);\n[/asy]\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "\nassistant > To find the length of \\( QR \\), we can use the trigonometric relationship involving the cosine of angle \\( Q \\) in the right triangle \\( \\triangle PQR \\).\n\nGiven:\n- \\(\\cos Q = 0.4\\)\n- \\(PQ = 12\\)\n\nIn a right triangle, the cosine of an angle is the ratio of the adjacent side to the hypotenuse. Here, \\( PQ \\) is the adjacent side to angle \\( Q \\), and \\( PR \\) is the hypotenuse.\n\n\\[\n\\cos Q = \\frac{PQ}{PR} = 0.4\n\\]\n\nWe can solve for \\( PR \\):\n\n\\[\nPR = \\frac{PQ}{\\cos Q} = \\frac{12}{0.4}\n\\]\n\nNow, let's calculate \\( PR \\).\nassistant > code_interpreter\n\n# Given values\nPQ = 12\ncos_Q = 0.4\n\n# Calculate PR\nPR = PQ / cos_Q\nPR\nassistant > The length of \\( PR \\) is 30.0.\n\nNow, we need to find the length of \\( QR \\). In the right triangle \\( \\triangle PQR \\), we can use the Pythagorean theorem:\n\n\\[\nPR^2 = PQ^2 + QR^2\n\\]\n\nWe can solve for \\( QR \\):\n\n\\[\nQR^2 = PR^2 - PQ^2\n\\]\n\nLet's calculate \\( QR \\).import math\n\n# Calculate QR using the Pythagorean theorem\nQR = math.sqrt(PR**2 - PQ**2)\nQR\nassistant > The length of \\( QR \\) is approximately 27.50. \n\nThus, the final answer is <<<27.50>>>."
+  ],
+  "user_prompt_list": [
+    "Suppose $\\cos Q = 0.4$ in the diagram below.  What is $QR$?\n\n\n\n[asy]\npair P,Q,R;\nP = (0,0);\nQ = (6,0);\nR = (0,6*tan(acos(0.4)));\ndraw(P--Q--R--P);\ndraw(rightanglemark(Q,P,R,18));\nlabel(\"$P$\",P,SW);\nlabel(\"$Q$\",Q,SE);\nlabel(\"$R$\",R,N);\nlabel(\"$12$\",Q/2,S);\n[/asy]\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

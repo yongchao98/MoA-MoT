@@ -1,0 +1,10 @@
+{
+  "question": "Calculate -( 78 - -944 / 118 + 493 ) / 3.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(-( 78 - -944 / 118 + 493 ) / 3\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Identify the expression inside the parentheses**: \n   \\[\n   78 - \\frac{-944}{118} + 493\n   \\]\n\n2. **Perform the division inside the parentheses**: \n   \\[\n   \\frac{-944}{118}\n   \\]\n   Calculate \\(-944 \\div 118\\):\n   - \\(-944 \\div 118 \\approx -8\\)\n   - Therefore, \\(\\frac{-944}{118} = -8\\).\n\n3. **Substitute the division result back into the expression**:\n   \\[\n   78 - (-8) + 493\n   \\]\n\n4. **Simplify the expression by handling the subtraction of a negative number**:\n   - Subtracting a negative is equivalent to adding the positive:\n   \\[\n   78 + 8 + 493\n   \\]\n\n5. **Perform the addition**:\n   - First, add \\(78 + 8\\):\n     \\[\n     78 + 8 = 86\n     \\]\n   - Then, add \\(86 + 493\\):\n     \\[\n     86 + 493 = 579\n     \\]\n\n6. **Substitute back into the original expression**:\n   \\[\n   -(579) / 3\n   \\]\n\n7. **Perform the division**:\n   - Calculate \\(579 \\div 3\\):\n     \\[\n     579 \\div 3 = 193\n     \\]\n\n8. **Apply the negative sign**:\n   \\[\n   -193\n   \\]\n\nThus, the final answer is:\n\n<<<-193>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate -( 78 - -944 / 118 + 493 ) / 3.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

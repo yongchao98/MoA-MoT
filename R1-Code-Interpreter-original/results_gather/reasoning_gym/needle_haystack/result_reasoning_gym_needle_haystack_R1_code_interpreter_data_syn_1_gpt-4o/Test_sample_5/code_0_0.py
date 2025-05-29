@@ -1,0 +1,43 @@
+# List of people and their preferences
+preferences = [
+    "Yahya glorifies virtual reality.", "Bret execrates grilled chicken.", "Zakariya glories in kayaks.",
+    "Rory ignores the color silver.", "Amrinder is committed to dumplings.", "Layne lusts after brownies.",
+    "Mustafa finds pleasure in urban exploration.", "Salahudin is committed to crocheting.", "Calley ridicules wolves.",
+    "Ola-Oluwa dotes cleaning the oven.", "Warren scoffs at cleaning the patio.", "Jaydan is crazy about the color periwinkle.",
+    "Liam-Stephen favors curry.", "Mika prizes setting the table.", "Neil adores learning magic tricks.",
+    "Crawford spurns entrepreneurship.", "Armen reveres climbing.", "Brendyn respects the color black.",
+    "Mathew exalts elephants.", "Benjamin fancies sailing.", "Shaw adores the color cyan.",
+    "Jensen rejoices in theatre.", "Kyle-Derek craves visiting museums.", "Morton worships attending concerts.",
+    "Tyelor longs for exploring caves.", "Taddy exults convertibles.", "Lang detests zoology.",
+    "Teydren commends astronomy hobby.", "Amir glories in comic books.", "Sahil mocks wrestling.",
+    "Zane is nuts about playing guitar.", "Fezaan derides philosophy.", "Rio dotes empathy.",
+    "Maxx overlooks playing table tennis.", "Ayan likes electric scooters.", "Abu embraces attending concerts.",
+    "Abhinav likes sailplanes.", "Roddy yearns for minibikes.", "Kyle rejects compassion.",
+    "Badsha stomachs penguins.", "Tobi begrudges entrepreneurship.", "Gallagher accepts cupcakes.",
+    "Aleksandrs endures playing field hockey.", "Kayam ridicules sheep.", "Konan rails against scrubbing the floor.",
+    "Sajid adores dolphins.", "Darryl rejects cooking experiments.", "Albie idolizes composing music.",
+    "Aedyn shrugs off cinema.", "Flint applauds listening to folk music.", "Kaelum complains about learning languages.",
+    "Geoffrey laments imagination.", "Roen fancies embroidery.", "Jordon is apathetic about the color taupe.",
+    "Zinedine finds fulfillment in beer.", "Antonyo rejoices in winemaking.", "Jayden-Paul champions linguistics.",
+    "Jahid begrudges playing piano.", "Ernie-Jacks finds joy in collecting postcards.", "Raheem can’t stand the color fuchsia.",
+    "Corrie scoffs at organizing the pantry.", "Ferre blasts cryptocurrency.", "Ismaeel glorifies the color blue.",
+    "Zakariya pines for drawing.", "Aristomenis scorns playing the cello.", "Myles likes electric scooters.",
+    "Nikash dotes sandwich.", "Calan yearns playing the banjo.", "Stewarty yearns limousines.",
+    "Abaan likes snowmobiles.", "Israel respects sports cars.", "Hadji scoffs at cleaning the carpets.",
+    "Branden overlooks fencing.", "Nayan savors giraffes.", "Codi disdains climbing.",
+    "Khizar overlooks all-terrain vehicles.", "Kody longs for beatboxing.", "Allan is nuts about composting.",
+    "Butali hates sustainable living.", "Daksh derides pottery making.", "Ayman admires falcons.",
+    "Timucin finds satisfaction in playing darts.", "Daren yearns ice skating.", "Rishi puts up with crocodiles.",
+    "Haroon damns collecting coins.", "Sami detests sketching.", "Jensen champions stir-fry.",
+    "Pieter prefers playing saxophone.", "Alfie longs for convertible cars.", "Tiarnan bears watering the garden.",
+    "Dion curses learning magic tricks.", "Shaurya execrates playing percussion.", "Joeddy rejects mythology.",
+    "Conlly is devoted to muffins.", "Faysal neglects literature.", "Carlo finds joy in scrubbing the tub.",
+    "Deecan cherishes the color red."
+]
+
+# Search for the person who finds fulfillment in beer
+for preference in preferences:
+    if "finds fulfillment in beer" in preference:
+        name = preference.split()[0]
+        print(name)
+        break

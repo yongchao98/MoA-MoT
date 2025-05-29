@@ -1,0 +1,13 @@
+# Define the moves to achieve the goal state
+moves = [
+    "Move D from 1 to 4",
+    "Move E from 1 to 3",
+    "Move B from 2 to 4",
+    "Move A from 2 to 1",
+    "Move D from 4 to 3",
+    "Move B from 4 to 2"
+]
+
+# Print the moves
+for move in moves:
+    print(move)

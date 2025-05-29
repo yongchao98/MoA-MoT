@@ -1,0 +1,10 @@
+{
+  "question": "Calculate 136 - -121 * 191.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(136 - -121 \\times 191\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Identify the operations**: The expression involves subtraction and multiplication. The expression is \\(136 - (-121) \\times 191\\).\n\n2. **Handle the negative sign**: The expression has a double negative, \\(- -121\\), which simplifies to \\(+121\\). So, the expression becomes \\(136 + 121 \\times 191\\).\n\n3. **Order of operations**: According to PEMDAS, we perform multiplication before addition.\n\n4. **Perform the multiplication**: Calculate \\(121 \\times 191\\).\n\n   - Break it down:\n     - \\(121 \\times 191 = 121 \\times (190 + 1)\\)\n     - \\(= 121 \\times 190 + 121 \\times 1\\)\n     - \\(= (121 \\times 190) + 121\\)\n\n   - Calculate \\(121 \\times 190\\):\n     - \\(121 \\times 190 = 121 \\times (200 - 10)\\)\n     - \\(= 121 \\times 200 - 121 \\times 10\\)\n     - \\(= (121 \\times 2 \\times 100) - (121 \\times 10)\\)\n     - \\(= 24200 - 1210\\)\n     - \\(= 22990\\)\n\n   - Add the remaining part:\n     - \\(22990 + 121 = 23111\\)\n\n5. **Perform the addition**: Now, add the result of the multiplication to 136.\n\n   - \\(136 + 23111 = 23247\\)\n\nTherefore, the final answer to the expression \\(136 - -121 \\times 191\\) is:\n\n<<<23247>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate 136 - -121 * 191.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

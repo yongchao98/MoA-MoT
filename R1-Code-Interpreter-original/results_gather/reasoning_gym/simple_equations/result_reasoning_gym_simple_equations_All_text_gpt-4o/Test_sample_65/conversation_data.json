@@ -1,0 +1,10 @@
+{
+  "question": "Solve for g: 72*g + 67 = 6979\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the equation \\(72g + 67 = 6979\\) for \\(g\\), we will follow these steps:\n\n1. **Understand the Equation**: The equation is a linear equation in the form of \\(ax + b = c\\), where \\(a = 72\\), \\(b = 67\\), and \\(c = 6979\\). We need to solve for \\(g\\).\n\n2. **Isolate the Term with \\(g\\)**: \n   - Subtract 67 from both sides of the equation to isolate the term with \\(g\\).\n   - This gives us: \n     \\[\n     72g + 67 - 67 = 6979 - 67\n     \\]\n   - Simplifying both sides, we have:\n     \\[\n     72g = 6912\n     \\]\n\n3. **Solve for \\(g\\)**:\n   - Divide both sides of the equation by 72 to solve for \\(g\\).\n   - This gives us:\n     \\[\n     g = \\frac{6912}{72}\n     \\]\n\n4. **Perform the Division**:\n   - Calculate \\(\\frac{6912}{72}\\).\n   - Performing the division, we find:\n     \\[\n     g = 96\n     \\]\n\n5. **Verify the Solution**:\n   - Substitute \\(g = 96\\) back into the original equation to verify:\n     \\[\n     72 \\times 96 + 67 = 6912 + 67 = 6979\n     \\]\n   - The left-hand side equals the right-hand side, confirming that \\(g = 96\\) is correct.\n\nTherefore, the solution to the equation is:\n\n<<<96>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Solve for g: 72*g + 67 = 6979\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Jessica has 2 male friends and she also has 4 female friends. They all are friends with each other and have no other friends aside. How many female friends does John, a male friend of Jessica, have?\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve this problem, we need to understand the relationships between Jessica's friends. Jessica has 2 male friends and 4 female friends, and they are all friends with each other. This means that each of Jessica's male friends is also friends with all of Jessica's female friends.\n\nLet's break it down:\n\n1. Jessica has 2 male friends: John and another male friend.\n2. Jessica has 4 female friends.\n3. All of these friends are friends with each other.\n\nSince John is one of the male friends and all of Jessica's friends are friends with each other, John is friends with all 4 of Jessica's female friends.\n\nTherefore, John has 4 female friends.\n\n<<<4>>>"
+  ],
+  "user_prompt_list": [
+    "\nThe User asks a question, and you solve it. \nYou first generate the reasoning and thinking process and then provide the User with the final answer.\nDuring the thinking process, **you can generate python code** for efficient searching, optimization, and computing with the format of starting the python block with ```python. \n**A code query must involve only a single script that uses 'print' function for the output.**. \nOnce the code script is complete, stop the generation. Then, the code interpreter platform will execute the code and return the execution output and error.\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response.\nOtherwise, you can continue your reasoning process and possibly generate more code query to solve the problem.\n\n    Jessica has 2 male friends and she also has 4 female friends. They all are friends with each other and have no other friends aside. How many female friends does John, a male friend of Jessica, have?\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

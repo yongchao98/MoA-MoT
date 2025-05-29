@@ -1,0 +1,10 @@
+{
+  "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nYour output should be a matrix in the same format as the input matrix, enclosed within triple angle brackets, like <<<output matrix>>>.\nThe output matrix is smaller than the input matrix when the kernel size is greater than 1, and its elements may be floating-point numbers.\nGive elements in the output matrix correct to 2 decimal places.\n\nPerform average pooling on the following matrix with a kernel size of 1:\n6 1 3 0 4 9 6 1 8\n2 9 6 0 6 2 0 6 3\n",
+  "response_list": [
+    "\nassistant > When performing average pooling with a kernel size of 1, each element in the output matrix corresponds directly to the element in the input matrix. This is because the kernel size of 1 means that each element is considered individually, and the average of a single element is the element itself.\n\nTherefore, the output matrix will be the same as the input matrix. Let's format the output matrix as requested:\n\n\\[\n\\begin{bmatrix}\n6 & 1 & 3 & 0 & 4 & 9 & 6 & 1 & 8 \\\\\n2 & 9 & 6 & 0 & 6 & 2 & 0 & 6 & 3 \\\\\n\\end{bmatrix}\n\\]\n\nThe output matrix is:\n\n<<<\n6 1 3 0 4 9 6 1 8\n2 9 6 0 6 2 0 6 3\n>>>"
+  ],
+  "user_prompt_list": [
+    "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nYour output should be a matrix in the same format as the input matrix, enclosed within triple angle brackets, like <<<output matrix>>>.\nThe output matrix is smaller than the input matrix when the kernel size is greater than 1, and its elements may be floating-point numbers.\nGive elements in the output matrix correct to 2 decimal places.\n\nPerform average pooling on the following matrix with a kernel size of 1:\n6 1 3 0 4 9 6 1 8\n2 9 6 0 6 2 0 6 3\n"
+  ],
+  "system_message": ""
+}

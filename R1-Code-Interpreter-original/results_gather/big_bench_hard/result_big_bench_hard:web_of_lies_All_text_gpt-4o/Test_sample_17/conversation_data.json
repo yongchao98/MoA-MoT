@@ -1,0 +1,10 @@
+{
+  "question": "Question: Ka lies. Andree says Ka tells the truth. Audrie says Andree lies. Antwan says Audrie tells the truth. Millie says Antwan tells the truth. Does Millie tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine whether Millie tells the truth, we need to analyze the statements step by step, considering the implications of each person's statement and the fact that Ka lies.\n\n1. **Ka lies.**\n   - This is given, so any statement made by Ka is false.\n\n2. **Andree says Ka tells the truth.**\n   - Since Ka lies, Andree's statement that Ka tells the truth must be false. Therefore, Andree lies.\n\n3. **Audrie says Andree lies.**\n   - We have established that Andree lies. Therefore, Audrie's statement is true.\n\n4. **Antwan says Audrie tells the truth.**\n   - Since Audrie's statement is true, Antwan's statement that Audrie tells the truth is also true.\n\n5. **Millie says Antwan tells the truth.**\n   - Since Antwan's statement is true, Millie's statement that Antwan tells the truth is also true.\n\nTherefore, Millie tells the truth.\n\n<<<true>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Ka lies. Andree says Ka tells the truth. Audrie says Andree lies. Antwan says Audrie tells the truth. Millie says Antwan tells the truth. Does Millie tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

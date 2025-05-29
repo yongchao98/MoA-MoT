@@ -1,0 +1,10 @@
+{
+  "question": "Question: Sima tells the truth. Teressa says Sima tells the truth. Vina says Teressa lies. Crista says Vina lies. Phoebe says Crista tells the truth. Does Phoebe tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine whether Phoebe tells the truth, we need to analyze the statements made by each person and their implications step by step.\n\n1. **Sima tells the truth.**\n   - This is a given statement. We assume Sima always tells the truth.\n\n2. **Teressa says Sima tells the truth.**\n   - Since Sima tells the truth, Teressa's statement is true. Therefore, Teressa also tells the truth.\n\n3. **Vina says Teressa lies.**\n   - We have established that Teressa tells the truth. Therefore, Vina's statement that Teressa lies is false. This means Vina lies.\n\n4. **Crista says Vina lies.**\n   - We have established that Vina lies. Therefore, Crista's statement that Vina lies is true. This means Crista tells the truth.\n\n5. **Phoebe says Crista tells the truth.**\n   - We have established that Crista tells the truth. Therefore, Phoebe's statement that Crista tells the truth is true. This means Phoebe tells the truth.\n\nBased on the analysis, Phoebe tells the truth.\n\nFinal answer: <<<yes>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Sima tells the truth. Teressa says Sima tells the truth. Vina says Teressa lies. Crista says Vina lies. Phoebe says Crista tells the truth. Does Phoebe tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

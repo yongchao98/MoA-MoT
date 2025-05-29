@@ -1,0 +1,10 @@
+{
+  "question": "The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells three fruits: peaches, mangoes, and apples. The peaches are more expensive than the apples. The mangoes are the cheapest.\nOptions:\n(A) The peaches are the second-most expensive\n(B) The mangoes are the second-most expensive\n(C) The apples are the second-most expensive\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to determine the order of the fruits based on their prices. We have three fruits: peaches, mangoes, and apples. The information given is:\n\n1. Peaches are more expensive than apples.\n2. Mangoes are the cheapest.\n\nFrom this information, we can deduce the following:\n\n- Since mangoes are the cheapest, they must be the least expensive of the three fruits.\n- Peaches are more expensive than apples, so apples cannot be the most expensive.\n- Therefore, the order from cheapest to most expensive is: mangoes, apples, peaches.\n\nNow, let's match this order with the options provided:\n\n- (A) The peaches are the second-most expensive: This is incorrect because peaches are the most expensive.\n- (B) The mangoes are the second-most expensive: This is incorrect because mangoes are the cheapest.\n- (C) The apples are the second-most expensive: This is correct because apples are in the middle of the order.\n\nThus, the correct answer is option (C).\n\n<<<answer>>>"
+  ],
+  "user_prompt_list": [
+    "The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells three fruits: peaches, mangoes, and apples. The peaches are more expensive than the apples. The mangoes are the cheapest.\nOptions:\n(A) The peaches are the second-most expensive\n(B) The mangoes are the second-most expensive\n(C) The apples are the second-most expensive\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

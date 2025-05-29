@@ -1,0 +1,10 @@
+{
+  "question": "Question: Michaela lies. Millicent says Michaela lies. Delbert says Millicent lies. Bernita says Delbert lies. Teressa says Bernita tells the truth. Does Teressa tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine if Teressa tells the truth, we need to analyze the statements made by each person and their implications. Let's break it down step by step:\n\n1. **Michaela lies.**\n   - This is a given statement. Michaela is a liar.\n\n2. **Millicent says Michaela lies.**\n   - Since Michaela is a liar, Millicent's statement is true. Therefore, Millicent tells the truth.\n\n3. **Delbert says Millicent lies.**\n   - Since Millicent tells the truth, Delbert's statement is false. Therefore, Delbert is a liar.\n\n4. **Bernita says Delbert lies.**\n   - Since Delbert is a liar, Bernita's statement is true. Therefore, Bernita tells the truth.\n\n5. **Teressa says Bernita tells the truth.**\n   - Since Bernita tells the truth, Teressa's statement is true.\n\nTherefore, Teressa tells the truth.\n\nFinal answer: <<<yes>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Michaela lies. Millicent says Michaela lies. Delbert says Millicent lies. Bernita says Delbert lies. Teressa says Bernita tells the truth. Does Teressa tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

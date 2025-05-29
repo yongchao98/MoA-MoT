@@ -1,0 +1,10 @@
+{
+  "question": "Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 0 degrees clockwise:\n1 7 9 9 4\n5 7 9 4 4\n7 4 5 1 8\n2 0 6 5 7\n1 2 8 8 2\n",
+  "response_list": [
+    "To solve the problem of rotating a square matrix by 0 degrees clockwise, we need to understand the implications of a 0-degree rotation. Let's break down the steps:\n\n1. **Understanding the Rotation**: \n   - A 0-degree rotation means that the matrix remains unchanged. There is no actual rotation happening, so the output matrix should be identical to the input matrix.\n\n2. **Input Matrix**:\n   - The given matrix is:\n     ```\n     1 7 9 9 4\n     5 7 9 4 4\n     7 4 5 1 8\n     2 0 6 5 7\n     1 2 8 8 2\n     ```\n\n3. **Output Matrix**:\n   - Since a 0-degree rotation does not alter the matrix, the output matrix will be the same as the input matrix.\n\n4. **Formatting the Output**:\n   - The output matrix should be enclosed within triple angle brackets as specified: <<<output matrix>>>.\n\n5. **Final Output**:\n   - The matrix should be presented in the same format as the input, with each row on a new line.\n\nBy following these steps, we can determine the final output for the given problem.\n\nThe final answer is:\n```\n<<<\n1 7 9 9 4\n5 7 9 4 4\n7 4 5 1 8\n2 0 6 5 7\n1 2 8 8 2\n>>>\n```"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Given a square matrix, your job is to rotate it clockwise.\n\nYour output should be a matrix in the same format as the input, enclosed within triple angle brackets, like <<<the output matrix>>>.\n\nRotate the matrix below by 0 degrees clockwise:\n1 7 9 9 4\n5 7 9 4 4\n7 4 5 1 8\n2 0 6 5 7\n1 2 8 8 2\n"
+  ],
+  "system_message": ""
+}

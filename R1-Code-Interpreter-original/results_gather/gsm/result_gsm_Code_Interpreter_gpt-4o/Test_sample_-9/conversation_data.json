@@ -1,0 +1,10 @@
+{
+  "question": "Fireman Frank has 3495007 shoes. If he gets 5 pairs of shoes on Monday and gains 15 new pairs on Wednesday and 30 pairs on Friday, how many shoes will he have on Sunday if he gets rid of 180 shoes on Saturday?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "\nassistant > To find out how many shoes Fireman Frank will have on Sunday, we need to follow these steps:\n\n1. Start with the initial number of shoes: 3,495,007.\n2. Add 5 pairs of shoes on Monday. Since each pair consists of 2 shoes, this adds \\(5 \\times 2 = 10\\) shoes.\n3. Add 15 pairs of shoes on Wednesday. This adds \\(15 \\times 2 = 30\\) shoes.\n4. Add 30 pairs of shoes on Friday. This adds \\(30 \\times 2 = 60\\) shoes.\n5. Subtract 180 shoes on Saturday.\n\nLet's calculate the final number of shoes.\nassistant > code_interpreter\n\n# Initial number of shoes\ninitial_shoes = 3495007\n\n# Shoes added on Monday, Wednesday, and Friday\nmonday_addition = 5 * 2\nwednesday_addition = 15 * 2\nfriday_addition = 30 * 2\n\n# Shoes removed on Saturday\nsaturday_removal = 180\n\n# Calculate final number of shoes\nfinal_shoes = (initial_shoes + monday_addition + wednesday_addition + friday_addition - saturday_removal)\nfinal_shoes\nassistant > Fireman Frank will have <<<3494927>>> shoes on Sunday."
+  ],
+  "user_prompt_list": [
+    "Fireman Frank has 3495007 shoes. If he gets 5 pairs of shoes on Monday and gains 15 new pairs on Wednesday and 30 pairs on Friday, how many shoes will he have on Sunday if he gets rid of 180 shoes on Saturday?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

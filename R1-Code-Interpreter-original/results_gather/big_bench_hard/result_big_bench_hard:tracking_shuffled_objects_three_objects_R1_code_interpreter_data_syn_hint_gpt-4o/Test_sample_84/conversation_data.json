@@ -1,0 +1,10 @@
+{
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Patrick, Bob is dancing with Karl, and Claire is dancing with Izzi.\nThroughout the song, the dancers often trade partners. First, Bob and Claire switch partners. Then, Claire and Alice switch partners. Finally, Claire and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Patrick\n(B) Karl\n(C) Izzi\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to track the partner changes step by step:\n\n1. **Initial Partners:**\n   - Alice is with Patrick.\n   - Bob is with Karl.\n   - Claire is with Izzi.\n\n2. **First Switch (Bob and Claire switch partners):**\n   - Bob takes Claire's partner, Izzi.\n   - Claire takes Bob's partner, Karl.\n   - New partners:\n     - Alice is with Patrick.\n     - Bob is with Izzi.\n     - Claire is with Karl.\n\n3. **Second Switch (Claire and Alice switch partners):**\n   - Claire takes Alice's partner, Patrick.\n   - Alice takes Claire's partner, Karl.\n   - New partners:\n     - Alice is with Karl.\n     - Bob is with Izzi.\n     - Claire is with Patrick.\n\n4. **Third Switch (Claire and Bob switch partners):**\n   - Claire takes Bob's partner, Izzi.\n   - Bob takes Claire's partner, Patrick.\n   - Final partners:\n     - Alice is with Karl.\n     - Bob is with Patrick.\n     - Claire is with Izzi.\n\nAt the end of the dance, Alice is dancing with Karl.\n\n<<<answer>>> B"
+  ],
+  "user_prompt_list": [
+    "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Patrick, Bob is dancing with Karl, and Claire is dancing with Izzi.\nThroughout the song, the dancers often trade partners. First, Bob and Claire switch partners. Then, Claire and Alice switch partners. Finally, Claire and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Patrick\n(B) Karl\n(C) Izzi\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

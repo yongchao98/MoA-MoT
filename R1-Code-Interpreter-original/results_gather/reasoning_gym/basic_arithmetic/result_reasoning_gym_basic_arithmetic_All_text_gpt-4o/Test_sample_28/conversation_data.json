@@ -1,0 +1,10 @@
+{
+  "question": "Calculate 655 - -43 * 623 + -684.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the expression \\(655 - -43 \\times 623 + -684\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Identify the operations**: The expression involves subtraction, multiplication, and addition.\n\n2. **Handle the multiplication first**: According to the order of operations, we first perform the multiplication.\n   - The multiplication part of the expression is \\(-43 \\times 623\\).\n   - Calculate \\(-43 \\times 623\\):\n     \\[\n     -43 \\times 623 = -26789\n     \\]\n\n3. **Substitute the result back into the expression**: Replace \\(-43 \\times 623\\) with \\(-26789\\) in the original expression.\n   - The expression now becomes \\(655 - (-26789) + -684\\).\n\n4. **Simplify the expression**: \n   - The expression \\(655 - (-26789)\\) is equivalent to \\(655 + 26789\\) because subtracting a negative is the same as adding the positive.\n   - Calculate \\(655 + 26789\\):\n     \\[\n     655 + 26789 = 27444\n     \\]\n\n5. **Complete the addition**: Now, add \\(-684\\) to the result from the previous step.\n   - The expression is now \\(27444 + (-684)\\), which is equivalent to \\(27444 - 684\\).\n   - Calculate \\(27444 - 684\\):\n     \\[\n     27444 - 684 = 26760\n     \\]\n\n6. **Final result**: The final result of the expression is 26760.\n\nTherefore, the answer to the expression \\(655 - -43 \\times 623 + -684\\) is:\n\n<<<26760>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Calculate 655 - -43 * 623 + -684.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

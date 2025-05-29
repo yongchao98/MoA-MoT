@@ -1,0 +1,10 @@
+{
+  "question": "A fair coin is tossed six times and the sequence of heads and tails is recorded. What is the probability that the sequence contains exactly two heads? Express your answer as a common fraction.\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "\nassistant > To find the probability of getting exactly two heads in six tosses of a fair coin, we can use the binomial probability formula. The formula for the probability of getting exactly \\( k \\) successes (heads, in this case) in \\( n \\) independent Bernoulli trials (coin tosses) is given by:\n\n\\[\nP(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\n\\]\n\nwhere:\n- \\( n \\) is the total number of trials (6 tosses),\n- \\( k \\) is the number of successful trials (2 heads),\n- \\( p \\) is the probability of success on a single trial (0.5 for a fair coin),\n- \\(\\binom{n}{k}\\) is the binomial coefficient, calculated as \\(\\frac{n!}{k!(n-k)!}\\).\n\nLet's calculate this probability.\nassistant > code_interpreter\n\nfrom math import comb\n\n# Parameters\nn = 6  # number of trials\nk = 2  # number of successes\np = 0.5  # probability of success on a single trial\n\n# Binomial probability\nprobability = comb(n, k) * (p ** k) * ((1 - p) ** (n - k))\nprobability\nassistant > The probability that the sequence contains exactly two heads is \\(\\frac{3}{16}\\).\n\nThus, the answer is <<<0.234375>>>."
+  ],
+  "user_prompt_list": [
+    "A fair coin is tossed six times and the sequence of heads and tails is recorded. What is the probability that the sequence contains exactly two heads? Express your answer as a common fraction.\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

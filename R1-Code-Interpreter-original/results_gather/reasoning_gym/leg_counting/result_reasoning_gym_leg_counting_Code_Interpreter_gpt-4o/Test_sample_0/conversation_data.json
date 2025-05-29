@@ -1,0 +1,10 @@
+{
+  "question": "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 8 lions, 1 dog, 12 starfishs, 1 giraffe?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To calculate the total number of legs, we need to know the number of legs each type of animal has:\n\n- Lions have 4 legs.\n- Dogs have 4 legs.\n- Starfish have 0 legs.\n- Giraffes have 4 legs.\n\nNow, we can calculate the total number of legs:\n\n- 8 lions: \\(8 \\times 4\\) legs\n- 1 dog: \\(1 \\times 4\\) legs\n- 12 starfish: \\(12 \\times 0\\) legs\n- 1 giraffe: \\(1 \\times 4\\) legs\n\nLet's compute the total number of legs.\nassistant > code_interpreter\n\n# Number of legs for each type of animal\nlegs_per_lion = 4\nlegs_per_dog = 4\nlegs_per_starfish = 0\nlegs_per_giraffe = 4\n\n# Number of each type of animal\nnum_lions = 8\nnum_dogs = 1\nnum_starfish = 12\nnum_giraffes = 1\n\n# Total number of legs\ntotal_legs = (num_lions * legs_per_lion +\n              num_dogs * legs_per_dog +\n              num_starfish * legs_per_starfish +\n              num_giraffes * legs_per_giraffe)\n\ntotal_legs\nassistant > The total number of legs is <<<40>>>."
+  ],
+  "user_prompt_list": [
+    "Your task is to count how many legs there are in total when given a list of animals.\n\nNow, how many legs are there in total if you have 8 lions, 1 dog, 12 starfishs, 1 giraffe?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

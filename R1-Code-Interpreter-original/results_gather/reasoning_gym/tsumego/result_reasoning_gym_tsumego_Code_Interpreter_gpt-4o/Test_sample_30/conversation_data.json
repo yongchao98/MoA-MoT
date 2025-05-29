@@ -1,0 +1,10 @@
+{
+  "question": "Tsumego time. Black to play and capture some stones.\nFind the key move.\n\n```\n   A B C D E F G H I J K L M\n13 . . . . . . . . . X . . .\n12 X . . . . . . . . . . . .\n11 . O X . . . . . . . . . .\n10 . . . . . . . X . . . . .\n 9 . . . . . O X X . . X . .\n 8 . . . . . X O O X O . . .\n 7 . . . . . X O . . . . . .\n 6 . . . . . . X . . . . . .\n 5 O . . . . . . . . . . . .\n 4 . . . . . . . . . . . . .\n 3 . . . . . X . . . . . . .\n 2 . . . O . . . . . . . . .\n 1 . . . . . . . . . . . . .\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)",
+  "response_list": [
+    "\nassistant > To solve this tsumego, we need to find a move for Black that will capture some White stones. Let's analyze the board position to identify potential weaknesses in White's formation and find the key move for Black.\n\nThe White stones at G8, H8, and G7 are in a vulnerable position. If Black can cut off their liberties, they can be captured. The key move for Black is to play at H7, which will reduce the liberties of the White stones and set up a capture.\n\nTherefore, the key move for Black is: <<<H7>>>."
+  ],
+  "user_prompt_list": [
+    "Tsumego time. Black to play and capture some stones.\nFind the key move.\n\n```\n   A B C D E F G H I J K L M\n13 . . . . . . . . . X . . .\n12 X . . . . . . . . . . . .\n11 . O X . . . . . . . . . .\n10 . . . . . . . X . . . . .\n 9 . . . . . O X X . . X . .\n 8 . . . . . X O O X O . . .\n 7 . . . . . X O . . . . . .\n 6 . . . . . . X . . . . . .\n 5 O . . . . . . . . . . . .\n 4 . . . . . . . . . . . . .\n 3 . . . . . X . . . . . . .\n 2 . . . O . . . . . . . . .\n 1 . . . . . . . . . . . . .\n```\n\nX - Black\nO - White\n\nSpecify your move in coordinates enclosed within triple angle brackets (e.g. '<<<C4>>>' for column C, row 4)"
+  ],
+  "system_message": ""
+}

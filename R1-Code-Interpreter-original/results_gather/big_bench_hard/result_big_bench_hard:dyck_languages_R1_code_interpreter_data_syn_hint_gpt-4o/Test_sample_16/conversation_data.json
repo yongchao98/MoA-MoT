@@ -1,0 +1,10 @@
+{
+  "question": "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: [ [ < < { } >\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve this problem, we need to complete the sequence of brackets and parentheses so that all are properly closed. The input sequence is:\n\n\\[ [ < < { } > \n\nLet's analyze the sequence step by step:\n\n1. **\\[**: This is an opening square bracket. It needs a corresponding closing square bracket \\].\n\n2. **[**: This is another opening square bracket. It also needs a corresponding closing square bracket \\].\n\n3. **<**: This is an opening angle bracket. It needs a corresponding closing angle bracket >.\n\n4. **<**: This is another opening angle bracket. It also needs a corresponding closing angle bracket >.\n\n5. **{**: This is an opening curly brace. It needs a corresponding closing curly brace }.\n\n6. **}**: This is a closing curly brace, which matches the last opened curly brace.\n\n7. **>**: This is a closing angle bracket, which matches the last opened angle bracket.\n\nNow, we need to close the remaining open brackets:\n\n- The last opened angle bracket < needs to be closed with >.\n- The last opened square bracket [ needs to be closed with ].\n- The first opened square bracket \\[ needs to be closed with \\].\n\nThus, the completed sequence is:\n\n\\[ [ < < { } > > ] \\]\n\nLet's verify this by checking the balance of each type of bracket:\n\n- Square brackets: \\[ and [ are opened, and ] and \\] are closed.\n- Angle brackets: < and < are opened, and > and > are closed.\n- Curly braces: { is opened, and } is closed.\n\nAll brackets are properly closed and balanced.\n\n<<<answer>>>[ [ < < { } > > ] ]<<<answer>>>"
+  ],
+  "user_prompt_list": [
+    "Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: [ [ < < { } >\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \n7 4 6\n6 9 4.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array.",
+  "response_list": [
+    "\nassistant > To rotate a 2D matrix 90 degrees clockwise, we need to transform the rows into columns in reverse order. Let's apply this transformation to the given matrix:\n\nOriginal matrix:\n```\n7 4 6\n6 9 4\n```\n\nRotated matrix:\n```\n6 7\n9 4\n4 6\n```\n\nNow, let's format the result as requested: <<<6,7,9,4,4,6>>>."
+  ],
+  "user_prompt_list": [
+    "Given a 2D array of strings, which represents a letter matrix. Your task is to rotate this matrix 90 degrees clockwise and output the result.\nIf the matrix is \n7 4 6\n6 9 4.\nWhat is the result?\nReturn your answer with format <<<list of values and symbols>>>, For example, <<<A,B,C,D>>> represents a 2D array."
+  ],
+  "system_message": ""
+}

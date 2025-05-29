@@ -1,0 +1,10 @@
+{
+  "question": "Margaret has 3 brothers and she also has 2 sisters. How many sisters does Margaret's brother have?\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the problem, let's break it down step by step:\n\n1. **Identify the family members:**\n   - Margaret has 3 brothers.\n   - Margaret has 2 sisters.\n\n2. **Understand the relationships:**\n   - Margaret is a sister to her brothers.\n   - Margaret's sisters are also sisters to her brothers.\n\n3. **Determine the number of sisters each brother has:**\n   - Since Margaret is a sister, she counts as one sister for each brother.\n   - Margaret's 2 sisters are also sisters to each brother.\n\n4. **Calculate the total number of sisters for each brother:**\n   - Each brother has Margaret as a sister.\n   - Each brother also has Margaret's 2 sisters as their sisters.\n\n5. **Add up the total number of sisters for each brother:**\n   - Total sisters for each brother = Margaret (1) + Margaret's 2 sisters (2) = 3 sisters.\n\nTherefore, each of Margaret's brothers has 3 sisters.\n\nFinal answer: <<<3>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Margaret has 3 brothers and she also has 2 sisters. How many sisters does Margaret's brother have?\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

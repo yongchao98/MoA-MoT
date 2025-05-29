@@ -1,0 +1,10 @@
+{
+  "question": "10, 10, 20, 30, 50, 80, 130, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>.",
+  "response_list": [
+    "\nassistant > The sequence given is: 10, 10, 20, 30, 50, 80, 130, ?\n\nLet's analyze the pattern:\n\n- 10, 10: The first two numbers are the same.\n- 20: The third number is the sum of the first two numbers (10 + 10).\n- 30: The fourth number is the sum of the second and third numbers (10 + 20).\n- 50: The fifth number is the sum of the third and fourth numbers (20 + 30).\n- 80: The sixth number is the sum of the fourth and fifth numbers (30 + 50).\n- 130: The seventh number is the sum of the fifth and sixth numbers (50 + 80).\n\nThe pattern is that each number (starting from the third) is the sum of the two preceding numbers.\n\nFollowing this pattern, the next number should be the sum of the sixth and seventh numbers (80 + 130).\n\nLet's calculate it:\n\n80 + 130 = 210\n\nTherefore, the value of \"?\" is 210.\n\n<<<210>>>"
+  ],
+  "user_prompt_list": [
+    "10, 10, 20, 30, 50, 80, 130, ?\nOutput the value of \"?\" enclosed within triple angle brackets, like <<<the value of \"?\">>>."
+  ],
+  "system_message": ""
+}

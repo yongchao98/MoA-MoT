@@ -1,0 +1,10 @@
+{
+  "question": "It's April, and Mrs. Rylan has been busy on her farm planting different types of vegetables for the season. She has bought 20 packets of tomato seeds and 80 packets of celery seeds to plant. If a packet of tomato seeds costs $2802500 and a packet of celery seeds costs $30, how much money did she use to buy the seeds?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "\nassistant > code_interpreter\n\n# Define the number of packets and their respective costs\ntomato_packets = 20\ncelery_packets = 80\ncost_per_tomato_packet = 2802500\ncost_per_celery_packet = 30\n\n# Calculate the total cost\ntotal_cost = (tomato_packets * cost_per_tomato_packet) + (celery_packets * cost_per_celery_packet)\ntotal_cost\nassistant > The total amount of money Mrs. Rylan used to buy the seeds is <<<56052400>>>."
+  ],
+  "user_prompt_list": [
+    "It's April, and Mrs. Rylan has been busy on her farm planting different types of vegetables for the season. She has bought 20 packets of tomato seeds and 80 packets of celery seeds to plant. If a packet of tomato seeds costs $2802500 and a packet of celery seeds costs $30, how much money did she use to buy the seeds?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

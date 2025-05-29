@@ -1,0 +1,10 @@
+{
+  "question": "State the final answer to the following arithmetic problem: 34 - 91 + 85 + 95 - 69 - 21 =\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "To solve the arithmetic problem step by step, we need to carefully follow the order of operations, which in this case is straightforward as it involves only addition and subtraction. We will perform the operations from left to right:\n\n1. Start with the initial number: 34\n2. Subtract 91 from 34:\n   - 34 - 91 = -57\n3. Add 85 to the result:\n   - -57 + 85 = 28\n4. Add 95 to the result:\n   - 28 + 95 = 123\n5. Subtract 69 from the result:\n   - 123 - 69 = 54\n6. Subtract 21 from the result:\n   - 54 - 21 = 33\n\nAfter performing all the operations step by step, the final result of the arithmetic problem is 33.\n\n<<<33>>>"
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    State the final answer to the following arithmetic problem: 34 - 91 + 85 + 95 - 69 - 21 =\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}

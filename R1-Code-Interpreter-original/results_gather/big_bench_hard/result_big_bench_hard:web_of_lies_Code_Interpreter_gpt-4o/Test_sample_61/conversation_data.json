@@ -1,0 +1,10 @@
+{
+  "question": "Question: Maybelle tells the truth. Bernita says Maybelle tells the truth. Inga says Bernita tells the truth. Tamika says Inga lies. Helene says Tamika tells the truth. Does Helene tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "\nassistant > To determine if Helene tells the truth, we need to analyze the statements and their implications:\n\n1. **Maybelle tells the truth.**\n2. **Bernita says Maybelle tells the truth.**  \n   - If Bernita tells the truth, then Maybelle tells the truth (which is consistent with Maybelle's statement).\n3. **Inga says Bernita tells the truth.**  \n   - If Inga tells the truth, then Bernita tells the truth, which implies Maybelle tells the truth.\n4. **Tamika says Inga lies.**  \n   - If Tamika tells the truth, then Inga lies, which means Bernita does not tell the truth, and Maybelle does not tell the truth.\n5. **Helene says Tamika tells the truth.**  \n   - If Helene tells the truth, then Tamika tells the truth, which means Inga lies.\n\nLet's analyze the consistency:\n\n- If Maybelle tells the truth, then Bernita tells the truth, and Inga tells the truth. However, this contradicts Tamika's statement that Inga lies.\n- If Maybelle does not tell the truth, then Bernita does not tell the truth, and Inga does not tell the truth. This is consistent with Tamika's statement that Inga lies.\n- If Tamika tells the truth, then Helene tells the truth.\n\nTherefore, Helene tells the truth.\n\nThus, the final answer is:\n\n<<<Helene tells the truth>>>"
+  ],
+  "user_prompt_list": [
+    "Question: Maybelle tells the truth. Bernita says Maybelle tells the truth. Inga says Bernita tells the truth. Tamika says Inga lies. Helene says Tamika tells the truth. Does Helene tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

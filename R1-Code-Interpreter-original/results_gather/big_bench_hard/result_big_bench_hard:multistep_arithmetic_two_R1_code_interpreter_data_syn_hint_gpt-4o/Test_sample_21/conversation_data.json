@@ -1,0 +1,10 @@
+{
+  "question": "((8 * -6 + 6 * 1) - (-3 * 7 * 0 - 7)) =\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To solve the expression \\(((8 \\times -6 + 6 \\times 1) - (-3 \\times 7 \\times 0 - 7))\\), we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Parentheses**: Evaluate the expressions inside the parentheses first.\n   - Inside the first set of parentheses: \\(8 \\times -6 + 6 \\times 1\\)\n   - Inside the second set of parentheses: \\(-3 \\times 7 \\times 0 - 7\\)\n\n2. **Multiplication**: Perform the multiplication operations.\n   - \\(8 \\times -6 = -48\\)\n   - \\(6 \\times 1 = 6\\)\n   - \\(-3 \\times 7 \\times 0 = 0\\) (since any number multiplied by zero is zero)\n\n3. **Addition/Subtraction**: Perform the addition and subtraction operations.\n   - First set of parentheses: \\(-48 + 6 = -42\\)\n   - Second set of parentheses: \\(0 - 7 = -7\\)\n\n4. **Subtraction**: Subtract the results of the two parentheses.\n   - \\((-42) - (-7) = -42 + 7 = -35\\)\n\nThus, the value of the expression is \\(-35\\).\n\n<<<answer>>> -35"
+  ],
+  "user_prompt_list": [
+    "((8 * -6 + 6 * 1) - (-3 * 7 * 0 - 7)) =\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Question: Inga tells the truth. Shenna says Inga lies. Rashida says Shenna tells the truth. Ka says Rashida tells the truth. Shalonda says Ka tells the truth. Does Shalonda tell the truth?\n\nOutput final answer with the format <<<answer>>>.",
+  "response_list": [
+    "To determine whether Shalonda tells the truth, we need to analyze the statements step by step, considering the implications of each person's statement.\n\n1. **Inga tells the truth.**\n   - This is a given statement. If Inga tells the truth, then any statement she makes is true.\n\n2. **Shenna says Inga lies.**\n   - If Shenna is telling the truth, then Inga must be lying. However, this contradicts the given statement that Inga tells the truth. Therefore, Shenna must be lying.\n\n3. **Rashida says Shenna tells the truth.**\n   - Since we have established that Shenna is lying, Rashida's statement that Shenna tells the truth must be false. Therefore, Rashida is lying.\n\n4. **Ka says Rashida tells the truth.**\n   - Since Rashida is lying, Ka's statement that Rashida tells the truth must also be false. Therefore, Ka is lying.\n\n5. **Shalonda says Ka tells the truth.**\n   - Since Ka is lying, Shalonda's statement that Ka tells the truth must be false. Therefore, Shalonda is lying.\n\nBased on this step-by-step analysis, Shalonda does not tell the truth.\n\nFinal answer: <<<no>>>."
+  ],
+  "user_prompt_list": [
+    "\nAnalyze the question step by step and try to list all the careful points. Then try to acquire the final answer with step by step analysis.\nIn the end of your response, directly output the answer to the question. Do not output the code for execution.\n    Question: Inga tells the truth. Shenna says Inga lies. Rashida says Shenna tells the truth. Ka says Rashida tells the truth. Shalonda says Ka tells the truth. Does Shalonda tell the truth?\n\nOutput final answer with the format <<<answer>>>."
+  ],
+  "system_message": ""
+}

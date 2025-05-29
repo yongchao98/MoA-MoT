@@ -1,0 +1,10 @@
+{
+  "question": "Jennifer bought 12 oranges from the market, she gave her three daughters 2 oranges each, and her only boy got 1277771 oranges. How many oranges did she remain with?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: ",
+  "response_list": [
+    "\nassistant > To find out how many oranges Jennifer remained with, we need to calculate the total number of oranges she gave away and subtract that from the original number of oranges she bought.\n\n1. Jennifer bought 12 oranges.\n2. She gave her three daughters 2 oranges each, so she gave away \\(3 \\times 2 = 6\\) oranges to her daughters.\n3. She gave her only boy 1277771 oranges.\n\nNow, let's calculate the remaining oranges:\n\n\\[\n\\text{Remaining oranges} = \\text{Total oranges bought} - (\\text{Oranges given to daughters} + \\text{Oranges given to boy})\n\\]\n\n\\[\n\\text{Remaining oranges} = 12 - (6 + 1277771)\n\\]\n\nLet's compute this.\nassistant > code_interpreter\n\n# Calculate the remaining oranges\ntotal_oranges = 12\noranges_given_to_daughters = 3 * 2\noranges_given_to_boy = 1277771\n\nremaining_oranges = total_oranges - (oranges_given_to_daughters + oranges_given_to_boy)\nremaining_oranges\nassistant > Jennifer remained with \\(-1277765\\) oranges.\n\nThe final answer is: <<<-1277765>>>."
+  ],
+  "user_prompt_list": [
+    "Jennifer bought 12 oranges from the market, she gave her three daughters 2 oranges each, and her only boy got 1277771 oranges. How many oranges did she remain with?\n\nOutput final answer with the format <<<answer>>> such as <<<123.42>>>, <<<125.0>>>, <<<-9867>>>.\nYour answer: "
+  ],
+  "system_message": ""
+}

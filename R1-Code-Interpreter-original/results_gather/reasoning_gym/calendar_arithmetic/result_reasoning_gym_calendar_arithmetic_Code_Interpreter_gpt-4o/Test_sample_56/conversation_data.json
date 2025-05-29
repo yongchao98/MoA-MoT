@@ -1,0 +1,10 @@
+{
+  "question": "Determine the day of the month for the third Tuesday in April 2022. Answer with a number. Answer with -1 if the ordinal does not exist in the month.\nOutput final answer with the format <<<answer>>>",
+  "response_list": [
+    "\nassistant > code_interpreter\n\nfrom datetime import date, timedelta\n\ndef find_nth_weekday(year, month, weekday, n):\n    # Start from the first day of the month\n    current_date = date(year, month, 1)\n    \n    # Find the first occurrence of the weekday in the month\n    while current_date.weekday() != weekday:\n        current_date += timedelta(days=1)\n    \n    # Move to the nth occurrence of the weekday\n    nth_weekday_date = current_date + timedelta(weeks=n-1)\n    \n    # Check if the nth occurrence is within the same month\n    if nth_weekday_date.month == month:\n        return nth_weekday_date.day\n    else:\n        return -1\n\n# April 2022, looking for the 3rd Tuesday\nyear = 2022\nmonth = 4\nweekday = 1  # Monday is 0, so Tuesday is 1\nn = 3\n\nthird_tuesday = find_nth_weekday(year, month, weekday, n)\nthird_tuesday\nassistant > The day of the month for the third Tuesday in April 2022 is <<<19>>>."
+  ],
+  "user_prompt_list": [
+    "Determine the day of the month for the third Tuesday in April 2022. Answer with a number. Answer with -1 if the ordinal does not exist in the month.\nOutput final answer with the format <<<answer>>>"
+  ],
+  "system_message": ""
+}
