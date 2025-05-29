@@ -1,0 +1,850 @@
+W0413 21:41:11.081000 2095791 site-packages/torch/distributed/run.py:792] 
+W0413 21:41:11.081000 2095791 site-packages/torch/distributed/run.py:792] *****************************************
+W0413 21:41:11.081000 2095791 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0413 21:41:11.081000 2095791 site-packages/torch/distributed/run.py:792] *****************************************
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:18,857 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:18,858 >> loading file tokenizer.model from cache at None
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:18,858 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:18,858 >> loading file special_tokens_map.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/special_tokens_map.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:18,858 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:18,858 >> loading file chat_template.jinja from cache at None
+[rank3]:[W413 21:41:19.913453036 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[INFO|tokenization_utils_base.py:2323] 2025-04-13 21:41:19,135 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[rank4]:[W413 21:41:19.732018274 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[rank2]:[W413 21:41:19.740315522 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[rank5]:[W413 21:41:20.974141482 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[INFO|configuration_utils.py:699] 2025-04-13 21:41:25,630 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/config.json
+[INFO|configuration_utils.py:771] 2025-04-13 21:41:25,631 >> Model config LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.50.0",
+  "use_cache": true,
+  "vocab_size": 128256
+}
+
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:25,690 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:25,690 >> loading file tokenizer.model from cache at None
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:25,690 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:25,690 >> loading file special_tokens_map.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/special_tokens_map.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:25,690 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 21:41:25,690 >> loading file chat_template.jinja from cache at None
+[rank1]:[W413 21:41:25.727784985 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[INFO|tokenization_utils_base.py:2323] 2025-04-13 21:41:25,973 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Converting format of dataset (num_proc=16):   0%|          | 0/2738 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 2738/2738 [00:00<00:00, 16106.78 examples/s]
+[rank0]:[W413 21:41:26.543078454 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+Running tokenizer on dataset (num_proc=16):   0%|          | 0/2738 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   6%|▋         | 172/2738 [00:00<00:14, 174.42 examples/s]Running tokenizer on dataset (num_proc=16):  13%|█▎        | 344/2738 [00:01<00:06, 364.10 examples/s]Running tokenizer on dataset (num_proc=16):  19%|█▉        | 515/2738 [00:01<00:04, 549.72 examples/s]Running tokenizer on dataset (num_proc=16):  25%|██▌       | 686/2738 [00:01<00:02, 732.01 examples/s]Running tokenizer on dataset (num_proc=16):  31%|███▏      | 857/2738 [00:01<00:02, 899.31 examples/s]Running tokenizer on dataset (num_proc=16):  44%|████▍     | 1199/2738 [00:01<00:01, 1366.68 examples/s]Running tokenizer on dataset (num_proc=16):  56%|█████▋    | 1541/2738 [00:01<00:00, 1438.30 examples/s]Running tokenizer on dataset (num_proc=16):  69%|██████▉   | 1883/2738 [00:02<00:00, 1409.13 examples/s]Running tokenizer on dataset (num_proc=16):  75%|███████▌  | 2054/2738 [00:02<00:00, 1440.87 examples/s]Running tokenizer on dataset (num_proc=16):  88%|████████▊ | 2396/2738 [00:02<00:00, 1465.08 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 2738/2738 [00:02<00:00, 1664.19 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 2738/2738 [00:02<00:00, 1047.94 examples/s]
+[INFO|configuration_utils.py:699] 2025-04-13 21:41:33,068 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/config.json
+[INFO|configuration_utils.py:771] 2025-04-13 21:41:33,069 >> Model config LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.50.0",
+  "use_cache": true,
+  "vocab_size": 128256
+}
+
+[INFO|modeling_utils.py:1154] 2025-04-13 21:41:33,205 >> loading weights file model.safetensors from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/model.safetensors.index.json
+[INFO|modeling_utils.py:3747] 2025-04-13 21:41:33,208 >> Detected DeepSpeed ZeRO-3: activating zero.init() for this model
+[INFO|configuration_utils.py:1139] 2025-04-13 21:41:33,216 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "use_cache": false
+}
+
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.64s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.65s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.65s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.65s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.64s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:15,  5.28s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.87s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.87s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.87s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.87s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.87s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:11<00:11,  5.78s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.72s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.72s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.72s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.72s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.72s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.91s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.91s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.91s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.91s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.91s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.23s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.23s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.23s/it]
+
+Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.23s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.23s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:16<00:05,  5.26s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:17<00:00,  3.72s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:17<00:00,  4.35s/it]
+[INFO|modeling_utils.py:4987] 2025-04-13 21:41:50,883 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+[INFO|modeling_utils.py:4995] 2025-04-13 21:41:50,883 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at meta-llama/Meta-Llama-3-8B-Instruct.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:1094] 2025-04-13 21:41:50,952 >> loading configuration file generation_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/generation_config.json
+[INFO|configuration_utils.py:1139] 2025-04-13 21:41:50,953 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "do_sample": true,
+  "eos_token_id": [
+    128001,
+    128009
+  ],
+  "max_length": 4096,
+  "temperature": 0.6,
+  "top_p": 0.9
+}
+
+[INFO|trainer.py:748] 2025-04-13 21:41:50,974 >> Using auto half precision backend
+[INFO|trainer.py:2409] 2025-04-13 21:41:53,762 >> ***** Running training *****
+[INFO|trainer.py:2410] 2025-04-13 21:41:53,762 >>   Num examples = 2,464
+[INFO|trainer.py:2411] 2025-04-13 21:41:53,762 >>   Num Epochs = 3
+[INFO|trainer.py:2412] 2025-04-13 21:41:53,762 >>   Instantaneous batch size per device = 5
+[INFO|trainer.py:2415] 2025-04-13 21:41:53,762 >>   Total train batch size (w. parallel, distributed & accumulation) = 60
+[INFO|trainer.py:2416] 2025-04-13 21:41:53,762 >>   Gradient Accumulation steps = 2
+[INFO|trainer.py:2417] 2025-04-13 21:41:53,762 >>   Total optimization steps = 123
+[INFO|trainer.py:2418] 2025-04-13 21:41:53,763 >>   Number of trainable parameters = 8,030,261,248
+  0%|          | 0/123 [00:00<?, ?it/s]  1%|          | 1/123 [00:07<14:28,  7.12s/it]  2%|▏         | 2/123 [00:13<13:19,  6.61s/it]  2%|▏         | 3/123 [00:20<13:40,  6.83s/it]  3%|▎         | 4/123 [00:27<13:31,  6.82s/it]  4%|▍         | 5/123 [00:32<12:18,  6.26s/it]  5%|▍         | 6/123 [00:36<10:36,  5.44s/it]  6%|▌         | 7/123 [00:44<12:13,  6.32s/it]  7%|▋         | 8/123 [00:53<13:34,  7.08s/it]  7%|▋         | 9/123 [00:55<10:52,  5.72s/it]  8%|▊         | 10/123 [01:02<11:05,  5.89s/it]                                                  8%|▊         | 10/123 [01:02<11:05,  5.89s/it][INFO|trainer.py:4289] 2025-04-13 21:42:56,013 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:42:56,013 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:42:56,013 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:08,  5.33it/s][A
+  7%|▋         | 3/46 [00:00<00:07,  5.73it/s][A
+  9%|▊         | 4/46 [00:00<00:07,  5.87it/s][A
+ 11%|█         | 5/46 [00:00<00:07,  5.37it/s][A
+ 13%|█▎        | 6/46 [00:01<00:07,  5.03it/s][A
+ 15%|█▌        | 7/46 [00:01<00:07,  5.38it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  5.66it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  5.86it/s][A
+ 22%|██▏       | 10/46 [00:01<00:06,  5.99it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.02it/s][A
+ 26%|██▌       | 12/46 [00:02<00:05,  6.06it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.82it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  5.93it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  6.02it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.08it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.16it/s][A
+ 39%|███▉      | 18/46 [00:03<00:04,  6.19it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.49it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.72it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.86it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.51it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.73it/s][A
+ 52%|█████▏    | 24/46 [00:04<00:03,  5.70it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  5.87it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.89it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  5.94it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.05it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.13it/s][A
+ 65%|██████▌   | 30/46 [00:05<00:02,  6.20it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.22it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  5.95it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.05it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.08it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.18it/s][A
+ 78%|███████▊  | 36/46 [00:06<00:01,  6.12it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.14it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.20it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.84it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:01,  5.99it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  6.08it/s][A
+ 91%|█████████▏| 42/46 [00:07<00:00,  5.97it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  6.05it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  6.07it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.01it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.10it/s][A                                                
+                                               [A  8%|▊         | 10/123 [01:10<11:05,  5.89s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.10it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:43:07,980 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-10
+[INFO|configuration_utils.py:423] 2025-04-13 21:43:07,983 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-10/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:43:07,984 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-10/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:43:14,310 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-10/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:43:14,313 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-10/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:43:14,313 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-10/special_tokens_map.json
+  9%|▉         | 11/123 [01:36<27:27, 14.71s/it] 10%|▉         | 12/123 [01:40<21:03, 11.38s/it] 11%|█         | 13/123 [01:45<17:18,  9.44s/it] 11%|█▏        | 14/123 [01:51<15:03,  8.29s/it] 12%|█▏        | 15/123 [01:54<12:08,  6.75s/it] 13%|█▎        | 16/123 [02:00<11:32,  6.48s/it] 14%|█▍        | 17/123 [02:07<11:57,  6.77s/it] 15%|█▍        | 18/123 [02:10<09:46,  5.58s/it] 15%|█▌        | 19/123 [02:17<10:06,  5.83s/it] 16%|█▋        | 20/123 [02:22<09:59,  5.82s/it]                                                 16%|█▋        | 20/123 [02:22<09:59,  5.82s/it][INFO|trainer.py:4289] 2025-04-13 21:44:16,583 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:44:16,583 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:44:16,583 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 12.58it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.76it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.49it/s][A
+ 13%|█▎        | 6/46 [00:00<00:06,  5.73it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.92it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  6.05it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  6.15it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.21it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.22it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.23it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.95it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  6.06it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  5.99it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.07it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.16it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  6.18it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.48it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.72it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.86it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.51it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.74it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.90it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  6.02it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.90it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  6.03it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.12it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.17it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.23it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.26it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  5.99it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.08it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.10it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.20it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.24it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.22it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.15it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.82it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:01,  5.97it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  6.06it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  5.99it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  6.07it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  6.08it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.13it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.19it/s][A                                                
+                                               [A 16%|█▋        | 20/123 [02:30<09:59,  5.82s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.19it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:44:28,193 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-20
+[INFO|configuration_utils.py:423] 2025-04-13 21:44:28,195 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-20/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:44:28,196 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-20/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:44:34,671 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-20/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:44:34,673 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-20/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:44:34,674 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-20/special_tokens_map.json
+ 17%|█▋        | 21/123 [02:57<24:41, 14.52s/it] 18%|█▊        | 22/123 [03:02<19:22, 11.51s/it] 19%|█▊        | 23/123 [03:07<15:57,  9.58s/it] 20%|█▉        | 24/123 [03:13<14:12,  8.61s/it] 20%|██        | 25/123 [03:17<11:50,  7.25s/it] 21%|██        | 26/123 [03:24<11:33,  7.15s/it] 22%|██▏       | 27/123 [03:30<11:07,  6.95s/it] 23%|██▎       | 28/123 [03:38<11:14,  7.10s/it] 24%|██▎       | 29/123 [03:44<10:31,  6.72s/it] 24%|██▍       | 30/123 [03:50<10:00,  6.46s/it]                                                 24%|██▍       | 30/123 [03:50<10:00,  6.46s/it][INFO|trainer.py:4289] 2025-04-13 21:45:43,892 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:45:43,892 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:45:43,892 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 12.55it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.94it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.58it/s][A
+ 13%|█▎        | 6/46 [00:00<00:06,  5.77it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.94it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  6.08it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  6.17it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.22it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.23it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.24it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.96it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  6.06it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  6.12it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.15it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.21it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  6.23it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.52it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.75it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.88it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.51it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.75it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.91it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  6.01it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.99it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  6.08it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.16it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.21it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.26it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.28it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  6.01it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.09it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.11it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.16it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.19it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.18it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.23it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.86it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:00,  6.00it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  6.08it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  5.97it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  6.05it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  6.06it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.11it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.17it/s][A                                                
+                                               [A 24%|██▍       | 30/123 [03:57<10:00,  6.46s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.17it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:45:55,531 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-30
+[INFO|configuration_utils.py:423] 2025-04-13 21:45:55,534 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-30/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:45:55,534 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-30/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:46:01,928 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-30/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:46:01,930 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-30/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:46:01,930 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-30/special_tokens_map.json
+ 25%|██▌       | 31/123 [04:26<23:44, 15.48s/it] 26%|██▌       | 32/123 [04:32<18:55, 12.48s/it] 27%|██▋       | 33/123 [04:38<16:10, 10.78s/it] 28%|██▊       | 34/123 [04:42<12:55,  8.71s/it] 28%|██▊       | 35/123 [04:48<11:24,  7.78s/it] 29%|██▉       | 36/123 [04:55<10:45,  7.42s/it] 30%|███       | 37/123 [05:01<10:12,  7.12s/it] 31%|███       | 38/123 [05:05<08:41,  6.13s/it] 32%|███▏      | 39/123 [05:11<08:40,  6.19s/it] 33%|███▎      | 40/123 [05:16<08:05,  5.85s/it]                                                 33%|███▎      | 40/123 [05:16<08:05,  5.85s/it][INFO|trainer.py:4289] 2025-04-13 21:47:10,402 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:47:10,402 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:47:10,402 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 12.59it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.95it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.57it/s][A
+ 13%|█▎        | 6/46 [00:00<00:06,  5.76it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.94it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  6.07it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  6.15it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.20it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.21it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.23it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.95it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  6.06it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  6.12it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.06it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.13it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  6.14it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.47it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.71it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.84it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.50it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.73it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.89it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  6.00it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.96it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  6.07it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.16it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.09it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.17it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.21it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  5.97it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.06it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.07it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.17it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.20it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.20it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.24it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.86it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:00,  6.01it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  6.09it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  5.97it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  6.06it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  6.07it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.12it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.17it/s][A                                                
+                                               [A 33%|███▎      | 40/123 [05:24<08:05,  5.85s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.17it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:47:22,070 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-40
+[INFO|configuration_utils.py:423] 2025-04-13 21:47:22,072 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-40/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:47:22,073 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-40/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:47:28,498 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-40/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:47:28,500 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-40/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:47:28,500 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-40/special_tokens_map.json
+ 33%|███▎      | 41/123 [05:53<20:30, 15.00s/it] 34%|███▍      | 42/123 [05:55<15:00, 11.11s/it] 35%|███▍      | 43/123 [06:01<13:06,  9.83s/it] 36%|███▌      | 44/123 [06:09<11:52,  9.02s/it] 37%|███▋      | 45/123 [06:12<09:27,  7.27s/it] 37%|███▋      | 46/123 [06:18<08:48,  6.86s/it] 38%|███▊      | 47/123 [06:26<09:23,  7.42s/it] 39%|███▉      | 48/123 [06:31<08:13,  6.58s/it] 40%|███▉      | 49/123 [06:36<07:42,  6.26s/it] 41%|████      | 50/123 [06:41<06:49,  5.61s/it]                                                 41%|████      | 50/123 [06:41<06:49,  5.61s/it][INFO|trainer.py:4289] 2025-04-13 21:48:34,823 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:48:34,823 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:48:34,824 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 12.60it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.96it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.58it/s][A
+ 13%|█▎        | 6/46 [00:00<00:06,  5.78it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.94it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  6.07it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  6.15it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.21it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.21it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.22it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.93it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  6.01it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  6.07it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.04it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.12it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  6.15it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.48it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.70it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.84it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.51it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.74it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.90it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  5.98it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.88it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  5.97it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.08it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.14it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.20it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.23it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  5.98it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.07it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.08it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.15it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.19it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.19it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.23it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.82it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:01,  5.97it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  6.05it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  5.92it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  6.00it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  6.00it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.08it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.15it/s][A                                                
+                                               [A 41%|████      | 50/123 [06:48<06:49,  5.61s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.15it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:48:46,553 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-50
+[INFO|configuration_utils.py:423] 2025-04-13 21:48:46,556 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-50/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:48:46,557 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-50/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:48:53,036 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-50/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:48:53,038 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-50/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:48:53,039 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-50/special_tokens_map.json
+ 41%|████▏     | 51/123 [07:16<17:23, 14.50s/it] 42%|████▏     | 52/123 [07:22<14:07, 11.93s/it] 43%|████▎     | 53/123 [07:25<10:45,  9.22s/it] 44%|████▍     | 54/123 [07:32<09:59,  8.68s/it] 45%|████▍     | 55/123 [07:38<08:45,  7.72s/it] 46%|████▌     | 56/123 [07:42<07:37,  6.83s/it] 46%|████▋     | 57/123 [07:48<07:17,  6.62s/it] 47%|████▋     | 58/123 [07:53<06:40,  6.15s/it] 48%|████▊     | 59/123 [08:01<06:54,  6.47s/it] 49%|████▉     | 60/123 [08:04<05:42,  5.44s/it]                                                 49%|████▉     | 60/123 [08:04<05:42,  5.44s/it][INFO|trainer.py:4289] 2025-04-13 21:49:57,985 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:49:57,985 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:49:57,985 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 12.50it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.67it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.44it/s][A
+ 13%|█▎        | 6/46 [00:00<00:07,  5.71it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.80it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  5.89it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  6.01it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.08it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.11it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.15it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.90it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  5.92it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  6.01it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.06it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.14it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  6.16it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.48it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.71it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.83it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.48it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.72it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.89it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  5.92it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.88it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  5.97it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.07it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.14it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.21it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.23it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  5.95it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.05it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.08it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.17it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.10it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.09it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.11it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.77it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:01,  5.84it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  5.94it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  5.85it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  5.92it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  5.92it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  5.97it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.05it/s][A                                                
+                                               [A 49%|████▉     | 60/123 [08:12<05:42,  5.44s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.05it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:50:09,794 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-60
+[INFO|configuration_utils.py:423] 2025-04-13 21:50:09,798 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-60/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:50:09,798 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-60/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:50:16,327 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-60/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:50:16,330 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-60/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:50:16,331 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-60/special_tokens_map.json
+ 50%|████▉     | 61/123 [08:42<15:54, 15.40s/it] 50%|█████     | 62/123 [08:47<12:17, 12.09s/it] 51%|█████     | 63/123 [08:51<09:40,  9.68s/it] 52%|█████▏    | 64/123 [08:54<07:42,  7.83s/it] 53%|█████▎    | 65/123 [08:57<06:06,  6.31s/it] 54%|█████▎    | 66/123 [09:02<05:42,  6.01s/it] 54%|█████▍    | 67/123 [09:08<05:36,  6.01s/it] 55%|█████▌    | 68/123 [09:14<05:31,  6.02s/it] 56%|█████▌    | 69/123 [09:21<05:33,  6.18s/it] 57%|█████▋    | 70/123 [09:25<04:47,  5.43s/it]                                                 57%|█████▋    | 70/123 [09:25<04:47,  5.43s/it][INFO|trainer.py:4289] 2025-04-13 21:51:18,944 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:51:18,944 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:51:18,944 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 12.56it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.92it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.57it/s][A
+ 13%|█▎        | 6/46 [00:00<00:06,  5.78it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.95it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  5.96it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  6.04it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.12it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.12it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.15it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.89it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  5.99it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  6.07it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.10it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.16it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  6.17it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.48it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.71it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.84it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.50it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.73it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.89it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  5.98it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.93it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  6.02it/s][A
+ 61%|██████    | 28/46 [00:04<00:03,  6.00it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.08it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.16it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.17it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  5.90it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.01it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.03it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.12it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.08it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.11it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.16it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.80it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:01,  5.94it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  6.04it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  5.93it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  6.02it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  6.03it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.08it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.14it/s][A                                                
+                                               [A 57%|█████▋    | 70/123 [09:32<04:47,  5.43s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.14it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:51:30,676 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-70
+[INFO|configuration_utils.py:423] 2025-04-13 21:51:30,679 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-70/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:51:30,680 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-70/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:51:37,120 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-70/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:51:37,123 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-70/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:51:37,123 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-70/special_tokens_map.json
+ 58%|█████▊    | 71/123 [10:02<12:52, 14.85s/it] 59%|█████▊    | 72/123 [10:06<09:59, 11.75s/it] 59%|█████▉    | 73/123 [10:12<08:28, 10.16s/it] 60%|██████    | 74/123 [10:17<06:51,  8.40s/it] 61%|██████    | 75/123 [10:22<06:04,  7.60s/it] 62%|██████▏   | 76/123 [10:27<05:16,  6.74s/it] 63%|██████▎   | 77/123 [10:32<04:49,  6.29s/it] 63%|██████▎   | 78/123 [10:37<04:19,  5.77s/it] 64%|██████▍   | 79/123 [10:43<04:15,  5.82s/it] 65%|██████▌   | 80/123 [10:49<04:08,  5.77s/it]                                                 65%|██████▌   | 80/123 [10:49<04:08,  5.77s/it][INFO|trainer.py:4289] 2025-04-13 21:52:42,893 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:52:42,893 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:52:42,893 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 12.59it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.67it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.44it/s][A
+ 13%|█▎        | 6/46 [00:00<00:06,  5.73it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.91it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  6.05it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  6.14it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.20it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.20it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.22it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.93it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  6.03it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  5.98it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.04it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.13it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  6.15it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.48it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.72it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.85it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.51it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.74it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.91it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  6.02it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.89it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  6.02it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.12it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.19it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.25it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.28it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  6.01it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.06it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.08it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.18it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.21it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.09it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.17it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.82it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:01,  5.98it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  6.08it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  6.00it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  6.08it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  6.08it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.14it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.18it/s][A                                                
+                                               [A 65%|██████▌   | 80/123 [10:56<04:08,  5.77s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.18it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:52:54,594 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-80
+[INFO|configuration_utils.py:423] 2025-04-13 21:52:54,598 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-80/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:52:54,598 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-80/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:53:01,074 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-80/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:53:01,077 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-80/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:53:01,077 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-80/special_tokens_map.json
+ 66%|██████▌   | 81/123 [11:25<10:29, 14.99s/it] 67%|██████▋   | 82/123 [11:33<08:48, 12.89s/it] 67%|██████▋   | 83/123 [11:38<06:57, 10.44s/it] 68%|██████▊   | 84/123 [11:42<05:35,  8.61s/it] 69%|██████▉   | 85/123 [11:49<05:11,  8.20s/it] 70%|██████▉   | 86/123 [11:56<04:41,  7.60s/it] 71%|███████   | 87/123 [11:59<03:50,  6.41s/it] 72%|███████▏  | 88/123 [12:04<03:27,  5.94s/it] 72%|███████▏  | 89/123 [12:08<03:00,  5.32s/it] 73%|███████▎  | 90/123 [12:14<02:59,  5.45s/it]                                                 73%|███████▎  | 90/123 [12:14<02:59,  5.45s/it][INFO|trainer.py:4289] 2025-04-13 21:54:07,984 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:54:07,984 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:54:07,984 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 11.95it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.79it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.51it/s][A
+ 13%|█▎        | 6/46 [00:00<00:06,  5.75it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.89it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  5.99it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  6.07it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.05it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.09it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.12it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.86it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  5.98it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  6.05it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.08it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.16it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  6.08it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.43it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.68it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.82it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.48it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.70it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.87it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  5.98it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.93it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  6.04it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.12it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.16it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.19it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.22it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  5.96it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.03it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.04it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.11it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.12it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.13it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.17it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.82it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:01,  5.88it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  5.99it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  5.86it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  5.96it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  5.98it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.06it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.12it/s][A                                                
+                                               [A 73%|███████▎  | 90/123 [12:21<02:59,  5.45s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.12it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:54:19,758 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-90
+[INFO|configuration_utils.py:423] 2025-04-13 21:54:19,761 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-90/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:54:19,762 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-90/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:54:26,261 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-90/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:54:26,264 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-90/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:54:26,264 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-90/special_tokens_map.json
+ 74%|███████▍  | 91/123 [12:49<07:43, 14.48s/it] 75%|███████▍  | 92/123 [12:55<06:08, 11.90s/it] 76%|███████▌  | 93/123 [13:00<04:50,  9.67s/it] 76%|███████▋  | 94/123 [13:02<03:40,  7.61s/it] 77%|███████▋  | 95/123 [13:10<03:29,  7.49s/it] 78%|███████▊  | 96/123 [13:13<02:49,  6.29s/it] 79%|███████▉  | 97/123 [13:19<02:41,  6.21s/it] 80%|███████▉  | 98/123 [13:25<02:32,  6.10s/it] 80%|████████  | 99/123 [13:32<02:31,  6.31s/it] 81%|████████▏ | 100/123 [13:37<02:20,  6.12s/it]                                                  81%|████████▏ | 100/123 [13:37<02:20,  6.12s/it][INFO|trainer.py:4289] 2025-04-13 21:55:31,739 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:55:31,740 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:55:31,740 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 12.49it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.91it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.56it/s][A
+ 13%|█▎        | 6/46 [00:00<00:06,  5.78it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.94it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  6.06it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  6.16it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.20it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.19it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.20it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.93it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  5.96it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  5.92it/s][A
+ 35%|███▍      | 16/46 [00:02<00:05,  5.86it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  5.95it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  5.95it/s][A
+ 41%|████▏     | 19/46 [00:03<00:05,  5.36it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.56it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.68it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.37it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.62it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.81it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  5.90it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.86it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  5.93it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.01it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.09it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.16it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.09it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  5.88it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  5.97it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.01it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.07it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.10it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.12it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.15it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.80it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:01,  5.86it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  5.97it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  5.86it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  5.96it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  5.94it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.01it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.08it/s][A                                                 
+                                               [A 81%|████████▏ | 100/123 [13:45<02:20,  6.12s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.08it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:55:43,584 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-100
+[INFO|configuration_utils.py:423] 2025-04-13 21:55:43,587 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-100/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:55:43,587 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-100/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:55:50,114 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-100/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:55:50,117 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-100/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:55:50,118 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-100/special_tokens_map.json
+ 82%|████████▏ | 101/123 [14:16<05:45, 15.70s/it] 83%|████████▎ | 102/123 [14:23<04:40, 13.34s/it] 84%|████████▎ | 103/123 [14:30<03:44, 11.21s/it] 85%|████████▍ | 104/123 [14:34<02:55,  9.23s/it] 85%|████████▌ | 105/123 [14:41<02:33,  8.51s/it] 86%|████████▌ | 106/123 [14:47<02:12,  7.79s/it] 87%|████████▋ | 107/123 [14:51<01:46,  6.65s/it] 88%|████████▊ | 108/123 [14:55<01:27,  5.86s/it] 89%|████████▊ | 109/123 [14:59<01:15,  5.40s/it] 89%|████████▉ | 110/123 [15:04<01:08,  5.26s/it]                                                  89%|████████▉ | 110/123 [15:04<01:08,  5.26s/it][INFO|trainer.py:4289] 2025-04-13 21:56:58,663 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:56:58,663 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:56:58,663 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 12.63it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.96it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.59it/s][A
+ 13%|█▎        | 6/46 [00:00<00:06,  5.79it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.97it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  6.09it/s][A
+ 20%|█▉        | 9/46 [00:01<00:05,  6.18it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.24it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.24it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.25it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.94it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  6.04it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  6.11it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.14it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.21it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  6.22it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.52it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.74it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.88it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.52it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.74it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.90it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  6.02it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  6.00it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  6.10it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.18it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.23it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.23it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.24it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  5.97it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.06it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.09it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.15it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.13it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.14it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.17it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.81it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:01,  5.96it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  6.05it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  5.93it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  6.00it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  6.00it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.07it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.13it/s][A                                                 
+                                               [A 89%|████████▉ | 110/123 [15:12<01:08,  5.26s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.13it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:57:10,391 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-110
+[INFO|configuration_utils.py:423] 2025-04-13 21:57:10,394 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-110/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:57:10,395 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-110/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:57:16,910 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-110/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:57:16,912 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-110/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:57:16,913 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-110/special_tokens_map.json
+ 90%|█████████ | 111/123 [15:41<02:55, 14.60s/it] 91%|█████████ | 112/123 [15:48<02:15, 12.31s/it] 92%|█████████▏| 113/123 [15:52<01:39,  9.95s/it] 93%|█████████▎| 114/123 [15:57<01:15,  8.35s/it] 93%|█████████▎| 115/123 [16:00<00:54,  6.85s/it] 94%|█████████▍| 116/123 [16:05<00:44,  6.35s/it] 95%|█████████▌| 117/123 [16:09<00:34,  5.68s/it] 96%|█████████▌| 118/123 [16:17<00:30,  6.14s/it] 97%|█████████▋| 119/123 [16:23<00:24,  6.16s/it] 98%|█████████▊| 120/123 [16:31<00:19,  6.64s/it]                                                  98%|█████████▊| 120/123 [16:31<00:19,  6.64s/it][INFO|trainer.py:4289] 2025-04-13 21:58:24,901 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:58:24,901 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:58:24,901 >>   Batch size = 1
+
+  0%|          | 0/46 [00:00<?, ?it/s][A
+  4%|▍         | 2/46 [00:00<00:03, 12.51it/s][A
+  9%|▊         | 4/46 [00:00<00:05,  7.90it/s][A
+ 11%|█         | 5/46 [00:00<00:06,  6.56it/s][A
+ 13%|█▎        | 6/46 [00:00<00:06,  5.80it/s][A
+ 15%|█▌        | 7/46 [00:01<00:06,  5.96it/s][A
+ 17%|█▋        | 8/46 [00:01<00:06,  6.08it/s][A
+ 20%|█▉        | 9/46 [00:01<00:06,  6.09it/s][A
+ 22%|██▏       | 10/46 [00:01<00:05,  6.16it/s][A
+ 24%|██▍       | 11/46 [00:01<00:05,  6.18it/s][A
+ 26%|██▌       | 12/46 [00:01<00:05,  6.21it/s][A
+ 28%|██▊       | 13/46 [00:02<00:05,  5.94it/s][A
+ 30%|███       | 14/46 [00:02<00:05,  6.05it/s][A
+ 33%|███▎      | 15/46 [00:02<00:05,  6.11it/s][A
+ 35%|███▍      | 16/46 [00:02<00:04,  6.14it/s][A
+ 37%|███▋      | 17/46 [00:02<00:04,  6.21it/s][A
+ 39%|███▉      | 18/46 [00:02<00:04,  6.23it/s][A
+ 41%|████▏     | 19/46 [00:03<00:04,  5.53it/s][A
+ 43%|████▎     | 20/46 [00:03<00:04,  5.74it/s][A
+ 46%|████▌     | 21/46 [00:03<00:04,  5.83it/s][A
+ 48%|████▊     | 22/46 [00:03<00:04,  5.48it/s][A
+ 50%|█████     | 23/46 [00:03<00:04,  5.71it/s][A
+ 52%|█████▏    | 24/46 [00:03<00:03,  5.87it/s][A
+ 54%|█████▍    | 25/46 [00:04<00:03,  5.98it/s][A
+ 57%|█████▋    | 26/46 [00:04<00:03,  5.92it/s][A
+ 59%|█████▊    | 27/46 [00:04<00:03,  6.02it/s][A
+ 61%|██████    | 28/46 [00:04<00:02,  6.12it/s][A
+ 63%|██████▎   | 29/46 [00:04<00:02,  6.19it/s][A
+ 65%|██████▌   | 30/46 [00:04<00:02,  6.25it/s][A
+ 67%|██████▋   | 31/46 [00:05<00:02,  6.26it/s][A
+ 70%|██████▉   | 32/46 [00:05<00:02,  5.98it/s][A
+ 72%|███████▏  | 33/46 [00:05<00:02,  6.08it/s][A
+ 74%|███████▍  | 34/46 [00:05<00:01,  6.09it/s][A
+ 76%|███████▌  | 35/46 [00:05<00:01,  6.18it/s][A
+ 78%|███████▊  | 36/46 [00:05<00:01,  6.20it/s][A
+ 80%|████████  | 37/46 [00:06<00:01,  6.20it/s][A
+ 83%|████████▎ | 38/46 [00:06<00:01,  6.24it/s][A
+ 85%|████████▍ | 39/46 [00:06<00:01,  5.86it/s][A
+ 87%|████████▋ | 40/46 [00:06<00:00,  6.00it/s][A
+ 89%|████████▉ | 41/46 [00:06<00:00,  6.08it/s][A
+ 91%|█████████▏| 42/46 [00:06<00:00,  5.94it/s][A
+ 93%|█████████▎| 43/46 [00:07<00:00,  6.03it/s][A
+ 96%|█████████▌| 44/46 [00:07<00:00,  6.03it/s][A
+ 98%|█████████▊| 45/46 [00:07<00:00,  6.09it/s][A
+100%|██████████| 46/46 [00:07<00:00,  6.15it/s][A                                                 
+                                               [A 98%|█████████▊| 120/123 [16:38<00:19,  6.64s/it]
+100%|██████████| 46/46 [00:07<00:00,  6.15it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 21:58:36,638 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-120
+[INFO|configuration_utils.py:423] 2025-04-13 21:58:36,641 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-120/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:58:36,642 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-120/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:58:43,621 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-120/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:58:43,624 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-120/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:58:43,624 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-120/special_tokens_map.json
+ 98%|█████████▊| 121/123 [17:08<00:31, 15.99s/it] 99%|█████████▉| 122/123 [17:13<00:12, 12.54s/it]100%|██████████| 123/123 [17:17<00:00,  9.98s/it][INFO|trainer.py:3966] 2025-04-13 21:59:15,218 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-123
+[INFO|configuration_utils.py:423] 2025-04-13 21:59:15,221 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-123/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:59:15,221 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-123/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:59:21,714 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-123/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:59:21,716 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-123/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:59:21,716 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/checkpoint-123/special_tokens_map.json
+[INFO|trainer.py:2665] 2025-04-13 21:59:34,581 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+                                                 100%|██████████| 123/123 [17:40<00:00,  9.98s/it]100%|██████████| 123/123 [17:40<00:00,  8.62s/it]
+[INFO|trainer.py:3966] 2025-04-13 21:59:38,534 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft
+[INFO|configuration_utils.py:423] 2025-04-13 21:59:38,537 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 21:59:38,538 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 21:59:45,000 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 21:59:45,003 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 21:59:45,003 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-2/full/sft/special_tokens_map.json
+[INFO|trainer.py:4289] 2025-04-13 21:59:45,411 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 21:59:45,411 >>   Num examples = 274
+[INFO|trainer.py:4294] 2025-04-13 21:59:45,411 >>   Batch size = 1
+  0%|          | 0/46 [00:00<?, ?it/s]  4%|▍         | 2/46 [00:00<00:03, 12.31it/s]  9%|▊         | 4/46 [00:00<00:05,  7.77it/s] 11%|█         | 5/46 [00:00<00:06,  6.48it/s] 13%|█▎        | 6/46 [00:00<00:06,  5.72it/s] 15%|█▌        | 7/46 [00:01<00:06,  5.90it/s] 17%|█▋        | 8/46 [00:01<00:06,  6.04it/s] 20%|█▉        | 9/46 [00:01<00:06,  6.14it/s] 22%|██▏       | 10/46 [00:01<00:05,  6.19it/s] 24%|██▍       | 11/46 [00:01<00:05,  6.17it/s] 26%|██▌       | 12/46 [00:01<00:05,  6.19it/s] 28%|██▊       | 13/46 [00:02<00:05,  5.90it/s] 30%|███       | 14/46 [00:02<00:05,  6.02it/s] 33%|███▎      | 15/46 [00:02<00:05,  6.09it/s] 35%|███▍      | 16/46 [00:02<00:04,  6.11it/s] 37%|███▋      | 17/46 [00:02<00:04,  6.20it/s] 39%|███▉      | 18/46 [00:02<00:04,  6.20it/s] 41%|████▏     | 19/46 [00:03<00:04,  5.51it/s] 43%|████▎     | 20/46 [00:03<00:04,  5.72it/s] 46%|████▌     | 21/46 [00:03<00:04,  5.84it/s] 48%|████▊     | 22/46 [00:03<00:04,  5.50it/s] 50%|█████     | 23/46 [00:03<00:04,  5.72it/s] 52%|█████▏    | 24/46 [00:03<00:03,  5.89it/s] 54%|█████▍    | 25/46 [00:04<00:03,  5.98it/s] 57%|█████▋    | 26/46 [00:04<00:03,  5.92it/s] 59%|█████▊    | 27/46 [00:04<00:03,  6.03it/s] 61%|██████    | 28/46 [00:04<00:02,  6.12it/s] 63%|██████▎   | 29/46 [00:04<00:02,  6.07it/s] 65%|██████▌   | 30/46 [00:04<00:02,  6.16it/s] 67%|██████▋   | 31/46 [00:05<00:02,  6.20it/s] 70%|██████▉   | 32/46 [00:05<00:02,  5.95it/s] 72%|███████▏  | 33/46 [00:05<00:02,  6.06it/s] 74%|███████▍  | 34/46 [00:05<00:01,  6.07it/s] 76%|███████▌  | 35/46 [00:05<00:01,  6.16it/s] 78%|███████▊  | 36/46 [00:05<00:01,  6.18it/s] 80%|████████  | 37/46 [00:06<00:01,  6.08it/s] 83%|████████▎ | 38/46 [00:06<00:01,  6.15it/s] 85%|████████▍ | 39/46 [00:06<00:01,  5.80it/s] 87%|████████▋ | 40/46 [00:06<00:01,  5.96it/s] 89%|████████▉ | 41/46 [00:06<00:00,  6.06it/s] 91%|█████████▏| 42/46 [00:06<00:00,  5.94it/s] 93%|█████████▎| 43/46 [00:07<00:00,  6.03it/s] 96%|█████████▌| 44/46 [00:07<00:00,  6.05it/s] 98%|█████████▊| 45/46 [00:07<00:00,  6.11it/s]100%|██████████| 46/46 [00:07<00:00,  6.16it/s]100%|██████████| 46/46 [00:07<00:00,  6.09it/s]
+[INFO|modelcard.py:449] 2025-04-13 21:59:53,146 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
