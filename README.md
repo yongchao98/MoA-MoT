@@ -27,9 +27,8 @@ cd LLaMA-Factory
 sh finetune_qwen_7b_1M.sh
 ```
 
-GRPO training:
+GRPO training (In train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2):
 ```
-In train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2.
 sh train_grpo_3B.sh
 ```
 
