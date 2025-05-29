@@ -4,6 +4,22 @@ Our code is based on [Llama-factory](https://github.com/hiyouga/LLaMA-Factory), 
 
 ## 📝 Introduction
 R1-Code-Interpreter is the first framework to train LLMs for step-by-step code reasoning using multi-turn supervised fine-tuning and reinforcement learning. By curating 144 diverse reasoning and planning tasks, we enable Qwen-2.5 models (3B/7B/14B) to autonomously decide when and how to invoke code. Our best model, R1-CI-14B, outperforms GPT-4o (text-only) and approaches GPT-4o with Code Interpreter, showing emergent self-checking behavior via code generation.
+<p align="center">
+  <img src="Open-images/example.png" width="86%">
+</p>
+
+## 🏆 Performance
+<p align="center">
+  <img src="Open-images/result1.png" width="86%">
+</p>
+
+## 🤖 Model
+R1-CI-14B/7B/3B are now available on huggingface-hub:
+| Model Name | HF Checkpoint                                                | Size                                                    |
+| ---------- | ------------------------------------------------------------ | :------: |
+| R1-Code-Interpreter-14B     | [🤗 yongchao98/R1-Code-Interpreter-14B](https://huggingface.co/yongchao98/R1-Code-Interpreter-14B) | **14B**
+| R1-Code-Interpreter-7B     | [🤗 yongchao98/R1-Code-Interpreter-7B](https://huggingface.co/yongchao98/R1-Code-Interpreter-7B) | **7B**
+| R1-Code-Interpreter-3B     | [🤗 yongchao98/R1-Code-Interpreter-3B](https://huggingface.co/yongchao98/R1-Code-Interpreter-3B) | **3B**
 
 ## 🚀 Get Started
 
