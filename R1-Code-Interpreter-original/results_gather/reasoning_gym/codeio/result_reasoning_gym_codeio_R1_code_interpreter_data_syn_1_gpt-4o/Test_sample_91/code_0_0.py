@@ -1,1 +1,0 @@
-{'opt_depth_isothermal': np.float64(0.12503162367592735), 'opt_depth_adiabatic': np.float64(0.12378936506099655)}

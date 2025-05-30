@@ -1,7 +1,0 @@
-solution = [
-    "fill C", "pour C->A", "empty A", "pour C->A", "fill C", 
-    "pour C->A", "empty A", "pour C->A", "fill C", "pour C->A", 
-    "empty A", "pour C->A", "fill C", "pour C->A", "empty A", 
-    "pour C->A"
-]
-print(solution)

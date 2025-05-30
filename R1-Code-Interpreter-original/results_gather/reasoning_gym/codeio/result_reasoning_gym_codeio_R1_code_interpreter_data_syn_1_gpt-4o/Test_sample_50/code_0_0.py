@@ -1,1 +1,0 @@
-{'conjunto': [17, 10, 6, 6, 9, 6, 2, 14], 'capacidade': 61, 'tecninca': 1, 'todos': True}

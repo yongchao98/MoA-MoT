@@ -1,1 +1,0 @@
-{'lookup_forward_shape': (3, 1), 'lookup_backward_shape': (3,)}

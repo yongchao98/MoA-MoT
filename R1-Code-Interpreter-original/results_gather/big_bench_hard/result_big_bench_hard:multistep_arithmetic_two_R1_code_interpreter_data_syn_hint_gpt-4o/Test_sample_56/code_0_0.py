@@ -1,3 +1,0 @@
-# Calculate the expression
-result = (1 + 1 * 3 - 2) * (-8 - -2 - 9 + -9)
-print(result)

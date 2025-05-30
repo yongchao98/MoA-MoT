@@ -1,2 +1,0 @@
-sequence = "[ ] ( [ [ { < { { ( < > [ ] ) } } < > > } ] ] { } )"
-print(sequence)

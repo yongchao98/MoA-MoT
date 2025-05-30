@@ -1,2 +1,0 @@
-result = 7 + 0 - 8 - 5
-print(result)

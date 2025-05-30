@@ -1,1855 +1,0 @@
-Traceback (most recent call last):
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/bin/llamafactory-cli", line 5, in <module>
-    from llamafactory.cli import main
-ModuleNotFoundError: No module named 'llamafactory'
-Traceback (most recent call last):
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/bin/llamafactory-cli", line 5, in <module>
-    from llamafactory.cli import main
-ModuleNotFoundError: No module named 'llamafactory'
-W0413 16:28:51.868000 3274553 site-packages/torch/distributed/run.py:792] 
-W0413 16:28:51.868000 3274553 site-packages/torch/distributed/run.py:792] *****************************************
-W0413 16:28:51.868000 3274553 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0413 16:28:51.868000 3274553 site-packages/torch/distributed/run.py:792] *****************************************
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:58,749 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:58,749 >> loading file tokenizer.model from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:58,749 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:58,749 >> loading file special_tokens_map.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/special_tokens_map.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:58,749 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:58,749 >> loading file chat_template.jinja from cache at None
-[INFO|tokenization_utils_base.py:2323] 2025-04-13 16:28:59,037 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[INFO|configuration_utils.py:699] 2025-04-13 16:28:59,256 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/config.json
-[INFO|configuration_utils.py:771] 2025-04-13 16:28:59,257 >> Model config LlamaConfig {
-  "architectures": [
-    "LlamaForCausalLM"
-  ],
-  "attention_bias": false,
-  "attention_dropout": 0.0,
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "head_dim": 128,
-  "hidden_act": "silu",
-  "hidden_size": 4096,
-  "initializer_range": 0.02,
-  "intermediate_size": 14336,
-  "max_position_embeddings": 8192,
-  "mlp_bias": false,
-  "model_type": "llama",
-  "num_attention_heads": 32,
-  "num_hidden_layers": 32,
-  "num_key_value_heads": 8,
-  "pretraining_tp": 1,
-  "rms_norm_eps": 1e-05,
-  "rope_scaling": null,
-  "rope_theta": 500000.0,
-  "tie_word_embeddings": false,
-  "torch_dtype": "bfloat16",
-  "transformers_version": "4.50.0",
-  "use_cache": true,
-  "vocab_size": 128256
-}
-
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:59,310 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:59,310 >> loading file tokenizer.model from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:59,310 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:59,310 >> loading file special_tokens_map.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/special_tokens_map.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:59,312 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:28:59,312 >> loading file chat_template.jinja from cache at None
-[INFO|tokenization_utils_base.py:2323] 2025-04-13 16:28:59,592 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[rank2]:[W413 16:28:59.580980661 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank1]:[W413 16:28:59.605704012 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Setting num_proc from 16 back to 1 for the train split to disable multiprocessing as it only contains one shard.
-Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 1077 examples [00:00, 31130.80 examples/s]
-[rank3]:[W413 16:28:59.654503296 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Converting format of dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 1077/1077 [00:00<00:00, 7319.48 examples/s]
-[rank0]:[W413 16:29:00.179770221 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Running tokenizer on dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   6%|▋         | 68/1077 [00:00<00:11, 87.76 examples/s]Running tokenizer on dataset (num_proc=16):  13%|█▎        | 136/1077 [00:00<00:05, 176.58 examples/s]Running tokenizer on dataset (num_proc=16):  19%|█▉        | 204/1077 [00:00<00:03, 261.14 examples/s]Running tokenizer on dataset (num_proc=16):  25%|██▌       | 272/1077 [00:01<00:02, 338.41 examples/s]Running tokenizer on dataset (num_proc=16):  32%|███▏      | 340/1077 [00:01<00:01, 396.46 examples/s]Running tokenizer on dataset (num_proc=16):  38%|███▊      | 407/1077 [00:01<00:01, 450.39 examples/s]Running tokenizer on dataset (num_proc=16):  44%|████▍     | 474/1077 [00:01<00:01, 490.45 examples/s]Running tokenizer on dataset (num_proc=16):  50%|█████     | 541/1077 [00:01<00:01, 518.18 examples/s]Running tokenizer on dataset (num_proc=16):  56%|█████▋    | 608/1077 [00:01<00:00, 540.81 examples/s]Running tokenizer on dataset (num_proc=16):  63%|██████▎   | 675/1077 [00:01<00:00, 561.84 examples/s]Running tokenizer on dataset (num_proc=16):  75%|███████▌  | 809/1077 [00:01<00:00, 640.86 examples/s]Running tokenizer on dataset (num_proc=16):  81%|████████▏ | 876/1077 [00:02<00:00, 637.79 examples/s]Running tokenizer on dataset (num_proc=16):  94%|█████████▍| 1010/1077 [00:02<00:00, 619.24 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1077/1077 [00:02<00:00, 439.11 examples/s]
-[INFO|configuration_utils.py:699] 2025-04-13 16:29:05,096 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/config.json
-[INFO|configuration_utils.py:771] 2025-04-13 16:29:05,097 >> Model config LlamaConfig {
-  "architectures": [
-    "LlamaForCausalLM"
-  ],
-  "attention_bias": false,
-  "attention_dropout": 0.0,
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "head_dim": 128,
-  "hidden_act": "silu",
-  "hidden_size": 4096,
-  "initializer_range": 0.02,
-  "intermediate_size": 14336,
-  "max_position_embeddings": 8192,
-  "mlp_bias": false,
-  "model_type": "llama",
-  "num_attention_heads": 32,
-  "num_hidden_layers": 32,
-  "num_key_value_heads": 8,
-  "pretraining_tp": 1,
-  "rms_norm_eps": 1e-05,
-  "rope_scaling": null,
-  "rope_theta": 500000.0,
-  "tie_word_embeddings": false,
-  "torch_dtype": "bfloat16",
-  "transformers_version": "4.50.0",
-  "use_cache": true,
-  "vocab_size": 128256
-}
-
-[INFO|modeling_utils.py:1154] 2025-04-13 16:29:05,330 >> loading weights file model.safetensors from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/model.safetensors.index.json
-[INFO|modeling_utils.py:3747] 2025-04-13 16:29:05,336 >> Detected DeepSpeed ZeRO-3: activating zero.init() for this model
-[INFO|configuration_utils.py:1139] 2025-04-13 16:29:05,345 >> Generate config GenerationConfig {
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "use_cache": false
-}
-
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  3.89it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  3.90it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  3.87it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.00it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.00it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.00it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:15,  5.14s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:03,  3.00s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:03,  3.00s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:03,  3.00s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.89s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.89s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.84s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.89s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.84s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.84s/it]
-Loading checkpoint shards:  50%|█████     | 2/4 [00:11<00:11,  5.70s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:15<00:05,  5.15s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  3.54s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  4.20s/it]
-[INFO|modeling_utils.py:4987] 2025-04-13 16:29:22,304 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
-
-[INFO|modeling_utils.py:4995] 2025-04-13 16:29:22,305 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at meta-llama/Meta-Llama-3-8B-Instruct.
-If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
-[INFO|configuration_utils.py:1094] 2025-04-13 16:29:22,360 >> loading configuration file generation_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/generation_config.json
-[INFO|configuration_utils.py:1139] 2025-04-13 16:29:22,360 >> Generate config GenerationConfig {
-  "bos_token_id": 128000,
-  "do_sample": true,
-  "eos_token_id": [
-    128001,
-    128009
-  ],
-  "max_length": 4096,
-  "temperature": 0.6,
-  "top_p": 0.9
-}
-
-[INFO|trainer.py:748] 2025-04-13 16:29:22,382 >> Using auto half precision backend
-[INFO|trainer.py:2409] 2025-04-13 16:29:25,570 >> ***** Running training *****
-[INFO|trainer.py:2410] 2025-04-13 16:29:25,570 >>   Num examples = 969
-[INFO|trainer.py:2411] 2025-04-13 16:29:25,570 >>   Num Epochs = 5
-[INFO|trainer.py:2412] 2025-04-13 16:29:25,570 >>   Instantaneous batch size per device = 5
-[INFO|trainer.py:2415] 2025-04-13 16:29:25,570 >>   Total train batch size (w. parallel, distributed & accumulation) = 40
-[INFO|trainer.py:2416] 2025-04-13 16:29:25,570 >>   Gradient Accumulation steps = 2
-[INFO|trainer.py:2417] 2025-04-13 16:29:25,570 >>   Total optimization steps = 120
-[INFO|trainer.py:2418] 2025-04-13 16:29:25,571 >>   Number of trainable parameters = 8,030,261,248
-  0%|          | 0/120 [00:00<?, ?it/s]  1%|          | 1/120 [00:11<22:24, 11.30s/it][rank3]: Traceback (most recent call last):
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank3]:     launch()
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank3]:     run_exp()
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank3]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank3]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank3]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank3]:     return inner_training_loop(
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2556, in _inner_training_loop
-[rank3]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3718, in training_step
-[rank3]:     loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/trainer.py", line 101, in compute_loss
-[rank3]:     return super().compute_loss(model, inputs, *args, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3783, in compute_loss
-[rank3]:     outputs = model(**inputs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
-[rank3]:     return self._call_impl(*args, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
-[rank3]:     return forward_call(*args, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank3]:     ret_val = func(*args, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 1899, in forward
-[rank3]:     loss = self.module(*inputs, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
-[rank3]:     return self._call_impl(*args, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1845, in _call_impl
-[rank3]:     return inner()
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1793, in inner
-[rank3]:     result = forward_call(*args, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
-[rank3]:     return func(*args, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 874, in forward
-[rank3]:     loss = self.loss_function(logits=logits, labels=labels, vocab_size=self.config.vocab_size, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/loss/loss_utils.py", line 56, in ForCausalLMLoss
-[rank3]:     loss = fixed_cross_entropy(logits, shift_labels, num_items_in_batch, ignore_index, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/loss/loss_utils.py", line 27, in fixed_cross_entropy
-[rank3]:     loss = nn.functional.cross_entropy(source, target, ignore_index=ignore_index, reduction=reduction)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/nn/functional.py", line 3494, in cross_entropy
-[rank3]:     return torch._C._nn.cross_entropy_loss(
-[rank3]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 9.79 GiB. GPU 3 has a total capacity of 79.21 GiB of which 7.41 GiB is free. Including non-PyTorch memory, this process has 71.79 GiB memory in use. Of the allocated memory 53.38 GiB is allocated by PyTorch, and 13.84 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
-W0413 16:29:39.545000 3274553 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 3274640 closing signal SIGTERM
-W0413 16:29:39.546000 3274553 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 3274641 closing signal SIGTERM
-W0413 16:29:39.547000 3274553 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 3274642 closing signal SIGTERM
-E0413 16:29:40.712000 3274553 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 3 (pid: 3274643) of binary: /proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/bin/python3.10
-Traceback (most recent call last):
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/bin/torchrun", line 8, in <module>
-    sys.exit(main())
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
-    return f(*args, **kwargs)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/distributed/run.py", line 918, in main
-    run(args)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/distributed/run.py", line 909, in run
-    elastic_launch(
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
-    raise ChildFailedError(
-torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
-============================================================
-/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py FAILED
-------------------------------------------------------------
-Failures:
-  <NO_OTHER_FAILURES>
-------------------------------------------------------------
-Root Cause (first observed failure):
-[0]:
-  time      : 2025-04-13_16:29:39
-  host      : p4-r03-n1.bluevela.rmf.ibm.com
-  rank      : 3 (local_rank: 3)
-  exitcode  : 1 (pid: 3274643)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-============================================================
-W0413 16:31:04.749000 1522769 site-packages/torch/distributed/run.py:792] 
-W0413 16:31:04.749000 1522769 site-packages/torch/distributed/run.py:792] *****************************************
-W0413 16:31:04.749000 1522769 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0413 16:31:04.749000 1522769 site-packages/torch/distributed/run.py:792] *****************************************
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:12,866 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:12,866 >> loading file tokenizer.model from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:12,866 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:12,866 >> loading file special_tokens_map.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/special_tokens_map.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:12,866 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:12,866 >> loading file chat_template.jinja from cache at None
-[INFO|tokenization_utils_base.py:2323] 2025-04-13 16:31:13,142 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[INFO|configuration_utils.py:699] 2025-04-13 16:31:13,447 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/config.json
-[INFO|configuration_utils.py:771] 2025-04-13 16:31:13,448 >> Model config LlamaConfig {
-  "architectures": [
-    "LlamaForCausalLM"
-  ],
-  "attention_bias": false,
-  "attention_dropout": 0.0,
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "head_dim": 128,
-  "hidden_act": "silu",
-  "hidden_size": 4096,
-  "initializer_range": 0.02,
-  "intermediate_size": 14336,
-  "max_position_embeddings": 8192,
-  "mlp_bias": false,
-  "model_type": "llama",
-  "num_attention_heads": 32,
-  "num_hidden_layers": 32,
-  "num_key_value_heads": 8,
-  "pretraining_tp": 1,
-  "rms_norm_eps": 1e-05,
-  "rope_scaling": null,
-  "rope_theta": 500000.0,
-  "tie_word_embeddings": false,
-  "torch_dtype": "bfloat16",
-  "transformers_version": "4.50.0",
-  "use_cache": true,
-  "vocab_size": 128256
-}
-
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:13,501 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:13,502 >> loading file tokenizer.model from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:13,502 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:13,502 >> loading file special_tokens_map.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/special_tokens_map.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:13,502 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 16:31:13,502 >> loading file chat_template.jinja from cache at None
-[rank1]:[W413 16:31:13.725712289 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[INFO|tokenization_utils_base.py:2323] 2025-04-13 16:31:13,828 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[rank2]:[W413 16:31:13.848128652 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank3]:[W413 16:31:13.906280254 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank5]:[W413 16:31:14.972624868 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Converting format of dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 1077/1077 [00:00<00:00, 6946.91 examples/s]
-[rank0]:[W413 16:31:14.532393914 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank4]:[W413 16:31:14.638884160 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Running tokenizer on dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   6%|▋         | 68/1077 [00:00<00:12, 77.87 examples/s]Running tokenizer on dataset (num_proc=16):  19%|█▉        | 204/1077 [00:00<00:03, 253.03 examples/s]Running tokenizer on dataset (num_proc=16):  32%|███▏      | 340/1077 [00:01<00:02, 361.53 examples/s]Running tokenizer on dataset (num_proc=16):  44%|████▍     | 474/1077 [00:01<00:01, 436.68 examples/s]Running tokenizer on dataset (num_proc=16):  50%|█████     | 541/1077 [00:01<00:01, 468.41 examples/s]Running tokenizer on dataset (num_proc=16):  56%|█████▋    | 608/1077 [00:01<00:00, 495.21 examples/s]Running tokenizer on dataset (num_proc=16):  63%|██████▎   | 675/1077 [00:01<00:00, 520.15 examples/s]Running tokenizer on dataset (num_proc=16):  75%|███████▌  | 809/1077 [00:01<00:00, 584.74 examples/s]Running tokenizer on dataset (num_proc=16):  81%|████████▏ | 876/1077 [00:02<00:00, 591.43 examples/s]Running tokenizer on dataset (num_proc=16):  94%|█████████▍| 1010/1077 [00:02<00:00, 627.34 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1077/1077 [00:02<00:00, 443.07 examples/s]
-[INFO|configuration_utils.py:699] 2025-04-13 16:31:20,800 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/config.json
-[INFO|configuration_utils.py:771] 2025-04-13 16:31:20,801 >> Model config LlamaConfig {
-  "architectures": [
-    "LlamaForCausalLM"
-  ],
-  "attention_bias": false,
-  "attention_dropout": 0.0,
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "head_dim": 128,
-  "hidden_act": "silu",
-  "hidden_size": 4096,
-  "initializer_range": 0.02,
-  "intermediate_size": 14336,
-  "max_position_embeddings": 8192,
-  "mlp_bias": false,
-  "model_type": "llama",
-  "num_attention_heads": 32,
-  "num_hidden_layers": 32,
-  "num_key_value_heads": 8,
-  "pretraining_tp": 1,
-  "rms_norm_eps": 1e-05,
-  "rope_scaling": null,
-  "rope_theta": 500000.0,
-  "tie_word_embeddings": false,
-  "torch_dtype": "bfloat16",
-  "transformers_version": "4.50.0",
-  "use_cache": true,
-  "vocab_size": 128256
-}
-
-[INFO|modeling_utils.py:1154] 2025-04-13 16:31:20,935 >> loading weights file model.safetensors from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/model.safetensors.index.json
-[INFO|modeling_utils.py:3747] 2025-04-13 16:31:20,937 >> Detected DeepSpeed ZeRO-3: activating zero.init() for this model
-[INFO|configuration_utils.py:1139] 2025-04-13 16:31:20,946 >> Generate config GenerationConfig {
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "use_cache": false
-}
-
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.66s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.66s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.66s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.66s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.66s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:16,  5.59s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.10s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.10s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.10s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.10s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.10s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:11<00:12,  6.02s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.90s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.90s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.90s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.90s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.90s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.36s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.36s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.36s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.36s/it]
-
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.36s/it]
-Loading checkpoint shards:  75%|███████▌  | 3/4 [00:16<00:05,  5.51s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:18<00:00,  3.89s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:18<00:00,  4.56s/it]
-[INFO|modeling_utils.py:4987] 2025-04-13 16:31:39,371 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
-
-[INFO|modeling_utils.py:4995] 2025-04-13 16:31:39,371 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at meta-llama/Meta-Llama-3-8B-Instruct.
-If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
-[INFO|configuration_utils.py:1094] 2025-04-13 16:31:39,430 >> loading configuration file generation_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/generation_config.json
-[INFO|configuration_utils.py:1139] 2025-04-13 16:31:39,430 >> Generate config GenerationConfig {
-  "bos_token_id": 128000,
-  "do_sample": true,
-  "eos_token_id": [
-    128001,
-    128009
-  ],
-  "max_length": 4096,
-  "temperature": 0.6,
-  "top_p": 0.9
-}
-
-[INFO|trainer.py:748] 2025-04-13 16:31:39,451 >> Using auto half precision backend
-[INFO|trainer.py:2409] 2025-04-13 16:31:42,298 >> ***** Running training *****
-[INFO|trainer.py:2410] 2025-04-13 16:31:42,298 >>   Num examples = 969
-[INFO|trainer.py:2411] 2025-04-13 16:31:42,298 >>   Num Epochs = 5
-[INFO|trainer.py:2412] 2025-04-13 16:31:42,298 >>   Instantaneous batch size per device = 5
-[INFO|trainer.py:2415] 2025-04-13 16:31:42,298 >>   Total train batch size (w. parallel, distributed & accumulation) = 60
-[INFO|trainer.py:2416] 2025-04-13 16:31:42,298 >>   Gradient Accumulation steps = 2
-[INFO|trainer.py:2417] 2025-04-13 16:31:42,298 >>   Total optimization steps = 80
-[INFO|trainer.py:2418] 2025-04-13 16:31:42,299 >>   Number of trainable parameters = 8,030,261,248
-  0%|          | 0/80 [00:00<?, ?it/s]  1%|▏         | 1/80 [00:11<15:10, 11.53s/it]  2%|▎         | 2/80 [00:17<10:57,  8.43s/it]  4%|▍         | 3/80 [00:26<11:05,  8.64s/it]  5%|▌         | 4/80 [00:34<10:21,  8.18s/it]  6%|▋         | 5/80 [00:41<10:00,  8.00s/it]  8%|▊         | 6/80 [00:49<09:32,  7.73s/it]  9%|▉         | 7/80 [00:56<09:09,  7.53s/it] 10%|█         | 8/80 [01:04<09:22,  7.81s/it] 11%|█▏        | 9/80 [01:10<08:42,  7.36s/it] 12%|█▎        | 10/80 [01:18<08:49,  7.56s/it] 14%|█▍        | 11/80 [01:23<07:36,  6.62s/it] 15%|█▌        | 12/80 [01:30<07:44,  6.83s/it] 16%|█▋        | 13/80 [01:36<07:24,  6.63s/it] 18%|█▊        | 14/80 [01:43<07:22,  6.70s/it] 19%|█▉        | 15/80 [01:50<07:16,  6.71s/it] 20%|██        | 16/80 [01:58<07:25,  6.96s/it] 21%|██▏       | 17/80 [02:02<06:31,  6.22s/it] 22%|██▎       | 18/80 [02:08<06:26,  6.23s/it] 24%|██▍       | 19/80 [02:14<06:01,  5.93s/it] 25%|██▌       | 20/80 [02:19<05:40,  5.67s/it]                                                25%|██▌       | 20/80 [02:19<05:40,  5.67s/it] 26%|██▋       | 21/80 [02:27<06:27,  6.57s/it] 28%|██▊       | 22/80 [02:33<06:09,  6.38s/it] 29%|██▉       | 23/80 [02:39<05:51,  6.17s/it] 30%|███       | 24/80 [02:48<06:30,  6.98s/it] 31%|███▏      | 25/80 [02:54<06:07,  6.69s/it] 32%|███▎      | 26/80 [03:01<06:04,  6.74s/it] 34%|███▍      | 27/80 [03:08<05:59,  6.79s/it] 35%|███▌      | 28/80 [03:13<05:30,  6.36s/it] 36%|███▋      | 29/80 [03:20<05:40,  6.68s/it] 38%|███▊      | 30/80 [03:27<05:27,  6.54s/it] 39%|███▉      | 31/80 [03:35<05:49,  7.14s/it] 40%|████      | 32/80 [03:43<06:00,  7.51s/it] 41%|████▏     | 33/80 [03:52<06:04,  7.77s/it] 42%|████▎     | 34/80 [03:55<04:53,  6.39s/it] 44%|████▍     | 35/80 [04:01<04:44,  6.31s/it] 45%|████▌     | 36/80 [04:08<04:49,  6.57s/it] 46%|████▋     | 37/80 [04:17<05:09,  7.20s/it] 48%|████▊     | 38/80 [04:22<04:39,  6.65s/it] 49%|████▉     | 39/80 [04:29<04:34,  6.71s/it] 50%|█████     | 40/80 [04:36<04:25,  6.65s/it]                                                50%|█████     | 40/80 [04:36<04:25,  6.65s/it] 51%|█████▏    | 41/80 [04:42<04:16,  6.56s/it] 52%|█████▎    | 42/80 [04:49<04:10,  6.60s/it] 54%|█████▍    | 43/80 [04:55<04:03,  6.59s/it] 55%|█████▌    | 44/80 [05:02<03:57,  6.61s/it] 56%|█████▋    | 45/80 [05:09<03:54,  6.70s/it] 57%|█████▊    | 46/80 [05:17<04:06,  7.24s/it] 59%|█████▉    | 47/80 [05:25<04:00,  7.28s/it] 60%|██████    | 48/80 [05:30<03:32,  6.64s/it] 61%|██████▏   | 49/80 [05:38<03:40,  7.12s/it] 62%|██████▎   | 50/80 [05:46<03:42,  7.41s/it] 64%|██████▍   | 51/80 [05:50<03:05,  6.39s/it] 65%|██████▌   | 52/80 [05:55<02:44,  5.88s/it] 66%|██████▋   | 53/80 [06:02<02:46,  6.18s/it] 68%|██████▊   | 54/80 [06:09<02:50,  6.58s/it] 69%|██████▉   | 55/80 [06:17<02:50,  6.82s/it] 70%|███████   | 56/80 [06:22<02:33,  6.40s/it] 71%|███████▏  | 57/80 [06:29<02:32,  6.62s/it] 72%|███████▎  | 58/80 [06:36<02:23,  6.52s/it] 74%|███████▍  | 59/80 [06:43<02:20,  6.69s/it] 75%|███████▌  | 60/80 [06:50<02:15,  6.78s/it]                                                75%|███████▌  | 60/80 [06:50<02:15,  6.78s/it] 76%|███████▋  | 61/80 [06:58<02:17,  7.24s/it] 78%|███████▊  | 62/80 [07:06<02:13,  7.40s/it] 79%|███████▉  | 63/80 [07:13<02:03,  7.24s/it] 80%|████████  | 64/80 [07:21<02:01,  7.62s/it] 81%|████████▏ | 65/80 [07:28<01:50,  7.38s/it] 82%|████████▎ | 66/80 [07:35<01:41,  7.28s/it] 84%|████████▍ | 67/80 [07:42<01:32,  7.12s/it] 85%|████████▌ | 68/80 [07:45<01:10,  5.87s/it] 86%|████████▋ | 69/80 [07:49<00:59,  5.44s/it] 88%|████████▊ | 70/80 [07:57<01:02,  6.29s/it] 89%|████████▉ | 71/80 [08:05<00:59,  6.56s/it] 90%|█████████ | 72/80 [08:11<00:51,  6.48s/it] 91%|█████████▏| 73/80 [08:19<00:48,  6.89s/it] 92%|█████████▎| 74/80 [08:27<00:43,  7.22s/it] 94%|█████████▍| 75/80 [08:34<00:36,  7.28s/it] 95%|█████████▌| 76/80 [08:41<00:28,  7.14s/it] 96%|█████████▋| 77/80 [08:49<00:22,  7.38s/it] 98%|█████████▊| 78/80 [08:55<00:14,  7.07s/it] 99%|█████████▉| 79/80 [09:02<00:07,  7.06s/it]100%|██████████| 80/80 [09:08<00:00,  6.80s/it]                                               100%|██████████| 80/80 [09:08<00:00,  6.80s/it][INFO|trainer.py:3966] 2025-04-13 16:40:55,337 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80
-[INFO|configuration_utils.py:423] 2025-04-13 16:40:55,340 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 16:40:55,341 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 16:41:01,791 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 16:41:01,794 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 16:41:01,794 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80/special_tokens_map.json
-[INFO|trainer.py:2665] 2025-04-13 16:41:14,727 >> 
-
-Training completed. Do not forget to share your model on huggingface.co/models =)
-
-
-                                               100%|██████████| 80/80 [09:32<00:00,  6.80s/it]100%|██████████| 80/80 [09:32<00:00,  7.16s/it]
-[INFO|trainer.py:3966] 2025-04-13 16:41:18,753 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft
-[INFO|configuration_utils.py:423] 2025-04-13 16:41:18,756 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 16:41:18,756 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 16:41:25,203 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 16:41:25,205 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 16:41:25,205 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/special_tokens_map.json
-[INFO|trainer.py:4289] 2025-04-13 16:41:25,504 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 16:41:25,505 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 16:41:25,505 >>   Batch size = 1
-  0%|          | 0/18 [00:00<?, ?it/s] 11%|█         | 2/18 [00:00<00:03,  4.87it/s] 17%|█▋        | 3/18 [00:00<00:02,  5.36it/s] 22%|██▏       | 4/18 [00:00<00:02,  5.62it/s] 28%|██▊       | 5/18 [00:00<00:02,  5.47it/s] 33%|███▎      | 6/18 [00:01<00:02,  5.68it/s] 39%|███▉      | 7/18 [00:01<00:01,  5.79it/s] 44%|████▍     | 8/18 [00:01<00:01,  5.66it/s] 50%|█████     | 9/18 [00:01<00:01,  5.82it/s] 56%|█████▌    | 10/18 [00:01<00:01,  5.94it/s] 61%|██████    | 11/18 [00:01<00:01,  5.75it/s] 67%|██████▋   | 12/18 [00:02<00:01,  5.86it/s] 72%|███████▏  | 13/18 [00:02<00:00,  5.99it/s] 78%|███████▊  | 14/18 [00:02<00:00,  6.05it/s] 83%|████████▎ | 15/18 [00:02<00:00,  5.72it/s] 89%|████████▉ | 16/18 [00:02<00:00,  5.86it/s] 94%|█████████▍| 17/18 [00:02<00:00,  5.95it/s]100%|██████████| 18/18 [00:03<00:00,  6.02it/s]100%|██████████| 18/18 [00:03<00:00,  5.78it/s]
-[INFO|modelcard.py:449] 2025-04-13 16:41:28,847 >> Dropping the following result as it does not have all the necessary fields:
-{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
-W0413 17:22:33.909000 4056113 site-packages/torch/distributed/run.py:792] 
-W0413 17:22:33.909000 4056113 site-packages/torch/distributed/run.py:792] *****************************************
-W0413 17:22:33.909000 4056113 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0413 17:22:33.909000 4056113 site-packages/torch/distributed/run.py:792] *****************************************
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:41,790 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:41,790 >> loading file tokenizer.model from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:41,790 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:41,790 >> loading file special_tokens_map.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/special_tokens_map.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:41,790 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:41,790 >> loading file chat_template.jinja from cache at None
-[rank1]:[W413 17:22:42.838832416 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[INFO|tokenization_utils_base.py:2323] 2025-04-13 17:22:42,075 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[INFO|configuration_utils.py:699] 2025-04-13 17:22:42,336 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/config.json
-[INFO|configuration_utils.py:771] 2025-04-13 17:22:42,337 >> Model config LlamaConfig {
-  "architectures": [
-    "LlamaForCausalLM"
-  ],
-  "attention_bias": false,
-  "attention_dropout": 0.0,
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "head_dim": 128,
-  "hidden_act": "silu",
-  "hidden_size": 4096,
-  "initializer_range": 0.02,
-  "intermediate_size": 14336,
-  "max_position_embeddings": 8192,
-  "mlp_bias": false,
-  "model_type": "llama",
-  "num_attention_heads": 32,
-  "num_hidden_layers": 32,
-  "num_key_value_heads": 8,
-  "pretraining_tp": 1,
-  "rms_norm_eps": 1e-05,
-  "rope_scaling": null,
-  "rope_theta": 500000.0,
-  "tie_word_embeddings": false,
-  "torch_dtype": "bfloat16",
-  "transformers_version": "4.50.0",
-  "use_cache": true,
-  "vocab_size": 128256
-}
-
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:42,410 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:42,420 >> loading file tokenizer.model from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:42,420 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:42,420 >> loading file special_tokens_map.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/special_tokens_map.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:42,420 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:22:42,420 >> loading file chat_template.jinja from cache at None
-[INFO|tokenization_utils_base.py:2323] 2025-04-13 17:22:42,695 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[rank2]:[W413 17:22:42.664357858 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank5]:[W413 17:22:42.665169068 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank4]:[W413 17:22:42.764083174 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank3]:[W413 17:22:42.790927002 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Converting format of dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 1077/1077 [00:00<00:00, 6367.52 examples/s]
-[rank0]:[W413 17:22:43.251937754 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Running tokenizer on dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   6%|▋         | 68/1077 [00:00<00:11, 86.12 examples/s]Running tokenizer on dataset (num_proc=16):  13%|█▎        | 136/1077 [00:00<00:05, 174.47 examples/s]Running tokenizer on dataset (num_proc=16):  19%|█▉        | 204/1077 [00:01<00:03, 257.77 examples/s]Running tokenizer on dataset (num_proc=16):  25%|██▌       | 272/1077 [00:01<00:02, 331.70 examples/s]Running tokenizer on dataset (num_proc=16):  32%|███▏      | 340/1077 [00:01<00:01, 395.99 examples/s]Running tokenizer on dataset (num_proc=16):  38%|███▊      | 407/1077 [00:01<00:01, 443.50 examples/s]Running tokenizer on dataset (num_proc=16):  44%|████▍     | 474/1077 [00:01<00:01, 484.21 examples/s]Running tokenizer on dataset (num_proc=16):  50%|█████     | 541/1077 [00:01<00:01, 515.72 examples/s]Running tokenizer on dataset (num_proc=16):  56%|█████▋    | 608/1077 [00:01<00:00, 535.51 examples/s]Running tokenizer on dataset (num_proc=16):  63%|██████▎   | 675/1077 [00:01<00:00, 548.93 examples/s]Running tokenizer on dataset (num_proc=16):  75%|███████▌  | 809/1077 [00:01<00:00, 635.20 examples/s]Running tokenizer on dataset (num_proc=16):  81%|████████▏ | 876/1077 [00:02<00:00, 640.53 examples/s]Running tokenizer on dataset (num_proc=16):  94%|█████████▍| 1010/1077 [00:02<00:00, 650.48 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1077/1077 [00:02<00:00, 647.55 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1077/1077 [00:02<00:00, 435.85 examples/s]
-[INFO|configuration_utils.py:699] 2025-04-13 17:22:49,575 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/config.json
-[INFO|configuration_utils.py:771] 2025-04-13 17:22:49,575 >> Model config LlamaConfig {
-  "architectures": [
-    "LlamaForCausalLM"
-  ],
-  "attention_bias": false,
-  "attention_dropout": 0.0,
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "head_dim": 128,
-  "hidden_act": "silu",
-  "hidden_size": 4096,
-  "initializer_range": 0.02,
-  "intermediate_size": 14336,
-  "max_position_embeddings": 8192,
-  "mlp_bias": false,
-  "model_type": "llama",
-  "num_attention_heads": 32,
-  "num_hidden_layers": 32,
-  "num_key_value_heads": 8,
-  "pretraining_tp": 1,
-  "rms_norm_eps": 1e-05,
-  "rope_scaling": null,
-  "rope_theta": 500000.0,
-  "tie_word_embeddings": false,
-  "torch_dtype": "bfloat16",
-  "transformers_version": "4.50.0",
-  "use_cache": true,
-  "vocab_size": 128256
-}
-
-[INFO|modeling_utils.py:1154] 2025-04-13 17:22:49,709 >> loading weights file model.safetensors from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/model.safetensors.index.json
-[INFO|modeling_utils.py:3747] 2025-04-13 17:22:49,712 >> Detected DeepSpeed ZeRO-3: activating zero.init() for this model
-[INFO|configuration_utils.py:1139] 2025-04-13 17:22:49,720 >> Generate config GenerationConfig {
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "use_cache": false
-}
-
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.59s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.59s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.59s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.59s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.59s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:15,  5.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:07,  3.71s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:07,  3.71s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:07,  3.71s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:07,  3.71s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:07,  3.71s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:10<00:11,  5.56s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.55s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.55s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.55s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.55s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.55s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.82s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.13s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.82s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.13s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.82s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.82s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.13s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.13s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.82s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.13s/it]
-Loading checkpoint shards:  75%|███████▌  | 3/4 [00:15<00:05,  5.11s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  3.51s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  4.15s/it]
-[INFO|modeling_utils.py:4987] 2025-04-13 17:23:06,721 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
-
-[INFO|modeling_utils.py:4995] 2025-04-13 17:23:06,721 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at meta-llama/Meta-Llama-3-8B-Instruct.
-If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
-[INFO|configuration_utils.py:1094] 2025-04-13 17:23:06,782 >> loading configuration file generation_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/generation_config.json
-[INFO|configuration_utils.py:1139] 2025-04-13 17:23:06,782 >> Generate config GenerationConfig {
-  "bos_token_id": 128000,
-  "do_sample": true,
-  "eos_token_id": [
-    128001,
-    128009
-  ],
-  "max_length": 4096,
-  "temperature": 0.6,
-  "top_p": 0.9
-}
-
-[INFO|trainer.py:748] 2025-04-13 17:23:06,803 >> Using auto half precision backend
-[INFO|trainer.py:2409] 2025-04-13 17:23:09,432 >> ***** Running training *****
-[INFO|trainer.py:2410] 2025-04-13 17:23:09,432 >>   Num examples = 969
-[INFO|trainer.py:2411] 2025-04-13 17:23:09,432 >>   Num Epochs = 10
-[INFO|trainer.py:2412] 2025-04-13 17:23:09,432 >>   Instantaneous batch size per device = 5
-[INFO|trainer.py:2415] 2025-04-13 17:23:09,432 >>   Total train batch size (w. parallel, distributed & accumulation) = 60
-[INFO|trainer.py:2416] 2025-04-13 17:23:09,432 >>   Gradient Accumulation steps = 2
-[INFO|trainer.py:2417] 2025-04-13 17:23:09,432 >>   Total optimization steps = 160
-[INFO|trainer.py:2418] 2025-04-13 17:23:09,433 >>   Number of trainable parameters = 8,030,261,248
-  0%|          | 0/160 [00:00<?, ?it/s]  1%|          | 1/160 [00:11<30:37, 11.56s/it]  1%|▏         | 2/160 [00:17<22:14,  8.45s/it]  2%|▏         | 3/160 [00:26<22:53,  8.75s/it]  2%|▎         | 4/160 [00:34<21:29,  8.26s/it]  3%|▎         | 5/160 [00:42<20:49,  8.06s/it]  4%|▍         | 6/160 [00:49<19:58,  7.78s/it]  4%|▍         | 7/160 [00:56<19:19,  7.58s/it]  5%|▌         | 8/160 [01:05<19:54,  7.86s/it]  6%|▌         | 9/160 [01:11<18:38,  7.41s/it]  6%|▋         | 10/160 [01:19<18:54,  7.56s/it][INFO|trainer.py:4289] 2025-04-13 17:24:28,772 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:24:28,772 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:24:28,772 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:03,  5.28it/s][A
- 17%|█▋        | 3/18 [00:00<00:02,  5.64it/s][A
- 22%|██▏       | 4/18 [00:00<00:02,  5.80it/s][A
- 28%|██▊       | 5/18 [00:00<00:02,  5.59it/s][A
- 33%|███▎      | 6/18 [00:01<00:02,  5.76it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  5.89it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  5.70it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  5.86it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  5.96it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.75it/s][A
- 67%|██████▋   | 12/18 [00:02<00:01,  5.88it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.01it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.07it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.74it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.90it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.00it/s][A
-100%|██████████| 18/18 [00:03<00:00,  6.09it/s][A                                                
-                                               [A  6%|▋         | 10/160 [01:22<18:54,  7.56s/it]
-100%|██████████| 18/18 [00:03<00:00,  6.09it/s][A
-                                               [A  7%|▋         | 11/160 [01:27<18:55,  7.62s/it]  8%|▊         | 12/160 [01:34<18:36,  7.54s/it]Traceback (most recent call last):
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/bin/llamafactory-cli", line 5, in <module>
-    from llamafactory.cli import main
-  File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/__init__.py", line 43, in <module>
-    from .extras.env import VERSION
-  File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/extras/env.py", line 22, in <module>
-    import peft
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/peft/__init__.py", line 17, in <module>
-    from .auto import (
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/peft/auto.py", line 21, in <module>
-    from transformers import (
-  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1957, in __getattr__
-    value = getattr(module, name)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1956, in __getattr__
-    module = self._get_module(self._class_to_module[name])
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1968, in _get_module
-    return importlib.import_module("." + module_name, self.__name__)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/models/auto/modeling_auto.py", line 22, in <module>
-    from .auto_factory import (
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 40, in <module>
-    from ...generation import GenerationMixin
-  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1956, in __getattr__
-    module = self._get_module(self._class_to_module[name])
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1968, in _get_module
-    return importlib.import_module("." + module_name, self.__name__)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/generation/utils.py", line 30, in <module>
-    from transformers.generation.candidate_generator import AssistantVocabTranslatorCache
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/generation/candidate_generator.py", line 29, in <module>
-    from ..cache_utils import DynamicCache
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/cache_utils.py", line 11, in <module>
-    from transformers.pytorch_utils import is_torch_greater_or_equal_than_2_6
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/pytorch_utils.py", line 50, in <module>
-    from torch.distributed.tensor.parallel import ColwiseParallel, RowwiseParallel
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/distributed/tensor/parallel/__init__.py", line 2, in <module>
-    from torch.distributed.tensor.parallel.api import parallelize_module
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/distributed/tensor/parallel/api.py", line 9, in <module>
-    from torch.distributed.tensor.parallel._utils import _validate_tp_mesh_dim
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/distributed/tensor/parallel/_utils.py", line 11, in <module>
-    from torch._dynamo.external_utils import is_compiling as is_torchdynamo_compiling
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_dynamo/__init__.py", line 3, in <module>
-    from . import convert_frame, eval_frame, resume_execution
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 33, in <module>
-    from torch._dynamo.symbolic_convert import TensorifyState
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 27, in <module>
-    from torch._dynamo.exc import TensorifyScalarRestartAnalysis
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_dynamo/exc.py", line 11, in <module>
-    from .utils import counters
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_dynamo/utils.py", line 66, in <module>
-    import torch.fx.experimental.symbolic_shapes
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/fx/experimental/symbolic_shapes.py", line 74, in <module>
-    from torch.utils._sympy.functions import (
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/utils/_sympy/functions.py", line 18, in <module>
-    import sympy
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/sympy/__init__.py", line 30, in <module>
-    from sympy.core.cache import lazy_function
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/sympy/core/__init__.py", line 9, in <module>
-    from .expr import Expr, AtomicExpr, UnevaluatedExpr
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/sympy/core/expr.py", line 4157, in <module>
-    from .mul import Mul
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/sympy/core/mul.py", line 2194, in <module>
-    from .numbers import Rational
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/sympy/core/numbers.py", line 2808, in <module>
-    class One(IntegerConstant, metaclass=Singleton):
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/sympy/core/basic.py", line 188, in __init_subclass__
-    _prepare_class_assumptions(cls)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/sympy/core/assumptions.py", line 666, in _prepare_class_assumptions
-    if not hasattr(cls, pname):
-KeyboardInterrupt
-  8%|▊         | 13/160 [01:40<17:28,  7.13s/it]  9%|▉         | 14/160 [01:47<17:15,  7.09s/it]  9%|▉         | 15/160 [01:54<16:51,  6.97s/it] 10%|█         | 16/160 [02:01<16:57,  7.07s/it] 11%|█         | 17/160 [02:06<15:03,  6.32s/it] 11%|█▏        | 18/160 [02:12<14:57,  6.32s/it] 12%|█▏        | 19/160 [02:17<14:06,  6.01s/it] 12%|█▎        | 20/160 [02:22<13:22,  5.73s/it]                                                 12%|█▎        | 20/160 [02:22<13:22,  5.73s/it][INFO|trainer.py:4289] 2025-04-13 17:25:32,327 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:25:32,328 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:25:32,328 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01,  9.78it/s][A
- 17%|█▋        | 3/18 [00:00<00:01,  7.93it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.20it/s][A
- 28%|██▊       | 5/18 [00:00<00:02,  6.38it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.31it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  6.26it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  5.91it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.01it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.07it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.85it/s][A
- 67%|██████▋   | 12/18 [00:01<00:01,  5.95it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.07it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.12it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.76it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.93it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.02it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.11it/s][A                                                
-                                               [A 12%|█▎        | 20/160 [02:25<13:22,  5.73s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.11it/s][A
-                                               [A 13%|█▎        | 21/160 [02:34<17:30,  7.56s/it] 14%|█▍        | 22/160 [02:40<16:16,  7.08s/it] 14%|█▍        | 23/160 [02:46<15:10,  6.65s/it] 15%|█▌        | 24/160 [02:55<16:28,  7.27s/it] 16%|█▌        | 25/160 [03:01<15:31,  6.90s/it] 16%|█▋        | 26/160 [03:08<15:26,  6.91s/it] 17%|█▋        | 27/160 [03:14<15:20,  6.92s/it] 18%|█▊        | 28/160 [03:20<14:13,  6.46s/it] 18%|█▊        | 29/160 [03:27<14:47,  6.77s/it] 19%|█▉        | 30/160 [03:34<14:20,  6.62s/it][INFO|trainer.py:4289] 2025-04-13 17:26:43,542 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:26:43,543 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:26:43,543 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.06it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.82it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.83it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.62it/s][A
- 39%|███▉      | 7/18 [00:00<00:01,  6.49it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.10it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.15it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.18it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.93it/s][A
- 67%|██████▋   | 12/18 [00:01<00:00,  6.01it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.11it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.14it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.79it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.95it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.04it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.13it/s][A                                                
-                                               [A 19%|█▉        | 30/160 [03:37<14:20,  6.62s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.13it/s][A
-                                               [A 19%|█▉        | 31/160 [03:45<17:25,  8.10s/it] 20%|██        | 32/160 [03:54<17:30,  8.21s/it] 21%|██        | 33/160 [04:02<17:32,  8.28s/it] 21%|██▏       | 34/160 [04:05<14:11,  6.76s/it] 22%|██▏       | 35/160 [04:11<13:44,  6.59s/it] 22%|██▎       | 36/160 [04:19<13:56,  6.75s/it] 23%|██▎       | 37/160 [04:27<15:01,  7.33s/it] 24%|██▍       | 38/160 [04:33<13:42,  6.75s/it] 24%|██▍       | 39/160 [04:40<13:40,  6.78s/it] 25%|██▌       | 40/160 [04:46<13:26,  6.72s/it]                                                 25%|██▌       | 40/160 [04:46<13:26,  6.72s/it][INFO|trainer.py:4289] 2025-04-13 17:27:56,052 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:27:56,053 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:27:56,053 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.10it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.84it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.84it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.64it/s][A
- 39%|███▉      | 7/18 [00:00<00:01,  6.50it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.06it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.13it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.16it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.89it/s][A
- 67%|██████▋   | 12/18 [00:01<00:01,  5.98it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.09it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.14it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.78it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.94it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.04it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.11it/s][A                                                
-                                               [A 25%|██▌       | 40/160 [04:49<13:26,  6.72s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.11it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:28:03,036 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40
-[INFO|configuration_utils.py:423] 2025-04-13 17:28:03,039 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:28:03,040 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:28:09,313 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:28:09,315 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:28:09,316 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40/special_tokens_map.json
- 26%|██▌       | 41/160 [05:19<28:38, 14.44s/it] 26%|██▋       | 42/160 [05:25<23:51, 12.13s/it] 27%|██▋       | 43/160 [05:32<20:26, 10.49s/it] 28%|██▊       | 44/160 [05:39<18:04,  9.35s/it] 28%|██▊       | 45/160 [05:46<16:32,  8.63s/it] 29%|██▉       | 46/160 [05:54<16:22,  8.62s/it] 29%|██▉       | 47/160 [06:02<15:33,  8.26s/it] 30%|███       | 48/160 [06:07<13:40,  7.33s/it] 31%|███       | 49/160 [06:15<14:04,  7.61s/it] 31%|███▏      | 50/160 [06:23<14:15,  7.78s/it][INFO|trainer.py:4289] 2025-04-13 17:29:33,139 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:29:33,140 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:29:33,140 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.05it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.82it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.83it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.61it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  6.47it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.07it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.11it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.14it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.90it/s][A
- 67%|██████▋   | 12/18 [00:01<00:01,  5.98it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.08it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.13it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.77it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.93it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.02it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.10it/s][A                                                
-                                               [A 31%|███▏      | 50/160 [06:26<14:15,  7.78s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.10it/s][A
-                                               [A 32%|███▏      | 51/160 [06:30<13:43,  7.55s/it] 32%|███▎      | 52/160 [06:35<12:02,  6.69s/it] 33%|███▎      | 53/160 [06:42<12:04,  6.77s/it] 34%|███▍      | 54/160 [06:49<12:24,  7.02s/it] 34%|███▍      | 55/160 [06:57<12:31,  7.15s/it] 35%|███▌      | 56/160 [07:02<11:30,  6.64s/it] 36%|███▌      | 57/160 [07:10<11:39,  6.79s/it] 36%|███▋      | 58/160 [07:16<11:18,  6.65s/it] 37%|███▋      | 59/160 [07:23<11:24,  6.77s/it] 38%|███▊      | 60/160 [07:30<11:25,  6.85s/it]                                                 38%|███▊      | 60/160 [07:30<11:25,  6.85s/it][INFO|trainer.py:4289] 2025-04-13 17:30:39,889 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:30:39,889 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:30:39,889 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.09it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.80it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.81it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.42it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  6.33it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.00it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.07it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.11it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.87it/s][A
- 67%|██████▋   | 12/18 [00:01<00:01,  5.96it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.07it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.12it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.78it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.94it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.03it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.10it/s][A                                                
-                                               [A 38%|███▊      | 60/160 [07:33<11:25,  6.85s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.10it/s][A
-                                               [A 38%|███▊      | 61/160 [07:41<13:33,  8.21s/it] 39%|███▉      | 62/160 [07:49<13:13,  8.10s/it] 39%|███▉      | 63/160 [07:56<12:30,  7.74s/it] 40%|████      | 64/160 [08:05<12:46,  7.99s/it] 41%|████      | 65/160 [08:12<12:06,  7.65s/it] 41%|████▏     | 66/160 [08:19<11:43,  7.48s/it] 42%|████▏     | 67/160 [08:25<11:16,  7.28s/it] 42%|████▎     | 68/160 [08:28<09:11,  5.99s/it] 43%|████▎     | 69/160 [08:33<08:23,  5.54s/it] 44%|████▍     | 70/160 [08:41<09:33,  6.37s/it][INFO|trainer.py:4289] 2025-04-13 17:31:51,105 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:31:51,105 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:31:51,105 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.05it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.80it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.81it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.61it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  6.46it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.11it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.14it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.17it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.91it/s][A
- 67%|██████▋   | 12/18 [00:01<00:01,  5.99it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.09it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.12it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.75it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.92it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.02it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.10it/s][A                                                
-                                               [A 44%|████▍     | 70/160 [08:44<09:33,  6.37s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.10it/s][A
-                                               [A 44%|████▍     | 71/160 [08:51<11:10,  7.54s/it] 45%|████▌     | 72/160 [08:58<10:30,  7.17s/it] 46%|████▌     | 73/160 [09:06<10:41,  7.38s/it] 46%|████▋     | 74/160 [09:14<10:51,  7.58s/it] 47%|████▋     | 75/160 [09:21<10:42,  7.56s/it] 48%|████▊     | 76/160 [09:28<10:17,  7.35s/it] 48%|████▊     | 77/160 [09:36<10:24,  7.53s/it] 49%|████▉     | 78/160 [09:42<09:49,  7.19s/it] 49%|████▉     | 79/160 [09:49<09:40,  7.16s/it] 50%|█████     | 80/160 [09:56<09:10,  6.89s/it]                                                 50%|█████     | 80/160 [09:56<09:10,  6.89s/it][INFO|trainer.py:4289] 2025-04-13 17:33:05,656 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:33:05,656 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:33:05,656 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.03it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.78it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.81it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.61it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  6.47it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.08it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.14it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.15it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.90it/s][A
- 67%|██████▋   | 12/18 [00:01<00:01,  5.98it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.06it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.10it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.74it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.91it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.01it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.10it/s][A                                                
-                                               [A 50%|█████     | 80/160 [09:59<09:10,  6.89s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.10it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:33:12,604 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80
-[INFO|configuration_utils.py:423] 2025-04-13 17:33:12,608 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:33:12,610 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:33:18,923 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:33:18,926 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:33:18,927 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-80/special_tokens_map.json
- 51%|█████     | 81/160 [10:31<20:07, 15.29s/it]W0413 17:33:45.672000 4056113 site-packages/torch/distributed/elastic/agent/server/api.py:719] Received Signals.SIGINT death signal, shutting down workers
-W0413 17:33:45.673000 4056113 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 4056183 closing signal SIGINT
-W0413 17:33:45.673000 4056113 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 4056184 closing signal SIGINT
-W0413 17:33:45.673000 4056113 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 4056185 closing signal SIGINT
-W0413 17:33:45.673000 4056113 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 4056186 closing signal SIGINT
-W0413 17:33:45.673000 4056113 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 4056187 closing signal SIGINT
-W0413 17:33:45.673000 4056113 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 4056188 closing signal SIGINT
-Traceback (most recent call last):
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/bin/llamafactory-cli", line 8, in <module>
-    sys.exit(main())
-  File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/cli.py", line 99, in main
-    process = subprocess.run(
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/subprocess.py", line 505, in run
-    stdout, stderr = process.communicate(input, timeout=timeout)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/subprocess.py", line 1146, in communicate
-    self.wait()
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/subprocess.py", line 1209, in wait
-    return self._wait(timeout=timeout)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/subprocess.py", line 1959, in _wait
-    (pid, sts) = self._try_wait(0)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/subprocess.py", line 1917, in _try_wait
-    (pid, sts) = os.waitpid(self.pid, wait_flags)
-KeyboardInterrupt
-[rank1]: Traceback (most recent call last):
-[rank1]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank1]:     launch()
-[rank1]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank1]:     run_exp()
-[rank1]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank1]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank1]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank1]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank1]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank1]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank1]:     return inner_training_loop(
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2556, in _inner_training_loop
-[rank1]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3764, in training_step
-[rank1]:     self.accelerator.backward(loss, **kwargs)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/accelerator.py", line 2238, in backward
-[rank1]:     self.deepspeed_engine_wrapped.backward(loss, **kwargs)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 186, in backward
-[rank1]:     self.engine.backward(loss, **kwargs)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank1]:     ret_val = func(*args, **kwargs)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 2020, in backward
-[rank1]:     self.optimizer.backward(loss, retain_graph=retain_graph)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank1]:     ret_val = func(*args, **kwargs)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/zero/stage3.py", line 2249, in backward
-[rank1]:     self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
-[rank1]:     scaled_loss.backward(retain_graph=retain_graph)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
-[rank1]:     torch.autograd.backward(
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
-[rank1]:     _engine_run_backward(
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
-[rank1]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
-[rank1]: KeyboardInterrupt
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank0]:     launch()
-[rank0]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank0]:     run_exp()
-[rank0]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank0]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank0]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank0]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank0]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank0]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank0]:     return inner_training_loop(
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2556, in _inner_training_loop
-[rank0]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3764, in training_step
-[rank0]:     self.accelerator.backward(loss, **kwargs)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/accelerator.py", line 2238, in backward
-[rank0]:     self.deepspeed_engine_wrapped.backward(loss, **kwargs)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 186, in backward
-[rank0]:     self.engine.backward(loss, **kwargs)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank0]:     ret_val = func(*args, **kwargs)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 2020, in backward
-[rank0]:     self.optimizer.backward(loss, retain_graph=retain_graph)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank0]:     ret_val = func(*args, **kwargs)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/zero/stage3.py", line 2249, in backward
-[rank0]:     self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
-[rank0]:     scaled_loss.backward(retain_graph=retain_graph)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
-[rank0]:     torch.autograd.backward(
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
-[rank0]:     _engine_run_backward(
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
-[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
-[rank0]: KeyboardInterrupt
-[rank4]: Traceback (most recent call last):
-[rank4]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank4]:     launch()
-[rank4]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank4]:     run_exp()
-[rank4]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank4]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank4]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank4]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank4]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank4]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank4]:     return inner_training_loop(
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2556, in _inner_training_loop
-[rank4]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3764, in training_step
-[rank4]:     self.accelerator.backward(loss, **kwargs)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/accelerator.py", line 2238, in backward
-[rank4]:     self.deepspeed_engine_wrapped.backward(loss, **kwargs)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 186, in backward
-[rank4]:     self.engine.backward(loss, **kwargs)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank4]:     ret_val = func(*args, **kwargs)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 2020, in backward
-[rank4]:     self.optimizer.backward(loss, retain_graph=retain_graph)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank4]:     ret_val = func(*args, **kwargs)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/zero/stage3.py", line 2249, in backward
-[rank4]:     self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
-[rank4]:     scaled_loss.backward(retain_graph=retain_graph)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
-[rank4]:     torch.autograd.backward(
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
-[rank4]:     _engine_run_backward(
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
-[rank4]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
-[rank4]: KeyboardInterrupt
-[rank3]: Traceback (most recent call last):
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank3]:     launch()
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank3]:     run_exp()
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank3]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank3]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank3]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank3]:     return inner_training_loop(
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2556, in _inner_training_loop
-[rank3]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3764, in training_step
-[rank3]:     self.accelerator.backward(loss, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/accelerator.py", line 2238, in backward
-[rank3]:     self.deepspeed_engine_wrapped.backward(loss, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 186, in backward
-[rank3]:     self.engine.backward(loss, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank3]:     ret_val = func(*args, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 2020, in backward
-[rank3]:     self.optimizer.backward(loss, retain_graph=retain_graph)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank3]:     ret_val = func(*args, **kwargs)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/zero/stage3.py", line 2249, in backward
-[rank3]:     self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
-[rank3]:     scaled_loss.backward(retain_graph=retain_graph)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
-[rank3]:     torch.autograd.backward(
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
-[rank3]:     _engine_run_backward(
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
-[rank3]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
-[rank3]: KeyboardInterrupt
-[rank5]: Traceback (most recent call last):
-[rank5]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank5]:     launch()
-[rank5]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank5]:     run_exp()
-[rank5]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank5]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank5]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank5]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank5]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank5]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank5]:     return inner_training_loop(
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2556, in _inner_training_loop
-[rank5]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3764, in training_step
-[rank5]:     self.accelerator.backward(loss, **kwargs)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/accelerator.py", line 2238, in backward
-[rank5]:     self.deepspeed_engine_wrapped.backward(loss, **kwargs)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 186, in backward
-[rank5]:     self.engine.backward(loss, **kwargs)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank5]:     ret_val = func(*args, **kwargs)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 2020, in backward
-[rank5]:     self.optimizer.backward(loss, retain_graph=retain_graph)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank5]:     ret_val = func(*args, **kwargs)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/zero/stage3.py", line 2249, in backward
-[rank5]:     self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
-[rank5]:     scaled_loss.backward(retain_graph=retain_graph)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
-[rank5]:     torch.autograd.backward(
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
-[rank5]:     _engine_run_backward(
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
-[rank5]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
-[rank5]: KeyboardInterrupt
-[rank2]: Traceback (most recent call last):
-[rank2]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank2]:     launch()
-[rank2]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank2]:     run_exp()
-[rank2]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank2]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank2]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank2]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank2]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank2]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank2]:     return inner_training_loop(
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2556, in _inner_training_loop
-[rank2]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3764, in training_step
-[rank2]:     self.accelerator.backward(loss, **kwargs)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/accelerator.py", line 2238, in backward
-[rank2]:     self.deepspeed_engine_wrapped.backward(loss, **kwargs)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 186, in backward
-[rank2]:     self.engine.backward(loss, **kwargs)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank2]:     ret_val = func(*args, **kwargs)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 2020, in backward
-[rank2]:     self.optimizer.backward(loss, retain_graph=retain_graph)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
-[rank2]:     ret_val = func(*args, **kwargs)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/zero/stage3.py", line 2249, in backward
-[rank2]:     self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
-[rank2]:     scaled_loss.backward(retain_graph=retain_graph)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
-[rank2]:     torch.autograd.backward(
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
-[rank2]:     _engine_run_backward(
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
-[rank2]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
-[rank2]: KeyboardInterrupt
- 51%|█████     | 81/160 [10:38<10:22,  7.88s/it]
-W0413 17:43:48.234000 1932325 site-packages/torch/distributed/run.py:792] 
-W0413 17:43:48.234000 1932325 site-packages/torch/distributed/run.py:792] *****************************************
-W0413 17:43:48.234000 1932325 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0413 17:43:48.234000 1932325 site-packages/torch/distributed/run.py:792] *****************************************
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,315 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,317 >> loading file tokenizer.model from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,317 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,317 >> loading file special_tokens_map.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/special_tokens_map.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,317 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,317 >> loading file chat_template.jinja from cache at None
-[INFO|tokenization_utils_base.py:2323] 2025-04-13 17:43:55,588 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[INFO|configuration_utils.py:699] 2025-04-13 17:43:55,891 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/config.json
-[INFO|configuration_utils.py:771] 2025-04-13 17:43:55,891 >> Model config LlamaConfig {
-  "architectures": [
-    "LlamaForCausalLM"
-  ],
-  "attention_bias": false,
-  "attention_dropout": 0.0,
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "head_dim": 128,
-  "hidden_act": "silu",
-  "hidden_size": 4096,
-  "initializer_range": 0.02,
-  "intermediate_size": 14336,
-  "max_position_embeddings": 8192,
-  "mlp_bias": false,
-  "model_type": "llama",
-  "num_attention_heads": 32,
-  "num_hidden_layers": 32,
-  "num_key_value_heads": 8,
-  "pretraining_tp": 1,
-  "rms_norm_eps": 1e-05,
-  "rope_scaling": null,
-  "rope_theta": 500000.0,
-  "tie_word_embeddings": false,
-  "torch_dtype": "bfloat16",
-  "transformers_version": "4.50.0",
-  "use_cache": true,
-  "vocab_size": 128256
-}
-
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,954 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,954 >> loading file tokenizer.model from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,954 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,954 >> loading file special_tokens_map.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/special_tokens_map.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,955 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 17:43:55,955 >> loading file chat_template.jinja from cache at None
-[INFO|tokenization_utils_base.py:2323] 2025-04-13 17:43:56,217 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Converting format of dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 1077/1077 [00:00<00:00, 6860.57 examples/s]
-[rank0]:[W413 17:43:56.784290647 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank1]:[W413 17:43:57.911235069 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank5]:[W413 17:43:57.944785980 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank4]:[W413 17:43:57.978799102 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank3]:[W413 17:43:57.413467855 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank2]:[W413 17:43:57.454847416 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Running tokenizer on dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   6%|▋         | 68/1077 [00:00<00:11, 87.41 examples/s]Running tokenizer on dataset (num_proc=16):  13%|█▎        | 136/1077 [00:00<00:05, 176.05 examples/s]Running tokenizer on dataset (num_proc=16):  19%|█▉        | 204/1077 [00:01<00:03, 259.34 examples/s]Running tokenizer on dataset (num_proc=16):  25%|██▌       | 272/1077 [00:01<00:02, 333.31 examples/s]Running tokenizer on dataset (num_proc=16):  32%|███▏      | 340/1077 [00:01<00:01, 397.17 examples/s]Running tokenizer on dataset (num_proc=16):  38%|███▊      | 407/1077 [00:01<00:01, 448.28 examples/s]Running tokenizer on dataset (num_proc=16):  44%|████▍     | 474/1077 [00:01<00:01, 488.00 examples/s]Running tokenizer on dataset (num_proc=16):  50%|█████     | 541/1077 [00:01<00:01, 518.72 examples/s]Running tokenizer on dataset (num_proc=16):  56%|█████▋    | 608/1077 [00:01<00:00, 534.16 examples/s]Running tokenizer on dataset (num_proc=16):  63%|██████▎   | 675/1077 [00:01<00:00, 563.13 examples/s]Running tokenizer on dataset (num_proc=16):  75%|███████▌  | 809/1077 [00:01<00:00, 625.13 examples/s]Running tokenizer on dataset (num_proc=16):  88%|████████▊ | 943/1077 [00:02<00:00, 614.06 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1077/1077 [00:02<00:00, 649.99 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1077/1077 [00:02<00:00, 437.05 examples/s]
-[INFO|configuration_utils.py:699] 2025-04-13 17:44:03,414 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/config.json
-[INFO|configuration_utils.py:771] 2025-04-13 17:44:03,415 >> Model config LlamaConfig {
-  "architectures": [
-    "LlamaForCausalLM"
-  ],
-  "attention_bias": false,
-  "attention_dropout": 0.0,
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "head_dim": 128,
-  "hidden_act": "silu",
-  "hidden_size": 4096,
-  "initializer_range": 0.02,
-  "intermediate_size": 14336,
-  "max_position_embeddings": 8192,
-  "mlp_bias": false,
-  "model_type": "llama",
-  "num_attention_heads": 32,
-  "num_hidden_layers": 32,
-  "num_key_value_heads": 8,
-  "pretraining_tp": 1,
-  "rms_norm_eps": 1e-05,
-  "rope_scaling": null,
-  "rope_theta": 500000.0,
-  "tie_word_embeddings": false,
-  "torch_dtype": "bfloat16",
-  "transformers_version": "4.50.0",
-  "use_cache": true,
-  "vocab_size": 128256
-}
-
-[INFO|modeling_utils.py:1154] 2025-04-13 17:44:03,546 >> loading weights file model.safetensors from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/model.safetensors.index.json
-[INFO|modeling_utils.py:3747] 2025-04-13 17:44:03,549 >> Detected DeepSpeed ZeRO-3: activating zero.init() for this model
-[INFO|configuration_utils.py:1139] 2025-04-13 17:44:03,557 >> Generate config GenerationConfig {
-  "bos_token_id": 128000,
-  "eos_token_id": 128009,
-  "use_cache": false
-}
-
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.62s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.62s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.62s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.62s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.62s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:16,  5.47s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:11<00:11,  5.99s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.89s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.89s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.89s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.89s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.89s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.35s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.35s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.35s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.35s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.35s/it]
-Loading checkpoint shards:  75%|███████▌  | 3/4 [00:16<00:05,  5.44s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:18<00:00,  3.85s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:18<00:00,  4.51s/it]
-[INFO|modeling_utils.py:4987] 2025-04-13 17:44:21,795 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
-
-[INFO|modeling_utils.py:4995] 2025-04-13 17:44:21,795 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at meta-llama/Meta-Llama-3-8B-Instruct.
-If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
-[INFO|configuration_utils.py:1094] 2025-04-13 17:44:21,856 >> loading configuration file generation_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a/generation_config.json
-[INFO|configuration_utils.py:1139] 2025-04-13 17:44:21,856 >> Generate config GenerationConfig {
-  "bos_token_id": 128000,
-  "do_sample": true,
-  "eos_token_id": [
-    128001,
-    128009
-  ],
-  "max_length": 4096,
-  "temperature": 0.6,
-  "top_p": 0.9
-}
-
-[INFO|trainer.py:748] 2025-04-13 17:44:21,877 >> Using auto half precision backend
-[INFO|trainer.py:2409] 2025-04-13 17:44:24,660 >> ***** Running training *****
-[INFO|trainer.py:2410] 2025-04-13 17:44:24,660 >>   Num examples = 969
-[INFO|trainer.py:2411] 2025-04-13 17:44:24,660 >>   Num Epochs = 3
-[INFO|trainer.py:2412] 2025-04-13 17:44:24,660 >>   Instantaneous batch size per device = 5
-[INFO|trainer.py:2415] 2025-04-13 17:44:24,660 >>   Total train batch size (w. parallel, distributed & accumulation) = 60
-[INFO|trainer.py:2416] 2025-04-13 17:44:24,660 >>   Gradient Accumulation steps = 2
-[INFO|trainer.py:2417] 2025-04-13 17:44:24,660 >>   Total optimization steps = 48
-[INFO|trainer.py:2418] 2025-04-13 17:44:24,661 >>   Number of trainable parameters = 8,030,261,248
-  0%|          | 0/48 [00:00<?, ?it/s]  2%|▏         | 1/48 [00:11<09:09, 11.70s/it]  4%|▍         | 2/48 [00:17<06:31,  8.52s/it]  6%|▋         | 3/48 [00:26<06:31,  8.69s/it]  8%|▊         | 4/48 [00:34<06:01,  8.21s/it] 10%|█         | 5/48 [00:42<05:45,  8.04s/it]                                               10%|█         | 5/48 [00:42<05:45,  8.04s/it][INFO|trainer.py:4289] 2025-04-13 17:45:06,769 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:45:06,769 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:45:06,769 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:03,  5.27it/s][A
- 17%|█▋        | 3/18 [00:00<00:02,  5.62it/s][A
- 22%|██▏       | 4/18 [00:00<00:02,  5.79it/s][A
- 28%|██▊       | 5/18 [00:00<00:02,  5.58it/s][A
- 33%|███▎      | 6/18 [00:01<00:02,  5.75it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  5.83it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  5.68it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  5.82it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  5.93it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.79it/s][A
- 67%|██████▋   | 12/18 [00:02<00:01,  5.91it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.00it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.02it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.69it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.86it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  5.97it/s][A
-100%|██████████| 18/18 [00:03<00:00,  6.05it/s][A                                              
-                                               [A 10%|█         | 5/48 [00:45<05:45,  8.04s/it]
-100%|██████████| 18/18 [00:03<00:00,  6.05it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:45:14,149 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-5
-[INFO|configuration_utils.py:423] 2025-04-13 17:45:14,152 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-5/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:45:14,152 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-5/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:45:20,578 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-5/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:45:20,580 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-5/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:45:20,580 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-5/special_tokens_map.json
- 12%|█▎        | 6/48 [01:16<11:47, 16.85s/it] 15%|█▍        | 7/48 [01:23<09:20, 13.67s/it] 17%|█▋        | 8/48 [01:31<08:00, 12.01s/it] 19%|█▉        | 9/48 [01:37<06:39, 10.24s/it] 21%|██        | 10/48 [01:45<06:01,  9.51s/it]                                                21%|██        | 10/48 [01:45<06:01,  9.51s/it][INFO|trainer.py:4289] 2025-04-13 17:46:10,531 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:46:10,531 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:46:10,531 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.07it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.74it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.79it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.62it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  6.45it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.10it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.12it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.15it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.87it/s][A
- 67%|██████▋   | 12/18 [00:01<00:01,  5.94it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.03it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.05it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.73it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.89it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  5.99it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.05it/s][A                                               
-                                               [A 21%|██        | 10/48 [01:48<06:01,  9.51s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.05it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:46:17,606 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-10
-[INFO|configuration_utils.py:423] 2025-04-13 17:46:17,609 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-10/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:46:17,610 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-10/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:46:24,085 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-10/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:46:24,088 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-10/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:46:24,088 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-10/special_tokens_map.json
- 23%|██▎       | 11/48 [02:16<09:54, 16.05s/it] 25%|██▌       | 12/48 [02:24<08:02, 13.41s/it] 27%|██▋       | 13/48 [02:30<06:33, 11.23s/it] 29%|██▉       | 14/48 [02:37<05:38,  9.94s/it] 31%|███▏      | 15/48 [02:43<04:55,  8.96s/it]                                                31%|███▏      | 15/48 [02:43<04:55,  8.96s/it][INFO|trainer.py:4289] 2025-04-13 17:47:08,652 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:47:08,652 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:47:08,652 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.15it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.79it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.81it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.65it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  6.46it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.12it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.14it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.17it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.94it/s][A
- 67%|██████▋   | 12/18 [00:01<00:00,  6.01it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.09it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.11it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.76it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.93it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.02it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.09it/s][A                                               
-                                               [A 31%|███▏      | 15/48 [02:47<04:55,  8.96s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.09it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:47:15,665 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-15
-[INFO|configuration_utils.py:423] 2025-04-13 17:47:15,668 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-15/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:47:15,669 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-15/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:47:22,141 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-15/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:47:22,144 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-15/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:47:22,144 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-15/special_tokens_map.json
- 33%|███▎      | 16/48 [03:17<08:43, 16.37s/it] 35%|███▌      | 17/48 [03:22<06:37, 12.81s/it] 38%|███▊      | 18/48 [03:28<05:27, 10.92s/it] 40%|███▉      | 19/48 [03:33<04:27,  9.21s/it] 42%|████▏     | 20/48 [03:38<03:42,  7.95s/it]                                                42%|████▏     | 20/48 [03:38<03:42,  7.95s/it][INFO|trainer.py:4289] 2025-04-13 17:48:03,534 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:48:03,534 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:48:03,534 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.15it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.80it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.84it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.67it/s][A
- 39%|███▉      | 7/18 [00:00<00:01,  6.49it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.14it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.14it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.17it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.97it/s][A
- 67%|██████▋   | 12/18 [00:01<00:00,  6.03it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.10it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.10it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.75it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.91it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.01it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.07it/s][A                                               
-                                               [A 42%|████▏     | 20/48 [03:41<03:42,  7.95s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.07it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:48:10,544 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-20
-[INFO|configuration_utils.py:423] 2025-04-13 17:48:10,547 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-20/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:48:10,548 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-20/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:48:16,979 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-20/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:48:16,981 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-20/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:48:16,982 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-20/special_tokens_map.json
- 44%|████▍     | 21/48 [04:13<07:13, 16.07s/it] 46%|████▌     | 22/48 [04:19<05:38, 13.02s/it] 48%|████▊     | 23/48 [04:25<04:29, 10.80s/it] 50%|█████     | 24/48 [04:34<04:03, 10.15s/it] 52%|█████▏    | 25/48 [04:40<03:24,  8.90s/it]                                                52%|█████▏    | 25/48 [04:40<03:24,  8.90s/it][INFO|trainer.py:4289] 2025-04-13 17:49:04,679 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:49:04,679 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:49:04,680 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.15it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.80it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.84it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.67it/s][A
- 39%|███▉      | 7/18 [00:00<00:01,  6.48it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.13it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.14it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.17it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.97it/s][A
- 67%|██████▋   | 12/18 [00:01<00:00,  6.03it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.09it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.11it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.75it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.91it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  5.99it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.05it/s][A                                               
-                                               [A 52%|█████▏    | 25/48 [04:43<03:24,  8.90s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.05it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:49:11,693 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-25
-[INFO|configuration_utils.py:423] 2025-04-13 17:49:11,695 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-25/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:49:11,696 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-25/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:49:18,156 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-25/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:49:18,158 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-25/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:49:18,158 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-25/special_tokens_map.json
- 54%|█████▍    | 26/48 [05:13<05:56, 16.20s/it] 56%|█████▋    | 27/48 [05:20<04:41, 13.41s/it] 58%|█████▊    | 28/48 [05:25<03:40, 11.00s/it] 60%|██████    | 29/48 [05:32<03:08,  9.94s/it] 62%|██████▎   | 30/48 [05:39<02:39,  8.83s/it]                                                62%|██████▎   | 30/48 [05:39<02:39,  8.83s/it][INFO|trainer.py:4289] 2025-04-13 17:50:03,897 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:50:03,897 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:50:03,897 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.14it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.78it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.84it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.68it/s][A
- 39%|███▉      | 7/18 [00:00<00:01,  6.49it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.15it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.16it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.19it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.97it/s][A
- 67%|██████▋   | 12/18 [00:01<00:00,  6.04it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.11it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.12it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.77it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.93it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.03it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.09it/s][A                                               
-                                               [A 62%|██████▎   | 30/48 [05:42<02:39,  8.83s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.09it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:50:10,904 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-30
-[INFO|configuration_utils.py:423] 2025-04-13 17:50:10,906 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-30/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:50:10,907 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-30/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:50:17,410 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-30/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:50:17,413 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-30/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:50:17,413 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-30/special_tokens_map.json
- 65%|██████▍   | 31/48 [06:14<04:42, 16.64s/it] 67%|██████▋   | 32/48 [06:22<03:46, 14.16s/it] 69%|██████▉   | 33/48 [06:30<03:06, 12.42s/it] 71%|███████   | 34/48 [06:33<02:15,  9.64s/it] 73%|███████▎  | 35/48 [06:40<01:51,  8.60s/it]                                                73%|███████▎  | 35/48 [06:40<01:51,  8.60s/it][INFO|trainer.py:4289] 2025-04-13 17:51:04,830 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:51:04,830 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:51:04,830 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.21it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.79it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.82it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.66it/s][A
- 39%|███▉      | 7/18 [00:00<00:01,  6.48it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.13it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.14it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.17it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.96it/s][A
- 67%|██████▋   | 12/18 [00:01<00:00,  6.04it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.10it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.11it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.76it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.91it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.00it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.08it/s][A                                               
-                                               [A 73%|███████▎  | 35/48 [06:43<01:51,  8.60s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.08it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:51:11,842 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-35
-[INFO|configuration_utils.py:423] 2025-04-13 17:51:11,844 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-35/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:51:11,845 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-35/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:51:18,268 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-35/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:51:18,271 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-35/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:51:18,271 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-35/special_tokens_map.json
- 75%|███████▌  | 36/48 [07:13<03:12, 16.05s/it] 77%|███████▋  | 37/48 [07:22<02:31, 13.82s/it] 79%|███████▉  | 38/48 [07:27<01:52, 11.27s/it] 81%|████████▏ | 39/48 [07:34<01:29,  9.95s/it] 83%|████████▎ | 40/48 [07:40<01:11,  8.93s/it]                                                83%|████████▎ | 40/48 [07:40<01:11,  8.93s/it][INFO|trainer.py:4289] 2025-04-13 17:52:05,609 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:52:05,609 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:52:05,609 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.18it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.81it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.80it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.64it/s][A
- 39%|███▉      | 7/18 [00:00<00:01,  6.48it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.15it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.16it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.18it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.98it/s][A
- 67%|██████▋   | 12/18 [00:01<00:00,  6.05it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.11it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.11it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.75it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.90it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.00it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.08it/s][A                                               
-                                               [A 83%|████████▎ | 40/48 [07:43<01:11,  8.93s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.08it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:52:12,616 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40
-[INFO|configuration_utils.py:423] 2025-04-13 17:52:12,621 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:52:12,623 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:52:19,126 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:52:19,129 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:52:19,130 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-40/special_tokens_map.json
- 85%|████████▌ | 41/48 [08:13<01:52, 16.11s/it] 88%|████████▊ | 42/48 [08:20<01:19, 13.30s/it] 90%|████████▉ | 43/48 [08:27<00:56, 11.30s/it] 92%|█████████▏| 44/48 [08:33<00:39,  9.92s/it] 94%|█████████▍| 45/48 [08:40<00:27,  9.01s/it]                                                94%|█████████▍| 45/48 [08:40<00:27,  9.01s/it][INFO|trainer.py:4289] 2025-04-13 17:53:05,452 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:53:05,452 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:53:05,452 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:01, 12.03it/s][A
- 22%|██▏       | 4/18 [00:00<00:01,  7.76it/s][A
- 28%|██▊       | 5/18 [00:00<00:01,  6.79it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.63it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  6.47it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.13it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.15it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.16it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  5.93it/s][A
- 67%|██████▋   | 12/18 [00:01<00:00,  6.01it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.08it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.09it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  5.75it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  5.88it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  5.98it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.06it/s][A                                               
-                                               [A 94%|█████████▍| 45/48 [08:43<00:27,  9.01s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.06it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 17:53:12,483 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-45
-[INFO|configuration_utils.py:423] 2025-04-13 17:53:12,486 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-45/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:53:12,486 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-45/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:53:18,946 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-45/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:53:18,948 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-45/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:53:18,949 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-45/special_tokens_map.json
- 96%|█████████▌| 46/48 [09:15<00:33, 16.81s/it] 98%|█████████▊| 47/48 [09:23<00:13, 13.97s/it]100%|██████████| 48/48 [09:28<00:00, 11.31s/it][INFO|trainer.py:3966] 2025-04-13 17:53:56,947 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-48
-[INFO|configuration_utils.py:423] 2025-04-13 17:53:56,950 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-48/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:53:56,951 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-48/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:54:03,394 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-48/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:54:03,396 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-48/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:54:03,397 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/checkpoint-48/special_tokens_map.json
-[INFO|trainer.py:2665] 2025-04-13 17:54:16,275 >> 
-
-Training completed. Do not forget to share your model on huggingface.co/models =)
-
-
-                                               100%|██████████| 48/48 [09:51<00:00, 11.31s/it]100%|██████████| 48/48 [09:51<00:00, 12.33s/it]
-[INFO|trainer.py:3966] 2025-04-13 17:54:20,281 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft
-[INFO|configuration_utils.py:423] 2025-04-13 17:54:20,285 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 17:54:20,287 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 17:54:26,820 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 17:54:26,824 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 17:54:26,825 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/llama3-8b-R1-CI-1/full/sft/special_tokens_map.json
-[INFO|trainer.py:4289] 2025-04-13 17:54:27,254 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 17:54:27,254 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 17:54:27,254 >>   Batch size = 1
-  0%|          | 0/18 [00:00<?, ?it/s] 11%|█         | 2/18 [00:00<00:01, 11.99it/s] 22%|██▏       | 4/18 [00:00<00:01,  7.74it/s] 28%|██▊       | 5/18 [00:00<00:01,  6.77it/s] 33%|███▎      | 6/18 [00:00<00:01,  6.62it/s] 39%|███▉      | 7/18 [00:01<00:01,  6.45it/s] 44%|████▍     | 8/18 [00:01<00:01,  6.12it/s] 50%|█████     | 9/18 [00:01<00:01,  6.13it/s] 56%|█████▌    | 10/18 [00:01<00:01,  6.15it/s] 61%|██████    | 11/18 [00:01<00:01,  5.96it/s] 67%|██████▋   | 12/18 [00:01<00:00,  6.03it/s] 72%|███████▏  | 13/18 [00:02<00:00,  6.09it/s] 78%|███████▊  | 14/18 [00:02<00:00,  6.11it/s] 83%|████████▎ | 15/18 [00:02<00:00,  5.77it/s] 89%|████████▉ | 16/18 [00:02<00:00,  5.91it/s] 94%|█████████▍| 17/18 [00:02<00:00,  5.99it/s]100%|██████████| 18/18 [00:02<00:00,  6.06it/s]100%|██████████| 18/18 [00:02<00:00,  6.31it/s]
-[INFO|modelcard.py:449] 2025-04-13 17:54:30,293 >> Dropping the following result as it does not have all the necessary fields:
-{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
-W0413 18:05:07.937000 814949 site-packages/torch/distributed/run.py:792] 
-W0413 18:05:07.937000 814949 site-packages/torch/distributed/run.py:792] *****************************************
-W0413 18:05:07.937000 814949 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0413 18:05:07.937000 814949 site-packages/torch/distributed/run.py:792] *****************************************
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:16,650 >> loading file vocab.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/vocab.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:16,650 >> loading file merges.txt from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/merges.txt
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:16,650 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/tokenizer.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:16,650 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:16,650 >> loading file special_tokens_map.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:16,651 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:16,651 >> loading file chat_template.jinja from cache at None
-[INFO|tokenization_utils_base.py:2323] 2025-04-13 18:05:16,860 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[rank3]:[W413 18:05:16.784445171 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[INFO|configuration_utils.py:699] 2025-04-13 18:05:17,060 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/config.json
-[INFO|configuration_utils.py:771] 2025-04-13 18:05:17,061 >> Model config Qwen2Config {
-  "architectures": [
-    "Qwen2ForCausalLM"
-  ],
-  "attention_dropout": 0.0,
-  "bos_token_id": 151643,
-  "dual_chunk_attention_config": {
-    "chunk_size": 262144,
-    "local_size": 8192,
-    "original_max_position_embeddings": 262144
-  },
-  "eos_token_id": 151645,
-  "hidden_act": "silu",
-  "hidden_size": 3584,
-  "initializer_range": 0.02,
-  "intermediate_size": 18944,
-  "max_position_embeddings": 1010000,
-  "max_window_layers": 28,
-  "model_type": "qwen2",
-  "num_attention_heads": 28,
-  "num_hidden_layers": 28,
-  "num_key_value_heads": 4,
-  "rms_norm_eps": 1e-05,
-  "rope_scaling": null,
-  "rope_theta": 10000000.0,
-  "sliding_window": 32768,
-  "tie_word_embeddings": false,
-  "torch_dtype": "bfloat16",
-  "transformers_version": "4.50.0",
-  "use_cache": true,
-  "use_sliding_window": false,
-  "vocab_size": 152064
-}
-
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:17,106 >> loading file vocab.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/vocab.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:17,106 >> loading file merges.txt from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/merges.txt
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:17,106 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/tokenizer.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:17,106 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:17,106 >> loading file special_tokens_map.json from cache at None
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:17,106 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:05:17,106 >> loading file chat_template.jinja from cache at None
-[INFO|tokenization_utils_base.py:2323] 2025-04-13 18:05:17,308 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[rank2]:[W413 18:05:17.184499832 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank1]:[W413 18:05:17.278226439 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Converting format of dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s][rank4]:[W413 18:05:17.673951068 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Converting format of dataset (num_proc=16): 100%|██████████| 1077/1077 [00:00<00:00, 5996.46 examples/s]
-[rank5]:[W413 18:05:17.820287436 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-[rank0]:[W413 18:05:18.903681640 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-Running tokenizer on dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   6%|▋         | 68/1077 [00:00<00:08, 115.31 examples/s]Running tokenizer on dataset (num_proc=16):  19%|█▉        | 204/1077 [00:00<00:02, 326.13 examples/s]Running tokenizer on dataset (num_proc=16):  32%|███▏      | 340/1077 [00:00<00:01, 483.98 examples/s]Running tokenizer on dataset (num_proc=16):  50%|█████     | 541/1077 [00:01<00:00, 646.60 examples/s]Running tokenizer on dataset (num_proc=16):  63%|██████▎   | 675/1077 [00:01<00:00, 731.92 examples/s]Running tokenizer on dataset (num_proc=16):  75%|███████▌  | 809/1077 [00:01<00:00, 824.23 examples/s]Running tokenizer on dataset (num_proc=16):  88%|████████▊ | 943/1077 [00:01<00:00, 839.57 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1077/1077 [00:01<00:00, 892.25 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1077/1077 [00:01<00:00, 624.99 examples/s]
-[INFO|configuration_utils.py:699] 2025-04-13 18:05:23,537 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/config.json
-[INFO|configuration_utils.py:771] 2025-04-13 18:05:23,538 >> Model config Qwen2Config {
-  "architectures": [
-    "Qwen2ForCausalLM"
-  ],
-  "attention_dropout": 0.0,
-  "bos_token_id": 151643,
-  "dual_chunk_attention_config": {
-    "chunk_size": 262144,
-    "local_size": 8192,
-    "original_max_position_embeddings": 262144
-  },
-  "eos_token_id": 151645,
-  "hidden_act": "silu",
-  "hidden_size": 3584,
-  "initializer_range": 0.02,
-  "intermediate_size": 18944,
-  "max_position_embeddings": 1010000,
-  "max_window_layers": 28,
-  "model_type": "qwen2",
-  "num_attention_heads": 28,
-  "num_hidden_layers": 28,
-  "num_key_value_heads": 4,
-  "rms_norm_eps": 1e-05,
-  "rope_scaling": null,
-  "rope_theta": 10000000.0,
-  "sliding_window": 32768,
-  "tie_word_embeddings": false,
-  "torch_dtype": "bfloat16",
-  "transformers_version": "4.50.0",
-  "use_cache": true,
-  "use_sliding_window": false,
-  "vocab_size": 152064
-}
-
-[INFO|modeling_utils.py:1154] 2025-04-13 18:05:23,694 >> loading weights file model.safetensors from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/model.safetensors.index.json
-[INFO|modeling_utils.py:3747] 2025-04-13 18:05:23,697 >> Detected DeepSpeed ZeRO-3: activating zero.init() for this model
-[INFO|configuration_utils.py:1139] 2025-04-13 18:05:23,706 >> Generate config GenerationConfig {
-  "bos_token_id": 151643,
-  "eos_token_id": 151645,
-  "use_cache": false
-}
-
-Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
-Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
-Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
-Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
-Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
-[WARNING|logging.py:329] 2025-04-13 18:05:23,721 >> Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.97s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.97s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.97s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.97s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.97s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.10s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.14s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.79s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.79s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.79s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.79s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.79s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.89s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.17s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.17s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.17s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.44s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.44s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.44s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.17s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.44s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.17s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.44s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.79s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.87s/it]
-[INFO|modeling_utils.py:4987] 2025-04-13 18:05:39,380 >> All model checkpoint weights were used when initializing Qwen2ForCausalLM.
-
-[INFO|modeling_utils.py:4995] 2025-04-13 18:05:39,380 >> All the weights of Qwen2ForCausalLM were initialized from the model checkpoint at Qwen/Qwen2.5-7B-Instruct-1M.
-If your task is similar to the task the model of the checkpoint was trained on, you can already use Qwen2ForCausalLM for predictions without further training.
-[INFO|configuration_utils.py:1094] 2025-04-13 18:05:39,432 >> loading configuration file generation_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/generation_config.json
-[INFO|configuration_utils.py:1139] 2025-04-13 18:05:39,432 >> Generate config GenerationConfig {
-  "bos_token_id": 151643,
-  "do_sample": true,
-  "eos_token_id": [
-    151645,
-    151643
-  ],
-  "pad_token_id": 151643,
-  "repetition_penalty": 1.05,
-  "temperature": 0.7,
-  "top_k": 20,
-  "top_p": 0.8
-}
-
-[INFO|trainer.py:748] 2025-04-13 18:05:39,455 >> Using auto half precision backend
-[INFO|trainer.py:2409] 2025-04-13 18:05:42,061 >> ***** Running training *****
-[INFO|trainer.py:2410] 2025-04-13 18:05:42,061 >>   Num examples = 969
-[INFO|trainer.py:2411] 2025-04-13 18:05:42,061 >>   Num Epochs = 3
-[INFO|trainer.py:2412] 2025-04-13 18:05:42,061 >>   Instantaneous batch size per device = 5
-[INFO|trainer.py:2415] 2025-04-13 18:05:42,061 >>   Total train batch size (w. parallel, distributed & accumulation) = 60
-[INFO|trainer.py:2416] 2025-04-13 18:05:42,061 >>   Gradient Accumulation steps = 2
-[INFO|trainer.py:2417] 2025-04-13 18:05:42,061 >>   Total optimization steps = 48
-[INFO|trainer.py:2418] 2025-04-13 18:05:42,062 >>   Number of trainable parameters = 7,615,616,512
-  0%|          | 0/48 [00:00<?, ?it/s]  2%|▏         | 1/48 [00:11<08:49, 11.27s/it]  4%|▍         | 2/48 [00:16<06:05,  7.94s/it]  6%|▋         | 3/48 [00:24<05:48,  7.73s/it]  8%|▊         | 4/48 [00:30<05:20,  7.27s/it] 10%|█         | 5/48 [00:37<05:05,  7.12s/it]                                               10%|█         | 5/48 [00:37<05:05,  7.12s/it][INFO|trainer.py:4289] 2025-04-13 18:06:19,839 >> 
-***** Running Evaluation *****
-[INFO|trainer.py:4291] 2025-04-13 18:06:19,839 >>   Num examples = 108
-[INFO|trainer.py:4294] 2025-04-13 18:06:19,840 >>   Batch size = 1
-
-  0%|          | 0/18 [00:00<?, ?it/s][A
- 11%|█         | 2/18 [00:00<00:02,  5.94it/s][A
- 17%|█▋        | 3/18 [00:00<00:02,  6.32it/s][A
- 22%|██▏       | 4/18 [00:00<00:02,  6.55it/s][A
- 28%|██▊       | 5/18 [00:00<00:02,  6.04it/s][A
- 33%|███▎      | 6/18 [00:00<00:01,  6.30it/s][A
- 39%|███▉      | 7/18 [00:01<00:01,  6.47it/s][A
- 44%|████▍     | 8/18 [00:01<00:01,  6.24it/s][A
- 50%|█████     | 9/18 [00:01<00:01,  6.42it/s][A
- 56%|█████▌    | 10/18 [00:01<00:01,  6.56it/s][A
- 61%|██████    | 11/18 [00:01<00:01,  6.29it/s][A
- 67%|██████▋   | 12/18 [00:01<00:00,  6.48it/s][A
- 72%|███████▏  | 13/18 [00:02<00:00,  6.66it/s][A
- 78%|███████▊  | 14/18 [00:02<00:00,  6.75it/s][A
- 83%|████████▎ | 15/18 [00:02<00:00,  6.35it/s][A
- 89%|████████▉ | 16/18 [00:02<00:00,  6.57it/s][A
- 94%|█████████▍| 17/18 [00:02<00:00,  6.71it/s][A
-100%|██████████| 18/18 [00:02<00:00,  6.82it/s][A                                              
-                                               [A 10%|█         | 5/48 [00:40<05:05,  7.12s/it]
-100%|██████████| 18/18 [00:02<00:00,  6.82it/s][A
-                                               [A[INFO|trainer.py:3966] 2025-04-13 18:06:26,636 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5
-[INFO|configuration_utils.py:423] 2025-04-13 18:06:26,639 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5/config.json
-[INFO|configuration_utils.py:908] 2025-04-13 18:06:26,639 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5/generation_config.json
-[INFO|modeling_utils.py:3594] 2025-04-13 18:06:32,644 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5/model.safetensors.index.json.
-[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:06:32,644 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5/tokenizer_config.json
-[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:06:32,645 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5/special_tokens_map.json
-W0413 18:06:37.209000 814949 site-packages/torch/distributed/elastic/agent/server/api.py:719] Received Signals.SIGINT death signal, shutting down workers
-W0413 18:06:37.209000 814949 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 815016 closing signal SIGINT
-W0413 18:06:37.209000 814949 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 815017 closing signal SIGINT
-W0413 18:06:37.210000 814949 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 815018 closing signal SIGINT
-W0413 18:06:37.210000 814949 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 815019 closing signal SIGINT
-W0413 18:06:37.210000 814949 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 815020 closing signal SIGINT
-W0413 18:06:37.210000 814949 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 815021 closing signal SIGINT
-Traceback (most recent call last):
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/bin/llamafactory-cli", line 8, in <module>
-    sys.exit(main())
-  File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/cli.py", line 99, in main
-    process = subprocess.run(
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/subprocess.py", line 505, in run
-    stdout, stderr = process.communicate(input, timeout=timeout)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/subprocess.py", line 1146, in communicate
-    self.wait()
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/subprocess.py", line 1209, in wait
-    return self._wait(timeout=timeout)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/subprocess.py", line 1959, in _wait
-    (pid, sts) = self._try_wait(0)
-  File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/subprocess.py", line 1917, in _try_wait
-    (pid, sts) = os.waitpid(self.pid, wait_flags)
-KeyboardInterrupt
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank0]:     launch()
-[rank0]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank0]:     run_exp()
-[rank0]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank0]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank0]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank0]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank0]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank0]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank0]:     return inner_training_loop(
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2620, in _inner_training_loop
-[rank0]:     self._maybe_log_save_evaluate(
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3100, in _maybe_log_save_evaluate
-[rank0]:     self._save_checkpoint(model, trial)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3208, in _save_checkpoint
-[rank0]:     self._save_optimizer_and_scheduler(output_dir)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3325, in _save_optimizer_and_scheduler
-[rank0]:     self.model_wrapped.save_checkpoint(output_dir)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3170, in save_checkpoint
-[rank0]:     self._save_zero_checkpoint(save_dir, tag)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3531, in _save_zero_checkpoint
-[rank0]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
-[rank0]:     torch.save(state_dict, path)
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 944, in save
-[rank0]:     _save(
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 1214, in _save
-[rank0]:     storage = storage.cpu()
-[rank0]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/storage.py", line 267, in cpu
-[rank0]:     return torch.UntypedStorage(self.size()).copy_(self, False)
-[rank0]: KeyboardInterrupt
-[rank4]: Traceback (most recent call last):
-[rank4]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank4]:     launch()
-[rank4]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank4]:     run_exp()
-[rank4]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank4]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank4]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank4]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank4]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank4]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank4]:     return inner_training_loop(
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2620, in _inner_training_loop
-[rank4]:     self._maybe_log_save_evaluate(
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3100, in _maybe_log_save_evaluate
-[rank4]:     self._save_checkpoint(model, trial)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3208, in _save_checkpoint
-[rank4]:     self._save_optimizer_and_scheduler(output_dir)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3325, in _save_optimizer_and_scheduler
-[rank4]:     self.model_wrapped.save_checkpoint(output_dir)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3170, in save_checkpoint
-[rank4]:     self._save_zero_checkpoint(save_dir, tag)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3531, in _save_zero_checkpoint
-[rank4]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
-[rank4]:     torch.save(state_dict, path)
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 944, in save
-[rank4]:     _save(
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 1214, in _save
-[rank4]:     storage = storage.cpu()
-[rank4]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/storage.py", line 267, in cpu
-[rank4]:     return torch.UntypedStorage(self.size()).copy_(self, False)
-[rank4]: KeyboardInterrupt
-[rank1]: Traceback (most recent call last):
-[rank1]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank1]:     launch()
-[rank1]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank1]:     run_exp()
-[rank1]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank1]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank1]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank1]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank1]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank1]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank1]:     return inner_training_loop(
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2620, in _inner_training_loop
-[rank1]:     self._maybe_log_save_evaluate(
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3100, in _maybe_log_save_evaluate
-[rank1]:     self._save_checkpoint(model, trial)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3208, in _save_checkpoint
-[rank1]:     self._save_optimizer_and_scheduler(output_dir)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3325, in _save_optimizer_and_scheduler
-[rank1]:     self.model_wrapped.save_checkpoint(output_dir)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3170, in save_checkpoint
-[rank1]:     self._save_zero_checkpoint(save_dir, tag)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3531, in _save_zero_checkpoint
-[rank1]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
-[rank1]:     torch.save(state_dict, path)
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 944, in save
-[rank1]:     _save(
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 1214, in _save
-[rank1]:     storage = storage.cpu()
-[rank1]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/storage.py", line 267, in cpu
-[rank1]:     return torch.UntypedStorage(self.size()).copy_(self, False)
-[rank1]: KeyboardInterrupt
-[rank2]: Traceback (most recent call last):
-[rank2]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank2]:     launch()
-[rank2]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank2]:     run_exp()
-[rank2]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank2]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank2]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank2]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank2]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank2]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank2]:     return inner_training_loop(
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2620, in _inner_training_loop
-[rank2]:     self._maybe_log_save_evaluate(
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3100, in _maybe_log_save_evaluate
-[rank2]:     self._save_checkpoint(model, trial)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3208, in _save_checkpoint
-[rank2]:     self._save_optimizer_and_scheduler(output_dir)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3325, in _save_optimizer_and_scheduler
-[rank2]:     self.model_wrapped.save_checkpoint(output_dir)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3170, in save_checkpoint
-[rank2]:     self._save_zero_checkpoint(save_dir, tag)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3531, in _save_zero_checkpoint
-[rank2]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
-[rank2]:     torch.save(state_dict, path)
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 944, in save
-[rank2]:     _save(
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 1214, in _save
-[rank2]:     storage = storage.cpu()
-[rank2]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/storage.py", line 267, in cpu
-[rank2]:     return torch.UntypedStorage(self.size()).copy_(self, False)
-[rank2]: KeyboardInterrupt
-[rank3]: Traceback (most recent call last):
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank3]:     launch()
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank3]:     run_exp()
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank3]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank3]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank3]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank3]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank3]:     return inner_training_loop(
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2620, in _inner_training_loop
-[rank3]:     self._maybe_log_save_evaluate(
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3100, in _maybe_log_save_evaluate
-[rank3]:     self._save_checkpoint(model, trial)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3208, in _save_checkpoint
-[rank3]:     self._save_optimizer_and_scheduler(output_dir)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3325, in _save_optimizer_and_scheduler
-[rank3]:     self.model_wrapped.save_checkpoint(output_dir)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3170, in save_checkpoint
-[rank3]:     self._save_zero_checkpoint(save_dir, tag)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3531, in _save_zero_checkpoint
-[rank3]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
-[rank3]:     torch.save(state_dict, path)
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 944, in save
-[rank3]:     _save(
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 1214, in _save
-[rank3]:     storage = storage.cpu()
-[rank3]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/storage.py", line 267, in cpu
-[rank3]:     return torch.UntypedStorage(self.size()).copy_(self, False)
-[rank3]: KeyboardInterrupt
-[rank5]: Traceback (most recent call last):
-[rank5]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 23, in <module>
-[rank5]:     launch()
-[rank5]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/launcher.py", line 19, in launch
-[rank5]:     run_exp()
-[rank5]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 107, in run_exp
-[rank5]:     _training_function(config={"args": args, "callbacks": callbacks})
-[rank5]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/tuner.py", line 69, in _training_function
-[rank5]:     run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
-[rank5]:   File "/proj/long-multi/kqian/speech_2/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 102, in run_sft
-[rank5]:     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
-[rank5]:     return inner_training_loop(
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 2620, in _inner_training_loop
-[rank5]:     self._maybe_log_save_evaluate(
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3100, in _maybe_log_save_evaluate
-[rank5]:     self._save_checkpoint(model, trial)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3208, in _save_checkpoint
-[rank5]:     self._save_optimizer_and_scheduler(output_dir)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/transformers/trainer.py", line 3325, in _save_optimizer_and_scheduler
-[rank5]:     self.model_wrapped.save_checkpoint(output_dir)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3170, in save_checkpoint
-[rank5]:     self._save_zero_checkpoint(save_dir, tag)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 3531, in _save_zero_checkpoint
-[rank5]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
-[rank5]:     torch.save(state_dict, path)
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 944, in save
-[rank5]:     _save(
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/serialization.py", line 1214, in _save
-[rank5]:     storage = storage.cpu()
-[rank5]:   File "/proj/long-multi/kqian/miniforge3/envs/llama3_tune_3/lib/python3.10/site-packages/torch/storage.py", line 267, in cpu
-[rank5]:     return torch.UntypedStorage(self.size()).copy_(self, False)
-[rank5]: KeyboardInterrupt
- 10%|█         | 5/48 [00:55<08:00, 11.18s/it]
