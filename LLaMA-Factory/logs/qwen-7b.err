@@ -1,0 +1,442 @@
+W0413 18:07:28.992000 1620651 site-packages/torch/distributed/run.py:792] 
+W0413 18:07:28.992000 1620651 site-packages/torch/distributed/run.py:792] *****************************************
+W0413 18:07:28.992000 1620651 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0413 18:07:28.992000 1620651 site-packages/torch/distributed/run.py:792] *****************************************
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,081 >> loading file vocab.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/vocab.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,082 >> loading file merges.txt from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/merges.txt
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,082 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/tokenizer.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,082 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,082 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,082 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,082 >> loading file chat_template.jinja from cache at None
+[INFO|tokenization_utils_base.py:2323] 2025-04-13 18:07:37,291 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:699] 2025-04-13 18:07:37,548 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/config.json
+[INFO|configuration_utils.py:771] 2025-04-13 18:07:37,549 >> Model config Qwen2Config {
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dual_chunk_attention_config": {
+    "chunk_size": 262144,
+    "local_size": 8192,
+    "original_max_position_embeddings": 262144
+  },
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 3584,
+  "initializer_range": 0.02,
+  "intermediate_size": 18944,
+  "max_position_embeddings": 1010000,
+  "max_window_layers": 28,
+  "model_type": "qwen2",
+  "num_attention_heads": 28,
+  "num_hidden_layers": 28,
+  "num_key_value_heads": 4,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 10000000.0,
+  "sliding_window": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.50.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 152064
+}
+
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,601 >> loading file vocab.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/vocab.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,601 >> loading file merges.txt from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/merges.txt
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,601 >> loading file tokenizer.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/tokenizer.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,603 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,603 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,603 >> loading file tokenizer_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2060] 2025-04-13 18:07:37,603 >> loading file chat_template.jinja from cache at None
+[INFO|tokenization_utils_base.py:2323] 2025-04-13 18:07:37,811 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[rank2]:[W413 18:07:38.012176092 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[rank3]:[W413 18:07:38.104080834 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+Converting format of dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s][rank1]:[W413 18:07:38.140248033 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[rank4]:[W413 18:07:38.198436793 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[rank5]:[W413 18:07:38.265493929 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+Converting format of dataset (num_proc=16): 100%|██████████| 1077/1077 [00:00<00:00, 6465.10 examples/s]
+[rank0]:[W413 18:07:38.515161432 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+Running tokenizer on dataset (num_proc=16):   0%|          | 0/1077 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   6%|▋         | 68/1077 [00:00<00:09, 105.28 examples/s]Running tokenizer on dataset (num_proc=16):  25%|██▌       | 272/1077 [00:00<00:01, 425.16 examples/s]Running tokenizer on dataset (num_proc=16):  44%|████▍     | 474/1077 [00:00<00:00, 615.33 examples/s]Running tokenizer on dataset (num_proc=16):  63%|██████▎   | 675/1077 [00:01<00:00, 759.25 examples/s]Running tokenizer on dataset (num_proc=16):  75%|███████▌  | 809/1077 [00:01<00:00, 833.21 examples/s]Running tokenizer on dataset (num_proc=16):  88%|████████▊ | 943/1077 [00:01<00:00, 837.63 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1077/1077 [00:01<00:00, 666.29 examples/s]
+[INFO|configuration_utils.py:699] 2025-04-13 18:07:43,813 >> loading configuration file config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/config.json
+[INFO|configuration_utils.py:771] 2025-04-13 18:07:43,814 >> Model config Qwen2Config {
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dual_chunk_attention_config": {
+    "chunk_size": 262144,
+    "local_size": 8192,
+    "original_max_position_embeddings": 262144
+  },
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 3584,
+  "initializer_range": 0.02,
+  "intermediate_size": 18944,
+  "max_position_embeddings": 1010000,
+  "max_window_layers": 28,
+  "model_type": "qwen2",
+  "num_attention_heads": 28,
+  "num_hidden_layers": 28,
+  "num_key_value_heads": 4,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 10000000.0,
+  "sliding_window": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.50.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 152064
+}
+
+[INFO|modeling_utils.py:1154] 2025-04-13 18:07:43,863 >> loading weights file model.safetensors from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/model.safetensors.index.json
+[INFO|modeling_utils.py:3747] 2025-04-13 18:07:43,866 >> Detected DeepSpeed ZeRO-3: activating zero.init() for this model
+[INFO|configuration_utils.py:1139] 2025-04-13 18:07:43,874 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "use_cache": false
+}
+
+[WARNING|logging.py:329] 2025-04-13 18:07:43,886 >> Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.15s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.16s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.15s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.15s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.15s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.31s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.22s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.22s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.21s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.22s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.22s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.37s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.03s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.03s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.03s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.03s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.03s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.15s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.37s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.37s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.37s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.37s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.65s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.65s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.64s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.64s/it]
+
+Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.37s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.65s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  4.01s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  4.10s/it]
+[INFO|modeling_utils.py:4987] 2025-04-13 18:08:00,534 >> All model checkpoint weights were used when initializing Qwen2ForCausalLM.
+
+[INFO|modeling_utils.py:4995] 2025-04-13 18:08:00,534 >> All the weights of Qwen2ForCausalLM were initialized from the model checkpoint at Qwen/Qwen2.5-7B-Instruct-1M.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use Qwen2ForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:1094] 2025-04-13 18:08:00,596 >> loading configuration file generation_config.json from cache at /proj/long-multi/kqian/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct-1M/snapshots/e28526f7bb80e2a9c8af03b831a9af3812f18fba/generation_config.json
+[INFO|configuration_utils.py:1139] 2025-04-13 18:08:00,597 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "do_sample": true,
+  "eos_token_id": [
+    151645,
+    151643
+  ],
+  "pad_token_id": 151643,
+  "repetition_penalty": 1.05,
+  "temperature": 0.7,
+  "top_k": 20,
+  "top_p": 0.8
+}
+
+[INFO|trainer.py:748] 2025-04-13 18:08:00,616 >> Using auto half precision backend
+[INFO|trainer.py:2409] 2025-04-13 18:08:03,263 >> ***** Running training *****
+[INFO|trainer.py:2410] 2025-04-13 18:08:03,263 >>   Num examples = 969
+[INFO|trainer.py:2411] 2025-04-13 18:08:03,263 >>   Num Epochs = 3
+[INFO|trainer.py:2412] 2025-04-13 18:08:03,263 >>   Instantaneous batch size per device = 5
+[INFO|trainer.py:2415] 2025-04-13 18:08:03,263 >>   Total train batch size (w. parallel, distributed & accumulation) = 60
+[INFO|trainer.py:2416] 2025-04-13 18:08:03,263 >>   Gradient Accumulation steps = 2
+[INFO|trainer.py:2417] 2025-04-13 18:08:03,263 >>   Total optimization steps = 48
+[INFO|trainer.py:2418] 2025-04-13 18:08:03,264 >>   Number of trainable parameters = 7,615,616,512
+  0%|          | 0/48 [00:00<?, ?it/s]  2%|▏         | 1/48 [00:11<09:12, 11.76s/it]  4%|▍         | 2/48 [00:17<06:13,  8.12s/it]  6%|▋         | 3/48 [00:24<05:52,  7.83s/it]  8%|▊         | 4/48 [00:31<05:21,  7.30s/it] 10%|█         | 5/48 [00:38<05:07,  7.15s/it]                                               10%|█         | 5/48 [00:38<05:07,  7.15s/it][INFO|trainer.py:4289] 2025-04-13 18:08:41,450 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 18:08:41,450 >>   Num examples = 108
+[INFO|trainer.py:4294] 2025-04-13 18:08:41,450 >>   Batch size = 1
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 11%|█         | 2/18 [00:00<00:02,  5.99it/s][A
+ 17%|█▋        | 3/18 [00:00<00:02,  6.18it/s][A
+ 22%|██▏       | 4/18 [00:00<00:02,  6.44it/s][A
+ 28%|██▊       | 5/18 [00:00<00:02,  6.06it/s][A
+ 33%|███▎      | 6/18 [00:00<00:01,  6.31it/s][A
+ 39%|███▉      | 7/18 [00:01<00:01,  6.48it/s][A
+ 44%|████▍     | 8/18 [00:01<00:01,  6.23it/s][A
+ 50%|█████     | 9/18 [00:01<00:01,  6.41it/s][A
+ 56%|█████▌    | 10/18 [00:01<00:01,  6.57it/s][A
+ 61%|██████    | 11/18 [00:01<00:01,  6.30it/s][A
+ 67%|██████▋   | 12/18 [00:01<00:00,  6.45it/s][A
+ 72%|███████▏  | 13/18 [00:02<00:00,  6.58it/s][A
+ 78%|███████▊  | 14/18 [00:02<00:00,  6.67it/s][A
+ 83%|████████▎ | 15/18 [00:02<00:00,  6.31it/s][A
+ 89%|████████▉ | 16/18 [00:02<00:00,  6.53it/s][A
+ 94%|█████████▍| 17/18 [00:02<00:00,  6.66it/s][A
+100%|██████████| 18/18 [00:02<00:00,  6.78it/s][A                                              
+                                               [A 10%|█         | 5/48 [00:41<05:07,  7.15s/it]
+100%|██████████| 18/18 [00:02<00:00,  6.78it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 18:08:48,290 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5
+[INFO|configuration_utils.py:423] 2025-04-13 18:08:48,295 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:08:48,297 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:08:54,310 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:08:54,312 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:08:54,313 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-5/special_tokens_map.json
+ 12%|█▎        | 6/48 [01:09<10:47, 15.42s/it] 15%|█▍        | 7/48 [01:15<08:28, 12.41s/it] 17%|█▋        | 8/48 [01:23<07:13, 10.84s/it] 19%|█▉        | 9/48 [01:28<05:58,  9.20s/it] 21%|██        | 10/48 [01:35<05:23,  8.52s/it]                                                21%|██        | 10/48 [01:35<05:23,  8.52s/it][INFO|trainer.py:4289] 2025-04-13 18:09:39,200 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 18:09:39,200 >>   Num examples = 108
+[INFO|trainer.py:4294] 2025-04-13 18:09:39,200 >>   Batch size = 1
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 11%|█         | 2/18 [00:00<00:01, 13.56it/s][A
+ 22%|██▏       | 4/18 [00:00<00:01,  8.77it/s][A
+ 28%|██▊       | 5/18 [00:00<00:01,  7.48it/s][A
+ 33%|███▎      | 6/18 [00:00<00:01,  7.29it/s][A
+ 39%|███▉      | 7/18 [00:00<00:01,  7.16it/s][A
+ 44%|████▍     | 8/18 [00:01<00:01,  6.71it/s][A
+ 50%|█████     | 9/18 [00:01<00:01,  6.77it/s][A
+ 56%|█████▌    | 10/18 [00:01<00:01,  6.82it/s][A
+ 61%|██████    | 11/18 [00:01<00:01,  6.48it/s][A
+ 67%|██████▋   | 12/18 [00:01<00:00,  6.61it/s][A
+ 72%|███████▏  | 13/18 [00:01<00:00,  6.76it/s][A
+ 78%|███████▊  | 14/18 [00:01<00:00,  6.82it/s][A
+ 83%|████████▎ | 15/18 [00:02<00:00,  6.42it/s][A
+ 89%|████████▉ | 16/18 [00:02<00:00,  6.61it/s][A
+ 94%|█████████▍| 17/18 [00:02<00:00,  6.73it/s][A
+100%|██████████| 18/18 [00:02<00:00,  6.81it/s][A                                               
+                                               [A 21%|██        | 10/48 [01:38<05:23,  8.52s/it]
+100%|██████████| 18/18 [00:02<00:00,  6.81it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 18:09:45,516 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-10
+[INFO|configuration_utils.py:423] 2025-04-13 18:09:45,520 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-10/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:09:45,521 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-10/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:09:51,585 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-10/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:09:51,587 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-10/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:09:51,587 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-10/special_tokens_map.json
+ 23%|██▎       | 11/48 [02:04<09:02, 14.65s/it] 25%|██▌       | 12/48 [02:10<07:16, 12.12s/it] 27%|██▋       | 13/48 [02:16<05:53, 10.10s/it] 29%|██▉       | 14/48 [02:22<05:04,  8.94s/it] 31%|███▏      | 15/48 [02:28<04:24,  8.00s/it]                                                31%|███▏      | 15/48 [02:28<04:24,  8.00s/it][INFO|trainer.py:4289] 2025-04-13 18:10:31,630 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 18:10:31,630 >>   Num examples = 108
+[INFO|trainer.py:4294] 2025-04-13 18:10:31,630 >>   Batch size = 1
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 11%|█         | 2/18 [00:00<00:01, 13.55it/s][A
+ 22%|██▏       | 4/18 [00:00<00:01,  8.77it/s][A
+ 28%|██▊       | 5/18 [00:00<00:01,  7.48it/s][A
+ 33%|███▎      | 6/18 [00:00<00:01,  7.29it/s][A
+ 39%|███▉      | 7/18 [00:00<00:01,  7.16it/s][A
+ 44%|████▍     | 8/18 [00:01<00:01,  6.73it/s][A
+ 50%|█████     | 9/18 [00:01<00:01,  6.78it/s][A
+ 56%|█████▌    | 10/18 [00:01<00:01,  6.85it/s][A
+ 61%|██████    | 11/18 [00:01<00:01,  6.53it/s][A
+ 67%|██████▋   | 12/18 [00:01<00:00,  6.64it/s][A
+ 72%|███████▏  | 13/18 [00:01<00:00,  6.78it/s][A
+ 78%|███████▊  | 14/18 [00:01<00:00,  6.84it/s][A
+ 83%|████████▎ | 15/18 [00:02<00:00,  6.42it/s][A
+ 89%|████████▉ | 16/18 [00:02<00:00,  6.62it/s][A
+ 94%|█████████▍| 17/18 [00:02<00:00,  6.73it/s][A
+100%|██████████| 18/18 [00:02<00:00,  6.80it/s][A                                               
+                                               [A 31%|███▏      | 15/48 [02:31<04:24,  8.00s/it]
+100%|██████████| 18/18 [00:02<00:00,  6.80it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 18:10:38,232 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-15
+[INFO|configuration_utils.py:423] 2025-04-13 18:10:38,234 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-15/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:10:38,234 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-15/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:10:44,283 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-15/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:10:44,284 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-15/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:10:44,284 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-15/special_tokens_map.json
+ 33%|███▎      | 16/48 [02:59<07:59, 14.98s/it] 35%|███▌      | 17/48 [03:03<06:03, 11.74s/it] 38%|███▊      | 18/48 [03:09<04:56,  9.88s/it] 40%|███▉      | 19/48 [03:13<03:59,  8.27s/it] 42%|████▏     | 20/48 [03:18<03:19,  7.12s/it]                                                42%|████▏     | 20/48 [03:18<03:19,  7.12s/it][INFO|trainer.py:4289] 2025-04-13 18:11:21,511 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 18:11:21,511 >>   Num examples = 108
+[INFO|trainer.py:4294] 2025-04-13 18:11:21,511 >>   Batch size = 1
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 11%|█         | 2/18 [00:00<00:01, 13.41it/s][A
+ 22%|██▏       | 4/18 [00:00<00:01,  8.75it/s][A
+ 28%|██▊       | 5/18 [00:00<00:01,  7.48it/s][A
+ 33%|███▎      | 6/18 [00:00<00:01,  7.29it/s][A
+ 39%|███▉      | 7/18 [00:00<00:01,  7.16it/s][A
+ 44%|████▍     | 8/18 [00:01<00:01,  6.68it/s][A
+ 50%|█████     | 9/18 [00:01<00:01,  6.77it/s][A
+ 56%|█████▌    | 10/18 [00:01<00:01,  6.84it/s][A
+ 61%|██████    | 11/18 [00:01<00:01,  6.49it/s][A
+ 67%|██████▋   | 12/18 [00:01<00:00,  6.62it/s][A
+ 72%|███████▏  | 13/18 [00:01<00:00,  6.77it/s][A
+ 78%|███████▊  | 14/18 [00:01<00:00,  6.84it/s][A
+ 83%|████████▎ | 15/18 [00:02<00:00,  6.42it/s][A
+ 89%|████████▉ | 16/18 [00:02<00:00,  6.62it/s][A
+ 94%|█████████▍| 17/18 [00:02<00:00,  6.73it/s][A
+100%|██████████| 18/18 [00:02<00:00,  6.81it/s][A                                               
+                                               [A 42%|████▏     | 20/48 [03:20<03:19,  7.12s/it]
+100%|██████████| 18/18 [00:02<00:00,  6.81it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 18:11:28,120 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-20
+[INFO|configuration_utils.py:423] 2025-04-13 18:11:28,122 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-20/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:11:28,123 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-20/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:11:34,193 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-20/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:11:34,194 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-20/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:11:34,194 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-20/special_tokens_map.json
+ 44%|████▍     | 21/48 [03:50<06:37, 14.73s/it] 46%|████▌     | 22/48 [03:56<05:09, 11.90s/it] 48%|████▊     | 23/48 [04:00<04:05,  9.81s/it] 50%|█████     | 24/48 [04:08<03:39,  9.14s/it] 52%|█████▏    | 25/48 [04:13<03:02,  7.94s/it]                                                52%|█████▏    | 25/48 [04:13<03:02,  7.94s/it][INFO|trainer.py:4289] 2025-04-13 18:12:16,940 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 18:12:16,940 >>   Num examples = 108
+[INFO|trainer.py:4294] 2025-04-13 18:12:16,940 >>   Batch size = 1
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 11%|█         | 2/18 [00:00<00:01, 13.42it/s][A
+ 22%|██▏       | 4/18 [00:00<00:01,  8.74it/s][A
+ 28%|██▊       | 5/18 [00:00<00:01,  7.54it/s][A
+ 33%|███▎      | 6/18 [00:00<00:01,  7.34it/s][A
+ 39%|███▉      | 7/18 [00:00<00:01,  7.19it/s][A
+ 44%|████▍     | 8/18 [00:01<00:01,  6.70it/s][A
+ 50%|█████     | 9/18 [00:01<00:01,  6.79it/s][A
+ 56%|█████▌    | 10/18 [00:01<00:01,  6.84it/s][A
+ 61%|██████    | 11/18 [00:01<00:01,  6.49it/s][A
+ 67%|██████▋   | 12/18 [00:01<00:00,  6.61it/s][A
+ 72%|███████▏  | 13/18 [00:01<00:00,  6.77it/s][A
+ 78%|███████▊  | 14/18 [00:01<00:00,  6.83it/s][A
+ 83%|████████▎ | 15/18 [00:02<00:00,  6.43it/s][A
+ 89%|████████▉ | 16/18 [00:02<00:00,  6.63it/s][A
+ 94%|█████████▍| 17/18 [00:02<00:00,  6.74it/s][A
+100%|██████████| 18/18 [00:02<00:00,  6.82it/s][A                                               
+                                               [A 52%|█████▏    | 25/48 [04:16<03:02,  7.94s/it]
+100%|██████████| 18/18 [00:02<00:00,  6.82it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 18:12:23,550 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-25
+[INFO|configuration_utils.py:423] 2025-04-13 18:12:23,552 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-25/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:12:23,553 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-25/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:12:29,692 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-25/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:12:29,693 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-25/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:12:29,693 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-25/special_tokens_map.json
+ 54%|█████▍    | 26/48 [04:44<05:26, 14.83s/it] 56%|█████▋    | 27/48 [04:50<04:15, 12.19s/it] 58%|█████▊    | 28/48 [04:55<03:18,  9.94s/it] 60%|██████    | 29/48 [05:01<02:48,  8.89s/it] 62%|██████▎   | 30/48 [05:07<02:21,  7.87s/it]                                                62%|██████▎   | 30/48 [05:07<02:21,  7.87s/it][INFO|trainer.py:4289] 2025-04-13 18:13:10,492 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 18:13:10,493 >>   Num examples = 108
+[INFO|trainer.py:4294] 2025-04-13 18:13:10,493 >>   Batch size = 1
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 11%|█         | 2/18 [00:00<00:01, 13.46it/s][A
+ 22%|██▏       | 4/18 [00:00<00:01,  8.73it/s][A
+ 28%|██▊       | 5/18 [00:00<00:01,  7.49it/s][A
+ 33%|███▎      | 6/18 [00:00<00:01,  7.30it/s][A
+ 39%|███▉      | 7/18 [00:00<00:01,  7.15it/s][A
+ 44%|████▍     | 8/18 [00:01<00:01,  6.68it/s][A
+ 50%|█████     | 9/18 [00:01<00:01,  6.78it/s][A
+ 56%|█████▌    | 10/18 [00:01<00:01,  6.84it/s][A
+ 61%|██████    | 11/18 [00:01<00:01,  6.48it/s][A
+ 67%|██████▋   | 12/18 [00:01<00:00,  6.61it/s][A
+ 72%|███████▏  | 13/18 [00:01<00:00,  6.76it/s][A
+ 78%|███████▊  | 14/18 [00:01<00:00,  6.83it/s][A
+ 83%|████████▎ | 15/18 [00:02<00:00,  6.41it/s][A
+ 89%|████████▉ | 16/18 [00:02<00:00,  6.61it/s][A
+ 94%|█████████▍| 17/18 [00:02<00:00,  6.72it/s][A
+100%|██████████| 18/18 [00:02<00:00,  6.81it/s][A                                               
+                                               [A 62%|██████▎   | 30/48 [05:09<02:21,  7.87s/it]
+100%|██████████| 18/18 [00:02<00:00,  6.81it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 18:13:17,098 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-30
+[INFO|configuration_utils.py:423] 2025-04-13 18:13:17,101 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-30/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:13:17,101 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-30/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:13:23,173 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-30/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:13:23,174 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-30/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:13:23,174 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-30/special_tokens_map.json
+ 65%|██████▍   | 31/48 [05:39<04:18, 15.20s/it] 67%|██████▋   | 32/48 [05:46<03:24, 12.81s/it] 69%|██████▉   | 33/48 [05:54<02:47, 11.15s/it] 71%|███████   | 34/48 [05:56<02:00,  8.63s/it] 73%|███████▎  | 35/48 [06:02<01:39,  7.65s/it]                                                73%|███████▎  | 35/48 [06:02<01:39,  7.65s/it][INFO|trainer.py:4289] 2025-04-13 18:14:05,409 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 18:14:05,410 >>   Num examples = 108
+[INFO|trainer.py:4294] 2025-04-13 18:14:05,410 >>   Batch size = 1
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 11%|█         | 2/18 [00:00<00:01, 13.52it/s][A
+ 22%|██▏       | 4/18 [00:00<00:01,  8.75it/s][A
+ 28%|██▊       | 5/18 [00:00<00:01,  7.42it/s][A
+ 33%|███▎      | 6/18 [00:00<00:01,  7.26it/s][A
+ 39%|███▉      | 7/18 [00:00<00:01,  7.13it/s][A
+ 44%|████▍     | 8/18 [00:01<00:01,  6.65it/s][A
+ 50%|█████     | 9/18 [00:01<00:01,  6.74it/s][A
+ 56%|█████▌    | 10/18 [00:01<00:01,  6.82it/s][A
+ 61%|██████    | 11/18 [00:01<00:01,  6.45it/s][A
+ 67%|██████▋   | 12/18 [00:01<00:00,  6.59it/s][A
+ 72%|███████▏  | 13/18 [00:01<00:00,  6.75it/s][A
+ 78%|███████▊  | 14/18 [00:01<00:00,  6.81it/s][A
+ 83%|████████▎ | 15/18 [00:02<00:00,  6.42it/s][A
+ 89%|████████▉ | 16/18 [00:02<00:00,  6.63it/s][A
+ 94%|█████████▍| 17/18 [00:02<00:00,  6.74it/s][A
+100%|██████████| 18/18 [00:02<00:00,  6.80it/s][A                                               
+                                               [A 73%|███████▎  | 35/48 [06:04<01:39,  7.65s/it]
+100%|██████████| 18/18 [00:02<00:00,  6.80it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 18:14:12,024 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-35
+[INFO|configuration_utils.py:423] 2025-04-13 18:14:12,026 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-35/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:14:12,027 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-35/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:14:18,085 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-35/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:14:18,086 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-35/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:14:18,086 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-35/special_tokens_map.json
+ 75%|███████▌  | 36/48 [06:33<02:56, 14.68s/it] 77%|███████▋  | 37/48 [06:40<02:17, 12.53s/it] 79%|███████▉  | 38/48 [06:45<01:41, 10.19s/it] 81%|████████▏ | 39/48 [06:51<01:20,  8.93s/it] 83%|████████▎ | 40/48 [06:57<01:03,  7.96s/it]                                                83%|████████▎ | 40/48 [06:57<01:03,  7.96s/it][INFO|trainer.py:4289] 2025-04-13 18:15:00,430 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 18:15:00,431 >>   Num examples = 108
+[INFO|trainer.py:4294] 2025-04-13 18:15:00,431 >>   Batch size = 1
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 11%|█         | 2/18 [00:00<00:01, 13.55it/s][A
+ 22%|██▏       | 4/18 [00:00<00:01,  8.76it/s][A
+ 28%|██▊       | 5/18 [00:00<00:01,  7.48it/s][A
+ 33%|███▎      | 6/18 [00:00<00:01,  7.28it/s][A
+ 39%|███▉      | 7/18 [00:00<00:01,  7.14it/s][A
+ 44%|████▍     | 8/18 [00:01<00:01,  6.69it/s][A
+ 50%|█████     | 9/18 [00:01<00:01,  6.78it/s][A
+ 56%|█████▌    | 10/18 [00:01<00:01,  6.83it/s][A
+ 61%|██████    | 11/18 [00:01<00:01,  6.48it/s][A
+ 67%|██████▋   | 12/18 [00:01<00:00,  6.61it/s][A
+ 72%|███████▏  | 13/18 [00:01<00:00,  6.76it/s][A
+ 78%|███████▊  | 14/18 [00:01<00:00,  6.83it/s][A
+ 83%|████████▎ | 15/18 [00:02<00:00,  6.45it/s][A
+ 89%|████████▉ | 16/18 [00:02<00:00,  6.65it/s][A
+ 94%|█████████▍| 17/18 [00:02<00:00,  6.75it/s][A
+100%|██████████| 18/18 [00:02<00:00,  6.82it/s][A                                               
+                                               [A 83%|████████▎ | 40/48 [06:59<01:03,  7.96s/it]
+100%|██████████| 18/18 [00:02<00:00,  6.82it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 18:15:07,037 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-40
+[INFO|configuration_utils.py:423] 2025-04-13 18:15:07,040 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-40/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:15:07,041 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-40/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:15:13,110 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-40/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:15:13,111 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-40/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:15:13,112 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-40/special_tokens_map.json
+ 85%|████████▌ | 41/48 [07:27<01:42, 14.69s/it] 88%|████████▊ | 42/48 [07:33<01:12, 12.04s/it] 90%|████████▉ | 43/48 [07:39<00:50, 10.17s/it] 92%|█████████▏| 44/48 [07:45<00:35,  8.86s/it] 94%|█████████▍| 45/48 [07:51<00:24,  8.01s/it]                                                94%|█████████▍| 45/48 [07:51<00:24,  8.01s/it][INFO|trainer.py:4289] 2025-04-13 18:15:54,333 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 18:15:54,333 >>   Num examples = 108
+[INFO|trainer.py:4294] 2025-04-13 18:15:54,333 >>   Batch size = 1
+
+  0%|          | 0/18 [00:00<?, ?it/s][A
+ 11%|█         | 2/18 [00:00<00:01, 13.59it/s][A
+ 22%|██▏       | 4/18 [00:00<00:01,  8.75it/s][A
+ 28%|██▊       | 5/18 [00:00<00:01,  7.50it/s][A
+ 33%|███▎      | 6/18 [00:00<00:01,  7.33it/s][A
+ 39%|███▉      | 7/18 [00:00<00:01,  7.18it/s][A
+ 44%|████▍     | 8/18 [00:01<00:01,  6.66it/s][A
+ 50%|█████     | 9/18 [00:01<00:01,  6.76it/s][A
+ 56%|█████▌    | 10/18 [00:01<00:01,  6.84it/s][A
+ 61%|██████    | 11/18 [00:01<00:01,  6.49it/s][A
+ 67%|██████▋   | 12/18 [00:01<00:00,  6.61it/s][A
+ 72%|███████▏  | 13/18 [00:01<00:00,  6.77it/s][A
+ 78%|███████▊  | 14/18 [00:01<00:00,  6.84it/s][A
+ 83%|████████▎ | 15/18 [00:02<00:00,  6.46it/s][A
+ 89%|████████▉ | 16/18 [00:02<00:00,  6.65it/s][A
+ 94%|█████████▍| 17/18 [00:02<00:00,  6.78it/s][A
+100%|██████████| 18/18 [00:02<00:00,  6.85it/s][A                                               
+                                               [A 94%|█████████▍| 45/48 [07:53<00:24,  8.01s/it]
+100%|██████████| 18/18 [00:02<00:00,  6.85it/s][A
+                                               [A[INFO|trainer.py:3966] 2025-04-13 18:16:00,934 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-45
+[INFO|configuration_utils.py:423] 2025-04-13 18:16:00,937 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-45/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:16:00,938 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-45/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:16:06,979 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-45/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:16:06,980 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-45/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:16:06,981 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-45/special_tokens_map.json
+ 96%|█████████▌| 46/48 [08:23<00:30, 15.32s/it] 98%|█████████▊| 47/48 [08:29<00:12, 12.64s/it]100%|██████████| 48/48 [08:34<00:00, 10.20s/it][INFO|trainer.py:3966] 2025-04-13 18:16:41,560 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-48
+[INFO|configuration_utils.py:423] 2025-04-13 18:16:41,563 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-48/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:16:41,564 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-48/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:16:47,729 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-48/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:16:47,730 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-48/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:16:47,730 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/checkpoint-48/special_tokens_map.json
+[INFO|trainer.py:2665] 2025-04-13 18:16:59,893 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+                                               100%|██████████| 48/48 [08:56<00:00, 10.20s/it]100%|██████████| 48/48 [08:56<00:00, 11.18s/it]
+[INFO|trainer.py:3966] 2025-04-13 18:17:03,786 >> Saving model checkpoint to /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft
+[INFO|configuration_utils.py:423] 2025-04-13 18:17:03,789 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/config.json
+[INFO|configuration_utils.py:908] 2025-04-13 18:17:03,790 >> Configuration saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/generation_config.json
+[INFO|modeling_utils.py:3594] 2025-04-13 18:17:09,938 >> The model is bigger than the maximum size per checkpoint (5GB) and is going to be split in 4 checkpoint shards. You can find where each parameters has been saved in the index located at /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:2510] 2025-04-13 18:17:09,939 >> tokenizer config file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2519] 2025-04-13 18:17:09,939 >> Special tokens file saved in /proj/long-multi/kqian/speech_2/LLaMA-Factory/saves/qwen-7b-1M-R1-CI-1/full/sft/special_tokens_map.json
+[INFO|trainer.py:4289] 2025-04-13 18:17:10,324 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:4291] 2025-04-13 18:17:10,324 >>   Num examples = 108
+[INFO|trainer.py:4294] 2025-04-13 18:17:10,324 >>   Batch size = 1
+  0%|          | 0/18 [00:00<?, ?it/s] 11%|█         | 2/18 [00:00<00:01, 13.40it/s] 22%|██▏       | 4/18 [00:00<00:01,  8.72it/s] 28%|██▊       | 5/18 [00:00<00:01,  7.50it/s] 33%|███▎      | 6/18 [00:00<00:01,  7.33it/s] 39%|███▉      | 7/18 [00:00<00:01,  7.16it/s] 44%|████▍     | 8/18 [00:01<00:01,  6.66it/s] 50%|█████     | 9/18 [00:01<00:01,  6.75it/s] 56%|█████▌    | 10/18 [00:01<00:01,  6.83it/s] 61%|██████    | 11/18 [00:01<00:01,  6.46it/s] 67%|██████▋   | 12/18 [00:01<00:00,  6.59it/s] 72%|███████▏  | 13/18 [00:01<00:00,  6.74it/s] 78%|███████▊  | 14/18 [00:01<00:00,  6.80it/s] 83%|████████▎ | 15/18 [00:02<00:00,  6.40it/s] 89%|████████▉ | 16/18 [00:02<00:00,  6.60it/s] 94%|█████████▍| 17/18 [00:02<00:00,  6.73it/s]100%|██████████| 18/18 [00:02<00:00,  6.80it/s]100%|██████████| 18/18 [00:02<00:00,  7.00it/s]
+[INFO|modelcard.py:449] 2025-04-13 18:17:13,054 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
