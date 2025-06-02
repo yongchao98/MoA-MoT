@@ -45,6 +45,7 @@ pip install --upgrade huggingface_hub
 huggingface-cli login
 cd ../Search-R1
 pip install -r requirements.txt
+pip3 install flash-attn --no-build-isolation
 ```
 
 ### GRPO training
