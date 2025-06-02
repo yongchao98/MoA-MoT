@@ -45,7 +45,7 @@ cd verl
 pip3 install -e .
 pip install --upgrade huggingface_hub
 huggingface-cli login
-cd ../R1-Code-Interpreter/Search-R1
+cd ../Search-R1
 pip install -r requirements.txt
 ```
 
