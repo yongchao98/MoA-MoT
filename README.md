@@ -57,10 +57,11 @@ sh train_grpo_3B.sh
 ### Inference
 (In train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2; In r1_code_inter/generation_models.py and ../generation_models.py, fill in your OpenAI API for GPT-4o calling to extract the answer):
 ```
-conda create -n llama_factory python=3.10
+conda create -n llama_factory python=3.11
 conda activate llama_factory
-cd R1-Code-Interpreter/LLaMA-Factory
+cd LLaMA-Factory
 pip install -r requirements.txt
+cd ..
 ```
 
 ## ✍️ Citation
