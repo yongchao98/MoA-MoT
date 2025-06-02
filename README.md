@@ -40,26 +40,18 @@ conda activate R1_code_inter
 pip install reasoning-gym
 pip3 install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu124
 pip3 install flash-attn --no-build-isolation
-pip install -r requirements.txt
-```
-```
+cd ..
+git clone https://github.com/volcengine/verl.git
 cd verl
 pip3 install -e .
-cd ../LLaMA-Factory
-pip install -e ".[torch,metrics]"
-pip install deepspeed==0.15.2
 pip install --upgrade huggingface_hub
 huggingface-cli login
-```
-
-### SFT training:
-```
-cd LLaMA-Factory
-sh finetune_qwen_7b_1M.sh
+cd ../R1-Code-Interpreter/Search-R1
+pip install -r requirements.txt
 ```
 
 ### GRPO training
-(In train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2):
+(In train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2; In ../generation_models.py, fill in your OpenAI API for GPT-4o calling to extract the answer):
 ```
 sh train_grpo_3B.sh
 ```
