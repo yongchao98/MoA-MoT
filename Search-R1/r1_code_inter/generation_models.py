@@ -17,11 +17,11 @@ from typing_extensions import override
 from openai import AssistantEventHandler
 
 # Access the keys safely
-openai_api_key = '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'
-claude_api_key = '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'
-mixtral_api_key = "o8RvU1VQablwXwAuNDCnBOfmH1fGbQwe"
+openai_api_key = 'sk-..'
+claude_api_key = 'sk-..'
+mixtral_api_key = ""
 
-deepseek_api_key = 'sk-5ff4229e05574b94ab2f9f13df1d0e1b'
+deepseek_api_key = 'sk-..'
 
 def save_dataset_item(dataset_item, json_file_path="dataset.json"):
     """
