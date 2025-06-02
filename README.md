@@ -62,6 +62,7 @@ conda activate llama_factory
 cd LLaMA-Factory
 pip install -r requirements.txt
 cd ..
+python benchmark_inference_test.py
 ```
 
 ## ✍️ Citation
