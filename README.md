@@ -49,7 +49,7 @@ pip3 install flash-attn --no-build-isolation
 ```
 
 ### GRPO training
-(In train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2; In ../generation_models.py, fill in your OpenAI API for GPT-4o calling to extract the answer):
+(In train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2; In r1_code_inter/generation_models.py and ../generation_models.py, fill in your OpenAI API for GPT-4o calling to extract the answer):
 ```
 sh train_grpo_3B.sh
 ```
