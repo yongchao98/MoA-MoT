@@ -45,7 +45,7 @@ python benchmark_inference_test.py
 ```
 
 ### SFT training
-For SFT training, we'd better create another environment. We can do this by running the following command:
+Then for SFT training, we'd better create another environment. We can do this by running the following command:
 ```
 conda create -n llama_factory_SFT python=3.11
 conda activate llama_factory_SFT
@@ -59,7 +59,7 @@ sh finetune_qwen_7b_1M.sh
 
 ### GRPO training
 
-For GRPO training, we'd better create another environment. We can do this by running the following command:
+Then for GRPO training, we'd better create another environment. We can do this by running the following command:
 
 ```
 conda deactivate
