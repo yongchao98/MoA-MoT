@@ -49,6 +49,7 @@ Then for SFT training, we'd better create another environment. We can do this by
 ```
 conda create -n llama_factory_SFT python=3.11
 conda activate llama_factory_SFT
+cd LLaMA-Factory
 git clone --depth 1 https://github.com/hiyouga/LLaMA-Factory.git
 cd LLaMA-Factory
 pip install -e ".[torch,metrics]" --no-build-isolation
@@ -64,6 +65,7 @@ sh finetune_qwen_7b_1M.sh
 Then for GRPO training, we'd better create another environment. We can do this by running the following command:
 
 ```
+cd R1-Code-Interpreter
 conda deactivate
 conda create -n R1_code_inter python=3.11
 conda activate R1_code_inter
@@ -76,11 +78,13 @@ huggingface-cli login
 cd ../Search-R1
 pip install -r requirements.txt
 pip3 install flash-attn --no-build-isolation
+cd ..
 ```
 
 (In Search-R1/train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2; In r1_code_inter/generation_models.py and ../generation_models.py, fill in your OpenAI API for GPT-4o calling to extract the answer):
 ```
-sh Search-R1/train_grpo_3B.sh
+cd Search-R1
+sh train_grpo_3B.sh
 ```
 
 ## ✍️ Citation
