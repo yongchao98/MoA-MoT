@@ -52,8 +52,10 @@ conda activate llama_factory_SFT
 git clone --depth 1 https://github.com/hiyouga/LLaMA-Factory.git
 cd LLaMA-Factory
 pip install -e ".[torch,metrics]" --no-build-isolation
+pip install deepspeed==0.15.2
 ```
 ```
+cd ..
 sh finetune_qwen_7b_1M.sh
 ```
 
