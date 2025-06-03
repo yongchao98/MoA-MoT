@@ -29,15 +29,17 @@ R1-CI-14B/7B/3B are now available on huggingface-hub:
 ## 🚀 Get Started
 
 ### Direct usage (Inference)
-(In benchmark_inference_test.py, fill your python local path of current directory in line 28 and choose desired model type in line 30; In r1_code_inter/generation_models.py and ../generation_models.py, fill in your OpenAI API for GPT-4o calling to extract the answer). Then we create the environment for inference and SFT training.
+First we create the environment for inference and SFT training.
 ```
+git clone https://github.com/yongchao98/R1-Code-Interpreter.git
+cd R1-Code-Interpreter
 conda create -n llama_factory python=3.11
 conda activate llama_factory
 cd LLaMA-Factory
 pip install -r requirements.txt
 cd ..
 ```
-We can run the testing R1-CI models with:
+(In benchmark_inference_test.py, fill your python local path of current directory in line 28 and choose desired model type in line 30; In generation_models.py and Search-R1/r1_code_inter/generation_models.py, fill in your OpenAI API for GPT-4o calling to extract the answer). Then we can run the testing R1-CI models with:
 ```
 python benchmark_inference_test.py
 ```
@@ -47,8 +49,7 @@ python benchmark_inference_test.py
 For GRPO training, we'd better create another environment. We can do this by running the following command:
 
 ```
-git clone https://github.com/yongchao98/R1-Code-Interpreter.git
-cd R1-Code-Interpreter
+conda deactivate
 conda create -n R1_code_inter python=3.11
 conda activate R1_code_inter
 pip install reasoning-gym
@@ -62,9 +63,9 @@ pip install -r requirements.txt
 pip3 install flash-attn --no-build-isolation
 ```
 
-(In train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2; In r1_code_inter/generation_models.py and ../generation_models.py, fill in your OpenAI API for GPT-4o calling to extract the answer):
+(In Search-R1/train_grpo_3B.sh, fill your wandb key and python local path in line 1 and line 2; In r1_code_inter/generation_models.py and ../generation_models.py, fill in your OpenAI API for GPT-4o calling to extract the answer):
 ```
-sh train_grpo_3B.sh
+sh Search-R1/train_grpo_3B.sh
 ```
 
 ## ✍️ Citation
