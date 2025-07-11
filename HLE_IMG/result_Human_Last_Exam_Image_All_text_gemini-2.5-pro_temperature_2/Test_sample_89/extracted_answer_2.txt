@@ -1,0 +1,59 @@
+
+**Product A:**
+The structure is N-(but-3-en-1-yl)acetamide.
+```mermaid
+graph TD
+    subgraph Product A
+        C1(CH3) -- single -- C2(C=O)
+        C2 -- single -- N1(NH)
+        N1 -- single -- C3(CH2)
+        C3 -- single -- C4(CH2)
+        C4 -- single -- C5(CH)
+        C5 -- double -- C6(CH2)
+    end
+    style C2 fill:#f9f,stroke:#333,stroke-width:2px
+    style N1 fill:#9cf,stroke:#333,stroke-width:2px
+```
+Chemical structure drawing:
+  ![Product A: N-(but-3-en-1-yl)  acetamide](https://i.imgur.com/kK53m4h.png)
+
+**Product B and Product C:**
+The structures of B and C are identical. The structure is 2-acetyl-2,3,5,6-tetrahydro-1H-pyrrolo[1,2-c]imidazol-1-one.
+```mermaid
+graph TD
+    subgraph Product B / C
+        N_bridge(N)
+        N_acyl(N)
+        C_carbonyl(C=O)
+        C_CH2_1(CH2)
+        C_CH2_2(CH2)
+        C_CH(CH)
+        C_CH2_3(CH2)
+    
+        N_acyl -- single -- C_CH2_1
+        C_CH2_1 -- single -- C_CH2_2
+        C_CH2_2 -- single -- N_bridge
+        N_bridge -- single -- C_CH(CH)
+        C_CH(CH) -- single -- C_carbonyl
+        C_carbonyl -- single -- N_acyl
+        N_bridge -- single -- C_CH2_3
+        C_CH2_3 -- single -- C_CH(CH)
+        
+        subgraph Acetyl group
+            C_acetyl_C(C)
+            C_acetyl_O(O)
+            C_acetyl_Me(CH3)
+        end
+
+        N_acyl -- single -- C_acetyl_C
+        C_acetyl_C -- double -- C_acetyl_O
+        C_acetyl_C -- single -- C_acetyl_Me
+    end
+    style C_carbonyl fill:#f9f,stroke:#333,stroke-width:2px
+    style N_acyl fill:#9cf,stroke:#333,stroke-width:2px
+    style N_bridge fill:#9cf,stroke:#333,stroke-width:2px
+    style C_acetyl_O fill:#f9f,stroke:#333,stroke-width:2px
+
+```
+Chemical structure drawing:
+ 

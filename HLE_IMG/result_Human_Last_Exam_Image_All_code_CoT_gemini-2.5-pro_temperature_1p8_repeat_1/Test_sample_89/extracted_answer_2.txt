@@ -1,0 +1,74 @@
+# It is recommended to install the RDKit library: pip install rdkit
+try:
+    from rdkit import Chem
+    from rdkit.Chem import Draw
+except ImportError:
+    print("RDKit library not found. Please install it using 'pip install rdkit'")
+    print("Structures will be provided as SMILES strings only.")
+    Chem = None
+
+def get_mol_block(smiles_string):
+    """Generates a MOL block from a SMILES string if RDKit is available."""
+    if Chem:
+        mol = Chem.MolFromSmiles(smiles_string)
+        # Add hydrogens to get a more complete MOL block
+        mol = Chem.AddHs(mol)
+        return Chem.MolToMolBlock(mol)
+    return "MOL block could not be generated because RDKit is not installed."
+
+def solve_reaction_products():
+    """
+    Determines and prints the structures of products A, B, and C.
+
+    The solution is based on interpreting the provided reaction mechanism. The text has
+    some confusing parts, so the structures are proposed based on the most
+    chemically reasonable interpretation of the named products and reaction types.
+    """
+
+    # Structure of Product A
+    # Pathway A involves a Huisgen cycloaddition reaction. The description suggests a
+    # fragmentation into a "new pyrrole" and a "tethered isocyanate", with the latter
+    # being converted to an acetamide group. This is interpreted as a molecular
+    # rearrangement where both functionalities are part of the single final product, A.
+    # The structure is a complex pyrrolizine derivative.
+    # Assumed structure: methyl 1-(3-acetamidopropyl)pyrrolizine-2-carboxylate
+    smiles_A = "CC(=O)NCCCc1c(C(=O)OC)cn2cccc21"
+    mol_block_A = get_mol_block(smiles_A)
+
+    # Structure of Product B
+    # Pathway B describes a Michael addition leading to a "bicyclic
+    # tetrahydro-3H-pyrrolizin-3-one" and an imide. Ignoring the confusing
+    # text that assigns the imide as product B (which conflicts with pathway C's
+    # description), we assume product B is the more clearly named pyrrolizinone.
+    # Structure: Hexahydropyrrolizin-3-one (1-azabicyclo[3.3.0]octan-3-one)
+    smiles_B = "O=C1CC2N(C1)CCC2"
+    mol_block_B = get_mol_block(smiles_B)
+
+    # Structure of Product C
+    # Pathway C involves a reaction with acetic anhydride. The description mentions the
+    # formation of "acetyl pyrrolidine". Similar to product B's analysis, we assume
+    # Product C is this named molecule, despite the contradictory statement about
+    # it being an imide.
+    # Structure: N-acetylpyrrolidine
+    smiles_C = "CC(=O)N1CCCC1"
+    mol_block_C = get_mol_block(smiles_C)
+
+    # --- Outputting the results ---
+    print("### Structure of Product A ###")
+    print(f"SMILES: {smiles_A}")
+    print("MOL Block:")
+    print(mol_block_A)
+    print("\n" + "="*40 + "\n")
+
+    print("### Structure of Product B ###")
+    print(f"SMILES: {smiles_B}")
+    print("MOL Block:")
+    print(mol_block_B)
+    print("\n" + "="*40 + "\n")
+
+    print("### Structure of Product C ###")
+    print(f"SMILES: {smiles_C}")
+    print("MOL Block:")
+    print(mol_block_C)
+
+solve_reaction_products()

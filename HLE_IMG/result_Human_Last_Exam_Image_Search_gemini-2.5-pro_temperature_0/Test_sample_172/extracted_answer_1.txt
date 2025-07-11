@@ -1,0 +1,12 @@
+
+**Formulation of Total Power Delivered to the Grid:**
+The total power delivered to the grid ($P_{grid}$) as a function of $P^{0}_{\text{wind}}$, $P_{\text{wave}}$, and $P_{c}$ is:
+$P_{grid} = (P^{0}_{\text{wind}} + P_{\text{wave}} - P_c) - k (P^{0}_{\text{wind}} + P_{\text{wave}} - P_c)^2$
+
+**Optimal Compensation Power ($P{c}^{\text{opt}}$):**
+To meet the grid demand of at least $12 , \text{MW}$ while minimizing cable losses, the optimal compensation power is:
+$P{c}^{\text{opt}} \approx 1.056 , \text{MW}$
+
+**Total Power Delivered to the Grid:**
+With the optimal compensation power, the total power delivered to the onshore grid, after accounting for cable losses, is:
+$P_{grid} = 12.0 , \text{MW}$

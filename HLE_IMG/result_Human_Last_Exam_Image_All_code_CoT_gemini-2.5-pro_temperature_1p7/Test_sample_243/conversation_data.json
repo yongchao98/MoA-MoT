@@ -1,0 +1,10 @@
+{
+  "question": "What is the name of the island to which this plant was endemic to?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "This plant is identified as *Debregeasia heveloi*, a species known for its beautifully reticulated leaves. It is a critically endangered plant from the nettle family (Urticaceae). My task is to identify the specific, remote island to which this unique plant is endemic. I will use a simple Python script to output the name of this island.\n\n```python\ndef solve():\n  \"\"\"\n  This function prints the name of the island where the plant Debregeasia heveloi is endemic.\n  \"\"\"\n  island_name = \"Gough Island\"\n  print(f\"The plant, Debregeasia heveloi, was endemic to: {island_name}\")\n\nsolve()\n```\n<<<Gough Island>>>"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    What is the name of the island to which this plant was endemic to?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Given this position:\n- White:\nQa4\nKb7\nKe7\nb4\nRf3\nRh5\nKh4\nBg1\nBg2\n\n- Black: \nRc6\nKd5\ne5\nf4\n\nIt's white turn to move, find the 2 moves checkmate for white\n\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "The two-move checkmate for White is as follows:\n\n**Move 1: Qe8+**\n\nWhite moves the Queen to e8, putting the Black King in check. Black's only possible legal move is to block the check with its Queen.\n\n*   1. ... Qe6\n\n**Move 2: Qxe6#**\n\nWhite captures the Black Queen on e6, resulting in a checkmate. The Black King has no escape squares and the White Queen cannot be captured.\n\n<<<1. Qe8+ Qe6\n2. Qxe6#>>>"
+  ],
+  "user_prompt_list": [
+    "Given this position:\n- White:\nQa4\nKb7\nKe7\nb4\nRf3\nRh5\nKh4\nBg1\nBg2\n\n- Black: \nRc6\nKd5\ne5\nf4\n\nIt's white turn to move, find the 2 moves checkmate for white\n\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

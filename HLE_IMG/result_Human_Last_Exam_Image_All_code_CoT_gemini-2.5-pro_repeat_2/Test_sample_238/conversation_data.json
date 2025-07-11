@@ -1,0 +1,10 @@
+{
+  "question": "What is the name of the black organism in this photo?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "Based on the visual information, the tiny black organisms growing on the surface of the larger shelf fungus are a type of mold. Their appearance, with a thin stalk and a small, dark head, is characteristic of a group known as \"pin molds.\" These are often fungi that grow on other fungi.\n\nThis Python script will print the name of the identified organism.\n\n```python\ndef identify_organism():\n  \"\"\"\n  This function identifies the black organism in the image and prints its name.\n  The image shows tiny black structures with stalks and heads growing on a larger fungus.\n  This morphology is characteristic of a pin mold.\n  \"\"\"\n  organism_name = \"Pin mold\"\n  print(f\"The name of the black organism in the photo is: {organism_name}\")\n\nidentify_organism()\n```\n<<<Pin mold>>>"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    What is the name of the black organism in this photo?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

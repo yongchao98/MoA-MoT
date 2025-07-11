@@ -1,0 +1,2 @@
+P_delivered = 0.9604 * (P_wind + P_pv)
+V_drop = ((0.9604 * (P_wind + P_pv) + j Q_comp * 0.979) / V_nominal) * (0.08 + j0.16)

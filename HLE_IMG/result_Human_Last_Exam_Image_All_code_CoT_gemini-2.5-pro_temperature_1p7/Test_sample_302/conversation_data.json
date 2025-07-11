@@ -1,0 +1,10 @@
+{
+  "question": "What's the character content on the seal in simplified Chinese?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "This is a task that requires analyzing an image. A human assistant will be more helpful.\n\nThe characters on the seal, read from top to bottom, right to left, are 寫經不善 (xiě jīng bù shàn).\n\nHere is a python script to output the simplified Chinese version of these characters.\n\n```python\n# The traditional characters on the seal are 寫經不善.\n# Let's convert them to simplified Chinese and print the result.\n\n# 寫 in simplified is 写\n# 經 in simplified is 经\n# 不 is the same in both\n# 善 is the same in both\n\nsimplified_characters = \"写经不善\"\n\nprint(f\"The character content on the seal in simplified Chinese is: {simplified_characters}\")\n```\n<<<写经不善>>>"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    What's the character content on the seal in simplified Chinese?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

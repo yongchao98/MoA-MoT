@@ -1,0 +1,11 @@
+**Formulation of Total Power Delivered:**
+The total power delivered to the grid ($P_{\text{grid}}$) is given by the formula:
+$P_{\text{grid}} = (P^{0}_{\text{wind}} + P_{\text{wave}} + P_{c}) - 0.01 \times (P^{0}_{\text{wind}} + P_{\text{wave}} + P_{c})^2$
+
+**Optimal Compensation Power ($P{c}^{\text{opt}}$):**
+To meet the grid demand of at least 12 MW while minimizing losses, the optimal compensation power is:
+$P{c}^{\text{opt}} = -1.055 , \text{MW}$
+
+**Total Power Delivered to the Grid:**
+With the optimal compensation, the total power delivered to the grid is:
+$P_{\text{grid}} = 12.0 , \text{MW}$

@@ -1,0 +1,10 @@
+{
+  "question": "Identify the timestamps of synchronized bursts in this graph of firing activity of a neuronal culture and calculate the average inter-burst interval to two significant figures.\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "Based on the analysis of the graph, the synchronized bursts occur at the following approximate timestamps: 2 s, 10 s, 18 s, 28 s, 37 s, and 49 s.\n\nThe inter-burst intervals are calculated as the difference between consecutive burst times:\n*   10 s - 2 s = 8 s\n*   18 s - 10 s = 8 s\n*   28 s - 18 s = 10 s\n*   37 s - 28 s = 9 s\n*   49 s - 37 s = 12 s\n\nThe average inter-burst interval is the sum of these intervals divided by the number of intervals:\n(8 + 8 + 10 + 9 + 12) / 5 = 47 / 5 = 9.4 s.\n\nTo two significant figures, the average inter-burst interval is 9.4 s.\n<<<9.4>>>"
+  ],
+  "user_prompt_list": [
+    "Identify the timestamps of synchronized bursts in this graph of firing activity of a neuronal culture and calculate the average inter-burst interval to two significant figures.\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

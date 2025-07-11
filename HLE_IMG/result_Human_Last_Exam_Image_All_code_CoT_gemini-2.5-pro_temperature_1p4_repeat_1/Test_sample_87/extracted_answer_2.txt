@@ -1,0 +1,22 @@
+```python
+def get_product_structures():
+    """
+    This function describes the chemical structures of products A, B, and C.
+    The structures are provided as text descriptions and SMILES strings.
+    """
+
+    print("--- Structure of Product C (C11H16N2O3) ---")
+    print("Description: Product C is the mixed anhydride formed by the reaction of the starting material's carboxylic acid with acetic anhydride. It is an intermediate on the path to the other products.")
+    print("SMILES: CC(=O)OC(=O)[C@@H]1CCCN1C2=NCCC2\n")
+
+    print("--- Structure of Product A (C14H20N2O3) ---")
+    print("Description: Product A is the result of the main reaction pathway. First, a [3+2] cycloaddition occurs between the azomethine ylide (from the starting material) and methyl propiolate. The resulting cycloadduct is then C-acetylated by acetic anhydride on the newly formed ring.")
+    print("SMILES: COC(=O)C1=C(C(=O)C)[C@]2N(C3=NCCC3)CCC[C@@H]12\n")
+
+    print("--- Structure of Product B (C12H14N2O3) ---")
+    print("Description: Product B is a side-product formed from the primary cycloadduct via oxidation and aromatization. It involves the loss of 4 hydrogen atoms to form a fully aromatic pyrrole-substituted pyrrolizinium core, and the addition of one oxygen atom, likely as an N-oxide.")
+    print("SMILES (plausible): COC(=O)c1c[n+]2c(c1)CCCC2-c1cccn1.[O-]\n")
+
+if __name__ == '__main__':
+    get_product_structures()
+```

@@ -1,0 +1,18 @@
+
+**Product A:** N-acetylprolinamide.
+**Product B:** One diastereomer of the N-acetylated hexahydroindolizinone derivative shown in the image.
+**Product C:** Another diastereomer of the N-acetylated hexahydroindolizinone derivative shown in the image.
+
+The structures are depicted below:
+```mermaid
+graph TD
+    subgraph Product A
+        A_struct((<img src='https://i.imgur.com/YxY9QWv.png' />))
+    end
+    subgraph Products B and C
+        BC_struct((<img src='https://i.imgur.com/vHq0L5K.png' />))
+    end
+    style A_struct fill:none,stroke:none
+    style BC_struct fill:none,stroke:none
+```
+**(Note: In the provided image for B and C, "Diastereomers" implies that B and C have the same connectivity but differ in the 3D arrangement of atoms at one or more stereocenters.)**

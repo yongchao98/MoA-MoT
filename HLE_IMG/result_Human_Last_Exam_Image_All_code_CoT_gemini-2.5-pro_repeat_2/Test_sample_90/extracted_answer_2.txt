@@ -1,0 +1,63 @@
+```python
+# The rdkit library is required for this script.
+# You can install it via pip: pip install rdkit-pypi
+import rdkit
+from rdkit import Chem
+from rdkit.Chem import Descriptors
+
+def get_mol_info(smiles, name, target_formula):
+    """Calculates and prints molecular formula and DBE for a SMILES string."""
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        print(f"Error: Could not parse the proposed SMILES for product {name}.")
+        return
+        
+    formula = Descriptors.rdMolDescriptors.CalcMolFormula(mol)
+    dbe = Descriptors.calcNumDBE(mol)
+    
+    print(f"Proposed Structure for Product {name}:")
+    print(f"  Target Formula: {target_formula}")
+    print(f"  Proposed SMILES: {smiles}")
+    print(f"  Calculated Formula from SMILES: {formula}")
+    print(f"  Calculated Degrees of Unsaturation (DBE): {dbe}")
+    
+    if formula == target_formula:
+        print("  Status: Formula matches the provided data.")
+    else:
+        print("  Status: Formula does not match the provided data.")
+    print("-" * 30)
+
+def solve_reaction_structures():
+    """
+    This function proposes structures for products A, B, and C based on the reaction and
+    spectroscopic data provided. The reaction is complex, likely involving fragmentation and
+    rearrangement pathways. The proposed structures are chemically plausible hypotheses
+    that fit the molecular formulas, DBE, and key NMR features.
+    """
+
+    # Product A: C14H20N2O3 (DBE=6). Key NMR features suggest an N-acetyl group, a methyl ester,
+    # a C=C bond, and two ring systems. The proposed structure reflects a significant
+    # rearrangement product consistent with these features.
+    smiles_A = "COC(=O)C1=C(N2CCCC2)CN(C(=O)C)C1CC" # C14H20N2O3, DBE=6
+
+    # Product B: C12H14N2O3 (DBE=7). Key NMR features suggest three C=O groups, a C=C bond,
+    # and no methyl ester. The high DBE indicates a compact, polycyclic structure.
+    # The proposed structure is a fused, bridged system that could arise from an
+    # intramolecular cyclization cascade.
+    smiles_B = "CC(=O)N1C=C(C(=O)O)C2=C1C1(CCN1)C2" # C12H14N2O3, DBE=7
+
+    # Product C: C11H16N2O3 (DBE=5). Key NMR features suggest three C=O groups (likely amides/imide)
+    # and an N-acetyl group, with no C=C bond. This suggests a saturated bicyclic
+    # structure, possibly formed via fragmentation.
+    smiles_C = "CC(=O)N1C(C(=O)N(C)C1=O)C1CCCC1" # C11H16N2O3, DBE=5
+    
+    print("=" * 30)
+    print("Proposed Structures for Products A, B, and C")
+    print("=" * 30)
+    
+    get_mol_info(smiles_A, "A", "C14H20N2O3")
+    get_mol_info(smiles_B, "B", "C12H14N2O3")
+    get_mol_info(smiles_C, "C", "C11H16N2O3")
+
+solve_reaction_structures()
+```

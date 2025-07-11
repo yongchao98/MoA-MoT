@@ -1,0 +1,10 @@
+{
+  "question": "Guess the music.\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "This sheet music is from the video game series Final Fantasy. The piece is titled \"Prelude,\" also known as \"The Crystal Theme,\" and was composed by Nobuo Uematsu. It is famous for its cascading arpeggios, which are clearly visible in the score starting from the third measure.\n\nI will now provide a Python script to print the name of the song.\n\n```python\ndef guess_music():\n    \"\"\"\n    Identifies the music from the provided sheet music.\n    \"\"\"\n    composer = \"Nobuo Uematsu\"\n    piece_title = \"Prelude (The Crystal Theme)\"\n    source = \"Final Fantasy series\"\n    \n    print(f\"The music is '{piece_title}' from the {source}, composed by {composer}.\")\n\nguess_music()\n```\n<<<Prelude (The Crystal Theme) from Final Fantasy>>>"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    Guess the music.\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

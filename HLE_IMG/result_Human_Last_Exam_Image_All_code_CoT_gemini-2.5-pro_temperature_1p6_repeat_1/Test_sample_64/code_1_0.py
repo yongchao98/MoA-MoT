@@ -1,0 +1,12 @@
+def describe_process():
+  """
+  Describes the biological process shown in the image series.
+  """
+  process_description = (
+      "The image depicts the process of hyphal lysis (cell bursting) in a filamentous organism. "
+      "Panel L shows an intact hypha. Panel M shows the initiation of lysis with a bulge forming at a septum (the connection between cells), as indicated by the arrowhead. "
+      "Panel N shows the advanced stage of lysis, where the cell has collapsed and buckled at the weakened septum due to internal pressure."
+  )
+  print(process_description)
+
+describe_process()

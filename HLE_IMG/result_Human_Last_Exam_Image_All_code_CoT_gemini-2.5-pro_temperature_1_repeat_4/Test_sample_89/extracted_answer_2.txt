@@ -1,0 +1,36 @@
+```python
+def get_product_structures():
+    """
+    This function prints the names and SMILES strings for the three products A, B, and C.
+    """
+    # Structure of Product A
+    product_A_name = "A: N-(but-3-en-1-yl)acetamide"
+    product_A_smiles = "CC(=O)NCCCC=C"
+
+    # Structure of Product B
+    product_B_name = "B: Hexahydropyrrolizin-3-one"
+    product_B_smiles = "O=C1CCN2CCCC12"
+
+    # Structure of Product C
+    # This structure is complex and derived from the likely source literature for the reaction.
+    product_C_name = "C: (E)-methyl 2-(2,5-dioxo-1,2,5,6,7,8-hexahydro-3H-pyrrolo[1,2-a]pyrimidin-3-ylidene)acetate"
+    # Note: Generating a canonical SMILES for such a complex fused system with defined stereochemistry can be challenging.
+    # The following is a valid SMILES representation for the structure.
+    product_C_smiles = "COC(=O)/C=C/1\\C(=O)N2CCCC2N(C1=O)"
+
+
+    print("The structures of the three products are:")
+    print("-" * 40)
+    print(product_A_name)
+    print("SMILES:", product_A_smiles)
+    print("-" * 40)
+    print(product_B_name)
+    print("SMILES:", product_B_smiles)
+    print("-" * 40)
+    print(product_C_name)
+    print("SMILES:", product_C_smiles)
+    print("-" * 40)
+
+if __name__ == "__main__":
+    get_product_structures()
+```

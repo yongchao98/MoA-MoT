@@ -1,0 +1,10 @@
+{
+  "question": "Identify the timestamps of synchronized bursts in this graph of firing activity of a neuronal culture and calculate the average inter-burst interval to two significant figures.\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "The timestamps of the synchronized bursts, which are the dense, vertical collections of points indicating simultaneous firing across many electrodes, are identified as follows:\n\n*   Burst 1: ~2 s\n*   Burst 2: ~16 s\n*   Burst 3: ~22 s\n*   Burst 4: ~36 s\n*   Burst 5: ~49 s\n\nThe inter-burst interval (IBI) is the time elapsed between the start of consecutive bursts. The individual intervals are:\n\n*   IBI 1 (between Burst 1 and 2): 16 s - 2 s = 14 s\n*   IBI 2 (between Burst 2 and 3): 22 s - 16 s = 6 s\n*   IBI 3 (between Burst 3 and 4): 36 s - 22 s = 14 s\n*   IBI 4 (between Burst 4 and 5): 49 s - 36 s = 13 s\n\nThe average inter-burst interval is calculated as follows:\n\nAverage IBI = (14 s + 6 s + 14 s + 13 s) / 4 = 47 s / 4 = 11.75 s\n\nRounding this to two significant figures gives 12 s.\n<<<12>>>"
+  ],
+  "user_prompt_list": [
+    "Identify the timestamps of synchronized bursts in this graph of firing activity of a neuronal culture and calculate the average inter-burst interval to two significant figures.\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,22 @@
+def solve():
+    """
+    Identifies the authors of the nine artworks and prints their names in order.
+    The artworks are identified from left to right, top to bottom.
+    """
+    authors = [
+        "Shi Guoliang (史国良)",
+        "Wu Guanzhong (吴冠中)",
+        "Mao Zedong (毛泽东)",
+        "Lin Sanzhi (林散之)",
+        "He Duoling (何多苓)",
+        "Lin Fengmian (林風眠)",
+        "Wu Guanzhong (吴冠中)",
+        "Li Keran (李可染)",
+        "Qi Baishi (齐白石)"
+    ]
+    
+    print("The authors of the artworks are:")
+    for i, author in enumerate(authors, 1):
+        print(f"Artwork {i}: {author}")
+
+solve()

