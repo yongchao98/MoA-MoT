@@ -1,0 +1,15 @@
+In the framework of Interval Type-3 Membership Functions (IT3 MFs) using Gaussian-based paradigms, the vertical cross-section for a fixed primary input `x'` is an Interval Type-2 Membership Function (IT2 MF) of a secondary variable `u`. This IT2 MF is characterized by an upper membership function `μ̄_A(x')(u)` and a lower membership function `μ̲_A(x')(u)`.
+
+The mathematical formulation is given by:
+
+**Upper Bound:**
+`μ̄_A(x')(u) = exp( -1/2 * ( (u - c_u(x')) / σ_u(x') )^2 )`
+
+**Lower Bound:**
+`μ̲_A(x')(u) = λ(x') * exp( -1/2 * ( (u - c_l(x')) / σ_l(x') )^2 )`
+
+Where:
+*   `u` is the secondary input variable.
+*   `c_u(x')` and `c_l(x')` are the means of the Gaussian functions, dependent on the primary input `x'`.
+*   `σ_u(x')` and `σ_l(x')` are the standard deviations of the Gaussian functions, dependent on `x'`.
+*   `λ(x')` is a scaling factor (0 ≤ λ(x') ≤ 1) that adjusts the height of the lower bound, also dependent on `x'`.

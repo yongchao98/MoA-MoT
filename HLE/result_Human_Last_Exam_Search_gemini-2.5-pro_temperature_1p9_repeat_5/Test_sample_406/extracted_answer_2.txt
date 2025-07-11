@@ -1,0 +1,18 @@
+The conditions for the functions `F:X*Y*Z→X`, `G:Y*X*Y→Y` and `H:Z*Y*X→Z` to have an FGH-tripled fixed point are typically established within the framework of partially ordered complete metric spaces. An FGH-tripled fixed point is a triplet `(x, y, z)` such that `x = F(x, y, z)`, `y = G(y, x, z)`, and `z = H(z, y, x)`. The primary conditions are:
+
+1.  **Complete Metric Spaces**: The spaces `(X, d_X)`, `(Y, d_Y)`, and `(Z, d_Z)` must be complete metric spaces, each equipped with a partial ordering (`≤_X`, `≤_Y`, `≤_Z`).
+
+2.  **Mixed Monotone Property**: The functions `F`, `G`, and `H` must have a mixed monotone property with respect to the partial orderings. This means that for each function, the output is non-decreasing with respect to some arguments and non-increasing with respect to others. For an FGH-tripled fixed point, a common requirement is that the functions are non-decreasing in the first and third arguments and non-increasing in the second argument.
+
+3.  **Contractive Condition**: The functions must satisfy a contractive type condition. This ensures that iterating the functions brings points closer together. A typical contractive condition is that for all `x, u ∈ X`, `y, v ∈ Y`, and `z, w ∈ Z` for which `x ≥ u`, `y ≤ v`, and `z ≥ w`, there exist constants `k, l, m ∈ [0, 1)` with `k + l + m < 1` such that:
+    `d_X(F(x,y,z), F(u,v,w)) + d_Y(G(y,x,z), G(v,u,w)) + d_Z(H(z,y,x), H(w,v,u)) ≤ k * d_X(x,u) + l * d_Y(y,v) + m * d_Z(z,w)`.
+
+4.  **Existence of an Initial Point**: There must exist an initial triplet `(x₀, y₀, z₀) ∈ X × Y × Z` such that either:
+    *   `x₀ ≤ F(x₀,y₀,z₀)`, `y₀ ≥ G(y₀,x₀,z₀)`, and `z₀ ≤ H(z₀,y₀,x₀)`
+    *   or the reverse inequalities hold.
+
+5.  **Continuity or a Regularity Condition**:
+    *   Either the functions `F`, `G`, and `H` are continuous.
+    *   Or, if they are not continuous, the space must satisfy a regularity property, for instance, that for any convergent monotonic sequence, all its terms are related by the partial order to the limit of the sequence.
+
+Under these conditions, an FGH-tripled fixed point is guaranteed to exist. Uniqueness often requires an additional condition, such as every pair of elements in the product space having an upper or lower bound.

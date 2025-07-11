@@ -1,0 +1,45 @@
+170[#include <stdio.h>
+
+void main() {
+    // Defines variables using smallest possible memory footprint.
+    digit result[158] = {0};
+    char i;
+    char size = 1;
+    char j;
+    char carry;
+
+    result[0] = 1; // Initialize result to 1
+
+    // Loop from i = 2 to 100, multiplying it with the result array.
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Multiply each digit of the result array with i.
+        for (j = 0; j < size; j++) {
+            carry += result[j] * i;
+            result[j] = carry % 10;
+            carry /= 10;
+        }
+
+        // Propagate the remaining carry, extending the array size if needed.
+        while (carry > 0) {
+            result[size] = carry % 10;
+            carry /= 10;
+            size++;
+        }
+    }
+
+    // Print the final equation result: 100! = [the number]
+    // The loop prints each digit, which is a number in the final result.
+    printf("100! = ");
+    
+    // Print digits in reverse order. Use a while loop as 'j' is unsigned.
+    j = size - 1;
+    while (1) {
+        printf("%d", result[j]);
+        if (j == 0) {
+            break;
+        }
+        j--;
+    }
+    printf("\\n");
+}]

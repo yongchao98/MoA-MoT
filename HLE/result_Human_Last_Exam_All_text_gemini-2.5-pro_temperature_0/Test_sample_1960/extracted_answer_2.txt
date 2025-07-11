@@ -1,0 +1,7 @@
+Let A be an atomic proposition. For any formula F and integer k ≥ 1, let $F^k$ denote the formula $F \otimes F \otimes \dots \otimes F$ (k times), and let $F^0$ denote the constant $1$.
+
+The function $f$ is defined as:
+$f(w) = A \multimap A^{w+1}$
+
+The linear formula $C = C(W, m, b)$ is defined as:
+$C = (A^m \otimes (A^{b+1} \multimap A)^m) \multimap A^m$

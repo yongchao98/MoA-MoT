@@ -1,0 +1,10 @@
+{
+  "question": "There is a single genus of mushroom known to produce a distinctly blue spore print, what is its name?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "I will answer the question about the mushroom genus with a blue spore print. Since this is a factual question, I will write a simple Python script that defines the answer as a string and then prints it to the console.\n\n```python\n# The user is asking for the name of the single mushroom genus\n# known to produce a distinctly blue spore print.\n# This information is a known fact in mycology.\n\n# Storing the name of the genus in a variable.\ngenus_name = \"Entoloma\"\n\n# Printing the answer to the user's question.\nprint(\"The single genus of mushroom known to produce a distinctly blue spore print is:\")\nprint(genus_name)\n```\n<<<Entoloma>>>"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    There is a single genus of mushroom known to produce a distinctly blue spore print, what is its name?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,10 @@
+The equation for the absorption cross-section is derived using first-order time-dependent perturbation theory for a system interacting with a Gaussian laser pulse of carrier frequency $\omega$ and duration $\tau$.
+
+**a) No interaction between molecules:**
+The absorption cross-section is the sum of the cross-sections of N independent molecules. The spectrum is a set of Gaussian peaks located at the transition frequencies ($\omega_{ak}$) of a single molecule.
+$$ \sigma_a(\omega) = N \left( \frac{\sqrt{2\pi}\tau}{\hbar c \epsilon_0} \right) \sum_{k<E_F, a>E_F} \omega_{ak} |\vec{\mu}_{ak} \cdot \vec{\epsilon}|^2 e^{-(\omega_{ak}-\omega)^2 \tau^2 / 2} $$
+
+**b) Near-neighbor interaction:**
+The interaction results in the formation of exciton bands. The selection rule concentrates the total oscillator strength of each band into the $K=0$ state. The spectrum consists of a series of Gaussian peaks, each corresponding to a $K=0$ exciton state. The peak positions are shifted relative to the non-interacting case by the Coulombic interaction.
+$$ \sigma_b(\omega) = N \left( \frac{\sqrt{2\pi}\tau}{\hbar c \epsilon_0} \right) \sum_{k<E_F, a>E_F} \omega_{K=0, ak} |\vec{\mu}_{ak} \cdot \vec{\epsilon}|^2 e^{-(\omega_{K=0, ak}-\omega)^2 \tau^2 / 2} $$
+where the transition frequency $\omega_{K=0, ak}$ is for the $K=0$ exciton state, given by $\hbar\omega_{K=0, ak} = \hbar\omega_{ak} + (D_{ak} + 2J_{ak})$.

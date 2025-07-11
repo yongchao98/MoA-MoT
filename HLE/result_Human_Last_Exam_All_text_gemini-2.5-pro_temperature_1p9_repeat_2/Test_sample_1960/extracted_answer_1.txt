@@ -1,0 +1,2 @@
+The function $f$ is defined as $f(w) = \underbrace{\bot \otimes \dots \otimes \bot}_{w \text{ times}}$ for $w>0$, and $f(0) = 1$.
+The formula $C(W, m, b)$ is given by $\underbrace{\text{BIN} \otimes \dots \otimes \text{BIN}}_{m \text{ times}}$ (or $1$ if $m=0$), where the formula BIN is defined as $\text{BIN} = \underbrace{\bot \multimap (\bot \multimap \dots (\bot}_{b \text{ times}} \multimap 1)\dots)$ for $b>0$, and $\text{BIN}=1$ for $b=0$.

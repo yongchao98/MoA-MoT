@@ -1,0 +1,1 @@
+Let K be the unique non-negative integer satisfying $\sum_{i=1}^{K} \frac{100}{2n - 2i + 1} < m \le \sum_{i=1}^{K+1} \frac{100}{2n - 2i + 1}$ (where the sum is 0 for K=0). The maximum amount of water left is $100(n-K) - \left( m - \sum_{i=1}^{K} \frac{100}{2n - 2i + 1} \right) \times (2n - 2K - 1)$.

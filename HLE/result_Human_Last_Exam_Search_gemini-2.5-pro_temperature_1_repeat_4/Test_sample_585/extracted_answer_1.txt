@@ -1,0 +1,9 @@
+**Σ' = [J_r(-μ)]⁻¹ Σ ([J_r(-μ)]⁻¹)ᵀ**
+
+where:
+*   **Σ'** is the post-reset covariance matrix.
+*   **Σ** is the pre-reset covariance matrix.
+*   **μ** is the mean of the pre-reset attitude deviation `δ`.
+*   **[J_r(φ)]⁻¹ = I + (1/2)[φ]ₓ + (1/||φ||² - (1 + cos(||φ||))/(2||φ||sin(||φ||)))[φ]ₓ²** is the inverse of the right-Jacobian of SO(3), evaluated at `φ = -μ`.
+*   **I** is the 3x3 identity matrix.
+*   **[φ]ₓ** is the skew-symmetric matrix of the vector `φ`.

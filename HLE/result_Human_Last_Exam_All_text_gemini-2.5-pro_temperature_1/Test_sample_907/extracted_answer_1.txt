@@ -1,0 +1,13 @@
+The equation for the absorption cross-section $\sigma(\omega_L)$ as a function of the laser frequency $\omega_L$ is derived from first-order time-dependent perturbation theory. The general form is a Gaussian function whose width is determined by the pulse duration $\tau$ and whose center and amplitude depend on the properties of the molecular chain.
+
+Let $\omega_0$ be the electronic transition frequency of a single molecule, $\vec{\mu}_{mol}$ be its transition dipole moment, $\tau$ be the pulse duration, $J$ be the near-neighbor interaction energy, and $N$ be the number of molecules.
+
+**a) No interaction between molecules:**
+The system behaves as a collection of $N$ independent absorbers. The absorption spectrum is determined by the properties of a single molecule. The cross-section for a single molecule transition is:
+$\sigma_a(\omega_L) = \frac{2\sqrt{\pi} \omega_0 \tau |\mu_{mol, \parallel}|^2}{\hbar c \epsilon_0} \exp\left[-\tau^2 (\omega_0 - \omega_L)^2\right]$
+where $\mu_{mol, \parallel}$ is the component of $\vec{\mu}_{mol}$ along the laser polarization.
+
+**b) Near-neighbor interaction considered:**
+The interaction leads to the formation of delocalized excitons. A selection rule dictates that only the exciton state with wavevector $k=0$ is optically active. This concentrates the entire absorption strength of the chain into a single transition. The absorption cross-section for the whole chain is:
+$\sigma_b(\omega_L) = \frac{2\sqrt{\pi} \omega_{k=0} \tau N |\mu_{mol, \parallel}|^2}{\hbar c \epsilon_0} \exp\left[-\tau^2 (\omega_{k=0} - \omega_L)^2\right]$
+where the transition frequency is shifted by the interaction energy, $\omega_{k=0} = \omega_0 + 2J/\hbar$, and the total transition strength is enhanced by a factor of $N$.

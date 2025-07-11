@@ -1,0 +1,7 @@
+Let \(f_m\) be the answer for a given \(m\).
+The base cases are:
+\(f_0 = 1\)
+\(f_1 = 0\)
+
+For \(m \geq 2\), the recursive formula is:
+\(f_m = \frac{1}{m} \left( \binom{2^n-1}{m-1} - f_{m-1} - (2^n-m+1)f_{m-2} \right)\)

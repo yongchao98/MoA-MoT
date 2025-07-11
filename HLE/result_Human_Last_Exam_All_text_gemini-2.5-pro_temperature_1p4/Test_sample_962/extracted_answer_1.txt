@@ -1,0 +1,20 @@
+The design for a tightly secure t-out-of-n threshold signature scheme with a two-round signing protocol is as follows. It is based on a modified BLS-type signature over asymmetric bilinear groups `(G1, G2, GT)`.
+
+**1. System Setup and Key Generation (DKG):**
+*   **Secret Keys**: The scheme utilizes two independent master secret keys, `x` and `y`, randomly chosen from `Z_p`.
+*   **Distributed Key Generation**: Two parallel instances of a `(t, n)`-Verifiable Secret Sharing (VSS) scheme (e.g., Pedersen VSS for malicious security) are executed.
+    *   The first VSS instance shares `x` via a degree `t-1` polynomial `P_x(z)`, so `P_x(0) = x`.
+    *   The second VSS instance shares `y` via a degree `t-1` polynomial `P_y(z)`, so `P_y(0) = y`.
+*   **Secret Shares**: Each of the `n` parties, party `i`, holds a pair of secret shares `sk_i = (x_i, y_i)`, where `x_i = P_x(i)` and `y_i = P_y(i)`.
+*   **Public Key**: The single system public key is `pk = (X, Y)`, where `X = g1^x` and `Y = g1^y`.
+*   **Public Verification Keys**: For robustness, the DKG also outputs public verification keys for each share: `(X_i = g1^{x_i}, Y_i = g1^{y_i})` for `i=1...n`.
+
+**2. Two-Round Signing Protocol:**
+To sign a message `m`, a set `S` of `t` or more parties performs the following protocol:
+
+*   **Round 1: Nonce Commitment and Aggregation**
+    1.  Each party `i ∈ S` generates a random nonce `k_i ∈ Z_p` and computes its public commitment `R_i = g1^{k_i}`.
+    2.  Each party `i` broadcasts `R_i` to all other parties in `S`.
+    3.  Upon receiving all `R_j` values, each party computes the aggregate nonce `R = Π_{j∈S} R_j`.
+
+*   **Round 2: Partial

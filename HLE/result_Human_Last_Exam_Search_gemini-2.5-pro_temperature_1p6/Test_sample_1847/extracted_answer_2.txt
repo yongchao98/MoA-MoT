@@ -1,0 +1,8 @@
+The analytical solution for the density profile \(\tilde{\rho}(\tilde{x}) = \rho(x)/\rho_0\) is given by the implicit expression:
+$$ \frac{(\tilde{\rho} - 1)^2}{2 - \tilde{\rho}} = C_0 \exp\left(-\frac{4}{3}\tilde{x}\right) $$
+Where:
+*   \(\tilde{\rho}\) is the density normalized by the ambient density \(\rho_0\). It varies from 1 (far upstream, \(\tilde{x} \to -\infty\)) to 2 (far downstream, \(\tilde{x} \to +\infty\)).
+*   \(\tilde{x}\) is the position normalized by the conductive length scale \(L = \frac{\kappa}{\rho_0 M c_0 C_v}\).
+*   \(C_0\) is an arbitrary constant that determines the position of the shock wave, effectively setting the origin of the x-coordinate. A common choice to center the shock at \(\tilde{x}=0\) is to set \(C_0=1\), which places the point where \(\tilde{\rho} = (1+\sqrt{5})/2 \approx 1.618\) at the origin.
+
+This equation is the specific form of Becker's solution for a Mach \(\sqrt{3}\) shock in a monatomic gas with a Prandtl number of 3/4.

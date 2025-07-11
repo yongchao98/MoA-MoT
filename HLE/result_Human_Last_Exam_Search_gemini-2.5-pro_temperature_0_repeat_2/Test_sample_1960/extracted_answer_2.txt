@@ -1,0 +1,8 @@
+**Function f:**
+Let the base formula $\mathbf{A}$ be defined as $\bot \multimap \bot$.
+The function $f$ maps a natural number $w$ to the formula:
+$f(w) = \mathbf{A}^w = \underbrace{\mathbf{A} \otimes \dots \otimes \mathbf{A}}_{w \text{ times}}$
+
+**Formula C:**
+The formula $C = C(W, m, b)$ is defined as:
+$C = \left(\underbrace{(\mathbf{A}^b \multimap \bot) \otimes \dots \otimes (\mathbf{A}^b \multimap \bot)}_{m \text{ times}}\right) \multimap \bot$

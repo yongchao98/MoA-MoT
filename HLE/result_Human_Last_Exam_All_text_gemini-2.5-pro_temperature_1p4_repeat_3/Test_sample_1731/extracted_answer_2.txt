@@ -1,0 +1,6 @@
+Equilibrium Mean Energy: $U = \sum_i \frac{\epsilon_i}{e^{\beta\epsilon_i} - 1}$
+
+Equilibrium Entropy: $S = k_B \sum_i \left[ \left(\frac{1}{e^{\beta\epsilon_i} - 1} + 1\right)\log\left(\frac{1}{e^{\beta\epsilon_i} - 1} + 1\right) - \left(\frac{1}{e^{\beta\epsilon_i} - 1}\right)\log\left(\frac{1}{e^{\beta\epsilon_i} - 1}\right) \right]$
+This can also be written in terms of the average occupation numbers $\langle n_i \rangle = \frac{1}{e^{\beta\epsilon_i}-1}$ as:
+$S = k_B \sum_i \left[ (\langle n_i \rangle + 1)\log(\langle n_i \rangle + 1) - \langle n_i \rangle \log(\langle n_i \rangle) \right]$
+(where $k_B$ is the Boltzmann constant).

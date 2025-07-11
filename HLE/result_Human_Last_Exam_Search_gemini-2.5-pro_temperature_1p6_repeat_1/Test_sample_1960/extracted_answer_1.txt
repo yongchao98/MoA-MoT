@@ -1,0 +1,24 @@
+**Final Answer**
+
+Let the base formula `A` be defined as:
+$$
+A := \bot \multimap 1
+$$
+This formula is constructed using only the allowed constants and connectives and contains no literals.
+
+The function `f: \mathbb{N} \to \text{Formula}` is defined as:
+$$
+f(w) = \underbrace{A \otimes A \otimes \dots \otimes A}_{w \text{ times}} \quad (\text{denoted } A^{\otimes w})
+$$
+For `w=0`, `f(0)` would be the multiplicative unit `1`.
+
+The formula `C = C(W, m, b)` is defined as:
+$$
+C = \underbrace{B \otimes B \otimes \dots \otimes B}_{m \text{ times}} \quad \text{where} \quad B = \underbrace{A \otimes A \otimes \dots \otimes A}_{b \text{ times}}
+$$
+This can be written more compactly as:
+$$
+C = (A^{\otimes b})^{\otimes m}
+$$
+
+With these definitions, the sequent `\{ f(w) \mid w \in W \} \vdash C` is derivable in multiplicative linear logic if and only if the equipartitioning problem `EP(W, m, b)` is true.

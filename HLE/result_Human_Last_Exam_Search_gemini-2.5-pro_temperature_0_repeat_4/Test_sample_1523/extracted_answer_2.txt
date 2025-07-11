@@ -1,0 +1,15 @@
+In finite-temperature field theory for a neutral scalar field \( \phi \), the partition function is given by the functional integral \( Z = \int \mathcal{D}\phi \, e^{-S_E[\phi]} \), where \( S_E[\phi] \) is the Euclidean action. The inner product in question, \( (\phi, D_\phi) \), corresponds to the quadratic part of this action.
+
+The Euclidean action for a free neutral scalar field with mass \( m \) is:
+\[ S_E[\phi] = \int_0^\beta d\tau \int d^3x \left( \frac{1}{2} (\partial_\tau \phi)^2 + \frac{1}{2} (\nabla\phi)^2 + \frac{1}{2} m^2 \phi^2 \right) \]
+Here, \( \tau \) is the imaginary time, and \( \beta = 1/T \) is the inverse temperature.
+
+Through integration by parts, and assuming appropriate boundary conditions (periodicity in imaginary time for bosons), this action can be written as:
+\[ S_E[\phi] = \frac{1}{2} \int_0^\beta d\tau \int d^3x \, \phi(\tau, \mathbf{x}) (-\partial_\tau^2 - \nabla^2 + m^2) \phi(\tau, \mathbf{x}) \]
+This expression is of the form \( \frac{1}{2} (\phi, D_\phi \phi) \).
+
+Therefore, the inner product of \( (\phi, D_\phi) \) is:
+\[ (\phi, D_\phi) \equiv \int_0^\beta d\tau \int d^3x \, \phi(\tau, \mathbf{x}) D_\phi \]
+where the operator \( D_\phi \) is the Euclidean Klein-Gordon operator:
+\[ D_\phi = -\partial_\tau^2 - \nabla^2 + m^2 \]
+The full term in the exponent of the partition function is \( -\frac{1}{2}(\phi, D_\phi \phi) \).

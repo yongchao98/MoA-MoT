@@ -1,0 +1,3 @@
+Let $k=\lfloor n/2 \rfloor$.
+If $n$ is odd ($n=2k+1$), the number of positions is $\frac{1}{2}\binom{4t+2k+2}{2k+1} + \binom{2t+k+1}{k}$.
+If $n$ is even ($n=2k$), the number of positions is $\frac{1}{2}\left(\binom{4t+2k+1}{2k} - \binom{2t+k+1}{k} - \binom{2t+k}{k-1}\right)$.

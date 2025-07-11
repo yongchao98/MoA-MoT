@@ -1,0 +1,14 @@
+In the context of Interval Type-3 Membership Functions (IT3 MFs) using Gaussian-based paradigms, the mathematical formulation for the vertical cross-section at a fixed primary input `x` is defined by an Upper Membership Function (UMF) and a Lower Membership Function (LMF), which together form an Interval Type-2 Fuzzy Set.
+
+The **Upper Membership Function (UMF)**, `µ̄<sub>A(x)</sub>(u)`, is given by a Gaussian function:
+`µ̄<sub>A(x)</sub>(u) = exp[-1/2 * ((u - c(x)) / σ<sub>u</sub>)²]`
+where:
+*   `u` is the secondary input variable.
+*   `c(x)` is the center of the Gaussian function, dependent on the primary input `x`.
+*   `σ<sub>u</sub>` is the standard deviation of the upper bound.
+
+The **Lower Membership Function (LMF)**, `µ̲<sub>A(x)</sub>(u)`, is a scaled version of the upper membership function:
+`µ̲<sub>A(x)</sub>(u) = λ * exp[-1/2 * ((u - c(x)) / σ'<sub>u</sub>)²]`
+where:
+*   `λ` (LowerScale) is a scaling parameter `(0 ≤ λ ≤ 1)`.
+*   `σ'<sub>u</sub>` is the standard deviation of the lower bound, which can be dependent on a lower lag parameter `l`.

@@ -1,0 +1,15 @@
+The quantum correction to the conductivity, `δσ`, for an electron performing diffusion in a bulk (3D) semiconductor is given by:
+
+`δσ = (e^2 / (2π^2 ħ)) * (1/L_φ - 1/l_e)`
+
+where:
+*   `e` is the elementary charge.
+*   `ħ` is the reduced Planck constant.
+*   `l_e` is the elastic mean free path, representing the average distance an electron travels between momentum-randomizing collisions that preserve phase coherence.
+*   `L_φ` is the phase coherence length, representing the average distance an electron travels before an inelastic scattering event destroys its phase coherence.
+
+Given that phase coherence is lost over much longer distances than the mean free path (`L_φ >> l_e`), the term `1/L_φ` is much smaller than `1/l_e`. Therefore, the expression is often approximated as:
+
+`δσ ≈ - e^2 / (2π^2 ħ * l_e)`
+
+This result indicates that the quantum correction is negative, leading to an increase in resistivity—a phenomenon known as weak localization. The magnitude of this correction is inversely proportional to the elastic mean free path of the electron in the semiconductor.

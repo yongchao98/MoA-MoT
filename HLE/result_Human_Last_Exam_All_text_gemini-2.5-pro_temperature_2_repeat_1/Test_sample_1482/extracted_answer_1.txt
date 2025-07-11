@@ -1,0 +1,13 @@
+The mathematical formulation characterizing the vertical cross-sections of a Gaussian-based Interval Type-3 Membership Function (IT3 MF) for a fixed primary input `x` and a secondary input `u` is given by the Footprint of Uncertainty (FOU) of the resulting Interval Type-2 (IT2) fuzzy set. This FOU is bounded by an Upper Membership Function (UMF) and a Lower Membership Function (LMF) defined as follows:
+
+Upper Membership Function (UMF):
+μ̄(u|x) = exp( -0.5 * ( (u - μ_c(x)) / σ_L(x) )^2 )
+
+Lower Membership Function (LMF):
+μ̲(u|x) = exp( -0.5 * ( (u - μ_c(x)) / σ_U(x) )^2 )
+
+where:
+*   `u` is the secondary variable, representing the domain of the vertical cross-section's IT2 MF.
+*   `μ_c(x)` is the center of the Gaussian functions, representing the principal membership grade as a function of the primary input `x`.
+*   `σ_L(x)` and `σ_U(x)` are the lower and upper bounds for the standard deviation, respectively, which are also functions of `x`. They define the level of uncertainty at that slice.
+*   The formulation is subject to the constraint: `0 < σ_L(x) ≤ σ_U(x)` for all `x` to ensure a valid FOU where the UMF is always greater than or equal to the LMF.

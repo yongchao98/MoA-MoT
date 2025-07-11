@@ -1,0 +1,33 @@
+For the spaceship to reach a maximum distance, the kinetic energy it has, plus the work done by the external force F, must be equal to the work done against the gravitational force.
+
+Let the maximum distance be \( l_{\text{max}} \).
+
+The initial kinetic energy of the spaceship is \( \frac{1}{2}Mv_0^2 \).
+The work done by the applied force F over the distance \( (l_{\text{max}} - l_0) \) is \( W_F = F(l_{\text{max}} - l_0) \).
+The work done against the gravitational force is the change in gravitational potential energy:
+\( \Delta PE = \int_{l_0}^{l_{\text{max}}} \frac{GmM}{r^2} dr = -GmM \left[ \frac{1}{r} \right]_{l_0}^{l_{\text{max}}} = -GmM \left( \frac{1}{l_{\text{max}}} - \frac{1}{l_0} \right) = GmM \left( \frac{1}{l_0} - \frac{1}{l_{\text{max}}} \right) \)
+
+By the work-energy principle:
+Initial Energy + Work Done by non-conservative forces = Final Energy
+\( \frac{1}{2}Mv_0^2 - \frac{GmM}{l_0} + F(l_{\text{max}} - l_0) = -\frac{GmM}{l_{\text{max}}} \)
+
+Rearranging the terms to solve for \( l_{\text{max}} \):
+\( \frac{GmM}{l_{\text{max}}} = \frac{GmM}{l_0} - \frac{1}{2}Mv_0^2 - F(l_{\text{max}} - l_0) \)
+Let's go back to the first formulation which resulted in a quadratic equation, as it is a more direct application of the work-energy theorem.
+
+\( F l_{\text{max}}^2 + \left( \frac{1}{2}Mv_0^2 - F l_0 - \frac{GmM}{l_0} \right) l_{\text{max}} + GmM = 0 \)
+
+Solving for \( l_{max} \) from this quadratic equation gives the maximum distance. Let's simplify the expression inside the parenthesis for clarity.
+
+Let \( C = \frac{1}{2}Mv_0^2 - F l_0 - \frac{GmM}{l_0} \).
+The equation is \( F l_{\text{max}}^2 + C l_{\text{max}} + GmM = 0 \).
+
+The solution for \( l_{\text{max}} \) is:
+\( l_{\text{max}} = \frac{-C \pm \sqrt{C^2 - 4(F)(GmM)}}{2F} \)
+
+Substituting back the expression for C:
+\( l_{\text{max}} = \frac{-( \frac{1}{2}Mv_0^2 - F l_0 - \frac{GmM}{l_0}) \pm \sqrt{( \frac{1}{2}Mv_0^2 - F l_0 - \frac{GmM}{l_0})^2 - 4FGmM}}{2F} \)
+
+Since \( l_{max} \) must be greater than \( l_0 \), we choose the positive sign.
+
+\( l_{\text{max}} = \frac{(F l_0 + \frac{GmM}{l_0} - \frac{1}{2}Mv_0^2) + \sqrt{( \frac{1}{2}Mv_0^2 - F l_0 - \frac{GmM}{l_0})^2 - 4FGmM}}{2F} 

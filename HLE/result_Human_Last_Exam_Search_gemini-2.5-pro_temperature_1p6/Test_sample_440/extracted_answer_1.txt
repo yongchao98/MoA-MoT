@@ -1,0 +1,14 @@
+The determination of the density profile \(\rho(z)\) requires the numerical solution of a system of coupled non-linear differential equations derived from the conditions of hydrostatic and thermodynamic equilibrium for a non-ideal gas mixture.
+
+The governing principles are:
+1.  **Hydrostatic Equilibrium:** The pressure gradient is balanced by the force of gravity: \( \frac{dP(z)}{dz} = -\rho(z)g \).
+2.  **Thermodynamic Equilibrium:** The electrochemical potential for each gas species is constant with height: \( \mu_i(z) + m_i g z = \text{constant} \).
+
+These principles lead to a system of equations for the molar densities \(n_A(z)\) and \(n_B(z)\), which are then used to find the mass density profile \( \rho(z) = n_A(z)M_A + n_B(z)M_B \). The pressure \(P(z)\) is described by the van der Waals equation for a mixture.
+
+**The procedure is as follows:**
+1.  Formulate a system of first-order ordinary differential equations for \(n_A(z)\) and \(n_B(z)\).
+2.  Establish boundary conditions based on the total number of particles of each gas, \(N_A\) and \(N_B\), in the total volume \(V = A \times H\). This typically involves a shooting method to find the correct initial densities at \(z=0\).
+3.  Solve this system of equations numerically using computational software.
+
+The resulting profile \(\rho(z)\) will show a general decrease with height, with a greater concentration of the heavier gas (Gas B) at lower altitudes and a greater concentration of the lighter gas (Gas A) at higher altitudes, modified from the simple exponential decay of ideal gases by the van der Waals interaction terms.

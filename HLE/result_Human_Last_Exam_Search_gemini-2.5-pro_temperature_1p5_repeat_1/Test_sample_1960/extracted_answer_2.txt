@@ -1,0 +1,15 @@
+**Answer:**
+
+The function $f$ and the linear formula $C$ are defined as follows:
+
+1.  Let $A$ be the linear logic formula $A = \bot \multimap 1$.
+
+2.  The function $f: \mathbb{N} \to \text{Formula}$ is defined by:
+    $f(w) = A^{\otimes w} = \underbrace{A \otimes A \otimes \dots \otimes A}_{w \text{ times}}$
+    (with $f(0) = 1$)
+
+3.  The linear formula $C = C(m, b)$ is defined by:
+    $C(m, b) = (A^{\otimes b})^{\otimes m} = \underbrace{(A \otimes \dots \otimes A)}_{b \text{ times}} \otimes \dots \otimes \underbrace{(A \otimes \dots \otimes A)}_{b \text{ times}}$
+    where the block $A^{\otimes b}$ is repeated `m` times.
+
+The sequent $\{ f(w) \mid w \in W \} \vdash C(m, b)$ is derivable in linear logic if and only if $EP(W, m, b)$ is true.

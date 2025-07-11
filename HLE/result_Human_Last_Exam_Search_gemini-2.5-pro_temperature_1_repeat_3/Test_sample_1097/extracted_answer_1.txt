@@ -1,0 +1,7 @@
+The set `M` should be defined as the space of non-positive continuous functions on the interval `[0, 1]` that satisfy the boundary conditions. This set is a closed subset of the Banach space of all continuous functions on `[0, 1]` with the supremum norm, and is therefore a complete metric space.
+
+Formally, the set `M` is:
+`M = {u ∈ C([0, 1]) | u(0) = u(1) = 0 and u(x) ≤ 0 for all x ∈ [0, 1]}`
+equipped with the supremum norm metric `d(u, v) = supₓ∈[₀,₁] |u(x) - v(x)|`.
+
+On this set `M`, the operator `T` can be shown to be a contraction that maps `M` to itself, thus satisfying the conditions of the Banach fixed-point theorem and ensuring a unique solution exists within this set. Since any solution to the original problem must belong to this set, this guarantees a unique global solution.

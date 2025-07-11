@@ -1,0 +1,10 @@
+{
+  "question": "Complete the next 4 elements of this sequence:\n3 2 1 2 3 3 3 2 2\n\nAnswer Choices:\nA. 2 1 1 1\nB. 2 4 4 4\nC. 2 3 1 2\nD. 2 1 2 3\nE. 2 3 5 5\nF. 2 3 2 1\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "The pattern of the sequence can be broken down into distinct logical parts.\n\n1.  **Part 1: Countdown and Count-up.** The sequence begins by counting down from 3 to 1, and then back up.\n    *   `3, 2, 1`\n    *   `2, 3`\n    This gives the first segment: `3, 2, 1, 2, 3`.\n\n2.  **Part 2: Grouping.** The sequence then continues with groups of identical numbers.\n    *   First, there is a group of three 3s: `3, 3, 3`.\n    *   This is followed by a group of 2s. The provided sequence ends with `2, 2`.\n\nThe most logical interpretation, especially since all answer choices begin with the number 2, is that the sequence provided was cut short in the middle of the group of 2s. The full group should contain three 2s.\n\nFollowing this pattern, the sequence of groups is:\n*   A group of three 3s: `3, 3, 3`\n*   A group of three 2s: `2, 2, 2`\n*   The logical continuation would be a group of three 1s: `1, 1, 1`\n\nTo find the next four elements of the original sequence `3 2 1 2 3 3 3 2 2`, we complete the pattern:\n1.  The first missing element is `2`, which completes the group of three 2s.\n2.  The next three elements are `1, 1, 1`, which form the next logical group.\n\nTherefore, the next four elements are 2, 1, 1, 1.\n\n<<<A>>>"
+  ],
+  "user_prompt_list": [
+    "Complete the next 4 elements of this sequence:\n3 2 1 2 3 3 3 2 2\n\nAnswer Choices:\nA. 2 1 1 1\nB. 2 4 4 4\nC. 2 3 1 2\nD. 2 1 2 3\nE. 2 3 5 5\nF. 2 3 2 1\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

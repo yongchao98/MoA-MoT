@@ -1,0 +1,53 @@
+Here is a specific, command-line-based filtering strategy using log2 fold change to eliminate contaminating cancer genes from your RNA-seq data, as requested:
+
+**Rationale and Strategy**
+
+The presence of cancer-cell-specific gene transcripts in your "CAR only" samples, and their absence in the "CAR-IL15" samples, is likely due to the superior cancer-killing efficacy of the IL-15 co-expressing T-cells. After three rounds of co-culture, the CAR-IL15 cells have more effectively eliminated the cancer cells, leading to a purer sorted T-cell population for RNA extraction.
+
+This difference can be leveraged for filtering. In a differential expression analysis comparing `CAR-IL15` vs. `CAR only`, the contaminating cancer genes will appear as highly **downregulated** (i.e., having a large negative log2 fold change). This is not a true biological downregulation within the T-cells, but an artifact of the contaminant's removal.
+
+The strategy is to:
+1.  Perform a differential expression analysis.
+2.  Identify genes that are known to be cancer-associated.
+3.  Filter out these cancer-associated genes **only if** they show a strong negative log2 fold change, indicating they are contaminants.
+
+**Command-Line Implementation**
+
+This procedure uses standard command-line tools and assumes you have a differential expression results file from a tool like DESeq2 or edgeR.
+
+**Step 1: Prepare a Cancer Gene List**
+
+First, obtain a list of known cancer-associated genes. The COSMIC Cancer Gene Census is a standard resource for this.
+
+1.  Download the Cancer Gene Census list in CSV format from the [COSMIC website](https://cancer.sanger.ac.uk/census).
+2.  Use a command-line utility to extract the gene symbols into a simple text file. Assuming the gene symbol is the first field in the CSV:
+    ```bash
+    cut -d',' -f1 'CGC_all.csv' > cancer_genes.txt
+    ```
+    This creates a file named `cancer_genes.txt` containing one gene symbol per line.
+
+**Step 2: Apply the Filtering Logic with `awk`**
+
+Now, use the `awk` command-line utility to filter your differential expression results file. `awk` is ideal as it can process large files line by line based on conditional logic.
+
+Let's assume your differential expression results are in a comma-separated file named `de_results.csv` with the following columns:
+*   Column 1: Gene Symbol
+*   Column 2: baseMean
+*   Column 3: log2FoldChange
+*   Column 4: lfcSE
+*   Column 5: pvalue
+*   Column 6: padj
+
+The following command will filter out the contaminating genes:
+
+```bash
+awk -F, 'NR==FNR{cancer[$1]; next} FNR==1{print; next} !($1 in cancer && $3 < -4)' cancer_genes.txt de_results.csv > de_results_filtered.csv
+```
+
+**Explanation of the `awk` command:**
+
+*   **`-F,`**: Sets the input field separator to a comma. Use `\t` for tab-separated files.
+*   **`NR==FNR{cancer[$1]; next}`**: This is a standard `awk` pattern to read the first file (`cancer_genes.txt`) into memory. It creates an associative array named `cancer` where each key is a gene symbol from the file. `NR` is the total record (line) number, and `FNR` is the record number for the current file. They are only equal while `awk` is reading the first file.
+*   **`FNR==1{print; next}`**: This processes the second file (`de_results.csv`). If it's the first line (`FNR==1`), it prints the header and moves to the next line.
+*   **`!($1 in cancer && $3 < -4)`**: This is the core filtering logic applied to every other line of `de_results.csv`. It translates to: "Print the current line only if it is **NOT** the case that the gene (in column 1, `$1`) is in our `cancer` list **AND** its log2 fold change (in column 3, `$3`) is less than -4".
+*   **`> de_results_filtered.csv`**: This

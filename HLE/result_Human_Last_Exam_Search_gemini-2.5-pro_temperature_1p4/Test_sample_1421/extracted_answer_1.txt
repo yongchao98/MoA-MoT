@@ -1,0 +1,5 @@
+In the imaginary time representation, the formula for the fermionic partition function Z within Feynman’s path integral formalism is given by a functional integral over anticommuting Grassmann fields, ψ(τ) and ψ̄(τ). The formula is:
+
+Z = ∫ D[ψ̄] D[ψ] exp(-S_E[ψ̄, ψ])
+
+Here, S_E is the Euclidean action of the fermionic system, calculated by integrating the Lagrangian over imaginary time τ from 0 to β = 1/(k_B T). A critical component of this formalism is that the Grassmann fields must satisfy anti-periodic boundary conditions in the imaginary time direction: ψ(τ) = -ψ(τ + β). This mathematical requirement correctly accounts for the Fermi-Dirac statistics that govern the behavior of fermions.

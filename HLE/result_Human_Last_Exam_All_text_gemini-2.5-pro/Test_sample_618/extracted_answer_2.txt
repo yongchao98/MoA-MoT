@@ -1,0 +1,7 @@
+The general representation for the transformation on x, denoted by $x \to x'$, is parameterized by a variable $\lambda$ and depends on arbitrary constants $C_0, C_1, C_2$ which define the specific transformation from the Lie group. There are two forms depending on whether the transformation involves a time shift ($C_0 \neq 0$) or not ($C_0 = 0$).
+
+1.  If the transformation includes a time shift ($C_0 \neq 0$):
+    $x' = x + C_1 \lambda + \frac{C_2 e^{k_1 t}}{k_1 C_0} (e^{k_1 C_0 \lambda} - 1)$
+
+2.  If the transformation does not include a time shift ($C_0 = 0$):
+    $x' = x + (C_1 + C_2 e^{k_1 t})\lambda$

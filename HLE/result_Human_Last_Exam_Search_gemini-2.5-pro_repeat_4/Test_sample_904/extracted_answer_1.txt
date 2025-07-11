@@ -1,0 +1,22 @@
+The governing linear equation for the interfacial shape $\xi(r)$ is derived from the augmented Young-Laplace equation, which balances the capillary pressure and the electrostatic pressure at the fluid-fluid interface.
+
+1.  **Capillary Pressure**: For an axisymmetric interface $z = \xi(r)$ in cylindrical coordinates, the pressure jump due to surface tension $\gamma$ is given by $P_{capillary} = \gamma \times (\text{mean curvature})$. For small displacements, the linearized mean curvature is $\nabla^2 \xi = \frac{d^2\xi}{dr^2} + \frac{1}{r}\frac{d\xi}{dr}$.
+
+2.  **Governing Equation**: The pressure balance equation takes the form:
+    $P_{capillary} + P_{electric} = \text{constant}$
+    Substituting the linearized capillary pressure term, we get:
+    $\gamma \left( \frac{d^2\xi}{dr^2} + \frac{1}{r} \frac{d\xi}{dr} \right) + P_{electric}(r, \xi) - \text{constant} = 0$
+
+3.  **Identifying Coefficients**: This equation can be matched to the general form provided:
+    $A(r) \frac{d^2 \xi(r)}{dr^2} + B(r) \frac{d\xi(r)}{dr} + C(r, \xi(r)) = 0$
+
+By comparing the terms, we can directly identify the coefficients of the second and first derivative terms, which arise from the surface tension contribution:
+
+*   The coefficient of the second derivative, $\frac{d^2\xi}{dr^2}$, is $A(r) = \gamma$.
+*   The coefficient of the first derivative, $\frac{d\xi}{dr}$, is $B(r) = \frac{\gamma}{r}$.
+
+The term $C(r, \xi(r))$ incorporates the electrostatic pressure and any constant pressure difference. The exact form of $C(r, \xi(r))$ depends on the specific model of the electrostatic force acting on the interface.
+
+Thus, the coefficients are:
+$A(r) = \gamma$
+$B(r) = \frac{\gamma}{r}$

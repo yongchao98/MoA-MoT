@@ -1,0 +1,1 @@
+μ_upper(u | x') = { exp(-(u - c_lower(x'))^2 / (2 * σ_upper(x')^2)) if u < c_lower(x'); 1 if c_lower(x') <= u <= c_upper(x'); exp(-(u - c_upper(x'))^2 / (2 * σ_upper(x')^2)) if u > c_upper(x') }

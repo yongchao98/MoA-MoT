@@ -1,0 +1,7 @@
+The design consists of three main stages: a one-time Distributed Key Generation (DKG) using Verifiable Secret Sharing (VSS) to create shared private keys `x_i` and a single group public key `P`; and a two-round signing protocol.
+**Round 1 (Commitment):** Each of the `t` signing participants generates a random secret nonce `k_i`, computes a public commitment `R_i = k_i * G`, and broadcasts `R_i`.
+**Round 2 (Signing):** After receiving all `t` commitments, each participant `P_i`:
+1.  Computes a binding factor `b_j` for every participant `j`, where `b_j = H(P_1..P_t, R_1..R_t, m, j)`. This step is crucial for tight security as it prevents parallel session attacks.
+2.  Computes the group public nonce `R = \sum b_j * R_j` and the challenge `e = H(R, P, m)`.
+3.  Calculates their partial signature `s_i = k_i*b_i + e*L_i*x_i`, where `L_i` is their Lagrange coefficient, and sends it to an aggregator.
+The aggregator sums the partial signatures `s = \sum s_i` to form the final signature `(R, s)`. This design is tightly secure in the random oracle model and is completed in two rounds.

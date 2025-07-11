@@ -1,0 +1,15 @@
+The conditions for the existence of an FGH-tripled fixed point for the functions F:X×Y×Z→X, G:Y×X×Y→Y, and H:Z×Y×X→Z are as follows, based on an extension of the Banach Fixed Point Theorem:
+
+1.  **Space Requirement:** The sets X, Y, and Z must be **complete metric spaces** with respective metrics d_X, d_Y, and d_Z.
+
+2.  **Function Contractiveness:** The functions F, G, and H must satisfy a mixed Lipschitz-type condition. This means there exist non-negative constants `α, β, γ, δ, ε, ζ, η, θ` such that for any two sets of points `(x, y, z)` and `(u, v, w)`:
+    *   `d_X(F(x, y, z), F(u, v, w)) ≤ α⋅d_X(x, u) + β⋅d_Y(y, v) + γ⋅d_Z(z, w)`
+    *   `d_Y(G(y, x, y), G(v, u, v)) ≤ δ⋅d_Y(y, v) + ε⋅d_X(x, u)`
+    *   `d_Z(H(z, y, x), H(w, v, u)) ≤ ζ⋅d_Z(z, w) + η⋅d_Y(y, v) + θ⋅d_X(x, u)`
+
+3.  **Overall Contraction Sum:** The sum of the constants corresponding to each space's metric must be less than 1. This ensures that the overall mapping on the product space `X×Y×Z` is a contraction.
+    *   `α + ε + θ < 1`
+    *   `β + δ + η < 1`
+    *   `γ + ζ < 1`
+
+If all these conditions are fulfilled, there exists a unique triplet `(x, y, z)` satisfying `F(x, y, z) = x`, `G(y, x, y) = y`, and `H(z, y, x) = z`.

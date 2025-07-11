@@ -1,0 +1,4 @@
+Let $f(m, n)$ be the number of sets $T$ that satisfy the given conditions. The value of $f(m, n)$ can be determined using the following recursive formula:
+Define $f(0, n) = 1$ and $f(1, n) = 0$.
+For $m \ge 2$,
+$f(m, n) = \frac{1}{m} \left( \binom{2^n - 1}{m-1} - f(m-1, n) - (2^n - m + 2)f(m-2, n) \right)$.

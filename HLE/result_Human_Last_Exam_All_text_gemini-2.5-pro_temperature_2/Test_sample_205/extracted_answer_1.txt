@@ -1,0 +1,54 @@
+167[
+/**
+ * Program for the Wuxing computer to calculate 100 factorial (100!).
+ *
+ * This program uses a large number multiplication algorithm where the
+ * resulting number is stored as an array of decimal digits. It is
+ * optimized to use the minimum amount of variable memory as per the
+ * Wuxing architecture's C compiler specifications.
+ *
+ * Total variable memory footprint: 167D.
+ */
+void main() {
+    // Variable Declarations (167D total)
+    // - result[158]: Stores the 158 digits of 100!. Size: 158 * 1D = 158D.
+    // - i: Loop counter for factorial (2 to 100). Size: char (3D).
+    // - j: Loop counter for array/digit operations. Size: char (3D).
+    // - carry: Accumulator for multiplication. Max value is 999. Size: char (3D).
+    digit result[158];
+    char i, j;
+    char carry;
+
+    // Initialization: Set the initial result to 1.
+    // result = [1, 0, 0, ..., 0]
+    result[0] = 1;
+    for (j = 1; j < 158; j = j + 1) {
+        result[j] = 0;
+    }
+
+    // Main calculation loop: Multiply the result by i, from i=2 to 100.
+    for (i = 2; i <= 100; i = i + 1) {
+        carry = 0;
+        // Perform grade-school multiplication: (result[j] * i) + carry
+        for (j = 0; j < 158; j = j + 1) {
+            carry = result[j] * i + carry;
+            result[j] = carry % 10;
+            carry = carry / 10;
+        }
+    }
+
+    // Output the result to the console.
+    // First, find the most significant digit (skip leading zeros).
+    // The variable 'j' is reused for this task.
+    j = 157;
+    while (j > 0 && result[j] == 0) {
+        j = j - 1;
+    }
+
+    // Then, print from the most significant digit downwards.
+    while (j >= 0) {
+        printf("%d", result[j]);
+        j = j - 1;
+    }
+}
+]

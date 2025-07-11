@@ -1,0 +1,27 @@
+```python
+def print_lower_bound():
+    """
+    This function prints the derived tight lower bound for the minimax risk R^*_n.
+    """
+    
+    # The final answer is a formula. We will print it out for the user.
+    # The derivation leads to a specific mathematical expression.
+    
+    # Using unicode for better readability
+    final_formula = "R^*_n \u2265 max(0, (\u03A6(\u03B4 / 2) / 2) * (1 - \u221A((n / (2 * N)) * \u03A3\u2099\u208c\u2081\u1d3a\u1d3a\u207f D\u2096\u2097(P\u2097 || P\u2080))))"
+    
+    print("The tightest lower bound on R^*_n that can be proven with the given information is:")
+    print(final_formula)
+    
+    # Per the instructions, we explicitly identify and output each number in the equation.
+    print("\nThe numbers in the final equation are:")
+    print("The '0' in max(0, ...), ensuring the bound is non-negative.")
+    print("The '2' in the term 'δ / 2' inside the function Φ.")
+    print("The '2' in the denominator of the term '(...) / 2'.")
+    print("The '1' in the term '(1 - ...)' inside the main parenthesis.")
+    print("The '2' in the term '(n / (2 * N))' under the square root.")
+    print("The sum 'Σ' is taken from j=1 to N.")
+
+if __name__ == '__main__':
+    print_lower_bound()
+```

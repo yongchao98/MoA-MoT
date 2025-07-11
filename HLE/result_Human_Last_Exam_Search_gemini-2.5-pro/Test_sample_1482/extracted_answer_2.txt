@@ -1,0 +1,19 @@
+In the context of advanced fuzzy logic systems, specifically within the framework of Interval Type-3 Membership Functions (IT3 MFs), the mathematical formulation that characterizes the vertical cross-sections for a fixed primary input variable *x* and a secondary input variable *u*, utilizing Gaussian-based membership paradigms, is defined as follows:
+
+An Interval Type-3 Membership Function, µ̃<sub>Ã</sub>(*x*, *u*), can be represented by its vertical slices. For a fixed value of the primary variable, *x* = *x'*, the vertical cross-section is an Interval Type-2 Fuzzy Set (IT2 FS), denoted by A<sub>x'</sub>(*u*). This IT2 FS is defined by an Upper Membership Function (UMF) and a Lower Membership Function (LMF), which are functions of the secondary variable *u*.
+
+First, the upper and lower bounds of the primary membership function (the Footprint of Uncertainty - FOU) are defined using a Gaussian function:
+*   **Upper Bound of FOU:** μ̅<sub>Ã</sub>(*x*) = exp[-½((*x* - c) / σ)²]
+*   **Lower Bound of FOU:** μ̲<sub>Ã</sub>(*x*) = λ * μ̅<sub>Ã</sub>(*x*)
+
+Here, *c* is the center and σ is the standard deviation of the primary Gaussian function, and λ is a scaling factor (0 ≤ λ ≤ 1).
+
+The vertical cross-section at *x'* is then defined by the following UMF and LMF for the secondary variable *u*:
+
+*   **Upper Membership Function (UMF) of the Vertical Cross-Section:**
+    μ̅<sub>A</sub>(*x'*, *u*) = exp[-½((*u* - μ̅<sub>Ã</sub>(*x'*)) / σ<sub>u</sub>)²]
+    This is a Gaussian function in *u* with its mean at μ̅<sub>Ã</sub>(*x'*) and standard deviation σ<sub>u</sub>.
+
+*   **Lower Membership Function (LMF) of the Vertical Cross-Section:**
+    μ̲<sub>A</sub>(*x'*, *u*) = exp[-½((*u* - μ̲<sub>Ã</sub>(*x'*)) / σ<sub>u</sub>*)²]
+    This is also a Gaussian function in *u* with its mean at μ̲<sub>Ã</sub>(*x'*). The standard deviation σ<sub>u</sub>* may be influenced by a lower lag parameter to introduce further uncertainty.

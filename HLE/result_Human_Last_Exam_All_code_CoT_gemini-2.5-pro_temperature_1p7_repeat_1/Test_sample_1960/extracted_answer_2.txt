@@ -1,0 +1,6 @@
+Let $U$ be a formula containing no literals, for instance $U = 1 \multimap \bot$. Let $A^{\otimes n}$ denote the formula $A \otimes A \otimes \dots \otimes A$ for $n$ times (and $1$ if $n=0$).
+The function $f$ is:
+$f(w) = U^{\otimes w}$
+
+The formula $C$ is:
+$C(W, m, b) = (U^{\otimes b})^{\otimes m}$

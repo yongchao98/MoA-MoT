@@ -1,0 +1,9 @@
+The most common reason a functional MRI receive coil shows no resonance when probed with a VNA and a magnetic loop is that its **active decoupling circuit** is not being properly biased.
+
+Modern MRI coils contain active circuits, typically using PIN diodes, to protect them from the high-power transmit pulse. These circuits require a specific DC bias voltage from the MRI scanner to put the coil into its high-Q (Quality Factor) "receive" mode. Without this DC bias, which is absent during a bench test, the coil defaults to a "decoupled" state. In this state, the PIN diodes are often conductive, which spoils the coil's Q-factor or shifts its resonance far from the operating frequency.
+
+Essentially, you are testing the coil while it is in its self-protective "off" state. The coil is perfectly functional, but it requires the correct power and control signals from the scanner to become an active, resonant circuit.
+
+Other possible, though often secondary, reasons include:
+1.  **Incorrect Probe Positioning:** The probe might be placed in a magnetic field null of the coil, especially in complex phased array or quadrature coils.
+2.  **Unpowered Preamplifier:** An unpowered preamplifier can present a low impedance to the coil, loading it down and killing its resonance.

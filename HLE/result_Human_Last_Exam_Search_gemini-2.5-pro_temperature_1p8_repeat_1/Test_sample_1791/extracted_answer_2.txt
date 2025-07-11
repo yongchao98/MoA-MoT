@@ -1,0 +1,10 @@
+The effective electron-electron interaction potential $V_{eff}$ for a given momentum transfer **q** and Matsubara frequency $i\omega_n$ is obtained by integrating out the phonon fields. The resulting potential is:
+$V_{eff}(\mathbf{q}, i\omega_n) = - \frac{g^2 |\mathbf{q}|^2}{m(\omega_q^2 + \omega_n^2)}$
+where:
+*   $g$ is the electron-phonon coupling constant.
+*   $|\mathbf{q}|^2 = q^2$ is the squared magnitude of the momentum transfer vector **q**.
+*   $m$ is the mass (presumably of the ions in the lattice).
+*   $w_q$ is the phonon frequency for the wavevector **q**.
+*   $\omega_n = 2\pi n T$ are the bosonic Matsubara frequencies (with $T$ being the temperature and $n$ an integer).
+
+This interaction is attractive (indicated by the negative sign) and retarded (indicated by its dependence on the frequency $\omega_n$). The term for a single **q** mode in the effective Hamiltonian can be written as $H_{eff, \mathbf{q}} = \frac{1}{2\beta} \sum_n V_{eff}(\mathbf{q}, i\omega_n) \rho_{\mathbf{q},n} \rho_{-\mathbf{q},n}$, where $\rho_{\mathbf{q},n}$ is the Fourier component of the electron density operator.

@@ -1,0 +1,5 @@
+The primary conditions for the existence of an FGH-tripled fixed point in a partially ordered complete metric space (X, d, ≤) for functions `F, G, H: X³ → X` are:
+1.  **Mixed Monotone Property:** The functions F, G, and H must have a compatible mixed monotone property with respect to the partial order ≤. For example, F may be non-decreasing in its first and third arguments and non-increasing in its second.
+2.  **Contractive Condition:** A generalized contraction inequality must be satisfied by the functions. For instance, for all comparable elements (x, y, z) and (u, v, w), `d(F(x, y, z), F(u, v, w)) + d(G(y, z, x), G(v, w, u)) + d(H(z, x, y), H(w, u, v)) ≤ k * (d(x, u) + d(y, v) + d(z, w))` for some constant `k` in `[0, 1)`.
+3.  **Existence of an Initial Ordered Point:** There must be a starting point `(x₀, y₀, z₀)` that satisfies the order relations `x₀ ≤ F(x₀, y₀, z₀)`, `y₀ ≥ G(y₀, z₀, x₀)`, and `z₀ ≤ H(z₀, x₀, y₀)`.
+4.  **Continuity or Regularity:** Either the functions F, G, and H must be continuous, or the partially ordered metric space (X, ≤, d) must be regular.

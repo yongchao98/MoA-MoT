@@ -1,0 +1,7 @@
+If $m = n+1$: 2
+If $m = n$ (and $n \ge 2$): 3
+If $m \le n-1$ and $2m \ge n+1$: 4
+If $2m < n+1$: Let $q = \lfloor (n+1)/m \rfloor$ and $r = (n+1) \pmod m$.
+    $2q$ if $r=0$
+    $2q+1$ if $r=1$
+    $2q+2$ if $r \ge 2$

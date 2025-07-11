@@ -1,0 +1,14 @@
+The evaluation of the integral depends on whether the indices $i$ and $j$ are the same.
+
+**1. For the diagonal element ($i=j$), representing the expectation value:**
+The result is simply the orbital exponent $\zeta$.
+\[
+\langle \phi_{1s} \left| \frac{1}{r} \right| \phi_{1s}\rangle = \zeta
+\]
+
+**2. For the off-diagonal element ($i \neq j$), where the orbitals have different exponents $\zeta_i$ and $\zeta_j$:**
+The result is given by the formula:
+\[
+\langle \phi_i \left| \frac{1}{r} \right| \phi_j\rangle = \frac{4(\zeta_i \zeta_j)^{3/2}}{(\zeta_i + \zeta_j)^2}
+\]
+Typically, without further specification, the question asks for the expectation value, which is $\zeta$.

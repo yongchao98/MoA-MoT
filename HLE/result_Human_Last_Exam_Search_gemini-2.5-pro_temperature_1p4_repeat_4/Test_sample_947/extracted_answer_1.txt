@@ -1,0 +1,19 @@
+The expression for the magnetic field `H = (H_x, H_z)` for `H_a > H_0` and `|x| >> a` (implying `|x| >> w`) is given by the applied field `H_a` plus a decaying term that represents the screening from the infinite stack of superconductors. This decaying field is periodic in the z-direction. The components of the magnetic field are given by:
+
+*   **x-component:**
+    `H_x(x, z) = - (2 * J_c * d / π) * [sinh(πw/D) - sinh(πa/D)] * e^(-π|x|/D) * cos(πz/D)`
+
+*   **z-component:**
+    `H_z(x, z) = H_a + (2 * J_c * d / π) * [sinh(πw/D) - sinh(πa/D)] * e^(-π|x|/D) * sin(πz/D)`
+
+Here:
+*   `J_c` is the critical current density.
+*   `d` is the thickness of each strip.
+*   `2w` is the width of each strip.
+*   `D` is the separation distance between the strips.
+*   `H_a` is the applied magnetic field in the z-direction.
+*   `a` is the position of the flux front, which depends on `H_a` through the relation:
+    `H_a = (J_c * d / π) * arccosh[cosh(πw/D) / cosh(πa/D)]`
+*   `(x, z)` are the coordinates where the field is being calculated, with `z` measured from the center of one of the strips.
+
+These expressions show that far from the stack (`|x| >> w, D`), the magnetic field is the sum of the uniform applied field and an exponentially decaying periodic field created by the induced currents in the superconductors.

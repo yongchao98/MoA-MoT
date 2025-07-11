@@ -1,0 +1,10 @@
+The formula for the fermionic partition function Z in the imaginary time path integral formalism is:
+
+$Z = \int_{\psi(\beta) = -\psi(0)} \mathcal{D}\bar{\psi} \, \mathcal{D}\psi \,\, e^{-S_E[\bar{\psi}, \psi]}$
+
+where:
+*   $Z$ is the partition function.
+*   $\psi(\tau)$ and $\bar{\psi}(\tau)$ are the anticommuting Grassmann fields representing the fermions.
+*   $\int \mathcal{D}\bar{\psi} \, \mathcal{D}\psi$ is the functional integral (Berezin integral) over all possible paths of these fields.
+*   The subscript $\psi(\beta) = -\psi(0)$ indicates that the integral is restricted to paths that are **anti-periodic** over the imaginary time interval from $\tau=0$ to $\tau=\beta$.
+*   $S_E[\bar{\psi}, \psi]$ is the Euclidean action of the fermionic system, given by $S_E = \int_0^\beta d\tau \, L_E$, where $L_E$ is the Euclidean Lagrangian (e.g., $L_E = \int d^d x \, [ \bar{\psi}(\partial_\tau \psi) + H(\bar{\psi}, \psi) ]$, with $H(\bar{\psi}, \psi)$ being the Hamiltonian density expressed in terms of Grassmann fields).

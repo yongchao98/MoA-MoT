@@ -1,0 +1,58 @@
+171[void main() {
+    // This program calculates 100! using the smallest possible memory footprint
+    // for variables on the Wuxing architecture. It uses a base-100 representation
+    // stored in an array of shorts.
+
+    // --- Variable Memory Analysis ---
+    // result array: 79 elements * 2D/short     = 158D
+    // i (multiplier, 2-100): char (0-999)      =   3D
+    // size (number of shorts used, max 79): short (0-99)  =   2D
+    // j (inner loop index, max 78): short (0-99)     =   2D
+    // carry (max 99): short (0-99)             =   2D
+    // temp_prod (max 9999): unsigned int (0-9999) =   4D
+    // --- Total Memory: 171D ---
+
+    short result[79];
+    char i;
+    short size;
+    short j;
+    short carry;
+    unsigned int temp_prod;
+
+    // Initialize result to 1.
+    result[0] = 1;
+    for (j = 1; j < 79; j = j + 1) {
+        result[j] = 0;
+    }
+    size = 1;
+
+    // Main calculation loop: multiply by i from 2 to 100.
+    for (i = 2; i <= 100; i = i + 1) {
+        carry = 0;
+        // Multiply each "digit" (a short) of the number by i.
+        for (j = 0; j < size; j = j + 1) {
+            temp_prod = result[j] * i + carry;
+            result[j] = temp_prod % 100;
+            carry = temp_prod / 100;
+        }
+
+        // If there is a remaining carry, extend the number's size.
+        while (carry > 0) {
+            result[size] = carry % 100;
+            size = size + 1;
+            carry = carry / 100;
+        }
+    }
+
+    // Print the final result.
+    // First, print the most significant part (no leading zero padding).
+    printf("%i", result[size - 1]);
+
+    // Then, print the rest of the parts, ensuring each is two digits.
+    for (j = size - 2; j >= 0; j = j - 1) {
+        // Decompose the short into two individual digits and print them
+        // to ensure correct zero padding (e.g., 5 is printed as "05").
+        printf("%d", result[j] / 10);
+        printf("%d", result[j] % 10);
+    }
+}]

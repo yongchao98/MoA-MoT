@@ -1,0 +1,18 @@
+An FGH-tripled fixed point for the functions F: X × Y × Z → X, G: Y × X × Y → Y, and H: Z × Y × X → Z is a point (x, y, z) ∈ X × Y × Z such that F(x, y, z) = x, G(y, x, y) = y, and H(z, y, x) = z. The conditions for the existence and uniqueness of such a point are primarily established in the context of partially ordered complete metric spaces and involve properties of the functions F, G, and H, as well as the existence of an initial point.
+
+**Key Conditions:**
+
+1.  **Spaces**: (X, dₓ, ≤ₓ), (Y, dᵧ, ≤ᵧ), and (Z, d₂, ≤₂) must be partially ordered complete metric spaces.
+2.  **Mixed Monotone Property**:
+    *   F(x, y, z) is non-decreasing in x and z, and non-increasing in y.
+    *   G(y, x, y) is non-decreasing in its first and third arguments (y), and non-increasing in its second argument (x).
+    *   H(z, y, x) is non-decreasing in z and x, and non-increasing in y.
+3.  **Contractive Condition**: The functions must satisfy a contractive inequality. For instance, a typical condition would be of the form:
+    dₓ(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) + dᵧ(G(y₁, x₁, y₁), G(y₂, x₂, y₂)) + d₂(H(z₁, y₁, x₁), H(z₂, y₂, x₂)) ≤ k [dₓ(x₁, x₂) + dᵧ(y₁, y₂) + d₂(z₁, z₂)]
+    for all comparable elements (x₁, y₁, z₁) and (x₂, y₂, z₂), with 0 ≤ k < 1.
+4.  **Initial Point**: There must exist initial points x₀ ∈ X, y₀ ∈ Y, and z₀ ∈ Z such that:
+    x₀ ≤ F(x₀, y₀, z₀)
+    y₀ ≥ G(y₀, x₀, y₀)
+    z₀ ≤ H(z₀, y₀, x₀)
+5.  **Continuity**: Theorems can be formulated for cases where F, G, and H are either continuous or not, though the latter may require additional assumptions.
+6.  **Condition for Uniqueness**: To ensure a unique fixed point, the product space X × Y × Z typically needs to satisfy a condition where for any two elements, there is a third element that is comparable to both.

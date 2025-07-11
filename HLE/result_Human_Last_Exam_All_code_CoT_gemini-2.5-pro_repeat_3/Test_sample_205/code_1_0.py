@@ -1,0 +1,71 @@
+def solve_wuxing_factorial():
+    """
+    This function generates the solution for the Wuxing 100! problem.
+    It constructs a string in the format z[C], where z is the calculated
+    minimum memory usage and C is the C code for the Wuxing computer.
+    """
+
+    memory_size = 171
+
+    c_code = """// This program calculates 100! for the Wuxing computer,
+// using an array of digits to handle the large result.
+// It is optimized to use the smallest possible data types
+// for its variables to minimize memory usage.
+
+void main() {
+    // Array to store digits of the result. 158 digits are sufficient for 100!.
+    // Memory: 158 * 1D = 158D
+    digit result[158];
+
+    // Loop counters and control variables.
+    // 'i' must go up to 100, so 'char' (0-999) is the smallest suitable type.
+    // 'size' and 'j' must go up to 158, so 'char' is also the best fit.
+    // Memory: i(3D) + j(3D) + size(3D) = 9D
+    char i, j, size;
+
+    // 'carry' can exceed 999 (e.g., 9 * 100 + previous_carry).
+    // 'unsigned int' (0-9999) is the smallest required type.
+    // Memory: 4D
+    unsigned int carry;
+
+    // Total variable memory: 158 + 9 + 4 = 171D
+
+    // Initialize result to 1 (size = 1, result[0] = 1)
+    size = 1;
+    result[0] = 1;
+
+    // Multiply by numbers from 2 to 100
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Multiply current result number by i
+        for (j = 0; j < size; j++) {
+            // Add product to carry, update digit, and calculate new carry
+            carry += result[j] * i;
+            result[j] = carry % 10;
+            carry /= 10;
+        }
+
+        // If there is a remaining carry, append its digits to the result array
+        while (carry > 0) {
+            result[size] = carry % 10;
+            carry /= 10;
+            size++;
+        }
+    }
+
+    // Print the final result in the format "100! = [number]".
+    // The digits are stored in reverse order, so we print backwards.
+    printf("100! = ");
+    for (j = size - 1; j >= 0; j--) {
+        // %d is specified for printing a single 'digit'
+        printf("%d", result[j]);
+    }
+    printf("\\n");
+}
+"""
+
+    # The final output is the memory size 'z' followed by the C code 'C' in brackets.
+    final_answer = f"{memory_size}[{c_code}]"
+    print(final_answer)
+
+solve_wuxing_factorial()

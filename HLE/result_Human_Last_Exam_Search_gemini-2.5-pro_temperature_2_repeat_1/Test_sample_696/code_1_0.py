@@ -1,0 +1,1 @@
+from re import *;print(*(sorted({int(i)for i in findall(r'\d+', input())}) or ["NO"]))

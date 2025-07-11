@@ -1,0 +1,10 @@
+An FGH-tripled fixed point for the functions F: X * Y * Z → X, G: Y * X * Y → Y, and H: Z * Y * X → Z is a point (x, y, z) ∈ X × Y × Z such that F(x, y, z) = x, G(y, x, y) = y, and H(z, y, x) = z. The primary conditions for the existence of such a point are established in the context of partially ordered complete metric spaces and involve a generalized mixed monotone property and a contractive condition.
+
+The fundamental conditions are:
+*   **The Spaces**: (X, d_X, ≤_X), (Y, d_Y, ≤_Y), and (Z, d_Z, ≤_Z) must be partially ordered complete metric spaces.
+*   **Mixed Monotone Property**: The functions F, G, and H need to satisfy a mixed monotone property, which means they are monotone (either non-decreasing or non-increasing) in each of their arguments. For example, F is non-decreasing in its first and third arguments and non-increasing in its second. Similar specific monotonicity conditions apply to G and H.
+*   **Contractive Condition**: The mappings must jointly satisfy a contractive condition. For any two comparable triples (x, y, z) and (u, v, w), this condition typically takes the form of an inequality that bounds the sum of the distances between their images under F, G, and H by a fraction of the sum of the distances between the original points.
+*   **Continuity or Regularity**: The functions F, G, and H must either be continuous, or the underlying spaces must possess a regularity property that relates convergence to the partial order.
+*   **Existence of an Initial Point**: There must exist an initial triple (x₀, y₀, z₀) that is ordered in a specific way with respect to its image under the three mappings.
+
+If these conditions hold, iterative sequences starting from the initial point will converge to an FGH-tripled fixed point. Uniqueness of the fixed point generally requires an additional condition on the comparability of elements in the space.

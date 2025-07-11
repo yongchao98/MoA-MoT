@@ -1,0 +1,4 @@
+Let `A^{\otimes n}` denote the formula `A \otimes A \otimes \dots \otimes A` (`n` times), with `A^{\otimes 0} = 1`. The function `f` and formula `C` are defined as follows:
+
+-   `f(w) = \bot^{\otimes w}`
+-   `C(W, m, b) = B^{\otimes m}` where `B = (\bot^{\otimes b} \multimap \bot) \multimap \bot`

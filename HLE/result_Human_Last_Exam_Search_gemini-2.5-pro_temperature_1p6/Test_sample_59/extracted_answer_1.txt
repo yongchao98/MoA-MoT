@@ -1,0 +1,7 @@
+In a jointly exchangeable random graph of size N, the probability of drawing a link y_ij between nodes i and j is determined by the Aldous-Hoover representation theorem. According to this theorem, each node i is associated with a latent random variable U_i, drawn independently from a uniform distribution on (the uniform measure U). The probability of an edge between nodes i and j is then given by a symmetric, measurable function W(U_i, U_j), where W:² → is called a graphon. This graphon W can itself be a random function drawn from a distribution corresponding to the random measure F.
+
+The probability of an edge, conditioned on the latent variables and the graphon, is:
+P(y_ij = 1 | U_i, U_j, W) = W(U_i, U_j)
+
+The unconditional probability of an edge is the expectation of this conditional probability over the distributions of W and the U_i's:
+P(y_ij = 1) = E_F[∫_ ∫_ W(u, v) dU(u) dU(v)] which is equivalent to the expected edge density of the graph.

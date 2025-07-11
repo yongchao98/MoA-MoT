@@ -1,0 +1,8 @@
+The density profile `ρ(z)` is given by `ρ(z) = M_A c_A(z) + M_B c_B(z)`, where `c_A(z)` and `c_B(z)` are the molar density functions implicitly defined by the following system of equations:
+1.  Equilibrium of chemical potentials:
+    `RT \ln(c_A(z)) - RT \ln(1 - (c_A(z)b_{AA} + c_B(z)b_{BB})) + \frac{RT b_{AA}(c_A(z) + c_B(z))}{1 - (c_A(z)b_{AA} + c_B(z)b_{BB})} - 2(a_{AA}c_A(z) + a_{AB}c_B(z)) + M_A gz = \mathcal{C}_A`
+    `RT \ln(c_B(z)) - RT \ln(1 - (c_A(z)b_{AA} + c_B(z)b_{BB})) + \frac{RT b_{BB}(c_A(z) + c_B(z))}{1 - (c_A(z)b_{AA} + c_B(z)b_{BB})} - 2(a_{BB}c_B(z) + a_{AB}c_A(z)) + M_B gz = \mathcal{C}_B`
+2.  Total particle number constraints:
+    `A ∫_0^H c_A(z) dz = N_A / N_{av}`
+    `A ∫_0^H c_B(z) dz = N_B / N_{av}`
+This system of coupled non-linear integral-algebraic equations must be solved numerically to find the functions `c_A(z)` and `c_B(z)`, which then determine `ρ(z)`. An explicit analytical formula for `ρ(z)` cannot be derived.

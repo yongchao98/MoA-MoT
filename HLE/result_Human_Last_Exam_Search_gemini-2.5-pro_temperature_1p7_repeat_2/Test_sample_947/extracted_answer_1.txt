@@ -1,0 +1,4 @@
+The final expression for the magnetic field `H(x,z)` has components `H_x` and `H_z` given by:
+`H_x(x, z) = - (J_c d w^2 π / (2D^2)) * [sin(2πz/D)sinh(2πx/D)] / [cosh(2πx/D) - cos(2πz/D)]^2`
+`H_z(x, z) = H_a + (J_c d w^2 π / (2D^2)) * [1 - cos(2πz/D)cosh(2πx/D)] / [cosh(2πx/D) - cos(2πz/D)]^2`
+And `H_y(x, z) = 0`. These expressions are valid under the given conditions, specifically for `|x| >> w`.

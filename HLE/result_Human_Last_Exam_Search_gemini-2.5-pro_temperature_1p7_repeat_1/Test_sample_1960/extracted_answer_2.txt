@@ -1,0 +1,15 @@
+
+The function $f$ and the linear logic formula $C$ are defined as follows.
+
+Let $A$ be the linear logic formula $1 \multimap \bot$.
+
+The function $f: \mathbb{N} \to \text{Formula}$ is defined as:
+$$
+f(w) = A^{\otimes w} = \underbrace{(1 \multimap \bot) \otimes \dots \otimes (1 \multimap \bot)}_{w \text{ times}}
+$$
+where $A^{\otimes 0}$ is defined as $1$.
+
+The linear logic formula $C = C(W, m, b)$ is defined as:
+$$
+C(W, m, b) = (A^{\otimes b})^{\otimes m} = \underbrace{((1 \multimap \bot)^{\otimes b}) \otimes \dots \otimes ((1 \multimap \bot)^{\otimes b})}_{m \text{ times}}
+$$

@@ -1,0 +1,16 @@
+
+**Final Answer:**
+
+Let $A_1, \dots, A_m, P$ be $m+1$ distinct atomic formulas.
+
+The function $f: \mathbb{N} \to \text{Formula}$ is defined as follows:
+$$
+f(w) := (A_1 \multimap (A_1 \otimes P^{\otimes w})) \;\parr\; \dots \;\parr\; (A_m \multimap (A_m \otimes P^{\otimes w}))
+$$
+where $P^{\otimes w}$ denotes the tensor product of $P$ with itself $w$ times, and $A \parr B$ is the multiplicative disjunction.
+
+The linear formula $C = C(W, m, b)$ is defined as:
+$$
+C := (A_1 \multimap (A_1 \otimes P^{\otimes b})) \;\otimes\; \dots \;\otimes\; (A_m \multimap (A_m \otimes P^{\otimes b}))
+$$
+The sequent $\{ f(w) \mid w \in W \} \vdash C$ is derivable in linear logic if and only if the equipartitioning problem $EP(W, m, b)$ is true.

@@ -1,0 +1,11 @@
+The number of such sets, denoted by \(f_m\), can be calculated using the recurrence relation:
+\[
+f_m = c_m - f_{m-1}
+\]
+for \(m \geq 1\), with the initial condition \(f_0 = 1\).
+
+Here, \(c_m\) is the number of ways to choose \(m\) subsets of \(S\) (including the empty set) whose representative vectors sum to zero, given by the formula:
+\[
+c_m = \frac{1}{2^n} \left( \binom{2^n}{m} + (2^n-1) \delta_{m, \text{even}} (-1)^{m/2} \binom{2^{n-1}}{m/2} \right)
+\]
+where \(\delta_{m, \text{even}}\) is the Kronecker delta, which is 1 if \(m\) is even and 0 if \(m\) is odd.

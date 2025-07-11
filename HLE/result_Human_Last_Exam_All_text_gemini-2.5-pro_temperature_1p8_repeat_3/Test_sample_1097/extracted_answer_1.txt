@@ -1,0 +1,3 @@
+The set M should be defined as a closed ball in the Banach space of continuous functions on [0,1] that are zero at the boundaries, equipped with the supremum norm. Specifically:
+`M = { u ∈ C([0, 1]) | u(0) = u(1) = 0, and max_{x∈[0,1]} |u(x)| ≤ R }`
+where `R` is a positive constant chosen to satisfy both conditions `R < ln(8)` and `exp(R)/8 ≤ R`.

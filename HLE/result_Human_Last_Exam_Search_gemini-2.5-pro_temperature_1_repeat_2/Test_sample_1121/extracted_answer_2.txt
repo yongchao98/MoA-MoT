@@ -1,0 +1,5 @@
+The number of non-Clifford gates required for universal quantum computation is algorithm-dependent and not a fixed value for a given code.
+
+For a **distance-3 surface code**, while not practical for a full universal computer, the creation of a single logical non-Clifford magic state (a necessary resource) involves a circuit with a physical depth of approximately 25 gate operations.
+
+For a **distance-5 surface code**, implementing a universal quantum computer with a **faulty gate error rate of 1% is not feasible**. This physical error rate is at the threshold of the surface code, meaning the code cannot sufficiently suppress errors to the extremely low levels required for fault-tolerant computation. Achieving useful logical error rates would necessitate a physical error rate significantly lower than 1% and likely a much larger code distance.

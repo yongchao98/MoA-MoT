@@ -1,0 +1,8 @@
+The conditions are that (X, d_X), (Y, d_Y), and (Z, d_Z) must be complete metric spaces, and the functions F, G, H must satisfy a set of joint contraction-like inequalities. Specifically, there must exist non-negative constants a1, a2, a3, b1, b2, b3, c1, c2, c3 such that for all x_i in X, y_i in Y, z_i in Z:
+1. d_X(F(x1, y1, z1), F(x2, y2, z2)) ≤ a1*d_X(x1, x2) + a2*d_Y(y1, y2) + a3*d_Z(z1, z2)
+2. d_Y(G(y1, x1, z1), G(y2, x2, z2)) ≤ b1*d_Y(y1, y2) + b2*d_X(x1, x2) + b3*d_Z(z1, z2)
+3. d_Z(H(z1, y1, x1), H(z2, y2, x2)) ≤ c1*d_Z(z1, z2) + c2*d_Y(y1, y2) + c3*d_X(x1, x2)
+and these constants must satisfy the following three inequalities:
+1. a1 + b2 + c3 < 1
+2. a2 + b1 + c2 < 1
+3. a3 + b3 + c1 < 1

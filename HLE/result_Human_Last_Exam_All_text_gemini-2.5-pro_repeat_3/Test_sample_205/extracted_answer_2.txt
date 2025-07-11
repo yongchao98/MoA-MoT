@@ -1,0 +1,39 @@
+172[void main() {
+    // Array to store the digits of the large integer result.
+    // 100! has 158 decimal digits. An array of 158 'digit' types is needed.
+    // Memory: 158 * 1D = 158D.
+    digit result[158];
+
+    // Loop counters and state variables.
+    // Types are chosen to be the smallest possible that can hold the required range of values.
+    char i;       // For loop 2..100. Size: 3D
+    char j;       // For loop 0..157. Size: 3D
+    char len;     // Stores current number of digits, up to 158. Size: 3D
+    short carry;  // Stores carry-over, up to 99. Size: 2D
+    char product; // Stores intermediate product, up to 999. Size: 3D
+
+    // Total variable memory: 158 + 3 + 3 + 3 + 2 + 3 = 172D.
+
+    // Initialize the result to 1.
+    result[0] = 1;
+    len = 1;
+
+    // Calculate 100! by repeatedly multiplying.
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        
+        // Multiply the number in 'result' by 'i'.
+        for (j = 0; j < len; j++) {
+            product = result[j] * i + carry;
+            result[j] = product % 10;
+            carry = product / 10;
+        }
+
+        // If carry remains, extend the length of the number.
+        while (carry > 0) {
+            result[len] = carry % 10;
+            carry = carry / 10;
+            len++;
+        }
+    }
+}]

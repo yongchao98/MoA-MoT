@@ -1,0 +1,52 @@
+175[
+```c
+// Define a function to multiply a large number (represented as a digit array)
+// by an integer. It updates the array and returns the new size.
+int multiply(int multiplier, digit res[], int size) {
+    int carry = 0; // Initialize carry, needs to be an int (4D)
+    int j;         // Loop counter for array, char (3D) is sufficient
+    int temp;      // Temporary product, int (4D) is needed
+
+    // Multiply number with each digit of the array
+    for (j = 0; j < size; j = j + 1) {
+        temp = res[j] * multiplier + carry;
+        res[j] = temp % 10; // Store the last digit of the product
+        carry = temp / 10;  // Store the remaining carry
+    }
+
+    // Handle remaining carry by adding it as new digits to the array
+    while (carry > 0) {
+        res[size] = carry % 10;
+        carry = carry / 10;
+        size = size + 1;
+    }
+    return size;
+}
+
+void main() {
+    // Array to store the digits of 100!. Size 158 is required.
+    // The 'digit' type uses 1D per element.
+    digit res;
+
+    // Loop counter to multiply from 2 to 100.
+    // 'char' (3D) is sufficient as it holds 0-999.
+    char i;
+
+    // Variable to track the current number of digits in the result array.
+    // 'char' (3D) is sufficient as the max size is 158.
+    char size;
+
+    // Initialize result to 1
+    res = 1;
+    size = 1;
+
+    // Calculate factorial by repeatedly multiplying the result array
+    for (i = 2; i <= 100; i = i + 1) {
+        size = multiply(i, res, size);
+    }
+
+    // The result is stored in res[] in reverse order.
+    // It can be printed from res[size-1] down to res.
+}
+```
+]

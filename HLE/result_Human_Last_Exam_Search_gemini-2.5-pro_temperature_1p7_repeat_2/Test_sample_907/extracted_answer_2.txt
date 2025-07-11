@@ -1,0 +1,65 @@
+Here are the equations for the absorption cross-section under the specified conditions.
+
+The interaction of a molecule with a light pulse is described by the time-dependent perturbation Hamiltonian, H'(t) = -**µ**·**E**(t), where **µ** is the electric dipole operator and **E**(t) is the electric field of the laser.
+
+For an ultrashort laser pulse with a Gaussian shape, the electric field can be written as:
+**E**(t) = **E**₀ * exp(-t²/τ²) * cos(ω₀t)
+Here, **E**₀ is the peak electric field amplitude, τ is the pulse duration parameter (related to the full width at half maximum), and ω₀ is the carrier frequency.
+
+Within first-order time-dependent perturbation theory, the probability of a transition from an initial state |i⟩ to a final state |f⟩ after the pulse has passed is given by:
+Pᵢ→f = (1/ħ²) |∫<f|H'(t)|i> exp(iω_fi t) dt|²
+where ω_fi = (E_f - E_i)/ħ is the transition frequency.
+
+This simplifies to:
+Pᵢ→f = (1/ħ²) |**µ**_fi · ∫ **E**(t) exp(iω_fi t) dt|² = (1/ħ²) |**µ**_fi · **Ẽ**(ω_fi)|²
+where **µ**_fi = <f|**µ**|i> is the transition dipole moment and **Ẽ**(ω) is the Fourier transform of the electric field pulse. For the Gaussian pulse, **Ẽ**(ω) is also a Gaussian function centered at the carrier frequency ω₀.
+
+The absorption cross-section, σ, is the absorbed energy per unit of incident fluence (energy per unit area). For a single transition, the absorbed energy is ħω_fi * Pᵢ→f. The total cross-section is a sum over all possible transitions from occupied initial states (below the Fermi level, with occupation f(Eᵢ)=1) to unoccupied final states (with occupation f(E_f)=0).
+
+σ(ω₀) ∝ ∑ᵢ,f f(Eᵢ)[1-f(E_f)] |**µ**_fi|² S(ω_fi - ω₀)
+where S(ω_fi - ω₀) represents the spectral profile of the Gaussian pulse, which determines how efficiently the pulse can drive a transition of frequency ω_fi.
+
+### a) The interaction between molecules can be neglected.
+
+When intermolecular interactions are ignored, the N molecules in the chain behave independently. The total absorption is the sum of the absorption of each individual molecule. The electronic states are localized on each molecule `n`. Let's denote the ground (occupied) state of a single molecule as |gₙ⟩ and an excited (unoccupied) state as |eₙ⟩.
+
+The transition energy is the same for all molecules: ħω_eg = E_e - E_g. The transition dipole moment is **µ**_eg = <e|**µ**|g>.
+
+The total absorption cross-section for the chain of N molecules is simply N times the cross-section of a single molecule (assuming uniform illumination):
+**σ(ω₀) = C ⋅ N ⋅ |**µ**_eg ⋅ **e**|² ⋅ exp[ - (ω_eg - ω₀)²τ² / 2 ]**
+
+Where:
+*   C is a constant of proportionality that includes fundamental constants.
+*   N is the number of molecules in the chain.
+*   **µ**_eg is the transition dipole moment vector for a single molecule.
+*   **e** is the polarization vector of the laser field.
+*   ω_eg is the transition frequency for a single molecule.
+*   ω₀ is the carrier frequency of the Gaussian laser pulse.
+*   τ is the parameter related to the pulse duration.
+
+This equation shows that the absorption spectrum is a single Gaussian peak centered at the monomer transition frequency ω_eg, with a width determined by the laser pulse's spectral width.
+
+### b) The interaction between near-neighbors should be considered.
+
+When near-neighbor interactions are included, the single-molecule excited states |eₙ⟩ couple and delocalize to form a band of N exciton states, |k⟩. This is often described using a tight-binding model. The ground state of the chain is still |G⟩ = |g₁, g₂, ..., gₙ⟩.
+
+The energy of each exciton state |k⟩ is given by:
+E_k = E_eg + 2J cos(πk / (N+1)), for k = 1, 2, ..., N
+
+Where:
+*   E_eg is the excitation energy of a single monomer.
+*   J is the near-neighbor coupling energy. If J<0, it's a J-aggregate; if J>0, it's an H-aggregate.
+
+The transition is from the ground state |G⟩ to one of these exciton states |k⟩. The transition dipole moment for this transition is:
+**µ**_kG = <k| ∑ₙ **µ**ₙ |G⟩ = **µ**_eg ∑ₙ c_kn
+where c_kn = √(2/(N+1)) sin(πkn/(N+1)) are the coefficients of the exciton wavefunction. For parallel monomer dipoles, the transition to the k=1 state is strongly allowed and carries most of the oscillator strength, a phenomenon known as superradiance.
+
+The total absorption cross-section is the sum of contributions from transitions to each allowed exciton state:
+**σ(ω₀) = C ⋅ ∑ₖ |**µ**_kG ⋅ **e**|² ⋅ exp[ - (ω_kG - ω₀)²τ² / 2 ]**
+
+Where:
+*   The sum is over the exciton states k = 1 to N.
+*   **µ**_kG is the transition dipole moment from the ground state to the exciton state k. Its magnitude depends significantly on k.
+*   ω_kG = (E_k - E_G)/ħ is the frequency of the transition to the k-th exciton state.
+
+This equation results in an absorption spectrum consisting of multiple peaks, each corresponding to a transition to a different exciton state |k⟩. The position of each peak is given by ω_kG and its intensity is proportional to |**µ**_kG|². The width of

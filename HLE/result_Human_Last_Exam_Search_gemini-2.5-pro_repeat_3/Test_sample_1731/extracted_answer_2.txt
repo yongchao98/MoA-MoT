@@ -1,0 +1,11 @@
+The equilibrium values for a Bose gas of light quanta, derived using large deviation theorems, are determined by the Bose-Einstein distribution which arises from maximizing the system's entropy.
+
+The **equilibrium mean number of photons** `n_i` in an energy state `E_i` with degeneracy `g_i` at temperature `T` is given by the Bose-Einstein distribution:
+`n_i = g_i / (exp(E_i / (k_B * T)) - 1)`
+
+From this distribution, the **equilibrium mean energy (U)** for a photon gas in a volume V is given by the Stefan-Boltzmann law:
+`U = (4 * σ / c) * V * T^4`
+where `σ` is the Stefan-Boltzmann constant, `c` is the speed of light, and `T` is the absolute temperature.
+
+The **equilibrium entropy (S)** is given by:
+`S = (16 * σ * V * T^3) / (3 * c)`

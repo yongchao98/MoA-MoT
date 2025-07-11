@@ -1,0 +1,9 @@
+The general finite transformation $(t,x) \to (t', x')$ depends on three arbitrary constants $(a,b,d)$ and is given by one of two forms:
+
+1.  For transformations without time translation ($a=0$):
+    $t' = t$
+    $x' = x + b + d e^{k_1 t}$
+
+2.  For transformations that include time translation ($a \neq 0$):
+    $t' = t + a$
+    $x' = x + \frac{b}{a}(t'-t) + \frac{d}{k_1 a}(e^{k_1 t'} - e^{k_1 t})$

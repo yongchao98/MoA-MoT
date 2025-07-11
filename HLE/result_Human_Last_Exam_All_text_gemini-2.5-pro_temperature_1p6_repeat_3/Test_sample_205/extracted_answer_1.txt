@@ -1,0 +1,44 @@
+170[
+void main() {
+    // This program calculates 100! using an array to handle the large number.
+    
+    digit result[158]; // Array to store the digits of the result
+    char num_digits;   // Current number of digits in the result
+    char i, j;         // Loop counters
+    char carry;        // Carry-over for multiplication
+
+    // Initialize result to 1
+    num_digits = 1;
+    result[0] = 1;
+
+    // Multiply by numbers from 2 to 100 to compute factorial
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        
+        // Multiply the large number stored in 'result' by 'i'
+        for (j = 0; j < num_digits; j++) {
+            carry += result[j] * i;
+            result[j] = carry % 10;
+            carry /= 10;
+        }
+
+        // If there's a carry left, extend the 'result' array
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            num_digits++;
+            carry /= 10;
+        }
+    }
+
+    // Print the final value of 100!
+    // The digits are stored in reverse, so we print backwards.
+    // A while loop is used for safe reverse iteration with an unsigned index.
+    printf("100! = \n");
+    j = num_digits;
+    while (j > 0) {
+        j--;
+        printf("%d", result[j]);
+    }
+    printf("\n");
+}
+]

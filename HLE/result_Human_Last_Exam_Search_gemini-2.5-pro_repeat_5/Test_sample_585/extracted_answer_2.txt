@@ -1,0 +1,12 @@
+**Σ' = (I - 1/2 * [δ_hat]x) * Σ * (I - 1/2 * [δ_hat]x)^T**
+
+Where:
+*   **Σ'** is the post-reset 3x3 covariance matrix of the attitude deviation.
+*   **Σ** is the pre-reset 3x3 covariance matrix of the attitude deviation.
+*   **I** is the 3x3 identity matrix.
+*   **[δ_hat]x** is the skew-symmetric matrix of the estimated attitude deviation vector δ_hat that is being reset. For δ_hat = [δ_x, δ_y, δ_z]^T, the skew-symmetric matrix is:
+    ```
+      [ 0  -δ_z   δ_y]
+      [ δ_z   0  -δ_x]
+      [-δ_y   δ_x   0]
+    ```

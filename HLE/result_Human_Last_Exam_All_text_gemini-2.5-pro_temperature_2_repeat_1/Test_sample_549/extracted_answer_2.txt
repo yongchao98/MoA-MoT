@@ -1,0 +1,10 @@
+The quantum correction to the conductivity, $\Delta\sigma$, for an electron in a bulk semiconductor is given by the formula for 3D weak localization:
+$$ \Delta\sigma = \frac{e^2}{2\pi^2\hbar} \left( \frac{1}{\sqrt{D\tau_\phi}} - \frac{1}{\sqrt{D\tau}} \right) $$
+where:
+-   $e$ is the elementary charge.
+-   $\hbar$ is the reduced Planck constant.
+-   $D$ is the electron diffusion constant.
+-   $\tau$ is the elastic scattering time (momentum relaxation time).
+-   $\tau_\phi$ is the phase coherence time.
+
+Since physically $\tau_\phi > \tau$, the correction $\Delta\sigma$ is negative, representing a decrease in conductivity due to enhanced backscattering from quantum interference.

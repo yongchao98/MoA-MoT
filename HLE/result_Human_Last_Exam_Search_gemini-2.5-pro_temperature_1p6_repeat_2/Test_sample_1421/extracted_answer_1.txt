@@ -1,0 +1,11 @@
+$$
+Z = \int_{\psi(\beta) = -\psi(0)} \mathcal{D}\bar{\psi}\mathcal{D}\psi \, \exp\left(-\int_0^\beta d\tau \int d^d x \, \mathcal{L}_E(\bar{\psi}, \psi)\right)
+$$
+
+Where:
+- **Z** is the partition function.
+- **`∫ Dψ̄Dψ`** denotes the functional integral over all configurations of the Grassmann-valued fermion fields `ψ` and `ψ̄`.
+- The integral is performed subject to **anti-periodic boundary conditions** in the imaginary time `τ` direction: `ψ(τ + β) = -ψ(τ)` and `ψ̄(τ + β) = -ψ̄(τ)`.
+- **`β = 1/T`** is the inverse temperature.
+- **`S_E = ∫ dτ ∫ dᵈx L_E`** is the Euclidean action.
+A common form for the Euclidean Lagrangian density, `L_E`, is `ψ̄(∂/∂τ + H)ψ`, where `H` is the Hamiltonian operator.

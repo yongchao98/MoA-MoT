@@ -1,0 +1,7 @@
+Let $A$ be the formula $(1 \multimap \bot) \multimap \bot$, and let $X$ be the formula $A \multimap A$. For any formula $F$ and natural number $n \ge 1$, let $F^n$ denote the formula $F \otimes F \otimes \dots \otimes F$ ($n$ times), and let $F^0 = 1$.
+
+The function $f$ is defined as:
+$f(w) = X \multimap (X \otimes A^w)$
+
+The formula $C(W, m, b)$ is defined as:
+$C(W, m, b) = (X \multimap (X \otimes A^b))^m$

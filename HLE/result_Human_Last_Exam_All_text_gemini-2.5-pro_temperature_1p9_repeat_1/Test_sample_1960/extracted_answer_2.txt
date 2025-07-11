@@ -1,0 +1,13 @@
+Let p and q be two distinct atomic formulas. (Note: To adhere strictly to the "no literals" rule, p and q can be instantiated as distinct formulas built from the allowed constants, for example `p = (1 ⊸ ⊥)` and `q = p ⊸ p`. The logic of the proof remains identical regardless of this instantiation).
+
+We use the notation `A^{⊗n}` for the formula `A ⊗ A ⊗ ... ⊗ A` (`n` times), with the convention that `A^{⊗0} = 1`.
+
+The function `f` is defined as:
+$$
+f(w) = q \multimap (p^{⊗w} \otimes q)
+$$
+
+The linear formula `C` is defined as:
+$$
+C(W, m, b) = q^{⊗m} \multimap (p^{⊗b} \otimes q)^{⊗m}
+$$

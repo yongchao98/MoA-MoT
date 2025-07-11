@@ -1,0 +1,7 @@
+The set of all proper stabilizing controllers $H_2(s)$ for the system $H_1(s) = \frac{s}{s^2-1}$ is given by:
+$H_2(s) = \frac{(1-s^2)K(s) + s p(s)}{s K(s) - p(s)}$
+where:
+1. $K(s)$ is any arbitrary polynomial.
+2. $p(s)$ is any Hurwitz polynomial (a polynomial whose roots all have negative real parts) that satisfies the following two conditions based on the choice of $K(s)$:
+    a. The degree of $p(s)$ is one greater than the degree of $K(s)$: $\deg(p) = \deg(K) + 1$.
+    b. The leading coefficient of $p(s)$ is the same as the leading coefficient of $K(s)$.

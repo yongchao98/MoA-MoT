@@ -1,0 +1,8 @@
+The minimum possible value for the diameter of G is given by a piecewise function depending on $n$ and $m$:
+1.  If $m = n+1$, the minimum diameter is 2.
+2.  If $m = n$, the minimum diameter is 3.
+3.  If $m < n$ and $2m \ge n+1$, the minimum diameter is 4.
+4.  If $m < n$ and $2m < n+1$, let $q = \lfloor \frac{n-m+1}{m} \rfloor$ and $r = (n-m+1) \pmod m$. The minimum diameter is:
+    *   $2q+2$ if $r=0$.
+    *   $2q+3$ if $r=1$.
+    *   $2q+4$ if $r\ge2$.

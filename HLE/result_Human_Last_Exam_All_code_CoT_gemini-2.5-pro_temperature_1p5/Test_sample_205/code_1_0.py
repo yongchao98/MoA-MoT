@@ -1,0 +1,82 @@
+def generate_wuxing_factorial_program():
+    """
+    This script generates the C code for calculating 100! on the Wuxing computer
+    and formats the final output as requested.
+    """
+
+    # z is the calculated minimum memory size in decimal digits (D).
+    z = 172
+
+    # C is the program code for the hypothetical Wuxing C compiler.
+    C = """// This C program is designed for the hypothetical Wuxing computer.
+// It calculates 100! using the minimal amount of variable memory.
+// Data types are defined by the Wuxing C compiler:
+// digit (1D, 0-9), short (2D, 0-99), char (3D, 0-999).
+// The code itself is formatted for clarity.
+
+int main() {
+    // --- Variable Declarations (Total Memory: 172D) ---
+    
+    // Result array to store 158 digits of 100!
+    // Memory: 158 * 1D = 158D
+    digit result[158] = {0};
+
+    // Number of active digits in the result array. Max value will be 158.
+    // Smallest type that can hold 158 is 'char' (3D).
+    char num_digits = 1;
+
+    // Loop counters i (2 to 100) and j (0 to 157).
+    // Smallest type for both is 'char' (3D).
+    // Memory: 3D + 3D = 6D
+    char i, j;
+
+    // Temporary product for multiplication. Max value is 9*100+99=999.
+    // Smallest type that can hold 999 is 'char' (3D).
+    char product;
+
+    // Carry-over value. Max value is 999/10=99.
+    // Smallest type that can hold 99 is 'short' (2D).
+    short carry;
+
+    // --- Factorial Calculation ---
+    // Initialize result to 1
+    result[0] = 1;
+
+    // Multiply by i from 2 to 100
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Multiply each digit of our big number by i
+        for (j = 0; j < num_digits; j++) {
+            product = result[j] * i + carry;
+            result[j] = product % 10;
+            carry = product / 10;
+        }
+
+        // After multiplying all digits, place the remaining carry
+        // into the result array, extending its size.
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            carry = carry / 10;
+            num_digits++;
+        }
+    }
+
+    // --- Output The Final Equation ---
+    // The final code must output each number in the final equation.
+    // This is interpreted as printing "100! = " followed by each digit of the result.
+    printf("100! = ");
+    // Print digits from most significant to least significant
+    for (j = num_digits - 1; j >= 0; j--) {
+        // Assuming implicit type promotion of 'digit' to 'int' for printf
+        printf("%d", result[j]);
+    }
+    printf("\\n");
+
+    return 0;
+}
+"""
+
+    # Print the final answer in the specified z[C] format.
+    print(f"{z}[{C.strip()}]")
+
+generate_wuxing_factorial_program()

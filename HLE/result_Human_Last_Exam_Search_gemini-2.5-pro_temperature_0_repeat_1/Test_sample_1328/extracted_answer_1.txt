@@ -1,0 +1,9 @@
+The optimal feedback adjustment factor is given by the piecewise function:
+\[
+b = 
+\begin{cases} 
+-P_1\alpha & \text{if } P_1^2\alpha^2 \le P_2 \\
+-\text{sign}(\alpha)\sqrt{P_2} & \text{if } P_1^2\alpha^2 > P_2 
+\end{cases}
+\]
+where \(P_1\) is the power of the first transmission, \(P_2\) is the power of the second transmission, and \(\alpha\) is the noise correlation coefficient.

@@ -1,0 +1,43 @@
+Let $r_A(n)$ be the fraction of red liquid in cup A after $n$ repetitions of the procedure, and $r_B(n)$ be the fraction of red liquid in cup B. Initially, at $n=0$, we have $r_A(0) = 1$ and $r_B(0) = 0$. The volume in each cup is assumed to be 1.
+
+The procedure involves moving a $\delta$-fraction of liquid between the cups. This is modeled as a simultaneous exchange. After one step, the fraction of red liquid in cup A is what remains from A, $(1-\delta)r_A(n)$, plus what arrives from B, $\delta r_B(n)$. This gives the following system of recurrence relations:
+$r_A(n+1) = (1-\delta)r_A(n) + \delta r_B(n)$
+$r_B(n+1) = \delta r_A(n) + (1-\delta)r_B(n)$
+
+Since the total amount of red liquid is conserved, we have $r_A(n) + r_B(n) = 1$ for all $n$. Substituting $r_B(n) = 1 - r_A(n)$ into the first equation gives a single recurrence for $r_A(n)$:
+$r_A(n+1) = (1-\delta)r_A(n) + \delta(1 - r_A(n)) = (1-2\delta)r_A(n) + \delta$
+
+This is a linear first-order recurrence relation. The equilibrium state (the fixed point) is $r^* = 1/2$. The solution to this recurrence with the initial condition $r_A(0)=1$ is:
+$r_A(n) = \frac{1}{2} + \frac{1}{2}(1-2\delta)^n$
+
+Consequently, the fraction of red liquid in cup B is:
+$r_B(n) = 1 - r_A(n) = \frac{1}{2} - \frac{1}{2}(1-2\delta)^n$
+
+The liquids are considered "the same" if they differ by at most an $\epsilon$-fraction of their contents. This means the absolute difference in the concentration of red liquid (and equivalently, white liquid) between the two cups must be no more than $\epsilon$.
+$|r_A(n) - r_B(n)| \le \epsilon$
+
+Substituting the solutions for $r_A(n)$ and $r_B(n)$:
+$|\left(\frac{1}{2} + \frac{1}{2}(1-2\delta)^n\right) - \left(\frac{1}{2} - \frac{1}{2}(1-2\delta)^n\right)| \le \epsilon$
+$|(1-2\delta)^n| \le \epsilon$
+$|1-2\delta|^n \le \epsilon$
+
+To find the number of repetitions, $n$, we solve this inequality.
+
+**Case 1: $\delta = 1/2$**
+If $\delta = 1/2$, then $|1-2\delta| = 0$. After one step ($n=1$), the difference is 0, which is less than or equal to any $\epsilon \in (0, 1)$. Thus, for this specific case, the number of repetitions needed is 1.
+
+**Case 2: $\delta \neq 1/2$**
+Since $\delta \in (0,1)$, we have $0 < |1-2\delta| < 1$. We can take the natural logarithm of both sides of the inequality:
+$n \ln(|1-2\delta|) \le \ln(\epsilon)$
+
+Because $|1-2\delta| < 1$, its natural logarithm is negative. Therefore, when we divide by $\ln(|1-2\delta|)$, we must reverse the inequality sign:
+$n \ge \frac{\ln(\epsilon)}{\ln(|1-2\delta|)}$
+
+Since $n$ must be an integer, we need the smallest integer that satisfies this condition, which is the ceiling of the expression on the right.
+
+The number of times the procedure must be repeated, $n$, is given by:
+For $\delta = 1/2$:
+$n = 1$
+
+For $\delta \neq 1/2$:
+$n = \left\lceil \frac{\ln(\epsilon)}{\ln(|1-2\delta|)} \right\rceil$

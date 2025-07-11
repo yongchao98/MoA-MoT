@@ -1,0 +1,12 @@
+An FGH-tripled fixed point for the functions F: X × Y × Z → X, G: Y × X × Y → Y, and H: Z × Y × X → Z is a point (x, y, z) ∈ X × Y × Z such that x = F(x, y, z), y = G(y, x, y), and z = H(z, y, x). The conditions for the existence of such a point are primarily established within the framework of partially ordered metric spaces.
+
+The main conditions are:
+1.  **Structured Spaces**: The sets X, Y, and Z must be partially ordered sets and complete metric spaces. A partial order and a metric are then defined on the product space X × Y × Z.
+2.  **Mixed Monotonicity**: The functions F, G, and H must satisfy a mixed monotone property. This generally means that the functions are non-decreasing with respect to some variables and non-increasing with respect to others.
+3.  **Contractive Condition**: The functions must satisfy a contractive inequality. This ensures that applying the functions to two comparable points brings their images closer together in the metric space. For instance, a typical condition would be:
+    d(F(x, y, z), F(u, v, w)) + d(G(y, x, y), G(v, u, v)) + d(H(z, y, x), H(w, v, u)) ≤ k * [d(x, u) + d(y, v) + d(z, w)]
+    for all comparable points (x, y, z) and (u, v, w), with 0 ≤ k < 1.
+4.  **Continuity or Regularity**: The functions F, G, and H must be continuous, or the spaces must satisfy a regularity condition that ensures convergence is well-behaved with respect to the partial order.
+5.  **Existence of an Initial Point**: There must exist a starting point (x₀, y₀, z₀) that has a specific ordered relationship with its image under F, G, and H, which allows for the construction of convergent iterative sequences.
+
+If these conditions are met, the existence of an FGH-tripled fixed point is guaranteed. For the fixed point to be unique, an additional condition regarding the comparability of any two points in the space is typically required.

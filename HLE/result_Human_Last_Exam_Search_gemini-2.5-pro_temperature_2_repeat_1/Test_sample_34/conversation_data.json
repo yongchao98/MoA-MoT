@@ -1,0 +1,10 @@
+{
+  "question": "What is the worst suited jack you should open from the button to 2.5x in a 100BB rake-free cash game? Give your answer as the abbreviated hand: e.g., \"JTs\"\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "Based on an analysis of GTO (Game Theory Optimal) poker strategies, the worst suited jack you should open from the button with a 2.5x raise in a 100 big blind, rake-free cash game is J2s.\n\nIn a rake-free environment, a player on the button can profitably open a much wider range of hands compared to a game with rake. This is because the incentive is to steal the blinds and play post-flop in the most advantageous position without the house taking a cut of the pot.\n\nGTO solver charts for similar no-rake, 100bb scenarios indicate that the weakest suited hands are included in the button's opening range. Specifically, charts for a slightly smaller 2.2bb open include J2s as a standard open. It is a standard GTO principle that the bottom of an opening range will consist of the weakest suited connectors and gappers. Therefore, it is highly likely that J2s remains the worst suited jack in a 2.5x opening range under these conditions.\n\nIt's important to note that many of these weaker hands are often part of a \"mixed strategy,\" meaning a GTO player would not open them 100% of the time but would mix between raising and folding. However, as it is included in the opening range, it qualifies as a hand you *should* open at least some of the time.\n\n<<<J2s>>>"
+  ],
+  "user_prompt_list": [
+    "What is the worst suited jack you should open from the button to 2.5x in a 100BB rake-free cash game? Give your answer as the abbreviated hand: e.g., \"JTs\"\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,35 @@
+print("This is a logic puzzle. Let's determine the maximum number of occupied chairs step-by-step.")
+print("There are 20 chairs in a row.")
+
+print("\n--- Step 1: Analyze the rules ---")
+print("A person sits on an empty chair. If that chair has any seated neighbors, one neighbor must leave.")
+print("Conclusion: The total number of occupied chairs only increases if a person sits in a chair with NO seated neighbors. Otherwise, the count stays the same (one person arrives, one person leaves).")
+
+print("\n--- Step 2: Determine the optimal arrangement ---")
+print("To maximize the number of occupants, we must always choose a chair with no neighbors.")
+print("This leads to an arrangement where no two people are sitting next to each other.")
+print("For example: Occupied, Empty, Occupied, Empty, ... ('O E O E ...')")
+print("If we had two people sitting together ('O O'), the last one to arrive would have sat next to a neighbor, forcing that neighbor to leave. So, an 'O O' arrangement is not possible as a stable state to build upon.")
+
+print("\n--- Step 3: Set up an equation ---")
+print("Let 'k' be the maximum number of occupied chairs.")
+print("In the optimal arrangement, these 'k' people must be separated by at least 'k-1' empty chairs.")
+print("Total chairs needed = (number of people) + (number of separating chairs)")
+print("Total chairs needed = k + (k - 1)")
+print("This must be less than or equal to the total number of chairs available (20).")
+
+print("\n--- Step 4: Solve the inequality ---")
+print("The inequality is:")
+print("k + (k - 1) <= 20")
+print("Which simplifies to:")
+print("2 * k - 1 <= 20")
+print("Add 1 to both sides:")
+print("2 * k <= 21")
+print("Divide by 2:")
+print("k <= 10.5")
+
+print("\n--- Step 5: Final Answer ---")
+print("Since 'k' (the number of people) must be a whole number, the maximum value it can be is 10.")
+print("This maximum is achieved by filling the chairs in this order: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19.")
+print("The final maximum number of occupied chairs is 10.")
+<<<10>>>

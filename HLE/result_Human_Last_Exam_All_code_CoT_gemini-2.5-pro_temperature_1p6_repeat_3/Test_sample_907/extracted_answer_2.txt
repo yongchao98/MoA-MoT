@@ -1,0 +1,9 @@
+The absorption cross-section equation for a chain of molecules under first-order time-dependent perturbation theory with a Gaussian pulse is:
+
+a) For non-interacting molecules:
+σ_a(ω) = C * N * |μ_mol|² * ω * exp(-(ω - ω₀)²τ²/2) * δ(ω - ω_mol)
+This represents a single absorption peak at the monomer frequency (ω_mol), with an intensity proportional to the number of molecules N.
+
+b) For molecules with near-neighbor interaction (coupling J):
+σ_b(ω) = C * N * |μ_mol|² * ω * exp(-(ω - ω₀)²τ²/2) * δ(ω - (ω_mol + 2J/ħ))
+This also represents a single, strong absorption peak due to a cooperative exciton state. However, its frequency is shifted from the monomer frequency by an amount dependent on the coupling energy J.

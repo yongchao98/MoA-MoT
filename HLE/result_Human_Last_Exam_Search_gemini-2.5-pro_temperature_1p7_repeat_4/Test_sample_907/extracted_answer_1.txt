@@ -1,0 +1,9 @@
+$\sigma^{(b)}(\omega_0) = \sum_{v,c} \sum_{k \in BZ} \frac{2\sqrt{\pi}\tau}{\hbar c \epsilon_0} \omega_{cv}(k) |\langle c,k|\mathbf{D} \cdot \mathbf{e}|v,k\rangle|^2 \exp\left(-(\omega_{cv}(k) - \omega_0)^2 \tau^2\right)$
+
+where:
+*   The first sum is over all pairs of valence ($v$) and conduction ($c$) bands.
+*   The second sum is over all discrete k-vectors in the first Brillouin Zone (BZ). For a long chain, this sum can be replaced by an integral: $\sum_k \to \frac{Na}{2\pi}\int_{BZ} dk$.
+*   $\omega_{cv}(k) = (E_c(k) - E_v(k))/\hbar$ is the k-dependent transition frequency.
+*   $\mathbf{D} = \sum_n \mathbf{d}_n$ is the total electric dipole operator for the entire chain. In the tight-binding model, the transition dipole moment $\langle c,k|\mathbf{D} \cdot \mathbf{e}|v,k\rangle$ is often found to be independent of $k$ and equal to the corresponding single-molecule transition dipole moment, $\langle c|\mathbf{d} \cdot \mathbf{e}|v\rangle$.
+
+This equation indicates that the absorption spectrum is no longer a set of discrete lines but a continuous band, reflecting the joint density of states of the valence and conduction bands, broadened by the spectral profile of the Gaussian laser pulse.

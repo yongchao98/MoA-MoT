@@ -1,0 +1,17 @@
+The transmitted symbols from each antenna for the six time slots are as follows, where $c = \cos(\pi/8)$ and $s = \sin(\pi/8)$:
+
+**Transmitted Symbols from Antenna 1:**
+*   Time Slot 1: $(s-c) - j(s+c)$
+*   Time Slot 2: $(s-c) - j(s+c)$
+*   Time Slot 3: $(c+s) + j(s-c)$
+*   Time Slot 4: $(-c-s) + j(c-s)$
+*   Time Slot 5: $(s-c) - j(s+c)$
+*   Time Slot 6: $(c-s) + j(c+s)$
+
+**Transmitted Symbols from Antenna 2:**
+*   Time Slot 1: $(c+s) + j(s-c)$
+*   Time Slot 2: $(-c-s) + j(c-s)$
+*   Time Slot 3: $(c-s) + j(c+s)$
+*   Time Slot 4: $(c-s) + j(c+s)$
+*   Time Slot 5: $(-c-s) + j(c-s)$
+*   Time Slot 6: $(-c-s) + j(c-s)

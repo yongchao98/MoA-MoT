@@ -1,0 +1,7 @@
+Let `(X, d_X)`, `(Y, d_Y)`, and `(Z, d_Z)` be complete metric spaces. The functions F, G, and H have a unique FGH-tripled fixed point if there exist non-negative constants `α, β, γ, δ, ε, ζ, η, θ` such that for all `x₁, x₂ ∈ X`, `y₁, y₂ ∈ Y`, `z₁, z₂ ∈ Z`, the following two conditions are met:
+1. The functions satisfy the mixed Lipschitz conditions:
+   *  `d_X(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) ≤ α*d_X(x₁, x₂) + β*d_Y(y₁, y₂) + γ*d_Z(z₁, z₂)`
+   *  `d_Y(G(y₁, x₁, y₁), G(y₂, x₂, y₂)) ≤ δ*d_X(x₁, x₂) + ε*d_Y(y₁, y₂)`
+   *  `d_Z(H(z₁, y₁, x₁), H(z₂, y₂, x₂)) ≤ ζ*d_Z(z₁, z₂) + η*d_Y(y₁, y₂) + θ*d_X(x₁, x₂)`
+2. The constants satisfy the aggregate contraction condition:
+   `max(α + δ + θ, β + ε + η, γ + ζ) < 1`

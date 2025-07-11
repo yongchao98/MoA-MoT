@@ -1,0 +1,5 @@
+**Mean Energy (E):**
+E = ∫₀^∞ [ε * g(ε) / (exp(ε / k\_B T) - 1)] dε
+
+**Entropy (S):**
+S = (E/T) + k\_B ∫₀^∞ g(ε)ln(1 - exp(-ε / k\_B T)) dε

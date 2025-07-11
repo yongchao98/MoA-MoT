@@ -1,0 +1,7 @@
+Let $f_m$ be the required number of sets.
+For $m=1$ or $m=2$, the answer is $f_1=0, f_2=0$.
+For $m \geq 3$, the answer is given by the recurrence relation:
+$f_m = \frac{1}{m} \left( \binom{2^n-1}{m-1} - f_{m-1} - (2^n - m + 1) f_{m-2} \right)$
+where $f_{m-1}$ and $f_{m-2}$ are the answers for size $m-1$ and $m-2$ respectively.
+Using the definition from the hint $a = \binom{2^n-1}{m-1}$, this can be written as:
+$f_m = \frac{1}{m} ( a - f_{m-1} - (2^n - m + 1) f_{m-2} )

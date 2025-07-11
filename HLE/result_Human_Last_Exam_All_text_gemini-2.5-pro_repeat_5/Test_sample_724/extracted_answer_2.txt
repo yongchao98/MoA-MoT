@@ -1,0 +1,1 @@
+Let $K = \max\left\{k \in \{0, 1, \dots, n-1\} \mid 100 \sum_{i=n-k+1}^{n} \frac{1}{2i-1} \le m \right\}$ (where the summation is 0 for k=0). The maximum amount of water left is given by the formula: $100(n-K) - (2(n-K)-1) \left( m - 100 \sum_{i=n-K+1}^{n} \frac{1}{2i-1} \right)$.

@@ -1,0 +1,20 @@
+The set of distances at which two particles can be found for r ≤ 3, normalized over the sphere diameter, are {1.00, 1.41, 1.73, 2.00, 2.24, 2.65, 2.83, 3.00}.
+
+These distances are derived by considering the possible arrangements of hard sphere centers on a two-dimensional plane (a hyperplane), which correspond to the most probable local structures within a jammed 3D system. The two primary planar arrangements for spheres are the hexagonal (close-packed) lattice and the square lattice.
+
+The distances are calculated as follows:
+*   **From a hexagonal lattice arrangement:**
+    *   **r = 1.00:** The distance between two spheres in direct contact.
+    *   **r = √3 ≈ 1.73:** The distance between a sphere and its second-nearest neighbors.
+    *   **r = 2.00:** The distance between a sphere and its third-nearest neighbors (e.g., three spheres in a line).
+    *   **r = √7 ≈ 2.65:** The distance to the fourth-nearest neighbors.
+    *   **r = 3.00:** The distance to a fifth-nearest neighbor.
+*   **From a square lattice arrangement:**
+    *   **r = 1.00:** The distance between two adjacent spheres.
+    *   **r = √2 ≈ 1.41:** The distance across the diagonal of a square formed by four spheres.
+    *   **r = 2.00:** The distance between a sphere and its next neighbor along a straight line.
+    *   **r = √5 ≈ 2.24:** The distance to a neighbor located at a (2,1) displacement in the lattice.
+    *   **r = √8 ≈ 2.83:** The distance across the diagonal of a 2x2 rectangle of spheres.
+    *   **r = 3.00:** The distance to a neighbor located at a (3,0) displacement in the lattice.
+
+These discrete distances correspond to the expected positions of the peaks in the radial distribution function, g(r), for such a system.

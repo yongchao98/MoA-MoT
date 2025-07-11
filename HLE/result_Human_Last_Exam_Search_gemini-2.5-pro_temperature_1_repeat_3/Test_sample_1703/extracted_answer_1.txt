@@ -1,0 +1,5 @@
+The area of the triangle T(t) as a function of time t is given by the formula:
+\( A(t) = \frac{\sqrt{3}}{4} \left(225 + 3 \left(5 - |5 - (t \mod 10)|\right)^2\right) \)
+This simplifies to:
+\( A(t) = \frac{225\sqrt{3}}{4} + \frac{3\sqrt{3}}{4} \left(5 - |5 - (t \mod 10)|\right)^2 \)
+The area is periodic with a period of 10 seconds. It varies between a minimum value of \( \frac{225\sqrt{3}}{4} \) (at t = 0, 10, 20, ...) and a maximum value of \( 75\sqrt{3} \) (at t = 5, 15, 25, ...).

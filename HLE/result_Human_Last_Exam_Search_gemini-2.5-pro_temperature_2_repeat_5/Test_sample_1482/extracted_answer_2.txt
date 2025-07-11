@@ -1,0 +1,9 @@
+The mathematical formulation for the vertical cross-section of an Interval Type-3 Membership Function `Ã` at a fixed primary input `x`, denoted as `μ_Ã(x)(u)`, is an Interval Type-2 Fuzzy Set characterized by upper and lower Gaussian-based bounds:
+
+*   **Upper Membership Function (UMF):**
+    `μ¯_Ã(x)(u) = exp( - (u - m(x))² / (2 * σ_u²) )`
+
+*   **Lower Membership Function (LMF):**
+    `μ_Ã(x)(u) = exp( - (u - m(x))² / (2 * (σ_u*)²) )`
+
+Here, `u` is the secondary variable, `m(x)` is the mean (potentially dependent on `x`), `σ_u` is the standard deviation for the upper bound, and `σ_u*` is the modified standard deviation for the lower bound that reflects the degree of uncertainty.

@@ -1,0 +1,3 @@
+The formula for the fermionic partition function Z in the imaginary time path integral formalism is:
+Z = ∫_{ψ(β)=-ψ(0)} Dψ* Dψ exp( - ∫_0^β dτ ∫ d^d x [ ψ*(x,τ) ∂_τ ψ(x,τ) + H(ψ*(x,τ), ψ(x,τ)) ] )
+where ψ and ψ* are anti-commuting Grassmann fields, Dψ* Dψ is the functional integration measure, β is the inverse temperature, and the integral is performed over fields satisfying anti-periodic boundary conditions (APBC) in the imaginary time direction τ. The term H(ψ*,ψ) is the Hamiltonian density expressed in terms of the Grassmann fields.

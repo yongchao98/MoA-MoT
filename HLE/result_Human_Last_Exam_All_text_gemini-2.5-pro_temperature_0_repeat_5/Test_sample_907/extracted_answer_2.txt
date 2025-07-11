@@ -1,0 +1,24 @@
+The equations for the absorption cross-section are as follows:
+
+**a) The interaction between molecules can be neglected:**
+
+The absorption cross-section $\sigma_a(\omega_L)$ is given by:
+$\sigma_a(\omega_L) = \frac{2\sqrt{\pi} \tau N |\mu_{eg}|^2}{\hbar c\epsilon_0} \omega_0 e^{-(\omega_0-\omega_L)^2 \tau^2}$
+
+Where:
+*   $\omega_L$ is the laser carrier frequency.
+*   $\tau$ is the Gaussian pulse duration.
+*   $N$ is the number of molecules in the chain.
+*   $\mu_{eg}$ is the transition dipole moment of a single molecule.
+*   $\omega_0$ is the transition frequency of a single molecule.
+*   $\hbar, c, \epsilon_0$ are fundamental constants.
+
+**b) The interaction between near-neighbors should be considered:**
+
+The absorption cross-section $\sigma_b(\omega_L)$ is given by:
+$\sigma_b(\omega_L) = \frac{2\sqrt{\pi} \tau N |\mu_{eg}|^2}{\hbar c\epsilon_0} (\omega_0 + \frac{2J}{\hbar}) e^{-(\omega_0 + 2J/\hbar - \omega_L)^2 \tau^2}$
+
+Where the new parameter is:
+*   $J$ is the near-neighbor coupling energy.
+
+This equation shows that the absorption peak is shifted to a new frequency $\omega_{k=0} = \omega_0 + 2J/\hbar$, corresponding to the energy of the optically active k=0 exciton state.

@@ -1,0 +1,3 @@
+Let \(\tau = t \pmod{10}\). The area of the triangle as a function of time \(t\) is given by:
+\( A(t) = \begin{cases} \frac{\sqrt{3}}{4}(225+3\tau^2) & \text{if } 0 \le \tau \le 5 \\ \frac{\sqrt{3}}{4}(225+3(10-\tau)^2) & \text{if } 5 < \tau < 10 \end{cases} \)
+This can be written in a single formula as \(A(t) = \frac{\sqrt{3}}{4} \left( 225 + 3 \left( 5 - |(t \pmod{10}) - 5| \right)^2 \right)\).

@@ -1,0 +1,9 @@
+In the theoretical framework of planar Birkhoff billiard dynamics, the generating function `H(s, s')` is given by the negative Euclidean distance between the points on the boundary parametrized by arc lengths `s` and `s'`, i.e., `H(s, s') = -|γ(s') - γ(s)|`. An asymptotic analysis of this function in the limit as the separation `|s' - s|` approaches zero reveals its leading-order behavior. By performing a Taylor expansion of the position vector `γ(s')` around `s` and incorporating the Frenet-Serret relations for a planar curve, the generating function can be expressed as:
+
+`H(s, s') = -|s' - s| + (|s' - s|³/24)κ(s)² + O((s' - s)⁴)`
+
+Here, `κ(s)` is the local curvature of the boundary at the point `s`.
+
+This expansion elucidates the interplay between the boundary geometry and the system's dynamics:
+*   The **leading term**, `-|s' - s|`, represents the chord length in the absence of curvature (a straight boundary).
+*   The **first-order correction term**, `(|s' - s|³/24)κ(s)²`, directly and rigorously incorporates the influence of the boundary's local curvature. It shows that for small separations, the deviation of the generating function from the simple arc-length distance is proportional to the cube of the separation and the square of the curvature. This term is crucial as its derivatives determine the non-trivial local dynamics and the symplectic structure of the billiard map in the asymptotic regime.

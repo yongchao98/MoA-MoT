@@ -1,0 +1,8 @@
+`Σ' = [[exp(-Δ) Σ_δδ exp(-Δ)ᵀ, exp(-Δ) Σ_δ,other], [Σ_other,δ exp(-Δ)ᵀ, Σ_other,other]]`
+where:
+`Σ'` is the post-reset covariance matrix.
+`Σ` is the pre-reset covariance matrix, partitioned as `[[Σ_δδ, Σ_δ,other], [Σ_other,δ, Σ_other,other]]`.
+`δ̂` is the estimated mean of the attitude deviation vector.
+`Δ` is the skew-symmetric matrix of `δ̂`, i.e., `Δ = [δ̂]`.
+`exp(-Δ)` is the matrix exponential of `-Δ`, which represents the rotation matrix for the coordinate transformation of the error.
+`I` (implicit in the block matrix multiplication) is the identity matrix of appropriate dimensions for the other states.

@@ -1,0 +1,7 @@
+The set of all solutions for $z$ in the equation $z\cdot i = i^z$ can be expressed using the branches of the Lambert W function, $W_j$. For any integer $k \in \mathbb{Z}$ that specifies the branch of the logarithm of $i$, and for any integer $j \in \mathbb{Z}$ that specifies the branch of the Lambert W function, the solutions are given by:
+$z = i \frac{W_j(-\frac{\pi}{2}(1+4k))}{\frac{\pi}{2}(1+4k)}$
+
+This set includes:
+1. The two real solutions: $z=1$ and $z=-1$.
+2. An infinite family of purely imaginary solutions, obtained when $j=0$ and $k$ is any integer less than or equal to -1.
+3. An infinite family of non-real complex solutions for all other pairs of integers $(k, j)$.

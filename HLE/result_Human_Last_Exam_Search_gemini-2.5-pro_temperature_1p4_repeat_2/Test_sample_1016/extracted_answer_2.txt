@@ -1,0 +1,23 @@
+For the one-dimensional wave equation with propagation speed `c`, the Schwarz Relaxation Method with an overlap of size `M` and absorbing boundary conditions at the interfaces requires a specific number of iterations to converge up to a given time `T`.
+
+The convergence of this method for hyperbolic problems is dictated by the time it takes for information to propagate across the subdomains. Each iteration of the Schwarz method allows information from the boundary of one subdomain to be communicated to the adjacent subdomain. This information then travels through the subdomain at speed `c`.
+
+In one full iteration (updating both subdomains), the region of the converged solution effectively expands by a time interval equal to the time it takes for a wave to travel across the overlap region. This travel time is given by:
+`τ = M / c`
+
+For the solution to be correct up to the time instant `T`, the cumulative time of convergence after `k` iterations must be greater than or equal to `T`. Therefore, the condition for convergence is:
+`k * τ ≥ T`
+
+Substituting the expression for τ, we get:
+`k * (M / c) ≥ T`
+
+Solving for `k`, the number of iterations, we find:
+`k ≥ (c * T) / M`
+
+Since the number of iterations must be an integer, we need to take the smallest integer that satisfies this inequality. This is given by the ceiling function.
+
+`k = ceil((c * T) / M)`
+
+This formula indicates that the required number of iterations is directly proportional to the final time `T` and the wave speed `c`, and inversely proportional to the size of the overlap `M`. A larger overlap reduces the number of iterations needed to achieve convergence for a given time `T`. For hyperbolic problems, the convergence is finite and predictable, unlike for parabolic problems where convergence is generally asymptotic.
+
+`ceil((c * T) / M)`

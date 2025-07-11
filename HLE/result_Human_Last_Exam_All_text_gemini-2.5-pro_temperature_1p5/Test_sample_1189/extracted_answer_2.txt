@@ -1,0 +1,6 @@
+Let \( f_m \) be the number of sets \( T \) for a given \( m \). The value can be computed using the following recurrence relation:
+For \( m \ge 2 \):
+\[ f_m = \frac{1}{m} \left( \binom{2^n-1}{m-1} - f_{m-1} - (2^n - m + 1)f_{m-2} \right) \]
+with the base cases:
+\[ f_0 = 1 \]
+\[ f_1 = 0 \]

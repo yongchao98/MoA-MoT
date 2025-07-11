@@ -1,0 +1,1 @@
+Let `k` be the integer in `{1, ..., n}` such that `100 * \sum_{i=k+1}^{n} \frac{1}{2i-1} \le m < 100 * \sum_{i=k}^{n} \frac{1}{2i-1}`. The maximum amount of water left is given by the expression: `100k - (2k-1) * (m - 100 * \sum_{i=k+1}^{n} \frac{1}{2i-1})`

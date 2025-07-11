@@ -1,0 +1,56 @@
+174[void main() {
+    /*
+     * Variable Memory Analysis (smallest possible):
+     * The result of 100! has 158 decimal digits.
+     * To store this, we need an array of digits.
+     * The 'digit' type (1D) is the most space-efficient for this.
+     * -----------------------------------------------------------------
+     * Type         | Variable | Purpose                   | Size (D)
+     * -----------------------------------------------------------------
+     * digit[158]   | res      | Stores 158 digits of 100! | 158
+     * char         | i        | Loop counter (2 to 100)   | 3
+     * char         | m        | Number of digits in res   | 3
+     * char         | j        | Inner loop counter        | 3
+     * char         | carry    | Multiplication carry-over | 3
+     * int          | product  | Temp product storage      | 4
+     * -----------------------------------------------------------------
+     * Total Memory (z)                                    | 174 D
+     */
+
+    // Variable declarations
+    digit res[158];
+    char m, i, j, carry;
+    int product;
+
+    // Initialize result to 1
+    res[0] = 1;
+    m = 1;
+
+    // Calculate 100! by multiplying by numbers from 2 to 100
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Multiply current result 'res' by 'i'
+        for (j = 0; j < m; j++) {
+            product = res[j] * i + carry;
+            res[j] = product % 10;
+            carry = product / 10;
+        }
+
+        // Store remaining carry in new digits
+        while (carry > 0) {
+            res[m] = carry % 10;
+            carry = carry / 10;
+            m++;
+        }
+    }
+
+    // Print the final result
+    // Digits are stored in reverse order, so we print from the end
+    printf("100! = ");
+    j = m;
+    while (j > 0) {
+        j--;
+        printf("%d", res[j]);
+    }
+    printf("\n");
+}]

@@ -1,0 +1,26 @@
+### a) No intermolecular interaction:
+For a chain of $N$ non-interacting molecules, the absorption cross-section is the sum of the individual molecular cross-sections. This results in a single absorption peak with a Gaussian line shape determined by the laser pulse. The equation is:
+
+$\sigma(\omega_L) = N \cdot \frac{2\sqrt{\pi} \omega_0 \tau}{3\hbar \epsilon_0 c} |\vec{d}_{eg}|^2 e^{-(\omega_0-\omega_L)^2 \tau^2}$
+
+**Where:**
+*   $\sigma(\omega_L)$: Absorption cross-section as a function of the laser's carrier frequency $\omega_L$.
+*   $N$: Number of molecules in the chain.
+*   $\omega_0$: Transition frequency of a single molecule.
+*   $\vec{d}_{eg}$: Transition dipole moment of a single molecule.
+*   $\tau$: Duration of the Gaussian laser pulse.
+*   $\hbar$: Reduced Planck's constant.
+*   $\epsilon_0$: Vacuum permittivity.
+*   $c$: Speed of light.
+
+### b) Near-neighbor interaction considered:
+When interactions between adjacent molecules are included, the system's eigenstates become delocalized Frenkel excitons. The absorption spectrum is composed of multiple peaks, each corresponding to a transition to a specific exciton state. The equation is:
+
+$\sigma(\omega_L) = \frac{2\sqrt{\pi} \tau}{3\hbar \epsilon_0 c} \sum_{k=1}^N \omega_k |\vec{D}_k|^2 e^{-(\omega_k - \omega_L)^2 \tau^2}$
+
+**Where:**
+*   The sum is over all exciton states $k=1, \dots, N$.
+*   $\omega_k = \frac{E_k}{\hbar}$ is the frequency of the k-th exciton state, given by $E_k = \hbar\omega_0 + 2J \cos\left(\frac{\pi k}{N+1}\right)$, with $J$ being the near-neighbor coupling energy.
+*   $\vec{D}_k$ is the transition dipole moment to the k-th exciton state. For a linear chain, this is given by $\vec{D}_k = \left(\sum_{n=1}^N \sqrt{\frac{2}{N+1}} \sin\left(\frac{\pi k n}{N+1}\right)\right) \vec{d}_{eg}$. This term is non-zero only for odd values of $k$, meaning only these exciton states contribute to the absorption.
+
+This results in a spectrum with several Gaussian peaks at the exciton frequencies $\omega_k$, with intensities governed by the oscillator strength of each excitonic transition. The k=1 state typically dominates the spectrum.

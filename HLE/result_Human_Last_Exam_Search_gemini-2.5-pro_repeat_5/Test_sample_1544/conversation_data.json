@@ -1,0 +1,10 @@
+{
+  "question": "This is a FEN of a Chess position:\n\n8/3p4/1kpP4/p1q5/P7/8/5Q2/6K1 w - - 0 1\n\nAssume both sides play optimally. What should White's next move be. Your answer should be a move in standard Chess notation. \nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "In the provided chess position, the optimal move for White is to trade queens. This simplifies the position to a winning pawn endgame.\n\nWhite's passed pawn on d6 is a significant advantage. By trading queens, White eliminates Black's primary defensive piece, leaving the Black king unable to stop the passed pawn from promoting.\n\nThe correct move is:\n\n<<<Qxc5+>>>"
+  ],
+  "user_prompt_list": [
+    "This is a FEN of a Chess position:\n\n8/3p4/1kpP4/p1q5/P7/8/5Q2/6K1 w - - 0 1\n\nAssume both sides play optimally. What should White's next move be. Your answer should be a move in standard Chess notation. \nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

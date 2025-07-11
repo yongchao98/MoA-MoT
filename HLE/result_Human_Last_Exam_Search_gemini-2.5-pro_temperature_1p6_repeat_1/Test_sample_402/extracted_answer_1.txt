@@ -1,0 +1,16 @@
+Based on the provided information about the RNA-seq experiment and the nature of the contamination, a filtering strategy can be implemented using a command-line tool like `awk` to remove genes based on their log fold base 2 change. The principle is that the contaminating cancer genes, being present in the "CAR only" samples and not in the "CAR T cells co-expressing IL15" samples, will exhibit a strong negative log2 fold change in a differential expression analysis comparing the IL15-secreting group to the control group.
+
+The proposed command-line implementation assumes a tab-separated output file from a differential expression analysis tool:
+
+```bash
+awk -F'\t' 'NR==1 || $3 > -2.0' your_de_results.tsv > filtered_de_results.tsv
+```
+
+In this command:
+- `awk` is the command-line utility being used.
+- `-F'\t'` specifies that the columns in the input file are separated by tabs.
+- `'NR==1 || $3 > -2.0'` is the filtering rule. `NR==1` ensures the header line is preserved. `$3 > -2.0` will filter out any gene where the value in the third column (assumed to be the log2 fold change) is less than or equal to -2.0. The value `$3` should be changed to match the actual column number of the log2 fold change in your results file.
+- `your_de_results.tsv` is the input file with the differential expression results.
+- `> filtered_de_results.tsv` directs the filtered output to a new file.
+
+The choice of the log2 fold change threshold (e.g., -2.0) is critical and should be determined by examining the distribution of the data, for instance, by using an MA-plot to visually separate the contaminating genes from biologically relevant downregulated genes. This approach provides a targeted and easily scriptable method to clean the dataset within a bioinformatics pipeline.

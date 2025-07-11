@@ -1,0 +1,13 @@
+The partition function Z for a system with Hamiltonian Ĥ = −μN̂ in the grand canonical ensemble, expressed using path integrals, is given by:
+
+$Z = \int \mathcal{D}[\phi^*, \phi] \exp\left(-\int_0^\beta d\tau \int d^dx \, \phi^*(\tau, \mathbf{x}) (\partial_\tau - 2\mu) \phi(\tau, \mathbf{x})\right)$
+
+Here:
+*   β is the inverse temperature (1/k<sub>B</sub>T).
+*   μ is the chemical potential.
+*   φ(τ, **x**) and φ<sup>*</sup>(τ, **x**) are the quantum fields, which are functions of imaginary time τ and spatial coordinates **x**.
+*   ∫ D[φ<sup>*</sup>, φ] represents the functional integral over all possible field configurations.
+*   The integral ∫₀<sup>β</sup> dτ is over imaginary time from 0 to β.
+*   The fields must satisfy boundary conditions in imaginary time depending on the particle statistics:
+    *   **Bosonic fields**: Periodic boundary conditions, φ(0, **x**) = φ(β, **x**).
+    *   **Fermionic fields**: Anti-periodic boundary conditions, φ(0, **x**) = -φ(β, **x**).

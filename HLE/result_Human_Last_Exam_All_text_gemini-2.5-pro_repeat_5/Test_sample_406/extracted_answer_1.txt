@@ -1,0 +1,9 @@
+The conditions are:
+1.  The spaces `X`, `Y`, and `Z` are non-empty complete metric spaces with metrics `d_X`, `d_Y`, and `d_Z` respectively.
+2.  There exist non-negative constants `α₁`, `α₂`, `α₃`, `β₁`, `β₂`, `γ₁`, `γ₂`, `γ₃` such that for all `x₁, x₂ ∈ X`, `y₁, y₂ ∈ Y`, `z₁, z₂ ∈ Z`, the following inequalities hold:
+    a) `d_X(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) ≤ α₁d_X(x₁, x₂) + α₂d_Y(y₁, y₂) + α₃d_Z(z₁, z₂)`
+    b) `d_Y(G(y₁, x₁, y₁), G(y₂, x₂, y₂)) ≤ β₁d_X(x₁, x₂) + β₂d_Y(y₁, y₂)`
+    c) `d_Z(H(z₁, y₁, x₁), H(z₂, y₂, x₂)) ≤ γ₁d_X(x₁, x₂) + γ₂d_Y(y₁, y₂) + γ₃d_Z(z₁, z₂)`
+3.  The sum of the constants related to each space is less than 1:
+    `max { (α₁ + β₁ + γ₁), (α₂ + β₂ + γ₂), (α₃ + γ₃) } < 1`
+Under these conditions, a unique FGH-tripled fixed point is guaranteed to exist.

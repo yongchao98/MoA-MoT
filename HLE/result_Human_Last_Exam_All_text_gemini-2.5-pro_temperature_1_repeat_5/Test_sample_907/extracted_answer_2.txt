@@ -1,0 +1,9 @@
+**a) Neglecting interaction:**
+The absorption cross-section $\sigma_a(\omega)$ is given by the incoherent sum of the contributions from each of the $N$ molecules. The equation is:
+$\sigma_a(\omega) = N \frac{\pi \omega_{eg}}{\epsilon_0 c} |\vec{\mu}_{eg} \cdot \vec{\epsilon}|^2 g(\omega - \omega_{eg})$
+Here, $\omega_{eg}$ is the electronic transition frequency of a single molecule, $\vec{\mu}_{eg}$ is its transition dipole moment, $\vec{\epsilon}$ is the light polarization vector, and $g(\omega - \omega_{eg})$ is the lineshape function. This represents an absorption peak at the monomer frequency with an intensity proportional to $N$.
+
+**b) Considering near-neighbor interaction:**
+The interaction creates delocalized Frenkel excitons. Optical selection rules allow transitions only to the $k=0$ exciton state. The absorption cross-section $\sigma_b(\omega)$ is:
+$\sigma_b(\omega) = N \frac{\pi (\omega_{eg} + 2J/\hbar)}{\epsilon_0 c} |\vec{\mu}_{eg} \cdot \vec{\epsilon}|^2 g(\omega - (\omega_{eg} + 2J/\hbar))$
+Here, $J$ is the coupling energy between adjacent molecules. Thi

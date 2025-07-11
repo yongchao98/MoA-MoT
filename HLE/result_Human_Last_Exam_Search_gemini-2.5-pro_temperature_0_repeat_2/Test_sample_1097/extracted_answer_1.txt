@@ -1,0 +1,6 @@
+The set M you should define is the set of all continuous functions on the interval that are non-positive and satisfy the boundary conditions. This set is equipped with the standard supremum norm.
+
+Formally, the set M is defined as:
+**M = {u ∈ C() | u(x) ≤ 0 for all x ∈, and u(0) = u(1) = 0}**
+
+This set M, endowed with the metric d(u, v) = sup_{x∈} |u(x) - v(x)|, is a complete metric space. On this space, the operator T is a contraction mapping that maps M to itself, thus satisfying the conditions of the Banach fixed-point theorem and guaranteeing a unique global solution within that set.

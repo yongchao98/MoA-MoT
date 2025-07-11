@@ -1,0 +1,10 @@
+A threshold signature scheme based on the principles of FROST (Flexible Round-Optimized Schnorr Threshold Signatures) meets the requirements of being a tightly secure t-out-of-n scheme with a two-round signing protocol.
+
+The design involves three main phases:
+1.  **Key Generation:** A secure Distributed Key Generation (DKG) protocol (like Pedersen DKG) is used for `n` parties to create a single group public key `Y` and for each party `P_i` to obtain a secret key share `s_i` without a trusted dealer.
+2.  **Signing (2 Rounds):**
+    *   **Round 1 (Commitment):** To sign a message, each of the `t` participating signers generates two secret nonces `(d_i, e_i)` and broadcasts their public commitments `(D_i = g^{d_i}, E_i = g^{e_i})`. This round forces all parties to commit to their nonces simultaneously, preventing adaptive attacks. This can be done as a pre-computation step for lower latency.
+    *   **Round 2 (Signing):** After receiving all commitments, each participant deterministically computes a group nonce commitment `R` and a group challenge `c`. `R` is built by combining all individual commitments `(D_j, E_j)` using a message-and-identity-dependent binding factor `ρ_j`. Then, each party computes its partial signature `z_i = (d_i + e_i*ρ_i) + c*λ_i*s_i`, where `λ_i` is their Lagrange coefficient, and sends it to an aggregator.
+3.  **Aggregation:** An aggregator collects at least `t` partial signatures. It first verifies each individual share `z_i` for correctness, making the protocol robust against malicious insiders. It then computes the final signature `(R, z)` where `z = Σ z_i`.
+
+This design is **t-out-of-n** because `t` parties are required to reconstruct the signature via Lagrange interpolation. It has a **two-round signing protocol**. It achieves **tight security** because its structure (specifically the two-nonce commitment scheme) allows for a security proof in the Random Oracle Model that reduces tightly to the hardness of the discrete logarithm problem, thus avoiding the security degradation found in many other schemes.

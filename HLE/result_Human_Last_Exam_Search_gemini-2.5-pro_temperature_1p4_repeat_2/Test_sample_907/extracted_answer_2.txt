@@ -1,0 +1,54 @@
+Here are the equations for the absorption cross-section under the specified conditions.
+
+The general expression for the absorption cross-section σ(ω₀) for a system absorbing an ultrashort Gaussian-shape laser pulse is derived from first-order time-dependent perturbation theory. The laser pulse is defined by its electric field **E**(t) = **E**₀ exp(-t²/2τ²)cos(ω₀t), where ω₀ is the carrier frequency and τ is the pulse duration.
+
+The probability of a transition from an initial state |i⟩ to a final state |f⟩ is given by:
+P_{f←i} = (1/ħ²) |∫⟨f|H'(t)|i⟩e^(iω_{fi}t) dt|²
+where H'(t) = -**D** · **E**(t) is the interaction Hamiltonian in the electric dipole approximation, **D** is the electric dipole operator, and ω_{fi} = (E_f - E_i)/ħ is the transition frequency.
+
+For the Gaussian pulse, and applying the rotating wave approximation, this probability becomes:
+P_{f←i} = ( |⟨f|**D**|i⟩ · **E**₀|² π τ² ) / (2ħ²) * exp(-(ω_{fi} - ω₀)²τ²)
+
+The absorption cross-section is the total absorbed energy per molecule divided by the incident energy fluence. For transitions originating from states |i⟩ below the Fermi level (with population p_i=1) to final states |f⟩ above the Fermi level, after averaging over molecular orientation, the cross-section is:
+σ(ω₀) = Σ_{i,f} (2√(π) τ ω_{fi}) / (3ħcε₀) |**D**_{fi}|² * exp(-(ω_{fi} - ω₀)²τ²)
+where **D**_{fi} = ⟨f|**D**|i⟩ is the transition dipole moment.
+
+This general formula can now be applied to the two specific cases.
+
+### a) The interaction between molecules can be neglected.
+
+When intermolecular interactions are ignored, the chain of N molecules behaves as an ensemble of N independent absorbers. The total absorption is the sum of the absorptions of each molecule. The electronic states are the localized molecular orbitals (MOs) of a single molecule, |ψ_j⟩, with corresponding energies ε_j. Transitions occur from occupied MOs (|ψ_i⟩ with energy ε_i < E_F) to unoccupied MOs (|ψ_f⟩ with energy ε_f > E_F) within any of the N molecules.
+
+The equation for the total absorption cross-section of the chain is:
+<br>
+<br>
+$ \sigma_a(\omega_0) = N \sum_{i,f} \frac{2\sqrt{\pi}\tau \omega_{fi}}{3\hbar c \varepsilon_0} |\vec{\mu}_{fi}|^2 \exp(-(\omega_{fi} - \omega_0)^2\tau^2) $
+<br>
+<br>
+where:
+*   **N** is the number of molecules in the chain.
+*   The sum is over the initial occupied molecular orbitals **i** and final unoccupied molecular orbitals **f** of a single molecule.
+*   $ \vec{\mu}_{fi} = \langle\psi_f|\vec{d}|\psi_i\rangle $ is the transition dipole moment of a single molecule, with $\vec{d}$ being the single-molecule dipole operator.
+*   $ \omega_{fi} = (\varepsilon_f - \varepsilon_i)/\hbar $ is the transition frequency for the single-molecule transition.
+*   **τ** is the duration of the Gaussian laser pulse.
+*   **ħ** is the reduced Planck constant.
+*   **c** is the speed of light in vacuum.
+*   **ε₀** is the permittivity of free space.
+
+### b) The interaction between near-neighbors should be considered.
+
+When nearest-neighbor interactions (with coupling strength V) are included, the electronic excitations are no longer localized on individual molecules but are delocalized over the chain, forming **exciton states**. The initial state is the electronic ground state of the entire chain, |G⟩, with energy E_G (which can be set to zero). The final states are the one-exciton states, |k⟩, with energies E_k. These states and energies are the eigenstates of the Hamiltonian for the molecular chain, which includes the nearest-neighbor interaction term V.
+
+The absorption process now involves transitions from the ground state |G⟩ to these exciton states |k⟩. The relevant transition dipole moment is for the entire chain, **D**_{kG} = ⟨k|$\sum_n \vec{d}_n$|G⟩, where $\sum_n \vec{d}_n$ is the total dipole operator of the chain. Due to symmetry, transitions are only allowed to certain exciton states (those for which **D**_{kG} is non-zero). The strength of these allowed transitions can be significantly enhanced, with the squared transition dipole moment, |**D**_{kG}|², being proportional to N for the most strongly absorbing state (the J-band).
+
+The equation for the absorption cross-section in this case is:
+<br>
+<br>
+$ \sigma_b(\omega_0) = \sum_{k, \text{allowed}} \frac{2\sqrt{\pi}\tau \omega_{kG}}{3\hbar c \varepsilon_0} |\vec{D}_{kG}|^2 \exp(-(\omega_{kG} - \omega_0)^2\tau^2) $
+<br>
+<br>
+where:
+*   The sum is over the optically **allowed** exciton states **k**.
+*   $ \vec{D}_{kG} = \langle k | \sum_{n=1}^N \vec{d}_n | G \rangle $ is the transition dipole moment from the ground state to the exciton state |k⟩.
+*   $ \omega_{kG} = (E_k - E_G)/\hbar $ is the frequency of the transition to the exciton state |k⟩.
+*   The other constants (τ, ħ, c, ε₀) have the same meaning as in part (a).

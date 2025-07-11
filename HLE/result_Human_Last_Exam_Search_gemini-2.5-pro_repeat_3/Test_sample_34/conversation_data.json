@@ -1,0 +1,10 @@
+{
+  "question": "What is the worst suited jack you should open from the button to 2.5x in a 100BB rake-free cash game? Give your answer as the abbreviated hand: e.g., \"JTs\"\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "In a 100BB rake-free cash game, a Game Theory Optimal (GTO) strategy for opening from the button is exceptionally wide due to the significant positional advantage. When raising to 2.5x the big blind, the button's opening range includes a large number of hands.\n\nThe \"worst\" hand in a particular category (like suited jacks) that should be opened is the one with the lowest kicker that is still considered a profitable raise, even if it's only raised a fraction of the time (a mixed strategy).\n\nAccording to GTO solver outputs for these conditions, the button's opening range is very broad and includes many speculative hands. For suited jacks, modern GTO charts and solvers advise opening all of them, from Jack-Ten suited down to Jack-Two suited. While hands like JTs and J9s are opened 100% of the time, the lower suited jacks like J4s, J3s, and J2s are often part of a mixed strategy, meaning they are raised some percentage of the time and folded the rest.\n\nBecause these hands are still included in the GTO opening range, they are considered profitable raises. The suited jack with the lowest kicker that is part of this range is Jack-Two suited.\n\n<<<J2s>>>"
+  ],
+  "user_prompt_list": [
+    "What is the worst suited jack you should open from the button to 2.5x in a 100BB rake-free cash game? Give your answer as the abbreviated hand: e.g., \"JTs\"\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

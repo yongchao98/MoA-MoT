@@ -1,0 +1,1 @@
+Σ' = J_l(δ̂) * Σ * J_l(δ̂)ᵀ, where J_l(δ̂) = I + (1 - cos(||δ̂||)) / ||δ̂||² * ŝ(δ̂) + (||δ̂|| - sin(||δ̂||)) / ||δ̂||³ * ŝ(δ̂)² is the left Jacobian of SO(3) and ŝ(δ̂) is the skew-symmetric matrix of the pre-reset attitude deviation estimate δ̂.

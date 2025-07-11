@@ -1,0 +1,12 @@
+In finite-temperature field theory for a neutral scalar field, the inner product (ϕ, D_ϕ) in the functional integral representation of the partition function corresponds to the quadratic part of the Euclidean action. It is given by the integral of the field ϕ multiplied by the operator D_ϕ acting on ϕ, over the Euclidean spacetime (with imaginary time τ ∈ [0, β] where β is the inverse temperature).
+
+The operator D_ϕ for a free scalar field is the Klein-Gordon operator in Euclidean space:
+D<sub>ϕ</sub> = -∂<sub>τ</sub><sup>2</sup> - ∇<sup>2</sup> + m<sup>2</sup>
+
+The inner product is therefore:
+(ϕ, D<sub>ϕ</sub>ϕ) = ∫<sub>0</sub><sup>β</sup> dτ ∫ d<sup>d</sup>x ϕ(τ, **x**) (-∂<sub>τ</sub><sup>2</sup> - ∇<sup>2</sup> + m<sup>2</sup>) ϕ(τ, **x**)
+
+Through integration by parts, this is equivalent to the standard expression for the free Euclidean action:
+S<sub>E</sub>[ϕ] = ½ ∫<sub>0</sub><sup>β</sup> dτ ∫ d<sup>d</sup>x [ (∂<sub>τ</sub>ϕ)<sup>2</sup> + (∇ϕ)<sup>2</sup> + m<sup>2</sup>ϕ<sup>2</sup> ]
+
+So, the inner product (ϕ, D_ϕϕ) is twice the free part of the Euclidean action. Often, the action is simply written as S<sub>E</sub> = ½ (ϕ, D<sub>ϕ</sub>ϕ) for a free field. For interacting theories, this term represents the kinetic and mass terms, while the interaction terms are handled separately.

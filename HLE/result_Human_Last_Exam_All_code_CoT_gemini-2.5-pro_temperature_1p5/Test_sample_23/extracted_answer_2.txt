@@ -1,0 +1,5 @@
+The number of non-admissible integers depends on the given positive integers `a` and `b`. The formula is as follows:
+- If `a = 1` or `b = 1`, the number of non-admissible integers is `ab`.
+- If `a > 1` and `b > 1`:
+    - If `ab` is even, the number is `ab / 2`.
+    - If `ab` is odd, the number is `(ab + 1) / 2`.

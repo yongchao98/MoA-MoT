@@ -1,0 +1,4 @@
+Let $k_0$ be the unique integer $k \in [1, n]$ that satisfies the condition:
+$$ \sum_{j=k+1}^{n} \frac{100}{2j-1} < m \le \sum_{j=k}^{n} \frac{100}{2j-1} $$
+The maximum amount of water left at the destination is then given by the expression:
+$$ 100k_0 - \left( m - \sum_{j=k_0+1}^{n} \frac{100}{2j-1} \right) (2k_0 - 1) $$

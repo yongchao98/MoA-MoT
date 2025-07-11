@@ -1,0 +1,24 @@
+The code will print `1 1 ` and then enter an infinite loop printing `2 `. Here is a step-by-step breakdown of the execution flow:
+
+1.  **First pass:**
+    *   `cosmo-loco` is called.
+    *   The `let` statement is entered. The first `call/cc` captures the continuation of the entire `let` body and binds it to the variable `k`. Let's call this continuation `K0`.
+    *   `(write 1)` prints `1`.
+    *   The second `call/cc` captures the continuation from that point onward (i.e., the rest of the code in the `let` body). Let's call this `K1`.
+    *   The expression `(k c)` becomes `(K0 K1)`. This call abandons the current execution and jumps back to the beginning of the `let` block, this time binding `k` to the value `K1`.
+
+2.  **Second pass:**
+    *   The `let` body starts again, but now `k` is bound to `K1`.
+    *   `(write 1)` prints another `1`. The output is now `1 1 `.
+    *   The second `call/cc` is reached again. It captures a new continuation, `K2` (which is functionally the same as `K1`).
+    *   The expression `(k c)` becomes `(K1 K2)`. This invokes the continuation `K1`.
+    *   Invoking `K1` jumps the execution to the point where `K1` was originally captured: right after the second `call/cc`.
+
+3.  **The loop:**
+    *   Execution continues from after the second `call/cc`.
+    *   `(write 2)` prints `2`. The output is now `1 1 2 `.
+    *   The third `call/cc` is executed. It captures a new continuation, `K3`.
+    *   The expression `(k c)` becomes `(K1 K3)`, because `k` is still bound to `K1` from the second pass.
+    *   Invoking `K1` again jumps execution back to the point after the second `call/cc`.
+    *   `(write 2)` prints another `2`. The output is now `1 1 2 2 `.
+    *   This process repeats indefinitely, creating an infinite loop that continually prints `2`.

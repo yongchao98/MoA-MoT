@@ -1,0 +1,10 @@
+{
+  "question": "What is the minimum number of diffraction gratings necessary to construct a full spectral volume from a single image using computed tomography?\n\nAnswer Choices:\nA. 1\nB. 2\nC. 3\nD. 4\nE. 5\nF. 6\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "A Computed Tomography Imaging Spectrometer (CTIS) constructs a three-dimensional data set (two spatial dimensions and one spectral dimension) from a single two-dimensional image. This is achieved without scanning by using a dispersive element to project multiple, spectrally separated images onto a single focal plane array.\n\nThe core of a CTIS system is a two-dimensional disperser. While a single one-dimensional diffraction grating can separate light by wavelength, it only does so along one axis. To create the necessary projections for a tomographic reconstruction of a full data cube from a single snapshot, dispersion in two dimensions is required.\n\nHistorically, and in a common fundamental design, this two-dimensional dispersion was achieved by stacking two one-dimensional gratings and crossing them, typically at a 90-degree angle to each other. While modern systems may use a single, more complex component like a computer-generated hologram (CGH) that acts as a 2D disperser, this single component is functionally creating a two-dimensional diffraction pattern equivalent to what two crossed gratings would produce. Therefore, the minimum number of conventional one-dimensional gratings needed to achieve the required 2D dispersion is two.\n\n<<<B>>>"
+  ],
+  "user_prompt_list": [
+    "What is the minimum number of diffraction gratings necessary to construct a full spectral volume from a single image using computed tomography?\n\nAnswer Choices:\nA. 1\nB. 2\nC. 3\nD. 4\nE. 5\nF. 6\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

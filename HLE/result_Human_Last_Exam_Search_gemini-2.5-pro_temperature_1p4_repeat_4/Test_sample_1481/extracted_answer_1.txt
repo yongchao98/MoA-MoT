@@ -1,0 +1,16 @@
+In the theoretical framework of planar Birkhoff billiard dynamics, the asymptotic analysis of the generating function H(s,s′) for the billiard map, in the limit as the arc-length separation ∣s′−s∣ approaches zero, reveals a leading-order behavior that is critically influenced by the local curvature of the boundary, κ(s).
+
+The generating function, H(s,s′), is defined as the negative of the Euclidean distance between two points, γ(s) and γ(s′), on the boundary of the billiard table:
+H(s,s′) = -‖γ(s′) - γ(s)‖.
+
+By performing a Taylor expansion of the position vector γ(s′) around s, where s′ = s + δs and δs is a small displacement, and utilizing the Frenet-Serret formulas for a plane curve (γ′(s) = **T**(s) and γ′′(s) = κ(s)**N**(s)), we can derive an asymptotic expansion for H(s,s′). The expansion of the squared distance is:
+
+‖γ(s′) - γ(s)‖² = (δs)² - (1/12)κ(s)²(δs)⁴ + O((δs)⁶)
+
+Taking the square root and expanding for small δs yields the asymptotic form of the generating function:
+
+**H(s, s + δs) ≈ -|δs| + (1/24)κ(s)²|δs|³**
+
+This expansion characterizes the leading-order behavior of H(s,s′). The dominant term is simply the negative of the arc-length separation, -|s′ - s|, which represents the length of the chord in the limit of zero curvature. The first and most significant correction term is of the third order in the separation, |s′ - s|³, and its coefficient is directly proportional to the square of the local curvature, κ(s)².
+
+This result rigorously demonstrates the profound influence of the boundary's geometry on the billiard's dynamics in the asymptotic regime of near-grazing incidence. The curvature term dictates the deviation of the system from a simple linear behavior. Dynamically, the partial derivatives of H(s,s′) determine the angles of incidence and reflection. The presence of the κ(s)² term in the asymptotic expansion is crucial for accurately describing the scattering properties of the boundary for nearly tangent trajectories. This, in turn, is fundamental for analyzing the stability of periodic orbits close to the boundary (whispering gallery modes) and for the formation of caustics. The curvature-dependent term quantifies the "strength" of the boundary's focusing or defocusing effect on nearby trajectories, a key aspect in understanding the transition from regular to chaotic dynamics in billiard systems.

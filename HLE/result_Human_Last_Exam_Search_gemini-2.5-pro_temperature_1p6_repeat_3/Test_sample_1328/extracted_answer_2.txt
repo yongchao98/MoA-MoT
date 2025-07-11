@@ -1,0 +1,3 @@
+The optimal feedback adjustment factor b is given by the expression:
+\[ b_{opt} = \begin{cases} -\alpha P_1 & \text{if } \alpha^2 P_1^2 \le P_2 \\ -\text{sign}(\alpha) \sqrt{P_2} & \text{if } \alpha^2 P_1^2 > P_2 \end{cases} \]
+This can also be expressed as `b_opt = median([-\sqrt{P_2}, -\alpha P_1, \sqrt{P_2}])`.

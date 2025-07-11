@@ -1,0 +1,1 @@
+μ_bound(x, u) = f_param ( |x-c| / sqrt(-2ln(u)) ), where f_param is a Gaussian-based function describing the membership of the uncertain parameter σ. For example, the upper bound is expressed as: exp[ - ( ( |x-c| / sqrt(-2ln(u)) ) - m_σ )² / (2s_param²) ]

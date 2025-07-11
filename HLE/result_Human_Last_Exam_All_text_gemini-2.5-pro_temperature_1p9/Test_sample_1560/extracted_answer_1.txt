@@ -1,0 +1,6 @@
+The final state of the system is probabilistic. After applying gate Q to the second ququint and measuring the first ququint in the computational basis, there are five possible outcomes. Each outcome occurs with a probability of 1/5. If the measurement outcome for the first ququint is $|k\rangle_A$ (for k=0, 1, 2, 3, 4), the system collapses to the state $|k\rangle_A \otimes Q|k\rangle_B$, which are explicitly:
+- (Prob 1/5) Final State: $|0\rangle_A \otimes \frac{1}{\sqrt{2}}(|1\rangle_B + |2\rangle_B)$
+- (Prob 1/5) Final State: $|1\rangle_A \otimes \frac{1}{\sqrt{2}}(|0\rangle_B + |3\rangle_B)$
+- (Prob 1/5) Final State: $|2\rangle_A \otimes \frac{1}{\sqrt{2}}(|1\rangle_B + |4\rangle_B)$
+- (Prob 1/5) Final State: $|3\rangle_A \otimes \frac{1}{\sqrt{2}}(|0\rangle_B + |2\rangle_B)$
+- (Prob 1/5) Final State: $|4\rangle_A \otimes \frac{1}{\sqrt{2}}(|2\rangle_B + |3\rangle_B)$

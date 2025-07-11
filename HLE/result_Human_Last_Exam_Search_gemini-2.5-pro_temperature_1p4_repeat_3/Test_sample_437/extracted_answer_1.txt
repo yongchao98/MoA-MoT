@@ -1,0 +1,14 @@
+The value of the integral depends on whether the orbitals $\phi_i$ and $\phi_j$ are identical.
+
+**1. General Case (Different Orbital Exponents):**
+If $\phi_i$ and $\phi_j$ are 1s Slater orbitals on the same center with potentially different orbital exponents $\zeta_i$ and $\zeta_j$, the value of the integral is:
+\[
+\langle \phi_i \left| \frac{1}{r} \right| \phi_j\rangle = \frac{4(\zeta_i \zeta_j)^{3/2}}{(\zeta_i + \zeta_j)^2}
+\]
+
+**2. Special Case (Identical Orbitals):**
+If $\phi_i$ and $\phi_j$ are the same 1s Slater orbital (i.e., $i=j$ and $\zeta_i = \zeta_j = \zeta$), the integral represents the expectation value of the operator $\frac{1}{r}$. The expression simplifies to:
+\[
+\langle \phi_{1s} \left| \frac{1}{r} \right| \phi_{1s}\rangle = \zeta
+\]
+This indicates that the average value of the inverse distance of the electron from the nucleus is equal to the orbital exponent $\zeta$.

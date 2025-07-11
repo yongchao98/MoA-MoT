@@ -1,0 +1,22 @@
+def provide_literary_evaluation():
+    """
+    This function stores and prints Liu Ban's exact evaluation of Zhang Ji's seven-character poems.
+    The information is sourced from Liu Ban's "Zhongshan Shihua" (《中山诗话》).
+    """
+
+    evaluation_in_chinese = """根据北宋文学家刘攽在其著作《中山诗话》中的记载，他对唐代诗人张籍的七言诗的评价原文如下：
+
+“张籍七言诗，拙多于巧，然吾常爱其‘海人无家海里住，采珠役象为岁赋。恶波横天山塞路，未央宫中常满库’之句，状海中景物、利害，可谓奇矣。”
+
+这段评价的含义可以解读为：
+
+1.  **总体评价**: 刘攽认为张籍的七言诗整体风格上质朴、古拙的成分多于工整、华美的技巧（“拙多于巧”）。
+
+2.  **具体赞赏**: 尽管如此，他却非常喜爱和赞赏其中的一些诗句。他特别举出《蛮中纪行》里的四句诗，并称赞这几句诗描绘了海中百姓的生活、景物以及其间的利害关系，可以说是“奇矣”（意为非凡、了不起）。
+
+因此，刘攽的评价是十分深刻的，他认为张籍的诗歌虽然不以华丽的技巧取胜，但其质朴的风格下蕴含着深刻的现实描绘能力，能够达到“奇”的艺术境界。"""
+
+    print(evaluation_in_chinese)
+
+# Execute the function to print the evaluation
+provide_literary_evaluation()

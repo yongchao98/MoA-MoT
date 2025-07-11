@@ -1,0 +1,10 @@
+The density profile \(\rho(z)\) is given by \(\rho(z) = m_A n_A(z) + m_B n_B(z)\), where \(m_A = 4.650 \times 10^{-26}\) kg and \(m_B = 7.307 \times 10^{-26}\) kg. The number densities \(n_A(z)\) and \(n_B(z)\) are defined as the simultaneous solution to the following system of equations:
+1.  Chemical potential equilibrium for Gas A:
+    \( (6.903 \times 10^{-21}) \ln(n_A(z)) + (4.562 \times 10^{-25})z - (1.38 \times 10^{-47}) n_A(z) - (1.656 \times 10^{-47}) n_B(z) = K_A \)
+2.  Chemical potential equilibrium for Gas B:
+    \( (6.903 \times 10^{-21}) \ln(n_B(z)) + (7.168 \times 10^{-25})z - (1.656 \times 10^{-47}) n_A(z) - (1.986 \times 10^{-47}) n_B(z) = K_B \)
+3.  Normalization for Gas A:
+    \( \int_0^{10} n_A(z) \, dz = 2 \times 10^{24} \)
+4.  Normalization for Gas B:
+    \( \int_0^{10} n_B(z) \, dz = 1.5 \times 10^{24} \)
+where \(K_A\) and \(K_B\) are constants determined by the normalization conditions.

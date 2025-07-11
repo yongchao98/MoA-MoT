@@ -1,0 +1,63 @@
+def print_absorption_equations():
+    """
+    This function prints the equations for the absorption cross-section
+    for a chain of molecules in two different cases, as requested.
+    """
+
+    # --- Case a: No Interaction ---
+    case_a_explanation = """
+    Case a) The interaction between molecules can be neglected.
+
+    In this case, the total absorption cross-section is the sum of the cross-sections of N identical, non-interacting molecules.
+    The equation for the absorption cross-section, σ(ω), as a function of the laser's angular frequency ω is:
+    """
+    case_a_equation = """
+    σ(ω) = N * C * ω * |μ_fi|^2 * exp( -( (E_f - E_i)/ħ - ω )^2 * τ^2 )
+    """
+    case_a_terms = """
+    Where:
+      σ(ω)    : Absorption cross-section.
+      N       : The total number (integer) of molecules in the chain.
+      C       : A constant of proportionality that includes fundamental constants.
+      ω       : The angular frequency of the incident laser pulse.
+      |μ_fi|^2 : The squared magnitude of the transition dipole moment for a single molecule, between its initial state |i> (e.g., HOMO) and final state |f> (e.g., LUMO).
+      E_i     : The energy of the initial state of the molecule (below the Fermi level).
+      E_f     : The energy of the final state of the molecule (above the Fermi level).
+      ħ       : The reduced Planck constant.
+      τ       : The time duration of the Gaussian laser pulse. A shorter τ leads to a wider Gaussian spectral shape.
+      exp(...) : The Gaussian lineshape function. This term shows that absorption is most efficient when the laser frequency ω matches the transition frequency (E_f - E_i)/ħ.
+    """
+    print(case_a_explanation)
+    print(case_a_equation)
+    print(case_a_terms)
+    print("-" * 70)
+
+    # --- Case b: Near-Neighbor Interaction ---
+    case_b_explanation = """
+    Case b) The interaction between near-neighbors should be considered.
+
+    Here, the interaction couples the molecules, and the excited states are delocalized "Frenkel excitons".
+    Each exciton state is described by a quantum number k. The absorption cross-section is a sum over transitions to these allowed exciton states.
+    """
+    case_b_equation = """
+    σ(ω) = C * ω * Σ_{k=1 to N} |μ_k|^2 * exp( -( (E_k - E_g)/ħ - ω )^2 * τ^2 )
+    """
+    case_b_terms = """
+    Where:
+      Σ_{k=1 to N} : The sum over all exciton states, indexed by the integer quantum number k from 1 to N.
+      μ_k        : The transition dipole moment from the collective ground state |G> to the k-th exciton state |Ψ_k>. Its value depends on the single-molecule dipole μ and k, and it leads to optical selection rules (e.g., for a simple chain, only transitions to k=1, 3, 5, ... are allowed).
+      E_g        : The energy of the ground state of the entire chain.
+      E_k        : The energy of the k-th exciton state. In a simple tight-binding model with near-neighbor coupling J, it is given by:
+                 E_k = E_0 + 2*J*cos(π*k / (N+1))
+                 Here, E_0 is the single-molecule excitation energy, J is the coupling energy, and π (pi) is the mathematical constant.
+      (All other symbols like C, ω, ħ, τ have the same meaning as in case a).
+    """
+
+    print(case_b_explanation)
+    print(case_b_equation)
+    print(case_b_terms)
+
+
+# Execute the function to print the results
+print_absorption_equations()
+<<<

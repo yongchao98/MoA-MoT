@@ -1,0 +1,7 @@
+Let A be an atomic formula. The function `f` and formula `C` are defined as follows:
+
+$f(w) = \underbrace{A \otimes A \otimes \dots \otimes A}_{w \text{ times}}$
+(For $w=0$, $f(0) = 1$, the multiplicative unit).
+
+$C(W, m, b) = \underbrace{(\underbrace{A \otimes \dots \otimes A}_{b \text{ times}}) \otimes \dots \otimes (\underbrace{A \otimes \dots \otimes A}_{b \text{ times}})}_{m \text{ times}}$
+This can be written more compactly as $f(b) \otimes f(b) \otimes \dots \otimes f(b)$ ($m$ times).

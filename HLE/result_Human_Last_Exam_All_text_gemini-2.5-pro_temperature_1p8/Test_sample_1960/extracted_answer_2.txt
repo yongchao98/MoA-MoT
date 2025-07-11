@@ -1,0 +1,7 @@
+The function $f$ is given by:
+$f(w) = \bot^{\otimes w}$
+(where $\bot^{\otimes w}$ is the tensor product of $\bot$ with itself $w$ times, i.e., $\underbrace{\bot \otimes \dots \otimes \bot}_{w \text{ times}}$).
+
+The linear logic formula $C = C(W, m, b)$ is:
+$C = ((\bot^{\otimes b} \multimap \bot)^{\otimes m}) \multimap \bot^{\otimes m}$
+(where $A^{\otimes k}$ denotes the formula $A$ tensored with itself $k$ times).

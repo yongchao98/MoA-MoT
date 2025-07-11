@@ -1,0 +1,46 @@
+import numpy as np
+
+def solve_spin_orbital_coupling():
+    """
+    Calculates and prints the common eigenvalues for J^2 and J_z
+    for a p-electron (l=1, s=1/2).
+    """
+    # Step 1: Define quantum numbers for a p-electron
+    l = 1
+    s = 0.5
+
+    print(f"Solving for a p-electron with orbital quantum number l={l} and spin quantum number s={s}.\n")
+
+    # Step 2: Determine the possible values for the total angular momentum quantum number, j.
+    j_vals = np.arange(abs(l - s), l + s + 1, 1)
+    
+    print(f"The possible values for the total angular momentum quantum number j are: {list(j_vals)}\n")
+    print("The eigenvalue equation for J^2 is: J^2 |j, m_j> = j(j+1)hbar^2 |j, m_j>")
+    print("The eigenvalue equation for J_z is: J_z |j, m_j> = m_j*hbar |j, m_j>\n")
+    print("--------------------------------------------------")
+
+    # Step 3: Calculate and display the eigenvalues for each j value.
+    # We will iterate in descending order of j, which is a common convention.
+    for j in sorted(j_vals, reverse=True):
+        # Calculate J^2 eigenvalue
+        j2_eigenvalue = j * (j + 1)
+        
+        print(f"For the state with j = {j}:")
+        
+        # Print the J^2 eigenvalue equation with the calculated value
+        print(f"  J^2 |{j}, m_j> = {j}({j} + 1) hbar^2 |{j}, m_j> = {j2_eigenvalue:.2f} hbar^2 |{j}, m_j>")
+        
+        # Determine the possible m_j values for the current j
+        m_j_vals = np.arange(-j, j + 1, 1)
+        
+        print(f"  The possible m_j values are: {list(m_j_vals)}")
+        
+        # Print the J_z eigenvalue equations for each m_j
+        print("  The corresponding J_z eigenvalues are:")
+        for m_j in m_j_vals:
+            print(f"    J_z |{j}, {m_j}> = {m_j} hbar |{j}, {m_j}>")
+        
+        print("--------------------------------------------------")
+
+# Execute the function
+solve_spin_orbital_coupling()

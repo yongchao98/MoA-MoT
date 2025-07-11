@@ -1,0 +1,3 @@
+The matrix $M_n$ is given by the outer product of the vectors $\mathbf{u} = (n-1, 1, \dots, 1)^T$ and $\mathbf{v} = (1, -1, \dots, -1)^T$, resulting in the matrix:
+$M_n = \begin{pmatrix} n-1 & -(n-1) & \dots & -(n-1) \\ 1 & -1 & \dots & -1 \\ \vdots & \vdots & \ddots & \vdots \\ 1 & -1 & \dots & -1 \end{pmatrix}$.
+The largest immanant of this matrix is its permanent, which is $n!(n-1)(-1)^{n-1}$.

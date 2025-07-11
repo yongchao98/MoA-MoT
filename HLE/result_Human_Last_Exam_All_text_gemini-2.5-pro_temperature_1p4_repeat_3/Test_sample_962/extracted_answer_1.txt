@@ -1,0 +1,13 @@
+A tightly secure t-out-of-n threshold signature scheme with a two-round signing protocol can be designed using Schnorr signatures over a Verifiable Secret Sharing (VSS) scheme. The design consists of three main phases: a one-time Distributed Key Generation (DKG) setup, and a two-round signing protocol.
+
+**1. Distributed Key Generation (DKG):**
+A robust DKG protocol (e.g., based on Pedersen VSS) is used to establish a `t-1` degree secret polynomial. Each of the `n` parties receives a secret share `x_i` of the main private key `x` and a corresponding public verification key `Y_i = g^{x_i}`. The group's public key `Y = g^x` is known to all. No single party ever learns the full key `x`.
+
+**2. Two-Round Signing Protocol:**
+To sign a message `m`, a group of `t` participants executes the following two rounds:
+
+*   **Round 1 (Commitment):**
+    Each participating party `P_i` generates two secret nonces `(d_i, e_i)` and broadcasts the corresponding public commitments `(D_i, E_i) = (g^{d_i}, g^{e_i})`. Committing to two nonces is a crucial defense against advanced attacks on two-round protocols.
+
+*   **Round 2 (Signature Share Generation):**
+    1.  After receiving all commitments from Round 1, each party computes a **binding factor** `\rho_j = H(j, m, \{D_k, E_k\}_{k})` for every participant `j`. This hash binds each participant's contribution to the message and all Round 1 commitments, prev

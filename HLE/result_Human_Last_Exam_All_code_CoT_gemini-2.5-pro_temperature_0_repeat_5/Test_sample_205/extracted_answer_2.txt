@@ -1,0 +1,49 @@
+172[void main() {
+    // This program calculates 100! using an array of digits
+    // to handle the large result. Memory usage is minimized by
+    // selecting the smallest possible data types for all variables.
+
+    // Variable Declarations (Total Memory: 172D)
+    digit result[160]; // 160 * 1D = 160D
+    char i;            // 3D (for loop 2-100)
+    char num_digits;   // 3D (max ~158)
+    char j;            // 3D (for inner loops)
+    char carry;        // 3D (max product ~999)
+
+    // Initialize result to 1
+    result[0] = 1;
+    num_digits = 1;
+
+    // Calculate 100! by multiplying from 2 to 100
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Multiply the number in 'result' array by 'i'
+        for (j = 0; j < num_digits; j++) {
+            // 'carry' temporarily stores the product before being updated
+            carry = result[j] * i + carry;
+            result[j] = carry % 10;
+            carry = carry / 10;
+        }
+
+        // Propagate the remaining carry to extend the number
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            num_digits++;
+            carry = carry / 10;
+        }
+    }
+
+    // Print the final equation: 100! = <result>
+    printf("100! = ");
+    
+    // Print each digit of the result.
+    // A while loop is used because 'char' is unsigned, and a
+    // for loop like 'for(j=num_digits-1; j>=0; j--)' would be infinite.
+    j = num_digits;
+    while (j > 0) {
+        j--;
+        printf("%d", result[j]);
+    }
+    printf("\\n");
+}
+]

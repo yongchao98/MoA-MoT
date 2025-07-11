@@ -1,0 +1,10 @@
+In finite-temperature field theory, for a neutral scalar field `ϕ`, the inner product `(ϕ, D_ϕ)` in the functional integral representation of the partition function is given by the quadratic part of the Euclidean action. This is expressed as:
+
+`(ϕ, D_ϕ) = ∫_0^β dτ ∫ d³x  ϕ(x) (-∂_τ² - ∇² + m²) ϕ(x)`
+
+where:
+*   `β = 1/T` is the inverse temperature.
+*   `τ` is the imaginary time, integrated from 0 to `β`.
+*   `x` represents the spatial coordinates.
+*   `m` is the mass of the scalar field.
+*   The operator `D_ϕ = -∂_τ² - ∇² + m²` is the Euclidean Klein-Gordon operator.

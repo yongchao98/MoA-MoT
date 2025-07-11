@@ -1,0 +1,10 @@
+The post-reset covariance, \(\Sigma'\), is computed by rotating the pre-reset covariance, \(\Sigma\), with the rotation matrix that represents the mean of the attitude deviation. The exact expression is:
+
+\(\Sigma' = R(\hat{\delta}) \Sigma R(\hat{\delta})^T\)
+
+where:
+*   \(\Sigma\) is the pre-reset covariance matrix of the attitude deviation \(\delta\).
+*   \(\hat{\delta}\) is the mean of the attitude deviation estimate that is used to update the reference attitude.
+*   \(R(\hat{\delta}) = \text{exp}([\hat{\delta}]_\times)\) is the rotation matrix corresponding to the attitude deviation vector \(\hat{\delta}\). \([\hat{\delta}]_\times\) is the skew-symmetric matrix of \(\hat{\delta}\), and \(\text{exp}(\cdot)\) is the matrix exponential, which can be calculated using Rodrigues' rotation formula.
+
+This transformation correctly reflects the change in the coordinate frame of the error representation after the mean error has been incorporated into the reference attitude. This correction is crucial for maintaining the accuracy and consistency of the Kalman filter.

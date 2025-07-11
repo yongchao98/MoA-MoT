@@ -1,0 +1,10 @@
+The absorption cross-section $\sigma(\omega)$ for a system absorbing a Gaussian pulse is a sum of Gaussian functions, one for each allowed transition from the initial state $|i\rangle$ to a final state $|f\rangle$. The general form is:
+$\sigma(\omega) = C \sum_f \omega_{fi} |\vec{d}_{fi} \cdot \hat{\epsilon}|^2 e^{-(\omega_{fi}-\omega)^2\tau^2}$, where $C = \frac{\sqrt{\pi} \tau}{\epsilon_0 c \hbar}$.
+
+**a) For a chain of N non-interacting molecules:** The final states correspond to exciting a single molecule. The spectrum is N times the spectrum of a single molecule, with Gaussian peaks at the molecular transition frequencies $\omega_j$:
+$\sigma_a(\omega) = N \cdot C \sum_{j} \omega_j |\vec{\mu}_j \cdot \hat{\epsilon}|^2 e^{-(\omega_j-\omega)^2\tau^2}$
+where $\vec{\mu}_j$ is the single-molecule transition dipole moment.
+
+**b) For a chain with nearest-neighbor interactions:** The excitations are delocalized Frenkel excitons. The single absorption band splits into a series of peaks at the exciton transition frequencies $\omega_k$. Optical selection rules apply, meaning only certain exciton states ($k$) contribute to the sum. The equation becomes:
+$\sigma_b(\omega) = C \sum_{k \text{ allowed}} \omega_k |\vec{d}_{ik} \cdot \hat{\epsilon}|^2 e^{-(\omega_k-\omega)^2\tau^2}$
+where $\omega_k$ and $\vec{d}_{ik}$ are the transition frequencies and dipole moments for the exciton states, which depend on the single-molecule properties ($\Delta E$, $\vec{\mu}$) and the intermolecular coupling ($J$). This results in a spectrum that is qualitatively different from the non-interacting case.

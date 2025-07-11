@@ -1,0 +1,1 @@
+awk -F'\t' 'BEGIN {OFS=FS} NR==1 {print} NR>1 { if ( !($3 > 8 && $5 < 0.01 && $7 < 1) ) {print} }' DE_results.tsv > DE_results_filtered.tsv

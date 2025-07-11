@@ -1,0 +1,12 @@
+The expression for the magnetic field $H_z(x,z)$ for $H_a > H_0 = J_c d/\pi$ and $|x| \gg a$ is given by the sum of the applied field and the induced field, where the induced field is approximated as the field from a fully penetrated stack plus a correction term:
+$H_z(x,z) = H_a + H_{z, \text{induced}}(a=0) + \Delta H_z$
+
+The components are:
+1.  **Field from fully penetrated stack ($a=0$):**
+    $H_{z, \text{induced}}(a=0) = \frac{J_c d}{4\pi} \ln \left[ \frac{\left(\cosh\frac{2\pi(x+w)}{D} - \cos\frac{2\pi z}{D}\right)\left(\cosh\frac{2\pi(x-w)}{D} - \cos\frac{2\pi z}{D}\right)}{\left(\cosh\frac{2\pi x}{D} - \cos\frac{2\pi z}{D}\right)^2} \right]$
+
+2.  **Correction term for the non-penetrated region:**
+    $\Delta H_z = - \frac{J_c d}{\pi} \sinh^2\left(\frac{\pi w}{D}\right) \exp\left(-\frac{2\pi H_a}{J_c d}\right) \frac{1-\cosh\left(\frac{2\pi x}{D}\right)\cos\left(\frac{2\pi z}{D}\right)}{\left(\cosh\left(\frac{2\pi x}{D}\right)-\cos\left(\frac{2\pi z}{D}\right)\right)^2}$
+
+Therefore, the final expression for the total magnetic field is:
+$H_z(x,z) = H_a + \frac{J_c d}{4\pi} \ln \left[ \frac{\left(\cosh\frac{2\pi(x+w)}{D} - \cos\frac{2\pi z}{D}\right)\left(\cosh\frac{2\pi(x-w)}{D} - \cos\frac{2\pi z}{D}\right)}{\left(\cosh\frac{2\pi x}{D} - \cos\frac{2\pi z}{D}\right)^2} \right] - \frac{J_c d}{\pi} \sinh^2\left(\frac{\pi w}{D}\right) \exp\left(-\frac{2\pi H_a}{J_c d}\right) \frac{1-\cosh\left(\frac{2\pi x}{D}\right)\cos\left(\frac{2\pi z}{D}\right)}{\left(\cosh\left(\frac{2\pi x}{D}\right)-\cos\left(\frac{2\pi z}{D}\right)\right)^2}$

@@ -1,0 +1,7 @@
+A two-step filtering strategy implemented via the command line. First, generate a list of cancer-cell-specific genes and save it as `contaminant_genes.txt`. Second, after running a paired differential expression analysis (e.g., `~ donor + condition`) comparing CAR-IL15 vs CAR-only cells and saving the results to `dge_full_results.tsv`, use the following `awk` command to filter out the contaminants. This command removes any gene that is both on the contaminant list and has a log2 fold change less than a specified threshold (e.g., -2.0), which indicates high expression in the contaminated CAR-only group.
+
+```bash
+awk 'NR==FNR {contaminants[$1]; next} FNR==1 {print; next} ($1 in contaminants && $3 < -2.0) {next} {print}' contaminant_genes.txt dge_full_results.tsv > dge_filtered_results.tsv
+```
+
+This command assumes the gene ID is in the first column and the log2 fold change is in the third column of your DGE results file; these column numbers should be adjusted as necessary. The final output `dge_filtered_results.tsv` is the cleaned list of differentially expressed genes for downstream analysis.

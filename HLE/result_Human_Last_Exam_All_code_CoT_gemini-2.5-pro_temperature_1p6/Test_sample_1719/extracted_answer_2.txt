@@ -1,0 +1,21 @@
+```python
+def get_obstruction_groups():
+    """
+    Identifies the homotopy-theoretic groups that constitute the obstructions.
+
+    The obstructions to the homotopy between the two paths lie in the group
+    pi_1(SO(2k)) x [Sigma^2 X, SO(2k)]. The constituent groups, as requested,
+    are the homology groups of X and the homotopy groups of SO(2k) that
+    are needed to define these obstruction groups.
+    """
+    obstruction_groups = [
+        "The reduced homology group H_{n-1}(X) (with tilde)",
+        "The homotopy groups pi_i(SO(2k)) for all i >= 1"
+    ]
+    
+    print("The obstructions are determined by elements of the following groups:")
+    for group in obstruction_groups:
+        print(f"- {group}")
+
+get_obstruction_groups()
+```

@@ -1,0 +1,11 @@
+**Required Permeability:**
+The permeability `μ` of the material in the shell must satisfy the condition:
+`μ = μ₀ * (R₁ - R₂)/(R₁ + R₂) ` or `μ = μ₀ * (R₁ + R₂)/(R₁ - R₂) `
+where `μ₀` is the permeability of free space, `R₁` is the interior radius, and `R₂` is the exterior radius of the cylindrical shell. Since `R₂ > R₁`, both of these values for `μ` are negative.
+
+**Magnetic Field in the Interior Region:**
+The magnetic field `H_int` in the interior region (`ρ < R₁`) is uniform and is given by:
+`H_int = -H₀ * (R₂/R₁) î` for `μ = μ₀ * (R₁ - R₂)/(R₁ + R₂)`
+or
+`H_int = H₀ * (R₂/R₁) î` for `μ = μ₀ * (R₁ + R₂)/(R₁ - R₂)`
+where `H₀î` is the externally applied uniform magnetic field.

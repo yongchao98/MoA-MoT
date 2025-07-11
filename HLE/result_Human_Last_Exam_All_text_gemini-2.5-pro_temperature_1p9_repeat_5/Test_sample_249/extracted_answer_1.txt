@@ -1,0 +1,5 @@
+Let $q = \lfloor \frac{n+1-m}{m} \rfloor$ and $r = (n+1-m) \pmod m$. The minimum possible value for the diameter is:
+- 2, if $m=n+1$.
+- $2q+2$, if $m \le n$ and $r=0$.
+- $2q+3$, if $m \le n$ and $r=1$.
+- $2q+4$, if $m \le n$ and $r \ge 2$.

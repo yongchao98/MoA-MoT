@@ -1,0 +1,4 @@
+The minimum possible value for the diameter of G is given by:
+1. 2, if m = n+1.
+2. 2(n/m) + 1, if m <= n and n is a multiple of m.
+3. 2*floor(n/m) + 2, if m <= n and n is not a multiple of m.

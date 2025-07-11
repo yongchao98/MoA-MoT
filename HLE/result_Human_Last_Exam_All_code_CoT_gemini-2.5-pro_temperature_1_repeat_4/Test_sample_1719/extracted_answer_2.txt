@@ -1,0 +1,29 @@
+
+```python
+def get_obstruction_groups():
+    """
+    Prints the list of homology and homotopy groups that form the obstructions.
+
+    The variables n and k are from the problem description:
+    n-1: dimension of the homology sphere X
+    2k: rank of the vector bundle E
+    """
+
+    # The list of groups that are the ingredients for the obstruction theory calculation.
+    # The actual obstruction groups are cohomology groups of X with coefficients in homotopy groups of SO(2k).
+    # The prompt asks for the list of ingredients.
+    
+    obstruction_groups = [
+        "H_{n-1}(X)",       # The top homology group of the homology sphere X.
+        "H_{n-2}(X)",       # Used in the Universal Coefficient Theorem for H^{n-1}(X).
+        "pi_2(SO(2k))",     # Corresponds to the H^0 obstruction. It is typically zero.
+        "pi_{n+1}(SO(2k))"  # Corresponds to the H^{n-1} obstruction.
+    ]
+    
+    print("The homotopy-theoretic obstructions are determined by the following groups:")
+    for group in obstruction_groups:
+        print(f"- {group}")
+
+if __name__ == "__main__":
+    get_obstruction_groups()
+```

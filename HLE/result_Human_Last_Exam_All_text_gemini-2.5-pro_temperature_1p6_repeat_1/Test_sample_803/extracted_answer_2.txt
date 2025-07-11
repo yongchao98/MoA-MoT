@@ -1,0 +1,9 @@
+The nonabelian filled groups of order `2q^m` for an odd prime `q` and natural number `m` are precisely all nonabelian groups of that order. Every group of order `2q^m` is filled.
+These groups can be described structurally as follows:
+Any such group `G` is a semidirect product `G \cong Q \rtimes_{\alpha} C_2`, where:
+1.  `Q` is a group of order `q^m`.
+2.  `C_2` is the cyclic group of order 2.
+3.  The action is determined by an automorphism `\alpha \in Aut(Q)` such that `\alpha^2` is the identity automorphism.
+The group `G` is nonabelian if at least one of the following conditions holds:
+*   The group `Q` is itself a nonabelian group.
+*   The automorphism `\alpha` is not the identity automorphism (i.e., the semidirect product is not a direct product).

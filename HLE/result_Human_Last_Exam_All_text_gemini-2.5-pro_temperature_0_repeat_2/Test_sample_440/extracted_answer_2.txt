@@ -1,0 +1,4 @@
+The density profile `ρ(z)` is given by `ρ(z) = m_A n_A(z) + m_B n_B(z)`, where the number density profiles `n_A(z)` and `n_B(z)` are the numerical solutions to the system of coupled equations derived from the principle of constant chemical potential for each species in a van der Waals mixture under gravity. The equations are:
+1. `k_B T ln(n_A(z)) - k_B T ln(1 - n_A(z)b'_{AA} - n_B(z)b'_{BB}) + (k_B T b'_{AA} (n_A(z)+n_B(z))) / (1 - n_A(z)b'_{AA} - n_B(z)b'_{BB}) - 2(a'_{AA} n_A(z) + a'_{AB} n_B(z)) + m_A g z = C_A`
+2. `k_B T ln(n_B(z)) - k_B T ln(1 - n_A(z)b'_{AA} - n_B(z)b'_{BB}) + (k_B T b'_{BB} (n_A(z)+n_B(z))) / (1 - n_A(z)b'_{AA} - n_B(z)b'_{BB}) - 2(a'_{BB} n_B(z) + a'_{AB} n_A(z)) + m_B g z = C_B`
+These are solved subject to the integral constraints `A ∫ n_A(z) dz = N_A` and `A ∫ n_B(z) dz = N_B` to determine the constants `C_A` and `C_B`.

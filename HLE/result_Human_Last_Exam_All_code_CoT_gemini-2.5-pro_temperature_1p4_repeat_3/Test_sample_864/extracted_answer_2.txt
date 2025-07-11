@@ -1,0 +1,5 @@
+The whitening filter W(D) is given by the equation:
+W(D) = (1.0*D + -0.50) / (1.0*D + -0.33)
+
+Which is equivalent to:
+W(D) = (1.0 + (-0.50)*D^-1) / (1.0 + (-0.333)*D^-1)

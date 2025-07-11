@@ -1,0 +1,10 @@
+The conditions for functions `F, G, H` (mapping a product of spaces `X, Y, Z` to `X, Y, Z` respectively) to have an FGH-tripled fixed point are typically given by a theorem in the setting of metric spaces. Assuming `X=Y=Z=S` and adopting the standard definition of the FGH-tripled fixed point, the primary conditions are:
+
+1.  **Complete Metric Space:** The set `S` must be a **complete metric space** with respect to a distance function `d`. This ensures that sequences that "should" converge actually have a limit within the space.
+
+2.  **Contractive Condition:** The functions `F, G, H: S × S × S → S` must collectively satisfy a mixed contractive condition. This means there exist non-negative constants `α, β, γ` such that `α + β + γ < 1`, and for any two sets of points `(x, y, z)` and `(u, v, w)` in `S`, the following inequalities must all be true:
+    *   `d(F(x, y, z), F(u, v, w)) ≤ α d(x, u) + β d(y, v) + γ d(z, w)`
+    *   `d(G(y, z, x), G(v, w, u)) ≤ α d(y, v) + β d(z, w) + γ d(x, u)`
+    *   `d(H(z, x, y), H(w, u, v)) ≤ α d(z, w) + β d(x, u) + γ d(y, v)`
+
+If these two conditions are met, then there is guaranteed to be one and only one triple `(x*, y*, z*)` in `S` that is an FGH-tripled fixed point, satisfying `F(x*, y*, z*) = x*`, `G(y*, z*, x*) = y*`, and `H(z*, x*, y*) = z*`.

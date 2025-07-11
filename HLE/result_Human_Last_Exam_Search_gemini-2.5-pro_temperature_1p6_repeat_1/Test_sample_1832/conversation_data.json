@@ -1,0 +1,10 @@
+{
+  "question": "In empty space outside a spherically symmetric gravitating body with mass $M$, how many non-zero Christoffel symbols $\\Gamma_{\\mu\\nu}^\\rho$ are non-zero?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "In the empty space outside a spherically symmetric, non-rotating gravitating body of mass M, the geometry of spacetime is described by the Schwarzschild metric. For this metric, there are 9 unique non-zero Christoffel symbols.\n\nThe Schwarzschild metric in spherical coordinates $(t, r, \\theta, \\phi)$ is given by:\n$ds^2 = \\left(1 - \\frac{2GM}{c^2r}\\right) c^2 dt^2 - \\left(1 - \\frac{2GM}{c^2r}\\right)^{-1} dr^2 - r^2(d\\theta^2 + \\sin^2\\theta d\\phi^2)$\n\nDue to the symmetries of this metric (it is diagonal and the components only depend on r and $\\theta$), many of the Christoffel symbols are zero. The non-zero Christoffel symbols are:\n\n*   $\\Gamma^r_{tt} = \\frac{GM}{r^2}\\left(1 - \\frac{2GM}{c^2r}\\right)$\n*   $\\Gamma^t_{tr} = \\Gamma^t_{rt} = \\frac{GM}{r(r - 2GM/c^2)}$\n*   $\\Gamma^r_{rr} = -\\frac{GM}{r(r - 2GM/c^2)}$\n*   $\\Gamma^r_{\\theta\\theta} = -(r - 2GM/c^2)$\n*   $\\Gamma^r_{\\phi\\phi} = -(r - 2GM/c^2)\\sin^2\\theta$\n*   $\\Gamma^\\theta_{r\\theta} = \\Gamma^\\theta_{\\theta r} = \\frac{1}{r}$\n*   $\\Gamma^\\phi_{r\\phi} = \\Gamma^\\phi_{\\phi r} = \\frac{1}{r}$\n*   $\\Gamma^\\theta_{\\phi\\phi} = -\\sin\\theta\\cos\\theta$\n*   $\\Gamma^\\phi_{\\theta\\phi} = \\Gamma^\\phi_{\\phi\\theta} = \\cot\\theta$\n\nCounting these unique non-zero components, we find there are 9.\n\n<<<9>>>"
+  ],
+  "user_prompt_list": [
+    "In empty space outside a spherically symmetric gravitating body with mass $M$, how many non-zero Christoffel symbols $\\Gamma_{\\mu\\nu}^\\rho$ are non-zero?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

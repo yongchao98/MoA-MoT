@@ -1,0 +1,13 @@
+**Analytical Expression for the Initial Magnetization Curve**
+
+For a superconducting bar with a rectangular cross-section of dimensions 2a and 2b, where b << a, placed in a uniform magnetic field H applied perpendicular to the wider face (along the 'b' dimension), the initial magnetization curve M(H) according to the Bean critical-state model with constant critical current Jc is given by:
+
+The penetration field H* is defined as **H* = Jc * b**.
+
+1.  For an applied field less than or equal to the penetration field (**0 ≤ H ≤ H***):
+    M(H) = -H + H² / (2 * Jc * b)
+
+2.  For an applied field greater than the penetration field (**H > H***):
+    M(H) = - (Jc * b) / 2
+
+These expressions describe the magnetization as the external field H is increased from zero on a zero-field cooled superconductor. A paper by Chen and Goldfarb in 1990 provides a detailed analysis for a rectangular cross-section, and their results simplify to this expression in the limit where one dimension is much smaller than the other (b/a → 0).

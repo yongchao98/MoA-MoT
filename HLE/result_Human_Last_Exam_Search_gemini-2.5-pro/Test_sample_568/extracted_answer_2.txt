@@ -1,0 +1,9 @@
+The number of repetitions `n` is given by the function:
+<br>
+`n(ε, δ) = `
+<br>
+`  `|` 1                               , if δ = 0.5`
+<br>
+`  `|` ceil( ln(ε) / ln(|1 - 2δ|) )    , if δ ≠ 0.5`
+<br>
+where `ceil(x)` is the ceiling function, which gives the smallest integer greater than or equal to x.

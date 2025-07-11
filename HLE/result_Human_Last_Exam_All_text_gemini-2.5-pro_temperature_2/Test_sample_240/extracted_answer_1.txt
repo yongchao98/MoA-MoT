@@ -1,0 +1,6 @@
+The inability to see a resonance dip is typically due to advanced coil design features not accounted for by the simple sniffer loop test. The primary reasons include:
+1.  **Active Detuning Circuitry:** The coil may be in a default "detuned" state and requires a specific DC voltage from the scanner to become resonant.
+2.  **RF Shielding:** An integrated RF shield may be blocking the magnetic field from the test loop, preventing it from coupling to the internal resonant circuit.
+3.  **Low-Impedance Preamplifier Loading:** In array coils, elements are often connected to low-impedance preamps for decoupling. This intentionally creates a low-Q resonance that is too broad and shallow to be easily detected by this method.
+4.  **Balanced Coil Topology:** The simple probe may not effectively couple to the coil's sensitive "differential" resonant mode.
+Therefore, the absence of resonance on this test does not indicate a faulty coil but rather that the test conditions do not replicate the coil's active operational state within the MRI scanner.

@@ -1,0 +1,16 @@
+**The magnetic field `B = B_x \hat{i} + B_z \hat{k}` has components:**
+**x-component:**
+`B_x(x,z) = \frac{\mu_0 J_c d}{2\pi} Arg\left( \frac{\cosh\left(\frac{2\pi(x+iz)}{D}\right) - \cosh\left(\frac{2\pi w}{D}\right)}{\cosh\left(\frac{2\pi(x+iz)}{D}\right) - \cosh\left(\frac{2\pi a}{D}\right)} \right)`
+**z-component:**
+`B_z(x,z) = \mu_0 H_a + \frac{\mu_0 J_c d}{2\pi} \ln\left| \frac{\cosh\left(\frac{2\pi(x+iz)}{D}\right) - \cosh\left(\frac{2\pi w}{D}\right)}{\cosh\left(\frac{2\pi(x+iz)}{D}\right) - \cosh\left(\frac{2\pi a}{D}\right)} \right|`
+**where:**
+*   `μ_0` is the permeability of free space.
+*   `J_c` is the critical current density.
+*   `d` is the strip thickness.
+*   `2w` is the strip width.
+*   `D` is the stacking interval.
+*   `a` is the flux front position, determined by the applied field `Ha`.
+*   `(x,z)` are the coordinates where the field is evaluated.
+*   `Arg(Z)` is the argument of the complex number `Z`.
+*   `ln|Z|` is the natural logarithm of the magnitude of the complex number `Z`.
+*   `i` is the imaginary unit.

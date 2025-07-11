@@ -1,0 +1,83 @@
+174[/*
+ * This program calculates the exact value of 100! (100 factorial)
+ * on the Wuxing virtual machine.
+ *
+ * The result is a very large number (158 digits), so it must be
+ * stored in an array of digits. The program uses an iterative
+ * multiplication algorithm to compute the factorial.
+ *
+ * All variables are chosen with the smallest possible data types
+ * to minimize memory usage, as required by the problem.
+ */
+void main() {
+    // ---- Variable Declarations ----
+    // Total variable memory footprint: 174D
+    // Calculation: 158*1D (result) + 4*3D (i, digits, j, carry) + 1*4D (product)
+
+    // Stores the digits of the factorial in reverse order (result[0] is units digit).
+    // 100! has 158 digits. Memory: 158 * sizeof(digit) = 158D.
+    digit result[158];
+
+    // Main loop counter, i, for calculating factorial (from 2 to 100).
+    // Needs to hold 100, so 'char' (0-999) is the smallest required type. Memory: 3D.
+    char i;
+
+    // Stores the current number of digits in the 'result' array.
+    // Max value is 158, so 'char' (0-999) is required. Memory: 3D.
+    char digits;
+
+    // Loop counter, j, for iterating through the result digits. Reused for all loops.
+    // Max value is 157, so 'char' (0-999) is required. Memory: 3D.
+    char j;
+
+    // Stores the carry-over value during multiplication.
+    // Max carry can be 100, so 'char' (0-999) is required. Memory: 3D.
+    char carry;
+
+    // Stores the intermediate product (digit * i + carry).
+    // Max value can be (9 * 100 + 100) = 1000.
+    // 'unsigned int' (0-9999) is the smallest required type. Memory: 4D.
+    unsigned int product;
+
+    // ---- Initialization ----
+
+    // Initialize result to 1 (0! = 1, 1! = 1).
+    result[0] = 1;
+    digits = 1;
+
+    // Zero out the rest of the array to ensure a clean state.
+    for (j = 1; j < 158; j++) {
+        result[j] = 0;
+    }
+
+    // ---- Factorial Calculation ----
+
+    // Loop from 2 to 100 to calculate 100!
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Multiply the current number (stored in result) by i.
+        for (j = 0; j < digits; j++) {
+            product = result[j] * i + carry;
+            result[j] = product % 10;
+            carry = product / 10;
+        }
+
+        // If there is a remaining carry, append its digits to the result array.
+        while (carry > 0) {
+            result[digits] = carry % 10;
+            carry = carry / 10;
+            digits++;
+        }
+    }
+
+    // ---- Output ----
+
+    // Print the final calculated value of 100!
+    printf("100! =\n");
+    // Iterate backwards from the most significant digit to print correctly.
+    for (j = digits - 1; j >= 0; j--) {
+        printf("%d", result[j]);
+    }
+    printf("\n");
+}
+]

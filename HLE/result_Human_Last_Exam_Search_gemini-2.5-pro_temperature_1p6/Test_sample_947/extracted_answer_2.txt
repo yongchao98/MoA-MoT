@@ -1,0 +1,7 @@
+The expression for the magnetic field **H**(x,z) has two components, H_x(x,z) and H_z(x,z).
+
+The x-component is:
+`H_x(x, z) = - (π^3 * H0 * w^2) / (2 * D^2) * [ (cosh(2πx/D) * cos(2πz/D) - 1) / (cosh(2πx/D) - cos(2πz/D))^2 ]`
+
+The z-component is:
+`H_z(x, z) = Ha - (π^3 * H0 * w^2) / (2 * D^2) * [ (sinh(2πx/D) * sin(2πz/D)) / (cosh(2πx/D) - cos(2πz/D))^2 ]`

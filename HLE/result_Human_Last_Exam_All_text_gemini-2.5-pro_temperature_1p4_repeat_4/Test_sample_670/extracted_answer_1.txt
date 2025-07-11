@@ -1,0 +1,16 @@
+A textual description of the Tate-style program-expression graph is as follows:
+
+The graph represents the final value of the variable `a`.
+
+1.  **Root Node:** The root of the graph is a projection node, **`π₁`**, which selects the first element from a pair. It has one input.
+
+2.  **Loop Node:** The input to the `π₁` node is a **`μ` (mu) node**. This node represents the loop and has the following properties:
+    *   **Bound Variables:** It binds two variables, `a` and `b`.
+    *   **Initial Value Inputs:** It receives two inputs for the initial values of `a` and `b`.
+        *   The initial value for `a` is supplied by a **constant node with value 1**.
+        *   The initial value for `b` is supplied by a **constant node with value 1**.
+    *   **Outputs:** It produces a pair of values, which are the final values of `a` and `b` after the loop. The first of these outputs is connected to the `π₁` node.
+
+3.  **Loop Body Subgraph:** The `μ` node contains a subgraph that defines the recurrence relation. This subgraph computes a new pair of values from the bound variables `a` and `b`.
+    *   **First Output (new value for `a`):** This is the output of a **multiplication node (`*`)**. The inputs to this `*` node are the bound variables `a` and `b`.
+    *   **Second Output (new value for `b`):** This is the output of an **addition node (`+`)**. The inputs to this `+` node are the bound variable `b` and a **constant node with value 1**.

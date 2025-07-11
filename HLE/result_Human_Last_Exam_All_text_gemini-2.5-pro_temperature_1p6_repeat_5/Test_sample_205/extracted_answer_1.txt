@@ -1,0 +1,65 @@
+170[
+/*
+ * This program calculates 100! for the Wuxing computer.
+ * It is optimized for minimal variable memory usage, totaling 170D.
+ *
+ * The result of 100! is a 158-digit number, so an array of digits is
+ * used for storage. The multiplication is performed iteratively.
+ *
+ * Memory usage breakdown (z = 170D):
+ * - result[158]: Array to hold the 158 digits of the result.
+ *   Type: digit (1D). Size: 158 * 1D = 158D.
+ * - i:          Loop counter for multiplying from 2 to 100.
+ *   Type: char (3D, range 0-999). Size: 3D.
+ * - j:          Loop counter for iterating through the result's digits.
+ *   Type: char (3D, range 0-999). Size: 3D.
+ * - num_digits: Tracks the current number of digits in the result.
+ *   Type: char (3D, range 0-999). Size: 3D.
+ * - carry:      Stores carry-over and the intermediate product. Max value
+ *               is 9*100+99=999, fitting within a 'char'.
+ *   Type: char (3D, range 0-999). Size: 3D.
+ */
+#include <stdio.h>
+
+void main() {
+    // Variable Declarations with a total memory footprint of 170D.
+    digit result[158]; // Holds the large number, one digit per element.
+    char i, j;         // Loop counters.
+    char num_digits;   // Current length of the number in 'result'.
+    char carry;        // Used for carry and intermediate products.
+
+    // Initialize result to 1.
+    result[0] = 1;
+    num_digits = 1;
+
+    // Perform multiplication: result = 1 * 2 * 3 * ... * 100.
+    for (i = 2; i <= 100; i++) {
+        carry = 0; // Reset carry for each new multiplier.
+
+        // Multiply each digit of the current number by 'i'.
+        for (j = 0; j < num_digits; j++) {
+            // Reuse 'carry' to store the intermediate product. Its maximum
+            // value (999) fits in the 'char' type (0-999).
+            carry = result[j] * i + carry;
+            result[j] = carry % 10; // The new digit is the remainder.
+            carry = carry / 10;     // The new carry is the quotient.
+        }
+
+        // If carry remains, append new digits to the number.
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            carry = carry / 10;
+            num_digits++;
+        }
+    }
+
+    // Print the final result.
+    printf("100! = ");
+    // The number is stored with the least significant digit first,
+    // so we print the array in reverse order.
+    for (j = num_digits; j > 0; j--) {
+        printf("%d", result[j - 1]);
+    }
+    printf("\n");
+}
+]

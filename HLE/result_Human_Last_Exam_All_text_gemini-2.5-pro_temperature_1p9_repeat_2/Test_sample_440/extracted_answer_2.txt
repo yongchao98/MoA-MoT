@@ -1,0 +1,20 @@
+The mass density profile \( \rho(z) \) of the gas mixture is given by:
+\[ \rho(z) = m_A \nu_A(z) + m_B \nu_B(z) \]
+where \( \nu_A(z) \) and \( \nu_B(z) \) are the number density profiles for Gas A and Gas B. These profiles are the solution to the following system of coupled, non-linear equations, which must hold at every height \( z \in [0, H] \):
+
+1.  **Density Equations (Generalized Barometric Formula):**
+    \[ \nu_A(z) = C_A \exp\left[-\frac{1}{k_B T} \left( m_A g z + \mu_{A, \text{excess}}(\nu_A(z), \nu_B(z)) \right)\right] \]
+    \[ \nu_B(z) = C_B \exp\left[-\frac{1}{k_B T} \left( m_B g z + \mu_{B, \text{excess}}(\nu_A(z), \nu_B(z)) \right)\right] \]
+
+2.  **Excess Chemical Potentials (from van der Waals model):**
+    \[ \mu_{A, \text{excess}}(z) = -k_B T \ln(1 - \nu_A(z) b'_{A} - \nu_B(z) b'_{B}) + \frac{k_B T b'_{A} (\nu_A(z) + \nu_B(z))}{1 - \nu_A(z) b'_{A} - \nu_B(z) b'_{B}} - 2(\nu_A(z) a'_{AA} + \nu_B(z) a'_{AB}) \]
+    \[ \mu_{B, \text{excess}}(z) = -k_B T \ln(1 - \nu_A(z) b'_{A} - \nu_B(z) b'_{B}) + \frac{k_B T b'_{B} (\nu_A(z) + \nu_B(z))}{1 - \nu_A(z) b'_{A} - \nu_B(z) b'_{B}} - 2(\nu_B(z) a'_{BB} + \nu_A(z) a'_{AB}) \]
+
+3.  **Normalization Conditions (to determine constants \( C_A, C_B \)):**
+    \[ N_A = A \int_0^H \nu_A(z) \, dz \]
+    \[ N_B = A \int_0^H \nu_B(z) \, dz \]
+
+The parameters in these equations are derived from the given molar values using Avogadro's number, \( N_{Av} \):
+- Particle masses: \( m_A = M_A / N_{Av} \), \( m_B = M_B / N_{Av} \)
+- Per-particle interaction parameters: \( a'_{ij} = a_{ij} / N_{Av}^2 \)
+- Per-particle excluded volumes: \( b'_{A} = b_{AA} / N_{Av} \), \( b'_{B} = b_{BB} / N_{Av} \)

@@ -1,0 +1,6 @@
+The maximum distance \( l_{\text{max}} \) that the spaceship B can achieve from the asteroid A is given by the formula:
+$$ l_{\text{max}} = \frac{1}{2F} \left( C + \sqrt{C^2 - 4FGmM} \right) $$
+where \( C \) is a constant determined by the initial conditions:
+$$ C = Fl_0 + \frac{GmM}{l_0} - \frac{1}{2}Mv_0^2 $$
+Therefore, the full expression for the maximum distance is:
+$$ l_{\text{max}} = \frac{1}{2F} \left[ \left( Fl_0 + \frac{GmM}{l_0} - \frac{1}{2}Mv_0^2 \right) + \sqrt{\left( Fl_0 + \frac{GmM}{l_0} - \frac{1}{2}Mv_0^2 \right)^2 - 4FGmM} \right] $$

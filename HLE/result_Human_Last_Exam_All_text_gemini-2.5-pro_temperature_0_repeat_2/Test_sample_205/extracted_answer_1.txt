@@ -1,0 +1,62 @@
+174[void main() {
+    // To calculate 100!, a number with 158 decimal digits, we must use an
+    // array to store the digits. This is a "Big Number" implementation.
+    // The goal is to use the smallest data types possible for all variables
+    // to minimize memory usage as requested.
+
+    // Memory usage breakdown:
+    // result: 160 * sizeof(digit) = 160 * 1D = 160D
+    // i: sizeof(char) = 3D
+    // j: sizeof(char) = 3D
+    // num_digits: sizeof(char) = 3D
+    // product: sizeof(char) = 3D
+    // carry: sizeof(short) = 2D
+    // Total (z) = 160 + 3 + 3 + 3 + 3 + 2 = 174D
+
+    // The array to store digits of the result. 100! has 158 digits,
+    // so 160 is a safe size. 'digit' (1D) is the most efficient type.
+    digit result[160];
+
+    // Loop variables and calculation temporaries.
+    char i;          // Multiplier, 2 to 100. Needs 'char' (3D, 0-999) as 'short' (2D, 0-99) is too small.
+    char j;          // Digit array index. Needs 'char' as it goes up to ~159.
+    char num_digits; // Tracks current number of digits. Needs 'char'.
+    char product;    // Stores intermediate product. Max value is 9*100+99=999, so 'char' is required.
+    short carry;     // Stores carry-over. Max value is 999/10=99, so 'short' (2D, 0-99) is sufficient and optimal.
+
+    // Initialize the factorial calculation with 1.
+    // result[0] holds the least significant digit.
+    result[0] = 1;
+    num_digits = 1;
+
+    // It's good practice to clear the array.
+    for (j = 1; j < 160; j = j + 1) {
+        result[j] = 0;
+    }
+
+    // Main loop to compute 100! by multiplying result by i from 2 to 100.
+    for (i = 2; i <= 100; i = i + 1) {
+        carry = 0;
+        // Multiply each digit of the current result by i, adding the carry from the previous digit.
+        for (j = 0; j < num_digits; j = j + 1) {
+            product = result[j] * i + carry;
+            result[j] = product % 10; // The new digit is the remainder.
+            carry = product / 10;     // The new carry for the next digit.
+        }
+
+        // If there's a carry left over, append its digits to the result array.
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            carry = carry / 10;
+            num_digits = num_digits + 1;
+        }
+    }
+
+    // Print the final result. The digits are stored in reverse order,
+    // so we print from the last calculated digit down to the first.
+    printf("100! = ");
+    for (j = num_digits - 1; j >= 0; j = j - 1) {
+        printf("%d", result[j]);
+    }
+    printf("\n");
+}]

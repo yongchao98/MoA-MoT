@@ -1,0 +1,30 @@
+import sys
+
+def solve():
+    """
+    Reads two strings, compares them lexicographically ignoring case,
+    and prints -1, 1, or 0.
+    """
+    try:
+        # Read the first string from standard input
+        s1 = sys.stdin.readline().strip()
+        # Read the second string from standard input
+        s2 = sys.stdin.readline().strip()
+
+        # Convert both strings to lowercase for case-insensitive comparison
+        s1_lower = s1.lower()
+        s2_lower = s2.lower()
+
+        # Perform the comparison
+        if s1_lower < s2_lower:
+            print("-1")
+        elif s1_lower > s2_lower:
+            print("1")
+        else:
+            print("0")
+
+    except Exception as e:
+        # Handle potential errors, though not expected with problem constraints
+        print(f"An error occurred: {e}", file=sys.stderr)
+
+solve()

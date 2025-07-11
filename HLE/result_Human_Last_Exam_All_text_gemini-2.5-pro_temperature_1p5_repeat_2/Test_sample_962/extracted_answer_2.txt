@@ -1,0 +1,13 @@
+The design for a tightly secure t-out-of-n threshold signature scheme with a two-round signing protocol involves three main stages.
+**1. Key Generation:** A Distributed Key Generation (DKG) protocol based on Feldman's Verifiable Secret Sharing is used. This allows `n` parties to collaboratively create a single group public key `pk` while each party `P_i` obtains a secret share `x_i` of the private key, without any single party learning the full key.
+**2. Pre-computation (Offline):** To enable a fast online protocol, each party `P_i` generates a set of secret nonce pairs `(d, e)` and publishes the corresponding public commitments `(D=d*P, E=e*P)`, where `P` is the group generator. These are stored for future signings and each pair can only be used once.
+**3. Two-Round Online Signing:**
+*   **Round 1 (Commitment):** For a message `m`, a set `S` of `t` participating signers is chosen. Each signer `P_i` selects an unused pre-committed nonce pair `(D_i, E_i)` and broadcasts it to the others.
+*   **Round 2 (Signing):** After receiving all `t` commitments, each party `P_i` calculates:
+    a. A binding value for each participant: `b_j = H_bind(j, m, {D_k, E_k}_{k∈S})`.
+    b. The group nonce commitment point: `R = Σ_{j∈S} (D_j + b_j * E_j)`.
+    c. The Schnorr challenge: `e = H_chal(R, pk, m)`.
+    d. Its signature share: `s_i = (d_i + b_i * e_i) + e * L_i * x_i`, where `L_i` is the Lagrange coefficient.
+    Each `P_i` then sends `s_i` to an aggregator.
+The aggregator sums the shares to get the final signature `s = Σ s_i`. The final signature `(R, s)` is a standard Schnorr signature verifiable with the single public key `pk`.
+This design achieves tight security by using the binding values `b_j`, which prevent an adversary from adaptively manipulating the group nonce `R`, thus thwarting known forgery attacks and allowing for a tight security proof in the Algebraic Group Model.

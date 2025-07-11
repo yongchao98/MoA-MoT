@@ -1,0 +1,10 @@
+The one-step transformation of the probability distribution $P_j(t)$ over the sites $j=0, \dots, N-1$ for a lazy random walk on a circle is given by:
+$P_j(t+1) = \frac{1}{2} P_j(t) + \frac{1}{4} P_{j-1}(t) + \frac{1}{4} P_{j+1}(t)$.
+
+The corresponding transition probability matrix $\hat{A}$ has entries $A_{ii} = 1/2$, $A_{i, i\pm1} = 1/4$ (with indices taken modulo N), and $A_{ij}=0$ otherwise.
+
+The eigenvectors of this matrix are indeed vectors $\mathbf{v}_n$ with components $(\mathbf{v}_n)_j = e^{ijk_n}$ where $k_n = 2\pi n/N$ for $n=0, \dots, N-1$. The corresponding eigenvalues are $\lambda_n = \cos^2(\pi n/N)$.
+
+The rate of relaxation is determined by the second-largest eigenvalue, which is $\lambda_1$.
+
+The value of the second-largest eigenvalue is $\cos^2(\pi/N)$.

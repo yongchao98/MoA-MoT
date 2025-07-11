@@ -1,0 +1,66 @@
+170[
+/*
+ * This program calculates 100! on the Wuxing virtual machine.
+ * It uses a BigNum algorithm with an array of decimal digits to
+ * store the large result. The total memory for variables is minimized
+ * by selecting the most compact data type for each one.
+ *
+ * Variable Memory Breakdown:
+ * - result[158]: 158 * digit (1D) = 158 D
+ * - i:           1 * char  (3D)   =   3 D
+ * - j:           1 * char  (3D)   =   3 D
+ * - carry:       1 * short (2D)   =   2 D
+ * - product:     1 * char  (3D)   =   3 D
+ * - is_printing: 1 * digit (1D)   =   1 D
+ * Total memory:                     170 D
+*/
+#define MAX_DIGITS 158
+
+void main() {
+    digit result[MAX_DIGITS]; // Stores factorial result in little-endian format
+    char i;                   // Loop counter for factorial (from 2 to 100)
+    char j;                   // Loop index for the result array
+    short carry;                // Carry-over for multiplication
+    char product;             // Temporary variable for digit * i + carry
+    digit is_printing;        // Flag to suppress printing of leading zeros
+
+    // Initialize the result array to all zeros
+    for (j = 0; j < MAX_DIGITS; j++) {
+        result[j] = 0;
+    }
+
+    result[0] = 1; // Start with 1! = 1
+
+    // Calculate 100! by iteratively multiplying by i from 2 up to 100
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        for (j = 0; j < MAX_DIGITS; j++) {
+            product = result[j] * i + carry;
+            result[j] = product % 10;
+            carry = product / 10;
+        }
+    }
+
+    // Print the final large number without leading zeros
+    is_printing = 0; // Set boolean flag to false
+    
+    // Loop from the most significant digit downwards. Since 'j' is an
+    // unsigned type, the loop condition 'j>=0' would be an infinite
+    // loop. Instead, we use a manual break when j reaches 0.
+    for (j = MAX_DIGITS - 1; ; j--) {
+        // Start printing only when the first non-zero digit is found
+        if (is_printing == 0 && result[j] != 0) {
+            is_printing = 1; // Set boolean flag to true
+        }
+
+        if (is_printing == 1) {
+            printf("%d", result[j]);
+        }
+
+        // Break the loop after processing and printing the last digit (result[0])
+        if (j == 0) {
+            break;
+        }
+    }
+}
+]

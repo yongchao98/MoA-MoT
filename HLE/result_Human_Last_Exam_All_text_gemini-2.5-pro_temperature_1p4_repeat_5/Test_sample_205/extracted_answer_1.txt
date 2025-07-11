@@ -1,0 +1,53 @@
+172[
+```c
+#include <stdio.h>
+
+int main() {
+    // Variable Declarations (Total Memory: 172D)
+    // result: holds 158 digits for 100! -> 158 * 1D = 158D
+    digit result[158];
+    // i: loop counter 2..100 -> char (0-999) is minimal -> 3D
+    char i;
+    // j: array index up to 157 -> char is minimal -> 3D
+    char j;
+    // num_digits: current digit count up to 158 -> char is minimal -> 3D
+    char num_digits;
+    // carry: for multiplication, up to 99 -> short (0-99) is minimal -> 2D
+    short carry;
+    // temp_product: holds (digit * i + carry), up to 999 -> char is minimal -> 3D
+    char temp_product;
+
+    // Initialize result to 1
+    num_digits = 1;
+    result[0] = 1;
+
+    // Main factorial loop: multiply by i from 2 to 100
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        for (j = 0; j < num_digits; j++) {
+            temp_product = result[j] * i + carry;
+            result[j] = temp_product % 10;
+            carry = temp_product / 10;
+        }
+
+        // Propagate remaining carry, extending the number's length
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            carry = carry / 10;
+            num_digits++;
+        }
+    }
+
+    // Print the final result, which is stored in reverse order
+    printf("100! = ");
+    j = num_digits;
+    while (j > 0) {
+        j--;
+        printf("%d", result[j]);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+]

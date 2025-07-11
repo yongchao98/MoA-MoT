@@ -1,0 +1,4 @@
+The solutions for $z \in \mathbb{C}$ are:
+1. Two real solutions: $z=1$ and $z=-1$.
+2. An infinite sequence of purely imaginary solutions: For each integer $k \le -1$, there is a unique solution $z_k=iy_k$, where $y_k$ is the single real root of the equation $-y=e^{-y(\frac{\pi}{2}+2k\pi)}$. All these roots $y_k$ are negative.
+3. An infinite set of other complex solutions with non-zero real and imaginary parts: For each integer $k$, there is an infinite number of solutions which can be found by solving the system of equations $-y = e^{-y(\frac{\pi}{2}+2k\pi)}\cos(x(\frac{\pi}{2}+2k\pi))$ and $x = e^{-y(\frac{\pi}{2}+2k\pi)}\sin(x(\frac{\pi}{2}+2k\pi))$.

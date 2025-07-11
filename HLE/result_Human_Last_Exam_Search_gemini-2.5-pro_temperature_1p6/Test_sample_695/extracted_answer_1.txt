@@ -1,0 +1,45 @@
+The accumulated chemical concentrations in the fish after 365 days are as follows:
+
+**PFOS:** 27.17 ng/g
+**PFOA:** 264,173 ng/g
+
+**Detailed Calculation Breakdown:**
+
+**1. Concentration in the Water Environment (C(t))**
+
+First, for each chemical, the concentration in the freshwater environment after 365 days was calculated using the provided formula: `C(t) = (Cin × Qin / (Qout + Qin × (1 + Kd × foc))) × (1−e^−(k + r)t) + C0 × e^−(k + r)t`.
+
+*   **Key intermediate parameters:**
+    *   Organic Carbon Fraction (`foc`): 0.001
+    *   Water Transport Rate (`r`): 0.16 d⁻¹
+    *   Initial Water Concentration (`C0`): 0 ng/L
+    *   For both chemicals, the term `e^-(k+r)t` where t=365 was negligible (approaching zero), meaning the water concentration reached a steady state within the year.
+
+*   **For PFOS:**
+    *   `log Koc`: 3.25
+    *   `Kd`: 1.778
+    *   Water Degradation Rate (`k`): 2.086 x 10⁻⁵ d⁻¹
+    *   **Water Concentration `C(365)` ≈ 0.9354 ng/L**
+
+*   **For PFOA:**
+    *   `log Koc`: 3.655
+    *   `Kd`: 4.519
+    *   Water Degradation Rate (`k`): 7.972 x 10⁻⁶ d⁻¹
+    *   **Water Concentration `C(365)` ≈ 75,944.4 ng/L**
+
+**2. Concentration in Fish (Cfish(t))**
+
+The accumulation in fish was modeled using a standard bioaccumulation differential equation, assuming the water concentration calculated above (`C(365)`) was constant for the exposure period.
+
+*   **Equation used:** `Cfish(t) = Cfish_ss * (1 - e^(-kelim*t)) + Cfish(0) * e^(-kelim*t)`
+    *   Where `Cfish_ss` is the steady-state concentration in fish, and `Cfish(0)` is the initial concentration (10 ng/g).
+
+*   **For PFOS:**
+    *   The total uptake rate (from gills and food) was calculated to be ~1,875 ng/day.
+    *   The steady-state concentration in fish (`Cfish_ss`) was found to be **27.17 ng/g**.
+    *   After 365 days, the concentration nearly reaches this steady state, resulting in `Cfish(365) ≈ 27.17 ng/g`.
+
+*   **For PFOA:**
+    *   The total uptake rate (from gills and food) was calculated to be ~6,077,352 ng/day.
+    *   The steady-state concentration in fish (`Cfish_ss`) was found to be ~264,233 ng/g.
+    *   After 365 days at an elimination rate of 0.023 d⁻¹, the concentration reaches `Cfish(365) ≈ 264,173 ng/g`.

@@ -1,0 +1,12 @@
+
+**Function `f`:**
+$f(w) = \underbrace{\bot \otimes \bot \otimes \dots \otimes \bot}_{w \text{ times}} = \bot^{\otimes w}$
+(with the convention that $f(0) = \bot^{\otimes 0} = 1$)
+
+**Formula `C`:**
+Let $B = \bot \multimap \bot$.
+Let $H = \bot^{\otimes b} \multimap B$.
+Then $C = H^{\otimes m} \multimap B^{\otimes m}$.
+
+Explicitly written out:
+$C(W, m, b) = \left( \left( \bot^{\otimes b} \multimap (\bot \multimap \bot) \right)^{\otimes m} \right) \multimap \left( (\bot \multimap \bot)^{\otimes m} \right)$

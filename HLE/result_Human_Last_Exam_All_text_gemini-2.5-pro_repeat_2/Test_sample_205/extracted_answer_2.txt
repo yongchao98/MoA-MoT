@@ -1,0 +1,51 @@
+174[
+int main() {
+    // Array to store the 158 digits of 100!.
+    // Memory: 158 * sizeof(digit) = 158D.
+    digit result[158];
+
+    // Loop counter for 2..100. 'char' is the smallest type that holds 100.
+    // Memory: sizeof(char) = 3D.
+    char i;
+
+    // Loop counter for digits. Max value 157. 'char' is required.
+    // Memory: sizeof(char) = 3D.
+    char j;
+
+    // Variable to track number of digits in result. Max value 158.
+    // Memory: sizeof(char) = 3D.
+    char num_digits;
+
+    // Carry for multiplication. Max value < 1000.
+    // Memory: sizeof(char) = 3D.
+    char carry;
+
+    // Intermediate product. Max value ~1890. 'int' is required.
+    // Memory: sizeof(int) = 4D.
+    int product;
+
+    // Initialize result to 1 (one digit).
+    result[0] = 1;
+    num_digits = 1;
+
+    // Loop from 2 to 100 to calculate factorial.
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Multiply current result by i.
+        for (j = 0; j < num_digits; j++) {
+            product = result[j] * i + carry;
+            result[j] = product % 10;
+            carry = product / 10;
+        }
+
+        // Handle remaining carry by adding new digits to the result.
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            carry = carry / 10;
+            num_digits++;
+        }
+    }
+
+    return 0;
+}
+]

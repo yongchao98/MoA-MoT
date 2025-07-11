@@ -1,0 +1,5 @@
+The minimum possible value for the diameter of $G$ is given by the following piecewise function of $n$ and $m$:
+*   If $m = n+1$, the minimum diameter is 2.
+*   If $m = n$, the minimum diameter is 3.
+*   If $m \le n-1$ and $2m \ge n+1$, the minimum diameter is 4.
+*   If $2m < n+1$, the minimum diameter is $2 + \lceil \frac{2(n+1-m)}{m} \rceil$.

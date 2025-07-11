@@ -1,0 +1,13 @@
+In the context of Interval Type-3 Membership Functions (IT3 MFs), for a fixed primary input variable *x* and a secondary input variable *u*, the vertical cross-section is an Interval Type-2 Fuzzy Set (IT2 FS) characterized by an upper and a lower membership function. Utilizing Gaussian-based paradigms, the mathematical formulation for these uncertainty bounds is:
+
+**Upper Membership Function (UMF):**
+µ̅<sub>A(x)</sub>(u) = exp[ -½ ( (u - m(x)) / σ<sub>u</sub> )² ]
+
+**Lower Membership Function (LMF):**
+µ̲<sub>A(x)</sub>(u) = exp[ -½ ( (u - m(x)) / σ*<sub>u</sub> )² ]
+
+Where:
+*   **µ̅<sub>A(x)</sub>(u)** and **µ̲<sub>A(x)</sub>(u)** are the upper and lower bounds of the membership function for the secondary variable *u*.
+*   **m(x)** is the center (mean) of the Gaussian functions, which may be a function of the primary variable *x*.
+*   **σ<sub>u</sub>** is the standard deviation (width) of the upper membership function.
+*   **σ*<sub>u</sub>** is the standard deviation of the lower membership function, often defined as σ*<sub>u</sub> = σ<sub>u</sub> * √(|ln(ℓ) / ln(ε)|), where ℓ is a scaling parameter (LowerLag) between 0 and 1, and ε is machine epsilon.

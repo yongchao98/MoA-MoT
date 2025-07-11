@@ -1,0 +1,10 @@
+$V_{eff}(\mathbf{q}, i\nu_n) = -\sum_j \frac{g^2 q_j^2}{m} \frac{1}{\nu_n^2 + w_q^2}$
+
+Assuming that the index *j* refers to the Cartesian components (x, y, z) and that the phonon frequency $w_q$ is independent of polarization (isotropic medium), the sum can be performed:
+$\sum_j q_j^2 = q_x^2 + q_y^2 + q_z^2 = |\mathbf{q}|^2$
+
+This simplifies the effective interaction to:
+
+$V_{eff}(\mathbf{q}, i\nu_n) = - \frac{g^2 |\mathbf{q}|^2}{m} \frac{1}{\nu_n^2 + w_q^2}$
+
+This represents an attractive, frequency-dependent interaction between electrons. At zero frequency transfer ($\nu_n=0$), the static interaction is $V_{eff}(\mathbf{q}, 0) = - \frac{g^2 |\mathbf{q}|^2}{m w_q^2}$. The negative sign indicates that the interaction is attractive, which is the basis for conventional phonon-mediated superconductivity.

@@ -1,0 +1,17 @@
+For a thermally isolated freely jointed chain, the force of attraction, $F$, between the ends of the polymer is given by a linear restoring force. This force arises because stretching the polymer at constant total energy requires a redistribution of energy from kinetic to potential, which is entropically unfavorable. In the microcanonical ensemble (constant energy, volume, and particle number), the force is derived from the entropy of the system.
+
+The entropy, $S$, of the chain can be expressed as a function of its total kinetic energy, $E$, and the end-to-end separation, $x$:
+$S(E, x) \approx \frac{3n k_B}{2} \ln E - \frac{3 k_B x^2}{2n\ell^2} + \text{constant}$
+
+This expression consists of a kinetic energy term and a configurational entropy term, which is valid for large $n$ and small extensions $x \ll n\ell$.
+
+For a thermally isolated system undergoing a slow, reversible change, the total entropy remains constant. The force is given by $F = -(\frac{\partial E}{\partial x})_S$. By holding $S$ constant in the equation above and differentiating with respect to $x$, we find the relationship between energy and extension:
+$\frac{3n k_B}{2E} \frac{dE}{dx} - \frac{3k_B x}{n\ell^2} = 0$
+$\frac{dE}{dx} = \frac{2Ex}{n^2\ell^2}$
+
+Since the total energy $E$ of the isolated system is constant, it is equal to the kinetic energy at zero extension, $E(0)$. The force law is therefore:
+$F(x) = -\frac{2E(0)x}{n^2\ell^2}$
+
+This shows that the force of attraction between the polymer ends is directly proportional to the separation $x$ and the initial kinetic energy $E(0)$, and inversely proportional to the square of the number of segments, $n^2$.
+
+$F(x) = -\frac{2E(0)}{n^2\ell^2}x$

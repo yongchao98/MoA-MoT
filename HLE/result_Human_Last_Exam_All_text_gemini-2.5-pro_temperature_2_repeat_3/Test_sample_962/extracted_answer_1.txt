@@ -1,0 +1,13 @@
+A threshold signature scheme is a system where a single public key is associated with a secret key that is shared among n parties. Any subgroup of t or more parties can collaborate to produce a signature, while any group with t-1 or fewer parties cannot. A tightly secure, two-round protocol for this is highly efficient and desirable for practical applications like cryptocurrency wallets and secure infrastructure management.
+
+To design such a scheme, we follow these principles:
+
+**1. Foundational Choices:**
+*   **Underlying Cryptography:** Use a signature scheme with algebraic properties suitable for secret sharing, such as Schnorr signatures.
+*   **Secret Sharing:** Employ Feldman's Verifiable Secret Sharing (VSS) for the one-time Distributed Key Generation (DKG) phase. This allows `n` parties to create a single public key `Y = g^x` while each party `P_i` receives a private share `s_i` of the secret `x`, without any single party ever knowing `x`.
+
+**2. The Two-Round Signing Protocol Design:**
+The protocol design centers around preventing malicious participants (up to `t-1`) from influencing the final signature based on honest parties' inputs. This is achieved with a commit-and-reveal structure. Let a group `S` of `t` parties want to sign a message `m`.
+
+**Round 1: Commitment**
+Each participant `P_i` in the signing g

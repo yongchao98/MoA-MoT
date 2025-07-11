@@ -1,0 +1,74 @@
+168[
+```c
+#include <stdio.h>
+
+/**
+ * This program calculates 100! for the WXVM architecture.
+ * It is designed to use the minimum amount of variable memory
+ * as defined by the WXVM C compiler's data types.
+ */
+int main() {
+    // --- Variable Declaration ---
+    // The total memory for variables is 168D.
+    // result: Array to store the 158 digits of the factorial. Size: 158 * 1D = 158D.
+    digit result[158];
+    // i: Loop counter for multiplication, 2 through 100. Size: 3D (type char).
+    char i;
+    // j: Loop counter for traversing the digit array, 0 to 157. Size: 3D (type char).
+    char j;
+    // temp: Holds product/carry. Max value is 999. Size: 3D (type char).
+    char temp;
+    // found_first_digit: Flag for printing to suppress leading zeros. Size: 1D (type digit).
+    digit found_first_digit;
+
+    // --- Initialization ---
+    // Set the initial number to 1.
+    result[0] = 1;
+    // Initialize the rest of the array to 0s.
+    for (j = 1; j < 158; j++) {
+        result[j] = 0;
+    }
+
+    // --- Factorial Calculation ---
+    // Multiply the number by i from 2 to 100.
+    for (i = 2; i <= 100; i++) {
+        // temp will store the carry-over for each multiplication step.
+        temp = 0;
+        // Multiply the current number (stored in result) by i.
+        // The loop iterates over the entire fixed-size array.
+        for (j = 0; j < 158; j++) {
+            // temp becomes the product of the current digit and i, plus the previous carry.
+            temp += result[j] * i;
+            // The new digit is the product modulo 10.
+            result[j] = temp % 10;
+            // The new carry is the product divided by 10.
+            temp /= 10;
+        }
+    }
+
+    // --- Output ---
+    // Print the final result to the console.
+    printf("100! = ");
+    found_first_digit = 0;
+    // Loop backwards through the array to print digits in the correct order.
+    // The loop structure `j = 158; while(j>0){...}` avoids issues
+    // with the unsigned type `char` reaching 0 and wrapping around.
+    j = 158;
+    while (j > 0) {
+        j--;
+        // Once the first non-zero digit is found, set the flag.
+        if (found_first_digit == 0 && result[j] != 0) {
+            found_first_digit = 1;
+        }
+        // Print all digits from the most significant one onwards.
+        if (found_first_digit) {
+            // Use %d to print a variable of type 'digit' as per specification.
+            printf("%d", result[j]);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+]

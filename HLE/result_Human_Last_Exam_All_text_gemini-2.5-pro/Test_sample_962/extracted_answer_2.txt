@@ -1,0 +1,21 @@
+The proposed design is a Schnorr-based threshold signature scheme, inspired by the FROST protocol, which consists of a one-time DKG setup phase followed by a two-round signing protocol.
+
+**1. Setup Phase (DKG):**
+A robust Distributed Key Generation protocol like Pedersen VSS is used by `n` parties to create a shared secret. This results in a single group public key `P` and each party `P_i` holding a secret share `x_i` and a public verification share `P_i`.
+
+**2. Signing Protocol (2 Rounds):**
+For a set `S` of `t` signers and a message `m`:
+
+*   **Round 1 (Commitment):** Each party `P_i ∈ S` generates two secret nonces (`d_i`, `k_i`), computes public commitments (`D_i = g^{d_i}`, `K_i = g^{k_i}`), and broadcasts the pair `(D_i, K_i)` to all other participants.
+
+*   **Round 2 (Partial Signature):** After receiving all commitments, each party `P_i` calculates:
+    1.  A binding value `ρ_j` for each participant `j`, based on the message and all commitments from Round 1.
+    2.  The aggregate public nonce `R = Π_{j∈S} (D_j * (K_j)^{ρ_j})`.
+    3.  The Schnorr challenge `e = H(R, P, m)`.
+    4.  Its partial signature `s_i = d_i + (k_i * ρ_i) + (e * λ_i * x_i)`, where `λ_i` is its Lagrange coefficient.
+    5.  `P_i` sends `s_i` to a signature aggregator.
+
+**3. Aggregation:**
+An aggregator sums the partial signatures to get the final signature `s = Σ s_i`. The resulting pair `(R, s)` is a standard Schnorr signature.
+
+This design is **tightly secure** because the nonce-commitment mechanism, specifically the use of binding factors `ρ_j`, prevents nonce manipulation attacks and allows for a security proof without the Forking Lemma, thus avoiding significant security loss in the reduction to the Discrete Logarithm Problem.

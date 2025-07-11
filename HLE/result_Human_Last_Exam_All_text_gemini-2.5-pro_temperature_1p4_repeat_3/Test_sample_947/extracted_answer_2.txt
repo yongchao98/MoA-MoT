@@ -1,0 +1,10 @@
+The expression for the complex magnetic field `H(ζ) = H_z(x,z) + iH_x(x,z)` at a point `(x,z)` is given by:
+
+`H(x+iz) = H_a + (H_0 / 2) * ln[ (sinh^2(π(x-iz)/D) - sinh^2(πa/D)) / (sinh^2(π(x-iz)/D) - sinh^2(πw/D)) ]`
+
+where:
+- `H_0 = J_c * d / π` is the characteristic field.
+- `w` is the half-width of the strips.
+- `D` is the stacking interval.
+- `a` is the position of the flux front, which is determined by the applied field `H_a` via the relation:
+  `H_a = H_0 * ln[ sinh(πw/D) / sinh(πa/D) ]`

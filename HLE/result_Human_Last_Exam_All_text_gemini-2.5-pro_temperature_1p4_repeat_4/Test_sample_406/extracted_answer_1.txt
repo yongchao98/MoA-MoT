@@ -1,0 +1,7 @@
+The conditions for an FGH-tripled fixed point are:
+1.  **(Completeness of Spaces):** The domains X, Y, and Z must be complete metric spaces with metrics `d_X`, `d_Y`, and `d_Z` respectively.
+2.  **(Individual Contraction Conditions):** The functions F, G, and H must satisfy mixed Lipschitz-type conditions. Assuming a standard symmetric definition of the fixed point (`F(x,y,z)=x`, `G(y,z,x)=y`, `H(z,x,y)=z`), there must exist nine non-negative constants (`α, β, γ, δ, ε, ζ, η, θ, ι`) such that for all `x_i ∈ X, y_i ∈ Y, z_i ∈ Z`:
+    *   `d_X(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) ≤ α·d_X(x₁, x₂) + β·d_Y(y₁, y₂) + γ·d_Z(z₁, z₂)`
+    *   `d_Y(G(y₁, z₁, x₁), G(y₂, z₂, x₂)) ≤ δ·d_Y(y₁, y₂) + ε·d_Z(z₁, z₂) + ζ·d_X(x₁, x₂)`
+    *   `d_Z(H(z₁, x₁, y₁), H(z₂, x₂, y₂)) ≤ η·d_Z(z₁, z₂) + θ·d_X(x₁, x₂) + ι·d_Y(y₁, y₂)`
+3.  **(Overall Contraction Requirement):** The sum of the relevant constants must be less than 1, ensuring the operator on the product space is a contraction. Specifically, `max(α + ζ + θ,  β + δ + ι,  γ + ε + η) < 1`.

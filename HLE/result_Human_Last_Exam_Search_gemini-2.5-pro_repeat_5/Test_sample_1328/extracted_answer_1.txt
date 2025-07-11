@@ -1,0 +1,1 @@
+The optimal feedback adjustment factor `b` is given by `b = median(-sqrt(P_2), alpha * P_1, sqrt(P_2))`, which is equivalent to `b = alpha * P_1` if `(alpha * P_1)^2 <= P_2`, and `b = sign(alpha * P_1) * sqrt(P_2)` otherwise.

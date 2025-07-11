@@ -1,0 +1,11 @@
+The inability to observe a resonance in a functional MRI coil using a VNA and a magnetic loop probe can be attributed to several advanced design features of the coil. The most likely reasons are:
+
+1.  **Balanced Circuit Design:** High-performance MRI coils are often balanced circuits designed to detect differential signals and reject common-mode noise. A single-ended loop probe generates a common-mode field, which the coil is specifically designed to ignore. Therefore, no energy is coupled, and no resonance is observed.
+
+2.  **Active Decoupling State:** Coils have active decoupling circuits (using PIN diodes) to protect them during the transmit RF pulse. On the bench, these circuits do not receive the necessary DC bias from the scanner to switch them into their "receive" (resonant) mode. They may default to a detuned or low-Q state, rendering the resonance invisible.
+
+3.  **Coupling and Geometry:** The magnetic field of the coil can be complex (e.g., in a phased array). The probe must be placed at a specific location and orientation to achieve sufficient magnetic coupling. It is possible the probe is simply in a "null" of the coil's magnetic field.
+
+4.  **Low Unloaded Q-Factor:** The coil may be designed for optimal performance when loaded by the patient, resulting in a low "unloaded Q" when measured in air. This would create a resonance dip that is too broad and shallow to be easily identified on the VNA.
+
+In essence, the coil is functional, but its sophisticated design for in-scanner performance (noise rejection, active decoupling) prevents it from responding to a simple, out-of-context bench test.

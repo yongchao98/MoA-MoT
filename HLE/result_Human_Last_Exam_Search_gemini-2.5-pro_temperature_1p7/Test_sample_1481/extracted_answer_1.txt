@@ -1,0 +1,15 @@
+In the theoretical framework of planar Birkhoff billiard dynamics, the generating function H(s,s′), which represents the negative of the Euclidean distance between two boundary points parametrized by arc-length `s` and `s'`, encapsulates the symplectic structure of the billiard map. An asymptotic analysis of H(s,s′) in the limit as the separation ∣s′−s∣ approaches zero reveals the critical role of the boundary's local curvature, κ(s).
+
+The asymptotic expansion of H(s,s′) is given by:
+
+**H(s, s′) = −|s′ − s| [1 − (κ(s)²/24)(s′ − s)² − (κ(s)κ′(s)/24)(s′ − s)³ + O((s′ − s)⁴)]**
+
+This formula characterizes the leading-order behavior and the influence of curvature as follows:
+
+1.  **Leading-Order Behavior:** The dominant term is **−|s′−s|**. For infinitesimally small separations, the generating function is primarily determined by the arc-length distance between the two points, reflecting the length of the short billiard trajectory.
+
+2.  **Curvature-Induced Correction:** The first correction term that involves the geometry of the boundary is **( |s′−s|³κ(s)² )/24**. This term demonstrates that the local curvature `κ(s)` introduces a third-order correction in the separation distance. A larger curvature causes a more significant deviation from a straight line, which is reflected in this term.
+
+3.  **Higher-Order Effects:** The term involving the derivative of the curvature, **κ'(s)**, appears at the fourth order, indicating that the rate of change of curvature along the boundary contributes to an even finer level of the system's dynamics.
+
+This expansion rigorously shows how the geometric properties of the billiard table, specifically its local curvature, are intricately woven into the dynamical properties of the system through the generating function, becoming particularly important for understanding the behavior of short trajectories.

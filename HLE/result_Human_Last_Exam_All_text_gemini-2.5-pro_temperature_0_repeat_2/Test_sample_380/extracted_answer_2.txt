@@ -1,0 +1,9 @@
+The local magnetic field at the L1 point is generally **not** considered to be radial. It follows the Parker Spiral, which typically makes an angle of about 45 degrees with the radial direction at 1 AU.
+
+The use of magnetic field components perpendicular to the radial direction (e.g., the Y and Z components in a GSE-like coordinate system) to calculate normalized magnetic helicity is therefore an **approximation**. This methodological choice is justified under the following conditions and with significant caveats:
+
+1.  **Simplicity:** It simplifies large statistical studies by avoiding the computationally intensive step of rotating the data into a field-aligned coordinate system for every time interval.
+2.  **Assumption of Quasi-Parallel Propagation:** The method implicitly assumes that the wave propagation direction (i.e., the local magnetic field for AIC waves) is nearly parallel to the radial direction. The accuracy of the calculated helicity is directly dependent on how small the angle between the local magnetic field and the radial direction is.
+3.  **Risk of Inaccuracy:** When the magnetic field is not quasi-radial (which is the common case), this approximation can lead to a significant underestimation of the true helicity. It can cause strongly polarized waves to appear weakly polarized or even linearly polarized, potentially leading to the misidentification or omission of wave events.
+
+Therefore, while this method may be used, it is not based on the physical reality of a radial field at L1. The rigorous and physically correct method is to first use Minimum Variance Analysis (MVA) to determine the true propagation direction and then calculate the helicity in the plane perpendicular to that direction.

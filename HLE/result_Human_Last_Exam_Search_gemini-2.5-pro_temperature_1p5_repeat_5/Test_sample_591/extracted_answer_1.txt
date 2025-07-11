@@ -1,0 +1,13 @@
+In the provided model, the term $\kappa$ is a constant defined as:
+
+$\kappa = -\frac{\rho w_0 \tau_u}{\phi^2 \tau_v}$
+
+This constant is composed of the following parameters from the model:
+
+*   **$\rho$**: The offset constant in the Hebbian equation for synaptic efficacy.
+*   **$w_0$**: The initial or equal synaptic efficacy.
+*   **$\tau_u$**: The time constant for the postsynaptic accumulator ($u_k$).
+*   **$\tau_v$**: The time constant for the presynaptic accumulator ($v_k$).
+*   **$\phi$**: The scaling constant for the presynaptic accumulator.
+
+Essentially, $\kappa$ encapsulates the relationship between the parameters that govern the pre- and postsynaptic dynamics and the learning rule itself, influencing the switch between synaptic depression and potentiation regimes.

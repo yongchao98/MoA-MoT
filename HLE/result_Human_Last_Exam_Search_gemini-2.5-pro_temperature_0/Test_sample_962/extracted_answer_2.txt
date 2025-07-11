@@ -1,0 +1,12 @@
+A tightly secure t-out-of-n threshold signature scheme with a two-round signing protocol is designed by first employing a Distributed Key Generation (DKG) protocol with Verifiable Secret Sharing to securely create and distribute secret key shares among *n* participants without a trusted dealer. The two-round signing protocol then proceeds as follows:
+
+**Round 1 (Commitment Phase):** Each of the *t* participating signers generates a secret nonce and broadcasts a public commitment to this nonce. This round is message-independent and can be performed as a pre-computation step.
+
+**Round 2 (Signing Phase):** Once a message is to be signed, a coordinator sends it to the participants. Each participant then computes a signature share using their secret key share, their secret nonce, and a challenge derived from the message and the aggregated public nonces. These shares are sent to the coordinator, who aggregates at least *t* of them into a final, standard signature.
+
+To ensure tight security, the design incorporates several critical elements:
+*   **Commitment Schemes:** To prevent malicious participants from choosing their nonces after seeing others' commitments.
+*   **Identifiable Aborts:** To identify and exclude participants who provide invalid shares.
+*   **Secure Nonce Generation:** To protect against attacks arising from predictable nonces.
+
+A prominent example of such a scheme is **FROST (Flexible Round-Optimized Schnorr Threshold Signatures)**, which is based on the discrete logarithm problem. For post-quantum security, similar design principles are applied using lattice-based cryptography, as seen in schemes like **Ringtail**.

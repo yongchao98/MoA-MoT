@@ -1,0 +1,6 @@
+In position space, the inner product is given by the expression:
+$(\phi, D_\phi) = \int_0^\beta d\tau \int d^d x \, \phi(\vec{x}, \tau) \left( -\partial_\tau^2 - \nabla^2 + m^2 \right) \phi(\vec{x}, \tau)$
+
+In momentum space, this is equivalent to:
+$(\phi, D_\phi) = T \sum_{n=-\infty}^{\infty} \int \frac{d^d p}{(2\pi)^d} |\tilde{\phi}(\vec{p}, \omega_n)|^2 ( \omega_n^2 + \vec{p}^2 + m^2)$
+where $T$ is the temperature, $\omega_n = 2\pi n T$ are the bosonic Matsubara frequencies, and $\tilde{\phi}(\vec{p}, \omega_n)$ is the Fourier transform of the field $\phi(\vec{x}, \tau)$.

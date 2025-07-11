@@ -1,0 +1,31 @@
+The absorption cross-section within the first-order time-dependent perturbation theory for a chain of molecules with a pre-existing exciton at t=0, subjected to an ultrashort Gaussian laser pulse, is described by the following equations for the two cases:
+
+**a) Negligible interaction between molecules:**
+
+The total absorption cross-section `σ_a(ω)` is the sum of contributions from exciting any of the `N-1` ground-state molecules and the potential further excitation of the already excited molecule:
+
+`σ_a(ω) = (N-1) ⋅ C ⋅ ω ⋅ |μ_{eg}|^2 ⋅ G(ω - ω_{eg}) + C ⋅ ω ⋅ |μ_{e'e}|^2 ⋅ G(ω - ω_{e'e})`
+
+where:
+*   `N` is the number of molecules.
+*   `C` is a constant derived from fundamental physical constants.
+*   `ω` is the angular frequency of the light.
+*   `μ_{eg}` is the transition dipole moment for a ground-to-excited state (`g` → `e`) transition of a single molecule.
+*   `μ_{e'e}` is the transition dipole moment for a transition from the excited state to a higher excited state (`e` → `e'`).
+*   `ω_{eg}` and `ω_{e'e}` are the respective transition frequencies.
+*   `G(Δω) = (τ/√π) exp(-(Δω)²τ²)` represents the Gaussian lineshape function dictated by the laser pulse's temporal width `τ`.
+
+**b) Near-neighbor interaction is considered:**
+
+Interactions lead to delocalized Frenkel exciton states. The absorption involves a transition from a one-exciton state to a band of two-exciton states. The equation becomes:
+
+`σ_b(ω) = C ⋅ ω ⋅ Σ_f |⟨2_f|μ_{total}|1_i⟩|² ⋅ G(ω - (E_{2,f} - E_{1,i})/ħ)`
+
+where:
+*   `|1_i⟩` is the initial delocalized one-exciton state with energy `E_{1,i}`.
+*   The sum runs over the final delocalized two-exciton states `|2_f⟩` with energies `E_{2,f}`.
+*   `μ_{total}` is the total dipole operator for the entire chain.
+*   `ħ` is the reduced Planck constant.
+*   `G(Δω)` is the same Gaussian lineshape function.
+
+In this case, the energies and the transition dipole matrix elements depend on the intermolecular coupling strength `J` and exciton-exciton interactions, resulting in an absorption profile that is a band, distinct from the single-molecule spectrum.

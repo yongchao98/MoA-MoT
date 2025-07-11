@@ -1,0 +1,7 @@
+Let `P` be the linear logic formula `P = (1 \multimap \bot) \multimap 1`.
+
+The function `f` is defined for any natural number `w \in W` as:
+$f(w) = \underbrace{P \otimes P \otimes \dots \otimes P}_{w \text{ times}}$
+
+The formula `C = C(W, m, b)` is defined as:
+$C = \underbrace{B \otimes B \otimes \dots \otimes B}_{m \text{ times}}$, where $B = \underbrace{P \otimes P \otimes \dots \otimes P}_{b \text{ times}}$.

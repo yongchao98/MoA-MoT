@@ -1,0 +1,1 @@
+The exact expression for the post-reset covariance `Σ'` is `Σ' = G * Σ * G^T`, where `G = exp(-[ (1/2) * δ_hat ])`, and `δ_hat` is the attitude deviation vector used to reset the reference attitude. Often, a first-order approximation `G ≈ I - (1/2) * [δ_hat]` is used, where `[δ_hat]` is the skew-symmetric matrix of `δ_hat`.

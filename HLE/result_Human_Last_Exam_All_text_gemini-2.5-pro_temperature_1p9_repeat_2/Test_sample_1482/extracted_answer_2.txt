@@ -1,0 +1,10 @@
+For a fixed primary input `x`, the vertical cross-section of an Interval Type-3 Membership Function `Ã`, denoted as `μ_{Ã(x)}(u)`, is a piecewise function of the secondary variable `u`. It is characterized by the following formulation, where `μ_U(x)` and `μ_L(x)` are the means of the upper and lower bounds (derived from a reference Interval Type-2 MF), and `σ_U(x)` and `σ_L(x)` are the standard deviations defining the uncertainty at these bounds:
+
+`μ_{Ã(x)}(u) =` 
+`{`
+`exp[-0.5 * ((u - μ_L(x)) / σ_L(x))^2],`   for `u ≤ μ_L(x)`
+
+`1,`                                      for `μ_L(x) < u < μ_U(x)`
+
+`exp[-0.5 * ((u - μ_U(x)) / σ_U(x))^2],`   for `u ≥ μ_U(x)`
+`}`

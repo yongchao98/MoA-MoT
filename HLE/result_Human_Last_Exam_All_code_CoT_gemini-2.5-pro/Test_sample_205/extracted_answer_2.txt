@@ -1,0 +1,56 @@
+176[// WXVM C program to calculate 100! with minimal variable memory.
+// It assumes the existence of a stdio.h equivalent for printf.
+// The data types (digit, char, short, int) are based on the problem description.
+
+void main() {
+    // Variable declarations are optimized for minimum memory usage.
+    // Total memory for variables is 176D.
+    
+    // An array to store the 158 digits of 100!.
+    digit result[158]; // 158 * 1D = 158D
+    
+    // Loop counter for factorial multiplication (from 2 to 100).
+    char i; // 3D (range 0-999)
+    
+    // Tracks the current number of digits in the result array.
+    char result_size; // 3D (max value 158)
+    
+    // Inner loop counter for digit-by-digit multiplication.
+    char j; // 3D (max value 157)
+    
+    // Stores the carry-over during multiplication.
+    short carry; // 2D (range 0-99)
+    
+    // Stores the intermediate product of a digit, 'i', and carry.
+    char product; // 3D (range 0-999)
+    
+    // A signed counter is required for the reverse printing loop.
+    int print_idx; // 4D (signed type)
+
+    // Initialize result to 1.
+    result[0] = 1;
+    result_size = 1;
+
+    // Main loop: Multiply the 'result' array by numbers from 2 to 100.
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        for (j = 0; j < result_size; j++) {
+            product = result[j] * i + carry;
+            result[j] = product % 10;
+            carry = product / 10;
+        }
+
+        // Append the remaining carry digits to the result array.
+        while (carry > 0) {
+            result[result_size] = carry % 10;
+            result_size++;
+            carry = carry / 10;
+        }
+    }
+
+    // Print the final result. The digits are stored in reverse order.
+    // The following loop outputs each digit of the final number, 93326...
+    for (print_idx = result_size - 1; print_idx >= 0; print_idx--) {
+        printf("%d", result[print_idx]);
+    }
+}]

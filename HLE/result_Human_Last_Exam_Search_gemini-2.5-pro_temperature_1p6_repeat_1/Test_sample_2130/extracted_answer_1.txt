@@ -1,0 +1,11 @@
+The minimum ratio of the cube of the surface area to the square of the volume of the region traversed by the particles is given by the expression (9/π) * (3 + 2√3).
+
+Here is a summary of the derivation:
+1.  **Region Traversed**: The particles are emitted from a height `h` with an initial speed `v₀`. The region they can possibly occupy before hitting the ground is bounded by an envelope of all possible trajectories. This envelope is a "paraboloid of safety".
+2.  **Geometry of the Region**: The region is a segment of a paraboloid. Its volume (V) and surface area (A) can be calculated using standard formulas. The surface consists of a circular base on the ground and the curved lateral surface of the paraboloid.
+3.  **Dimensionless Ratio**: The ratio A³/V² can be expressed in terms of a single dimensionless parameter `x = (2gh/v₀²) + 1`, where `g` is the acceleration due to gravity. This parameter must be greater than 1 since the initial height `h` is non-zero.
+4.  **Minimization**: To find the minimum possible value of this ratio, we treat it as a function of `x` and find the value of `x` that minimizes it. This is done by taking the derivative with respect to `x` and setting it to zero.
+5.  **Solving for the Minimum**: Solving the resulting equation yields a single valid critical point for `x > 1`, which corresponds to the minimum of the function. The value is `x = 12 + 4√3`.
+6.  **Final Calculation**: Substituting this value of `x` back into the expression for the ratio A³/V² and simplifying gives the final result. All physical constants cancel out, leaving a pure number.
+
+The minimum ratio is thus a constant, independent of the specific height, initial speed, or gravitational field, as long as these parameters are combined in the proportion that satisfies the minimization condition.

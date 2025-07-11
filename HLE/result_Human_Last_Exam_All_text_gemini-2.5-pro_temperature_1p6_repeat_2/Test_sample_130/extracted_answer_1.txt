@@ -1,0 +1,6 @@
+The edges of the image will undergo a process analogous to motion by mean curvature. This means:
+1.  **Smoothing:** Sharp corners on the edges will be rounded off, and the edges will become smoother.
+2.  **Annihilation of closed loops:** Any edge that forms a closed loop (like the boundary of an object or a hole) will shrink over time and eventually disappear. This means finite shapes will be erased.
+3.  **Straightening of open curves:** Any edge that is not a closed loop will straighten out over time.
+
+Therefore, as $t \rightarrow \infty$, any edge will either disappear completely or become a perfectly straight line that separates large regions of the image. The final image will contain only straight-line boundaries.

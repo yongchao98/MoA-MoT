@@ -1,0 +1,22 @@
+The design involves three main phases: a one-time Setup (using Distributed Key Generation), a two-round Signing Protocol, and a final Aggregation step.
+
+**1. Setup Phase (DKG):**
+*   All `n` parties run a DKG protocol (e.g., Pedersen DKG) to create a shared secret key `x` without a trusted party.
+*   **Output:** Each party `i` holds a secret share `x_i`, and a group public key `Y = g*x` is publicly known.
+
+**2. Signing Protocol (t signers, 2 rounds):**
+*   **Round 1: Commitment**
+    1.  Each of the `t` signers `i` generates two random nonces, `d_i` and `e_i`.
+    2.  They compute and broadcast the commitments `D_i = g*d_i` and `E_i = g*e_i`.
+*   **Round 2: Response**
+    1.  After receiving all commitments from Round 1, each signer computes a per-signer binding value `ρ_j` for every participant `j` by hashing the message and all Round 1 commitments. This prevents malleability.
+    2.  Each signer computes the group nonce commitment `R = Σ(D_j + ρ_j * E_j)`.
+    3.  Each signer computes the group challenge `c = H(Y, R, m)`.
+    4.  Each signer `i` computes their signature share `z_i = d_i + (e_i * ρ_i) + (c * λ_i * x_i)`, where `λ_i` is their Lagrange coefficient.
+    5.  Each signer sends `z_i` to a signature aggregator.
+
+**3. Signature Aggregation:**
+*   The aggregator collects the `t` signature shares `z_i` and sums them to create the final value `z = Σ z_i`.
+*   The final signature is the pair `(R, z)`.
+
+This design, based on the FROST protocol, is tightly secure because the two-part nonce commitment prevents an adversary from choosing their nonce share after observing others, which is the primary attack vector in simpler schemes. This allows for a tight security reduction to the Discrete Logarithm problem.

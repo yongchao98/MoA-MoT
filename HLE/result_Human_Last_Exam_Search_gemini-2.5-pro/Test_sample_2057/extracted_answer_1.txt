@@ -1,0 +1,20 @@
+The puzzle is solved by determining the exact arrangement of hats and the state of knowledge at each round.
+
+**Hat Distribution:**
+The initial "No" from everyone in the first round eliminates all hat configurations that would allow for an immediate deduction. An immediate deduction is possible if a person sees 5 black hats (knowing their own must be white) or 4 white hats (knowing their own must be black). The fact that no one could do this forces the arrangement of hats into a unique pattern to avoid these conditions. The only possible distribution is a sequence of **`B B W B W B W B W`** around the table. Any other arrangement would create a block of 5 black hats or 4 white hats, which would lead to a "Yes" in the first round.
+
+**Number of People Who Replied "Yes":**
+This is where the puzzle statement appears to contain a logical inconsistency. Based on the rules, the "Yes" answers should come in the second round, not the third. Here's why:
+
+1.  **After Round 1:** Every logician has deduced that the hat arrangement must be `B B W B W B W B W`. They now know the entire circle of hats, but not their specific seat.
+
+2.  **Deduction for Round 2:** Each person considers their own view.
+    *   Anyone who sees 3 black and 3 white hats cannot know their color. There are positions for both black and white hats that result in this view. These individuals would say "No" again.
+    *   Anyone who sees 4 black and 2 white hats can deduce their color. By checking the now-known `B B W B W B W B W` arrangement, they can see that the only positions that provide a view of 4 black and 2 white hats are themselves occupied by **black** hats. There are **three** such positions.
+
+Therefore, in the second round, these three people would know their hats are black and would be forced to answer "Yes." The puzzle states everyone says "No" in the second round and "Yes" in the third. This is impossible under the standard rules of such puzzles, as no new information is presented between the "No" of round two and the question in round three.
+
+Accepting this likely flaw in the puzzle's phrasing (that the "Yes" comes in Round 2), we can conclude:
+
+*   **Number of people who replied "Yes":** 3
+*   **Distribution of hats:** A repeating pattern of `B B W B W B W B W`.

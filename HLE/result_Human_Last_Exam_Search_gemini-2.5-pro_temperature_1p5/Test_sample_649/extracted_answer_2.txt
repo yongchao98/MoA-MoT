@@ -1,0 +1,22 @@
+The minimax risk \(R_n^* = \inf_{\hat{\theta}} \sup_{P \in \mathcal{P}} \mathbb{E}_{S \sim P^n} [\Phi(\rho(\hat{\theta}(S), \theta(P)))]\) is bounded from below as:
+\[
+R^*_n \ge \frac{1}{2} \Phi\left(\frac{\delta}{2}\right) \left(1 - d_{TV}\left(P_0^n, P\right)\right)
+\]
+where:
+- \(\delta = \min_{j \in \{1, \dots, N\}} \rho(\theta(P_0), \theta(P_j))\) is the minimum separation distance.
+- \(\Phi\) is the non-decreasing component of the loss function.
+- \(P_0^n\) is the n-fold product distribution for the "null" hypothesis.
+- \(P = \frac{1}{N} \sum_{j=1}^N P_j^n\) is the mixture distribution of the n-fold product distributions for the "alternative" hypotheses.
+- \(d_{TV}(Q, R) = \sup_{A} |Q(A) - R(A)|\) is the total variation distance between two probability distributions \(Q\) and \(R\).
+
+This bound is derived using Le Cam's method by reducing the minimax estimation problem to a Bayesian binary hypothesis testing problem between \(P_0^n\) and the mixture \(P\). The term \(1 - d_{TV}(P_0^n, P)\) represents the minimum overlap between the two distributions, which is twice the minimal Bayesian error probability for testing between them with equal priors.
+
+A more explicit, though potentially looser, bound can be obtained by relating the total variation distance to the Kullback-Leibler (KL) divergence using the Bretagnolle-Huber inequality, which leads to:
+\[
+R_n^* \ge \frac{1}{4} \Phi\left(\frac{\delta}{2}\right) \exp\left(-D_{KL}\left(\frac{1}{N}\sum_{j=1}^N P_j^n \, \middle\| \, P_0^n\right)\right)
+\]
+Using the convexity of the KL-divergence and the i.i.d. property of the data, this can be further bounded as:
+\[
+R_n^* \ge \frac{1}{4} \Phi\left(\frac{\delta}{2}\right) \exp\left( - \frac{n}{N} \sum_{j=1}^N D_{KL}(P_j || P_0) \right)
+\]
+This second form makes the dependence on the sample size \(n\) and the average KL divergence from \(P_0\) to the alternatives more apparent. However, the bound expressed in terms of the total variation distance is the most direct and generally tightest result from this method.

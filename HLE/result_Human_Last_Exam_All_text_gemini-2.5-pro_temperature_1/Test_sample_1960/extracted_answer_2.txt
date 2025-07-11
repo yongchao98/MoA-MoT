@@ -1,0 +1,6 @@
+**Function `f`:** Maps a natural number `w` to the linear logic formula:
+`f(w) = (A ⊗ B^{\otimes w}) ⊸ A`
+where `B^{\otimes w}` denotes the formula `B ⊗ B ⊗ ... ⊗ B` (`w` times). For `w=0`, `B^{\otimes 0} = 1`.
+
+**Formula `C`:** Depends on `m` and `b`. It is the `m`-fold tensor product of a formula representing a single bin of capacity `b`.
+`C(W, m, b) = ((A ⊗ B^{\otimes b}) ⊸ A)^{\otimes m}`

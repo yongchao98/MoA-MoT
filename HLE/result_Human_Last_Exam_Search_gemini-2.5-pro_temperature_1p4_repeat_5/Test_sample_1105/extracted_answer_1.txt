@@ -1,0 +1,15 @@
+For the spaceship to achieve a maximum distance (implying it does not escape to infinity), it must have started in a region where the gravitational pull was greater than the applied force and with an initial velocity that was not sufficient to overcome the "potential energy barrier". Under these conditions, the maximum distance $l_{max}$ is given by the following expression derived from the work-energy theorem:
+
+$l_{max} = \frac{K + \sqrt{K^2 - 4FGmM}}{2F}$
+
+where the term $K$ is a constant determined by the initial conditions:
+
+$K = F l_0 + \frac{G m M}{l_0} - \frac{1}{2} M v_0^2$
+
+Here is a summary of the variables:
+*   $m$: mass of the asteroid A
+*   $M$: mass of the spaceship B
+*   $l_0$: initial distance between A and B
+*   $v_0$: initial speed of the spaceship B
+*   $F$: additional constant force applied to B
+*   $G$: the universal gravitational constant

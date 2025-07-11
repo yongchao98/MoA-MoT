@@ -1,0 +1,3 @@
+The tightest lower bound on the minimax risk \( R_n^* \) that can be proven with the given information is:
+$R_n^* \ge \Phi(\frac{\delta}{2}) \left( 1 - \frac{\frac{n}{N} \sum_{j=1}^N D_{KL}(P_j^n \| P^n) + \log 2}{\log(N)} \right)$
+where \( P = \frac{1}{N} \sum_{j=1}^N P_j^n \) and \( D_{KL}(P_j^n \| P^n) \) is the Kullback-Leibler divergence between the n-product measures.

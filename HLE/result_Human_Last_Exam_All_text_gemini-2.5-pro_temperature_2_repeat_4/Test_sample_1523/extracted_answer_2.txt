@@ -1,0 +1,5 @@
+The inner product `(ϕ, Dϕ)` is given by the integral over Euclidean spacetime:
+`(ϕ, Dϕ) = ∫₀^β dτ ∫ d³x  ϕ(τ, **x**) [ -∂_τ² - ∇² + m² ] ϕ(τ, **x**)`
+where `β = 1/T` is the inverse temperature, `m` is the mass of the scalar field, `∂_τ` is the derivative with respect to imaginary time, and `∇` is the spatial gradient. By performing an integration by parts, this is equivalent to:
+`(ϕ, Dϕ) = ∫₀^β dτ ∫ d³x [ (∂_τϕ)² + (∇ϕ)² + m²ϕ² ]`
+which is equal to twice the free Euclidean action, `2S_E`.

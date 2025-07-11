@@ -1,0 +1,3 @@
+The general representation for the transformation on `x` has two forms, depending on the transformation parameter `a` (for time-translation). Let `ε` be the group parameter.
+Case 1 (a=0): `x* = x + ε * (b - (2*f / k1) * exp(k1*t))`
+Case 2 (a≠0): `x* = x + b*ε - (2*f / (a * k1**2)) * (exp(k1*(a*ε + t)) - exp(k1*t))`

@@ -1,0 +1,12 @@
+The formula is:
+$Z = \int_{\psi(\beta)=-\psi(0)} \mathcal{D}\psi^*(\tau) \mathcal{D}\psi(\tau) \, \exp\left( -S_E[\psi^*, \psi] \right)$
+where the Euclidean action $S_E$ is given by:
+$S_E[\psi^*, \psi] = \int_0^\beta d\tau \, \left[ \psi^*(\tau) \partial_\tau \psi(\tau) + H(\psi^*(\tau), \psi(\tau)) \right]$
+
+Here:
+*   $Z$ is the partition function.
+*   $\beta = 1/(k_B T)$ is the inverse temperature.
+*   $\psi(\tau)$ and $\psi^*(\tau)$ are independent Grassmann-valued fields.
+*   $\mathcal{D}\psi^*(\tau) \mathcal{D}\psi(\tau)$ is the functional integration measure over all field paths.
+*   The subscript on the integral sign, $\psi(\beta)=-\psi(0)$, signifies that the integration is restricted to paths that satisfy anti-periodic boundary conditions in imaginary time $\tau$.
+*   $H(\psi^*, \psi)$ is the classical analogue of the system's Hamiltonian, obtained by replacing the creation and annihilation operators with their corresponding Grassmann fields.

@@ -1,0 +1,13 @@
+The one-step transformation of the probability distribution is given by the equation:
+$P_i(t+1) = p * P_{i-1}(t) + q * P_{i+1}(t)$
+
+The transition probability matrix Â is a circulant matrix with the following structure:
+```
+     [0, q, 0, ..., p]
+     [p, 0, q, ..., 0]
+A =  [0, p, 0, ..., 0]
+     [...          ]
+     [q, 0, ..., p, 0]
+```
+
+The eigenvectors are of the form $e^{ijk_n}$ with corresponding eigenvalues $\lambda_n = p * e^{ik_n} + q * e^{-ik_n}$. The rate of relaxation, determined by the second-largest eigenvalue, is $cos(2\pi/N)$ for a symmetric random walk ($p=q=1/2$).

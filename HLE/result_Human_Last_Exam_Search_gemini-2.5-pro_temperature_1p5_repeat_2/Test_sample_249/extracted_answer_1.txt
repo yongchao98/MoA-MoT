@@ -1,0 +1,4 @@
+The minimum possible value for the diameter of G is given by the following piecewise function of $n$ and $m$:
+1. If $m = n+1$, the diameter is 2.
+2. If $n$ is a multiple of $m$, let $k = n/m$. The diameter is $2k+1$.
+3. Otherwise, the diameter is $2k+2$, where $k = \lfloor(n-1)/m\rfloor$.

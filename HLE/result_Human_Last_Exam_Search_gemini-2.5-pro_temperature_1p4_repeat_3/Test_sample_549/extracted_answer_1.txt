@@ -1,0 +1,9 @@
+The quantum correction to the conductivity for an electron in a bulk semiconductor is primarily due to the weak localization effect. This phenomenon arises from the constructive quantum interference of time-reversed, closed-loop electron paths, which enhances the probability of the electron returning to its origin. This increased "localization" hinders charge transport and reduces the overall conductivity.
+
+The magnitude of this correction, Δσ, can be evaluated using the following formula for a 3-dimensional system:
+
+**Δσ = - (e² / (2π²ħ)) * (1/l_e - 1/l_φ)**
+
+Here, `e` is the electron charge, `ħ` is the reduced Planck constant, `l_e` is the elastic mean free path (the average distance between impurity scattering events), and `l_φ` is the phase coherence length. The phase coherence length is the crucial scale, representing the maximum size of an interfering loop before an inelastic scattering event destroys the electron's phase memory.
+
+The electron's wavelength is implicitly crucial, as the diffusive regime where this model applies requires the mean free path to be much larger than the wavelength (`l_e >> λ`). The correction is negative because `l_φ > l_e`, signifying a reduction in conductivity. Since the phase coherence length `l_φ` increases as temperature decreases, this quantum correction becomes more pronounced at lower temperatures, leading to a characteristic rise in resistivity as the temperature is lowered.

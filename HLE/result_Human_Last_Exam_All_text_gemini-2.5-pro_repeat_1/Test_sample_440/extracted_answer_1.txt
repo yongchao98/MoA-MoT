@@ -1,0 +1,13 @@
+The density profile \(\rho(z)\) of the gas mixture is given by:
+$$ \rho(z) = M_A c_A(z) + M_B c_B(z) $$
+where \(c_A(z)\) and \(c_B(z)\) are the molar concentration profiles (in \(\text{mol/m}^3\)) for Gas A and Gas B, respectively. These profiles are implicitly defined as the solutions to the following system of coupled equations, which ensure the constancy of the chemical potential for each species throughout the container height \(z \in [0, H]\):
+
+**1. Equilibrium Equations:**
+$$ RT \ln\left(\frac{c_A(z)}{1 - c_A(z)b_{AA} - c_B(z)b_{BB}}\right) + \frac{(c_A(z)+c_B(z))RT b_{AA}}{1 - c_A(z)b_{AA} - c_B(z)b_{BB}} - 2(a_{AA}c_A(z) + a_{AB}c_B(z)) + M_A g z = \text{const}_A $$
+$$ RT \ln\left(\frac{c_B(z)}{1 - c_A(z)b_{AA} - c_B(z)b_{BB}}\right) + \frac{(c_A(z)+c_B(z))RT b_{BB}}{1 - c_A(z)b_{AA} - c_B(z)b_{BB}} - 2(a_{AB}c_A(z) + a_{BB}c_B(z)) + M_B g z = \text{const}_B $$
+
+**2. Normalization Conditions (to determine the constants):**
+$$ \int_0^H c_A(z) A \, dz = N_A / N_{Avogadro} $$
+$$ \int_0^H c_B(z) A \, dz = N_B / N_{Avogadro} $$
+
+Here, all parameters (\(R, T, g, A, H, N_A, N_B, M_A, M_B, a_{ij}, b_{ii}\)) are known values provided in the problem statement. This system of equations completely defines the density profiles.

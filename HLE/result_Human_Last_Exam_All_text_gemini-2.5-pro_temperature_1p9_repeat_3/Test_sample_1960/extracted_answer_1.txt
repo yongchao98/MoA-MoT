@@ -1,0 +1,13 @@
+The function `f` and the formula `C` are defined as follows:
+
+Let `\bot` be the multiplicative false constant in linear logic. We define exponentiation with `\otimes` such that `A^{\otimes n} = \underbrace{A \otimes A \otimes \dots \otimes A}_{n \text{ times}}` for `n > 0`, and `A^{\otimes 0} = 1` (the multiplicative true constant).
+
+1.  The function `f` maps a natural number `w` to the linear logic formula:
+    $$
+    f(w) = \bot^{\otimes w}
+    $$
+
+2.  The linear formula `C = C(W, m, b)` is:
+    $$
+    C = (\bot^{\otimes b})^{\otimes m}
+    $$

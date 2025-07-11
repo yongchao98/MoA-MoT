@@ -1,0 +1,50 @@
+
+```python
+import math
+
+def find_sphere_distances():
+    """
+    Calculates the possible distances between two hard spheres on a 2D plane for r <= 3.
+
+    The calculation considers the two primary 2D packing arrangements: square and hexagonal lattices.
+    For a sphere at the origin, the distance 'r' to another sphere at lattice coordinates (m,n) is calculated.
+    - Square lattice: r^2 = m^2 + n^2
+    - Hexagonal lattice: r^2 = m^2 + n^2 + m*n
+
+    All unique distances r <= 3 are collected, sorted, and printed.
+    """
+
+    # Use a set to store unique distances to avoid duplicates
+    distances = set()
+    
+    # The maximum value for m or n to consider. If m or n is > 3, r will be > 3.
+    max_coord = 3
+
+    # Loop through possible lattice vector integer coefficients (m, n)
+    for m in range(max_coord + 1):
+        for n in range(max_coord + 1):
+            # Skip the origin particle
+            if m == 0 and n == 0:
+                continue
+
+            # Case 1: Square lattice arrangement
+            dist_sq_square = m**2 + n**2
+            if dist_sq_square <= max_coord**2:
+                distances.add(math.sqrt(dist_sq_square))
+
+            # Case 2: Hexagonal lattice arrangement
+            dist_sq_hex = m**2 + m * n + n**2
+            if dist_sq_hex <= max_coord**2:
+                distances.add(math.sqrt(dist_sq_hex))
+
+    # Convert the set to a list and sort it in ascending order
+    sorted_distances = sorted(list(distances))
+
+    # Print the results as requested
+    print("The set of possible normalized distances (r) for r <= 3 are:")
+    for r_val in sorted_distances:
+        print(f"r = {r_val:.2f}")
+
+if __name__ == "__main__":
+    find_sphere_distances()
+```

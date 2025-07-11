@@ -1,0 +1,6 @@
+The proposed filtering strategy is to use the command-line utility `awk` to parse the differential expression results file. First, determine the file's delimiter (e.g., tab), the column number containing the log2FoldChange values, and a suitable log2FC threshold (e.g., -8) by inspecting an MA or volcano plot for a cluster of contaminating genes. Then, execute the following command, which preserves the header row and removes any gene with a log2FoldChange less than or equal to the chosen threshold.
+
+For a tab-separated file with log2FC in column 3 and a threshold of -8:
+`awk 'BEGIN {FS="\t"} NR==1 || $3 > -8' input_file.tsv > filtered_file.tsv`
+
+This command effectively removes genes whose expression is disproportionately high in the contaminated CAR T samples compared to the cleaner CAR-IL15 T samples, thus cleaning the dataset for downstream analysis.

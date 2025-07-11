@@ -1,0 +1,5 @@
+The tightest lower bound on the minimax risk \( R_n^* \) that can be proven under the given setup is:
+\[
+R_n^* \ge \frac{\Phi(\delta/2)}{2} \left(1 - d_{TV}\left(P_0^n, \frac{1}{N} \sum_{j=1}^N P_j^n\right)\right)
+\]
+where \( d_{TV}(P, Q) = \sup_A |P(A) - Q(A)| \) is the total variation distance, and \( P_j^n \) is the \( n \)-fold product measure corresponding to the distribution \( P_j \).

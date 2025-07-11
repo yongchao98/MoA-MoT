@@ -1,0 +1,26 @@
+Let $N = |W|$ be the number of elements in the set $W$.
+For any formula $F$ and any natural number $k > 0$, we define $F^k$ as the formula $F \otimes F \otimes \dots \otimes F$ ($k$ times). If $k=0$, we define $F^0 = 1$.
+
+We define two formulas, $P$ and $Q$, to serve as distinct "atomic" resources, built from the allowed constants and connectives:
+*   Let $P = \perp \multimap 1$.
+*   Let $Q = \perp$.
+
+These are chosen because they are not provable from an empty context, and neither is provable from the other in multiplicative linear logic, which prevents them from interfering with the resource counting scheme.
+
+The function $f$ mapping a natural number $w$ to a linear logic formula is defined as:
+$$
+f(w) = P \multimap (Q^w \otimes P)
+$$
+Substituting our chosen $P$ and $Q$:
+$$
+f(w) = (\perp \multimap 1) \multimap (\perp^w \otimes (\perp \multimap 1))
+$$
+
+The linear formula $C(W, m, b)$ is defined as:
+$$
+C(W, m, b) = P^N \multimap ((Q^b)^m \otimes P^N)
+$$
+Substituting our chosen $P$ and $Q$ and simplifying $(Q^b)^m = (\perp^b)^m = \perp^{mb}$:
+$$
+C(W, m, b) = (\perp \multimap 1)^N \multimap (\perp^{mb} \otimes (\perp \multimap 1)^N)
+$$

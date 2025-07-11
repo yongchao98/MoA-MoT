@@ -1,0 +1,4 @@
+The optimal feedback adjustment factor \(b\) is given by \(b = \text{median}(-\sqrt{P_2}, \sqrt{P_2}, -\alpha P_1)\), which can be written as:
+\[
+b = \begin{cases} -\alpha P_1 & \text{if } \alpha^2 P_1^2 \le P_2 \\ -\text{sgn}(\alpha)\sqrt{P_2} & \text{if } \alpha^2 P_1^2 > P_2 \end{cases}
+\]

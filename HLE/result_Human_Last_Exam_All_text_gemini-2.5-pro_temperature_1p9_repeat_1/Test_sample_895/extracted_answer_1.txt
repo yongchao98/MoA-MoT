@@ -1,0 +1,1 @@
+max_{i \in \{1, \ldots, n\}} \begin{cases} a_i & \text{if } a_i + a_{i+1} \cos\phi \le 0 \\ a_{i+1} & \text{if } a_{i+1} + a_i \cos\phi \le 0 \\ \frac{a_i a_{i+1} \sin\phi}{\sqrt{a_i^2 + a_{i+1}^2 + 2 a_i a_{i+1} \cos \phi }} & \text{otherwise} \end{cases}

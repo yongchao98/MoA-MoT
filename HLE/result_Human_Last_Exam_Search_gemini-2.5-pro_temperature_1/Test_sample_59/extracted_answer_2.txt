@@ -1,0 +1,4 @@
+The probability to draw a link `y_{ij}` between nodes `i` and `j` in a random graph of size `N` that is jointly exchangeable is given by the expectation of the graphon function `W(u, v)` over the uniform measure on `[0,1] x [0,1]` and over the random measure `F` of the graphon itself. Mathematically, this is expressed as:
+P(y_{ij} = 1) = E_F[∫₀¹ ∫₀¹ W(u, v) du dv] = ∫ (∫₀¹ ∫₀¹ W(u, v) du dv) dF(W)
+If the graphon `W` is considered fixed, the probability is simply the integral of `W` over the unit square:
+P(y_{ij} = 1 | W) = ∫₀¹ ∫₀¹ W(u, v) du dv

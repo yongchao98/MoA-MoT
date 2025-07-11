@@ -1,0 +1,25 @@
+An FGH-tripled fixed point for the functions F: X × Y × Z → X, G: Y × X × Y → Y, and H: Z × Y × X → Z is a point (x, y, z) ∈ X × Y × Z such that F(x, y, z) = x, G(y, x, y) = y, and H(z, y, x) = z. The conditions for its existence and uniqueness are established in the framework of partially ordered metric spaces and are a generalization of the tripled fixed point concept.
+
+The primary conditions are:
+
+1.  **Partially Ordered Complete Metric Spaces**: The spaces (X, d<sub>X</sub>, ≤<sub>X</sub>), (Y, d<sub>Y</sub>, ≤<sub>Y</sub>), and (Z, d<sub>Z</sub>, ≤<sub>Z</sub>) must be partially ordered and complete as metric spaces. This provides the necessary structure for both ordering and convergence.
+
+2.  **Mixed Monotone Property**: The functions F, G, and H must adhere to a mixed monotone property with respect to the partial orders. This means that each function is non-decreasing in some arguments and non-increasing in others. Specifically:
+    *   F is non-decreasing in its first (X) and third (Z) arguments and non-increasing in its second (Y) argument.
+    *   G is non-decreasing in its first (Y) and third (Y) arguments and non-increasing in its second (X) argument.
+    *   H is non-decreasing in its first (Z) and third (X) arguments and non-increasing in its second (Y) argument.
+
+3.  **Contractive Condition**: The functions must satisfy a contractive condition that ensures the iterative application of the functions leads to a convergent sequence. For all x, u ∈ X, y, v ∈ Y, and z, w ∈ Z for which x ≥ u, y ≤ v, and z ≥ w, a typical contractive condition is of the form:
+    d<sub>X</sub>(F(x, y, z), F(u, v, w)) + d<sub>Y</sub>(G(y, x, y), G(v, u, v)) + d<sub>Z</sub>(H(z, y, x), H(w, v, u)) ≤ k * (d<sub>X</sub>(x, u) + d<sub>Y</sub>(y, v) + d<sub>Z</sub>(z, w))
+    where `k` is a constant in [0, 1). More complex inequalities may also be used.
+
+4.  **Existence of an Initial Point**: There must exist a set of initial points (x<sub>0</sub>, y<sub>0</sub>, z<sub>0</sub>) in X × Y × Z that satisfy the following relations:
+    *   x<sub>0</sub> ≤<sub>X</sub> F(x<sub>0</sub>, y<sub>0</sub>, z<sub>0</sub>)
+    *   y<sub>0</sub> ≥<sub>Y</sub> G(y<sub>0</sub>, x<sub>0</sub>, y<sub>0</sub>)
+    *   z<sub>0</sub> ≤<sub>Z</sub> H(z<sub>0</sub>, y<sub>0</sub>, x<sub>0</sub>)
+    This condition allows for the construction of convergent iterative sequences.
+
+5.  **Continuity or a Regularity Condition**: The functions F, G, and H must either be continuous, or the underlying spaces must satisfy a regularity condition. This condition ensures that the limit of a convergent monotone sequence is comparable to the terms of the sequence, which is crucial if the functions are not continuous.
+
+**For Uniqueness**:
+To guarantee that the FGH-tripled fixed point is unique, an additional condition is generally imposed: for any two tripled points in the space, there must exist a third tripled point that is comparable to both.

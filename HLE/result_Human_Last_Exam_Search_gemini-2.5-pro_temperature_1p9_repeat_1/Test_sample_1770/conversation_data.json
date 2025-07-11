@@ -1,0 +1,10 @@
+{
+  "question": "You want to engineer Corynebacterium glutamicum to produce p-coumaric acid so you introduce the appropriate biosynthetic genes. However, the produced coumarate is rapidly degraded. What gene should you knock out to prevent degradation of the desired product?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "To prevent the degradation of p-coumaric acid in *Corynebacterium glutamicum*, you should knock out a gene within the **phd gene cluster**.\n\nThis cluster is responsible for the degradation of phenylpropanoids, including p-coumaric acid, through a CoA-dependent, β-oxidative deacetylation pathway. Research has shown that deleting genes within this cluster, such as *phdA, phdB, phdC*, or *phdE*, eliminates the ability of *C. glutamicum* to grow on phenylpropanoid substrates, thereby preventing the degradation of the desired product.\n\nMetabolic engineering studies aimed at producing p-coumaric acid in *C. glutamicum* have successfully increased product accumulation by inactivating this phenylpropanoid degradation pathway. For instance, the deletion of the *phd* gene cluster was a key step in developing a platform strain for the production of various plant polyphenols. One study specifically mentioned the effect of a *phdA*-deletion on p-coumaric acid synthesis.\n\n<<<phd gene cluster>>>"
+  ],
+  "user_prompt_list": [
+    "You want to engineer Corynebacterium glutamicum to produce p-coumaric acid so you introduce the appropriate biosynthetic genes. However, the produced coumarate is rapidly degraded. What gene should you knock out to prevent degradation of the desired product?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,4 @@
+The tightest lower bound on the minimax risk \(R_n^*\) that can be proven with the given information is:
+\[ R_n^* \ge \frac{\Phi(\delta/2)}{2} \left( 1 - \min_{k \in \{1, \dots, N\}} d_{TV}(P_0^n, P_k^n) \right) \]
+Expressed in terms of the Kullback-Leibler (KL) divergence, by applying the inequality \(d_{TV}(P,Q) \le \sqrt{1 - e^{-D_{KL}(P,Q)}}\), the bound is:
+\[ R_n^* \ge \frac{\Phi(\delta/2)}{2} \left( 1 - \sqrt{1 - e^{-n \min_{k \in \{1, \dots, N\}} D_{KL}(P_0 || P_k)}} \right) \]

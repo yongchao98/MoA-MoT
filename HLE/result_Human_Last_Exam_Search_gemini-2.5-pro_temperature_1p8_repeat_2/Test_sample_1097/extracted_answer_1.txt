@@ -1,0 +1,10 @@
+The set M you should define is the Banach space of continuous functions on the interval that are zero at the boundaries, equipped with the supremum norm.
+
+Mathematically, this is expressed as:
+**M = (C₀, ||·||_∞)**
+
+where:
+*   **C₀ = {u ∈ C | u(0) = u(1) = 0}**. `C[0,1]` is the space of all continuous functions on the interval `[0, 1]`.
+*   **||·||_∞** is the supremum (or maximum) norm, defined as **||u||_∞ = sup_{x ∈} |u(x)|**.
+
+This set `M` is a closed subset of the Banach space `C[0, 1]` and is therefore itself a complete metric space, which is a necessary condition for the application of the Banach fixed-point theorem. The proof then continues by showing that the operator `T` is a contraction mapping on a suitable closed subset of `M`.

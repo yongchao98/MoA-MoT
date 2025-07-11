@@ -1,0 +1,10 @@
+{
+  "question": "The following nucleotide sequence is taken from the middle of an ORF. Find the frame and translate into protein sequence using the one-letter code for amino acids:\nggacattgttgttagcgaagacttgaatggaacggtgaagttttcaagctctttaccctaccccaataatcttaacagtgtcctggctgagcgactggagaagtggc\n\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "An open reading frame (ORF) is a continuous stretch of codons that does not contain a stop codon. Since the provided nucleotide sequence is from the middle of an ORF, the correct reading frame will be the one that is free of stop codons (TAA, TAG, TGA).\n\nThe sequence can be translated in three possible reading frames:\n\n*   **Frame 1 (starting from the 1st base):** gga-cat-tgt-tgt-**tag**-... This frame contains the stop codon TAG (\"amber\"). Therefore, it is not the correct reading frame.\n*   **Frame 2 (starting from the 2nd base):** gac-att-gtt-gtt-... This frame is free of stop codons.\n*   **Frame 3 (starting from the 3rd base):** aca-ttg-ttg-tta-gcg-aag-act-**tga**-... This frame contains the stop codon TGA (\"opal\"). Therefore, it is not the correct reading frame.\n\nFrame 2 is the only open reading frame. Translating the sequence in this frame yields the following protein sequence:\n\n<<<DIVVSCDLNGTVKFSSSLPYPNNLNSVLAERLEKW>>>"
+  ],
+  "user_prompt_list": [
+    "The following nucleotide sequence is taken from the middle of an ORF. Find the frame and translate into protein sequence using the one-letter code for amino acids:\nggacattgttgttagcgaagacttgaatggaacggtgaagttttcaagctctttaccctaccccaataatcttaacagtgtcctggctgagcgactggagaagtggc\n\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

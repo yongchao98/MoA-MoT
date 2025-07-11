@@ -1,0 +1,11 @@
+The function $f$ and the formula $C$ are defined as follows:
+
+1.  First, define a sequence of formulas $(P_k)_{k=0, \dots, b}$ to represent numeric values:
+    *   $P_0 = \bot \multimap \bot$
+    *   $P_{k+1} = P_k \multimap P_k$ for $k = 0, \dots, b-1$.
+
+2.  The function $f: \mathbb{N} \to \text{Formula}$ is defined as:
+    $f(w) = \bigotimes_{i=0}^{b-w} (P_i \multimap P_{i+w})$
+
+3.  The formula $C = C(W, m, b)$ is defined as:
+    $C(W, m, b) = \underbrace{(P_0 \multimap P_b) \otimes (P_0 \multimap P_b) \otimes \dots \otimes (P_0 \multimap P_b)}_{m \text{ times}}$

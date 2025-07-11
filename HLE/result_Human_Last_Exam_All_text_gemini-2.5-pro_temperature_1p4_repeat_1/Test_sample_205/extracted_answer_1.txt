@@ -1,0 +1,48 @@
+174[
+int main() {
+    // A 158-digit array is needed to store 100!
+    digit result[158];
+
+    // Variables for loops and calculation. Types are chosen to be the
+    // smallest possible for the range of values they will hold.
+    char num_digits;        // Current number of digits in result
+    char i, j;              // Loop counters
+    char carry;             // Carry-over for multiplication
+    unsigned int product;   // Intermediate product
+
+    // Initialize result to 1.
+    // Set all digits to 0 first, then set the first digit to 1.
+    for (j = 0; j < 158; j++) {
+        result[j] = 0;
+    }
+    result[0] = 1;
+    num_digits = 1;
+
+    // Multiply the result by i for i from 2 to 100.
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        for (j = 0; j < num_digits; j++) {
+            product = result[j] * i + carry;
+            result[j] = product % 10;
+            carry = product / 10;
+        }
+
+        // If there's a remaining carry, append it as new digits.
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            carry = carry / 10;
+            num_digits++;
+        }
+    }
+
+    // Print the final number (in reverse order of storage).
+    printf("100! = ");
+    j = num_digits;
+    while (j-- > 0) {
+        printf("%d", result[j]);
+    }
+    printf("\n");
+
+    return 0;
+}
+]

@@ -1,0 +1,24 @@
+The equation for the absorption cross-section is derived from first-order time-dependent perturbation theory. It relates the absorption probability to the square of the transition dipole moment between the initial ground state and the final excited states of the molecular chain.
+
+**a) The interaction between molecules can be neglected.**
+
+In this case, the molecules are independent. The total absorption cross-section of the chain is the sum of the cross-sections of the N individual molecules.
+
+The equation is:
+$\sigma_a(\omega) = N \sum_{\alpha} \sigma_{mol}^{(\alpha)}(\omega) = N \left[ \frac{\pi \omega}{n_r c \epsilon_0} \sum_{\alpha} |\mathbf{\mu}_\alpha \cdot \mathbf{e}|^2 \mathcal{L}(\hbar\omega - \hbar\omega_\alpha) \right]$
+
+Here:
+*   $N$ is the number of molecules in the chain.
+*   $\sigma_{mol}^{(\alpha)}(\omega)$ is the absorption cross-section of a single molecule for an electronic transition $\alpha$.
+*   $\omega$ is the photon frequency.
+*   $n_r, c, \epsilon_0$ are physical constants (refractive index, speed of light, vacuum permittivity).
+*   $\mathbf{\mu}_\alpha$ is the transition dipole moment of a single molecule for transition $\alpha$.
+*   $\mathbf{e}$ is the light polarization vector.
+*   $\hbar\omega_\alpha$ is the energy of the molecular transition $\alpha$.
+*   $\mathcal{L}$ is a normalized lineshape function (e.g., a Lorentzian or Gaussian) describing the spectral line broadening.
+
+The spectrum consists of peaks at the individual molecular transition frequencies, with the total intensity scaled by N.
+
+**b) The interaction between near-neighbors should be considered.**
+
+Intermo

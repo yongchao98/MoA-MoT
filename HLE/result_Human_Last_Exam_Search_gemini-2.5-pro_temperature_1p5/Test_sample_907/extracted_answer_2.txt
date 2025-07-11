@@ -1,0 +1,31 @@
+### a) The interaction between molecules can be neglected.
+
+The absorption cross-section $\sigma^{(a)}(\omega)$ is the incoherent sum of the contributions from each of the N independent molecules. The equation is:
+
+$ \sigma^{(a)}(\omega) = C \cdot \omega \cdot N \sum_{i}^{\text{occ}} \sum_{f}^{\text{unocc}} |\vec{\mu}_{fi} \cdot \vec{\epsilon}|^2 \cdot G(\hbar\omega - \Delta E_{fi}) $
+
+**Where:**
+*   $C = \frac{\pi}{c n_r \epsilon_0 \hbar}$ is a constant comprising physical constants.
+*   $\omega$ is the angular frequency of the absorbed light.
+*   $N$ is the total number of molecules in the chain.
+*   $\sum_{i}^{\text{occ}} \sum_{f}^{\text{unocc}}$ denotes the sum over all possible electronic transitions from occupied initial states (below the Fermi level) to unoccupied final states.
+*   $\vec{\mu}_{fi} = \langle \phi_f | \hat{\vec{\mu}} | \phi_i \rangle$ is the electric dipole transition moment for the transition $i \to f$ within a single molecule.
+*   $\vec{\epsilon}$ is the light polarization vector.
+*   $\Delta E_{fi} = E_f - E_i$ is the energy difference between the final and initial molecular orbitals.
+*   $G(\hbar\omega - \Delta E_{fi})$ is a Gaussian lineshape function, whose shape is determined by the spectrum of the ultrashort laser pulse, centered at the transition energy $\Delta E_{fi}$.
+
+### b) The interaction between near-neighbors should be considered.
+
+When near-neighbor interactions are included, the excitation delocalizes into collective exciton states. For a one-dimensional chain, this leads to the formation of an exciton band for each molecular transition. Due to optical selection rules, absorption is typically dominated by the transition to the in-phase exciton state (wavevector $k=0$), which concentrates the oscillator strength of the entire chain.
+
+The absorption cross-section $\sigma^{(b)}(\omega)$ is given by:
+
+$ \sigma^{(b)}(\omega) = C \cdot \omega \cdot N \sum_{i}^{\text{occ}} \sum_{f}^{\text{unocc}} |\vec{\mu}_{fi} \cdot \vec{\epsilon}|^2 \cdot G(\hbar\omega - E_{\text{exciton}}^{(fi)}) $
+
+**Where:**
+*   $C$, $\omega$, $N$, $\vec{\mu}_{fi}$, and $\vec{\epsilon}$ are the same as in case (a).
+*   The key difference lies in the energy of the final state, which is now the energy of the optically active ($k=0$) exciton, $E_{\text{exciton}}^{(fi)}$:
+    $ E_{\text{exciton}}^{(fi)} = \Delta E_{fi} + \Delta D_{fi} + 2V_{fi} $
+    *   $\Delta D_{fi}$ is the "crystal shift," representing the change in energy of the excited molecule due to its interaction with the surrounding ground-state molecules.
+    *   $V_{fi}$ is the near-neighbor coupling integral, representing the strength of the excitation transfer between adjacent molecules for the specific transition $i \to f$.
+*   The Gaussian lineshape $G$ is now centered at this new, shifted exciton energy. The absorption peaks are shifted by an amount that depends on the strength and sign of the intermolecular coupling V.

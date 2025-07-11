@@ -1,0 +1,5 @@
+The tightest lower bound on the minimax risk \(R_n^*\) that can be proved using the specified construction is given by:
+\[
+R_n^* \ge \frac{1}{2} \Phi\left(\frac{\delta}{2}\right) \left(1 - d_{TV}\left(P_0^n, P\right)\right)
+\]
+where \(d_{TV}(Q, R) = \sup_{A} |Q(A) - R(A)|\) is the total variation distance between two probability measures \(Q\) and \(R\), and \(P\) is the mixture distribution \(P = \frac{1}{N} \sum_{j=1}^N P_j^n\).

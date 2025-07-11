@@ -1,0 +1,13 @@
+def liu_ban_evaluation():
+    """
+    This function stores and prints Liu Ban's evaluation of Zhang Ji's poetry.
+    The information is sourced from Liu Ban's (刘攽) "Zhongshan Shihua" (中山诗话).
+    """
+    answer_text = """根据北宋学者刘攽在其著作《中山诗话》中的记载，他对唐代诗人张籍的七言诗的评价原文是：
+
+“张籍七言诗，时有佳句，至于律体，则非其所长。”
+
+这段话的含义是：刘攽认为张籍的七言诗中，偶尔能看到一些写的很好的句子（“时有佳句”），但就整体的格律诗（“律体”）创作而言，这并不是张籍所擅长的领域（“非其所长”）。这是一种带有保留的肯定，承认其有佳句，但指出其在格律工整方面并非顶级水平。"""
+    print(answer_text)
+
+liu_ban_evaluation()

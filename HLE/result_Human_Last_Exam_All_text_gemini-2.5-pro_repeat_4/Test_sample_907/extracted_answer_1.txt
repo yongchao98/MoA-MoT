@@ -1,0 +1,6 @@
+a) For non-interacting molecules, the absorption cross-section is the sum of the contributions from each of the $N$ molecules. The states are localized molecular orbitals $|\phi_a\rangle$ and $|\phi_b\rangle$ with discrete energies $\epsilon_a$ and $\epsilon_b$. The equation is:
+$\sigma(\omega) = N \frac{\sqrt{\pi}\omega\tau}{\hbar c\epsilon_0} \sum_{\epsilon_a < E_F} \sum_{\epsilon_b > E_F} |\langle \phi_b | \vec{d}\cdot\vec{\epsilon} | \phi_a \rangle|^2 \exp\left[ - \left( \frac{\epsilon_b - \epsilon_a}{\hbar} - \omega \right)^2 \tau^2 \right]$
+
+b) When near-neighbor interactions are included, the electronic states become delocalized Bloch states, characterized by a band index (e.g., $v$ for valence, $c$ for conduction) and a wavevector $k$. The energies form bands, $E_{v,k}$ and $E_{c,k'}$. The equation is:
+$\sigma(\omega) = \frac{\sqrt{\pi}\omega\tau}{\hbar c\epsilon_0} \sum_{k \in \text{VB}} \sum_{k' \in \text{CB}} |\langle c,k' | \vec{d}\cdot\vec{\epsilon} | v,k \rangle|^2 \exp\left[ - \left( \frac{E_{c,k'} - E_{v,k}}{\hbar} - \omega \right)^2 \tau^2 \right]$
+In these equations, $\tau$ is the pulse duration, $E_F$ is the Fermi level, $\vec{d}$ is the electric dipole operator, and $\vec{\epsilon}$ is the laser polarization vector.

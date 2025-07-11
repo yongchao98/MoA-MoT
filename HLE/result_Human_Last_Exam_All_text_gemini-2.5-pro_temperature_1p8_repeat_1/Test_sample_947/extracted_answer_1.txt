@@ -1,0 +1,5 @@
+The magnetic field vector `H(x,z)` is given by its components `H_x(x,z)` and `H_z(x,z)`:
+`H_x(x,z) = -\frac{2\pi J_c d}{D^2}(w^2 - x_p^2) \sin\left(\frac{2\pi z}{D}\right) \exp\left(-\frac{2\pi|x|}{D}\right)`
+`H_z(x,z) = H_a + \frac{2\pi J_c d}{D^2}(w^2 - x_p^2) \cos\left(\frac{2\pi z}{D}\right) \exp\left(-\frac{2\pi|x|}{D}\right)`
+where `x_p` is the half-width of the unpenetrated region, given by the relation:
+`x_p = \frac{D}{\pi} \text{arcsinh}\left[\sinh\left(\frac{\pi w}{D}\right) \exp\left(-\frac{\pi H_a}{J_c d}\right)\right]`

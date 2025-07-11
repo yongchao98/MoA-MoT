@@ -1,0 +1,9 @@
+The equation for the absorption cross-section is:
+$\sigma_a(\omega) = \frac{2\sqrt{\pi}\tau\omega N}{c\epsilon_0\hbar} |\vec{\mu}_{eg} \cdot \hat{\epsilon}|^2 \exp(-\tau^2(\omega_0 - \omega)^2)$
+
+This equation shows a single absorption peak centered at the single-molecule transition frequency $\omega_0$. The shape of the peak is a Gaussian with a width inversely proportional to the pulse duration $\tau$, and its total strength is proportional to the number of molecules $N$.
+
+The equation for the absorption cross-section is:
+$\sigma_b(\omega) = \frac{2\sqrt{\pi}\tau\omega N}{c\epsilon_0\hbar} |\vec{\mu}_{eg} \cdot \hat{\epsilon}|^2 \exp\left[-\tau^2\left(\left(\omega_0 + \frac{2J}{\hbar}\right) - \omega\right)^2\right]$
+
+Compared to the non-interacting case, the absorption peak is shifted by an amount $2J/\hbar$. If the coupling $J$ is positive (e.g., H-aggregates), the peak is blue-shifted. If $J$ is negative (e.g., J-aggregates), the peak is red-shifted. The absorption peak is still Gaussian-shaped due to the pulse, but its position reveals information about the collective, coherent interactions within the molecular chain. The peak intensity is proportional to $N$, a phenomenon known as superradiance.

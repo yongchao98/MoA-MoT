@@ -1,0 +1,5 @@
+The most common reason for this phenomenon is the presence of an **active detuning circuit** in the MRI coil. This circuit is a safety feature designed to make the coil non-resonant during the MRI scanner's high-power transmit pulse. It works using electronic switches (like PIN diodes) that are controlled by a DC voltage from the MRI scanner.
+
+When the coil is on a test bench and disconnected from the scanner, it does not receive this DC control voltage. By design, the coil defaults to its "safe" state, where the detuning circuit is active and the coil's resonance is intentionally destroyed or "spoiled". Therefore, your VNA probe correctly shows no resonance.
+
+The coil is still "completely functional" because once it is plugged into the scanner, the system provides the correct DC voltage during the signal acquisition phase, which deactivates the detuning circuit and allows the coil to become a highly resonant detector. You are essentially testing the coil while its primary safety feature is engaged.

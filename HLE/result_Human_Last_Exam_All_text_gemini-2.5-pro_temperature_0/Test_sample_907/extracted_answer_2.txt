@@ -1,0 +1,10 @@
+The equation for the absorption cross-section $\sigma(\omega)$ is derived using first-order time-dependent perturbation theory. Let $N$ be the number of molecules, $\omega$ the light frequency, $\vec{d}_{eg}$ the monomer transition dipole moment, $\hbar\omega_{eg}$ the monomer transition energy, and $\mathcal{L}$ a lineshape function determined by the ultrashort pulse and other broadening effects.
+
+a) When the interaction between molecules can be neglected:
+The total cross-section is the sum of the cross-sections of the $N$ independent molecules. All molecules absorb at the same frequency.
+$\sigma_a(\omega) = N \frac{\pi \omega}{\epsilon_0 c} |\vec{d}_{eg} \cdot \hat{\epsilon}|^2 \mathcal{L}(\hbar\omega - \hbar\omega_{eg})$
+
+b) When the interaction between near-neighbors is considered (Frenkel exciton model):
+The molecular excitations couple to form delocalized exciton states. A selection rule dictates that only the $k=0$ exciton state is optically active. This concentrates the entire oscillator strength of the chain into a single transition.
+$\sigma_b(\omega) = N \frac{\pi \omega}{\epsilon_0 c} |\vec{d}_{eg} \cdot \hat{\epsilon}|^2 \mathcal{L}(\hbar\omega - (\hbar\omega_{eg} + D + 2J))$
+Here, $J$ is the nearest-neighbor coupling energy, and $D$ is the shift in site energy due to the molecular environment. The absorption peak is shifted by the amount $D+2J$ relative to the monomer transition.

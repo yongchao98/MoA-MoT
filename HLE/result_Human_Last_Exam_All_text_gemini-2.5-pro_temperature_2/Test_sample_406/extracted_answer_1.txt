@@ -1,0 +1,7 @@
+The conditions for the existence of an FGH-tripled fixed point `(x, y, z)` satisfying `x = F(x, y, z)`, `y = G(y, z, x)`, and `z = H(z, x, y)` are:
+1.  **Space Requirement:** The spaces `X`, `Y`, and `Z` must be complete metric spaces, with respective metrics `d_X`, `d_Y`, and `d_Z`.
+2.  **Contractive Mapping Condition:** There must exist three non-negative constants `k, l, m` such that `k + l + m < 1`, and the functions `F: X×Y×Z→X`, `G: Y×Z×X→Y`, `H: Z×X×Y→Z` satisfy the following inequalities for all `x1, x2 ∈ X`, `y1, y2 ∈ Y`, and `z1, z2 ∈ Z`:
+    *   `d_X(F(x1, y1, z1), F(x2, y2, z2)) ≤ k⋅d_X(x1, x2) + l⋅d_Y(y1, y2) + m⋅d_Z(z1, z2)`
+    *   `d_Y(G(y1, z1, x1), G(y2, z2, x2)) ≤ k⋅d_Y(y1, y2) + l⋅d_Z(z1, z2) + m⋅d_X(x1, x2)`
+    *   `d_Z(H(z1, x1, y1), H(z2, x2, y2)) ≤ k⋅d_Z(z1, z2) + l⋅d_X(x1, x2) + m⋅d_Y(y1, y2)`
+If these conditions are met, there exists one and only one FGH-tripled fixed point.

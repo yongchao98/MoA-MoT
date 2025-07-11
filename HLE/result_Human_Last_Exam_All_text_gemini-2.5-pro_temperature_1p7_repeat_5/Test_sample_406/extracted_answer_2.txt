@@ -1,0 +1,10 @@
+The conditions for the functions `F: X*Y*Z→X`, `G: Y*X*Y→Y`, and `H: Z*Y*X→Z` to have an FGH-tripled fixed point `(x, y, z)` are, fundamentally, the conditions required by the Banach Fixed-Point Theorem applied to an operator `T(x, y, z) = (F(x, y, z), G(y, x, y), H(z, y, x))` on the product space `M = X×Y×Z`. These conditions are:
+1.  **Completeness of Spaces:** `(X, d_X)`, `(Y, d_Y)`, and `(Z, d_Z)` must be non-empty complete metric spaces.
+2.  **Contraction Mapping:** The functions `F`, `G`, and `H` must satisfy a combined contraction property. A sufficient condition is that they are Lipschitz continuous with respect to their arguments, and the sum of their corresponding Lipschitz constants is less than 1. More formally, if there exist non-negative constants `α, β, γ, δ, ε, η, θ, ι` such that for any two points `(x₁, y₁, z₁)` and `(x₂, y₂, z₂)`:
+    - `d_X(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) ≤ α d_X(x₁, x₂) + β d_Y(y₁, y₂) + γ d_Z(z₁, z₂)`
+    - `d_Y(G(y₁, x₁, y₁), G(y₂, x₂, y₂)) ≤ ε d_X(x₁, x₂) + δ d_Y(y₁, y₂)`
+    - `d_Z(H(z₁, y₁, x₁), H(z₂, y₂, x₂)) ≤ ι d_X(x₁, x₂) + θ d_Y(y₁, y₂) + η d_Z(z₁, z₂)`
+Then the sums of these constants, grouped by their corresponding metric component, must all be less than 1:
+    - `α + ε + ι < 1`
+    - `β + δ + θ < 1`
+    - `γ + η < 1`

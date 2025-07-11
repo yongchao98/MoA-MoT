@@ -1,0 +1,9 @@
+
+**Function f:**
+The function $f$ maps a natural number $w$ to the linear logic formula:
+$$ f(w) = \bot^w = \underbrace{\bot \otimes \bot \otimes \dots \otimes \bot}_{w \text{ times}} $$
+(Where $f(0) = 1$, the multiplicative unit)
+
+**Formula C:**
+The formula $C$, which depends on the parameters $m$ and $b$, is:
+$$ C(m, b) = (\bot^b)^m = \underbrace{(\bot^b) \otimes (\bot^b) \otimes \dots \otimes (\bot^b)}_{m \text{ times}} $$

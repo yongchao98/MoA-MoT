@@ -1,0 +1,18 @@
+**a) The interaction between molecules can be neglected:**
+The absorption cross-section $\sigma(\omega)$ as a function of the laser's central frequency $\omega$ is given by:
+$\sigma(\omega) = C \cdot N \cdot |\vec{\mu}_e|^2 \cdot e^{-(\omega - \omega_e)^2 \tau^2 / 2}$
+where:
+*   $C$ is a constant of proportionality.
+*   $N$ is the number of molecules in the chain.
+*   $|\vec{\mu}_e|^2$ is the squared magnitude of the transition dipole moment of a single molecule.
+*   $\omega_e$ is the transition frequency of a single molecule.
+*   $\tau$ is the duration of the Gaussian laser pulse.
+This represents a single absorption peak at the molecular resonance $\omega_e$ with a Gaussian lineshape whose width is determined by the pulse duration $\tau$, and its total strength is proportional to $N$.
+
+**b) The interaction between near-neighbors should be considered:**
+The absorption cross-section is determined by the transition to the collective, optically-active $k=0$ exciton state. The equation is:
+$\sigma(\omega) = C \cdot N \cdot |\vec{\mu}_e|^2 \cdot e^{-(\omega - (\omega_e + 2J/\hbar))^2 \tau^2 / 2}$
+where, in addition to the previously defined terms:
+*   $J$ is the near-neighbor interaction energy (excitation hopping integral).
+*   $\hbar$ is the reduced Planck constant.
+This represents a single absorption peak that is shifted from the single-molecule resonance by an amount $2J/\hbar$. The strength of this cooperative transition is also proportional to $N$, concentrating the entire oscillator strength of the chain into a single spectral line. The lineshape remains Gaussian, determined by the pulse duration.

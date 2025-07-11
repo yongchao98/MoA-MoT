@@ -1,0 +1,1 @@
+Let $D_j = 100 \sum_{k=j+1}^{n} \frac{1}{2k-1}$, (where an empty sum from $k=n+1$ to $n$ is 0). The value of $j$ is the unique integer in $\{1, ..., n\}$ such that $D_j \le m < D_{j-1}$. The maximum amount of water left at the destination is given by the expression: $j \cdot 100 - (2j - 1)(m - D_j)$

@@ -1,0 +1,8 @@
+
+**Function `f`:**
+$f(w) = \underbrace{\bot \otimes \bot \otimes \dots \otimes \bot}_{w \text{ times}}$
+We denote this as $\bot^w$.
+
+**Formula `C`:**
+$C(W, m, b) = ((\bot^b \multimap 1)^m) \multimap 1$
+where $A^k$ is the $k$-fold tensor product of $A$, and $A^0 = 1$.

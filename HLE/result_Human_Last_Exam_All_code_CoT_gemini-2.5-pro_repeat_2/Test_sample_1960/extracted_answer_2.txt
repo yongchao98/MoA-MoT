@@ -1,0 +1,30 @@
+The solution is to define a function `f` and a formula `C` as follows:
+
+**1. Definition of State Formulas `P_i`**
+
+First, we define a family of `b+1` formulas, `P_0, P_1, \dots, P_b`, to represent the integers from 0 to `b`. These serve as "states" in the computation of a sum.
+
+*   Let `A = \bot` and `B = (\bot \multimap \bot)`. These two formulas act as the building blocks for a binary representation.
+*   Let `d = \lceil \log_2(b+1) \rceil` be the number of bits needed to represent `b`. (If `b=0`, we take `d=1`).
+*   For each integer `i \in \{0, \dots, b\}`, let its `d`-bit binary representation be `c_{d-1}c_{d-2}\dots c_0`.
+*   We define `P_i` recursively based on this binary string:
+    `P_i = H_{c_0}(H_{c_1}(\dots(H_{c_{d-1}}(1))\dots))`
+    where `H_0(F) = A \multimap F` and `H_1(F) = B \multimap F`.
+
+**2. Definition of the function `f`**
+
+The function `f` maps a natural number `w \in W` to a linear logic formula. The formula `f(w)` acts as a transformer that can advance the state of a sum by `w`.
+
+*   `f(w) = \bigotimes_{i=0}^{b-w} (P_i \multimap P_{i+w})`
+
+This formula is a tensor product of all possible `w`-step advancements. For any state `P_i` where `i+w \le b`, `f(w)` provides the resource `P_i \multimap P_{i+w}` needed to compute `P_{i+w}`.
+
+**3. Definition of the formula `C`**
+
+The formula `C = C(m, b)` represents the overall goal of the problem: to successfully form `m` partitions, each summing to `b`.
+
+*   `C(m, b) = \bigotimes_{k=1}^{m} (P_0 \multimap P_b)`
+
+This formula is the tensor product of `m` copies of the sub-goal `(P_0 \multimap P_b)`. Each sub-goal represents the task of starting with an empty bucket (state `P_0`) and reaching a full bucket (state `P_b`).
+
+With these definitions, the sequent `\{ f(w) \mid w \in W \} \vdash C` is derivable in linear logic if and only if `EP(W, m, b)` is true. The properties of the `⊗` connective on the right-hand side of the sequent force a partitioning of the resources `\{f(w)\}` to solve each of the `m` sub-goals independently.

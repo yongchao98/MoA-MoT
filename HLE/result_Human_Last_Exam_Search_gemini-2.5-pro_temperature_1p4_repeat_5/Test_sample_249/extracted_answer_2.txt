@@ -1,0 +1,5 @@
+The minimum possible value for the diameter of $G$ depends on the relationship between $n$ and $m$. We can define it piecewise:
+*   If $m = n+1$, the minimum diameter is 2.
+*   If $m = n$ (and $n \ge 2$), the minimum diameter is 3.
+*   If $(n+1)/2 \le m \le n-1$, the minimum diameter is 4.
+*   If $m < (n+1)/2$, the minimum diameter is $2 + f(n+2-m, m)$, where $f(k,l)$ denotes the minimum diameter of a tree with $k$ vertices and $l$ leaves.

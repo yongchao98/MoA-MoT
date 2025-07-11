@@ -1,0 +1,6 @@
+After applying gate Q to ququint A and then measuring ququint A in the computational basis, the final state of the two-ququint system is probabilistic. The possible outcomes are:
+*   With a probability of 1/5, the measurement yields $|0\rangle_A$, and the system collapses to the state: $|0\rangle_A \otimes \frac{1}{\sqrt{2}}(|1\rangle_B + |3\rangle_B)$.
+*   With a probability of 1/5, the measurement yields $|1\rangle_A$, and the system collapses to the state: $|1\rangle_A \otimes \frac{1}{\sqrt{2}}(|0\rangle_B + |2\rangle_B)$.
+*   With a probability of 3/10, the measurement yields $|2\rangle_A$, and the system collapses to the state: $|2\rangle_A \otimes \frac{1}{\sqrt{3}}(|0\rangle_B + |3\rangle_B + |4\rangle_B)$.
+*   With a probability of 1/5, the measurement yields $|3\rangle_A$, and the system collapses to the state: $|3\rangle_A \otimes \frac{1}{\sqrt{2}}(|1\rangle_B + |4\rangle_B)$.
+*   With a probability of 1/10, the measurement yields $|4\rangle_A$, and the system collapses to the state: $|4\rangle_A \otimes |2\rangle_B$.

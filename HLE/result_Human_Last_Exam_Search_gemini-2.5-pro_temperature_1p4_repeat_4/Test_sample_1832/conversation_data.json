@@ -1,0 +1,10 @@
+{
+  "question": "In empty space outside a spherically symmetric gravitating body with mass $M$, how many non-zero Christoffel symbols $\\Gamma_{\\mu\\nu}^\\rho$ are non-zero?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "In the empty space outside a spherically symmetric gravitating body with mass $M$, described by the Schwarzschild metric, there are 9 non-zero Christoffel symbols, $\\Gamma_{\\mu\\nu}^\\rho$.\n\nThe spacetime around such a body is static and spherically symmetric, which leads to many of the Christoffel symbols being zero. The non-zero Christoffel symbols are derived from the metric tensor of the spacetime. The symmetry of the Christoffel symbols in their lower indices ($\\Gamma^\\rho_{\\mu\\nu} = \\Gamma^\\rho_{\\nu\\mu}$) is taken into account when counting the unique non-zero symbols.\n\nThe non-zero Christoffel symbols are:\n*   $\\Gamma^r_{tt} = \\frac{M(r-2M)}{r^3}$\n*   $\\Gamma^r_{rr} = -\\frac{M}{r(r-2M)}$\n*   $\\Gamma^r_{\\theta\\theta} = -(r-2M)$\n*   $\\Gamma^r_{\\phi\\phi} = -(r-2M)\\sin^2\\theta$\n*   $\\Gamma^t_{rt} = \\Gamma^t_{tr} = \\frac{M}{r(r-2M)}$\n*   $\\Gamma^\\theta_{r\\theta} = \\Gamma^\\theta_{\\theta r} = \\frac{1}{r}$\n*   $\\Gamma^\\theta_{\\phi\\phi} = -\\sin\\theta\\cos\\theta$\n*   $\\Gamma^\\phi_{r\\phi} = \\Gamma^\\phi_{\\phi r} = \\frac{1}{r}$\n*   $\\Gamma^\\phi_{\\theta\\phi} = \\Gamma^\\phi_{\\phi\\theta} = \\frac{\\cos\\theta}{\\sin\\theta}$\n\nThese are the 9 distinct non-zero Christoffel symbols in this spacetime.\n\n<<<9>>>"
+  ],
+  "user_prompt_list": [
+    "In empty space outside a spherically symmetric gravitating body with mass $M$, how many non-zero Christoffel symbols $\\Gamma_{\\mu\\nu}^\\rho$ are non-zero?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

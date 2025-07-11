@@ -1,0 +1,1 @@
+Let K be the smallest integer in {1, 2, ..., n} such that `m \le \sum_{i=1}^{K} \frac{100}{2n - 2i + 1}`. The maximum amount of water left is given by: `(n - K + 1) \cdot 100 - \left( m - \sum_{i=1}^{K-1} \frac{100}{2n - 2i + 1} \right) \cdot (2n - 2K + 1)`

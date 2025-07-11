@@ -1,0 +1,9 @@
+The reason some functional MRI coils do not show resonance when probed with a magnetic loop is primarily due to their active and complex nature. Modern MRI coils are not simple passive circuits; they are integrated systems designed to be controlled by the MRI scanner. Here are the main reasons:
+
+1.  **Active Detuning Circuits:** Most coils have safety circuits involving PIN diodes. These circuits detune the coil (by shifting its resonant frequency or killing its Quality Factor) to prevent it from absorbing power during the high-power transmit phase of the MRI scan. When the coil is disconnected from the scanner, these circuits often default to this "safe," detuned state. Therefore, the coil is not in its resonant condition when measured on a workbench.
+
+2.  **Unpowered Preamplifiers:** The coil is designed to be perfectly impedance-matched to a low-noise preamplifier (LNA) that is located on the coil itself. This LNA requires DC power to function and present the correct input impedance (e.g., 50 Ohms). When the coil is unpowered, the LNA's input impedance is incorrect, which spoils the matching and damps or shifts the resonance, making it undetectable.
+
+3.  **Balanced Coil Design:** Many coils have a balanced or differential design to reject common-mode noise. A simple, single-ended probe loop may generate a field that the coil is designed to reject, failing to excite the intended resonant mode.
+
+In summary, the coil's "functionality" is dependent on the power and control signals it receives from the MRI scanner. A simple benchtop measurement with a VNA cannot replicate this operational environment, so it fails to see the resonance of a coil that is in a default, non-operational state.

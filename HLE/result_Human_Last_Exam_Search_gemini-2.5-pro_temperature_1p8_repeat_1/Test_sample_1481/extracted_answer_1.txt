@@ -1,0 +1,10 @@
+In the theoretical framework of planar Birkhoff billiard dynamics, the generating function H(s,s′) that encapsulates the billiard map's symplectic structure is given by the negative of the Euclidean distance between two points, γ(s) and γ(s′), on the boundary curve parametrized by arc length s. The asymptotic analysis for the leading-order behavior of H(s,s′) in the limit as the arc-length parameter separation |s′−s| approaches zero is found by performing a Taylor expansion of the distance.
+
+The resulting expansion is:
+**H(s,s′) = -|s′ - s| - (κ(s)²/8)|s′ - s|³ + O((s′-s)⁵)**
+
+where κ(s) is the local curvature of the boundary at the point s.
+
+**Leading-Order Behavior:** The leading term, -|s′ - s|, represents the simple arc-length distance between the two points. This term dominates for infinitesimally short chords and corresponds to the dynamics on a straight boundary where curvature is zero.
+
+**Influence of Boundary Curvature:** The first correction term, -(κ(s)²/8)|s′ - s|³, reveals the influence of the boundary's local geometry. The presence of the curvature κ(s) in this term demonstrates how the bending of the boundary affects the dynamics. Specifically, the cubic dependence on the separation distance |s′ - s| indicates that for near-grazing trajectories, the curvature acts as a higher-order perturbation. This term is critical in understanding the nuanced interplay between the geometric shape of the billiard table and the stability of short periodic orbits, as well as the overall complexity of the billiard system's dynamical properties in this asymptotic regime. The fact that the curvature appears squared implies that the leading-order effect is independent of the direction of the boundary's bending.

@@ -1,0 +1,2 @@
+$$-\sum_{i=1}^{n-1} a_i b_i + s \cdot (-1)^{n-1} a_n b_n$$
+where $s = \det(U_A V_A^\top) \det(U_B V_B^\top)$ from the SVDs $A=U_A \Sigma_A V_A^\top$ and $B=U_B \Sigma_B V_B^\top$. If A and B are invertible, $s$ is equivalent to $s(|A||B|)$, the sign of the product of their determinants.

@@ -1,0 +1,5 @@
+The minimum possible diameter is:
+- 2, if $n=m-1$ and $m \ge 2$.
+- 3, if $n=m$ and $m \ge 2$.
+- 4, if $n-m+2 \ge 3$ and $m \ge n-m+1$.
+- $n-2m+5$, if $n-m+2 \ge 3$ and $m < n-m+1$.

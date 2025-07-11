@@ -1,0 +1,3 @@
+The critical amount of correlation, defined as the average covariance `Cov_vs` between any neuron in population `v` and any neuron in population `s`, required to balance potentiation and depression is given by the expression:
+`Cov_vs = ( (N_v+N_s)^2 * μ * (θ - μ) - (N_v+N_s)μ ) / (2 * N_v * N_s)`
+This condition ensures that, on average, the initial learning dynamics do not lead to runaway growth or decay of the total synaptic strength.

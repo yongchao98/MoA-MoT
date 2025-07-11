@@ -1,0 +1,27 @@
+def solve_integral_symbolically():
+    """
+    This function prints the symbolic result of the complex integral.
+    """
+
+    # The result is a symbolic matrix expression. We represent the components
+    # as strings for printing.
+    mu_0 = "μ₀"
+    Gamma = "Γ"
+    R = "R"
+    I = "I" # Identity matrix
+
+    # Construct the final expression step-by-step
+    log_term = f"log(1 - {Gamma})"
+    inverse_term = f"({R} - {mu_0}*{I})⁻¹"
+    
+    # The final result of the integral
+    final_expression = f"-{mu_0} * {log_term} * {inverse_term}"
+
+    # Print the definition of Gamma as given in the hint
+    print("The value of the integral is given by the expression below.")
+    print("Where Γ is defined as:")
+    print("Γ = (1/N) * Σ [K_r * (γ_r / (γ_r - μ₀))²] for r=1 to M_bar")
+    print("\nAnd the final result for the integral is:")
+    print(final_expression)
+
+solve_integral_symbolically()

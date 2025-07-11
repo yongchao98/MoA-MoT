@@ -1,0 +1,5 @@
+The reduced system is described by the variables $w_i$ (synaptic efficacy), $v_i = \phi x_i$ (presynaptic accumulator), and $u = \sum_j w_j x_j$ (postsynaptic accumulator). The dynamics of the synaptic efficacy $w_i$ are governed by the following expression:
+$\tau_w\frac{\mathrm{d}w_i}{\mathrm{d}t} = \frac{u}{1 + v_i} (\rho + \beta v_i)$
+where the constant $\rho$ is defined as:
+$\rho = \alpha(1-\eta) + \beta\eta$
+This equation describes how the change in synaptic weight $\dot{w_i}$ depends on the postsynaptic activity $u$ and is modulated by the presynaptic activity $v_i$.

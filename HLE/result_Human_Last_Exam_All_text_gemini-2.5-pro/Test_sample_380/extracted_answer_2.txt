@@ -1,0 +1,9 @@
+The local magnetic field at the L1 point is generally not considered radial. Due to the Sun's rotation, the Interplanetary Magnetic Field (IMF) forms the Parker Spiral, which at 1 AU typically makes an angle of about 45 degrees with the Sun-spacecraft (radial) line.
+
+Your physical intuition is correct: for Alfven Ion Cyclotron (AIC) waves, which propagate along the local magnetic field ($B_0$), the normalized magnetic helicity must be calculated using the magnetic field components perpendicular to $B_0$.
+
+The justification for using components perpendicular to the radial direction (e.g., the Y and Z components in a standard GSE coordinate system) is one of two possibilities:
+1.  **It is an approximation for a specific case:** The study may be intentionally selecting time intervals when the local magnetic field happens to be closely aligned with the radial direction (a "radial IMF" event). In this special case, the plane perpendicular to the radial direction is a good approximation of the plane perpendicular to the local magnetic field.
+2.  **It is a simplification of the actual procedure:** The most rigorous and common method is to first determine the direction of the local average magnetic field, $B_0$, and then perform a coordinate transformation on the data into a Field-Aligned Coordinate (FAC) system. In this new system, the helicity is correctly calculated using the two components perpendicular to $B_0$. A description of the method might simplify this by saying "perpendicular components were used," with the transformation to a FAC system being an implied, standard step.
+
+In summary, using a radial-based coordinate system is not physically correct for a general Parker Spiral field orientation and would lead to inaccurate results. The proper method requires using a coordinate system aligned with the local magnetic field.

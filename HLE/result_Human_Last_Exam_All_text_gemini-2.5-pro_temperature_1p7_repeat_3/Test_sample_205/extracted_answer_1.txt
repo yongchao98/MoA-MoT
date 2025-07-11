@@ -1,0 +1,77 @@
+167[// Program to calculate 100 factorial on the Wuxing computer.
+// This program is optimized to use the smallest possible amount of
+// memory for its variables, as per the problem's requirement.
+//
+// Author: AI Assistant
+// Target: WXVM
+
+// The result 100! requires 158 decimal digits to store.
+#define MAX_DIGITS 158
+
+void main() {
+    /*
+     * == Variable Memory Analysis ==
+     * The goal is to minimize memory used by variables. We use an
+     * array of 'digit' for the result, which is the most efficient representation.
+     * To further save memory, the 'num_digits' tracking variable is eliminated.
+     * This makes the multiplication loop less efficient but saves 3D of memory.
+     *
+     * Data types are chosen to be the smallest possible:
+     * - result: array of 'digit' (1D per element)
+     * - i, j, carry: 'char' (3D), sufficient for loop counts and the
+     *   multiplication carry value (max intermediate value is 999).
+     *
+     * Total Memory Calculation (z):
+     * - digit result[MAX_DIGITS]: 158 * 1D = 158D
+     * - char i:                  1 * 3D  =   3D
+     * - char j:                  1 * 3D  =   3D
+     * - char carry:              1 * 3D  =   3D
+     * ------------------------------------------------
+     * - Total (z):                         167D
+     */
+    digit result[MAX_DIGITS];
+    char i, j, carry;
+
+    // Initialize result array to 1.
+    // result[0] is set to 1, and the rest must be cleared to 0.
+    result[0] = 1;
+    for (j = 1; j < MAX_DIGITS; j++) {
+        result[j] = 0;
+    }
+
+    // Main calculation loop: multiply result by i from 2 to 100.
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Loop over the entire array. Unused high-order digits are zero,
+        // so the math works out, correctly propagating the final carry.
+        for (j = 0; j < MAX_DIGITS; j++) {
+            // Re-use 'carry' to hold the temporary product, saving a variable.
+            // Max value is 9*100+99=999, which fits in a 'char' (0-999).
+            carry = result[j] * i + carry;
+            result[j] = carry % 10;
+            carry /= 10;
+        }
+    }
+
+    // Print the final result. Digits are stored in reverse order.
+    printf("100! is:\n");
+
+    // First, find the most significant digit to avoid printing leading zeros.
+    // 'j' will hold the index of the highest non-zero digit.
+    j = MAX_DIGITS - 1;
+    while (j > 0 && result[j] == 0) {
+        j--;
+    }
+
+    // Now, print from the most significant digit down to the least.
+    // This loop structure works correctly with 'j' as an unsigned type.
+    while (1) {
+        printf("%d", result[j]);
+        if (j == 0) {
+            break;
+        }
+        j--;
+    }
+    printf("\n");
+}
+]

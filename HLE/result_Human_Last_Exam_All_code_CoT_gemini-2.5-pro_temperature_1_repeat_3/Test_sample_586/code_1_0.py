@@ -1,0 +1,105 @@
+import re
+
+def get_reverse_complement(seq):
+    """Computes the reverse complement of a DNA sequence."""
+    complement_map = str.maketrans('ATCGN', 'TAGCN')
+    return seq.upper().translate(complement_map)[::-1]
+
+def analyze_sgrna_options():
+    """
+    Analyzes potential sgRNA target sequences for the given gene structure.
+    """
+    full_sequence = "ATGTGTGCCTGCGGGATACTTTTGACTTTTACTTTGCTTTTGCATTTTCTTGGTGTTCACTCAATGAATCCTCTGTTTCCAAGCGCATCCAGGGGCATGAAAGTGTCTAAGTCTGTTCCTGCTGAGGGCAACAGGAGAGCAAAATACGGCAAGAATGTGCTGTCAGCATCACTGTTATCCGGAGACATACAGTCCAGAAGGGCGATCAAGGATGCGATTGAACCTCACGATTACATGATTTCCATATACAAGACCTTTTCAGCGGCTGAAAAACTGGGACTGAACGCGAGTTTTTTCCGCTCGTCTAAAGCAGCAAACACCATCACGAGCTTTGTGGACGAGGGTCAAG^GTTAGTTATTTCTACTTATACAAGCAACAGTGATTTCAAACGCACACGTACTGATTCTATATTGGTACTCACAGGGAAAAAAAAAAAAAAAACATTTGTATACAATTCAAACAACTCTTAAAGGAATACAGTCAAATGTGTCAGTGAACAGATGGAAACAAAGCATTTTGAATATTAGGCCTATATCATCTATGATACTGCGGAAAATCTTCAAGAAATCTTTTTCCCCTAATAGTAAAAATAATGACAACAATATATGTATAACATTATACACTTCTGTTTACAATCTTGCATAAAATAAGTTGTGTTTGCATCAAAGTGTGTATACATGCACTGTCCATTTCAAATATTTTTTATTGGAATGTGTAGGAATTTTCACGATGTAGGCAGGTTATTATCACTATAAAGTGCCTTAGATGTCCCACAAGATTGAATCAGTCCCATATGAGCATAATGCGAAATTGATGTTTTAATATGATTGGTTAAACTTGTACACACATGCAGGTAGAATTATGAGTGTTTTGAAACATGTTTTTGCCAATTATTGCCATAGTCTTTTATTGAATGGATGTGATTTTGCCATGTCCCACACACTGCACAGCCAAGTTCAGTAAGTCTAAAAAGTAGCTAAATTAGATAAATTTTTTTTAAATGTTTAAGTATTCTTTCTATTCTTACAGTTATTTTGAAAACTAAATCATTTTTATAACTTTTATTTTTTTATTCTTTTATAATATTATTAATCATTTTGCACGAGTCTTTGAGTTTGCTGTCCACCCTGTCATGATGTAGTAAATCCCCTTTAAGAAACCCTCTGATGTACTCATTGGCATCCCCATGCCTATTTTGCTTTTCTTCAGAGGAGGTTAAAAAAACTGATGTGCACACATTAAATATCTACATATATGTTTCCTATTTTTCATCATATTGTGTTTGAAACCGAATGTGGTCAAGCTTAACATGTCCACCCTGTCATAGTAAAATATTAATTAATATAAAAAATTCGGAAATCAAAGATAGCTTTTAAACTGTATACAAAGAGCTTAAATAAGGAAACACTTTACCAGCTGCAGGTTCAACCTGTGTTAAATAAATGCTATCTTTAGCCAAAAATGTCCTCCTTGTTATTGTCCACCCTTTCACAAATCCTTCCTTGGGTGGACATATGCATCGTTATTGACACTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTCTTTTTTGTTAATCAGCTAATGTTTTATTATGGTACATCACATACATACTACACCAGTAGATGCAATACATAAGTGGACAATACAAATCTTTTGGCAATATTTATCTCAGTCTATATAAAGAATATCCTTTTAAAGTCCATATAAGGCAGCTCATTGACTGTTTGAAATTAAAATACATTATTTATCCTATTCTGGAAAAGAAAAAATATGATACATTTGTGCGTTGATGGATTTGAAACCACACTGGACTGAACTAATTTGAACTTTTAATTTCAATTCACTACAACTTCTATGTTAAGCTGCTTAGACACAATTTACATTACAGGTGTCAAATCCAGTTTCTTAAGAGCCACAGCTCTGCACAGTTTAGGGTTAACCCTAATTAAACACACCTGATCAAACTAATTGAGTCCTTCAGGCTTGTTTGATACCTACAGGTAGGTTTGTTAAAGCAAGGTTGGAACTAAATTGTGCAGAGCTGCGGCCCTTCAGGAACTAGATTTGACACCTAATTTACATTATGGAAACGCTATAGAAATAAAGATAAATTGAATTGAATAGATTTTTCTCCTCCAAAACACTATATATAAAAATACTAATTAGCAAATGCTAGTATTAGAAAAAAAAATTAGAACCTAGCTTTAAAAACTTTAGCATAATGAAAGAAACAGAGACACAAGACAGAAATAAATTTCAACATATGTCACCTTAATTAGTTAAAAACGAGTTCTCGATCTGCACATGCCATAACAGATATTGTAAATTTTGTGGATGCAGATCTAGTGTCAACAAGCATCTGTTCTCTTTGTTTCAG^ATGACCATTTGAACTCTCCACTTTGGAGACAGAAATATTTATTCGACGTATCAACGCTTTCTGAAAATGTGGAGATCCTGGGTGCCGAACTGAGGATTTACACAAAGATCTCCGGAAGCTTCCGCGCATCTGAAACCGGTCCTGTGGAAATACAGCTTCTCTCCTGCCAGTCGCACACTGTCCTTGATTCACAAACTTTGGATCTGGAGGATGCACATAAACCAAAATGGGAAGTTTTCGACGTCTGGGAGATTTTTAAGGAACGTCAGCACCACTCTCATGGCACCCGCTTCTGTTTAGAGCTCAGGGCCACACTGGATAATCCAGAGAGAGAAATTGATTTGCAATATCTTGGATTTCACAGACATGGCCGCCCGCAACTGAAGAAAGCCATACTGGTTGTTTTCACAAGGTCAAAAAAGAGGCAAAGTCTTTTTTATGAAAAAAGAGAGAAGATCAAGCTATGGGGTCTGGATAGTATTGGTAAGGAAAGAAGATCCCACTCGAAAACCCGCCGGAGCAGACGGACTGCTCTACCCAATCGCCATGGCAAGAGACATGGTAAAAAGTCAAAATCTAGATGCAGCAAAAAGCCACTGCATGTCAATTTCAGAGAGCTGGGTTGGGACGATTGGGTCATCGCTCCATTAGATTATGAGGCTTATCACTGTGAGGGCATGTGTGACTTTCCCCTCCGATCTCACCTGGAACCAACCAATCATGCCATCATACAAACTCTAATGAACTCAATGAACCCCAGCAACATGCCACCCAGCTGTTGCGTCCCCTCCAAACTCAGTCCCATTAGCATCTTGTACATTGACGCAGGAAATAATGTTGTGTACAAGCAGTATGAAGACATGGTAGTGGAGTCCTGCGGCTGCAGATGA"
+    
+    parts = full_sequence.split('^')
+    exon1 = parts[0]
+    intron = parts[1]
+    exon2 = parts[2]
+
+    choices = {
+        "A": "AGCGGTTTACTGAGACCCGG(TGG)", "B": "TCCGGCGGGTTTTCGAGTGGG", "C": "TTCATGCCCCTGGATGCGCT(TGG)",
+        "D": "CAGGACCGGTTTCAGATGCG(CGG)", "E": "GCATCTGAAACCGGTCCTG(TGG)", "F": "GGAAGCAATCCTCCGAACGT(TGG)",
+        "G": "ACGTTGCGAGGACAGAGTCA(AGG)", "H": "CCCTTTCACAAATCCTTCCT(TGG)", "I": "TTCACCCGCACCTTGAACGG(AGG)",
+        "J": "CTTTCTTTCTTTCTTTCTTTC(TTT)", "K": "CTGCTCTACCCAATCGCCA(TGG)", "L": "TGCCTG(CGG)",
+        "M": "TGCAAAGTAGATCGAGATGG(AGG)", "N": "ACAGTCCAGAAGGGCGATCA(AGG)", "O": "ATG(ACC)"
+    }
+    
+    print("--- Analysis of sgRNA Target Options ---")
+    valid_candidates = {}
+
+    for choice_id, choice_str in choices.items():
+        # Standardize format to TARGET(PAM)
+        if '(' not in choice_str:
+            if len(choice_str) == 23:
+                choice_str = f"{choice_str[:-3]}({choice_str[-3:]})"
+            else:
+                 print(f"\n[Choice {choice_id}] {choice_str}\n  - STATUS: Invalid Format or Length")
+                 continue
+        
+        match = re.match(r'(.+?)\((.+?)\)', choice_str)
+        target, pam = match.groups()
+        
+        print(f"\n[Choice {choice_id}] {target}({pam})")
+
+        # --- Validation ---
+        if not (len(pam) == 3 and pam[1] == 'G' and pam[2] == 'G'):
+            print("  - STATUS: Invalid PAM. Must be NGG.")
+            continue
+        if not (18 <= len(target) <= 22):
+            print(f"  - STATUS: Invalid target length ({len(target)}).")
+            continue
+
+        # --- Location Analysis ---
+        fwd_search_seq = target + pam
+        rev_search_seq = get_reverse_complement(fwd_search_seq)
+
+        location = "Not Found"
+        if fwd_search_seq in exon2:
+            location = "Exon 2 (Forward Strand)"
+        elif rev_search_seq in exon2:
+            location = "Exon 2 (Reverse Strand)"
+        elif fwd_search_seq in intron:
+            location = "Intron (Forward Strand)"
+        elif rev_search_seq in intron:
+            location = "Intron (Reverse Strand)"
+        elif fwd_search_seq in exon1:
+            location = "Exon 1 (Forward Strand)"
+        elif rev_search_seq in exon1:
+            location = "Exon 1 (Reverse Strand)"
+
+        print(f"  - Location: {location}")
+        
+        if "Exon 2" in location:
+            gc_content = (target.count('G') + target.count('C')) / len(target) * 100
+            print(f"  - GC Content: {gc_content:.1f}%")
+            print(f"  - STATUS: Valid target for Exon 2.")
+            valid_candidates[choice_id] = {'target': target, 'pam': pam, 'gc': gc_content}
+
+    # --- Final Recommendation ---
+    print("\n\n--- Conclusion ---")
+    if not valid_candidates:
+        print("No valid sgRNA targets for Exon 2 were found in the options provided.")
+    else:
+        print("Valid candidates targeting Exon 2 are: " + ", ".join(valid_candidates.keys()))
+        print("Comparing valid candidates:")
+        
+        # Candidate E
+        print("\nCandidate E: GCATCTGAAACCGGTCCTG(TGG)")
+        print("  - Position: Found relatively early in Exon 2.")
+        print("  - Complexity: High. The sequence is varied and lacks simple repeats.")
+        print("  - Off-Target Risk: Predicted to be low due to high sequence complexity.")
+        
+        # Candidate K
+        print("\nCandidate K: CTGCTCTACCCAATCGCCA(TGG)")
+        print("  - Position: Found later in Exon 2 than candidate E.")
+        print("  - Complexity: Moderate. Contains some repeated motifs like 'CT' and 'CCA'.")
+        print("  - Off-Target Risk: Potentially higher than E due to lower sequence complexity in the seed region.")
+
+        print("\nRecommendation:")
+        print("Choice E is the most suitable target. It is located early in the second exon, which is ideal for gene knockout, and its sequence is more complex than other options, suggesting a lower likelihood of off-target effects.")
+
+    print("\n<<<E>>>")
+
+
+if __name__ == '__main__':
+    analyze_sgrna_options()

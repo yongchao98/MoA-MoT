@@ -1,0 +1,17 @@
+The density profile of the mixture is given by \( \rho(z) = M_A \tilde{n}_A(z) + M_B \tilde{n}_B(z) \). The molar density profiles for Gas A, \( \tilde{n}_A(z) \), and Gas B, \( \tilde{n}_B(z) \), are implicitly defined as the functions that simultaneously solve the following system of coupled integral-algebraic equations for \( z \in [0, H] \):
+
+1.  **Equilibrium Condition for Gas A:**
+    $$ RT \ln\left(\frac{\tilde{n}_A(z)}{1 - (\tilde{n}_A(z)b_{AA} + \tilde{n}_B(z)b_{BB})}\right) + \frac{RT b_{AA} (\tilde{n}_A(z) + \tilde{n}_B(z))}{1 - (\tilde{n}_A(z)b_{AA} + \tilde{n}_B(z)b_{BB})} - 2(\tilde{n}_A(z) a_{AA} + \tilde{n}_B(z) a_{AB}) + M_A g z = C_A $$
+
+2.  **Equilibrium Condition for Gas B:**
+    $$ RT \ln\left(\frac{\tilde{n}_B(z)}{1 - (\tilde{n}_A(z)b_{AA} + \tilde{n}_B(z)b_{BB})}\right) + \frac{RT b_{BB} (\tilde{n}_A(z) + \tilde{n}_B(z))}{1 - (\tilde{n}_A(z)b_{AA} + \tilde{n}_B(z)b_{BB})} - 2(\tilde{n}_A(z) a_{AB} + \tilde{n}_B(z) a_{BB}) + M_B g z = C_B $$
+
+The constants \(C_A\) and \(C_B\) are determined by the **Normalization Conditions** based on the total number of moles of each gas (\(n_A = N_A/N_{Av}\), \(n_B = N_B/N_{Av}\)) in the container volume (\(V = A \times H\)):
+
+3.  **Normalization for Gas A:**
+    $$ A \int_0^H \tilde{n}_A(z) dz = n_A $$
+
+4.  **Normalization for Gas B:**
+    $$ A \int_0^H \tilde{n}_B(z) dz = n_B $$
+
+where all parameters (\(T, g, A, H, N_A, N_B, M_A, M_B, a_{AA}, a_{BB}, a_{AB}, b_{AA}, b_{BB}\)) are the values given in the problem statement.

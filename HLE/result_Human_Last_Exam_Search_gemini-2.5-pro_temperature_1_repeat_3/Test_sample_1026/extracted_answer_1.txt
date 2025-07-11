@@ -1,0 +1,41 @@
+The horizontal displacement of the guide is calculated by applying the principle of conservation of momentum for the system (mass + guide) in the horizontal direction, as there are no external horizontal forces.
+
+First, we determine the final height *h* reached by the mass *m* using the work-energy theorem for the entire system. The initial mechanical energy is entirely potential energy, E_i = mgR. The final mechanical energy is E_f = mgh. The energy loss is due to the work done by friction over the distance *d*.
+
+E_f - E_i = W_friction
+mgh - mgR = -μ_D * N * d
+Since the normal force N on the horizontal section is mg:
+mgh - mgR = -μ_D * m * g * d
+h = R - μ_D * d
+Substituting the given values:
+h = 0.20 m - (0.20 * 0.50 m) = 0.10 m
+
+Next, we use the conservation of the center of mass. The horizontal displacement of the guide (Δx_g) and the horizontal displacement of the mass relative to the ground (Δx_m) are related by:
+M * Δx_g + m * Δx_m = 0
+
+The displacement of the mass relative to the ground is the sum of the guide's displacement and the mass's displacement relative to the guide (Δx_m|g):
+Δx_m = Δx_g + Δx_m|g
+
+Substituting this into the conservation equation gives:
+(M + m) * Δx_g + m * Δx_m|g = 0
+Δx_g = - (m / (M + m)) * Δx_m|g
+
+We need to calculate Δx_m|g, the horizontal displacement of the mass relative to the guide. Let's define the guide's coordinate system with the origin at the bottom-left corner.
+Initial horizontal position of the mass: x_initial = R
+Final horizontal position of the mass on the second curve at height *h*:
+x_final = (R + d) - sqrt(R² - (R - h)²)
+x_final = (0.20 + 0.50) - sqrt(0.20² - (0.20 - 0.10)²)
+x_final = 0.70 - sqrt(0.04 - 0.01) = 0.70 - sqrt(0.03) ≈ 0.70 - 0.1732 = 0.5268 m
+
+The displacement of the mass relative to the guide is:
+Δx_m|g = x_final - x_initial = (0.70 - sqrt(0.03)) - 0.20 = 0.50 - sqrt(0.03) ≈ 0.3268 m
+
+Finally, we calculate the displacement of the guide:
+Δx_g = - (0.20 kg / (0.80 kg + 0.20 kg)) * (0.50 - sqrt(0.03)) m
+Δx_g = -0.2 * (0.50 - 0.1732) m
+Δx_g = -0.2 * 0.3268 m
+Δx_g = -0.06536 m
+
+The negative sign indicates the guide moves to the left. The displacement is approximately -6.54 cm.
+
+-0.06536 m

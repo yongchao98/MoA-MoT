@@ -1,0 +1,13 @@
+A threshold signature scheme based on the Schnorr signature system, structured similarly to the FROST protocol, fulfills all the required criteria.
+
+**1. Overall Design:** The scheme uses a t-out-of-n structure established by a **Distributed Key Generation (DKG)** protocol like Pedersen's VSS. This creates secret shares `sk_i` for *n* parties and a single group public key `PK`. The signing protocol is where the two-round and tight security properties are engineered.
+
+**2. Two-Round Signing Protocol:**
+*   **Round 1 (Commitment):** Each of the *t* participating signers `P_i` generates two secret nonces (`d_i`, `e_i`) and broadcasts their public commitments (`D_i = g^{d_i}`, `E_i = g^{e_i}`). This round prevents adaptive nonce attacks by forcing all participants to commit to their randomness simultaneously.
+*   **Round 2 (Signing):** After receiving all commitments, each signer `P_i` calculates a final signature share. This involves:
+    a. Deterministically creating a group nonce `R` by combining all commitments from Round 1. This is done using a binding hash function to prevent manipulation (`R = \prod (D_j \cdot E_j^{\rho_j})`).
+    b. Calculating the signature challenge `e = H(R, PK, m)`.
+    c. Computing their partial signature `z_i = (d_i + e_i\rho_i) + e \cdot \lambda_i \cdot sk_i`, where `\lambda_i` is the Lagrange coefficient for that signer.
+    d. Sending `z_i` to an aggregator.
+
+**3. Signature Aggregation and Verification:** The aggregator sums the partial signatures to get the final signature `s = \sum z_i`. The pair `(R, s)` is the complete signature, which can be verified by anyone using the publ

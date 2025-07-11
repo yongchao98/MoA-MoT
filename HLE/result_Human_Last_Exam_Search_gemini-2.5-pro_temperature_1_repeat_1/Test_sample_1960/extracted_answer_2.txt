@@ -1,0 +1,18 @@
+**Final Answer:**
+
+A valid encoding is as follows:
+
+1.  **Define a base formula `G`** constructed from the allowed constants, for instance:
+    $$
+    G = 1 \multimap \bot
+    $$
+
+2.  **Define the function `f`** that maps a natural number `w` to the `w`-fold tensor product of `G`:
+    $$
+    f(w) = G^{\otimes w} = \underbrace{G \otimes G \otimes \dots \otimes G}_{w \text{ times}}
+    $$
+
+3.  **Define the formula `C`** as the `m`-fold tensor product of a formula representing a bin of size `b`:
+    $$
+    C(W, m, b) = (G^{\otimes b})^{\otimes m} = \underbrace{(G^{\otimes b}) \otimes (G^{\otimes b}) \otimes \dots \otimes (G^{\otimes b})}_{m \text{ times}}
+    $$

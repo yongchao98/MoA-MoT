@@ -1,0 +1,27 @@
+A tightly secure t-out-of-n threshold signature scheme with a two-round signing protocol can be designed based on the FROST (Flexible Round-Optimized Schnorr Threshold) signature scheme, with a strong emphasis on the underlying security assumptions and the specifics of the protocol that enable a tight security proof.
+
+The design process involves two main phases:
+
+**1. Distributed Key Generation (DKG):**
+This is a crucial preliminary phase where the `n` participants collaboratively generate a shared public key and their individual secret shares without a central trusted party. A two-round DKG protocol, as is often used with FROST, ensures that no single entity ever knows the entire secret key. This phase establishes:
+*   A single group public key for verifying the final signatures.
+*   A unique secret share for each of the `n` participants.
+*   A public verification share for each participant to validate their contributions during the signing process.
+
+**2. Two-Round Signing Protocol:**
+The signing process is where the efficiency of two rounds is paramount. It generally proceeds as follows:
+
+*   **Round 1: Commitment.** In this round, each of the `t` participating signers generates secret random values called nonces and computes public commitments to them. These commitments are then shared with a coordinator (who can be one of the participants). This round is message-independent and can be performed as a preprocessing step to reduce the online signing to a single round.
+
+*   **Round 2: Signature Share Generation.** Once a message needs to be signed, the coordinator sends it and the collected commitments to all `t` participants. Each participant then:
+    1.  Computes a **binding factor**. This is a value derived from the message and the commitments of all participants, which is essential to prevent certain forgery attacks by ensuring each participant's signature share is bound to the specific context of that signing operation.
+    2.  Computes a group commitment.
+    3.  Calculates a challenge by hashing the group's public key, the group commitment, and the message.
+    4.  Generates their individual signature share using their secret share, their nonces, and the challenge.
+    5.  Sends their signature share to the coordinator.
+
+The coordinator then aggregates at least `t` valid signature shares to construct the final signature.
+
+**Achieving "Tight Security":**
+
+A standard security proof for schemes like FROST shows that it is secure against chosen-message attacks if the discrete logarithm problem is hard. However, a "tight" security proof provides a much stronger guarantee: that an adversary's ability to forge a signature is very closely tied to their ability to solve the underlying

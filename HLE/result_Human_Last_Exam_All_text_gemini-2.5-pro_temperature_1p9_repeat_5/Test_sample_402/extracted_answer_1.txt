@@ -1,0 +1,21 @@
+The proposed filtering strategy leverages the differential expression (DE) results between your two experimental groups to computationally remove the cancer gene contamination. The logic is that contaminating genes, being present in the CAR-only samples but absent in the CAR-IL15 samples, will register as having an anomalously large positive log2 fold change (log2FC) in a direct comparison.
+
+Here is the step-by-step strategy:
+
+**Step 1: Perform Differential Expression Analysis**
+Conduct a DE analysis comparing your two conditions. Critically, you must set the comparison as **`CAR-only vs. CAR-IL15`**. The output should be a table (e.g., a tab-separated file named `de_results.tsv`) containing at a minimum the gene name, its log2FoldChange, and an adjusted p-value.
+
+**Step 2: Justify and Select a log2FC Threshold**
+Visualize the DE results using an MA plot or a Volcano plot. Identify the distinct cluster of genes with a very high positive log2FC, which represents your contamination. Based on this visualization, choose a stringent filtering threshold. A recommended starting point is a **`log2FC` threshold of 5**, representing a >32-fold upregulation.
+
+**Step 3: Filter the DE Results Using the Command Line**
+Use the `awk` command-line utility to create a new, filtered results file. This command will retain all genes *except* those identified as contaminants (i.e., where log2FC is greater than or equal to your threshold). Assuming your `log2FoldChange` value is in the 3rd column of `de_results.tsv`, the command is:
+
+```bash
+awk 'BEGIN {FS=OFS="\t"} FNR == 1 {print; next} {if ($3 < 5) print}' de_results.tsv > filtered_de_results.tsv
+```
+*   `FNR == 1 {print; next}` correctly preserves the header row.
+*   `{if ($3 < 5) print}` is the core filter. It checks if the value in column 3 (`$3`) is less than 5 and, if so, prints the line to the new file, `filtered_de_results.tsv`.
+
+**Step 4: Proceed with Downstream Analysis**
+Use the resulting `filtered_de_results.tsv` file for all subsequent bioinformatics analyses, such as Gene Set Enrichment Analysis (GSEA) or pathway analysis. This filtered list will provide a clearer and more accurate view of the true transcriptional differences driven by IL-15 expression in your CAR T cells.

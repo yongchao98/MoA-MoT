@@ -1,0 +1,14 @@
+The mathematical formulation for the vertical cross-section of an Interval Type-3 Membership Function (IT3 MF) at a fixed primary input `x`, which is a Type-2 MF defined over the secondary variable `u ∈ [μ_lower(x), μ_upper(x)]`, is given by its Upper Membership Function (UMF) `J_upper(u; x)` and Lower Membership Function (LMF) `J_lower(u; x)`:
+
+**Upper Membership Function (UMF):**
+`J_upper(u; x) = exp( -0.5 * ( (u - C(x)) / Σ(x) )^2 )`
+
+**Lower Membership Function (LMF):**
+`J_lower(u; x) = α(x) * exp( -0.5 * ( (u - C(x)) / Σ(x) )^2 )`
+
+Where the parameters are defined as:
+*   **Center `C(x)`:** The midpoint of the primary membership interval at `x`.
+    `C(x) = (μ_upper(x) + μ_lower(x)) / 2`
+*   **Standard Deviation `Σ(x)`:** The width of the Gaussian, proportional to the primary uncertainty at `x`.
+    `Σ(x) = (μ_upper(x) - μ_lower(x)) / K` (where `K` is a constant, e.g., `2√3`)
+*   **Height Ratio `α(x)`:** The parameter defining the third dimension of uncertainty, where `α(x) ∈ [α_lower(x), α_upper(x)]` and `0 ≤ α_lower(x) ≤ α_upper(x) ≤ 1`.

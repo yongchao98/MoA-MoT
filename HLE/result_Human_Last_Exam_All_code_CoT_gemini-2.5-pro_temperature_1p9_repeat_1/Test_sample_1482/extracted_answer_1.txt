@@ -1,0 +1,17 @@
+The mathematical formulation for the lower bound of a Gaussian IT3 MF's vertical cross-section is:
+--------------------------------------------------------------------------------
+μ̲_VC(u; x) = exp( -0.5 * ( (u - C(x)) / σ_u(x) )^2 )
+Where:
+  - μ̲_VC(u; x) is the Lower Membership Function (LMF) of the vertical cross-section at a fixed primary input 'x'.
+  - 'u' is the secondary variable, representing the membership value in the vertical dimension.
+  - C(x) is the center of the Gaussian, which is a function of 'x'.
+  - σ_u(x) is the standard deviation (spread) of the Gaussian along the vertical slice at 'x', representing vertical uncertainty.
+
+The center C(x) is defined by the primary Upper Membership Function (μ̄_P(x)):
+C(x) = μ̄_P(x) = exp( -0.5 * ( (x - c_p) / σ_p )^2 )
+Where:
+  - μ̄_P(x) is the Upper Membership Function of the primary IT3 fuzzy set.
+  - 'x' is the primary input variable.
+  - 'c_p' is the center of the primary Gaussian.
+  - 'σ_p' is the standard deviation of the primary Gaussian.
+--------------------------------------------------------------------------------

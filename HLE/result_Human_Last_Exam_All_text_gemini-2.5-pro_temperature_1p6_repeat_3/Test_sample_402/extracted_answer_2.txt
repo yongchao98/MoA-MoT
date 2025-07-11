@@ -1,0 +1,16 @@
+The proposed filtering strategy leverages the assumption that contaminating cancer cell genes will appear in the differential expression analysis as genes with a large, negative log2 Fold Change (log2FC) when comparing the clean `CAR-IL15` samples against the contaminated `CAR` samples.
+
+The strategy is as follows:
+
+1.  **Visualize Data:** Generate a volcano plot or MA plot from the differential expression results (`CAR-IL15` vs `CAR`). Identify the distinct cluster of genes with highly negative log2FC values, which represents the contaminant signature. Choose a specific log2FC value from the visible gap between this cluster and the bulk of the data (e.g., -5.0, -6.0, etc.) to use as a cutoff threshold.
+
+2.  **Filter using Command Line:** Use a command-line tool like `awk` to filter the differential expression results file. This command will preserve the header and any gene whose log2FC is greater than your chosen negative threshold, effectively removing the contaminants.
+
+3.  **Implementable Command:** Assuming the differential expression output is a tab-separated file named `results.tsv` and the log2FC values are in the 3rd column, the command to implement the filter is:
+
+    ```
+    awk -F'\t' 'BEGIN {OFS="\t"} NR==1 || $3 > -5.0' results.tsv > filtered_results.tsv
+    ```
+    (Note: Replace `-5.0` with the actual threshold determined from your data visualization).
+
+4.  **Validate:** After filtering, create a list of the removed genes and verify that it is enriched for markers of your specific cancer cell line and lacks canonical T-cell markers. This step is crucial for confirming the accuracy of the filter.

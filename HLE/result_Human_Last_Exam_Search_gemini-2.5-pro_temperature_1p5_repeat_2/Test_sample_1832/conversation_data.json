@@ -1,0 +1,10 @@
+{
+  "question": "In empty space outside a spherically symmetric gravitating body with mass $M$, how many non-zero Christoffel symbols $\\Gamma_{\\mu\\nu}^\\rho$ are non-zero?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "In the empty space outside a spherically symmetric gravitating body of mass $M$, the geometry of spacetime is described by the Schwarzschild metric. The Christoffel symbols, which are derived from this metric, determine the geodesic motion of particles. Due to the spherical symmetry and static nature of the spacetime, many of the Christoffel symbols are zero.\n\nThe non-zero Christoffel symbols for the Schwarzschild metric are:\n*   $\\Gamma^r_{tt} = \\frac{M(r-2M)}{r^3}$\n*   $\\Gamma^r_{rr} = -\\frac{M}{r(r-2M)}$\n*   $\\Gamma^r_{\\theta\\theta} = -(r-2M)$\n*   $\\Gamma^r_{\\phi\\phi} = -(r-2M)\\sin^2\\theta$\n*   $\\Gamma^t_{rt} = \\frac{M}{r(r-2M)}$\n*   $\\Gamma^\\theta_{r\\theta} = \\frac{1}{r}$\n*   $\\Gamma^\\theta_{\\phi\\phi} = -\\sin\\theta\\cos\\theta$\n*   $\\Gamma^\\phi_{r\\phi} = \\frac{1}{r}$\n*   $\\Gamma^\\phi_{\\theta\\phi} = \\cot\\theta$\n\nBy counting these distinct non-zero components, we find there are a total of 9 non-zero Christoffel symbols.\n\n<<<9>>>"
+  ],
+  "user_prompt_list": [
+    "In empty space outside a spherically symmetric gravitating body with mass $M$, how many non-zero Christoffel symbols $\\Gamma_{\\mu\\nu}^\\rho$ are non-zero?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

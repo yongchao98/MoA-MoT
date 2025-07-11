@@ -1,0 +1,9 @@
+
+The leading-order behavior of the generating function H(s,s′) in the limit as the arc-length separation `|s′−s|` approaches zero is given by the asymptotic expansion:
+
+`H(s, s') = |s' - s| - (1/24)κ(s)²|s' - s|³ + O(|s' - s|⁵)`
+
+where:
+-   `|s' - s|` is the leading term, representing the arc length between the bounce points.
+-   `κ(s)` is the local curvature of the boundary at the point `s`.
+-   The first correction term, `-(1/24)κ(s)²|s' - s|³`, characterizes the influence of the boundary's geometry. It shows that the Euclidean distance is less than the arc length, and the deviation grows cubically with the separation `|s' - s|` and quadratically with the local curvature `κ(s)`.

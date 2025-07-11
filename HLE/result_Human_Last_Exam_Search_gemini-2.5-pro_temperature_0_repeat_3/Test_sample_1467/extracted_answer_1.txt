@@ -1,0 +1,3 @@
+*   **Constant Precision Transformers**: Given that log-precision transformers are in TC0, constant-precision transformers are also in **TC0**. The required arithmetic is simpler, and research shows these models can be simulated by constant-depth threshold circuits, with some analyses suggesting they may even fall into the subclass AC0 under specific assumptions.
+
+*   **Polynomial Steps of Chain-of-Thought**: A single pass of a transformer is a TC0 circuit (constant-depth). Allowing a polynomial number of sequential chain-of-thought steps means composing this constant-depth circuit polynomially many times. This results in a circuit with polynomial depth and polynomial size. A uniform circuit family with these properties is equivalent to the complexity class **P**.

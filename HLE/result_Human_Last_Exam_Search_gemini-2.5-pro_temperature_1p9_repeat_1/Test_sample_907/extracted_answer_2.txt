@@ -1,0 +1,6 @@
+a) For non-interacting molecules, the absorption cross-section is the sum of individual molecular absorptions, considering transitions from all occupied orbitals below the Fermi level to all unoccupied ones.
+σₐ(ω) = N * (πω / n c ε₀) * Σ_{occ, j} Σ_{unocc, k} |**d** ⋅ **μ**_kj|² * g(ħω - (ε_k - ε_j))
+
+b) For molecules with near-neighbor interactions, the absorption is described by transitions to delocalized exciton states of the entire chain.
+σₙ(ω) = (πω / n c ε₀) * Σ_{k} |**d** ⋅ **M**_k|² * g(ħω - (E_k - E_G))
+Here, the sum is over the collective exciton states, and the selection rules often limit the absorption to a few specific, optically allowed "bright" exciton states.

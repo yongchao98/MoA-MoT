@@ -1,0 +1,18 @@
+The function `f` and the formula `C` are defined as follows.
+
+First, let's define a basic "unit" formula `U` using the allowed connectives and constants, which will serve as a single, non-duplicable, non-disposable resource token.
+$$
+U = 1 \multimap \bot
+$$
+
+The function $f$ maps a natural number $w$ to a formula representing $w$ units of this resource. This is achieved by taking the tensor product of $w$ copies of $U$.
+$$
+f(w) = \underbrace{U \otimes U \otimes \dots \otimes U}_{w \text{ times}} = \bigotimes_{i=1}^{w} (1 \multimap \bot)
+$$
+For the case where $w=0$, $f(0)$ is the empty product, which is the multiplicative unit `1`.
+
+The formula $C = C(W, m, b)$ represents the target state of having $m$ partitions, each containing resources summing to a value of $b$. This structure is encoded by taking the tensor product of $m$ identical sub-formulas, where each sub-formula represents a "bin" of size $b$. A bin of size $b$ is, in turn, represented by a formula equivalent to $f(b)$.
+$$
+C(W, m, b) = \bigotimes_{k=1}^{m} \left( \bigotimes_{j=1}^{b} U \right) = \bigotimes_{k=1}^{m} \left( \bigotimes_{j=1}^{b} (1 \multimap \bot) \right)
+$$
+This can be written more succinctly as `(U^{\otimes b})^{\otimes m}`.

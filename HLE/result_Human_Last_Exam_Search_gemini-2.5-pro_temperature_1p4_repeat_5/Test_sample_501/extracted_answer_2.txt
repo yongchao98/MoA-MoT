@@ -1,0 +1,14 @@
+The force law for a thermally isolated freely jointed polymer chain is given by:
+
+$F(x) = - \frac{2 E(0) x}{n^2 \ell^2} \exp\left(\frac{x^2}{n^2 \ell^2}\right)$
+
+where:
+*   $F(x)$ is the attractive force between the polymer ends.
+*   $E(0)$ is the initial kinetic energy of the polymer at zero extension.
+*   $n$ is the number of links in the chain.
+*   $\ell$ is the length of each link.
+*   $x$ is the separation between the polymer ends.
+
+For small extensions ($x \ll n\ell$), this can be approximated as a linear restoring force:
+
+$F(x) \approx - \frac{2 E(0)}{n^2 \ell^2} x$

@@ -1,0 +1,24 @@
+Here are the equations for the absorption cross-section.
+
+**a) The interaction between molecules can be neglected:**
+
+σ(ω) ≈ N * (2π²αħω / c) * |**μ**_eg|² * G(ħω - (E_e - E_g))
+
+where:
+*   σ(ω) is the absorption cross-section as a function of angular frequency ω.
+*   N is the number of molecules in the chain.
+*   α is the fine-structure constant.
+*   ħ is the reduced Planck constant.
+*   c is the speed of light.
+*   **μ**_eg is the transition dipole moment of a single molecule between the ground state |g⟩ and the excited state |e⟩.
+*   E_e and E_g are the energies of the excited and ground states, respectively.
+*   G(E) is a Gaussian lineshape function, representing the spectral profile of the ultrashort pulse, centered around E=0. Its width is inversely proportional to the pulse duration.
+
+**b) The interaction between near-neighbors should be considered:**
+
+σ(ω) ≈ N * (2π²αħω / c) * |**μ**_eg|² * G(ħω - (E_e + 2J - E_g))
+
+where all variables are the same as in (a), with the addition of:
+*   J is the near-neighbor interaction energy.
+
+This equation specifically describes the absorption to the optically allowed k=0 Frenkel exciton state, which is shifted in energy by 2J compared to the monomer transition.

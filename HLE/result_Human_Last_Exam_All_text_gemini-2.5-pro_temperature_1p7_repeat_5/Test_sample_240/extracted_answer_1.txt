@@ -1,0 +1,9 @@
+The inability to detect a resonance on a functional MRI coil with a VNA and a loop probe is most often due to one of three primary reasons inherent to modern MRI coil design.
+
+1.  **Active Detuning Circuits:** For patient safety, MRI coils are equipped with active detuning circuits (usually involving PIN diodes) that render the coil non-resonant during the scanner's transmit phase. This detuned state is often the default state when the coil is unpowered. On a test bench, the coil does not receive the necessary DC bias voltage from the scanner to activate its resonant mode, so it remains "off".
+
+2.  **RF Shielding:** Most high-performance coils are enclosed in an RF shield (like a Faraday cage) to block external noise and prevent the coil from interacting with its surroundings. This shield is highly effective and will also block the weak magnetic field from your test probe, preventing it from coupling to the resonant elements inside. You are essentially measuring the non-resonant shield, not the coil.
+
+3.  **Integrated Preamplifiers:** The low-noise preamplifier is an integral part of the coil's tuning and matching network. The coil is designed to be resonant and matched to the specific input impedance of the powered-on preamplifier. When tested on a bench, the unpowered preamplifier presents an incorrect impedance, which can severely damp, shift, or eliminate the coil's resonance.
+
+In essence, you are not seeing a resonance because your benchtop test conditions do not replicate the coil's required electrical and operational environment inside the MRI scanner.

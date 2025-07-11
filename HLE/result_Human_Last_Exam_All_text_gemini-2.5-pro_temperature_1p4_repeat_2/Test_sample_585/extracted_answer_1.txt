@@ -1,0 +1,3 @@
+The post-reset covariance Σ' is computed from the pre-reset covariance Σ via the formula Σ' = J * Σ * J^T, where J is the exact Jacobian of the state transformation. The Jacobian J is given by J = J_l(-δ), where δ is the attitude deviation vector being reset, and J_l is the left Jacobian of SO(3). The expression for the Jacobian matrix is:
+J_l(-δ) = I - ( (1-cos(||δ||)) / ||δ||^2 ) * δ_hat + ( (||δ||-sin(||δ||)) / ||δ||^3 ) * δ_hat^2
+where I is the 3x3 identity matrix, ||δ|| is the magnitude of the vector δ, and δ_hat is the skew-symmetric matrix corresponding to δ.

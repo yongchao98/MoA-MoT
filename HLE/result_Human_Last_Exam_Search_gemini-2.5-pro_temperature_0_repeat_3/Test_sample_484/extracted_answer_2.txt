@@ -1,0 +1,7 @@
+The final expression is:
+$\tau_w\frac{\mathrm{d}w_i}{\mathrm{d}t} = \frac{\beta u_i (v_i + \rho)}{1+v_i}$
+where:
+*   $w_i$ is the synaptic efficacy.
+*   $v_i = \phi \bar{x}_i$ is the presynaptic accumulator.
+*   $u_i = \sum_{j=1}^{N} w_j \bar{x}_j$ is the postsynaptic accumulator.
+*   $\rho = \frac{\alpha(1-\eta) + \beta\eta}{\beta}$ is a constant.

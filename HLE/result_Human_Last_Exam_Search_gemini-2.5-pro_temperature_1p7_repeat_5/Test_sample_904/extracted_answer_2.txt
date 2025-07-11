@@ -1,0 +1,11 @@
+Based on the derivation from the balance of pressures, the governing linear equation for the interfacial shape $\xi(r)$ is determined by the linearized Young-Laplace equation for surface tension and the electrostatic pressure. The surface tension pressure for a slightly deformed cylindrical interface is given by $P_{Laplace} = \gamma \left( \frac{d^2\xi}{dr^2} + \frac{1}{r} \frac{d\xi}{dr} \right)$. The total pressure balance equation is $P_{Laplace} + P_{electrostatic} = \text{constant}$.
+
+By arranging this into the requested form, we get:
+$\gamma \frac{d^2\xi(r)}{dr^2} + \frac{\gamma}{r} \frac{d\xi(r)}{dr} + C(r, \xi(r)) = 0$
+
+Here, the term $C(r, \xi(r))$ incorporates the electrostatic pressure and any constant pressure difference.
+
+By comparing this equation to the general form $A(r) \frac{d^2 \xi(r)}{dr^2} + B(r) \frac{d\xi(r)}{dr} + C(r, \xi(r)) = 0$, the coefficients are identified as:
+
+$A(r) = \gamma$
+$B(r) = \frac{\gamma}{r}$

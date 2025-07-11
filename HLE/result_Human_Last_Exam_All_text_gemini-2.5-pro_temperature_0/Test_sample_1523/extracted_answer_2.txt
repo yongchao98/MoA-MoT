@@ -1,0 +1,4 @@
+The inner product is given by the expression:
+$(\phi, D_\phi) = \int_0^\beta d\tau \int d^d x \, \phi(\vec{x}, \tau) \left( -\partial_\tau^2 - \nabla^2 + m^2 \right) \phi(\vec{x}, \tau)$
+This is equivalent to twice the free part of the Euclidean action, $2S_0[\phi]$. After performing an integration by parts, it can also be written as:
+$(\phi, D_\phi) = \int_0^\beta d\tau \int d^d x \, \left[ (\partial_\tau \phi)^2 + (\nabla\phi)^2 + m^2\phi^2 \right]$

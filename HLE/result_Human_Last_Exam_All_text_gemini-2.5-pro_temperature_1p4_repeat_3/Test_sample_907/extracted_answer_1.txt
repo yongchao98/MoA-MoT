@@ -1,0 +1,13 @@
+
+**a) Neglecting interaction:**
+The equation for the absorption cross-section is:
+$\sigma_a(\omega_{laser}) \propto N \omega_0 |\vec{\mu} \cdot \vec{\epsilon}|^2 e^{-(\omega_0 - \omega_{laser})^2 \tau^2}$
+This describes a single Gaussian peak centered at the isolated molecule's transition frequency $\omega_0$, with an amplitude proportional to the number of molecules $N$.
+
+**b) Including near-neighbor interaction:**
+The equation for the absorption cross-section is:
+$\sigma_b(\omega_{laser}) \propto N \left(\omega_0 + \frac{2J}{\hbar}\right) |\vec{\mu} \cdot \vec{\epsilon}|^2 e^{-\left(\omega_0 + \frac{2J}{\hbar} - \omega_{laser}\right)^2 \tau^2}$
+This describes a single Gaussian peak shifted from $\omega_0$ by the amount $2J/\hbar$ due to the collective excitation (Frenkel exciton). All the oscillator strength (proportional to $N |\vec{\mu}|^2$) is concentrated in this single peak.
+
+**Variable definitions:**
+*   $\omega_{laser}$: Central frequency

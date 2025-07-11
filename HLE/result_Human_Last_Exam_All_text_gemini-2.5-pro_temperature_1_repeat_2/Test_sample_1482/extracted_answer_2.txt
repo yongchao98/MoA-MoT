@@ -1,0 +1,13 @@
+The mathematical formulation characterizing the vertical cross-sections of an Interval Type-3 Membership Function (IT3 MF) using Gaussian paradigms is a pair of equations defining the Upper Membership Function (UMF) and Lower Membership Function (LMF) of the vertical IT2 MF slice. For a fixed primary input `x` and a secondary input `u`, the formulation is:
+
+**Upper Bound (UMF of the vertical slice):**
+`μ_upper(u; x) = exp( -1/2 * ( (u - c_upper(x)) / σ_upper(x) )^2 )`
+
+**Lower Bound (LMF of the vertical slice):**
+`μ_lower(u; x) = α(x) * exp( -1/2 * ( (u - c_lower(x)) / σ_lower(x) )^2 )`
+
+Where:
+*   `u` is the secondary variable representing the primary membership grade.
+*   `c_upper(x)` and `c_lower(x)` are the centers (means) of the Gaussian functions, which vary with the primary input `x`.
+*   `σ_upper(x)` and `σ_lower(x)` are the standard deviations, which also vary with `x`.
+*   `α(x)` is a scaling factor for the height of the LMF, where `0 ≤ α(x) ≤ 1`.

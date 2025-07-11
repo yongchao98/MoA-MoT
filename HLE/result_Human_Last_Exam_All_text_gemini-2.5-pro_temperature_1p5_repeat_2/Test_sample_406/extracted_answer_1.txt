@@ -1,0 +1,5 @@
+Let `(X, d_X)`, `(Y, d_Y)`, and `(Z, d_Z)` be complete metric spaces. Let `F: X * Y * Z → X`, `G: Y * X * Y → Y`, and `H: Z * Y * X → Z` be functions for which there exist non-negative constants `α₁, α₂, α₃, β₁, β₂, β₃, γ₁, γ₂, γ₃` such that for all `x₁, x₂, x ∈ X`, `y₁, y₂, y, y'₁, y'₂ ∈ Y`, `z₁, z₂, z ∈ Z`:
+1. `d_X(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) ≤ α₁·d_X(x₁, x₂) + α₂·d_Y(y₁, y₂) + α₃·d_Z(z₁, z₂)`
+2. `d_Y(G(y₁, x₁, y'₁), G(y₂, x₂, y'₂)) ≤ β₁·d_Y(y₁, y₂) + β₂·d_X(x₁, x₂) + β₃·d_Y(y'₁, y'₂)`
+3. `d_Z(H(z₁, y₁, x₁), H(z₂, y₂, x₂)) ≤ γ₁·d_Z(z₁, z₂) + γ₂·d_Y(y₁, y₂) + γ₃·d_X(x₁, x₂)`
+A sufficient condition for the existence of a unique FGH-tripled fixed point is that the sum of these coefficients satisfies: `max { (α₁ + β₂ + γ₃), (α₂ + β₁ + β₃ + γ₂), (α₃ + γ₁) } < 1`.

@@ -1,0 +1,8 @@
+Let \(N = 2^n - 1\) be the total number of non-empty subsets of \(\{1, 2, \ldots, n\}\). Let \(f_m\) denote the number of sets \(T\) for a given \(m\).
+
+The number of such sets is given by the following recurrence relation:
+*   \(f_1 = 0\)
+*   \(f_2 = 0\)
+*   For \(m \geq 3\):
+    $$ f_m = \frac{1}{m} \left( \binom{N}{m-1} - f_{m-1} - (N - m + 2)f_{m-2} \right) $$
+where \(\binom{n}{k}\) is the binomial coefficient "n choose k".

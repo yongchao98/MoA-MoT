@@ -1,0 +1,14 @@
+The path integral representation for the partition function Z of a system with the grand canonical Hamiltonian H' = -μN in the imaginary time formalism is given by:
+
+**Z = ∫ D[ψ*, ψ] exp(-∫₀^β dτ ∫ d³x ψ*(x, τ)(∂_τ - μ)ψ(x, τ))**
+
+where:
+*   **∫ D[ψ*, ψ]** represents the functional integral over all possible configurations of the field ψ and its conjugate ψ*.
+*   **β** is the inverse temperature (1/k_B T).
+*   **μ** is the chemical potential.
+*   **τ** is the imaginary time variable, integrated from 0 to β.
+*   **x** represents the spatial coordinates.
+*   **∂_τ** is the partial derivative with respect to τ.
+*   The fields are subject to boundary conditions in imaginary time:
+    *   **For Bosons:** Periodic boundary conditions, ψ(x, 0) = ψ(x, β). The fields are complex numbers.
+    *   **For Fermions:** Anti-periodic boundary conditions, ψ(x, 0) = -ψ(x, β). The fields are Grassmann numbers.

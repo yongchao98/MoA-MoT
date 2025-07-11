@@ -1,0 +1,15 @@
+The quantum correction to the conductivity (δσ) in a bulk semiconductor is a negative quantity known as the weak localization correction. It arises from the constructive interference between time-reversed, closed-loop paths of a diffusing electron, which increases the probability of the electron returning to its starting point. This enhanced return probability hinders charge transport and reduces the overall conductivity.
+
+The magnitude of this correction is proportional to the total probability of an electron returning to a small volume (on the order of its de Broglie wavelength λ cubed) during the time it maintains phase coherence (the phase coherence time, τ<sub>φ</sub>).
+
+Based on a simplified model where the correction is proportional to this return probability, the evaluation leads to a correction that depends on the fundamental length scales of the system. The full theoretical treatment yields the result for the change in conductivity:
+
+δσ = - (e² / (2π²ħ)) * (1/l - 1/L<sub>φ</sub>)
+
+where:
+*   `e` is the elementary charge.
+*   `ħ` is the reduced Planck constant.
+*   `l` is the electron's elastic mean free path.
+*   `Lφ` is the phase coherence length, representing the average distance an electron travels before its phase is randomized by an inelastic collision.
+
+Since the phase coherence length L<sub>φ</sub> is necessarily greater than the mean free path `l`, the term (1/l - 1/L<sub>φ</sub>) is positive, confirming that the correction δσ is negative. This signifies a reduction in conductivity due to quantum interference.

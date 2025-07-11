@@ -1,0 +1,16 @@
+The design consists of three main steps:
+1.  **Foundational Choice:** Base the scheme on the Schnorr signature algorithm due to its algebraic properties suitable for thresholdization. Use a Verifiable Secret Sharing (VSS) scheme like Feldman's VSS for the initial one-time Distributed Key Generation (DKG), where `n` parties receive shares `x_i` of a secret key `x`.
+
+2.  **Protocol Structure to Thwart Attacks:** The core of the design is a two-round signing protocol structured to prevent parallel session attacks, which is essential for achieving tight security. This is modeled after the FROST protocol.
+
+3.  **Detailed Two-Round Signing Protocol:** For a group of `t` participating signers `P_i`:
+    *   **Round 1 (Commitment):** Each signer `P_i` generates two secret nonces (`d_i`, `e_i`) and broadcasts their public commitments (`D_i = g^{d_i}`, `E_i = g^{e_i}`).
+    *   **Round 2 (Signing and Response):**
+        a. After receiving all commitments, a public set `B` of all `(D_j, E_j)` pairs is established.
+        b. Each signer `P_i` computes a binding factor `\rho_j = H(j, m, B)` for every participant `j`. This binds each participant's contribution to the full context of the signing session.
+        c. Each signer computes the group nonce `R = \prod (D_j \cdot E_j^{\rho_j})` and the challenge `e = H(R, Y, m)`.
+        d. Each signer computes its partial signature `s_i = d_i + (e_i \cdot \rho_i) + (e \cdot \lambda_i \cdot x_i)`, where `\lambda_i` is its public Lagrange coefficient.
+        e. The partial signatures `s_i` are sent to an aggregator.
+    *   **Finalization:** An aggregator sums the shares to create the final signature `s = \sum s_i`. The complete signature is `(R, s)`.
+
+This design is tightly secure because the binding factor `\rho_j` introduces a non-linear dependency on all participants' commitments from round one, directly preventing the linear algebra-based forgeries that plague simpler two-round schemes.

@@ -1,0 +1,12 @@
+The quantum correction to the conductivity for an electron undergoing diffusion in a bulk (3D) disordered semiconductor, arising from the weak localization effect, is given by:
+
+**δσ = - (e² / (2π²ħ)) * (1/l_e - 1/l_φ)**
+
+Where:
+*   **δσ** is the quantum correction to the conductivity.
+*   **e** is the elementary charge.
+*   **ħ** is the reduced Planck constant.
+*   **l_e** is the elastic mean free path, representing the average distance between scattering events off impurities or defects that do not break phase coherence.
+*   **l_φ** is the phase coherence length, which is the characteristic length scale over which the electron's wave function maintains its phase. It is limited by inelastic scattering processes (like electron-phonon or electron-electron interactions) and is strongly dependent on temperature.
+
+This correction is negative, signifying a reduction in conductivity. It is only significant at low temperatures where l_φ >> l_e.

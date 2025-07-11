@@ -1,0 +1,4 @@
+The effective electron-electron interaction, for a given momentum transfer **q** and Matsubara frequency transfer $i\Omega_m$, is given by:
+$V_{eff}(\mathbf{q}, i\Omega_m) = - \frac{g^2 |\mathbf{q}|^2}{m(w_q^2 + (\Omega_m)^2)}$
+This interaction is attractive for all bosonic Matsubara frequencies. After analytic continuation to real frequencies, $i\Omega_m \to \omega + i\delta$, the interaction is attractive for low energy transfers ($\omega < w_q$) and is retarded. The full effective Hamiltonian for the electron-electron interaction is obtained by summing over all **q**:
+$H_{eff} = \frac{1}{2} \sum_{\mathbf{q}} V_{eff}(\mathbf{q}) \rho_{\mathbf{q}} \rho_{-\mathbf{q}}$

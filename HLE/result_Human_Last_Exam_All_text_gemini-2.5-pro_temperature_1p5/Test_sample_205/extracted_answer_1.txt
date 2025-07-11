@@ -1,0 +1,73 @@
+172[/*
+ * Program to calculate 100! on the Wuxing computer.
+ *
+ * This program calculates the factorial of 100 using a big number
+ * array to store the result, as the final value (158 digits) is
+ * too large for any single native data type. It is designed to
+ * use the minimum possible memory for all variables as per the
+ * Wuxing C compiler specification.
+ *
+ * Memory Usage Calculation:
+ * - Result array: 100! has 158 digits.
+ *   digit result[158]; -> 158 * 1D = 158D
+ * - Local variables:
+ *   - char i:          (3D, for 2..100)
+ *   - char j:          (3D, for 0..157 index)
+ *   - char num_digits: (3D, for 1..158 count)
+ *   - short carry:      (2D, for max value 99)
+ *   - char product:     (3D, for max value 999)
+ *   Total local memory -> 3+3+3+2+3 = 14D
+ *
+ * Total memory z = 158D + 14D = 172D.
+ */
+
+// Global array to hold the digits of the factorial result.
+// Using the exact size required for 100! (158 digits).
+digit result[158];
+
+void main() {
+    // Local variables are chosen to be the smallest possible type.
+    char i;             // The multiplier, from 2 to 100.
+    char num_digits;    // The current number of digits in the result.
+    char product;       // Temporary product for each digit multiplication.
+    short carry;        // The carry-over value.
+    char j;             // Loop index for iterating through digits.
+
+    // Initialize the result to 1.
+    result[0] = 1;
+    num_digits = 1;
+
+    // Main loop: multiply the current result by i, from 2 to 100.
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+
+        // Multiply each digit of the big number by 'i' and add the carry.
+        for (j = 0; j < num_digits; j++) {
+            product = result[j] * i + carry;
+            result[j] = product % 10;
+            carry = product / 10;
+        }
+
+        // After multiplying all digits, if a carry remains,
+        // append its digits to the end of the result array.
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            num_digits++;
+            carry = carry / 10;
+        }
+    }
+
+    // Print the final result to the output buffer.
+    // The digits are stored in reverse order (least significant first),
+    // so we must print from the last digit to the first.
+    printf("100! = ");
+
+    j = num_digits;
+    while (j > 0) {
+        j--;
+        // Use the "%d" specifier for the 'digit' type.
+        printf("%d", result[j]);
+    }
+
+    printf("\n");
+}]

@@ -1,0 +1,29 @@
+### a) The interaction between molecules can be neglected.
+
+The absorption cross-section for the chain, σₐ(ω), is the sum of the cross-sections of the N independent molecules. For an isotropic sample, it is given by:
+
+**σₐ(ω) = N ⋅ [ (πω)/(3ε₀cħ) |μₑ₉|² G(ω - ω₀) ]**
+
+**Where:**
+*   **N**: Number of molecules in the chain.
+*   **ω**: Angular frequency of the incident light.
+*   **ε₀**: Permittivity of free space.
+*   **c**: Speed of light.
+*   **ħ**: Reduced Planck constant.
+*   **μₑ₉**: Transition dipole moment of a single molecule between the ground state |g⟩ and the excited state |e⟩.
+*   **ω₀**: Transition frequency of a single molecule ( (Eₑ - E₉)/ħ ).
+*   **G(ω - ω₀)**: A line shape function. For an ultrashort pulse, this function reflects the pulse's spectral profile, centered at the molecular transition frequency ω₀.
+
+### b) The interaction between near-neighbors should be considered.
+
+When molecules interact, delocalized excitons are formed. Due to selection rules, the absorption process is typically dominated by a single transition to the k=0 exciton state. This state concentrates the total oscillator strength of the N molecules.
+
+The absorption cross-section, σₑ(ω), is given by:
+
+**σₑ(ω) = N ⋅ [ (πω)/(3ε₀cħ) |μₑ₉|² G(ω - ωₖ₌₀) ]**
+
+The parameters are the same as in case (a), with one crucial difference in the line shape function:
+
+*   **G(ω - ωₖ₌₀)**: The line shape function is now centered at the frequency of the k=0 exciton state, **ωₖ₌₀ = (E₀ + 2J)/ħ**.
+    *   **E₀** is the excitation energy of an isolated molecule.
+    *   **J** is the near-neighbor interaction energy, which causes a shift in the absorption peak compared to the non-interacting case. This shift (2J) is a direct measure of the intermolecular coupling.

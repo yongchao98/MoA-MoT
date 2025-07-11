@@ -1,0 +1,29 @@
+To simulate the correlations of a singlet bipartite quantum state under Positive Operator-Valued Measure (POVM) measurements using a local hidden variable (LHV) model, no single answer provides the absolute minimal resources without specifying the nature of the measurements. The resources required depend on whether the measurements are general or restricted. Here's a breakdown of the minimal resources required in different scenarios:
+
+### Simulation of Projective Measurements
+
+For the less general case of projective measurements, the correlations of a singlet state can be perfectly simulated with the following resources:
+
+*   **One non-signaling PR-Box:** A single Popescu-Rohrlich (PR) box, a theoretical non-local resource that is itself non-signaling, is sufficient to simulate the correlations. The PR-box provides correlations that are stronger than what quantum mechanics allows, and a single use of it can reproduce the singlet state's correlations under any projective measurement. This is often considered the most fundamental resource in this context.
+*   **One bit of classical communication:** Alternatively, the correlations can be simulated if the two parties are allowed to exchange one bit of classical communication per measurement round. This result, by Toner and Bacon, also requires access to a shared source of randomness. While both a PR-box and a bit of communication are sufficient, the PR-box is considered a more economical resource because it does not allow for signaling.
+
+It's important to note that these simulations typically assume an infinite amount of shared classical randomness in the form of the local hidden variables.
+
+### Simulation of General POVM Measurements
+
+The case of general POVMs is more complex. POVMs are a more general class of measurements than projective measurements. The resources required depend on the specific set of POVMs being used:
+
+*   **Zero additional resources for restricted POVMs:** If the set of POVMs performed by the two parties is sufficiently restricted, it is possible to construct an LHV model for the singlet state without any need for PR-boxes or communication. This occurs when the POVMs are "noisy" enough or deviate sufficiently from ideal projective measurements. For example, for two-qubit Werner states, which are a mix of a singlet state and a maximally mixed state, an LHV model exists if the state's purity is below a certain threshold, making additional resources unnecessary.
+*   **One non-signaling PR-Box for general POVMs:** To simulate the correlations for an arbitrary and unrestricted set of POVMs on a singlet state, at least one PR-box is required. This is because any projective measurement can be implemented as a POVM, so the resources needed for the general case cannot be less than for the specific case of projective measurements. It has been shown that a single PR-box is indeed sufficient.
+
+### Summary of Minimal Resources
+
+In summary, the minimal resources required, on average, to simulate the correlations of a singlet state with an LHV model for a set of POVMs are:
+
+| Measurement Type | Minimal Non-Signaling Resource | Minimal Communication Resource |
+| :--- | :--- | :--- |
+| **Projective Measurements** | 1 PR-Box | 1 bit |
+| **Restricted POVMs** | 0 | 0 |
+| **General/Unrestricted POVMs** | 1 PR-Box | 1 bit |
+
+Therefore, the minimal non-signaling resource necessary is **one PR-box**, assuming the set of POVMs is general enough to include measurements that can violate a Bell inequality. If the set of POVMs is restricted, it's possible that **no additional resources** beyond shared randomness are required. The average resource cost would depend on the specific mix of measurements in the set of POVMs. If the set contains a mix of "easy" (simulable with LHV) and "hard" (requiring a PR-box) measurements, the average resource use per round of the experiment would be a fraction of a PR-box. However, the fundamental resource required to be available is a single PR-box.

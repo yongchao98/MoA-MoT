@@ -1,0 +1,53 @@
+177[#include <stdio.h>
+
+void main() {
+    // Total variable memory: 160(result)+3(i)+2(j)+2(carry)+8(temp)+2(start_index)=177D
+
+    // Use an array of 4-digit unsigned ints to store the big number.
+    // Each element is a "digit" in base 10000.
+    unsigned int result[40]; // 160D
+    char i;                  // 3D (for 2..100)
+    short j;                 // 2D (for 0..39)
+    short carry;             // 2D (max value is < 100)
+    long temp;               // 8D (for intermediate product)
+    short start_index;       // 2D (for printing)
+
+    // Initialize result array to 0
+    for (j = 0; j < 40; j++) {
+        result[j] = 0;
+    }
+    result[0] = 1; // Start with 1! = 1
+
+    // Calculate 100! by multiplying from 2 to 100
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        for (j = 0; j < 40; j++) {
+            // Multiply one "digit" of the big number by i and add the carry
+            temp = (long)result[j] * i + carry;
+            result[j] = temp % 10000; // The new value for this "digit"
+            carry = temp / 10000;     // The carry for the next "digit"
+        }
+    }
+
+    // Find the most significant chunk to start printing from
+    start_index = 39;
+    while (start_index > 0 && result[start_index] == 0) {
+        start_index--;
+    }
+    
+    // Output each number in the final equation: 100! = [result]
+    printf("100! = ");
+    
+    // Print the most significant chunk without leading zeros
+    printf("%u", result[start_index]);
+
+    // Print the rest of the chunks, padding with leading zeros.
+    // Manual padding is used since %04u format specifier might not exist.
+    for (j = start_index - 1; j >= 0; j--) {
+        if (result[j] < 1000) printf("0");
+        if (result[j] < 100)  printf("0");
+        if (result[j] < 10)   printf("0");
+        printf("%u", result[j]);
+    }
+    printf("\\n");
+}]

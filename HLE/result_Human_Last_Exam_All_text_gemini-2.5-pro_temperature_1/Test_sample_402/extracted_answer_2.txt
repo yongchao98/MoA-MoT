@@ -1,0 +1,11 @@
+A multi-step filtering strategy to remove contaminating cancer genes from RNA-seq data, implementable via command-line tools:
+
+1.  **Generate a Cancer-Specific Gene Signature:** Perform a differential expression (DE) analysis comparing RNA-seq data from the pure cancer cell line against a pure T-cell reference (e.g., pre-transduction T-cells). From these results, create a list of high-confidence cancer-specific genes by filtering for genes with a very high log2 fold change (e.g., > 5) and a stringent false discovery rate (FDR < 0.01). Save this list of gene IDs as `cancer_signature.txt`.
+
+2.  **Identify Upregulated Genes in the Contaminated Sample Group:** Perform the primary DE analysis on your experimental data: `CAR_only` vs. `CAR_IL15`. Filter these results to identify all genes that are significantly upregulated in the `CAR_only` group, using thresholds such as log2 fold change > 2 and FDR < 0.05. This captures all potential contaminants.
+
+3.  **Define the Contaminant List by Intersection:** Identify the genes that are present in both the `cancer_signature.txt` list (from Step 1) and the list of upregulated genes from your experiment (from Step 2). This intersection represents genes that are both specific to the cancer cell and appear as artifacts in your contaminated samples. Save this final list of gene IDs to be removed as `genes_to_filter.txt`.
+
+4.  **Filter the Primary DE Results:** Remove all genes listed in `genes_to_filter.txt` from your complete `CAR_only` vs. `CAR_IL15` DE results table. The resulting filtered table is now cleaned of the specific contamination and ready for downstream biological interpretation.
+
+5.  **Verification:** Perform a sanity check on the `genes_to_filter.txt` list to ensure it contains plausible cancer-related genes (e.g., epithelial markers) and not essential T-cell genes, confirming the validity of the filter.

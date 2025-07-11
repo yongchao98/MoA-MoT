@@ -1,0 +1,9 @@
+The mathematical formulation for the lower bound of the membership function for a vertical cross-section of a Gaussian Interval Type-3 Membership Function (IT3 MF) at a fixed primary input `x` is given by:
+
+`μ̲_v(u; x) = exp( - (u - m_u(x))² / (2 * σ_u(x)²) )`
+
+Where:
+*   `u` is the secondary input variable representing the membership grade of `x`.
+*   `m_u(x)` represents the mean of the Gaussian distribution for the vertical cross-section. It is defined based on the primary membership function boundaries as `m_u(x) = (μ̄_L(x) + μ̲_U(x)) / 2`.
+*   `σ_u(x)` represents the standard deviation of the Gaussian distribution. It is defined to be proportional to the uncertainty at `x` as `σ_u(x) = K * (μ̄_L(x) - μ̲_U(x))`, where `K` is a positive, user-defined constant.
+*   `μ̄_L(x)` and `μ̲_U(x)` are the lower bound of the primary upper membership function and the upper bound of the primary lower membership function of the IT3 MF, respectively. These functions define the most plausible range of membership values for the input `x`.

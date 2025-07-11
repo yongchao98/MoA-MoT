@@ -1,0 +1,15 @@
+**Equilibrium Mean Energy (U):**
+
+The equilibrium mean energy for a gas of light quanta distributed over energy levels `ε_s` with degeneracies `g_s` at a temperature `T` is given by:
+
+`U = Σ_s (g_s * ε_s) / (exp(ε_s / (k_B*T)) - 1)`
+
+where `k_B` is the Boltzmann constant.
+
+**Equilibrium Entropy (S):**
+
+The equilibrium entropy `S` for this system is:
+
+`S = (U/T) - k_B * Σ_s g_s * log(1 - exp(-ε_s / (k_B*T)))`
+
+These expressions are the fundamental results for the thermodynamics of black-body radiation and other systems of non-interacting bosons where the particle number is not conserved.

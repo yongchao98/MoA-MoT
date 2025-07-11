@@ -1,0 +1,30 @@
+The distribution of the electrical potential ($\psi$) in the electrical double layer (EDL) across the microchannel height (from y=0 to y=H) is determined by the linearized Poisson-Boltzmann equation, which is appropriate for systems where the Debye-Hückel approximation is valid.
+
+The governing equation is:
+$$
+\frac{d^2\psi}{dy^2} = k^2 \psi
+$$
+
+The general solution to this differential equation is:
+$$
+\psi(y) = C_1 \cosh(ky) + C_2 \sinh(ky)
+$$
+where $C_1$ and $C_2$ are constants determined by the boundary conditions.
+
+The problem specifies a slip-dependent zeta potential $z_{aj} = z_j(1+\beta k)$ and a key condition that the zeta potential at the top surface is zero ($z_2 = 0$). For a coordinate system with the bottom plate at $y=0$ and the top plate at $y=H$, the boundary conditions are:
+1.  At the bottom wall ($y=0$): $\psi(0) = z_{a1} = z_1(1+\beta k)$
+2.  At the top wall ($y=H$): $\psi(H) = z_{a2} = z_2(1+\beta k) = 0$
+
+By applying these boundary conditions to the general solution, the constants $C_1$ and $C_2$ are found. Substituting these constants back and simplifying the resulting expression using the hyperbolic identity for the sine of a difference leads to the final expression.
+
+The expression for the Electrical double-layer potential distribution $\psi(y)$ is:
+$$
+\psi(y) = z_1(1+\beta k) \frac{\sinh(k(H-y))}{\sinh(kH)}
+$$
+Where:
+*   $\psi(y)$ is the electrical potential at a vertical position $y$.
+*   $z_1$ is the zeta potential of the bottom surface under no-slip conditions.
+*   $\beta$ is the slip length.
+*   $k$ is the Debye-Hückel parameter.
+*   $H$ is the height of the microchannel.
+*   $\sinh$ is the hyperbolic sine function.

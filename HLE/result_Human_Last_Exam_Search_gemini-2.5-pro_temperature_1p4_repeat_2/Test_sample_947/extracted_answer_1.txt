@@ -1,0 +1,7 @@
+The expression for the magnetic field `H` is given by its components:
+
+`H_x(x, z) = - (π^2 * w^2 * H0) / (2 * D^2) * (1 - cosh(2πx / D) * cos(2πz / D)) / (cosh(2πx / D) - cos(2πz / D))^2`
+
+`H_y(x, z) = 0`
+
+`H_z(x, z) = Ha + (π^2 * w^2 * H0) / (2 * D^2) * (sinh(2πx / D) * sin(2πz / D)) / (cosh(2πx / D) - cos(2πz / D))^2`

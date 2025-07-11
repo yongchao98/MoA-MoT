@@ -1,0 +1,6 @@
+The primary reason a functional MRI coil may not show a resonance when tested with a magnetic loop antenna is due to its **active decoupling circuit**. For safety and to ensure proper operation, receive coils are designed to be actively "detuned" (made non-resonant) during the scanner's high-power RF transmit pulse. This is controlled by a DC voltage from the scanner. When the coil is on a bench without this control voltage, it defaults to this safe, non-resonant state.
+
+Other significant factors include:
+1.  **Lack of Loading:** Coils are tuned to resonate at the correct frequency when loaded by the patient. When tested unloaded in air, the resonant frequency shifts significantly higher, and may be outside the frequency range being tested.
+2.  **Complex Coil Geometry:** For multi-element phased-array coils, the pickup loop must be positioned carefully over a single element to detect a resonance, as the elements are decoupled from each other.
+3.  **Unpowered Integrated Electronics:** Most coils have built-in preamplifiers that are unpowered during a bench test. The impedance of the unpowered preamp can mask the underlying resonance of the coil element.

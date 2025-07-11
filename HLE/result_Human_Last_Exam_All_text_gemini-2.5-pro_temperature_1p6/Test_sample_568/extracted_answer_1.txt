@@ -1,0 +1,2 @@
+Let $n$ be the number of repetitions. The solution is:
+$n = \begin{cases} 1 & \text{if } \delta = 1/2 \\ \lceil \frac{\ln(\epsilon)}{\ln|1-2\delta|} \rceil & \text{if } \delta \neq 1/2 \end{cases}$

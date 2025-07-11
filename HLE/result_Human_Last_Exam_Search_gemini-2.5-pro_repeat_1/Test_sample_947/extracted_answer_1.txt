@@ -1,0 +1,13 @@
+The final expression for the magnetic field `H(x,z)` for `Ha > H0` and `|x| >> a` is:
+
+**H_z(x, z) = Ha - (2π² * Jc*d*w² / D²) * [ (cos(2πz/D)cosh(2πx/D) - 1) / (cosh(2πx/D) - cos(2πz/D))² ]**
+
+**H_x(x, z) = (2π² * Jc*d*w² / D²) * [ (sin(2πz/D)sinh(2πx/D)) / (cosh(2πx/D) - cos(2πz/D))² ]**
+
+where:
+*   `Ha` is the applied magnetic field in the z-direction.
+*   `Jc` is the critical current density.
+*   `d` is the strip thickness.
+*   `2w` is the strip width.
+*   `D` is the stacking interval.
+*   `x` and `z` are the coordinates.

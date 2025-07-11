@@ -1,0 +1,6 @@
+Let `k` be the integer `1 \le k \le n` such that the destination distance `m` satisfies the following inequality:
+$$ \sum_{j=k+1}^{n} \frac{100}{2j-1} < m \le \sum_{j=k}^{n} \frac{100}{2j-1} $$
+(where an empty sum from `j=n+1` to `n` is defined as 0).
+
+The maximum amount of water left, `W_{final}`, is then given by the formula:
+$$ W_{final} = 100k - (2k-1) \left( m - \sum_{j=k+1}^{n} \frac{100}{2j-1} \right) $$

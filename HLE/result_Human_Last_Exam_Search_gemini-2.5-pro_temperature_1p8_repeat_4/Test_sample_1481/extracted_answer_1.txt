@@ -1,0 +1,15 @@
+In the theoretical framework of planar Birkhoff billiard dynamics, the asymptotic analysis of the generating function `H(s,s')`, which encapsulates the billiard map's symplectic structure, reveals a profound interplay between the boundary's geometry and the system's dynamical properties. In the limit as the arc-length parameter separation `|s′−s|` approaches zero, corresponding to near-glancing collisions, the leading-order behavior of `H(s,s')` can be rigorously characterized through a Taylor series expansion of the boundary curve `γ(s)`.
+
+The generating function is defined as the negative of the Euclidean distance between two consecutive impact points, `H(s,s′) = -||γ(s′) - γ(s)||`. A detailed derivation based on the Frenet-Serret formulas for a planar curve yields the following asymptotic expansion:
+
+`H(s,s') ≈ -|s'-s| + (1/24)κ(s)²|s'-s|³ - (1/12)κ(s)κ'(s)|s'-s|⁴ + O(|s'-s|⁵)`
+
+This expansion elucidates the nuanced influence of the boundary's local geometry:
+
+1.  **Leading Term**: The leading term is `-|s'-s|`, the negative of the arc-length separation. This is the trivial approximation where the chord length equals the arc length for infinitesimal separations.
+
+2.  **Primary Curvature Effect**: The first and most significant correction term is `+(1/24)κ(s)²|s'-s|³`. This term demonstrates that the primary deviation from the simple arc-length approximation is cubic in the separation `|s'-s|` and proportional to the square of the local curvature `κ(s)`. This quantitatively shows how a larger curvature causes a greater deviation between the true distance and the arc length, a purely geometric effect that is fundamentally integrated into the dynamics via the generating function.
+
+3.  **Higher-Order Geometric Influence**: The subsequent term, `-(1/12)κ(s)κ'(s)|s'-s|⁴`, involves the derivative of the curvature, `κ'(s)`. This term reveals that the non-uniformity of the boundary's curvature also systematically affects the billiard dynamics, albeit at a higher order.
+
+This expansion is central to understanding the system's behavior for trajectories that are nearly tangent to the boundary. The derivatives of this function determine the reflection angles, thereby linking the geometric properties of the boundary (`κ(s)` and `κ'(s)`) directly to the dynamical variables of the billiard map in this critical asymptotic regime.

@@ -1,0 +1,17 @@
+To design a tightly secure t-out-of-n threshold signature scheme with a two-round signing protocol, follow these steps:
+
+**Step 1: Choose Schnorr Signatures as the Foundation**
+Select the Schnorr signature algorithm as the cryptographic primitive. Its signature equation (`s = k + c*x`) is linear, which is ideal for secret sharing and aggregation, enabling an efficient and secure threshold design. The scheme will operate over a standard elliptic curve group.
+
+**Step 2: Use a Verifiable Secret Sharing DKG**
+Implement a Distributed Key Generation (DKG) phase as a one-time setup. Use a robust protocol like Feldman's Verifiable Secret Sharing (VSS) to create the key shares. This ensures that a single group public key `Y` is generated, and each of the `n` parties receives a secret share `x_i` of the private key `x` without `x` ever being constructed in a single location. The VSS component guarantees that all parties hold consistent shares from a valid degree `t-1` polynomial.
+
+**Step 3: Design a Two-Round Signing Protocol**
+For a set `S` of `t` participating signers, the signing protocol proceeds in two rounds:
+
+*   **Round 1: Commitment.**
+    1.  Each participating party `P_i` generates a secret one-time nonce `k_i`.
+    2.  Each party computes and broadcasts a public commitment to their nonce, `R_i = g^{k_i}`.
+    *   *Security Rationale:* This commitment round is critical for security. It prevents an adversary from adaptively choosing their nonce contribution after observing the nonces of honest parties, thus defeating key-related attacks and enabling a tight security proof.
+
+*

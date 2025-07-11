@@ -1,0 +1,13 @@
+In the context of Interval Type-3 Membership Functions (IT3 MFs) using Gaussian-based paradigms, the mathematical formulation that characterizes the vertical cross-section for a fixed primary input variable *x* and a secondary input variable *u* is defined by an Upper Membership Function (UMF) and a Lower Membership Function (LMF).
+
+The **Upper Membership Function (UMF)**, denoted as μ̅_Ã*ₓ*(*u*), is given by a Gaussian function:
+**μ̅_Ã*ₓ*(*u*) = exp[ -½ ( (*u* - *m*(*x*)) / *σ*ᵤ )² ]**
+
+The **Lower Membership Function (LMF)**, denoted as μ̲_Ã*ₓ*(*u*), is a scaled version of the UMF:
+**μ̲_Ã*ₓ*(*u*) = *λ* * exp[ -½ ( (*u* - *m*(*x*)) / *σ*ᵤ )² ]**
+
+Where:
+*   **u** is the secondary input variable.
+*   **m(x)** is the mean of the Gaussian function, which depends on the primary input *x*.
+*   **σᵤ** is the standard deviation of the Gaussian function with respect to *u*.
+*   **λ** is the LowerScale parameter, where 0 ≤ *λ* ≤ 1, which determines the height of the lower bound relative to the upper bound.

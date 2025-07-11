@@ -1,0 +1,60 @@
+```python
+def derive_effective_interaction():
+    """
+    This function prints the step-by-step derivation of the effective 
+    electron-electron interaction from the electron-phonon coupling.
+    """
+
+    explanation = """
+    ### Derivation of the Effective Electron-Electron Interaction ###
+
+    Step 1: Define the relevant parts of the Hamiltonian.
+    - Phonon Hamiltonian: H_ph = sum_{q,j} w_q a†_{q,j} a_{q,j}
+    - Electron-Phonon Interaction (modified for momentum conservation):
+      H_e-ph = sum_{q,j} C_{q,j} * rho_{-q} * (a_{q,j} + a†_{-q,j})
+      where C_{q,j} = g * i * q_j / sqrt(2 * m * w_q)
+      and rho_{-q} is the electron density operator for momentum -q.
+
+    Step 2: Path Integral Formulation.
+    The partition function Z can be written as a path integral over electron and phonon fields.
+    We integrate out the phonon fields (phi) to get an effective action for the electrons.
+    Z_eff = integral(D[phi*, phi] * exp(-S_ph - S_e-ph))
+    This yields an effective action S_eff[rho] such that Z is proportional to integral(D[psi*,psi] exp(-S_e - S_eff)).
+
+    Step 3: Calculate the effective action S_eff.
+    The phonon integral is Gaussian. A standard result from second-order perturbation theory or direct evaluation of the Gaussian integral gives the effective action as:
+    S_eff = - (1/2) * <(S_e-ph)^2>_0
+    where S_e-ph = integral(d_tau H_e-ph(tau)) and <...>_0 denotes averaging over the free phonon ensemble.
+
+    Step 4: Expand the term.
+    S_eff = - (1/2) * sum_{q,j} integral(d_tau1 d_tau2) [C_{q,j} * C_{-q,j} * rho_{-q}(tau1) * rho_{q}(tau2) * D_{q,j}(tau1 - tau2)]
+    - C_{-q,j} is the coupling for momentum -q. Given C_{q,j}, we have C_{-q,j} = -C_{q,j}.
+      Therefore, the product is C_{q,j} * C_{-q,j} = -C_{q,j}^2 = -(g * i * q_j / sqrt(2*m*w_q))^2 = g^2 * q_j^2 / (2 * m * w_q).
+    - D_{q,j}(tau) is the free phonon propagator for the operator (a + a†). In Matsubara frequency space (omega_n), this is:
+      D_{q,j}(i*omega_n) = 2 * w_q / (w_q^2 + omega_n^2).
+
+    Step 5: Obtain the static interaction potential.
+    In the static limit (omega_n -> 0), which corresponds to an instantaneous interaction, the propagator becomes:
+    D_{q,j}(0) = 2 * w_q / w_q^2 = 2 / w_q.
+
+    Step 6: Assemble the effective interaction Hamiltonian.
+    The effective action in the static limit corresponds to an interaction term in the effective Lagrangian:
+    L_eff = - (1/2) * sum_{q,j} [C_{q,j} * C_{-q,j} * D_{q,j}(0)] * rho_{-q} * rho_q
+    Substituting the expressions for C*C and D(0):
+    L_eff = - (1/2) * sum_{q,j} [ (g^2 * q_j^2 / (2*m*w_q)) * (2 / w_q) ] * rho_{-q} * rho_q
+    L_eff = - sum_{q,j} [ g^2 * q_j^2 / (2 * m * w_q^2) ] * rho_{-q} * rho_q
+
+    The effective Hamiltonian is H_eff = -L_eff. For a single momentum mode q (not summing over q), we sum over the polarizations j:
+    H_eff(q) = sum_j [ g^2 * q_j^2 / (2 * m * w_q^2) ] * rho_{-q} * rho_q
+    Since sum_j (q_j^2) = |q|^2 (the squared magnitude of the vector q), we get:
+    H_eff(q) = [ g^2 * |q|^2 / (2 * m * w_q^2) ] * rho_{-q} * rho_q
+
+    Step 7: The Final Equation for the effective interaction.
+    The resulting effective interaction between electrons mediated by phonons for a given momentum q is described by the potential V_eff(q):
+    H_eff(q) = V_eff(q) * rho_{-q} * rho_q
+    
+    The potential V_eff(q) is:
+    V_eff(q) = g^2 * |q|^2 / (2 * m * w_q^2)
+
+    Note: This interaction is repulsive (V_eff > 0). This is a direct consequence of the imaginary coupling constant 'i' in the provided Hamiltonian. A real coupling constant
+```

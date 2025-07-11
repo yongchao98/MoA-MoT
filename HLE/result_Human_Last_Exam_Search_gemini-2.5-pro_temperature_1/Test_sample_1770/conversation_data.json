@@ -1,0 +1,10 @@
+{
+  "question": "You want to engineer Corynebacterium glutamicum to produce p-coumaric acid so you introduce the appropriate biosynthetic genes. However, the produced coumarate is rapidly degraded. What gene should you knock out to prevent degradation of the desired product?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "To prevent the degradation of p-coumaric acid in *Corynebacterium glutamicum*, you should knock out a gene within the **`phd` gene cluster**. This cluster is responsible for the catabolism of phenylpropanoids, including p-coumaric acid.\n\nThe degradation pathway is a CoA-dependent, β-oxidative process. The `phd` gene cluster contains several genes essential for this pathway, including `phdA`, `phdB`, `phdC`, `phdD`, and `phdE`.\n\nSpecifically, knocking out any of the following genes has been shown to abolish the degradation of phenylpropanoids:\n*   **`phdA`**: This gene encodes an acyl:CoA ligase that catalyzes the first step of the degradation pathway, the activation of p-coumaric acid to p-coumaroyl-CoA.\n*   **`phdB`**, **`phdC`**, or **`phdE`**: The loss of any of these genes also stops the bacterium from growing on p-coumaric acid, indicating they are all essential for its breakdown.\n\nTherefore, a targeted knockout of a key enzymatic gene such as `phdA`, or the entire `phd` gene cluster (or at least the genes `phdA-E`), will prevent the degradation of the desired product.\n\n<<<phd gene cluster (e.g., phdA)>>>"
+  ],
+  "user_prompt_list": [
+    "You want to engineer Corynebacterium glutamicum to produce p-coumaric acid so you introduce the appropriate biosynthetic genes. However, the produced coumarate is rapidly degraded. What gene should you knock out to prevent degradation of the desired product?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

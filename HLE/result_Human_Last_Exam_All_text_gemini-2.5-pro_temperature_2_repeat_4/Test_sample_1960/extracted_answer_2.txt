@@ -1,0 +1,5 @@
+The function `f` maps a natural number `w` to the linear logic formula `f(w)` defined as:
+$f(w) = \underbrace{\bot \otimes \bot \otimes \dots \otimes \bot}_{w \text{ times}}}$, which can be written as $\bot^w$. If $w=0$, $f(0)=\mathbf{1}$.
+
+The linear logic formula `C = C(W, m, b)` is:
+$C = (\underbrace{(\bot^b \multimap \mathbf{1}) \otimes (\bot^b \multimap \mathbf{1}) \otimes \dots \otimes (\bot^b \multimap \mathbf{1})}_{m \text{ times}}) \multimap \mathbf{1}$, which can be written as $(\bot^b \multimap \mathbf{1})^{\otimes m} \multimap \mathbf{1}$.

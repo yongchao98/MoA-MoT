@@ -1,0 +1,4 @@
+The density profile \(\rho(z)\) is given by \(\rho(z) = m_A n_A(z) + m_B n_B(z)\), where the number density profiles \(n_A(z)\) and \(n_B(z)\) are implicitly defined by the following system of equations:
+1. \( k_B T \left[ \ln(n_A(z)) - \ln(1-n_A(z)b'_A-n_B(z)b'_B) + \frac{b'_A (n_A(z)+n_B(z))}{1-n_A(z)b'_A-n_B(z)b'_B} \right] - 2(a'_{AA}n_A(z) + a'_{AB}n_B(z)) + m_A g z = C_A \)
+2. \( k_B T \left[ \ln(n_B(z)) - \ln(1-n_A(z)b'_A-n_B(z)b'_B) + \frac{b'_B (n_A(z)+n_B(z))}{1-n_A(z)b'_A-n_B(z)b'_B} \right] - 2(a'_{AB}n_A(z) + a'_{BB}n_B(z)) + m_B g z = C_B \)
+The constants \(C_A\) and \(C_B\) are determined by the total particle number constraints \(\int_0^H n_A(z) A \, dz = N_A\) and \(\int_0^H n_B(z) A \, dz = N_B\). The parameters \(m_i, a'_{ij}, b'_i\) are the particle-level parameters derived from the given molar values. This system must be solved numerically to find the explicit functions for \(n_A(z)\) and \(n_B(z)\).

@@ -1,0 +1,21 @@
+a) In the absence of intermolecular interactions, the absorption cross-section σ(ωₗ) as a function of the laser frequency ωₗ is given by the sum of the cross-sections of the individual molecules. For a single molecule, the equation is:
+
+**σ(ωₗ) = C₁ ⋅ ωₗ ⋅ |⟨φբ|μ|φᵢ⟩|² ⋅ exp[ - ( ωᵢf - ωₗ )² τ² ]**
+
+where:
+*   C₁ is a proportionality constant.
+*   μ is the electric dipole operator.
+*   |φᵢ⟩ and |φբ⟩ are the initial and final molecular orbitals, respectively.
+*   ωᵢf = (εբ - εᵢ)/ħ is the molecular transition frequency, determined by the orbital energies εᵢ and εբ.
+*   τ is the characteristic duration of the Gaussian laser pulse.
+
+b) When near-neighbor interactions are considered, delocalized exciton states are formed. For a linear chain, absorption is typically dominated by the k=0 exciton state. The equation for the absorption cross-section of the entire chain becomes:
+
+**σ(ωₗ) = C₂ ⋅ ωₗ ⋅ N ⋅ |⟨φբ|μ|φᵢ⟩|² ⋅ exp[ - ( ( ωᵢf + 2J/ħ ) - ωₗ )² τ² ]**
+
+where:
+*   C₂ is a proportionality constant.
+*   N is the number of coherently coupled molecules in the chain.
+*   J is the near-neighbor coupling energy.
+*   The term N⋅|⟨φբ|μ|φᵢ⟩|² shows the coherent enhancement of the transition strength.
+*   The term (ωᵢf + 2J/ħ) shows that the absorption peak is shifted by the interaction energy.

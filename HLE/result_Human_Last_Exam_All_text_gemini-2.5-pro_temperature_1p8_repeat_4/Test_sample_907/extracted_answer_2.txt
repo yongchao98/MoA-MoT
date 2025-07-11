@@ -1,0 +1,28 @@
+The equation for the absorption cross-section, $\sigma(\omega_L)$, as a function of the laser's central frequency $\omega_L$, within the first-order time-dependent perturbation theory for a Gaussian-shaped pulse with duration parameter $\tau$ is derived as follows.
+
+**a) The interaction between molecules can be neglected.**
+
+In this case, the chain behaves as a collection of $N$ independent molecules. The total absorption is the sum of the absorptions of individual molecules. All transitions are from the molecular ground state to the first excited state, occurring at the same frequency $\omega_{eg}$. The cross-section is given by a single Gaussian peak:
+
+$\sigma_a(\omega_L) = N \frac{2\sqrt{\pi}\tau}{3\hbar c \epsilon_0} \omega_{eg} |\vec{d}_{eg}|^2 e^{-(\omega_{eg}-\omega_L)^2 \tau^2}$
+
+where:
+*   $N$ is the number of molecules in the chain.
+*   $\omega_{eg}$ is the transition angular frequency of a single molecule.
+*   $\vec{d}_{eg}$ is the transition dipole moment of a single molecule.
+*   $\tau$ is the duration parameter of the Gaussian laser pulse.
+*   $\hbar$ is the reduced Planck constant.
+*   $c$ is the speed of light in vacuum.
+*   $\epsilon_0$ is the permittivity of free space.
+
+**b) The interaction between near-neighbors should be considered.**
+
+When nearest-neighbor interactions (with coupling energy $J$) are included, the excited states become delocalized Frenkel excitons. The absorption spectrum is no longer a single peak but a sum of peaks corresponding to transitions to the various exciton states $|\Psi_k\rangle$. The interaction leads to an energy shift and a redistribution of oscillator strength among the exciton states. The equation for the cross-section is a sum over all exciton states:
+
+$\sigma_b(\omega_L) = \frac{2\sqrt{\pi}\tau}{3\hbar c \epsilon_0} \sum_{k=1}^{N} \omega_{Gk} |\vec{D}_{Gk}|^2 e^{-(\omega_{Gk}-\omega_L)^2 \tau^2}$
+
+where:
+*   The sum is over all $N$ exciton states, indexed by $k$.
+*   $\omega_{Gk} = \omega_{eg} + \frac{2J}{\hbar}\cos(k a)$ is the transition frequency to the k-th exciton state (for a simple chain model with lattice spacing $a$).
+*   $\vec{D}_{Gk} = \langle \Psi_k | \sum_{n} \vec{d}_{n} | G \rangle$ is the cooperative transition dipole moment for the excitation from the ground state $|G\rangle$ to the exciton state $|\Psi_k\rangle$. Its magnitude depends on the constructive or destructive interference of the individual molecular dipoles.
+*   All other symbols are as defined in part (a).

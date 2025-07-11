@@ -1,0 +1,10 @@
+No, the local magnetic field at the L1 point is not considered to be radial when calculating the normalized magnetic helicity of Alfven Ion Cyclotron (AIC) waves. Due to the Sun's rotation, the Interplanetary Magnetic Field (IMF) at L1 follows a Parker Spiral and is typically oriented at about 45 degrees to the radial direction.
+
+The justification for this is based on the physics of the waves themselves. AIC waves are field-aligned, meaning they propagate along the direction of the local magnetic field. Normalized magnetic helicity is a measure of the wave's polarization, which is defined by the behavior of the wave's components *perpendicular* to its direction of propagation.
+
+Therefore, the correct scientific procedure involves:
+1.  Measuring the local mean magnetic field vector, $\vec{B}_0$.
+2.  Mathematically transforming the data from the standard spacecraft coordinate system (which is often radially based) into a new Field-Aligned Coordinate (FAC) system, where one axis is parallel to $\vec{B}_0$ and the other two are perpendicular.
+3.  Calculating the helicity using the magnetic field components along these two new perpendicular axes.
+
+Using components that are merely perpendicular to the radial direction (without performing this transformation) would be physically incorrect as it would fail to isolate the true transverse wave fluctuations.

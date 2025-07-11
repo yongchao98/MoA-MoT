@@ -1,0 +1,17 @@
+A point `(x, y, z) ∈ X×Y×Z` is an FGH-tripled fixed point of the functions `F:X×Y×Z→X`, `G:Y×X×Y→Y`, and `H:Z×Y×X→Z` if it satisfies the system `x=F(x,y,z)`, `y=G(y,x,y)`, and `z=H(z,y,x)`. The conditions for the existence and uniqueness of such a point are as follows:
+
+1.  **Completeness of Spaces:** The sets `X`, `Y`, and `Z` must be **complete metric spaces** with their respective metrics `d_X`, `d_Y`, and `d_Z`.
+
+2.  **Joint Contraction Condition:** The functions must collectively satisfy a contraction property. This means there exist non-negative constants `α₁, β₁, γ₁`, `α₂, β₂`, and `α₃, β₃, γ₃` such that for any two points `(x, y, z)` and `(u, v, w)` in the product space `X×Y×Z`, the following inequalities hold:
+    a) `d_X(F(x, y, z), F(u, v, w)) ≤ α₁·d_X(x, u) + β₁·d_Y(y, v) + γ₁·d_Z(z, w)`
+    b) `d_Y(G(y, x, y), G(v, u, v)) ≤ α₂·d_X(x, u) + β₂·d_Y(y, v)`
+    c) `d_Z(H(z, y, x), H(w, v, u)) ≤ α₃·d_X(x, u) + β₃·d_Y(y, v) + γ₃·d_Z(z, w)`
+
+3.  **Contraction Constant Constraint:** The constants from the inequalities must satisfy the following condition to ensure the overall mapping is a contraction:
+    Let `K_x = α₁ + α₂ + α₃`
+    Let `K_y = β₁ + β₂ + β₃`
+    Let `K_z = γ₁ + γ₃`
+    The final condition is that the maximum of these sums must be strictly less than 1:
+    **`max(K_x, K_y, K_z) < 1`**
+
+If all three of these conditions are met, then there exists one and only one FGH-tripled fixed point `(x*, y*, z*)`.

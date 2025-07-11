@@ -1,0 +1,15 @@
+The fermionic partition function `Z` in the imaginary time representation is expressed as a functional integral over anticommuting Grassmann fields `ψ(x, τ)` and `ψ̄(x, τ)`. The formula is:
+
+`Z = ∫ Dψ̄ Dψ exp[-S_E]`
+
+where `S_E` is the Euclidean action given by:
+
+`S_E = ∫_0^β dτ ∫ d^d x ψ̄(x,τ) (∂_τ + H_0 - μ) ψ(x,τ)`
+
+Here:
+- `β` is the inverse temperature `1/(k_B T)`.
+- `τ` is the imaginary time variable.
+- `H_0` is the single-particle Hamiltonian (e.g., the kinetic energy operator).
+- `μ` is the chemical potential.
+- The integral `∫ Dψ̄ Dψ` denotes a functional integral over all possible configurations of the Grassmann fields.
+- A critical requirement for fermions is that the fields must satisfy anti-periodic boundary conditions in the imaginary time dimension: `ψ(x, β) = -ψ(x, 0)`.

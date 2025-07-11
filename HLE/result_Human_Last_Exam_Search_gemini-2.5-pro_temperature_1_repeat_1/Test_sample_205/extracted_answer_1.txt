@@ -1,0 +1,58 @@
+172[
+```c
+/**
+ * Program to calculate 100! for the Wuxing computer.
+ * It uses an array of 'digit' to store the large integer result
+ * to minimize memory usage as requested.
+ */
+void main() {
+    // Allocate array for result digits. 100! has 158 digits.
+    // We use a slightly larger array for safety.
+    // Memory for result: 160 * sizeof(digit) = 160 * 1D = 160D
+    digit result;
+
+    // Variables for loops and calculation. 'char' is the smallest type
+    // that can hold the required values (i<=100, j<=158, carry<999).
+    // Memory for control variables: 4 * sizeof(char) = 4 * 3D = 12D
+    // Total variable memory z = 160D + 12D = 172D.
+    char i, j, carry, num_digits;
+
+    // Initialize the result to 1.
+    result = 1;
+    num_digits = 1;
+
+    // Set remaining digits in the array to 0.
+    for (j = 1; j < 160; j = j + 1) {
+        result[j] = 0;
+    }
+
+    // Main loop to calculate factorial: result = result * i
+    for (i = 2; i <= 100; i = i + 1) {
+        carry = 0;
+        
+        // Multiply each digit of the current result by 'i', propagating the carry.
+        // This is the same method as long multiplication by hand.
+        for (j = 0; j < num_digits; j = j + 1) {
+            carry = result[j] * i + carry;
+            result[j] = carry % 10;  // New digit is the remainder
+            carry = carry / 10;      // New carry is the quotient
+        }
+
+        // If carry remains, extend the number of digits in the result.
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            carry = carry / 10;
+            num_digits = num_digits + 1;
+        }
+    }
+
+    // Print the final result. The digits are stored in reverse order,
+    // so we print the array from the end to the beginning.
+    printf("100! = ");
+    for (j = num_digits - 1; j >= 0; j = j - 1) {
+        printf("%d", result[j]);
+    }
+    printf("\n");
+}
+```
+]

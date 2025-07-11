@@ -1,0 +1,4 @@
+The reduced system is described by the variables $w_i$, the postsynaptic accumulator $u_i = Y(t)$, and the presynaptic accumulator $v_i = M_i(t)$. Following a steady-state analysis for the fast proBDNF and BDNF dynamics, the evolution of the synaptic efficacy $w_i$ is given by the expression:
+$\tau_w\dot{w_i} = \beta u_i \frac{\rho + v_i}{1 + v_i}$
+where the constant $\rho$ is defined as:
+$\rho = \frac{\alpha(1-\eta) + \beta\eta}{\beta}

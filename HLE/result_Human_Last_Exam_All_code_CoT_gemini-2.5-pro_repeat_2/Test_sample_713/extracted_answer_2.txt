@@ -1,0 +1,6 @@
+The set of possible values for the volume of the polytope $P$ depends on the dimension $d$. Let $V$ be the volume of the simplex $T$. The results from convex geometry are as follows:
+
+*   For $d=1$: The polytope $P$ is identical to the simplex $T$. The set of possible values for the volume is a single point: $\{V\}$. This is equal to $\{1!V\}$.
+*   For $d=2$: For any triangle $T$, the volume of the corresponding polytope $P$ is exactly twice the volume of $T$. The set of possible values is $\{2V\}$. This is equal to $\{2!V\}$.
+*   For $d=3$: The set of possible values is the closed interval $[6V, 8V]$. The minimum value, $6V = 3!V$, is attained if and only if the tetrahedron $T$ is orthocentric.
+*   For $d \ge 4$: The set of possible values is the unbounded interval $[d!V, \infty)$. The minimum value $d!V$ is attained if and only if the simplex $T$ is orthocentric. For any value greater than or equal to $d!V$, there exists a simplex $T$ for which the polytope $P$ has that volume.

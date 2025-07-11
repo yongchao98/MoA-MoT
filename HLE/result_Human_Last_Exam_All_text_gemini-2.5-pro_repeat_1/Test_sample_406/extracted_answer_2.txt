@@ -1,0 +1,6 @@
+The conditions for the functions `F: X×Y×Z→X`, `G: Y×X×Z→Y`, and `H: Z×X×Y→Z` to have a unique FGH-tripled fixed point are:
+1.  **Completeness of Spaces:** The sets `X`, `Y`, and `Z` must be complete metric spaces, each with its own distance metric (`d_X`, `d_Y`, `d_Z`).
+2.  **Joint Contractive Condition:** There must exist non-negative constants `α`, `β`, `γ` such that their sum `α + β + γ < 1`, and for all `x,u ∈ X`, `y,v ∈ Y`, `z,w ∈ Z`, the following three inequalities hold:
+    *   `d_X( F(x, y, z), F(u, v, w) ) ≤ α⋅d_X(x, u) + β⋅d_Y(y, v) + γ⋅d_Z(z, w)`
+    *   `d_Y( G(y, x, z), G(v, u, w) ) ≤ α⋅d_Y(y, v) + β⋅d_X(x, u) + γ⋅d_Z(z, w)`
+    *   `d_Z( H(z, x, y), H(w, u, v) ) ≤ α⋅d_Z(z, w) + β⋅d_X(x, u) + γ⋅d_Y(y, v)`

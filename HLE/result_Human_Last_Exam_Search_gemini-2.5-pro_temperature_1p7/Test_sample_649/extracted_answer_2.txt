@@ -1,0 +1,5 @@
+The tightest lower bound on \( R_n^* \) is obtained by maximizing the following expression over all possible choices of an integer \( M \ge 1 \) and distributions \( \{P_0, P_1, \dots, P_M\} \subset \mathcal{P} \):
+\[
+R_n^* \ge \Phi\left(\frac{\min_{j \neq k} \rho(\theta(P_j), \theta(P_k))}{2}\right) \left(1 - \frac{n \cdot \max_{j=1,\dots,M} D_{KL}(P_j \| P_0) + \log 2}{\log(M+1)}\right)
+\]
+This bound is meaningful only when the term in the parenthesis is positive. The specific value of the bound depends on the properties of the family of distributions \( \mathcal{P} \), which determine the achievable trade-off between the parameter separation \( \rho \), the number of hypotheses \( M \), and the KL divergence. Without more information on \( \mathcal{P} \), a more concrete numerical value cannot be provided.

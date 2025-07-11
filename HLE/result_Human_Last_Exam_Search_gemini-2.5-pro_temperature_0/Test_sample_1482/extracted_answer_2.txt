@@ -1,0 +1,9 @@
+In the context of an Interval Type-3 Membership Function, for a fixed primary input `x'`, the vertical cross-section is an Interval Type-2 Fuzzy Set defined over the secondary variable `u`. Its mathematical formulation using Gaussian paradigms is given by the interval `[μ_lower_{A(x')}(u), μ_bar_{A(x')}(u)]`, where the upper bound `μ_bar_{A(x')}(u)` and lower bound `μ_lower_{A(x')}(u)` are defined as:
+
+**Upper Bound (UMF):**
+`μ_bar_{A(x')}(u) = exp[ -1/2 * ( (u - c(x')) / σ_upper )^2 ]`
+
+**Lower Bound (LMF):**
+`μ_lower_{A(x')}(u) = exp[ -1/2 * ( (u - c(x')) / σ_lower )^2 ]`
+
+Here, `c(x')` is the mean determined by the primary input `x'`, and `σ_lower` and `σ_upper` are the standard deviations defining the uncertainty bounds, with the constraint that `σ_lower ≥ σ_upper`.

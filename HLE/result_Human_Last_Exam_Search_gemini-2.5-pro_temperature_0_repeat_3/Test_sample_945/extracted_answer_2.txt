@@ -1,0 +1,5 @@
+The critical speed `v_crit` for an oversteering vehicle is given by the formula:
+
+`v_crit = sqrt((c_f * c_r * (a + b)^2) / (m * (a * c_f - b * c_r)))`
+
+This real-valued critical speed exists only for an oversteering vehicle, where the term `(a * c_f - b * c_r)` is positive. Below this speed, an oversteering vehicle is stable; above it, it becomes unstable.

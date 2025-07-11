@@ -1,0 +1,48 @@
+170[void main() {
+    /*
+     * This program calculates 100! on the Wuxing computer.
+     * It uses a Big Number multiplication algorithm to handle the large result.
+     *
+     * Variable memory usage is minimized by selecting the smallest valid data type.
+     * Total Memory = sizeof(z) + sizeof(i) + sizeof(j) + sizeof(size) + sizeof(carry)
+     *              = 158*1D + 3D + 3D + 3D + 3D = 170D.
+     *
+     * z:      Result array. 158 digits are sufficient for 100!
+     * i:      Loop counter for 2..100. Needs char (3D, 0-999).
+     * j:      Inner loop/print counter. Max value 157. Needs char (3D, 0-999).
+     * size:   Current number of digits in z. Max value 158. Needs char (3D, 0-999).
+     * carry:  Holds intermediate product/carry. Max value ~999. Needs char (3D, 0-999).
+     */
+    digit z[158] = {1};     // 158D. Initializes result to {1, 0, 0, ...}
+    char i, j, size, carry; // 3D + 3D + 3D + 3D = 12D
+
+    // The number 1 is in z; it has 1 digit.
+    size = 1;
+
+    // Main loop to compute 100! by repeated multiplication.
+    for (i = 2; i <= 100; i++) {
+        // Multiply the large number in z by i.
+        carry = 0;
+        for (j = 0; j < size; j++) {
+            // Re-use carry variable to store the full product.
+            carry += z[j] * i;
+            // The new digit is the product modulo 10.
+            z[j] = carry % 10;
+            // The new carry is the product integer-divided by 10.
+            carry /= 10;
+        }
+
+        // After looping, propagate any remaining carry to new digits.
+        while (carry > 0) {
+            z[size] = carry % 10;
+            carry /= 10;
+            size++; // The number of digits grows.
+        }
+    }
+
+    // Print the final result. Digits are stored in reverse order in z.
+    for (j = size; j > 0; j--) {
+        printf("%d", z[j-1]);
+    }
+}
+]

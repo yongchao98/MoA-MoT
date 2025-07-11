@@ -1,0 +1,9 @@
+In finite-temperature field theory for a neutral scalar field `ϕ`, the inner product `(ϕ, D_ϕ)` in the functional integral representation of the partition function corresponds to the quadratic part of the Euclidean action.
+
+In **position space**, it is given by:
+`(ϕ, D_ϕ) = ∫_0^β dτ ∫ d^d x ϕ(τ, x) (-∂_τ^2 - ∇^2 + m^2) ϕ(τ, x)`
+where `β=1/T` is the inverse temperature, `τ` is the imaginary time, `d` is the number of spatial dimensions, `∇` is the spatial gradient, and `m` is the mass of the scalar field.
+
+In **momentum space**, the expression becomes:
+`(ϕ, D_ϕ) = T ∑_{n=-∞}^∞ ∫ d^d k / (2π)^d ϕ̃^* (ω_n, k) (ω_n^2 + k^2 + m^2) ϕ̃(ω_n, k)`
+where `ω_n = 2πnT` are the bosonic Matsubara frequencies and `ϕ̃(ω_n, k)` is the Fourier transform of the field `ϕ(τ, x)`.

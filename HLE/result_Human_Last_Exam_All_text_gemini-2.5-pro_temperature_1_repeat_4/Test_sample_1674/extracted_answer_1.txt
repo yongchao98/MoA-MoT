@@ -1,0 +1,7 @@
+Yes, the theory can fail. The theory of inverting the optical path to recover the original input beam relies on the principle that the system's overall transmission matrix is invertible. A birefringent medium is one whose optical properties, like refractive index, depend on the polarization of light.
+
+While a purely phase-shifting birefringent element (like a wave plate) has an invertible (unitary) transmission matrix, the term "birefringent medium" can also describe materials that exhibit polarization-dependent loss, known as dichroism. A perfect polarizer is an extreme example of a dichroic medium.
+
+If the added "birefringent medium" is a polarizer, it will completely block one component of polarization. The Jones matrix for such an element is singular (its determinant is zero) and therefore not invertible. When this non-invertible element is included, the entire system's transmission matrix becomes non-invertible.
+
+Physically, the information carried by the blocked polarization component is irreversibly lost. Since information is lost, it is impossible to uniquely determine the original input beam from the output, and the inverse theory fails.

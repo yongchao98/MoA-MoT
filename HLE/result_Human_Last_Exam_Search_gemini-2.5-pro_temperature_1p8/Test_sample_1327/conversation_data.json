@@ -1,0 +1,10 @@
+{
+  "question": "2, 11, 23, 51, 119, ( )\nA. 291\nB. 285\nC. 171\nD. 167\nWhat should be filled in parentheses?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "Two different logical patterns point to the next number in the sequence.\n\n**Method 1:**\n\nLet the sequence be denoted by `a_n`. The pattern can be described by the formula `a_n = 3 * a_{n-1} - c_n` for `n >= 3`.\n*   `a_3 = 23 = 3 * 11 - 10`\n*   `a_4 = 51 = 3 * 23 - 18`\n*   `a_5 = 119 = 3 * 51 - 34`\n\nThe sequence of the subtracted numbers is 10, 18, 34. The difference between these terms is 8, 16. This suggests the next difference is 32. Therefore, the next number to be subtracted is 34 + 32 = 66.\nThe next term in the main sequence is: `3 * 119 - 66 = 357 - 66 = 291`.\n\n**Method 2:**\n\nThis pattern relates the terms to powers of 2.\n*   11 = 2³ + 3\n*   23 = 2⁴ + 7\n*   51 = 2⁵ + 19\n*   119 = 2⁶ + 55\n\nLet's analyze the added numbers: 3, 7, 19, 55. The differences between these numbers are 4, 12, 36. This is a geometric progression where each difference is multiplied by 3.\nThe next difference will be 36 * 3 = 108.\nThe next number to be added is 55 + 108 = 163.\nFollowing this pattern, the next term in the sequence is 2⁷ + 163 = 128 + 163 = 291.\n\nBoth methods lead to the same result.\n\n<<<A>>>"
+  ],
+  "user_prompt_list": [
+    "2, 11, 23, 51, 119, ( )\nA. 291\nB. 285\nC. 171\nD. 167\nWhat should be filled in parentheses?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

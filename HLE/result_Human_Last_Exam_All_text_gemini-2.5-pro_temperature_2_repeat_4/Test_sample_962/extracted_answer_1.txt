@@ -1,0 +1,21 @@
+The final design for a tightly secure, two-round t-out-of-n threshold signature scheme should be based on **BLS (Boneh-Lynn-Shacham) signatures**.
+
+The design consists of two phases:
+
+1.  **Phase 1: Distributed Key Generation (DKG) - A one-time setup.**
+    *   Use a robust protocol like **Pedersen DKG**.
+    *   `n` parties collaboratively create their secret key shares `x_i` such that any `t` shares can reconstruct the master secret `x`, but no `t-1` can. This process establishes a group public key `Y = g^x` without ever revealing `x`.
+    *   This DKG process must be **verifiable** to prevent malicious participants from corrupting the key generation.
+
+2.  **Phase 2: Signing Protocol - One round (which satisfies the two-round requirement).**
+    *   **Round 1: Sign.** To sign a message `m`, a set `S` of at least `t` participants each performs the following:
+        a. Compute a hash of the message to a point on the elliptic curve: `h = H(m)`.
+        b. Compute a partial signature using their secret key share `x_i`: `σ_i = h^{x_i}`.
+        c. Send `(i, σ_i)` to a signature combiner.
+    *   **Aggregation (no extra round needed).** A combiner performs the following steps:
+        a. Collects at least `t` partial signatures.
+        b. (Crucial Security Step) Verifies each partial signature `σ_i` against the signer's public share.
+        c. Computes Lagrange coefficients `λ_i` for the set `S` of valid signers.
+        d. Combines the partial signatures into a final signature: `σ = \prod_{i \in S} (σ_i)^{λ_i}`.
+
+This BLS-based design is provably and **tightly secure** under the Computational Diffie-Hellman (CDH) assumption in the Random Oracle Model, and its signing protocol is extremely efficient, consisting of only one communicat

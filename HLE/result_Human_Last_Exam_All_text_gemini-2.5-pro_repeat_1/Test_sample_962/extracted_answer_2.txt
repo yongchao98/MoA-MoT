@@ -1,0 +1,15 @@
+A design for a tightly secure t-out-of-n threshold signature scheme with a two-round signing protocol can be constructed based on the **Threshold BLS (Boneh-Lynn-Shacham) signature scheme**.
+
+The design proceeds as follows:
+1.  **Setup (Key Generation):** All `n` parties run a **Distributed Key Generation (DKG)** protocol (e.g., Pedersen's DKG) based on `(t, n)`-Shamir's Secret Sharing. This generates a single master public key `PK` for the group, while each party `Pᵢ` obtains a private key share `skᵢ` and a corresponding public verification key `VKᵢ`. The master secret key is never reconstructed in one place.
+2.  **Signing Protocol (Two Rounds):** To sign a message `m`, a group of `t` parties executes the following protocol:
+    *   **Round 1: Parallel Partial Signature Generation.** Each of the `t` participating parties `Pᵢ` independently computes its partial signature `σᵢ = H(m)ˢᵏᵢ`, where `H` is a hash function mapping the message to a group element. Each party then sends its partial signature `σᵢ` to a designated combiner. This is a single, parallel round of communication.
+    *   **Round 2: Signature Aggregation.** A combiner (which can be one of the signers) receives the `t` partial signatures.
+        a. **Verification (Crucial Step):** The combiner verifies each partial signature `σᵢ` using the signer's public verification key `VKᵢ`. This prevents invalid shares from corrupting the result.
+        b. **Combination:** The combiner uses Lagrange interpolation to combine the `t` valid partial signatures into a single final signature `σ`.
+3.  **Verification:** Anyone can verify the final signature `σ` against the master public key `PK`.
+
+This design satisfies all requirements:
+*   **Threshold:** The `(t,n)`-Shamir scheme ensures the t-out-of-n property.
+*   **Two Rounds:** The signing protocol is non-interactive (one round), which is a specific case of a two-round protocol.
+*   **Tight Security:** The security of threshold BLS is based on a tight reduction to a standard cryptographic hardness assumption (like co-CDH) in the Random Oracle Model, making it highly secure without needing excessively large parameters.

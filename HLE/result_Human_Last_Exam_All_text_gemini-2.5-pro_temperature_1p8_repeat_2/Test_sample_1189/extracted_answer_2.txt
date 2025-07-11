@@ -1,0 +1,4 @@
+For $m \ge 2$, the number of sets $f_m$ can be described by the recursive formula:
+$f_m = \frac{1}{m} \left( \binom{2^n-1}{m-1} - f_{m-1} - (2^n - m + 1)f_{m-2} \right)$
+with the base cases $f_0 = 1$ and $f_1 = 0$. Using the notation from the hint, this is:
+$f_m = \frac{1}{m} \left( a - f_{m-1} - (2^n - m + 1)f_{m-2} \right)$

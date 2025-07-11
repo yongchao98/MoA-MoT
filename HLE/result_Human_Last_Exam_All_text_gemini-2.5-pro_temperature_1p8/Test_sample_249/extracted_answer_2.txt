@@ -1,0 +1,7 @@
+
+The minimum possible value for the diameter of G, let's call it $D_{min}$, can be determined by the following conditions based on $n$ and $m$:
+1.  If $m > n$ (which implies $m = n+1$ for a tree), then $D_{min} = 2$.
+2.  If $m = n$ (which requires $n \ge 2$), then $D_{min} = 3$.
+3.  If $m < n$:
+    a. If $2m \ge n+1$, then $D_{min} = 4$.
+    b. If $2m < n+1$, then $D_{min} = 2 + \lceil \frac{n+1-m}{m} \rceil + \lfloor \frac{n+1-m}{m} \rfloor$.

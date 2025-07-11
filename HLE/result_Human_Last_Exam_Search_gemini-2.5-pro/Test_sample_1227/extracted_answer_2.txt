@@ -1,0 +1,15 @@
+There is no definitive, publicly documented answer for the precise number of possible 8x8 crossword grids that meet all the specified criteria of 180-degree rotational symmetry, a minimum word length of 3 letters, full interconnectivity, and no "cheater" squares.
+
+This is a highly specific problem in the field of computational combinatorics. While the rules for constructing such a grid are well-defined in sources like Cruciverb.com, the actual enumeration of all possible valid grids for a given size is a complex task that typically requires a custom computer program.
+
+Here's a breakdown of the factors involved:
+*   **180-Degree Rotational Symmetry**: This rule, standard for American-style crosswords, means the grid appears the same when rotated upside down.
+*   **Minimum Word Length of 3**: No sequence of white squares, horizontally or vertically, can be of length one or two.
+*   **Full Interconnect**: All white squares must form a single, contiguous block.
+*   **No "Cheater" Squares**: A "cheater" square is a black square whose removal does not alter the total word count of the puzzle.
+
+Academic research has explored related questions. For instance, the paper "Maximal Crossword Grids" by Kevin K. Ferland and Robert W. Pratt investigates grids that contain the maximum possible number of clues under these same rules. However, their work focuses on finding these "maximal" grids, not on counting all possible valid grids.
+
+Similarly, other mathematical and computer science resources discuss the methods for enumerating such grids but do not provide a final count for the 8x8 case. One article explicitly outlines the computational steps needed to count valid grids but does not provide a result for this specific size.
+
+In summary, while the principles of construction are clear, the exact number of valid 8x8 grids is not found in readily available mathematical literature or puzzle-related resources. The answer would require a dedicated computational search that, to date, has not been published.

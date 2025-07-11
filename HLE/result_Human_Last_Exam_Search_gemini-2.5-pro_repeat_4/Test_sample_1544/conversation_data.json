@@ -1,0 +1,10 @@
+{
+  "question": "This is a FEN of a Chess position:\n\n8/3p4/1kpP4/p1q5/P7/8/5Q2/6K1 w - - 0 1\n\nAssume both sides play optimally. What should White's next move be. Your answer should be a move in standard Chess notation. \nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "An analysis of the chess position reveals a decisive course of action for White.\n\nThe board configuration is represented by the Forsyth-Edwards Notation (FEN) `8/3p4/1kpP4/p1q5/P7/8/5Q2/6K1 w - - 0 1`. It is currently White's turn to move.\n\nThe most critical feature of the position is the advanced white pawn on d6, which poses a significant threat to Black. Black's queen on c5 is the primary piece preventing this pawn from advancing and promoting.\n\nBy playing the move `Qxc5+`, White forces an exchange of queens. Black is compelled to recapture the white queen. This leads to two possible scenarios:\n\n*   If Black plays `...bxc5`, the d6-pawn's path to promotion becomes unobstructed, guaranteeing a win for White.\n*   If Black plays `...Kxc5`, a pawn endgame ensues. In this endgame, White's passed d-pawn, supported by the white king, will inevitably advance and promote, securing victory for White.\n\nTherefore, the optimal move for White is to capture the black queen.\n\n<<<Qxc5+>>>"
+  ],
+  "user_prompt_list": [
+    "This is a FEN of a Chess position:\n\n8/3p4/1kpP4/p1q5/P7/8/5Q2/6K1 w - - 0 1\n\nAssume both sides play optimally. What should White's next move be. Your answer should be a move in standard Chess notation. \nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

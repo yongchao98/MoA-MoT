@@ -1,0 +1,14 @@
+
+**Function f:**
+Let $A = \bot \multimap \bot$ and $B = (A \multimap A)$ be two distinct pure linear logic formulas. The function $f: \mathbb{N} \to \text{Formula}$ is defined as:
+$$
+f(w) = A \multimap \underbrace{B \otimes \dots \otimes B}_{w \text{ times}}
+$$
+We denote this as $f(w) = A \multimap B^w$. For $w=0$, $f(0) = A \multimap 1$.
+
+**Formula C:**
+Let $G = (B \multimap B)$ be a third distinct pure formula. The formula $C$ is defined in terms of $W, m, b$ as follows. Let $n = |W|$ be the number of elements in the set $W$.
+$$
+C(W, m, b) = \left( \left(B^b \multimap G\right)^m \otimes A^n \right) \multimap G^m
+$$
+Here, $X^k$ denotes the formula $X$ tensored with itself $k$ times.

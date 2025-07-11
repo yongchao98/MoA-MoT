@@ -1,0 +1,7 @@
+The design for a tightly secure t-out-of-n threshold signature scheme with a two-round signing protocol involves three main phases:
+1.  **Distributed Key Generation (DKG):** Use a robust Verifiable Secret Sharing (VSS) scheme like Pedersen DKG. This allows `n` parties to create a single group public key while each party `i` holds a secret share `sk_i` of the private key, without any single party learning the full key.
+2.  **Signing Protocol (based on FROST):** This phase is composed of an offline pre-computation step and a two-round online protocol.
+    *   **Pre-computation (Offline):** Each party generates and commits to a set of secret nonces by broadcasting public points. This binds them to their nonces before signing begins.
+    *   **Online Round 1 (Commitment):** For a given message, `t` participating signers send their pre-computed nonce commitments to a coordinator. The coordinator computes a group nonce commitment `R` and a challenge `c = H(PK, R, m)`.
+    *   **Online Round 2 (Response):** The coordinator sends `c` to the participants. Each participant `i` uses their secret key share `sk_i`, their secret nonce, and the challenge `c` to compute a partial signature `z_i`. They send `z_i` back to the coordinator.
+3.  **Aggregation:** The coordinator combines the `t` partial signatures into the final signature `(R, s)` by summing them: `s = Σ z_i`. This step is a local computation and does not

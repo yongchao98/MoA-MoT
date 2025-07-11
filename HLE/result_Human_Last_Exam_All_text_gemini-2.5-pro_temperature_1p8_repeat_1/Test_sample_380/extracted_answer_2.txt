@@ -1,0 +1,10 @@
+The local magnetic field at the L1 point is generally **not** considered to be radial. Due to the Sun's rotation, the magnetic field lines are twisted into the Parker Spiral, which makes an angle of approximately 45 degrees with the radial direction at 1 AU for typical solar wind speeds.
+
+The justification for using magnetic field components perpendicular to the radial direction (e.g., the Y and Z components in a GSE coordinate system) to calculate the helicity of Alfvén Ion Cyclotron (AIC) waves relies on **Taylor's Hypothesis**.
+
+1.  **Dominant Convection:** In the solar wind at L1, the bulk flow speed ($V_{sw}$, ~400-800 km/s) is significantly larger than the wave's intrinsic propagation speed in the plasma, the Alfvén speed ($V_A$, ~50-100 km/s).
+2.  **"Frozen-in" Waves:** Because of this speed difference ($V_{sw} \gg V_A$), the wave structures are essentially "frozen-in" to the plasma and are carried (convected) past the stationary spacecraft.
+3.  **Radial Flow:** The solar wind flow is overwhelmingly radial from the Sun.
+4.  **Observed Propagation Direction:** As a result, the direction from which the wave appears to propagate as seen by the spacecraft is dominated by the radial solar wind flow, not by its slower propagation along the slanted magnetic field line. The observed wave vector, **k**, is therefore considered to be approximately radial.
+
+In summary, while AIC waves do propagate parallel to the local magnetic field *within the plasma*, a spacecraft at L1 observes these waves arriving from the radial direction due to the fast solar wind. Therefore, calculating the normalized magnetic helicity using components perpendicular to the radial direction is a valid and standard approximation under Taylor's Hypothesis.

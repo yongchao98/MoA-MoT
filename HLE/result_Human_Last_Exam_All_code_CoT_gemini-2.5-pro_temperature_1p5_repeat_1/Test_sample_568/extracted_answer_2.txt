@@ -1,0 +1,4 @@
+Let n be the number of repetitions. The answer is given by the function n(ε, δ):
+n(ε, δ) = 1, if δ = 1/2
+n(ε, δ) = ⌈ln(ε) / ln(|1 - 2δ|)⌉, if δ ≠ 1/2
+where ⌈x⌉ is the ceiling function, which gives the smallest integer greater than or equal to x.

@@ -1,0 +1,7 @@
+The general representation for the transformation on x, denoted by `x*`, depends on the parameters `c_0`, `c_2`, `c_3` from the Lie algebra of symmetries and the group parameter `ε`. There are two forms:
+
+1.  If the transformation does not scale time (`c_0 = 0`):
+    `x* = x + [c_2 - (2c_3/k_1)e^(k_1 t)]ε`
+
+2.  If the transformation includes time scaling (`c_0 ≠ 0`):
+    `x* = x + c_2 ε - (2c_3/(k_1^2 c_0))e^(k_1 t) (e^(k_1 c_0 ε) - 1)`

@@ -1,0 +1,16 @@
+An FGH-tripled fixed point for the functions F:X×Y×Z→X, G:Y×X×Y→Y, and H:Z×Y×X→Z exists under several key conditions, primarily in the context of partially ordered complete metric spaces. A point (x, y, z) ∈ X×Y×Z is defined as an FGH-tripled fixed point if F(x, y, z) = x, G(y, x, y) = y, and H(z, y, x) = z.
+
+The fundamental conditions for the existence of such a point are:
+
+**1. Mixed Monotone Property:** The functions F, G, and H must satisfy a mixed monotone property. This implies that F is non-decreasing in its first and third arguments and non-increasing in its second; G is non-decreasing in its first argument and non-increasing in its second and third; and H is non-decreasing in its second argument and non-increasing in its first and third.
+
+**2. Contractive Condition:** The functions must adhere to a contractive inequality. This means there are non-negative constants k, l, and m such that their sum is less than 1 (k + l + m < 1), and for all comparable elements (x ≥ u, y ≤ v, z ≥ w), the following holds:
+d_X(F(x, y, z), F(u, v, w)) + d_Y(G(y, x, y), G(v, u, v)) + d_Z(H(z, y, x), H(w, v, u)) ≤ k * d_X(x, u) + l * d_Y(y, v) + m * d_Z(z, w).
+
+**3. Existence of an Initial Point:** There must be at least one triplet of points (x₀, y₀, z₀) in X×Y×Z that satisfies the initial conditions: x₀ ≤ F(x₀, y₀, z₀), y₀ ≥ G(y₀, x₀, y₀), and z₀ ≤ H(z₀, y₀, x₀).
+
+**4. Continuity or Regularity:** Either the functions F, G, and H must be continuous, or the underlying partially ordered metric spaces must be regular, meaning that for any convergent monotonic sequence, the terms are comparable to the limit.
+
+For the **uniqueness** of the FGH-tripled fixed point, an additional condition is necessary:
+
+**5. Comparability:** For any two triplets of points in the space, there must exist a third triplet that is comparable to both.

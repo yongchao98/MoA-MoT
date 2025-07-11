@@ -1,0 +1,14 @@
+For a superconducting bar with a rectangular cross-section defined by −a ≤ x ≤ a and −b ≤ y ≤ b, where b ≪ a, placed in an external magnetic field H applied along the y-axis, the analytical expression for the initial magnetization curve M(H) according to the critical-state model is:
+
+**M(H) = - (a/b) * [ H - Hc * tanh(H/Hc) ]**
+
+where:
+*   **H** is the magnitude of the applied magnetic field.
+*   **a** is half the width of the strip.
+*   **b** is half the thickness of the strip.
+*   **Hc** is the characteristic field for the strip, given by:
+    **Hc = (Jc * 2b) / π**
+*   **Jc** is the constant critical-current density.
+*   **tanh** is the hyperbolic tangent function.
+
+This expression describes the magnetization of the superconductor as the applied field is increased from a zero-field cooled state. For small applied fields (H ≪ Hc), the expression can be approximated by `M(H) ≈ - (a * π² * H³) / (12 * b³ * Jc²)`, showing an initial cubic dependence of magnetization on the field.

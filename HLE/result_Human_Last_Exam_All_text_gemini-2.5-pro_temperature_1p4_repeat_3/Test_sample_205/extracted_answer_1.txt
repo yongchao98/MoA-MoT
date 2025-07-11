@@ -1,0 +1,66 @@
+172[
+void main() {
+    // Total variable memory: 158D (result) + 3D (size) + 3D (i) + 3D (j)
+    // + 3D (product) + 2D (carry) = 172D.
+
+    // An array to store the 158 digits of 100!.
+    // 'digit' is the smallest type (1D) for a single digit.
+    digit result[158]; // 158 * 1D = 158D
+
+    // The number of active digits in the 'result' array. Max value: 158.
+    // 'char' (0-999) is the smallest type that can hold 158. Size: 3D.
+    char size;
+
+    // Outer loop counter for factorial (2 to 100).
+    // 'char' (0-999) is the smallest type that can hold 100. Size: 3D.
+    char i;
+
+    // Inner loop counter to iterate through digits. Max value: 157.
+    // 'char' (0-999) is the smallest type that can hold 157. Size: 3D.
+    char j;
+
+    // Holds intermediate product. Max value: 9 * 100 + 99 = 999.
+    // 'char' (0-999) is a perfect fit. Size: 3D.
+    char product;
+
+    // Holds the carry value. Max value: 999 / 10 = 99.
+    // 'short' (0-99) is a perfect fit. Size: 2D.
+    short carry;
+
+    // Initialize result to 1.
+    size = 1;
+    result[0] = 1;
+    for (j = 1; j < 158; j++) {
+        result[j] = 0;
+    }
+
+    // Calculate 100! by multiplying with numbers from 2 to 100.
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        for (j = 0; j < size; j++) {
+            product = result[j] * i + carry;
+            result[j] = product % 10;
+            carry = product / 10;
+        }
+        
+        // Propagate remaining carry, extending the number of digits.
+        while (carry > 0) {
+            result[size] = carry % 10;
+            carry /= 10;
+            size++;
+        }
+    }
+
+    // Print the final 158-digit result.
+    printf("100! = ");
+
+    // Loop backwards from 'size' to print digits in correct order.
+    // A 'while' loop avoids issues with unsigned 'j' in a 'for' loop.
+    j = size;
+    while (j > 0) {
+        j--;
+        printf("%d", result[j]);
+    }
+    printf("\n");
+}
+]

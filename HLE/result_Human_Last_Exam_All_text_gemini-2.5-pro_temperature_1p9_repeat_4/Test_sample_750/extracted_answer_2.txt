@@ -1,0 +1,4 @@
+The solutions for $z$ are:
+1. Two real solutions: $z=1$ and $z=-1$.
+2. An infinite sequence of purely imaginary solutions $z_j = -ia_j$ for each positive integer $j=1, 2, 3, \ldots$, where $a_j$ is the unique positive real solution to the equation $a = e^{-a(4j-1)\pi/2}$. In terms of the principal branch of the Lambert W function, $a_j = \frac{W((4j-1)\frac{\pi}{2})}{(4j-1)\frac{\pi}{2}}$.
+3. A doubly-infinite set of other non-real complex solutions, given by $z_{k,n} = i\frac{W_n(-(\frac{\pi}{2}+2k\pi))}{\frac{\pi}{2}+2k\pi}$ for integers $k$ and $n$, excluding the cases that produce the real or purely imaginary solutions listed above.

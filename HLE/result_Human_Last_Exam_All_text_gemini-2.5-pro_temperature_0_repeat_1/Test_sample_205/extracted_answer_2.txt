@@ -1,0 +1,42 @@
+170[
+void main() {
+    // Variable Declarations
+    // Total memory: 158D (result) + 3D (num_digits) + 3D (i) + 3D (j) + 3D (carry) = 170D
+    digit result[158];
+    char num_digits;
+    char i;
+    char j;
+    char carry;
+
+    // Initialize result to 1
+    result[0] = 1;
+    num_digits = 1;
+
+    // Main loop to calculate 100!
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Multiply current number by i
+        for (j = 0; j < num_digits; j++) {
+            // Use 'carry' to store the intermediate product to save memory
+            carry = result[j] * i + carry;
+            result[j] = carry % 10;
+            carry = carry / 10;
+        }
+
+        // Propagate remaining carry to new digits
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            carry = carry / 10;
+            num_digits++;
+        }
+    }
+
+    // Print the final result (digits are stored in reverse order)
+    // A while loop is used to correctly handle the unsigned loop counter 'j'.
+    j = num_digits;
+    while (j > 0) {
+        j--;
+        printf("%d", result[j]);
+    }
+}
+]

@@ -1,0 +1,13 @@
+An FGH-tripled fixed point `(x, y, z) ∈ X × Y × Z` exists and is unique if the following conditions hold:
+
+**1. Space Requirement:**
+The spaces `(X, d_X)`, `(Y, d_Y)`, and `(Z, d_Z)` must be **complete metric spaces**.
+
+**2. Contraction Requirement:**
+The functions `F`, `G`, and `H` must satisfy a joint contraction condition. Specifically, there must exist a set of non-negative constants `{α₁, β₁, γ₁, α₂, β₂, α₃, β₃, γ₃}` such that for all `x₁, x₂ ∈ X`, `y₁, y₂ ∈ Y`, and `z₁, z₂ ∈ Z`, the following inequalities are satisfied:
+  *   `d_X(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) ≤ α₁ d_X(x₁, x₂) + β₁ d_Y(y₁, y₂) + γ₁ d_Z(z₁, z₂)`
+  *   `d_Y(G(y₁, x₁, y₁), G(y₂, x₂, y₂)) ≤ α₂ d_X(x₁, x₂) + β₂ d_Y(y₁, y₂)`
+  *   `d_Z(H(z₁, y₁, x₁), H(z₂, y₂, x₂)) ≤ α₃ d_X(x₁, x₂) + β₃ d_Y(y₁, y₂) + γ₃ d_Z(z₁, z₂)`
+
+Furthermore, the sum of these constants, when grouped by the corresponding component of the product space, must be less than 1. That is:
+  `max(α₁ + α₂ + α₃,  β₁ + β₂ + β₃,  γ₁ + γ₃) < 1`

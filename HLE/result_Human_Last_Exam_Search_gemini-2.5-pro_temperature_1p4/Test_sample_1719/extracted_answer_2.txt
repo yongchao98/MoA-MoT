@@ -1,0 +1,12 @@
+The homotopy-theoretic obstructions for $\phi_t$ and $\psi_t$ to be homotopic through paths of bundle automorphisms fixing the endpoints are elements in a group whose structure is determined by the following list of groups:
+*   $H_k(X)$ for $k = n-2, n-1$. These determine the cohomology of $\Sigma X$.
+*   $\pi_k(SO(2k))$ for $k \ge 1$.
+
+More specifically, the obstruction lies in $\pi_1(\text{Aut}(E))$, which is related to the cohomology of $\Sigma X$ with coefficients in the homotopy groups of $SO(2k)$. The primary components of this obstruction group come from:
+1.  $H^0(\Sigma X; \pi_1(SO(2k))) \cong \pi_1(SO(2k))$
+2.  $H^n(\Sigma X; \pi_{n+1}(SO(2k))) \cong \tilde{H}^{n-1}(X; \pi_{n+1}(SO(2k)))$
+
+So the answer is a list of the following groups:
+*   $H_{n-1}(X)$
+*   $\pi_1(SO(2k))$
+*   $\pi_{n+1}(SO(2k))$

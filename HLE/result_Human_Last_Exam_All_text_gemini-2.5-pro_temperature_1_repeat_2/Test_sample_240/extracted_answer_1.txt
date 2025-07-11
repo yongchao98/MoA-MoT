@@ -1,0 +1,7 @@
+The inability to see a resonance in a functional MRI coil with a VNA and a magnetic loop is typically due to the coil's advanced design. Here are the primary reasons:
+
+1.  **Active Decoupling:** The coil has active electronic circuits (usually involving PIN diodes) that "detune" or "decouple" it to protect it during the MRI scanner's transmit cycle. When testing on the bench, these circuits are unpowered and default to this decoupled state, in which the coil is specifically designed *not* to resonate.
+2.  **Integrated Preamplifiers:** Modern coils have built-in preamplifiers that require DC power to operate. Without this power, the unpowered preamp presents an incorrect impedance to the coil's resonant element, preventing it from resonating properly. You are essentially testing a coil connected to a dead amplifier.
+3.  **Phased Array Design:** If the coil is a phased array, its individual elements are intentionally decoupled from each other and from external sources to ensure signal integrity. This built-in decoupling network can actively reject the field from your test loop, thus hiding the resonance.
+
+In short, you are not testing a simple passive circuit. You are testing a complex electronic system that is not in its required operational state (i.e., it is not powered and biased correctly).

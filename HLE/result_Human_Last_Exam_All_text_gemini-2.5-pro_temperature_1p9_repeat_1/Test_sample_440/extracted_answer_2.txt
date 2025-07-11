@@ -1,0 +1,11 @@
+The mass density profile of the gas mixture is given by \(\rho(z) = n_A(z) M_A + n_B(z) M_B\), where the molar density profiles, \(n_A(z)\) and \(n_B(z)\), are the functions of height \(z\) that satisfy the following system of non-linear equations:
+
+1.  \( RT \ln\left(\frac{n_A(z)}{1 - n_A(z)b_{AA} - n_B(z)b_{BB}}\right) + \frac{(n_A(z) + n_B(z))RT b_{AA}}{1 - n_A(z)b_{AA} - n_B(z)b_{BB}} - 2(n_A(z)a_{AA} + n_B(z)a_{AB}) + M_A g z = C'_A \)
+2.  \( RT \ln\left(\frac{n_B(z)}{1 - n_A(z)b_{AA} - n_B(z)b_{BB}}\right) + \frac{(n_A(z) + n_B(z))RT b_{BB}}{1 - n_A(z)b_{AA} - n_B(z)b_{BB}} - 2(n_A(z)a_{AB} + n_B(z)a_{BB}) + M_B g z = C'_B \)
+
+The constants \(C'_A\) and \(C'_B\) are determined by the normalization conditions based on the total number of particles of each species:
+
+- \( \frac{N_A}{N_{Av}} = A \int_0^H n_A(z) dz \)
+- \( \frac{N_B}{N_{Av}} = A \int_0^H n_B(z) dz \)
+
+where \(N_{Av}\) is Avogadro's number and all other parameters are as defined in the problem statement.

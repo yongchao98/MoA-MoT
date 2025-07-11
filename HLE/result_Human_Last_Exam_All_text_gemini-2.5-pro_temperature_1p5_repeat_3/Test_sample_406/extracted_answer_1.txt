@@ -1,0 +1,20 @@
+An FGH-tripled fixed point for functions `F: X×Y×Z→X`, `G: Y×X×Z→Y`, and `H: Z×X×Y→Z` is a triplet `(x,y,z)` such that `F(x,y,z)=x`, `G(y,x,z)=y`, and `H(z,x,y)=z`. The conditions for the existence of such a point are established by tripled fixed point theorems, which typically require the following:
+
+1.  **Space Structure**: The sets `X`, `Y`, and `Z` must be **complete partially ordered metric spaces**. This means each is a metric space where every Cauchy sequence converges, and each has a partial order relation `≤`.
+
+2.  **Mixed Monotonicity**: The functions must respect the order structure in a specific way. For any `x₁ ≤ x₂`, `y₁ ≥ y₂`, `z₁ ≤ z₂`, the following must hold:
+    *   `F(x₁, y₁, z₁) ≤ F(x₂, y₂, z₂)`
+    *   `G(y₁, x₁, z₁) ≥ G(y₂, x₂, z₂)`
+    *   `H(z₁, x₁, y₁) ≤ H(z₂, x₂, y₂)`
+
+3.  **Contraction Condition**: The functions must satisfy a contractive inequality. There must exist non-negative constants `α, β, γ` whose sum is less than 1 (`α + β + γ < 1`), such that for any comparable elements (`x ≥ u, y ≤ v, z ≥ w`):
+    *   `d_X(F(x, y, z), F(u, v, w)) ≤ α·d_X(x, u) + β·d_Y(y, v) + γ·d_Z(z, w)`
+    *   `d_Y(G(y, x, z), G(v, u, w)) ≤ α·d_Y(y, v) + β·d_X(x, u) + γ·d_Z(z, w)`
+    *   `d_Z(H(z, x, y), H(w, u, v)) ≤ α·d_Z(z, w) + β·d_X(x, u) + γ·d_Y(y, v)`
+
+4.  **Initial Point**: There must exist a starting point `(x₀, y₀, z₀)` that satisfies the inequalities:
+    *   `x₀ ≤ F(x₀, y₀, z₀)`
+    *   `y₀ ≥ G(y₀, x₀, z₀)`
+    *   `z₀ ≤ H(z₀, x₀, y₀)`
+
+5.  **Continuity or Regularity**: To ensure the process converges to a fixed point, either the functions `F, G, H` must be continuous, or the ordered metric spaces must be "regular" (meaning limits of monotone sequences maintain the order relation).

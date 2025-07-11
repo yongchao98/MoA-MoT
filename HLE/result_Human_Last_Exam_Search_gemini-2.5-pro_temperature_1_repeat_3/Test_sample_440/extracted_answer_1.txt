@@ -1,0 +1,11 @@
+The density profile \(\rho(z)\) of the gas mixture is determined by the relation \(\rho(z) = M_A c_A(z) + M_B c_B(z)\), where the molar density profiles \(c_A(z)\) and \(c_B(z)\) are the solutions to the following system of coupled non-linear equations:
+
+1.  `RT \ln(c_A(z)) - RT\ln(1 - c_A(z)b_{AA} - c_B(z)b_{BB}) + \frac{RT(c_A(z)+c_B(z)) b_{AA}}{1 - c_A(z)b_{AA} - c_B(z)b_{BB}} - 2(a_{AA}c_A(z) + a_{AB}c_B(z)) + M_A g z = C_A`
+2.  `RT \ln(c_B(z)) - RT\ln(1 - c_A(z)b_{AA} - c_B(z)b_{BB}) + \frac{RT(c_A(z)+c_B(z)) b_{BB}}{1 - c_A(z)b_{AA} - c_B(z)b_{BB}} - 2(a_{AB}c_A(z) + a_{BB}c_B(z)) + M_B g z = C_B`
+
+The constants \(C_A\) and \(C_B\) are determined by the normalization conditions, which require the integral of the molar densities over the container volume to equal the total number of moles of each gas:
+
+-   `A \int_0^H c_A(z) dz = N_A / N_{avo}`
+-   `A \int_0^H c_B(z) dz = N_B / N_{avo}`
+
+These equations incorporate the effects of gravitational potential (`M_igz`), non-ideal interactions through the van der Waals parameters (`a_{ij}`, `b_{ii}`), and the Boltzmann distribution (via the chemical potential formulation). An analytical solution is not available, and the profiles must be found using numerical methods.

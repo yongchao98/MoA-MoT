@@ -1,0 +1,6 @@
+The mass density profile of the mixture is given by \( \rho(z) = c_A(z) M_A + c_B(z) M_B \), where \( M_A \) and \( M_B \) are the molar masses of the gases, and \( c_A(z) \) and \( c_B(z) \) are the molar density profiles as a function of height \( z \). These profiles are the solutions to the following system of coupled ordinary differential equations, derived from the condition of constant chemical potential in a gravitational field for a van der Waals mixture:
+1. \( \frac{d}{dz} \left[ RT \ln\left(\frac{c_A}{1 - c_A b_{AA} - c_B b_{BB}}\right) + \frac{RT b_{AA}(c_A + c_B)}{1 - c_A b_{AA} - c_B b_{BB}} - 2(c_A a_{AA} + c_B a_{AB}) \right] + M_A g = 0 \)
+2. \( \frac{d}{dz} \left[ RT \ln\left(\frac{c_B}{1 - c_A b_{AA} - c_B b_{BB}}\right) + \frac{RT b_{BB}(c_A + c_B)}{1 - c_A b_{AA} - c_B b_{BB}} - 2(c_A a_{AB} + c_B a_{BB}) \right] + M_B g = 0 \)
+The solution is subject to the integral constraints that the total number of moles of each gas in the container volume must equal the given amounts:
+\( n_A = A \int_0^H c_A(z) dz \) and \( n_B = A \int_0^H c_B(z) dz \).
+Due to the complexity and coupled nature of these equations, the profile \( \rho(z) \) cannot be expressed as a simple analytical function but is implicitly defined by the numerical solution to this system.

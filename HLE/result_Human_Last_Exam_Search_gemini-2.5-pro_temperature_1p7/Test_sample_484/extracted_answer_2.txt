@@ -1,0 +1,5 @@
+$\tau_w\frac{\mathrm{d}w_i}{\mathrm{d}t} = (\beta-\alpha)(1-\eta)u_i(v_i - \rho)$
+Where:
+*   $u_i = \sum_{j=1}^{N} w_j \bar{x}_j$ is the postsynaptic accumulator.
+*   $v_i = \frac{\phi\bar{x}_i}{1+\phi\bar{x}_i}$ is the presynaptic accumulator.
+*   $\rho = \frac{\alpha(1-\eta)+\beta\eta}{(\beta-\alpha)(1-\eta)}$ is a constant threshold.

@@ -1,0 +1,6 @@
+
+a) For the case of negligible interaction between molecules, the absorption cross-section is given by the formula for an individual molecule. The transition occurs from an initial molecular state |φ_i> with energy ε_i to a final state |φ_f> with energy ε_f. The equation is:
+σ_a(ω) = ( πω / (ncε₀ħ) ) |<φ_f|**d**⋅**ε**|φ_i>|² * (τ/√(2π)) * exp[ - (ω - (ε_f - ε_i)/ħ)² τ² / 2 ]
+
+b) When near-neighbor interactions are considered with a coupling energy J, collective exciton states are formed. Due to optical selection rules for a chain, only the k=0 exciton is optically active. The transition occurs from the ground state of the chain to this k=0 exciton state. The absorption cross-section for the entire chain of N molecules is enhanced and shifted in frequency:
+σ_b(ω) = ( πωN / (ncε₀ħ) ) |<φ_f|**d**⋅**ε**|φ_i>|² * (τ/√(2π)) * exp[ - (ω - (ε_f + 2J)/ħ)² τ² / 2 ]

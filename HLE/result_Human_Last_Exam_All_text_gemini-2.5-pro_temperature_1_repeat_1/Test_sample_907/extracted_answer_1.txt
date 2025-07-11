@@ -1,0 +1,7 @@
+**a) No interaction:**
+The absorption cross-section is described by a single absorption line at the molecular transition frequency $\omega_0$. Its strength is modulated by the Gaussian spectrum of the laser pulse evaluated at this frequency. The equation is:
+$\sigma_a(\omega) = K_a \cdot |\mu_{eg}|^2 e^{-(\omega_0-\omega_L)^2\tau^2} \delta(\omega - \omega_0)$
+where $K_a$ is a constant, $\mu_{eg}$ is the single-molecule transition dipole moment, $\omega_0$ is the transition frequency, $\omega_L$ is the laser central frequency, $\tau$ is the pulse duration, and $\delta$ is the Dirac delta function.
+
+**b) Nearest-neighbor interaction:**
+The interaction creates a band of delocalized exciton states, leading to multiple possible transition frequencies $\omega_k$. The absorption cr

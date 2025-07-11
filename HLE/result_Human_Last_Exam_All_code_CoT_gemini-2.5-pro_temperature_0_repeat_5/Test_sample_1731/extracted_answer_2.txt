@@ -1,0 +1,9 @@
+The equilibrium values are expressed as a sum over all energy levels `i`. The contribution from each level `i` with energy `ε_i` and degeneracy `g_i` is:
+
+1.  **Equilibrium Mean Energy (E):** The total energy is `E = Σ_i E_i`, where the contribution from level `i` is:
+    `E_i = (g_i * ε_i) / (exp(β*ε_i) - 1)`
+
+2.  **Equilibrium Entropy (S):** The total entropy is `S = Σ_i S_i`, where the contribution from level `i` is:
+    `S_i / k_B = (g_i * β * ε_i) / (exp(β*ε_i) - 1) - g_i * ln(1 - exp(-β*ε_i))`
+
+Here, `β = 1/(k_B*T)` is the inverse temperature and `k_B` is the Boltzmann constant.

@@ -1,0 +1,9 @@
+**Final Answer:** The asymptotic analysis of the generating function `H(s,s′)` for planar Birkhoff billiard dynamics in the limit `|s′−s| → 0` yields the following expansion:
+
+`H(s,s′) = -|s′−s| + (1/24)κ(s)²|s′−s|³ + O(|s′−s|⁵)`
+
+Here, `s` and `s′` are the arc-length coordinates of two consecutive reflection points on the billiard boundary, and `κ(s)` is the local curvature of the boundary at point `s`.
+
+**Characterization:**
+1.  **Leading-Order Term (`-|s′−s|`):** The dominant behavior is linear in the arc-length separation. This corresponds to the chord length being approximately equal to the arc length for infinitesimal separations, representing the basic Euclidean distance of the particle's path.
+2.  **Curvature-Dependent Correction (`(1/24)κ(s)²|s′−s|³`):** The first correction term that accounts for the boundary's geometry appears at the third order in the separation `|s′−s|`. Its magnitude is proportional to the square of the local curvature `κ(s)`. This demonstrates that a higher curvature causes a greater deviation of the true dynamics from the simple linear approximation. The positive sign of this term reflects the geometric fact that the chord (`-H`) is shorter than the arc (`|s'-s|`). This term is fundamental to the non-trivial dynamics of billiards on curved boundaries, as it is the source of the "twist" in the billiard map for near-grazing trajectories.

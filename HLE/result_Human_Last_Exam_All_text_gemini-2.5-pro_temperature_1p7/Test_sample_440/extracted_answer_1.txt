@@ -1,0 +1,16 @@
+The density profile `ρ(z)` of the gas mixture is given by the sum of the mass densities of the individual gases:
+`ρ(z) = M_A \cdot c_A(z) + M_B \cdot c_B(z)`
+
+where `M_A = 0.028 \, \text{kg/mol}` and `M_B = 0.044 \, \text{kg/mol}` are the molar masses, and `c_A(z)` and `c_B(z)` are the molar concentration profiles in `mol/m^3`. These profiles are the solution to the following system of coupled transcendental equations and integral constraints:
+
+**Governing Equations (from equilibrium condition `μ_i(z) + M_i g z = \text{const}`):**
+1.  For Gas A:
+    `RT\ln\left(\frac{c_A(z)}{1 - c_A(z)b_{AA} - c_B(z)b_{BB}}\right) + \frac{RT b_{AA} (c_A(z)+c_B(z))}{1 - c_A(z)b_{AA} - c_B(z)b_{BB}} - 2(c_A(z)a_{AA} + c_B(z)a_{AB}) + M_A g z = K'_A`
+2.  For Gas B:
+    `RT\ln\left(\frac{c_B(z)}{1 - c_A(z)b_{AA} - c_B(z)b_{BB}}\right) + \frac{RT b_{BB} (c_A(z)+c_B(z))}{1 - c_A(z)b_{AA} - c_B(z)b_{BB}} - 2(c_A(z)a_{AB} + c_B(z)a_{BB}) + M_B g z = K'_B`
+
+**Integral Constraints (from conservation of particles):**
+1.  `A \int_0^H c_A(z) dz = n_A`
+2.  `A \int_0^H c_B(z) dz = n_B`
+
+This system of equations implicitly defines the functions `c_A(z)` and `c_B(z)`, and thus the density profile `ρ(z)`. A numerical solver is required to find an explicit solution for the profiles and the constants `K'_A` and `K'_B`.

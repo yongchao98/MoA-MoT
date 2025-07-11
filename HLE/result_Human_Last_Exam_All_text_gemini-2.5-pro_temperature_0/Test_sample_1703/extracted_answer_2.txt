@@ -1,0 +1,2 @@
+Let \( t' = t \pmod{20} \). The area of the triangle \( T(t) \) is given by the function \( A(t) \):
+\( A(t) = \begin{cases} \frac{3\sqrt{3}}{4}(75+(t')^2) & \text{if } 0 \le t' \le 5 \\ \frac{3\sqrt{3}}{4}(75+(10-t')^2) & \text{if } 5 < t' \le 15 \\ \frac{3\sqrt{3}}{4}(75+(t'-20)^2) & \text{if } 15 < t' < 20 \end{cases} \)

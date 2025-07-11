@@ -1,0 +1,10 @@
+{
+  "question": "Complete the next 4 elements of this sequence:\n3 2 1 2 3 3 3 2 2\n\nAnswer Choices:\nA. 2 1 1 1\nB. 2 4 4 4\nC. 2 3 1 2\nD. 2 1 2 3\nE. 2 3 5 5\nF. 2 3 2 1\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "This sequence is a logic puzzle based on a pattern of descending numbers and repeating blocks. Let's break down the pattern:\n\nThe sequence starts with a descending run from 3: `3, 2, 1`.\n\nThis is followed by a separator number, which is `2`.\n\nAfter the separator, we get blocks of repeating numbers. The first block consists of three `3`s: `3, 3, 3`.\n\nThis is followed by the next block which, based on the pattern, should consist of three `2`s. The sequence provided shows the beginning of this block: `2, 2`.\n\nFollowing this logic, the pattern can be described as:\n1.  A descending sequence from 3: `3, 2, 1`\n2.  A separator: `2`\n3.  A block of three `3`s: `3, 3, 3`\n4.  A block of three `2`s: `2, 2, 2`\n5.  A block of three `1`s: `1, 1, 1`\n\nWhen we assemble the full sequence based on this pattern, we get:\n`3 2 1 2 3 3 3 2 2 2 1 1 1`\n\nThe original sequence given is `3 2 1 2 3 3 3 2 2`. To find the next four elements, we look at what comes next in our deduced pattern.\n*   The given sequence ends with `...2, 2`. The pattern requires a block of three `2`s, so the next element is `2`.\n*   Following the block of `2`s, the pattern continues with a block of three `1`s. Therefore, the next three elements are `1, 1, 1`.\n\nSo, the next four elements of the sequence are `2, 1, 1, 1`. This corresponds to answer choice A.\n\n<<<A>>>"
+  ],
+  "user_prompt_list": [
+    "Complete the next 4 elements of this sequence:\n3 2 1 2 3 3 3 2 2\n\nAnswer Choices:\nA. 2 1 1 1\nB. 2 4 4 4\nC. 2 3 1 2\nD. 2 1 2 3\nE. 2 3 5 5\nF. 2 3 2 1\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

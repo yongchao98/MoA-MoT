@@ -1,0 +1,14 @@
+To apply the Banach fixed-point theorem, the appropriate set M to define is the space of continuous functions on the interval that satisfy the given boundary conditions.
+
+Mathematically, this set is defined as:
+
+**M = {u ∈ C() | u(0) = u(1) = 0}**
+
+Here:
+*   **C()** is the set of all continuous functions defined on the closed interval.
+*   The condition **u(0) = u(1) = 0** ensures that any function in the set `M` already satisfies the boundary conditions of the problem.
+
+This set `M` is a complete metric space when endowed with the supremum norm (or max norm), defined as:
+d(u, v) = ||u - v||<sub>∞</sub> = sup<sub>x∈</sub>|u(x) - v(x)|
+
+The space C() with this norm is a Banach space, and therefore complete. The set `M` is a closed subset of C(), which means `M` itself is a complete metric space, fulfilling a key requirement of the Banach fixed-point theorem.

@@ -1,0 +1,20 @@
+Let $A$ be the formula $\bot \multimap 1$.
+
+The function $f: \mathbb{N} \to \text{Formula}$ is defined as:
+$$
+f(w) = A^{\otimes w} = \underbrace{A \otimes A \otimes \dots \otimes A}_{w \text{ times}}
+$$
+For the edge case $w=0$, $f(0) = 1$.
+
+The linear logic formula $C = C(W, m, b)$ is defined as:
+$$
+C = G^{\otimes m}
+$$
+where $G$ is the formula that represents a successfully completed partition:
+$$
+G = (A^{\otimes b})^{\bot\bot} = ((A^{\otimes b} \multimap \bot) \multimap \bot)
+$$
+Substituting the definitions of $A$ and $G$, the complete expression for $C$ is:
+$$
+C(W, m, b) = \left( \left( (\bot \multimap 1)^{\otimes b} \multimap \bot \right) \multimap \bot \right)^{\otimes m}
+$$

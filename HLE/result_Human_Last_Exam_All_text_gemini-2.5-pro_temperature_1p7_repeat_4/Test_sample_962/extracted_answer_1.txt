@@ -1,0 +1,32 @@
+Here is a summary of the design for a tightly secure t-out-of-n threshold signature scheme with a two-round signing protocol, based on the BLS signature scheme.
+
+**1. Preliminaries: Setup & DKG**
+*   **Foundation:** Use the BLS signature scheme over pairing-friendly elliptic curve groups `(G, G_T, e)`. Let `P` be the generator of `G`.
+*   **Key Generation:** Employ a **Verifiable Secret Sharing (VSS)** protocol (e.g., Pedersen VSS) for Distributed Key Generation (DKG). This process is run once to establish the keys.
+    *   **Output:** A master public key `PK` is known to everyone. Each of the *n* parties `P_i` holds a secret share `sk_i` and a corresponding public verification key `VK_i = sk_i * P`. No single party ever knows the master secret key `sk`.
+
+**2. Two-Round Signing Protocol**
+Let a set `S` of *t* parties sign a message `m`, coordinated by a designated Aggregator (who can be one of the signers).
+
+*   **Round 1: Announce and Agree on Signer Set**
+    1.  **Commitment:** The `t` intending signers `P_i` each send a "request to sign `m`" message to the Aggregator.
+    2.  **Set Broadcast:** The Aggregator collects `t` requests, finalizes the signer set `S` (a list of participant IDs), and broadcasts `S` to all participants in `S`. This round fixes the context of who is signing.
+
+*   **Round 2: Generate and Aggregate Partial Signatures**
+    1.  **Partial Signature Creation (by each signer `P_i` in `S`):**
+        *   Compute the Lagrange coefficient `L_i` for party `i` with respect to the set `S`.
+        *   **Crucially for tight security**, compute the hash `M = H(S, m)`, which binds the signature to the specific message and signer set.
+        *   Compute the partial signature: `sigma_i = (L_i * sk_i) * M`.
+        *   Send the partial signature `sigma_i` to the Aggregator.
+    2.  **Final Signature Aggregation (by the Aggregator):**
+        *   **Verify each partial signature:** For each `sigma_i` received from `P_i`, check its validity: `e(sigma_i, P) == e(L_i * M, VK_i)`. If any check fails, the protocol aborts, and the faulty party `P_i` is identified.
+        *   **Combine valid signatures:** If all `t` partial signatures are valid, compute the final signature by summing them: `Sigma = Σ sigma_i`.
+
+**3. Signature Verification**
+The final signature consists of `(S, Sigma)`. An external party verifies it by checking:
+`e(Sigma, P) == e(H(S, m), PK)`.
+
+**Why this design meets the requirements:**
+*   **Two Rounds:** The protocol structure is explicitly two rounds of communication.
+*   **t-out-of-n:** Based on Shamir's Secret Sharing, where any `t` shares `sk_i` can reconstruct the secret via Lagrange interpolation.
+*   **Tightly Secure:** Security is tightly reduced to the co-CDH assumption. The critical step is hashing the signer set `S` into the message `H(S, m)`. This prevents an attacker from combi

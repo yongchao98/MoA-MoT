@@ -1,0 +1,81 @@
+158[
+```c
+/*
+ * Program to calculate 100! on the Wuxing computer.
+ *
+ * Analysis for Minimal Memory Usage:
+ * 1. The value of 100! has 158 decimal digits, which is too large for
+ *    any standard data type. An array of digits must be used.
+ * 2. `digit result[158];` is the most memory-efficient structure.
+ *    Memory cost: 158 digits * 1D/digit = 158D.
+ * 3. All other helper variables (loop counters, carry, product) are small
+ *    enough to be held in the Wuxing computer's 10 registers (specifically
+ *    the 6 general-purpose ones). An optimizing compiler would do this to
+ *    achieve maximum performance and minimum memory footprint.
+ * 4. Therefore, the only memory allocated for variables is for the result array.
+ *    Total minimum memory for variables = 158D.
+ */
+void main() {
+    // === Variable Declaration ===
+    // This array stores the digits of 100! in reverse order. It is the
+    // only variable that requires data memory allocation.
+    digit result[158]; // Consumes 158D of stack memory.
+
+    // Helper variables. These would be mapped to registers by an
+    // optimizing compiler, consuming 0D of stack memory.
+    char i;          // Outer loop counter (2 to 100). `char` (3D) is sufficient.
+    char j;          // Inner loop digit-counter. `char` (3D) is sufficient.
+    char num_digits; // Tracks the current number of digits in the result.
+    char carry;      // Holds the carry-over value during multiplication.
+    int product;     // Stores intermediate products, requires a 4D `int`.
+
+    // === Initialization ===
+    // Initialize the result to 1.
+    // The number is stored as {1}, so it has 1 digit.
+    num_digits = 1;
+    result[0] = 1;
+
+    // Zero out the rest of the array for clean state.
+    for (j = 1; j < 158; j++) {
+        result[j] = 0;
+    }
+
+    // === Main Calculation Loop: Multiply by i from 2 to 100 ===
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // For each `i`, multiply it with the large number stored in `result`.
+        for (j = 0; j < num_digits; j++) {
+            // Standard grade-school multiplication algorithm.
+            product = result[j] * i + carry;
+            result[j] = product % 10;  // The new digit is the remainder.
+            carry = product / 10;      // The new carry is the quotient.
+        }
+
+        // After the loop, if a carry remains, append it to the number.
+        while (carry > 0) {
+            result[num_digits] = carry % 10;
+            num_digits = num_digits + 1;
+            carry = carry / 10;
+        }
+    }
+
+    // === Output the Result ===
+    // The program would now print the contents of `result`.
+    // The digits are stored in reverse, so we print from the end.
+    // The C-style loop condition `j >= 0` works because `j` is a signed char.
+    // But to be fully compliant and explicit with unsigned-like types:
+    // for (j = num_digits; j > 0; j--) {
+    //     printf("%d", result[j-1]);
+    // }
+    // Printing from `num_digits - 1` down to 0:
+    printf("100! = ");
+    for (j = num_digits - 1; ; j--) {
+        printf("%d", result[j]);
+        if (j == 0) {
+             break;
+        }
+    }
+    printf("\n");
+}
+```
+]

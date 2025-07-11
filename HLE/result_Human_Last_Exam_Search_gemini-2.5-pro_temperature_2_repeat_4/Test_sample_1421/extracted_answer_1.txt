@@ -1,0 +1,9 @@
+The formula for the fermionic partition function (Z) in the imaginary time representation using Feynman's path integral formalism is given by:
+$Z = \int_{\psi(\beta) = -\psi(0)}^{\psi} \mathcal{D}\bar{\psi}\mathcal{D}\psi \, e^{-S_E[\bar{\psi}, \psi]}$
+Where:
+<ul>
+  <li>$\mathcal{D}\bar{\psi}\mathcal{D}\psi$ is the functional integration measure over all configurations of the anti-commuting Grassmann fields $\bar{\psi}$ and $\psi$.</li>
+  <li>The integral is subject to anti-periodic boundary conditions in the imaginary time direction: $\psi(\beta) = -\psi(0)$ and $\bar{\psi}(\beta) = -\bar{\psi}(0)$, where $\beta$ is the inverse temperature.</li>
+  <li>$S_E[\bar{\psi}, \psi]$ is the Euclidean action for the fermionic system. For a system with a Hamiltonian operator $H$, the action is typically of the form:
+  $S_E = \int_0^\beta d\tau \int d^d x \, \bar{\psi}(\tau, \mathbf{x}) \left(\frac{\partial}{\partial\tau} + H\right) \psi(\tau, \mathbf{x})$</li>
+</ul

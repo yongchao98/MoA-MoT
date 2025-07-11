@@ -1,0 +1,9 @@
+Let `(X, d_X), (Y, d_Y), (Z, d_Z)` be complete metric spaces. A unique FGH-tripled fixed point `(x,y,z)` satisfying `F(x,y,z)=x`, `G(y,x,y)=y`, and `H(z,y,x)=z` exists if there are non-negative constants `a, b, c, d, e, g, h, i` such that for any two points `(x1,y1,z1)` and `(x2,y2,z2)` in `X*Y*Z`, the following conditions are met:
+1. The individual contraction inequalities hold:
+   - `d_X(F(x1, y1, z1), F(x2, y2, z2)) <= a*d_X(x1, x2) + b*d_Y(y1, y2) + c*d_Z(z1, z2)`
+   - `d_Y(G(y1, x1, y1), G(y2, x2, y2)) <= d*d_Y(y1, y2) + e*d_X(x1, x2)`
+   - `d_Z(H(z1, y1, x1), H(z2, y2, x2)) <= g*d_Z(z1, z2) + h*d_Y(y1, y2) + i*d_X(x1, x2)`
+2. The sums of coefficients are less than 1:
+   - `a + e + i < 1`
+   - `b + d + h < 1`
+   - `c + g < 1`

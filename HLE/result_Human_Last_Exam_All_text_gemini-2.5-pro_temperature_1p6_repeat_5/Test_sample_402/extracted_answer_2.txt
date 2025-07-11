@@ -1,0 +1,12 @@
+A multi-step computational filtering strategy should be implemented after performing a paired differential gene expression (DGE) analysis between the CAR-IL15 and CAR-only samples.
+
+1.  **Run Paired DGE Analysis:** First, perform a DGE analysis comparing the CAR-IL15 group against the CAR-only group, ensuring the paired donor design is properly modeled. This will generate a results table containing a `log2FoldChange` and an adjusted p-value (`padj`) for every gene.
+
+2.  **Define Filtering Criteria for Contaminants:** Identify contaminating genes by applying a dual filter to the DGE results. Contaminating genes, which are abundant in the CAR-only samples but nearly absent in the CAR-IL15 samples, will be characterized by:
+    *   A large negative **`log2FoldChange`** (e.g., `log2FC < -5`, indicating over 32-fold higher expression in the CAR-only group).
+    *   A high statistical significance (e.g., **`padj < 0.01`**).
+    The exact log2FC threshold should be determined by inspecting a volcano plot of the results to find a natural cutoff for the contaminating population.
+
+3.  **Generate a Contaminant Gene List:** Using command-line tools (`awk`), parse the DGE results table to extract the names of all genes that satisfy both criteria into a separate text file. This file is your list of contaminants.
+
+4.  **Filter the Expression Matrix:** Using command-line tools (`grep`), filter your primary normalized counts matrix, removing all genes whose names appear in the contaminant gene list you just created. The resulting filtered matrix is now cleaned of the cancer cell contamination and can be used for subsequent downstream biological interpretation, such as pathway analysis, PCA, and heatmap generation.

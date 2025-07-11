@@ -1,0 +1,17 @@
+Here are the definitions for the function `f` and the formula `C`.
+
+First, we define two base formulas, `X` and `Y`, using only the allowed connectives and constants, ensuring they are not literals:
+*   Let `X = 1 \multimap \bot`.
+*   Let `Y = X \multimap X`.
+
+Now, we define the function `f` and the formula `C`:
+
+The function `f` maps a natural number `w` to a linear logic formula as follows:
+`f(w) = Y \multimap (Y \otimes X^w)`
+where `X^w` denotes the formula `X \otimes X \otimes \dots \otimes X` (`w` times), and by definition `X^0 = 1`.
+
+The formula `C = C(W, m, b)` is given by:
+`C = (Y \multimap (Y \otimes X^b))^m`
+where the notation `A^m` denotes the formula `A \otimes A \otimes \dots \otimes A` (`m` times).
+
+With these definitions, the sequent `\{ f(w) \mid w \in W \} \vdash C` is derivable in linear logic if and only if `EP(W, m, b)` is true.

@@ -1,0 +1,26 @@
+### a) The interaction between molecules can be neglected.
+
+The absorption cross-section, σ_a(ω), is given by the sum of the contributions from each of the N independent molecules:
+
+**σ_a(ω) = N * (πω / (3cε₀ħ)) |μ|² g(ħω - E₀)**
+
+where:
+*   **N** is the number of molecules.
+*   **ω** is the light's angular frequency.
+*   **c, ε₀, ħ** are the speed of light, vacuum permittivity, and reduced Planck constant.
+*   **μ** is the transition dipole moment of a single molecule.
+*   **E₀** is the electronic excitation energy of a single molecule.
+*   **g(ħω - E₀)** is the normalized lineshape function for the transition.
+
+### b) The interaction between near-neighbors should be considered.
+
+In this case, delocalized Frenkel excitons are formed. The absorption cross-section, σ_b(ω), is a sum over the allowed transitions to the "bright" exciton states (those with odd quantum numbers k):
+
+**σ_b(ω) = (πω / (cε₀ħ)) |μ|² * ∑_{k=1,3,...}^N [ (2 / (N+1)) * cot²(πk / (2(N+1))) ] * g(ħω - [E₀ + 2J cos(πk / (N+1))])**
+
+where:
+*   All variables from (a) retain their meaning.
+*   **k** is the exciton quantum number.
+*   **J** is the near-neighbor coupling energy.
+*   The summation runs over all odd integer values of **k** from 1 to N.
+*   (Note: The orientational averaging factor of 1/3 is omitted, assuming the molecular transition dipoles are aligned with the light polarization).

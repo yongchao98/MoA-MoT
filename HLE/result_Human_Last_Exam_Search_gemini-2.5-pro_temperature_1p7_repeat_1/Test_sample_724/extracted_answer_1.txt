@@ -1,0 +1,5 @@
+Let `C=100`. The maximum amount of water left `A` is given by the formula:
+`A = j \cdot C - (2j-1) \left( m - C \sum_{k=j+1}^{n} \frac{1}{2k-1} \right)`
+where `j` is the unique integer `j \in \{1, 2, ..., n\}` satisfying the following inequality:
+`C \sum_{k=j+1}^{n} \frac{1}{2k-1} \le m < C \sum_{k=j}^{n} \frac{1}{2k-1}`
+(Note: A sum where the lower limit is greater than the upper limit is taken to be 0.)

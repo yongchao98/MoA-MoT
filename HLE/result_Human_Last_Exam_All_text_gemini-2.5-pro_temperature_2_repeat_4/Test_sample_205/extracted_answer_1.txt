@@ -1,0 +1,62 @@
+170[#include <stdio.h>
+
+/*
+ * This program calculates 100! on the Wuxing virtual machine.
+ * It uses a big number multiplication algorithm and the smallest
+ * possible data types for variables to minimize memory usage as
+ * defined by the Wuxing C compiler specification.
+ */
+int main() {
+    // Array to store the digits of the result. 100! has 158 digits.
+    digit result[158];
+
+    // Loop counter for factorial (2 to 100). char (0-999) is sufficient.
+    char i;
+
+    // Loop counter for iterating through the result array's digits.
+    char j;
+
+    // Stores the carry-over value during multiplication. char is sufficient.
+    char carry;
+
+    // Stores the current number of digits in the result array.
+    char size;
+
+    // Initialize the result to 1 (which has 1 digit).
+    size = 1;
+    result[0] = 1;
+
+    // Main loop: Multiply the current result by i for i = 2 to 100.
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Multiply each digit by i and add the carry from the previous digit.
+        for (j = 0; j < size; j++) {
+            carry += result[j] * i;
+            result[j] = carry % 10;
+            carry /= 10;
+        }
+
+        // If a carry remains, append its digits to the result array.
+        while (carry > 0) {
+            result[size] = carry % 10;
+            carry /= 10;
+            size++;
+        }
+    }
+
+    // Print the final result. Digits are stored in reverse order.
+    printf("100! = ");
+
+    // Loop backwards from the most significant digit to print the number.
+    // A while loop is used for robust handling of unsigned counters.
+    j = size;
+    while (j > 0) {
+        j--;
+        // The format specifier for a 'digit' type is %d.
+        printf("%d", result[j]);
+    }
+    printf("\n");
+
+    return 0;
+}
+]

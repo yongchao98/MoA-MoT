@@ -1,0 +1,17 @@
+The critical amount of correlation required to balance potentiation and depression, and to allow for the development of selectivity, is achieved when the covariance of the activity between corresponding neurons in the two input populations, `v` and `s`, is equal to the variance of the activity within a single input population.
+
+Let `v_k` and `s_k` be the activities of the k-th neurons in their respective layers, and let `μ` be their equal average rate of activation. The learning rules are given by:
+`dW_ik^v/dt ∝ r_i(v_k−θ)`
+`dW_ik^s/dt ∝ r_i(s_k−θ)`
+
+For the system to develop selectivity, a critical condition must be met that allows for competition between the synapses from population `v` and population `s`. This occurs when the system of equations governing the equilibrium weights becomes degenerate, which allows for solutions where `W_ik^v ≠ W_ik^s`.
+
+This critical point is reached when:
+**Covariance(`v_k`, `s_k`) = Variance(`v_k`)**
+
+Assuming the input activity is modeled as a sparse, binary process (a common simplification for a Poisson process in small time steps), where the probability of a neuron being active is `μ`, the variance of a single neuron's activity is `Var(v_k) = μ(1-μ)`.
+
+Therefore, the critical amount of correlation is:
+**`c_{vs} = μ(1-μ)`**
+
+where `c_{vs}` is the covariance between the activities of neurons `v_k` and `s_k`. At this level of correlation, the heterosynaptic depression perfectly balances the Hebbian potentiation in a way that allows for competitive dynamics and the emergence of selective receptive fields.

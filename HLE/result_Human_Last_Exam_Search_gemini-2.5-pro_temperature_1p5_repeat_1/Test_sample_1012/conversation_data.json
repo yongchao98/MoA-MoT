@@ -1,0 +1,10 @@
+{
+  "question": "How long does a symmetric key need to be at least, such that an arbitrarily powerful quantum computer cannot crack it?\n\nAnswer Choices:\nA. 256\nB. 128\nC. 512\nD. 1024\nE. 2048\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "An arbitrarily powerful quantum computer could theoretically crack a symmetric key using Grover's algorithm, which provides a quadratic speed-up on brute-force key searches. This means that an n-bit key would effectively provide n/2 bits of security.\n\nTo maintain a secure level of encryption against such a quantum threat, the key length needs to be doubled. For instance, a 128-bit key, which is considered secure against classical computers, would have its effective security reduced to 64 bits by a quantum computer, rendering it insecure.\n\nTherefore, to achieve a 128-bit security level against a quantum computer—a level generally considered safe for the foreseeable future—a symmetric key of at least 256 bits is required. The U.S. National Security Agency (NSA) now requires 256-bit AES keys for data classified as Top Secret to be resistant to quantum computing attacks. Organizations are advised to upgrade from 128-bit encryption to 256-bit to protect against future quantum adversaries.\n\n<<<A>>>"
+  ],
+  "user_prompt_list": [
+    "How long does a symmetric key need to be at least, such that an arbitrarily powerful quantum computer cannot crack it?\n\nAnswer Choices:\nA. 256\nB. 128\nC. 512\nD. 1024\nE. 2048\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

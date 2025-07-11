@@ -1,0 +1,12 @@
+
+The function `f` and the formula `C` are defined as follows. Let `A^k` be a shorthand for the formula `\underbrace{A \otimes A \otimes \dots \otimes A}_{k \text{ times}}`.
+
+1.  **The function `f` mapping a natural number to a linear logic formula:**
+    `f(w) = \bot^w`
+
+2.  **The linear formula `C = C(W, m, b)`:**
+    Let the formula for a single "bucket" be `B = \bot^b \multimap 1`.
+    The formula `C` is constructed by nesting `m` implications on `B`.
+    `C(W, m, b) = \underbrace{B \multimap (B \multimap (\dots(B}_{m \text{ implications}} \multimap 1)\dots))`
+    In full, this is:
+    `C(W, m, b) = (\bot^b \multimap 1) \multimap ((\bot^b \multimap 1) \multimap \dots ((\bot^b \multimap 1) \multimap 1) \dots)` with `m` instances of `(\bot^b \multimap 1)`.

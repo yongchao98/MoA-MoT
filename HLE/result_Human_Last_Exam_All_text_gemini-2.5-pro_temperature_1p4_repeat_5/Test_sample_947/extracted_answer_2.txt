@@ -1,0 +1,5 @@
+The magnetic field vector is given by $ \mathbf{H}(x,z) = H_x(x,z)\mathbf{\hat{x}} + H_z(x,z)\mathbf{\hat{z}} $, where the components are:
+$H_x(x,z) = -\frac{\pi^2 w^2 H_0}{4D^2} \left( \frac{H_a}{H_0} - \tanh\left(\frac{H_a}{H_0}\right) \right) \frac{\sinh\left(\frac{2\pi x}{D}\right)\sin\left(\frac{2\pi z}{D}\right)}{\left(\sinh^2\left(\frac{\pi x}{D}\right) + \sin^2\left(\frac{\pi z}{D}\right)\right)^2}$
+$H_z(x,z) = H_a + \frac{\pi^2 w^2 H_0}{2D^2} \left( \frac{H_a}{H_0} - \tanh\left(\frac{H_a}{H_0}\right) \right) \frac{\sinh^2\left(\frac{\pi x}{D}\right) - \sin^2\left(\frac{\pi z}{D}\right)}{\left(\sinh^2\left(\frac{\pi x}{D}\right) + \sin^2\left(\frac{\pi z}{D}\right)\right)^2}$
+Alternatively, in complex notation where $ \zeta = x+iz $, the field is given by $ H_x - iH_z = F(\zeta) $:
+$F(\zeta) = -iH_a - i \frac{\pi^2 w^2 H_0}{2D^2} \left( \frac{H_a}{H_0} - \tanh\left(\frac{H_a}{H_0}\right) \right) \mathrm{csch}^2\left(\frac{\pi\zeta}{D}\right)$

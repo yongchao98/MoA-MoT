@@ -1,0 +1,1 @@
+P(n) = \prod_{b=1, 4 \nmid b}^n (\prod_{0<a<b, \gcd(a,b)=1} \Gamma(\frac{a}{b}))^{\lfloor n/b \rfloor} \cdot \prod_{b=1, 4|b}^n (\prod_{0<a\le b/2, \gcd(a,b)=1} \frac{\Gamma(a/b)\Gamma(a/b+1/2)}{\Gamma(2a/b-1)^2})^{\lfloor n/b \rfloor}

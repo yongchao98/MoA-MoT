@@ -1,0 +1,11 @@
+
+Let $P$ be the formula $\bot \multimap 1$.
+Let $Q$ be the formula $P \otimes P$, which is $(\bot \multimap 1) \otimes (\bot \multimap 1)$.
+
+The function $f: \mathbb{N} \to \text{Formula}$ is defined as:
+$$f(w) = P \multimap (\underbrace{Q \otimes \dots \otimes Q}_{w \text{ times}} \otimes P)$$
+
+The formula $C = C(W, m, b)$ is defined as:
+$$C = \underbrace{Bin_b \otimes \dots \otimes Bin_b}_{m \text{ times}}$$
+where the formula $Bin_b$ is given by:
+$$Bin_b = P \multimap (\underbrace{Q \otimes \dots \otimes Q}_{b \text{ times}} \otimes P)$$

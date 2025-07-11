@@ -1,0 +1,23 @@
+For the one-dimensional wave equation, the convergence of the Optimized Schwarz Relaxation method with absorbing boundary conditions is determined by the time it takes for information to travel across the subdomains. The method converges in a finite number of iterations.
+
+With each full iteration (an update of both the left subdomain \(\Omega_1\) and the right subdomain \(\Omega_2\)), information is exchanged at the interfaces \(x=a\) and \(x=b\). Due to the nature of wave propagation and the use of absorbing boundary conditions which prevent non-physical reflections at these interfaces, the time horizon for which the solution is correct extends by the time it takes for a wave to travel across the overlap region.
+
+The key parameters are:
+*   **T**: The final time up to which convergence is required.
+*   **c**: The propagation speed of the wave.
+*   **M**: The size of the overlap, \(M = b - a\).
+
+The time it takes for a wave to cross the overlap of size M is \(\Delta t = M/c\).
+
+After one iteration, the solution is converged up to time \(1 \times (M/c)\). After N iterations, the solution is converged up to time \(N \times (M/c)\). To ensure the solution has converged for the entire time interval \([0, T]\), we need:
+$$N \times \frac{M}{c} \ge T$$
+
+Solving for N, the number of iterations, gives:
+$$N \ge \frac{T \times c}{M}$$
+
+Since the number of iterations must be an integer, we need the smallest integer that satisfies this condition, which is the ceiling of the expression.
+
+The number of iterations, N, required for the method to converge up to the time instant T is given by the formula:
+$$N = \left\lceil \frac{T \times c}{M} \right\rceil$$
+
+Where \(\lceil \cdot \rceil\) denotes the ceiling function, which rounds a number up to the next highest integer.

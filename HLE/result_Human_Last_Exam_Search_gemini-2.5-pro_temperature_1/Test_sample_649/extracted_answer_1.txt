@@ -1,0 +1,9 @@
+The tightest lower bound on the minimax risk \(R_n^*\) that can be proven from the given information is:
+\[
+R_n^* \ge \frac{1}{2}\Phi\left(\frac{\delta}{2}\right) \left(1 - d_{TV}\left(P_0^n, \frac{1}{N}\sum_{j=1}^N P_j^n\right)\right)
+\]
+Here, \(d_{TV}\) denotes the total variation distance, and \(P_j^n\) is the n-fold product measure of \(P_j\). This bound can be further relaxed using Pinsker's inequality, which relates the total variation distance to the Kullback-Leibler (KL) divergence:
+\[
+R_n^* \ge \frac{1}{2}\Phi\left(\frac{\delta}{2}\right) \left(1 - \sqrt{\frac{1}{2}D_{KL}\left(P_0^n \bigg\| \frac{1}{N}\sum_{j=1}^N P_j^n\right)}\right)
+\]
+Due to the convexity of the KL divergence, this can be further bounded, but the expression in terms of the total variation distance is the tightest.

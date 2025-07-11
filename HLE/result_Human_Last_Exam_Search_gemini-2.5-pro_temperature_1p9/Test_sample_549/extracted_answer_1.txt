@@ -1,0 +1,45 @@
+The quantum correction to the conductivity in a bulk semiconductor arises from the phenomenon of weak localization. This effect is a consequence of the constructive interference between an electron's wave function traveling along a certain path and its time-reversed counterpart. This interference enhances the probability of the electron returning to its starting point, leading to a slight increase in resistivity, which corresponds to a negative correction to the conductivity.
+
+The evaluation of this quantum correction is proportional to the probability of the electron returning to a small volume around its initial position. This volume is on the order of the cube of the electron's de Broglie wavelength, λ.
+
+For an electron undergoing diffusive motion in a three-dimensional disordered medium, the classical probability density of finding the electron at a position **r** at time *t*, given that it started at the origin at *t* = 0, is described by the diffusion equation. The solution to this is a Gaussian distribution:
+
+*P(r, t) = (4πDt)^(-3/2) * exp(-r^2 / 4Dt)*
+
+Here, *D* is the diffusion coefficient. The probability of the electron returning to the origin (r=0) at time *t* is given by the probability density at the origin:
+
+*P(0, t) = (4πDt)^(-3/2)*
+
+The quantum correction to the conductivity, δσ, is proportional to the total probability of return, integrated over the time during which the electron maintains its phase coherence. The lower limit for this integration is the elastic scattering time, τ, and the upper limit is the phase coherence time, τ_φ. The return probability must be considered within a small volume around the origin, which is of the order of λ³, where λ is the electron's wavelength.
+
+The quantum correction to the conductivity, δσ, can be related to the Drude conductivity, σ₀, through the following relation:
+
+*δσ / σ₀ ≈ - (Return Probability)*
+
+The total return probability, *W*, is the integral of the probability density of being in a volume λ³ around the origin, from the elastic scattering time τ to the phase coherence time τ_φ:
+
+*W = ∫[from τ to τ_φ] P(0, t) * V_λ dt*
+
+where *V_λ* is the volume of the vicinity of the initial point, taken as λ³.
+
+*W = λ³ ∫[from τ to τ_φ] (4πDt)^(-3/2) dt*
+
+The diffusion coefficient *D* is related to the elastic mean free path *l* and the Fermi velocity *v_F* by *D = v_F*l / 3*. The elastic scattering time is *τ = l / v_F*. The phase coherence time *τ_φ* is related to the phase coherence length *L_φ* by *τ_φ = L_φ² / D*.
+
+Performing the integration:
+
+*W = λ³ * (4πD)^(-3/2) * ∫[from τ to τ_φ] t^(-3/2) dt*
+*W = λ³ * (4πD)^(-3/2) * [-2t^(-1/2)] [from τ to τ_φ]*
+*W = λ³ * (4πD)^(-3/2) * 2 * (1/√τ - 1/√τ_φ)*
+
+Substituting D and τ:
+
+*W ≈ λ³ * (4π(v_F*l / 3))^(-3/2) * 2 * (√(v_F / l) - D^(1/2) / L_φ)*
+
+Since at low temperatures, the phase coherence length *L_φ* is much larger than the mean free path *l*, the term with *L_φ* is much smaller and can be neglected for an estimation. Also, for a rough estimate, we can use λ ≈ 1/k_F, where k_F is the Fermi wavevector.
+
+For a more standard result from the theory of weak localization in three dimensions, the correction to the conductivity is given by:
+
+*δσ = (e² / (2π²ħ)) * (1/l - 1/L_φ)*
+
+This formula provides the quantum correction in terms of fundamental constants (*e*, ħ) and material-dependent length scales (the elastic mean free path *l* and the phase coherence length *L_φ*). The correction is negative with respect to the conductivity, meaning it increases the resistivity. The phase coherence length *L_φ* is temperature-dependent and decreases with increasing temperature due to inelastic scattering processes like electron-phonon and electron-electron interactions. Therefore, the quantum correction becomes less significant at higher temperatures.

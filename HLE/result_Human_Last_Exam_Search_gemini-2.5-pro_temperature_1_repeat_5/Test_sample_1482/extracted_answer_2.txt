@@ -1,0 +1,14 @@
+In the context of Interval Type-3 Fuzzy Logic Systems, the vertical cross-section at a fixed primary input `x` is an Interval Type-2 Fuzzy Set defined by its upper and lower membership functions for the secondary variable `u`. Utilizing a Gaussian-based paradigm, the mathematical formulation for these bounds is:
+
+**Upper Membership Function (UMF):**
+μ¯_A(x)(u) = exp ( -1/2 * ( (u - m(x)) / σ_u )^2 )
+
+**Lower Membership Function (LMF):**
+μ_A(x)(u) = λ * exp ( -1/2 * ( (x - m(x)) / σ_u* )^2 )
+
+where:
+*   `u` is the secondary input variable.
+*   `m(x)` is the mean of the Gaussian function, dependent on the primary input `x`.
+*   `σ_u` is the standard deviation defining the uncertainty spread for the secondary variable.
+*   `λ` (`LowerScale`) is a scaling factor for the lower bound.
+*   `σ_u*` is a modified standard deviation for the lower bound, calculated as `σ_u* = σ_u * sqrt(ln(l) / ln(ε))`, with `l` being the `LowerLag` parameter and `ε` a machine epsilon.

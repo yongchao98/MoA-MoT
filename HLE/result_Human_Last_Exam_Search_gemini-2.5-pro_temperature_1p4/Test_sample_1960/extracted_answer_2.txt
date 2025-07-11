@@ -1,0 +1,14 @@
+
+**Function f:**
+The function `f` maps a natural number `w` to the linear logic formula:
+$$
+f(w) = P \multimap (P \otimes A^{\otimes w})
+$$
+where `P` and `A` are distinct atomic propositions and `A^{\otimes w}` denotes the tensor product of `A` with itself `w` times.
+
+**Formula C:**
+The linear logic formula `C = C(W, m, b)` is given by:
+$$
+C = \left( P^{\otimes m} \otimes \left( (P \otimes A^{\otimes b}) \multimap 1 \right)^{\otimes m} \right) \multimap 1
+$$
+where `1` is the multiplicative unit.

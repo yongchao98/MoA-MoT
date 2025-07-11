@@ -1,0 +1,6 @@
+The exact, non-approximated expression for the post-reset covariance matrix \(\Sigma'\) is given by its block components:
+$$ \Sigma'_{\delta\delta} = \exp(-[\mu_\delta]) \Sigma_{\delta\delta} \exp([\mu_\delta]) $$
+$$ \Sigma'_{\delta\xi} = \exp(-[\mu_\delta]) \Sigma_{\delta\xi} $$
+$$ \Sigma'_{\xi\delta} = \Sigma_{\xi\delta} \exp([\mu_\delta]) $$
+$$ \Sigma'_{\xi\xi} = \Sigma_{\xi\xi} $$
+Here, \(\mu_\delta\) is the mean of the attitude deviation vector before the reset, \(\Sigma\) is the pre-reset covariance matrix, \(\exp(\cdot)\) is the matrix exponential, and \([\mu_\delta]\) is the skew-symmetric matrix form of the vector \(\mu_\delta\). Note that the transpose of \(\exp(-[\mu_\delta])\) is \(\exp([\mu_\delta])\). The other states' covariance \(\Sigma_{\xi\xi}\) remains unchanged as the reset operation does not directly affect them. The cross-covariance terms are updated to reflect the change of basis for the attitude deviation.

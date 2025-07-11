@@ -1,0 +1,7 @@
+The fermionic partition function `Z` in the imaginary time path integral formalism is expressed as a functional integral over Grassmann fields `ψ` and `ψ̄` with anti-periodic boundary conditions in the imaginary time `τ`. The formula is:
+
+`Z = ∫ Dψ̄Dψ * e^(-S_E[ψ̄, ψ])`
+
+where the integral is over all field configurations satisfying `ψ(x, 0) = -ψ(x, β)`, and `S_E` is the Euclidean action, typically of the form:
+
+`S_E = ∫_0^β dτ ∫ d³x  ψ̄(x, τ) (ħ∂_τ + H) ψ(x, τ)`

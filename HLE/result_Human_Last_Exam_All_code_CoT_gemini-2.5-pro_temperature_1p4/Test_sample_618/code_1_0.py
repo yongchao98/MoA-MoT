@@ -1,0 +1,40 @@
+import math
+
+def print_xi_representation():
+    """
+    Prints the general representation for the infinitesimal transformation on x,
+    denoted as xi(t, x), for the given PDE.
+
+    The final form depends on the sign of the parameter k1.
+    c1, c2, and c3 are arbitrary constants.
+    """
+    print("The general representation for the infinitesimal transformation on x, xi(t, x), is given by:")
+    print("-" * 80)
+
+    # Case 1: k1 > 0
+    print("Case 1: k1 > 0")
+    # The numbers in the equation are 1 (implicit for c1), 3, 4, 1 (implicit for k1), 2
+    xi_k1_pos = "xi(t, x) = c1 + exp((3*k1*t)/4) * (c2*cos(sqrt(k1)*x/2) + c3*sin(sqrt(k1)*x/2))"
+    print(f"   {xi_k1_pos}\n")
+    print("   The numbers in the final equation are: 1 (for c1), 3, 4, 1 (for k1), 2.\n")
+
+
+    # Case 2: k1 < 0
+    print("Case 2: k1 < 0")
+    # The numbers in the equation are 1 (implicit for c1), 3, 4, -1 (implicit for k1), 2
+    xi_k1_neg = "xi(t, x) = c1 + exp((3*k1*t)/4) * (c2*cosh(sqrt(-k1)*x/2) + c3*sinh(sqrt(-k1)*x/2))"
+    print(f"   {xi_k1_neg}\n")
+    print("   The numbers in the final equation are: 1 (for c1), 3, 4, -1 (for k1), 2.\n")
+
+    # Case 3: k1 = 0
+    print("Case 3: k1 = 0 (This corresponds to the standard reaction-diffusion equation)")
+    # The numbers in the equation are 1 (implicit for c1), 1 (implicit for c3), 1 (implicit for c2), -6
+    xi_k1_zero = "xi(t, x) = c1 + c2*x + c3*(x**2 - 6*t)"
+    print(f"   {xi_k1_zero}\n")
+    print("   The numbers in the final equation are: 1 (for c1), 1 (for c2), 1 (for c3), 2, -6.\n")
+
+    print("-" * 80)
+    print("Where c1, c2, and c3 are arbitrary constants from the integration.")
+
+# Execute the function to display the results
+print_xi_representation()

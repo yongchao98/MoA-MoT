@@ -1,0 +1,3 @@
+The number of possible sequences is given by the formula:
+$$ \sum_{j=0}^{K-1} (-1)^j \binom{K-1}{j} \binom{N-jM}{K} $$
+where \(\binom{n}{r}\) is the binomial coefficient, which is zero if \(n < r\).

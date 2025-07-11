@@ -1,0 +1,10 @@
+*   **A base "unit" formula `U`:**
+    `U = ⊥ ⊸ ⊥`
+
+*   **The function `f` mapping a natural number `w` to a formula:**
+    `f(w)` is the tensor product of `U` with itself `w` times.
+    $$f(w) = \underbrace{U \otimes U \otimes \dots \otimes U}_{w \text{ times}}$$
+
+*   **The target formula `C(W, m, b)`:**
+    `C(W, m, b)` represents `m` bins, each of size `b`. It is the tensor product of `m` copies of the formula `f(b)`.
+    $$C(W, m, b) = \underbrace{f(b) \otimes f(b) \otimes \dots \otimes f(b)}_{m \text{ times}} = \left(U^{\otimes b}\right)^{\otimes m} = U^{\otimes mb}$$

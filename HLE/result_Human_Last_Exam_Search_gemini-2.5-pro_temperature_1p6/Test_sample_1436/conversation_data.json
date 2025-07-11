@@ -1,0 +1,10 @@
+{
+  "question": "What is the symmetry factor associated with a Feynman diagram featuring two vertices and four field contractions in perturbative Green's function analysis?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "A Feynman diagram featuring two vertices and four field contractions in perturbative Green's function analysis, specifically within the context of a φ⁴ theory, typically refers to a connected vacuum diagram where the two vertices are linked by four internal lines (propagators). The symmetry factor for such a diagram is determined by the number of ways the diagram can be rearranged to look the same.\n\nThe calculation of the symmetry factor, denoted as S, is based on the automorphisms of the graph:\n\n1.  **Permutations of Internal Lines:** There are four identical propagators connecting the two vertices. These can be permuted among themselves in 4! (4 factorial) ways, which equals 24.\n2.  **Permutations of Vertices:** The two vertices are indistinguishable. They can be swapped, leading to a factor of 2! (2 factorial), which equals 2.\n\nThe total symmetry factor is the product of these individual factors:\n\nS = (permutations of lines) × (permutations of vertices) = 4! × 2! = 24 × 2 = 48.\n\nThis diagram is a second-order vacuum bubble. In the perturbative expansion of the Green's function, the contribution of this diagram is divided by its symmetry factor. Therefore, the diagram's overall multiplicative constant would be proportional to 1/48.\n\n<<<48>>>"
+  ],
+  "user_prompt_list": [
+    "What is the symmetry factor associated with a Feynman diagram featuring two vertices and four field contractions in perturbative Green's function analysis?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

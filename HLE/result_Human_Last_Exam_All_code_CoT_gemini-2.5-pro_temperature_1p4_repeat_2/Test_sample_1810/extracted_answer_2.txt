@@ -1,0 +1,23 @@
+For k=3 and a=[2, 3, 4]:
+The equation is:
+N[3, 5, 4, 3, 2] = N[2, 3, 4, 4, 3] + c_k
+Substituting the calculated values:
+501 = 411 + 90
+
+Verification using the derived formula for c_k:
+c_k = N[a_1,...,a_k] * N[a_2,...,a_{k-1}]
+c_k = 30 * 3 = 90
+The result is consistent.
+
+==============================
+
+For k=2 and a=[5, 6]:
+The equation is:
+N[7, 6, 5] = N[5, 6, 6] + c_k
+Substituting the calculated values:
+247 = 216 + 31
+
+Verification using the derived formula for c_k:
+c_k = N[a_1,...,a_k] * N[a_2,...,a_{k-1}]
+c_k = 31 * 1 = 31
+The result is consistent.

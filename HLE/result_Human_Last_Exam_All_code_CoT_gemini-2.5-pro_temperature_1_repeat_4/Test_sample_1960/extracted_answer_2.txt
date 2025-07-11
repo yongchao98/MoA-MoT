@@ -1,0 +1,7 @@
+Let A be the formula `((1 ⊸ ⊥) ⊸ ⊥)` and S be the formula `(A ⊸ ⊥)`.
+
+The function `f` is defined as:
+`f(w) = A^w` (representing `A ⊗ A ⊗ ... ⊗ A`, w times). For w=0, `f(0)=1`.
+
+The formula `C` is defined as:
+`C(W, m, b) = B^m`, where `B = ((A^b) ⊸ S) ⊸ S`.

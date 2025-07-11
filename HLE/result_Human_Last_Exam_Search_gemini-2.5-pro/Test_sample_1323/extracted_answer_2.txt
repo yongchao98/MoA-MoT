@@ -1,0 +1,5 @@
+The term $?_1$ is given by:
+$$ ?_1 = \frac{1}{2}\delta_{ij}h(x) $$
+where $\delta_{ij}$ is the Kronecker delta, defined as:
+$$ \delta_{ij} = \begin{cases} 1 & \text{if } i=j \\ 0 & \text{if } i \neq j \end{cases} $$
+So, for the diagonal derivatives (i.e., $i=j$), $?_1 = \frac{1}{2}h(x)$, and for the mixed partial derivatives (i.e., $i \neq j$), $?_1 = 0$.

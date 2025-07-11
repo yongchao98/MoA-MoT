@@ -1,0 +1,6 @@
+After applying the gate Q to one ququint of the entangled pair and then performing a measurement on that same ququint, the final state of the system is not a single state but a probabilistic distribution of five possible outcomes. If the measurement of ququint A results in the state $|k\rangle_A$, ququint B collapses into a specific corresponding state. The five possible final states for the entire system $(|k\rangle_A \otimes |\psi_k\rangle_B)$ and their probabilities are:
+1.  With probability 2/11, the final state is $|0\rangle_A \otimes \frac{1}{\sqrt{2}}(|1\rangle_B + |3\rangle_B)$.
+2.  With probability 2/11, the final state is $|1\rangle_A \otimes \frac{1}{\sqrt{2}}(|0\rangle_B + |2\rangle_B)$.
+3.  With probability 3/11, the final state is $|2\rangle_A \otimes \frac{1}{\sqrt{3}}(|0\rangle_B + |3\rangle_B + |4\rangle_B)$.
+4.  With probability 2/11, the final state is $|3\rangle_A \otimes \frac{1}{\sqrt{2}}(|1\rangle_B + |4\rangle_B)$.
+5.  With probability 1/11, the final state is $|4\rangle_A \otimes |2\rangle_B$.

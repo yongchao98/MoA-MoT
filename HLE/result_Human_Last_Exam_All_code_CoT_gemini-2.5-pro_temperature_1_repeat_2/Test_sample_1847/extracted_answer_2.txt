@@ -1,0 +1,7 @@
+The analytical solution is an implicit equation for the density profile:
+
+Let rho be the density and rho_0 be the ambient density.
+Let x be the position and L be the ambient conductive length scale L = kappa/(rho_0 * M * c_0 * C_v).
+
+The equation is:
+(rho/rho_0 - 1)^2 / ((rho/rho_0) * (2 - rho/rho_0)) = (1/3) * exp((8/3) * x/L)

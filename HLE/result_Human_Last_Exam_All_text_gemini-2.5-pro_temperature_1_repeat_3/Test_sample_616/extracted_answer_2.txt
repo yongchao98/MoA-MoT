@@ -1,0 +1,4 @@
+The minimum value depends on the product of the signs of the determinants of $A$ and $B$. Let $s_{AB} = s(\det A)s(\det B)$.
+*   If $s_{AB} = 1$, the minimum is $\sum_{i=1}^n a_i b_{n-i+1}$.
+*   If $s_{AB} = -1$, the minimum is $-a_1 b_1 + \sum_{i=2}^n a_i b_i$.
+*   If $s_{AB} = 0$, the minimum is $\min(\sum_{i=1}^n a_i b_{n-i+1}, -a_1 b_1 + \sum_{i=2}^n a_i b_i) = -a_1 b_1 + \sum_{i=2}^n a_i b_i$.

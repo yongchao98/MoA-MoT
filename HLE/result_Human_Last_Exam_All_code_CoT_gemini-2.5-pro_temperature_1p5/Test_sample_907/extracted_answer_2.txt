@@ -1,0 +1,33 @@
+The equation for the absorption cross-section (σ_abs) for a chain of molecules is given by:
+
+Symbols represent:
+  C: Proportionality constant
+  N: Number of molecules
+  μ₀: Transition dipole moment of a single molecule
+  E_trans: Transition energy of a single molecule
+  ħ: Reduced Planck constant
+  ω_L: Laser pulse central frequency
+  τ: Laser pulse duration
+  J: Near-neighbor coupling energy
+
+----------------------------------------------------------
+a) The interaction between molecules can be neglected:
+----------------------------------------------------------
+         │ 2│   ⎛         2⎞
+         │μ₀│ ⋅ ⎜  (E_trans - ħ⋅ω_L) ⋅τ ⎟
+σ_abs = C⋅N   ⋅ℯ⎝- ──────────────────────⎠
+           2 
+          ħ  
+
+Here, the absorption peak is centered at the single-molecule transition energy E_trans.
+
+----------------------------------------------------------
+b) The interaction between near-neighbors should be considered:
+----------------------------------------------------------
+         │ 2│   ⎛           2⎞
+         │μ₀│ ⋅ ⎜(2⋅J + E_trans - ħ⋅ω_L) ⋅τ⎟
+σ_abs = C⋅N   ⋅ℯ⎝- ─────────────────────────⎠
+            2 
+           ħ  
+
+Here, the absorption peak is shifted to E_trans + 2J due to exciton formation.

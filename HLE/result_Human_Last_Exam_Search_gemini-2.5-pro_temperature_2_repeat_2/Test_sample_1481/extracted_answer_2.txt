@@ -1,0 +1,11 @@
+Within the framework of planar Birkhoff billiard dynamics, the generating function `H(s,s')` encapsulates the symplectic nature of the billiard map and is defined as the negative of the Euclidean distance between two points on the boundary curve, `H(s,s') = -d(γ(s), γ(s'))`, where `s` and `s'` are the arc-length parameters. The leading-order behavior of `H(s,s')` in the limit as the arc-length separation `|s'-s|` approaches zero reveals the critical influence of the boundary's local curvature, `κ(s)`.
+
+The asymptotic expansion is given by:
+**`H(s, s') = -|s' - s| * [1 - (κ(s)² / 24) * (s' - s)² - (κ(s)κ'(s) / 24) * (s' - s)³ + O((s' - s)⁴)]`**
+
+This expansion elucidates several key points:
+- The dominant term is `-|s' - s|`, the negative of the arc length, representing the trivial distance for infinitesimally separated points.
+- The leading-order correction is of order `|s' - s|³` and is proportional to the square of the local curvature, `κ(s)²`. This term is the most significant geometric correction, demonstrating that higher curvature at a point `s` has a pronounced effect on the dynamics of trajectories that are nearly tangent to the boundary.
+- A higher-order correction, of order `|s' - s|⁴`, depends on the product of the curvature and its derivative, `κ(s)κ'(s)`. This highlights the influence of the local *change* in curvature on the system's properties.
+
+This analysis rigorously incorporates the boundary's geometric properties into the dynamical framework, showing that the deviation from a simple linear relationship in the generating function is fundamentally governed by the local curvature in the asymptotic regime of grazing collisions.

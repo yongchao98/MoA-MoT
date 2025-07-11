@@ -1,0 +1,10 @@
+{
+  "question": "If a molecule of 1,4-13C glucose goes through glycolysis, how many 13C-labeled CO2 molecules will be released?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "When a molecule of 1,4-¹³C glucose undergoes glycolysis and subsequent pyruvate decarboxylation, two molecules of ¹³C-labeled CO₂ are released.\n\nHere is a step-by-step breakdown of the process:\n\n*   **Starting Molecule:** The glucose is labeled with a carbon-13 isotope at positions 1 and 4.\n*   **Glycolysis:** This initial stage of cellular respiration breaks down the 6-carbon glucose molecule into two 3-carbon pyruvate molecules. Glycolysis itself does not produce any carbon dioxide.\n*   **Tracing the Labeled Carbons:**\n    *   During glycolysis, the 6-carbon glucose is split into two 3-carbon molecules.\n    *   The ¹³C from position 1 of glucose ends up at the carboxyl group (C1 position) of one of the pyruvate molecules.\n    *   The ¹³C from position 4 of glucose ends up at the carboxyl group (C1 position) of the second pyruvate molecule.\n*   **Pyruvate Decarboxylation:** Before entering the Krebs cycle, each pyruvate molecule is converted into acetyl-CoA. In this step, a carboxyl group is removed from each pyruvate, releasing a molecule of carbon dioxide.\n*   **Release of Labeled CO₂:** Since both pyruvate molecules are labeled at their carboxyl carbon (C1), the carbon atom that is removed to form CO₂, both molecules of CO₂ produced will be ¹³C-labeled.\n\nTherefore, for every one molecule of 1,4-¹³C glucose, the process yields two molecules of ¹³C-labeled carbon dioxide.\n\n<<<2>>>"
+  ],
+  "user_prompt_list": [
+    "If a molecule of 1,4-13C glucose goes through glycolysis, how many 13C-labeled CO2 molecules will be released?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

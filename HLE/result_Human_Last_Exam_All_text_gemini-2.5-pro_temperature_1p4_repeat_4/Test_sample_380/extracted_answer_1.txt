@@ -1,0 +1,12 @@
+The local magnetic field at the L1 Lagrange point is generally not radial. Due to the Sun's rotation and the outward flow of solar wind plasma, the Interplanetary Magnetic Field (IMF) forms a Parker spiral, which has a significant component tangential to the radial direction (typically making a ~45° angle at 1 AU).
+
+Your physical intuition is correct: for Alfvén Ion Cyclotron (AIC) waves, which propagate along the local magnetic field ($\vec{B}_0$), the normalized magnetic helicity should ideally be calculated using magnetic field components perpendicular to $\vec{B}_0$. This requires using a Field-Aligned Coordinate (FAC) system.
+
+However, the practice of using components perpendicular to the *radial* direction (e.g., in a Radial-Tangential-Normal coordinate system) is a common **approximation**. The justification for this approximation is as follows:
+
+1.  **Taylor's Hypothesis:** The solar wind flows much faster than the wave propagates. This means the wave is convected past the spacecraft, and its wavevector $\vec{k}$ is measured to be nearly parallel to the solar wind velocity, which is predominantly radial.
+2.  **Assumption of Radial IMF:** The key step is to then assume that the background magnetic field, $\vec{B}_0$, is *also* pointing in the radial direction.
+
+When the magnetic field is indeed radial ("radial IMF" conditions), the wave propagation direction ($\vec{k}$), the background magnetic field direction ($\vec{B}_0$), and the radial coordinate axis all align. In this specific case, the plane perpendicular to the radial direction is the correct plane for calculating helicity.
+
+In summary, using a radially-based coordinate system is **not fundamentally correct but is a justifiable approximation** used for convenience, and its validity is restricted to periods when the local magnetic field is closely aligned with the radial direction. More rigorous analyses explicitly transform the data into a Field-Aligned Coordinate system or use Minimum Variance Analysis to accurately determine the wave propagation plane before calculating helicity.

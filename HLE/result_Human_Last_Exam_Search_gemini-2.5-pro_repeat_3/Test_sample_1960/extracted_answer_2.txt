@@ -1,0 +1,30 @@
+
+**1. The function `f`:**
+
+The function $f$ maps a natural number $w$ to the linear logic formula $A₀^w$:
+$$ f(w) = A₀^w = \underbrace{A₀ \otimes A₀ \otimes \dots \otimes A₀}_{w \text{ times}} $$
+
+**2. The formula `C`:**
+
+The formula $C = C(W, m, b)$ encodes the target state of `m` bins, each with a "capacity" of `b`. This is represented by the `m`-fold tensor product of the formula for `b`:
+$$ C = (A₀^b)^m = \underbrace{A₀^b \otimes A₀^b \otimes \dots \otimes A₀^b}_{m \text{ times}} $$
+
+### Justification
+
+With these definitions, the equipartitioning problem is encoded by the following sequent:
+$$ \{ f(w) \mid w \in W \} \vdash C $$
+which expands to:
+$$ \{ A₀^{w} \mid w \in W \} \vdash \underbrace{A₀^b \otimes A₀^b \otimes \dots \otimes A₀^b}_{m \text{ times}} $$
+
+To prove this sequent in multiplicative linear logic, one must use the `⊗-Right` rule. This rule requires that the antecedents (the set of formulas on the left) be partitioned into `m` disjoint multisets, let's call them $G_1, G_2, \dots, G_m$. Each multiset $G_k$ must be used to prove one of the components of the succedent (the formula on the right). That is, for each $k \in \{1, \dots, m\}$, we must be able to prove:
+$$ G_k \vdash A₀^b $$
+
+Let $W_k$ be the subset of numbers from $W$ such that $G_k = \{A₀^w \mid w \in W_k \}$. The antecedent of this smaller sequent, $G_k$, consists of the formulas $\{ A₀^w \mid w \in W_k \}$. Using the `⊗-Left` rule, these formulas are combined into a single formula:
+$$ \bigotimes_{w \in W_k} A₀^w \vdash A₀^b $$
+This simplifies to:
+$$ A₀^{\sum_{w \in W_k} w} \vdash A₀^b $$
+
+This final sequent is derivable in linear logic if and only if the formula on the left is identical to the formula on the right. This implies that the exponents must be equal:
+$$ \sum_{w \in W_k} w = b $$
+
+Since this must hold for every `k` from 1 to `m`, and the sets $W_k$ form a partition of $W$, this is precisely the definition of the equipartitioning problem $EP(W, m, b)$. Therefore, the sequent is derivable if and only if $EP(W, m, b)$ is true.

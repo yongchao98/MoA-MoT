@@ -1,0 +1,29 @@
+Here are the equations for the absorption cross-section within the first-order time-dependent perturbation theory for transitions below the Fermi level.
+
+**a) The interaction between molecules can be neglected.**
+
+In this case, the total absorption cross-section of the chain of \(N\) molecules is the sum of the cross-sections of the individual molecules. Each molecule has its own set of occupied orbitals \( \phi_v \) with energy \( \epsilon_v \) and unoccupied orbitals \( \phi_c \) with energy \( \epsilon_c \).
+
+The equation for the absorption cross-section \( \sigma_a(\omega) \) as a function of the laser's angular frequency \( \omega \) is:
+$$ \sigma_a(\omega) = N \frac{\pi \omega \tau}{\epsilon_0 c n \hbar\sqrt{2\pi}} \sum_{v,c} |\langle \phi_c | \mathbf{d} \cdot \mathbf{e} | \phi_v \rangle|^2 e^{-\frac{(\hbar\omega - (\epsilon_c - \epsilon_v))^2 \tau^2}{2\hbar^2}} $$
+
+Here:
+*   \( N \) is the number of molecules in the chain.
+*   \( \tau \) is the duration of the Gaussian laser pulse.
+*   \( \epsilon_0, c, n, \hbar \) are fundamental constants (vacuum permittivity, speed of light, refractive index, and reduced Planck constant).
+*   \( \mathbf{d} \) is the electric dipole moment operator, and \( \mathbf{e} \) is the laser polarization vector.
+*   The sum is over all occupied molecular orbitals \( v \) below the Fermi level and all unoccupied orbitals \( c \).
+*   The exponential term is a Gaussian function describing the spectral broadening due to the short pulse duration, centered at each molecular transition energy \( \epsilon_c - \epsilon_v \).
+
+**b) The interaction between near-neighbors should be considered.**
+
+When molecules interact, the electronic excitations become delocalized over the chain, forming exciton states. For each molecular transition from \( \phi_v \) to \( \phi_c \), an exciton band is created. Due to optical selection rules, transitions primarily occur to the \( k=0 \) exciton state. This leads to a shift in the absorption energies.
+
+The equation for the absorption cross-section \( \sigma_b(\omega) \) is:
+$$ \sigma_b(\omega) = N \frac{\pi \omega \tau}{\epsilon_0 c n \hbar\sqrt{2\pi}} \sum_{v,c} |\langle \phi_c | \mathbf{d} \cdot \mathbf{e} | \phi_v \rangle|^2 e^{-\frac{(\hbar\omega - [(\epsilon_c - \epsilon_v) + D_{vc} + 2J_{vc}])^2 \tau^2}{2\hbar^2}} $$
+
+The terms are the same as in case (a), with the addition of two interaction terms in the energy denominator of the exponential:
+*   \( D_{vc} \): A uniform energy shift for the exciton band arising from changes in non-resonant intermolecular interactions upon excitation.
+*   \( 2J_{vc} \): The exciton shift for the optically active \( k=0 \) state, where \( J_{vc} \) is the resonant transfer integral between nearest-neighbor molecules for the \( v \to c \) excitation. The sign of \( J_{vc} \) determines whether the absorption peak shifts to lower (red-shift) or higher (blue-shift) energies compared to the non-interacting case.
+
+The key difference is that the interaction causes a shift in the resonant absorption frequencies and the absorption process becomes a collective excitation of the entire chain.

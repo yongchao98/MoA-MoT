@@ -1,0 +1,6 @@
+The solutions to the equation $z \cdot i = i^z$ are found by considering the multi-valued nature of $i^z$. The solutions can be categorized as follows:
+1.  **Two real solutions**: $z=1$ and $z=-1$. These are solutions for any branch of $i^z$.
+2.  **An infinite set of purely imaginary solutions**: For each integer $k \le -1$, there is a unique solution of the form $z_k = iy_k$. These solutions can be expressed using the Lambert W function as $z_k = i \frac{W_0(-(\frac{\pi}{2}+2k\pi))}{\frac{\pi}{2}+2k\pi}$.
+3.  There also exist other complex solutions ($z=x+iy$ with $x\neq0, y\neq0$), but they are not straightforward to find analytically.
+
+The provided Python code calculates and verifies the two real solutions and the first five purely imaginary solutions.

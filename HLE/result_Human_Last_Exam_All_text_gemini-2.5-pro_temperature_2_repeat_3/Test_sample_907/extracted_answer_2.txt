@@ -1,0 +1,20 @@
+a) **No interaction between molecules:**
+The absorption cross-section is the sum of contributions from N independent molecules, resulting in:
+$\sigma(\omega_0) = N \frac{2\sqrt{\pi} \omega_{eg} \tau}{\hbar c \epsilon_0} |\vec{\mu}_{eg} \cdot \hat{\epsilon}|^2 e^{-(\omega_{eg}-\omega_0)^2 \tau^2}$
+
+b) **Near-neighbor interaction considered:**
+The interaction creates collective exciton states, but a selection rule allows transitions only to the $k=0$ exciton. The cross-section is for this single transition:
+$\sigma(\omega_0) = N \frac{2\sqrt{\pi} \omega_{ex} \tau}{\hbar c \epsilon_0} |\vec{\mu}_{eg} \cdot \hat{\epsilon}|^2 e^{-(\omega_{ex}-\omega_0)^2 \tau^2}$
+where the exciton transition frequency is shifted by the interaction: $\omega_{ex} = \omega_{eg} + 2J/\hbar$.
+
+**Nomenclature:**
+*   $\omega_0$: Central frequency of the laser pulse.
+*   $\tau$: Duration of the Gaussian pulse.
+*   $N$: Number of molecules in the chain.
+*   $\omega_{eg}$: Transition frequency of an isolated molecule.
+*   $\vec{\mu}_{eg}$: Transition dipole moment of an isolated molecule.
+*   $\hat{\epsilon}$: Polarization vector of the laser's electric field.
+*   $J$: Near-neighbor interaction energy.
+*   $\hbar$: Reduced Planck constant.
+*   $c$: Speed of light.
+*   $\epsilon_0$: Permittivity of free space.

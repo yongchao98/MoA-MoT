@@ -1,0 +1,15 @@
+The tightest lower bound for the minimax risk \(R^*_n\) that can be proven under these general conditions is obtained by maximizing over all possible choices of the testing family of distributions:
+
+\[
+R_n^* \ge \sup_{N \ge 2} \sup_{\{p_1, \dots, p_N\} \subseteq \mathcal{P}} \left\{ \Phi\left(\frac{\delta_{min}}{2}\right) \left(1 - \frac{n \cdot \frac{1}{N} \sum_{j=1}^N D_{KL}(p_j \| \bar{p}) + \log 2}{\log N}\right) \right\}
+\]
+where:
+<ul>
+    <li>The inner supremum is over all subsets of \(\mathcal{P}\) of size \(N\).</li>
+    <li>\(\delta_{min} = \min_{j \neq k} \rho(\theta(p_j), \theta(p_k))\) is the minimum separation for the chosen set of distributions. The choice of distributions must satisfy \(\delta_{min} > 0\).</li>
+    <li>\(\Phi\) is the non-decreasing function from the loss definition.</li>
+    <li>\(n\) is the number of i.i.d. datapoints.</li>
+    <li>\(N\) is the number of hypotheses in the testing family.</li>
+    <li>\(D_{KL}(p_j \| \bar{p})\) is the Kullback-Leibler divergence between the distribution \(p_j\) and the average mixture distribution \(\bar{p} = \frac{1}{N} \sum_{k=1}^N p_k\).</li>
+</ul>
+This bound holds provided that the term inside the parenthesis is positive. The expression demonstrates the fundamental trade-off in establishing minimax rates: to achieve a strong bound (high rate of convergence), one must find a large family of distributions (\(N\)) that are well-separated in the parameter metric (\(\delta_{min}\)) but are difficult to distinguish from one another in terms of KL divergence.

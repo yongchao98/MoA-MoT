@@ -1,0 +1,13 @@
+The equation for the absorption cross-section is derived from first-order time-dependent perturbation theory. It depends on the eigenstates, eigenenergies, and transition dipole moments of the molecular chain.
+
+**a) The interaction between molecules can be neglected.**
+
+In this case, the molecules act as independent absorbers. The absorption cross-section for the chain of $N$ molecules is the sum of their individual cross-sections. This results in a single absorption peak at the transition frequency of an isolated molecule, $\omega_0$.
+
+The equation is:
+$$ \sigma_a(\omega) = \frac{\pi \omega N |\vec{\mu}|^2}{3 \hbar c \epsilon_0} g(\omega - \omega_0) $$
+where $N$ is the number of molecules, $\vec{\mu}$ is the transition dipole moment of a single molecule, $\omega_0$ is the molecular transition frequency, and $g(\omega - \omega_0)$ is a lineshape function.
+
+**b) The interaction between near-neighbors should be considered.**
+
+In this case, the electronic coupling $J$ between neighboring molecules creates delocalized exciton states. The absorption spectrum

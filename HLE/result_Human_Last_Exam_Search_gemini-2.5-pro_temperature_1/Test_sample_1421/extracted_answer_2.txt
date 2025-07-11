@@ -1,0 +1,22 @@
+The formula for the fermionic partition function Z in the imaginary time representation using Feynman’s path integral formalism is:
+
+**Z = ∫<sub>A.P.</sub> DψDψ̄ *e*<sup>-S_E[ψ, ψ̄]</sup>**
+
+Here:
+*   **Z** is the partition function.
+*   The integral is a **path integral** over all possible configurations of the fermionic fields.
+*   **ψ(τ, x)** and **ψ̄(τ, x)** are the anticommuting **Grassmann-valued fermion fields**, which are functions of imaginary time τ and spatial position x.
+*   **DψDψ̄** is the **functional integration measure** over the Grassmann fields.
+*   **S<sub>E</sub>[ψ, ψ̄]** is the **Euclidean action** for the fermionic fields. For a free Dirac fermion, this is given by:
+    **S<sub>E</sub> = ∫<sub>0</sub><sup>β</sup> dτ ∫ d<sup>d</sup>x ψ̄(τ, x) (γ<sup>μ</sup>∂<sub>μ</sub> + m) ψ(τ, x)**
+    where the gamma matrices γ<sup>μ</sup> and the derivative ∂<sub>μ</sub> are defined in Euclidean spacetime.
+*   The subscript **A.P.** on the integral signifies that the integration is restricted to fields that satisfy **anti-periodic boundary conditions** in the imaginary time direction:
+    **ψ(τ + β, x) = -ψ(τ, x)**
+    **ψ̄(τ + β, x) = -ψ̄(τ, x)**
+    where **β = 1/T** is the inverse temperature (with the Boltzmann constant k<sub>B</sub> set to 1).
+
+For a non-interacting theory, this path integral evaluates to the determinant of the Dirac operator:
+
+**Z = det(∂̸ + m)**
+
+where ∂̸ = γ<sup>μ</sup>∂<sub>μ</sub>.

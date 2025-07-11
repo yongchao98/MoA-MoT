@@ -1,0 +1,18 @@
+The critical speed (\(v_{crit}\)) for an oversteering vehicle, at which its linear lateral dynamics become unstable, is derived from the linear single-track model. The stability of the model is determined by analyzing the eigenvalues of the system's state matrix. The system becomes unstable when the determinant of this matrix is no longer positive.
+
+An oversteering vehicle is defined by the condition \(a c_f > b c_r\), where the front axle is more responsive than the rear axle relative to their distances from the center of gravity. For such a vehicle, there exists a speed beyond which it becomes inherently unstable.
+
+By setting the determinant of the state-space representation of the equations of motion to zero, we can solve for this speed. The resulting expression for the critical speed is:
+
+\[ v_{crit} = \sqrt{\frac{c_f c_r (a+b)^2}{m(ac_f - bc_r)}} \]
+
+Where:
+*   \(a\) is the distance from the Center of Gravity (CG) to the front axle.
+*   \(b\) is the distance from the CG to the rear axle.
+*   \(c_{f}\) is the cornering stiffness of the front axle.
+*   \(c_{r}\) is the cornering stiffness of the rear axle.
+*   \(m\) is the vehicle mass.
+*   \(I\) is the vehicle moment of inertia (Note: while \(I\) is a parameter in the model's equations of motion, it mathematically cancels out from the final expression for the critical speed derived from the determinant condition).
+*   \(v\) is the constant forward speed.
+
+An understeering vehicle, where \(b c_r > a c_f\), does not have a real-valued critical speed according to this model and remains stable at all speeds.

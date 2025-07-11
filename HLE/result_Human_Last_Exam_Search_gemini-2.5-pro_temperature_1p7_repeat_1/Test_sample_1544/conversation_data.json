@@ -1,0 +1,10 @@
+{
+  "question": "This is a FEN of a Chess position:\n\n8/3p4/1kpP4/p1q5/P7/8/5Q2/6K1 w - - 0 1\n\nAssume both sides play optimally. What should White's next move be. Your answer should be a move in standard Chess notation. \nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "Analyzing the chess position represented by the FEN string `8/3p4/1kpP4/p1q5/P7/8/5Q2/6K1 w - - 0 1`, the optimal move for White is clear. White's objective is to capitalize on the powerful passed pawn on d6.\n\nThe move that secures a decisive advantage is for the White queen to capture the Black queen. After this capture, Black is forced to recapture with the b-pawn, which then allows White's d-pawn to advance and promote to a new queen. This sequence of moves leads to a winning endgame for White.\n\n<<<Qxc5+>>>"
+  ],
+  "user_prompt_list": [
+    "This is a FEN of a Chess position:\n\n8/3p4/1kpP4/p1q5/P7/8/5Q2/6K1 w - - 0 1\n\nAssume both sides play optimally. What should White's next move be. Your answer should be a move in standard Chess notation. \nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

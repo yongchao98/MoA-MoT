@@ -1,0 +1,9 @@
+The inability to see a resonance on a functional MRI coil with a VNA probe is possible and common. This happens because the coil is being tested outside of its required operating environment. The primary reasons are:
+
+1.  **Active Detuning Circuits:** Most receive coils have protection circuits (using PIN diodes) that "detune" them to prevent damage from the scanner's high-power transmit pulse. On the test bench, without the control signal from the scanner to switch it "on," the coil remains in its default, non-resonant state.
+2.  **Integrated Preamplifiers:** The coil is often integrated with a preamplifier. When unpowered, the preamplifier's input impedance improperly loads the coil, drastically lowering its Q-factor (quality factor) and making the resonance dip on the VNA too shallow and broad to be detected.
+3.  **RF Shielding:** A Faraday shield, designed to block electric field noise, can also screen the coil from the near-field magnetic coupling of your probe, effectively hiding the resonance.
+4.  **Phased Array Decoupling:** If the coil is an element in a phased array, its complex decoupling network, which is designed to prevent coupling between elements, may also prevent effective coupling with your external probe.
+5.  **Probe Position:** You may have placed the probe in a "null" of the coil's magnetic field, where coupling is physically impossible due to the coil's geometry.
+
+In short, the coil is fully functional, but only when it is integrated into the MRI system that provides the necessary power, control signals, and electrical terminations to make it resonant.

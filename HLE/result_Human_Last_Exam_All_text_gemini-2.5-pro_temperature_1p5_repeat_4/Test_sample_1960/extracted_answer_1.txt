@@ -1,0 +1,10 @@
+Let the unit formula be $U = 1 \multimap \bot$.
+
+The function $f$ maps a natural number $w$ to the linear logic formula:
+$f(w) = \underbrace{U \otimes U \otimes \dots \otimes U}_{w \text{ times}} = (1 \multimap \bot)^{\otimes w}$
+
+The linear formula $C = C(W, m, b)$ is:
+$C(W, m, b) = \underbrace{B \otimes B \otimes \dots \otimes B}_{m \text{ times}}$
+where $B = \underbrace{U \otimes U \otimes \dots \otimes U}_{b \text{ times}} = (1 \multimap \bot)^{\otimes b}$.
+
+So, $C(W, m, b) = ((1 \multimap \bot)^{\otimes b})^{\otimes m}$.

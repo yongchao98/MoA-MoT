@@ -1,0 +1,19 @@
+For a p-electron, l = 1 and s = 0.5.
+We will find the common eigenvalues of J^2 and J_z, where J = L + S.
+The eigenvalues are calculated in atomic units (h_bar = 1).
+
+--------------------------------------------------
+For the states with total angular momentum quantum number j = 0.5:
+The eigenvalue of J^2 is j*(j+1) = 0.5 * (0.5 + 1) = 0.75
+The corresponding eigenvalues of J_z for each m_j are:
+  For m_j = -0.5, the J_z eigenvalue is -0.5
+  For m_j = 0.5 , the J_z eigenvalue is 0.5
+--------------------------------------------------
+For the states with total angular momentum quantum number j = 1.5:
+The eigenvalue of J^2 is j*(j+1) = 1.5 * (1.5 + 1) = 3.75
+The corresponding eigenvalues of J_z for each m_j are:
+  For m_j = -1.5, the J_z eigenvalue is -1.5
+  For m_j = -0.5, the J_z eigenvalue is -0.5
+  For m_j = 0.5 , the J_z eigenvalue is 0.5
+  For m_j = 1.5 , the J_z eigenvalue is 1.5
+--------------------------------------------------

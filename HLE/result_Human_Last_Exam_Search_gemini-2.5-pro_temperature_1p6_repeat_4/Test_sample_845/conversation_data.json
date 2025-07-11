@@ -1,0 +1,10 @@
+{
+  "question": "HR and HRV were tracked  by capturing beat-to-beat intervals by using PPG. HRV is computed as a value between heartbeats. What is that value called?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "The value computed between heartbeats is called the **interbeat interval (IBI)**.\n\nHeart rate variability (HRV) is the measurement of the variation in time between consecutive heartbeats. This variation is recorded in milliseconds. While often measured using an electrocardiogram (ECG), where the interval between heartbeats is called an \"R-R interval\" (the time between the peaks of two consecutive R waves), the same principle applies when using photoplethysmography (PPG).\n\nWith PPG, the time between consecutive pulse waves is technically referred to as the **pulse-to-pulse interval (PP-interval)**. However, \"interbeat interval\" or IBI is a commonly used and widely understood term for this value regardless of the measurement technology. These IBI measurements are then used to calculate various HRV metrics.\n\n<<<interbeat interval (IBI)>>>"
+  ],
+  "user_prompt_list": [
+    "HR and HRV were tracked  by capturing beat-to-beat intervals by using PPG. HRV is computed as a value between heartbeats. What is that value called?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

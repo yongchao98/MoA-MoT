@@ -1,0 +1,10 @@
+{
+  "question": "HR and HRV were tracked  by capturing beat-to-beat intervals by using PPG. HRV is computed as a value between heartbeats. What is that value called?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "The value computed between heartbeats, which is the time duration between consecutive beats, is most commonly called the **Interbeat Interval (IBI)** or **R-R Interval**.\n\nHere's a breakdown of the terminology:\n*   **Interbeat Interval (IBI):** This is a general term for the time between successive heartbeats.\n*   **R-R Interval:** This term originates from electrocardiography (ECG), where the \"R wave\" is the most prominent peak in a heartbeat's electrical signal. The R-R interval is the time measured from the peak of one R wave to the peak of the next. Although your measurement is with PPG, the underlying interval it seeks to capture is the same, so this term is widely used.\n*   **Beat-to-Beat Interval (BBI):** This is another synonym for IBI.\n*   **NN Interval:** This refers to \"Normal-to-Normal\" intervals, signifying that the intervals are between consecutive normal heartbeats, with any irregular beats (artifacts) having been filtered out.\n\nTherefore, the variation in these Interbeat Intervals (IBIs) or R-R intervals is what constitutes Heart Rate Variability (HRV).\n\n<<<Interbeat Interval (IBI) or R-R Interval>>>"
+  ],
+  "user_prompt_list": [
+    "HR and HRV were tracked  by capturing beat-to-beat intervals by using PPG. HRV is computed as a value between heartbeats. What is that value called?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

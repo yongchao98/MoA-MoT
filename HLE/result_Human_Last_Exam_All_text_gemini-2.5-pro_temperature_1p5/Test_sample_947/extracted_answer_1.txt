@@ -1,0 +1,4 @@
+The magnetic field is a vector `H = H_x x̂ + H_z ẑ`, where the components are given by:
+`H_x(x, z) = - (π² H₀ w² / (4D²)) * tanh²(Ha/H₀) * [ sin(2πz/D) * sinh(2πx/D) ] / [ (sin²(πz/D) + sinh²(πx/D))² ]`
+`H_z(x, z) = Ha - (π² H₀ w² / (2D²)) * tanh²(Ha/H₀) * [ sin²(πz/D) - cos(2πz/D) * sinh²(πx/D) ] / [ (sin²(πz/D) + sinh²(πx/D))² ]`
+The y-component of the field, `H_y`, is zero.

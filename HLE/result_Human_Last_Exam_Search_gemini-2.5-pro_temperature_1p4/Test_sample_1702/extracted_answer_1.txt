@@ -1,0 +1,92 @@
+```c
+#include <stdio.h>
+
+/*
+    Assumed Wuxing architecture header providing the 'frac' type and
+    its associated arithmetic functions.
+
+    struct frac {
+        signed char n;    // numerator (-99 to 99)
+        unsigned char d;  // denominator (0 to 99, assumed non-zero)
+        signed char e;    // exponent (-99 to 99)
+    };
+    
+    Arithmetic operations (*, /, +) on 'frac' types are assumed to be
+    overloaded and handle simplification and overflow automatically as
+    per the problem description.
+    A type cast `(int)` is assumed to convert a 'frac' to a 5D integer
+    by truncating any fractional part.
+*/
+
+// Mock implementation for clarity, actual implementation is part of the architecture
+struct frac {
+    signed char n;
+    unsigned char d;
+    signed char e;
+};
+
+// The main program to calculate the star's temperature.
+int main() {
+    // ---- 1. Define Constants and Variables ----
+    
+    // Given observation data for Pandora
+    // Bλ = 9.9e16 W/m^2*sr*m represented as a fraction (99/1 * 10^15)
+    struct frac B_lambda = {99, 1, 15};
+    // λ = 500 nm = 5e-7 m represented as a fraction (5/1 * 10^-7)
+    struct frac lambda = {5, 1, -7};
+
+    // Physical constants approximated as simple fractions
+    // c ≈ 3e8 m/s
+    struct frac c = {3, 1, 8};
+    // k ≈ 1.4e-23 J/K (approximated from 1.38e-23 for easier representation)
+    struct frac k = {14, 10, -23};
+
+    // Helper frac values
+    struct frac two = {2, 1, 0};
+    struct frac one_thousand = {1, 1, 3};
+    struct frac half = {1, 2, 0}; // For rounding
+
+    // Variables for calculation
+    struct frac lambda4;
+    struct frac numerator;
+    struct frac denominator;
+    struct frac Temp_K;
+    struct frac Temp_kK_unrounded;
+    struct frac Temp_kK_for_rounding;
+    
+    int final_answer;
+
+    // ---- 2. Perform Calculation using Rayleigh-Jeans Law ----
+    // Formula: T = (Bλ * λ^4) / (2 * c * k)
+
+    // Calculate λ^4. The architecture's built-in frac arithmetic handles this.
+    lambda4 = lambda * lambda * lambda * lambda;
+
+    // Calculate the numerator: Bλ * λ^4
+    numerator = B_lambda * lambda4;
+
+    // Calculate the denominator: 2 * c * k
+    denominator = two * c * k;
+
+    // Calculate Temperature in Kelvin
+    Temp_K = numerator / denominator;
+    
+    // ---- 3. Convert to Thousand Kelvin and Round ----
+
+    // Convert temperature to thousands of Kelvin
+    Temp_kK_unrounded = Temp_K / one_thousand;
+
+    // To round to the nearest integer, add 0.5 and truncate.
+    Temp_kK_for_rounding = Temp_kK_unrounded + half;
+
+    // Cast to an integer (assumed to truncate the fractional part)
+    final_answer = (int)Temp_kK_for_rounding;
+
+    // ---- 4. Print the Final Answer ----
+    // The final result should be printed as an integer.
+    // The problem implies a standard printf is available for this.
+    printf("%d\n", final_answer);
+
+    return 0;
+}
+```

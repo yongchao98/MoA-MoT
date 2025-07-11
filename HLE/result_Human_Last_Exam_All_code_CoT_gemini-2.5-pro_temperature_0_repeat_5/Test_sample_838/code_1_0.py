@@ -1,0 +1,41 @@
+def solve_synthesis_problem():
+    """
+    This script provides a detailed explanation for a multi-step chemical synthesis
+    and identifies the final product, its IUPAC name, and its chirality.
+    """
+
+    explanation = """
+**Step-by-Step Reaction Analysis**
+
+1.  **Step 1: [(3S)-3-bromobutyl]benzene to Product A**
+    *   **Reaction:** The starting material, [(3S)-3-bromobutyl]benzene, is reacted with potassium tert-butoxide (t-BuOK), a strong and sterically bulky base.
+    *   **Mechanism:** This setup promotes an E2 elimination reaction. Due to the steric hindrance of the t-BuOK, it preferentially abstracts a proton from the less sterically hindered beta-carbon. In this molecule (Ph-CH2-CH2-CH(Br)-CH3), the protons on the terminal methyl group (C4) are more accessible than those on the internal methylene group (C2). This leads to the formation of the less substituted alkene, known as the Hofmann product.
+    *   **Product A:** The product is **4-phenylbut-1-ene**. The stereocenter at carbon 3 is destroyed as it becomes an sp2-hybridized carbon in the double bond.
+
+2.  **Step 2: Product A to Product B**
+    *   **Reaction:** Product A (4-phenylbut-1-ene) is treated with borane in THF (BH3/THF), followed by oxidation with hydrogen peroxide (H2O2) and sodium hydroxide (NaOH).
+    *   **Mechanism:** This is a hydroboration-oxidation reaction. It achieves an anti-Markovnikov addition of water across the double bond. The hydroxyl group (-OH) adds to the less substituted carbon of the alkene (C4), and a hydrogen atom adds to the more substituted carbon (C3).
+    *   **Product B:** The resulting product is the primary alcohol, **4-phenylbutan-1-ol**. This molecule is achiral.
+
+3.  **Step 3: Product B to Product C**
+    *   **Reaction:** Product B (4-phenylbutan-1-ol) is treated with phosphorous tribromide (PBr3).
+    *   **Mechanism:** PBr3 is a standard reagent for converting primary and secondary alcohols into alkyl bromides. The reaction proceeds through an SN2 mechanism, where the hydroxyl group is converted into a good leaving group and subsequently displaced by a bromide ion.
+    *   **Product C:** The final product is **1-bromo-4-phenylbutane**.
+
+---
+"""
+
+    final_answer = """
+**Final Product (C) Identity**
+
+The final product, C, is **1-bromo-4-phenylbutane**.
+
+*   **IUPAC Name:** 1-bromo-4-phenylbutane
+*   **Chirality Explanation:** The final product is **achiral**. The starting material was chiral, with a stereocenter at carbon 3. However, this stereocenter was eliminated in the first reaction step (E2 elimination) to form an achiral alkene. The subsequent hydroboration-oxidation and bromination steps did not create any new chiral centers. Therefore, the final molecule, 1-bromo-4-phenylbutane, has no stereocenters and is not optically active.
+"""
+
+    print(explanation)
+    print(final_answer)
+
+solve_synthesis_problem()
+<<<1-bromo-4-phenylbutane>>>

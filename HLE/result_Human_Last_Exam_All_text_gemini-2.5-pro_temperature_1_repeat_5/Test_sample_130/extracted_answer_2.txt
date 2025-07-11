@@ -1,0 +1,5 @@
+The edges of the image will undergo a process analogous to mean curvature flow. This means that:
+1.  **Smoothing**: The edges will become smoother over time. Sharp corners and high-curvature features will be rounded off.
+2.  **Shrinking**: Closed boundaries (the outlines of objects) will shrink. Convex shapes will get progressively smaller with each iteration.
+3.  **Annihilation**: As t approaches infinity, any finite object (represented by a closed edge boundary) will shrink to a point and disappear.
+Ultimately, the process seeks to minimize the total length of the edges, which will cause the image to converge to a single color (all 0s or all 1s), thus eliminating all edges.

@@ -1,0 +1,5 @@
+Let \( f(m) \) be the number of sets for a given \( n \). The values can be calculated as follows:
+f(1) = 0
+f(2) = 0
+For \( m \geq 3 \), the recursive formula is:
+f(m) = \( \frac{1}{m} \left( \binom{2^n-1}{m-1} - f(m-1) - (2^n+1-m)f(m-2) \right) \)

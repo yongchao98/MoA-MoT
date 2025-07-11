@@ -1,0 +1,86 @@
+169[
+// Include the standard input/output library for the printf function.
+#include <stdio.h>
+
+/**
+ * @brief This program calculates 100! on the Wuxing computer.
+ *
+ * The Wuxing architecture uses a decimal system. To solve this problem,
+ * we perform "Big Number" arithmetic. The result of 100!, which has 158
+ * decimal digits, is stored in an array.
+ *
+ * To minimize variable memory, we choose an array of 'short' (2D type),
+ * effectively storing the number in base 100. This requires an array of
+ * size 79 (158 digits / 2 digits per short). This choice leads to the
+ * smallest total memory usage for all necessary variables.
+ */
+int main() {
+    // --- Variable Declarations ---
+    // Total variable memory footprint is 169D.
+    
+    // Stores the result of the factorial calculation in base 100.
+    // Size: 79 * sizeof(short) = 79 * 2D = 158D.
+    short result[79];
+    
+    // Temporary variable for the multiplication step. Max value is ~9999.
+    // Size: sizeof(unsigned int) = 4D.
+    unsigned int product;
+    
+    // Loop counter for the main factorial loop (2 to 100).
+    // Needs to hold 100, so 'char' (0-999) is the smallest suitable type.
+    // Size: sizeof(char) = 3D.
+    char i;
+    
+    // Loop counter/index for the result array (0 to 78).
+    // 'short' (0-99) is sufficient and is the smallest type for this range.
+    // Size: sizeof(short) = 2D.
+    short j;
+    
+    // Stores the carry during multiplication. Max value is 99.
+    // 'short' (0-99) is sufficient.
+    // Size: sizeof(short) = 2D.
+    short carry;
+    
+    // --- Algorithm ---
+
+    // Initialize the result to 1.
+    // result[0] holds the least significant digits.
+    result[0] = 1;
+    for (j = 1; j < 79; j++) {
+        result[j] = 0;
+    }
+
+    // Main loop: multiply the current result by 'i' from 2 to 100.
+    for (i = 2; i <= 100; i++) {
+        carry = 0;
+        // Multiply each 2-digit chunk of our number by 'i'.
+        for (j = 0; j < 79; j++) {
+            product = result[j] * i + carry;
+            result[j] = product % 100; // The new value for this chunk
+            carry = product / 100;     // The carry-over to the next chunk
+        }
+    }
+
+    // --- Output ---
+
+    // Find the most significant non-zero chunk of the result.
+    // We reuse the variable 'j' for this, starting from the end of the array.
+    j = 78;
+    while (j > 0 && result[j] == 0) {
+        j--;
+    }
+
+    // Print the most significant chunk.
+    // Assumes printf promotes 'short' to 'int' for the '%i' specifier.
+    printf("%i", result[j]);
+
+    // Print the remaining chunks in reverse order.
+    // Assumes printf supports '%02i' to pad with a leading zero if needed.
+    for (j = j - 1; j >= 0; j--) {
+        printf("%02i", result[j]);
+    }
+    printf("\n");
+
+    return 0;
+}
+]

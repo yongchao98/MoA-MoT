@@ -1,0 +1,14 @@
+**a) The interaction between molecules can be neglected.**
+
+The equation for the absorption cross-section is:
+σ_a(ω) = C ⋅ ω ⋅ N ⋅ |μ ⋅ ε|² ⋅ exp( - (ω₀ - ω)² ⋅ τ² / 2 )
+
+**b) The interaction between near-neighbors should be considered.**
+
+The equation for the absorption cross-section is a sum over exciton states:
+σ_b(ω) = C ⋅ ω ⋅ Σ_{j=1,3,...}^N |μ ⋅ ε|² ⋅ (2 / (N+1)) ⋅ cot²(πj / (2(N+1))) ⋅ exp( - (ω_j - ω)² ⋅ τ² / 2 )
+
+where the frequency of each exciton peak, ω_j, is given by:
+ω_j = ω₀ + (2J / ħ) ⋅ cos(πj / (N+1))
+
+(See the code output for a formatted explanation of all symbols.)

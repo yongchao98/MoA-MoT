@@ -1,0 +1,4 @@
+The critical amount of correlation, expressed as the covariance `C` between corresponding input neurons `v_k` and `s_k`, required to balance potentiation and depression is given by the expression:
+`C = (N_v + N_s)μ(θ - μ) - σ²`
+where `N_v` and `N_s` are the number of neurons in the input layers, `μ` is the average activation rate of input neurons, `θ` is the heterosynaptic offset constant, and `σ²` is the variance of the input activation. Given the Poisson-like nature of the input, the variance can be expressed as `σ² = μ(1-μ)`, leading to the final result:
+`C = (N_v + N_s)μ(θ - μ) - μ(1-μ)`

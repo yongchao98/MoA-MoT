@@ -1,0 +1,11 @@
+The set M is the Banach space of continuous functions on the interval that satisfy the homogeneous boundary conditions, equipped with the supremum norm.
+
+More formally, M = (X, d), where:
+
+1.  **The set of functions X** is C₀(), defined as:
+    X = {u: → ℝ | u is continuous and u(0) = u(1) = 0}.
+
+2.  **The metric d** is the one induced by the supremum norm (or infinity norm), ||·||_∞:
+    d(u, v) = ||u - v||_∞ = sup_{x∈} |u(x) - v(x)|.
+
+This space (C₀(), ||·||_∞) is a closed subspace of the Banach space of all continuous functions on (C(), ||·||_∞), and is therefore itself a complete metric space, which is a necessary condition for the Banach fixed-point theorem. In the course of the proof, one might further restrict the domain to a specific closed ball within this space M to ensure the operator is a contraction.

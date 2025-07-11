@@ -1,0 +1,14 @@
+The tightest lower bound on the minimax risk \( R_n^* \) that can be proven under the given problem structure is obtained by reducing the estimation problem to a binary hypothesis testing problem and leveraging the relationship between statistical distances. The resulting bound is:
+\[
+R^*_n \ge \frac{\Phi(\delta/2)}{2} \left(1-d_{TV}\left(P_0^n, \frac{1}{N}\sum_{j=1}^N P_j^n\right)\right)
+\]
+This bound can be expressed in terms of the Hellinger distances between the underlying single-observation distributions, which is generally tighter than a bound based on KL-divergence. This yields:
+\[
+R^*_n \ge \frac{\Phi(\delta/2)}{2} \left( 1 - \sqrt{1 - \left(\frac{1}{N}\sum_{j=1}^N(1-h^2(P_j,P_0))^n\right)^2} \right)
+\]
+where:
+*   \( \Phi \) is the non-decreasing loss shaping function.
+*   \( \delta \) is the minimum separation between the parameter under the null hypothesis (\( \theta_0 \)) and the parameters under the alternative hypotheses (\( \theta_j \)).
+*   \( n \) is the number of i.i.d. samples.
+*   \( N \) is the number of alternative hypotheses.
+*   \( h^2(P_j, P_0) \) is the squared Hellinger distance between the distributions \( P_j \) and \( P_0 \).

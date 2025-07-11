@@ -1,0 +1,20 @@
+
+The function `f` and the formula `C` are defined as follows.
+
+First, define a family of formulas `A_k` for `k = 0, 1, \dots, b`:
+$A_0 = \perp$
+$A_{k+1} = \perp \multimap A_k$
+
+So, $A_k$ is the formula $\underbrace{\perp \multimap (\perp \multimap \dots (\perp \multimap}_{k \text{ times}} \perp) \dots)$.
+
+The function `f` maps a natural number `w` to the formula:
+$$
+f(w) = \bigotimes_{k=0}^{b-w} (A_k \multimap A_{k+w})
+$$
+where $\bigotimes_{i=1}^{n} F_i$ denotes $F_1 \otimes F_2 \otimes \dots \otimes F_n$.
+
+The formula $C = C(W, m, b)$ is:
+$$
+C = (A_0 \multimap A_b)^{\otimes m}
+$$
+where $F^{\otimes m}$ denotes the formula $\underbrace{F \otimes F \otimes \dots \otimes F}_{m \text{ times}}$.

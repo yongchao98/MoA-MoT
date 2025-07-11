@@ -1,0 +1,14 @@
+The components of the magnetic field vector `H = (Hx, Hz)` at a point `(x,z)` are given by:
+
+`H_x(x,z) = (H0/2) * arg[ (sinh²(π(x+iz)/D) - sinh²(πw/D)) / (sinh²(π(x+iz)/D) - sinh²(πa/D)) ]`
+
+`H_z(x,z) = Ha + (H0/2) * ln| (sinh²(π(x+iz)/D) - sinh²(πw/D)) / (sinh²(π(x+iz)/D) - sinh²(πa/D)) |`
+
+where:
+- `H0 = Jc * d / π` is the characteristic field.
+- `Ha` is the applied magnetic field.
+- `w` is the half-width of the strips.
+- `D` is the stacking interval.
+- `a` is the position of the flux penetration front.
+- `arg[Z]` is the argument of the complex number `Z`.
+- `ln|Z|` is the natural logarithm of the modulus of `Z`.

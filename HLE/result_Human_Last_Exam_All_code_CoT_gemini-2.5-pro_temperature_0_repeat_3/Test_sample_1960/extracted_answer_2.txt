@@ -1,0 +1,15 @@
+**Function `f(w)`:**
+
+Let `A_0, A_1, \dots, A_b` be a sequence of distinct formulas defined as `A_0 = \bot` and `A_{k+1} = A_k \multimap \bot`.
+The function `f` is defined as:
+$$
+f(w) = \bigotimes_{k=0}^{b-w} (A_k \multimap A_{k+w})
+$$
+
+**Formula `C(W, m, b)`:**
+
+Using the same definition for `A_k`, the formula `C` is:
+$$
+C(W, m, b) = \bigotimes_{i=1}^{m} (A_0 \multimap A_b)
+$$
+This is the formula `(A_0 \multimap A_b)` tensored with itself `m` times.

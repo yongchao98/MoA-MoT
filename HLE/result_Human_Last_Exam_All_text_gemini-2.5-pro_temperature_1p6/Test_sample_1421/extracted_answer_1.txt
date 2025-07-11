@@ -1,0 +1,13 @@
+The formula for the fermionic partition function `Z` in the imaginary time path integral formalism is given by a functional integral over anti-commuting Grassmann fields `ψ(τ)` and `ψ*(τ)`:
+
+`Z = ∫ D[ψ^*, ψ] exp( -S_E[ψ^*, ψ] )`
+
+where:
+1.  **`D[ψ^*, ψ]`** is the functional integration measure over all possible configurations of the Grassmann fields.
+2.  **`S_E[ψ^*, ψ]`** is the Euclidean action, defined as the integral of the Euclidean Lagrangian over the imaginary time interval `[0, β]`:
+    `S_E[ψ^*, ψ] = ∫_0^β dτ [ ∑_k ψ_k^*(τ) ∂_τ ψ_k(τ) + H(ψ^*(τ), ψ(τ)) ]`
+    *   `β = 1/(k_B T)` is the inverse temperature.
+    *   `ψ_k(τ)` and `ψ_k^*(τ)` are Grassmann fields corresponding to the fermion in state `k` at imaginary time `τ`.
+    *   `H(ψ^*, ψ)` is the Hamiltonian function, obtained by replacing the creation (`c_k^†`) and annihilation (`c_k`) operators in the normal-ordered quantum Hamiltonian with the corresponding Grassmann fields `ψ_k^*(τ)` and `ψ_k(τ)`.
+3.  The path integral is performed over all fields that satisfy **anti-periodic boundary conditions**:
+    `ψ_k(β) = -ψ_k(0)` for every mode `k`.

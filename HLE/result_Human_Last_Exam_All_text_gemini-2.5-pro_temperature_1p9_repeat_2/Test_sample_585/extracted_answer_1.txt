@@ -1,0 +1,7 @@
+The post-reset covariance Σ' is computed from the pre-reset covariance Σ and the pre-reset attitude deviation estimate δ using the formula:
+Σ' = J_l(δ) * Σ * (J_l(δ))^T
+
+where J_l(δ) is the left Jacobian of the special orthogonal group SO(3), given by:
+J_l(δ) = I + ( (1 - cos(||δ||)) / ||δ||^2 ) * hat(δ) + ( (||δ|| - sin(||δ||)) / ||δ||^3 ) * (hat(δ))^2
+
+Here, I is the 3x3 identity matrix and hat(δ) is the skew-symmetric matrix associated with the vector δ.

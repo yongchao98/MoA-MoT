@@ -1,0 +1,58 @@
+def solve_inductance_change():
+    """
+    This script provides a step-by-step derivation for the change in mutual
+    inductance between two circuits when surrounded by ideal magnetic concentrators.
+    """
+    print("This script calculates the change in mutual inductance per unit length (ΔM/L) between two circuits.")
+    print("The derivation follows these steps:")
+    print("1. Calculate the mutual inductance M₁ for the bare circuits using a dipole approximation.")
+    print("2. Analyze the effect of the ideal concentrator shell on the magnetic field.")
+    print("3. Calculate the new mutual inductance M₂ with the concentrators.")
+    print("4. Find the change, ΔM = M₂ - M₁.")
+    print("\n--- Step 1: Mutual Inductance M₁ (Bare Circuits) ---\n")
+
+    print("Each circuit consists of two long wires with currents +I and -I, separated by a distance h.")
+    print("Since the circuits are far apart (d >> h), we can model the source circuit as a 2D magnetic dipole.")
+    print("The magnetic dipole moment per unit length is m = I * h.")
+    print("The magnetic field component B_y from the source circuit at a distance d along the x-axis is approximately:")
+    print("B_y ≈ - (μ₀ * m) / (2 * π * d²) = - (μ₀ * I * h) / (2 * π * d²)")
+    print("\nThe magnetic flux per unit length (Φ₁) through the second circuit is approximately B_y * h:")
+    print("Φ₁/L ≈ - (μ₀ * I * h²) / (2 * π * d²)")
+    print("\nThe mutual inductance per unit length M₁ is |Φ₁/L| / I:")
+    print("M₁/L = (μ₀ * h²) / (2 * π * d²)")
+    print("\n--- Step 2 & 3: Effect of Concentrator and Mutual Inductance M₂ ---\n")
+
+    print("The ideal concentrator shell has radial permeability μ_r → ∞ and angular permeability μ_θ → 0.")
+    print("This special material guides magnetic flux purely in the radial direction.")
+    print("Solving the magnetic boundary value problem shows that the shell amplifies the external field,")
+    print("as if the source's magnetic moment 'm' was increased to an effective moment m':")
+    print("m' = m * (R₂ / R₁)")
+    print("\nThe new mutual inductance M₂ is calculated using this amplified moment:")
+    print("M₂/L = (μ₀ * (m'/I) * h) / (2 * π * d²)")
+    print("Substituting m' = I * h * (R₂/R₁), we get:")
+    print("M₂/L = (μ₀ * h² * R₂) / (2 * π * d² * R₁)")
+    print("\n--- Step 4: Change in Mutual Inductance (ΔM) ---\n")
+
+    print("The change in mutual inductance per unit length is ΔM/L = M₂/L - M₁/L.")
+    print("ΔM/L = [ (μ₀ * h² * R₂) / (2 * π * d² * R₁) ] - [ (μ₀ * h²) / (2 * π * d²) ]")
+    print("\nFactoring out the common term M₁/L gives:")
+    print("ΔM/L = ( (μ₀ * h²) / (2 * π * d²) ) * ( (R₂/R₁) - 1 )")
+    print("\nSimplifying this expression, we arrive at the final answer:")
+    print("ΔM/L = (μ₀ * h² * (R₂ - R₁)) / (2 * π * d² * R₁)")
+    print("\n--- Final Equation Breakdown ---\n")
+    
+    print("Here is a breakdown of the components in the final equation as requested:")
+    print("Expression: (μ₀ * h² * (R₂ - R₁)) / (2 * π * d² * R₁)\n")
+    print("Numerator constant part: μ₀")
+    print("Numerator variable part: h² * (R₂ - R₁)")
+    print("Denominator constant part: 2 * π")
+    print("Denominator variable part: d² * R₁")
+    print("\nBreakdown of individual numbers and variables:")
+    print("Number '2': In the denominator, part of the 2π term from the 2D field calculation.")
+    print("Variable 'h': In the numerator, squared (h²), from the dipole moment and the flux area.")
+    print("Variable 'd': In the denominator, squared (d²), from the dipole field fall-off.")
+    print("Variable 'R₁': In the denominator, from the concentrator amplification factor.")
+    print("Variable 'R₂': In the numerator, as part of the (R₂ - R₁) term from the change calculation.")
+    print("Variable '(R₂-R₁)': Represents the thickness of the concentrator shell, influencing the magnitude of change.")
+
+solve_inductance_change()

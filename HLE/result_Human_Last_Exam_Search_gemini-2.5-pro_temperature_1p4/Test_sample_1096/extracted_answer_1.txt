@@ -1,0 +1,9 @@
+The best choice for the pair of step sizes $(\gamma_1, \gamma_2)$ is:
+$\gamma_1 = \frac{2}{M+1 + \frac{M-1}{\sqrt{2}}}$
+$\gamma_2 = \frac{2}{M+1 - \frac{M-1}{\sqrt{2}}}$
+
+These can be rationalized to:
+$\gamma_1 = \frac{2\sqrt{2}}{\sqrt{2}(M+1) + M-1}$
+$\gamma_2 = \frac{2\sqrt{2}}{\sqrt{2}(M+1) - (M-1)}$
+
+The specific notation $S:=\sqrt{M^2+(M-1)^2}$ provided in the prompt does not appear in the standard derivation using Chebyshev polynomials for this problem and its origin or relevance is not immediately apparent from established optimization literature. The provided solution is the standard one for optimizing the worst-case performance on quadratic functions, which is the common approach for this class of problems.

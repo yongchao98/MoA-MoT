@@ -1,0 +1,8 @@
+The conditions for the functions F: X × Y × Z → X, G: Y × X × Y → Y, and H: Z × Y × X → Z to have an FGH-tripled fixed point are primarily established within the framework of partially ordered complete metric spaces. A point (x, y, z) is an FGH-tripled fixed point if F(x, y, z) = x, G(y, x, y) = y, and H(z, y, x) = z.
+
+The fundamental conditions are as follows:
+1.  **Metric and Order Structure**: The spaces (X, d_X), (Y, d_Y), and (Z, d_Z) must be complete metric spaces, and (X, ≤_X), (Y, ≤_Y), and (Z, ≤_Z) must be partially ordered sets.
+2.  **Contractive Mappings**: The functions F, G, and H must collectively satisfy a contractive condition. This typically means there exists a constant k ∈ [0, 1) such that for any comparable elements (x₁, y₁, z₁) and (x₂, y₂, z₂), the sum of the distances between their images under F, G, and H is less than or equal to k times the sum of the distances between the original elements.
+3.  **Mixed Monotonicity**: The mappings F, G, and H must satisfy a mixed monotone property with respect to the partial orders on X, Y, and Z. This property dictates how the functions behave when their arguments are ordered.
+4.  **Initial Point**: There must exist an initial point (x₀, y₀, z₀) that satisfies specific order relations with its image under F, G, and H, which serves as a starting point for an iterative sequence.
+5.  **Continuity**: Often, the functions F, G, and H are required to be continuous, although this can sometimes be replaced by a weaker condition on the behavior of convergent sequences in the ordered space.

@@ -1,0 +1,13 @@
+The function `f` and the formula `C` are defined as follows.
+
+Let `A` be the linear logic formula `⊥`. For a natural number `k`, let `A^{\otimes k}` denote the formula `A ⊗ A ⊗ ... ⊗ A` (`k` times), with `A^{\otimes 0} = 1` and `A^{\otimes 1} = A`.
+
+The function `f` is defined as:
+$f(w) = A \multimap A^{\otimes(w+1)}$
+which, substituting `A = ⊥`, is:
+$f(w) = \bot \multimap \bot^{\otimes(w+1)}$
+
+The formula `C` is defined as:
+$C(W, m, b) = (A \multimap A^{\otimes(b+1)})^{\otimes m}$
+which, substituting `A = ⊥`, is:
+$C(W, m, b) = (\bot \multimap \bot^{\otimes(b+1)})^{\otimes m}$

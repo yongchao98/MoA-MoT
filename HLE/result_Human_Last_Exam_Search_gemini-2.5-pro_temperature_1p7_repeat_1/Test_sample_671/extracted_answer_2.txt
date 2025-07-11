@@ -1,0 +1,7 @@
+The formula for $f_n(p)$ is given by:
+$f_n(p) = \frac{(1 - p x_1) x_1^{n-1}}{1 - p(2-p)x_1^2} - \frac{(1 - p x_2) x_2^{n-1}}{1 - p(2-p)x_2^2}$
+where $x_1$ and $x_2$ are the roots of the quadratic equation $x^2 - (1-p)x + p = 0$.
+
+Let $\alpha = \frac{1-p+\sqrt{(1-p)^2-4p}}{2}$ and $\beta = \frac{1-p-\sqrt{(1-p)^2-4p}}{2}$ be the roots of $t^2 - (1-p)t + p = 0$.
+The formula is:
+$f_n(p) = \frac{\alpha^n - \beta^n}{\alpha - \beta} - p \frac{\alpha^{n-1} - \beta^{n-1}}{\alpha - \beta}$

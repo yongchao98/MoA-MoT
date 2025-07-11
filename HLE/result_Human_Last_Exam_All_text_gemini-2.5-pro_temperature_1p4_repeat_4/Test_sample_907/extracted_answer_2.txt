@@ -1,0 +1,21 @@
+The equation for the absorption cross-section $\sigma(\omega_L)$ for a chain of $N$ molecules absorbing an ultrashort Gaussian pulse of duration $T$ and frequency $\omega_L$ is given by:
+
+$\sigma(\omega_L) = K \cdot T \cdot \sum_f f_{fG} \cdot e^{-(\omega_L - \omega_{fG})^2 T^2 / 2}$
+
+where $K$ is a constant, $\omega_{fG}$ is the transition frequency to a final state $|f\rangle$, and $f_{fG} \propto \omega_{fG}|\vec{\mu}_{fG}|^2$ is the oscillator strength of the transition.
+
+**a) The interaction between molecules can be neglected:**
+
+The molecules are independent, leading to $N$ identical, degenerate transitions at the monomer frequency $\omega_0$. The equation becomes:
+
+$\sigma_a(\omega_L) = N \cdot A \cdot \omega_0 \cdot T \cdot e^{-(\omega_L - \omega_0)^2 T^2 / 2}$
+
+where $A$ is a constant proportional to the squared transition dipole moment of a single molecule, $|\vec{\mu}_{eg}|^2$. The spectrum is a single Gaussian peak at the monomer frequency $\omega_0$.
+
+**b) The interaction between near-neighbors should be considered:**
+
+Molecular coupling creates delocalized exciton states. Optical selection rules dictate that only the $k=0$ exciton state is optically active, concentrating the entire oscillator strength of the chain into a single transition. The equation becomes:
+
+$\sigma_b(\omega_L) = N \cdot A \cdot (\omega_0 + 2J/\hbar) \cdot T \cdot e^{-(\omega_L - (\omega_0 + 2J/\hbar))^2 T^2 / 2}$
+
+where $J$ is the near-neighbor coupling energy. The spectrum is a single Gaussian peak that is shifted from the monomer frequency by $2J/\hbar$. The strength of this cooperative transition is proportional

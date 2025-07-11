@@ -1,0 +1,10 @@
+{
+  "question": "HR and HRV were tracked  by capturing beat-to-beat intervals by using PPG. HRV is computed as a value between heartbeats. What is that value called?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "This is a knowledge-based question, not a coding task. I will provide the direct answer to the question.\n\nThe value computed between heartbeats to measure Heart Rate Variability (HRV) is the time interval between successive heartbeats. This is most commonly called the **R-R interval**, referring to the time between the R-peaks of the QRS complex in an electrocardiogram (ECG). When derived from PPG, as mentioned in the question, it is also often called the **Inter-Beat Interval (IBI)**.\n\n<<<R-R interval>>>"
+  ],
+  "user_prompt_list": [
+    "You are a helpful AI assistant. Solve tasks using your coding skills.\n    In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.\n    Don't include multiple code blocks in one response, only include one in the response. Do not ask users to copy and paste the result. Instead, use 'print' function for the output when relevant.\n    Think the task step by step if you need to. If a plan is not provided, explain your plan first. You can first output your thinking steps with texts and then the final python code.\n    Remember in the final code you still need to output each number in the final equation!\n    Start the python block with ```python\n\n    HR and HRV were tracked  by capturing beat-to-beat intervals by using PPG. HRV is computed as a value between heartbeats. What is that value called?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

@@ -1,0 +1,13 @@
+For an oversteering vehicle, the critical speed \(v_{crit}\) at which the linear lateral dynamics become unstable is given by the formula:
+
+\( v_{crit} = \sqrt{\frac{c_f c_r (a+b)^2}{m(bc_r - ac_f)}} \)
+
+Where:
+*   \(a\) = distance between the center of gravity (CG) and the front axle
+*   \(b\) = distance between CG and the rear axle
+*   \(c_f\) = cornering stiffness of the front axle
+*   \(c_r\) = cornering stiffness of the rear axle
+*   \(m\) = vehicle mass
+*   \(I\) = vehicle moment of inertia about the vertical axis
+
+This formula is valid under the condition for oversteer, which is \( bc_r > ac_f \). This ensures that the term in the denominator is positive, yielding a real-valued speed.

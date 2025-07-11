@@ -1,0 +1,11 @@
+In a 3D system of hard spheres, the particles that lie on the same hyperplane can be arranged in various configurations. The distinct distances between the centers of two particles (`i` and `j`), normalized by the sphere diameter `d`, arise from the geometry of these local arrangements. For a jammed system, we primarily consider the densest local packings. The distances (`r`) for `r \leq 3` are determined by analyzing the geometry of these planar configurations, mainly the square and hexagonal lattices.
+
+The set of possible normalized distances is:
+*   **1.00**: This is the most fundamental distance, representing two spheres in direct contact. It is the first and highest peak in any radial distribution function for hard spheres.
+*   **1.41**: This distance corresponds to the diagonal of a square with side length `d`. It is calculated as `sqrt(d² + d²) / d = sqrt(2)`. This arrangement involves four spheres whose centers form a square.
+*   **1.73**: This distance arises from a compact triangular arrangement. Three spheres `i`, `k`, and `j` are arranged such that `k` touches `i`, and `j` touches `k`, with the centers of `i`, `k`, and `j` forming a 120-degree angle at `k`. This is the second-neighbor distance in a 2D hexagonal lattice, calculated as `sqrt(3)`.
+*   **2.00**: This distance represents two spheres separated by a third sphere in a straight line (`i-k-j`). The distance is simply `d + d`, and the normalized distance is 2.00. This configuration is possible in both square and hexagonal arrangements.
+*   **2.24**: In a square lattice arrangement, this is the distance from a sphere at the origin to a sphere at coordinates (2d, d), normalized by d. It is calculated as `sqrt((2d)² + d²) / d = sqrt(5)`.
+*   **2.65**: This is a next-nearest neighbor distance found in a hexagonal lattice structure, calculated as `sqrt(7)`.
+*   **2.83**: This distance is found in a square lattice, corresponding to the diagonal of a rectangle with sides `d` and `2d`, or more precisely the distance from a sphere at the origin to one at (2d, 2d). The value is `sqrt((2d)² + (2d)²) / d = sqrt(8)`.
+*   **3.00**: This represents three spheres in a line separated by two other spheres or the third-neighbor distance along a principal axis in both square and hexagonal lattices.

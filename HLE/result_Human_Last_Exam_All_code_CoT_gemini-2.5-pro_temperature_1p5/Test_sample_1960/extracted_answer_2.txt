@@ -1,0 +1,8 @@
+Let `α` and `β` be two distinct atomic formulas. The function `f` and the formula `C` are defined as follows:
+
+The function `f` maps a natural number `w` to the formula:
+$$ f(w) = \bigotimes_{i=1}^{w} \alpha $$
+(where $\bigotimes_{i=1}^{0} \alpha$ is defined as the multiplicative unit, $1$).
+
+The formula `C`, which depends on `m` and `b`, is:
+$$ C(m, b) = \left(\bigotimes_{k=1}^{m} \left(\left(\bigotimes_{i=1}^{b} \alpha\right) \multimap \beta\right)\right) \multimap \left(\bigotimes_{k=1}^{m} \beta\right) $$

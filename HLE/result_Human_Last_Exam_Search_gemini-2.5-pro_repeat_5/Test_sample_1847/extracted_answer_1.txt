@@ -1,0 +1,13 @@
+The analytical solution for the density profile is:
+
+`ρ(x/L) / ρ₀ = (1 + exp((5/3) * (x/L))) / (1 + 0.5 * exp((5/3) * (x/L)))`
+
+or equivalently:
+
+`ρ(x/L) / ρ₀ = 2 * (1 + exp((5/3) * (x/L))) / (2 + exp((5/3) * (x/L)))`
+
+where:
+*   `ρ` is the density, and `ρ₀` is the ambient density.
+*   `x` is the position in the direction of shock propagation.
+*   `L = κ/(\rho_0 M c_0 C_v)` is the ambient conductive length scale, with `κ` being the thermal conductivity, `M = √3` the Mach number, `c₀` the ambient sound speed, and `C_v` the specific heat at constant volume.
+*   The origin `x=0` is set at the inflection point of the velocity profile.

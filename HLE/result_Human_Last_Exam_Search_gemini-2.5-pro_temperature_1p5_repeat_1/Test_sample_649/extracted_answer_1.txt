@@ -1,0 +1,7 @@
+The tightest lower bound on the minimax risk \(R_n^*\) that can be proven from the provided information via Fano's method is:
+\[ R_n^* \ge \Phi\left(\frac{\delta}{2}\right) \left( 1 - \frac{\frac{1}{N} \sum_{j=1}^N D_{KL}(P_j^n || P) + \log 2}{\log N} \right) \]
+where \(P = \frac{1}{N} \sum_{k=1}^N P_k^n\) is the specified mixture distribution, and \( D_{KL}(P_j^n || P) \) is the Kullback-Leibler divergence between the distribution under hypothesis \(j\) and the average mixture distribution.
+
+This bound can be expressed in terms of single-letter KL divergences by noting that the mutual information \(I(S;J) = \frac{1}{N} \sum_{j=1}^N D_{KL}(P_j^n || P)\) is bounded by \( n \cdot I(X_1;J) \). This leads to the more explicit bound:
+\[ R_n^* \ge \Phi\left(\frac{\delta}{2}\right) \left( 1 - \frac{n \left( \frac{1}{N} \sum_{j=1}^N D_{KL}\left(P_j || \frac{1}{N}\sum_{k=1}^N P_k\right) \right) + \log 2}{\log N} \right) \]
+This bound holds under the assumption that we can choose \(N\) hypotheses \(P_1, \dots, P_N\) such that the corresponding parameters are pairwise separated by at least \(\delta\), i.e., \(\rho(\theta(P_j), \theta(P_k)) \ge \delta\) for all \(j \neq k\). The apparent contradictions in the prompt are resolved by interpreting it as a standard application of Fano's method to a well-separated finite set of hypotheses. This type of bound is fundamental in statistical theory for establishing the limits of estimation performance.

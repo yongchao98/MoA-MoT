@@ -1,0 +1,13 @@
+The conditions for the functions F: X*Y*Z→X, G: Y*X*Y→Y, and H: Z*Y*X→Z to have an FGH-tripled fixed point are primarily established in the framework of partially ordered complete metric spaces. An FGH-tripled fixed point is a triplet (x, y, z) from X × Y × Z satisfying F(x, y, z) = x, G(y, x, y) = y, and H(z, y, x) = z. The main conditions are as follows:
+
+1.  **Setting:** (X, ≤<sub>X</sub>, d<sub>X</sub>), (Y, ≤<sub>Y</sub>, d<sub>Y</sub>), and (Z, ≤<sub>Z</sub>, d<sub>Z</sub>) must be partially ordered complete metric spaces.
+
+2.  **Mixed Monotone Property:** The functions F, G, and H need to satisfy a mixed monotone property, meaning they are non-decreasing in some arguments and non-increasing in others, in a way that is compatible with the iterative process used to find the fixed point. Specifically, F is non-decreasing in its first and third arguments and non-increasing in the second; G is non-increasing in its first and third arguments and non-decreasing in the second; and H is non-decreasing in its first and third arguments and non-increasing in the second.
+
+3.  **Contractive Condition:** There must be a contractive condition on the functions. This usually takes the form of an inequality that bounds the distance between the images of two sets of points by a linear combination of the distances between the original points, with coefficients that sum to less than 1. This ensures that successive iterations of the functions bring points closer together.
+
+4.  **Initial Point Condition:** There must exist an initial set of points (x₀, y₀, z₀) that satisfies a specific order relationship with its image under the functions, such as x₀ ≤<sub>X</sub> F(x₀, y₀, z₀), y₀ ≥<sub>Y</sub> G(y₀, x₀, y₀), and z₀ ≤<sub>Z</sub> H(z₀, y₀, x₀).
+
+5.  **Continuity or Regularity:** Either the functions F, G, and H are continuous, or the partially ordered metric spaces possess a regularity property. This property ensures that if a monotone sequence converges to a limit, the terms of the sequence are related to the limit in the expected way by the partial order.
+
+For the fixed point to be unique, an additional condition of comparability is often required, stating that for any two triplets of points, there exists a third triplet that is comparable to both.

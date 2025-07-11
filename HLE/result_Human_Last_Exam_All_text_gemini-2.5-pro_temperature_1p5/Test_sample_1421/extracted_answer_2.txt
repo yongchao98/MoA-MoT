@@ -1,0 +1,11 @@
+Z = ∫ D[ψ*, ψ] exp(-S[ψ*, ψ])
+
+where:
+*   Z is the partition function.
+*   The integral ∫ D[ψ*, ψ] is a functional integral over all paths of the Grassmann fields ψ and ψ* that satisfy the anti-periodic boundary conditions: ψ(β) = -ψ(0) and ψ*(β) = -ψ*(0).
+*   S is the Euclidean action, given by:
+    S[ψ*, ψ] = ∫₀ᵝ dτ [ ψ*(τ) ∂_τ ψ(τ) + H(ψ*(τ), ψ(τ)) ]
+*   ψ(τ), ψ*(τ) are the time-dependent Grassmann fields.
+*   ∂_τ is the partial derivative with respect to imaginary time τ.
+*   β = 1/(k_B T), where T is the temperature.
+*   H(ψ*, ψ) is the Hamiltonian of the system with fermionic operators replaced by their corresponding Grassmann fields.

@@ -1,0 +1,30 @@
+The corrector to the large-distance behavior of $\omega$ when $A$ and $B$ are nonzero is given by the factor:
+$$r^{A(1-\cos\theta) + B\sin\theta}e^{B\theta}$$
+This factor multiplies the asymptotic behavior of the solution for the $A=B=0$ case.
+
+To derive this, we can follow these steps:
+1.  The vector field $u$ is given by $u = e_1 + A\frac{x}{|x|^2} + B\frac{x^\perp}{|x|^2}$. For $x \neq 0$, this field is irrotational and divergence-free. It can thus be written as the gradient of a potential $\Phi_0$. In polar coordinates $(r, \theta)$, this potential is $\Phi_0(r,\theta) = r\cos\theta + A\ln r + B\theta$.
+
+2.  We introduce a new function $\psi$ defined by the transformation $\omega(x) = e^{\Phi_0(x)}\psi(x)$. Substituting this into the original partial differential equation transforms it into a Schrödinger-type equation for $\psi$:
+    $$\Delta\psi - |u|^2\psi = e^{-\Phi_0}f$$
+    Since the source term $f$ is compactly supported, the right-hand side is also compactly supported. We are interested in the large-distance behavior of $\psi$, which will be governed by the homogeneous equation $\Delta\psi - |u|^2\psi = 0$.
+
+3.  For large distances ($r \to \infty$), the term $|u|^2$ can be approximated as:
+    $$|u|^2 = \left|e_1 + \frac{A}{r}e_r + \frac{B}{r}e_\theta\right|^2 = 1 + \frac{2(A\cos\theta - B\sin\theta)}{r} + O\left(\frac{1}{r^2}\right)$$
+    The equation for $\psi$ at large $r$ becomes approximately:
+    $$\Delta\psi - \left(1 + \frac{2(A\cos\theta - B\sin\theta)}{r}\right)\psi \approx 0$$
+
+4.  This equation can be solved using a WKB-type approximation. We look for a solution of the form $\psi(r,\theta) \sim a(r,\theta) e^{-r}$. Substituting this into the equation and keeping the most significant terms in $r$ yields a transport equation for the amplitude $a(r,\theta)$:
+    $$-2\frac{\partial a}{\partial r} - \frac{a}{r} - \frac{2(A\cos\theta - B\sin\theta)}{r}a = 0$$
+    This is a first-order ordinary differential equation for $a$ as a function of $r$, which can be solved to find:
+    $$a(r,\theta) \propto r^{-1/2 - (A\cos\theta - B\sin\theta)} = r^{-1/2 - A\cos\theta + B\sin\theta}$$
+
+5.  The asymptotic behavior of $\psi$ is therefore:
+    $$\psi(r,\theta) \sim C(\theta) r^{-1/2 - A\cos\theta + B\sin\theta} e^{-r}$$
+    where $C(\theta)$ is some function of $\theta$.
+
+6.  Finally, we transform back to the original function $\omega = e^{\Phi_0}\psi$:
+    $$\omega(r,\theta) \sim e^{r\cos\theta + A\ln r + B\theta} \cdot C(\theta) r^{-1/2 - A\cos\theta + B\sin\theta} e^{-r}$$
+    $$\omega(r,\theta) \sim C(\theta) e^{B\theta} r^{A(1-\cos\theta) + B\sin\theta - 1/2} e^{-r(1-\cos\theta)}$$
+
+The large-distance behavior for the case $A=B=0$ is proportional to $r^{-1/2}e^{-r(1-\cos\theta)}$. The corrector, which is the factor that multiplies this original behavior to obtain the new behavior for nonzero $A$ and $B$, is therefore $r^{A(1-\cos\theta) + B\sin\theta}e^{B\theta}$.

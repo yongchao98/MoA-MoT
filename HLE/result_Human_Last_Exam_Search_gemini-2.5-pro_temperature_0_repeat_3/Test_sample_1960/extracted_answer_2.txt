@@ -1,0 +1,11 @@
+**Function f(w):**
+Let `A` and `B` be two distinct formulas constructed without literals (e.g., `A = \bot`, `B = \bot \multimap \bot`).
+The function `f` is defined as:
+$f(w) := B \multimap (B \otimes A^w)$
+where $A^w$ is shorthand for $A \otimes \dots \otimes A$ repeated $w$ times.
+
+**Formula C:**
+Let $\text{check}_b := (B \otimes A^b) \multimap B$.
+The formula `C` is defined as:
+$C(W, m, b) := (\text{check}_b)^m \multimap (B \multimap B)$
+which is shorthand for $\text{check}_b \multimap (\text{check}_b \multimap \dots \multimap (B \multimap B)\dots)$.

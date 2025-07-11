@@ -1,0 +1,7 @@
+The inability to see a resonance on a functional MRI receive coil with a VNA and a loop probe is possible and typically occurs for one of three main reasons, all related to a failure of magnetic coupling:
+
+1.  **RF Shielding:** The coil is enclosed within a conductive RF shield inside its plastic housing. This shield blocks the probe's magnetic field from reaching the internal resonant components, even though the coil itself is perfectly functional.
+
+2.  **Active Detuning Circuitry:** The coil contains active circuits (using PIN diodes) to detune it for safety during the MRI transmit phase. When disconnected from the scanner, the coil often defaults to this "detuned" state because it is not receiving the necessary DC control voltage to become resonant. The coil is not broken, merely inactive.
+
+3.  **Coil Geometry and Field Distribution:** The coil's design creates regions of very weak or zero magnetic field on its exterior. For volume coils (like a birdcage), the field is contained inside. For phased arrays or balanced coils, specific probe placement is critical to avoid field nulls or exciting a mode that the coil is designed to reject. You are likely placing the probe in a location where there is no field to couple with.

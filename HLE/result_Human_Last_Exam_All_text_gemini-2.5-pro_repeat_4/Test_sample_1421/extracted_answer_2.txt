@@ -1,0 +1,9 @@
+The formula is:
+$Z = \int \mathcal{D}[\psi^*(\tau), \psi(\tau)] e^{-S_E[\psi^*, \psi]}$
+
+where $S_E$ is the Euclidean action, defined as:
+$S_E[\psi^*, \psi] = \int_0^\beta d\tau \left[ \sum_j \psi_j^*(\tau) \partial_\tau \psi_j(\tau) + H(\{\psi_j^*(\tau)\}, \{\psi_j(\tau)\}) \right]$
+
+This path integral is defined over Grassmann fields that satisfy **anti-periodic boundary conditions** in imaginary time:
+$\psi_j(\beta) = -\psi_j(0)$
+$\psi_j^*(\beta) = -\psi_j^*(0)$

@@ -1,0 +1,77 @@
+172[
+/*
+ * Wuxing C program to calculate 100!
+ * Uses global variables to minimize total variable memory allocation.
+ *
+ * Data type sizes (in decimal digits, D):
+ * digit: 1D
+ * char: 3D (0-999, unsigned)
+ */
+
+// --- Global Variables ---
+// Total variable memory = 160*1D (result) + 3*3D (size, i, j) + 3D (carry) = 172D.
+
+// The result is stored as an array of digits in reverse order.
+// 100! has 158 digits, so an array of 160 is safe.
+digit result[160];
+
+// Current number of digits in the result array.
+char size;
+
+// Loop counter for factorial calculation (from 2 to 100).
+char i;
+
+// Loop counter for digit-by-digit multiplication and printing.
+char j;
+
+// Variable to hold carry-over and the intermediate product.
+// The max product (~9*100+carry) fits within a 'char' (0-999).
+char carry;
+
+/*
+ * Multiplies the global 'result' array by an integer 'n'.
+ * The 'result' is updated in-place.
+ */
+void multiply(char n) {
+    carry = 0;
+
+    // Multiply each digit by 'n' and add the previous carry.
+    for (j = 0; j < size; j++) {
+        carry += result[j] * n;
+        result[j] = carry % 10;
+        carry /= 10;
+    }
+
+    // If a carry remains after the loop, extend the result array.
+    while (carry > 0) {
+        result[size] = carry % 10;
+        size++;
+        carry /= 10;
+    }
+}
+
+/*
+ * Main function to calculate and print 100!
+ */
+int main() {
+    // Initialize result to 1.
+    size = 1;
+    result[0] = 1;
+
+    // Calculate 100! by successively multiplying from 2 to 100.
+    for (i = 2; i <= 100; i++) {
+        multiply(i);
+    }
+
+    // Print the final calculated factorial.
+    // The result array is in reverse, so we print from the end.
+    // A standard reverse loop like "j-- >= 0" would be infinite because 'j'
+    // is an unsigned type ('char'). This alternative loop structure is safe.
+    for (j = size; j > 0; j--) {
+        printf("%d", result[j - 1]);
+    }
+    printf("\n");
+
+    return 0;
+}
+]

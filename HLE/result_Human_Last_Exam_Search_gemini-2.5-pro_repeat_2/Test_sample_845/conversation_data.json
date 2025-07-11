@@ -1,0 +1,10 @@
+{
+  "question": "HR and HRV were tracked  by capturing beat-to-beat intervals by using PPG. HRV is computed as a value between heartbeats. What is that value called?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "The value computed between heartbeats, derived from beat-to-beat intervals, is most commonly called the **Inter-Beat Interval (IBI)**.\n\nHere is a more detailed explanation:\n\n*   **Inter-Beat Interval (IBI):** This is the general term for the time duration between consecutive heartbeats. It is the fundamental measurement used to calculate heart rate variability (HRV). This term can be used for data from various sources, including PPG.\n\n*   **R-R Interval (RRI):** This term is specific to data from an electrocardiogram (ECG). It measures the time between two successive R-waves, which are the prominent peaks in an ECG signal. In practice, R-R interval and IBI are often used interchangeably, although IBI is the more general term.\n\n*   **Pulse-to-Pulse Interval (PPI) or Peak-to-Peak Interval:** When using PPG, which measures the pulse wave in the blood vessels, the time between consecutive pulse wave peaks is sometimes called the Pulse-to-Pulse Interval (PPI). However, IBI is also widely used and understood for PPG-derived data.\n\nIn summary, while terms like R-R Interval and Pulse-to-Pulse Interval are specific to the measurement technology (ECG and PPG, respectively), **Inter-Beat Interval (IBI)** is the widely accepted and most appropriate general term for the value between heartbeats used in HRV analysis.\n\n<<<Inter-Beat Interval (IBI)>>>"
+  ],
+  "user_prompt_list": [
+    "HR and HRV were tracked  by capturing beat-to-beat intervals by using PPG. HRV is computed as a value between heartbeats. What is that value called?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

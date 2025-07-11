@@ -1,0 +1,21 @@
+The governing equation for the interfacial shape `ξ(r)` is derived from the augmented Young-Laplace equation, which balances the pressure difference across the interface with the forces from surface tension.
+
+1.  **Surface Tension Pressure (`P_γ`)**: The pressure jump across a curved interface is given by the product of the surface tension (`γ`) and the mean curvature (`κ`). For a function `z = ξ(r)` in cylindrical coordinates with azimuthal symmetry, the mean curvature for small displacements (a linear analysis) is:
+    `κ ≈ d²ξ/dr² + (1/r) * dξ/dr`
+    This expression is the Laplacian of `ξ` in polar coordinates. The pressure associated with surface tension is therefore:
+    `P_γ = γ * (d²ξ/dr² + (1/r) * dξ/dr)`
+
+2.  **Electrostatic and other Pressures**: The electric field, along with any other pressure sources (which are assumed constant or negligible, like gravity), creates a pressure `P_ext` that acts on the interface. The total pressure balance at the interface is `P_ext = P_γ`.
+
+3.  **Governing Equation**: Rearranging the pressure balance into the specified form `A(r) d²ξ/dr² + B(r) dξ/dr + C(r, ξ(r)) = 0`, we get:
+    `γ * d²ξ/dr² + (γ/r) * dξ/dr - P_ext(r, ξ) = 0`
+
+    Here, the term `C(r, ξ(r))` encompasses all forces other than surface tension, primarily the electrostatic pressure, so `C(r, ξ(r)) = -P_ext(r, ξ)`.
+
+By comparing the terms, we can identify the coefficients `A(r)` and `B(r)`:
+
+*   The coefficient of the second derivative term, `d²ξ(r)/dr²`, is `A(r) = γ`.
+*   The coefficient of the first derivative term, `dξ(r)/dr`, is `B(r) = γ/r`.
+
+$A(r) = \gamma$
+$B(r) = \frac{\gamma}{r}$

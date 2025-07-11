@@ -1,0 +1,15 @@
+1. Required Permeability of the Shell Material:
+   To achieve non-distortion in the exterior, the permeability `mu` must satisfy:
+   mu = -mu_0
+   (where `mu_0` is the vacuum permeability). This corresponds to a relative
+   permeability of -1, a property of magnetic metamaterials.
+
+2. Magnetic Field in the Interior Region (rho < R1):
+   With the permeability found above, the magnetic field inside the shell is uniform
+   and given by the equation:
+   H_int = H_0 * (R2/R1)**2 * x_hat
+   where:
+     `H_0` is the magnitude of the externally applied uniform field.
+     `R1` is the interior radius of the shell.
+     `R2` is the exterior radius of the shell.
+     `x_hat` is the unit vector in the x-direction.

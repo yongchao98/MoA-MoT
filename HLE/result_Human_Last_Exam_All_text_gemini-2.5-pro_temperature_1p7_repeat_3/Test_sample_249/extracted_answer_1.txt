@@ -1,0 +1,4 @@
+The minimum possible value for the diameter of G is given by:
+1.  **2**, if $m = n+1$.
+2.  **3**, if $m = n$.
+3.  **$\min(2\lceil \frac{n+1}{m} \rceil, 2\lceil \frac{n}{m} \rceil + 1)$**, if $m \le n-1$.

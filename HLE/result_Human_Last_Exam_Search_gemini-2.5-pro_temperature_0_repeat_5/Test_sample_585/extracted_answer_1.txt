@@ -1,0 +1,31 @@
+The post-reset covariance \(\Sigma'\) is computed by transforming the pre-reset covariance \(\Sigma\) with a Jacobian matrix that represents the change of coordinates of the error state. The exact expression is:
+
+\(\Sigma' = G \Sigma G^T\)
+
+where \(G\) is the transformation matrix. For a system where the state \(x\) is composed of the attitude deviation \(\delta\) and other states \(x_{other}\), the state vector can be partitioned as \(x = [\delta^T, x_{other}^T]^T\). The transformation matrix \(G\) will then have a block structure.
+
+Specifically, the transformation for the attitude deviation part of the state is what defines the reset operation. Let the pre-reset attitude deviation be \(\delta\) and the post-reset deviation be \(\delta'\). The reset operation is a nonlinear transformation \(\delta' = f(\delta)\). The covariance is then transformed using the Jacobian of this transformation evaluated at the mean of the attitude deviation before the reset, which is \(\hat{\delta}\).
+
+The transformation matrix \(G\) is given by:
+
+\(G = \begin{bmatrix} A & 0 \\ 0 & I \end{bmatrix}\)
+
+where \(I\) is the identity matrix corresponding to the other states in the filter, and \(A\) is the Jacobian of the reset mapping for the attitude deviation.
+
+The matrix \(A\) is derived from the relationship between the pre-reset and post-reset attitude error representations. This relationship can be expressed using the group composition law for rotations. If the attitude error is represented by a small rotation vector \(\delta\), the reset operation corresponds to a change of the reference frame for this error.
+
+The exact, non-approximated transformation for the covariance matrix of the attitude error part, \(\Sigma_{\delta\delta}\), is given by:
+
+\(\Sigma'_{\delta\delta} = A \Sigma_{\delta\delta} A^T\)
+
+The matrix \(A\) is the Jacobian of the transformation that maps the pre-reset error to the post-reset error. This Jacobian is evaluated at the current best estimate of the attitude error \(\hat{\delta}\). For a small rotation vector representation, the matrix \(A\) can be expressed as:
+
+\(A = \exp([\hat{\delta}]_{\times})^{-1} = \exp(-[\hat{\delta}]_{\times})\)
+
+where \([\hat{\delta}]_{\times}\) is the skew-symmetric matrix of the estimated attitude deviation vector \(\hat{\delta}\), and \(\exp(\cdot)\) is the matrix exponential, which for a skew-symmetric matrix results in a rotation matrix. This can be calculated using Rodrigues' rotation formula.
+
+Therefore, the complete post-reset covariance matrix \(\Sigma'\) is calculated as:
+
+\(\Sigma' = \begin{bmatrix} \exp(-[\hat{\delta}]_{\times}) & 0 \\ 0 & I \end{bmatrix} \Sigma \begin{bmatrix} \exp(-[\hat{\delta}]_{\times})^T & 0 \\ 0 & I \end{bmatrix}\)
+
+This operation effectively rotates the covariance of the attitude error to align with the new reference frame defined by the updated reference attitude \(R_{ref}'\). This is a crucial step in the Multiplicative Extended Kalman Filter (MEKF) and related filtering schemes for attitude estimation.

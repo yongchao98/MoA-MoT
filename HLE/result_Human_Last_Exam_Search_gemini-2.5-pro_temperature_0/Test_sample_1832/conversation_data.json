@@ -1,0 +1,10 @@
+{
+  "question": "In empty space outside a spherically symmetric gravitating body with mass $M$, how many non-zero Christoffel symbols $\\Gamma_{\\mu\\nu}^\\rho$ are non-zero?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "In the empty space outside a spherically symmetric gravitating body of mass $M$, the geometry of spacetime is described by the Schwarzschild metric. The curvature of this spacetime is encoded in the Christoffel symbols, which are calculated from the derivatives of the metric tensor.\n\nFor the Schwarzschild metric in standard spherical coordinates $(t, r, \\theta, \\phi)$, there are 9 non-zero, independent Christoffel symbols. These are:\n\n*   $\\Gamma_{tt}^r = \\frac{M(r-2M)}{r^3}$\n*   $\\Gamma_{rr}^r = -\\frac{M}{r(r-2M)}$\n*   $\\Gamma_{\\theta\\theta}^r = -(r-2M)$\n*   $\\Gamma_{\\phi\\phi}^r = -(r-2M)\\sin^2\\theta$\n*   $\\Gamma_{rt}^t = \\frac{M}{r(r-2M)}$\n*   $\\Gamma_{r\\theta}^\\theta = \\frac{1}{r}$\n*   $\\Gamma_{\\phi\\phi}^\\theta = -\\sin\\theta\\cos\\theta$\n*   $\\Gamma_{r\\phi}^\\phi = \\frac{1}{r}$\n*   $\\Gamma_{\\theta\\phi}^\\phi = \\cot\\theta$\n\nDue to the symmetry of the Christoffel symbols in their lower indices ($\\Gamma_{\\mu\\nu}^\\rho = \\Gamma_{\\nu\\mu}^\\rho$), symbols such as $\\Gamma_{tr}^t$, $\\Gamma_{\\theta r}^\\theta$, $\\Gamma_{\\phi r}^\\phi$, and $\\Gamma_{\\phi\\theta}^\\phi$ are equal to their counterparts listed above and are not counted as distinct. All other Christoffel symbols are zero.\n\n<<<9>>>"
+  ],
+  "user_prompt_list": [
+    "In empty space outside a spherically symmetric gravitating body with mass $M$, how many non-zero Christoffel symbols $\\Gamma_{\\mu\\nu}^\\rho$ are non-zero?\nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

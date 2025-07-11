@@ -1,0 +1,6 @@
+In finite-temperature field theory, for a neutral scalar field, the inner product (ϕ, D_ϕ) in the functional integral representation of the partition function represents the kinetic and mass terms of the Euclidean action. It is given by the integral over Euclidean spacetime (with imaginary time τ ranging from 0 to β = 1/T) of the field ϕ multiplied by the Euclidean Klein-Gordon operator acting on ϕ.
+
+Explicitly, for a scalar field ϕ with mass m, the inner product is:
+(ϕ, D_ϕ) = ∫₀ᵝ dτ ∫ d³x ϕ(τ, **x**) (-∂_τ² - ∇² + m²) ϕ(τ, **x**)
+
+where ∂_τ is the derivative with respect to imaginary time and ∇ is the spatial gradient. This quadratic form in the field appears in the exponent of the functional integral for the partition function Z = ∫ Dϕ exp[-(1/2)(ϕ, D_ϕ)] for a free theory.

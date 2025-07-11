@@ -1,0 +1,10 @@
+The mathematical formulation for the upper bound of a vertical cross-section (VCS) of an Interval Type-3 Membership Function at a fixed primary input `x`, for a secondary variable `u` within an uncertainty interval `[underline{μ}(x), bar{μ}(x)]`, is given by:
+
+`bar{μ}_{VCS}(u; x) = exp(-0.5 * ( (u - c_u(x)) / σ_u(x) )^2)`
+
+where the Gaussian parameters are functions of the primary uncertainty bounds:
+
+*   **Mean:** `c_u(x) = (bar{μ}(x) + underline{μ}(x)) / 2`
+*   **Standard Deviation:** `σ_u(x) = (bar{μ}(x) - underline{μ}(x)) / S`
+
+Here, `S` is a design parameter controlling the spread of the Gaussian profile in the vertical dimension.

@@ -1,0 +1,6 @@
+The mathematical formulation for the upper and lower bounds of the vertical cross-section of an Interval Type-3 Membership Function at a fixed primary input `x` and for a secondary variable `u`, using a Gaussian paradigm with an uncertain standard deviation, is given by the following pair of equations:
+
+Upper Bound: `overline{μ}_{x}(u) = exp[ - ( (u - c_u(x))^2 ) / ( 2 * (overline{σ}_u(x))^2 ) ]`
+Lower Bound: `underline{μ}_{x}(u) = exp[ - ( (u - c_u(x))^2 ) / ( 2 * (underline{σ}_u(x))^2 ) ]`
+
+where `c_u(x)` is the center of the vertical slice, and `overline{σ}_u(x)` and `underline{σ}_u(x)` are the upper and lower standard deviations defining the uncertainty at `x`, respectively.

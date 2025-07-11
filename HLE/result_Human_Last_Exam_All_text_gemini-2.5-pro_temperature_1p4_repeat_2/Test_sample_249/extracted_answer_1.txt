@@ -1,0 +1,2 @@
+Let $q = \lfloor \frac{n+1}{m} \rfloor$ and $r = (n+1) \pmod m$. The minimum possible diameter is
+$\begin{cases} 2q & \text{if } r=0 \\ 2q+1 & \text{if } r=1 \\ 2q+2 & \text{if } r \ge 2 \end{cases}$

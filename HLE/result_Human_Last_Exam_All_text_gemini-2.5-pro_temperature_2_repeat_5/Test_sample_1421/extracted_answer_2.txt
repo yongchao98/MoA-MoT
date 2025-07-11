@@ -1,0 +1,7 @@
+The fermionic partition function $Z$ in the imaginary time path integral formalism is given by:
+$Z = \int \mathcal{D}\bar{\psi} \mathcal{D}\psi \, e^{-S_E[\bar{\psi}, \psi]}$
+where the integral is a functional integral over all Grassmann-valued fields $\psi(\tau)$ and $\bar{\psi}(\tau)$ that satisfy anti-periodic boundary conditions in imaginary time $\tau \in [0, \beta]$:
+$\psi(\beta) = -\psi(0)$ and $\bar{\psi}(\beta) = -\bar{\psi}(0)$.
+The Euclidean action $S_E$ is given by:
+$S_E[\bar{\psi}, \psi] = \int_0^\beta d\tau \left[ \bar{\psi}(\tau) \partial_\tau \psi(\tau) + H(\bar{\psi}(\tau), \psi(\tau)) \right]$
+with $\beta = 1/(k_B T)$ and $H(\bar{\psi}, \psi)$ being the Hamiltonian function where fermion operators have been replaced by the corresponding Grassmann fields.

@@ -1,0 +1,11 @@
+The proposed filtering strategy is as follows:
+
+1.  **Perform Differential Gene Expression (DGE) Analysis:** Using your gene count matrix, run a DGE analysis that accounts for the paired-donor design (e.g., using `~ donor + condition` in DESeq2). Crucially, set the comparison to be **`CAR_IL15` vs. `CAR_only`**. This will produce a results table (`dge_results.tsv`) where contaminating genes (present in `CAR_only` but absent in `CAR_IL15`) will have a large negative log2 Fold Change (log2FC).
+
+2.  **Filter for Contaminating Genes:** Use a command-line tool like `awk` to parse the DGE results table. Filter for genes that are both highly statistically significant and show a large negative fold change. A recommended starting command, assuming log2FC is the 3rd column and adjusted p-value is the 7th, would be:
+    `awk -F'\t' 'NR > 1 && $3 < -5 && $7 < 0.01 {print $1}' dge_results.tsv > contaminating_genes.txt`
+    This command extracts the IDs of genes with a log2FC less than -5 (a 32-fold reduction) and an adjusted p-value less than 0.01, saving them to `contaminating_genes.txt`.
+
+3.  **Create a Filtered Dataset:** Use the generated list of contaminating genes to remove them from your normalized count matrix before any further analysis (like PCA or heatmap generation). This can be done with the `grep` command:
+    `grep -v -f contaminating_genes.txt normalized_counts.tsv > filtered_normalized_counts.tsv`
+    The resulting file, `filtered_normalized_counts.tsv`, is your clean dataset ready for downstream biological interpretation.

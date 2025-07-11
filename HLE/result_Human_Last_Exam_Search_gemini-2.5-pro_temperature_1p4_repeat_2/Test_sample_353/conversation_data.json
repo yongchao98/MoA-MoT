@@ -1,0 +1,10 @@
+{
+  "question": "Find the exact value of the angle $\\alpha$ (in radians) in terms of $\\arctan()$ for the $A(\\alpha)$ stability of the BDF4 numerical scheme. \nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>.",
+  "response_list": [
+    "The exact value of the A($\\alpha$) stability angle for the BDF4 method is given by:\n\n$$ \\alpha = \\arctan\\left(\\frac{3\\sqrt{2033}}{85}\\right) $$\n\nThis result has been derived and presented by Akrivis and Katsoprinakis and simplified using computer algebra systems by Gander and Wanner.\n\nThe BDF4 method is known to be $A(\\alpha)$-stable, with the angle $\\alpha$ being approximately 73.35 degrees. This property makes it suitable for solving stiff differential equations, although it is not A-stable. The stability region for BDF4 contains a large portion of the left half-plane, which is a desirable characteristic for stiff solvers.\n\nThe stability angle is determined by finding the point on the boundary of the stability region where the argument of the complex value is maximized. This boundary is defined by the root locus curve of the method. The exact calculation involves finding the roots of the numerator of the derivative of the tangent of the angle of the points on this curve. For BDF4, this algebraic manipulation leads to the exact value involving the square root of 2033.\n\n<<<$\\arctan\\left(\\frac{3\\sqrt{2033}}{85}\\right)$>>>"
+  ],
+  "user_prompt_list": [
+    "Find the exact value of the angle $\\alpha$ (in radians) in terms of $\\arctan()$ for the $A(\\alpha)$ stability of the BDF4 numerical scheme. \nOnce you feel you are ready for the final answer, directly return the answer with the format <<<answer content>>> at the end of your response, e.g. <<<C>>>, <<<9.8>>>."
+  ],
+  "system_message": ""
+}

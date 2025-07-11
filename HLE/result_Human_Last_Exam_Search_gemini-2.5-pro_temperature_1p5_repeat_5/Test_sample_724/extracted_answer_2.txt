@@ -1,0 +1,9 @@
+The maximum amount of water left, `W_L`, is given by the expression:
+
+`W_L = (n-k) \times 100 - \left(m - 100 \sum_{i=1}^{k} \frac{1}{2n-2i+1}\right) \times (2n - 2k - 1)`
+
+where `k` is the largest integer that satisfies the condition:
+
+`100 \sum_{i=1}^{k} \frac{1}{2n-2i+1} \le m`
+
+If `m < \frac{100}{2n-1}`, then `k=0`, and the summation term is zero.

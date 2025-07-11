@@ -1,0 +1,5 @@
+In the Feynman path integral formalism, the bare Green's function in the frequency-momentum domain, $G_0(k, \omega)$, has a simple inverse functional dependence on the single-particle energy eigenvalue $\epsilon_k$. The precise relationship is given by:
+
+$G_0(k, \omega) = \frac{1}{\omega - \epsilon_k + i\delta}$
+
+where the term $i\delta$ is an infinitesimal imaginary part whose sign is determined by the specific boundary conditions (e.g., for a time-ordered Green's function at T=0, it is $i\delta \, \text{sgn}(\epsilon_k - \mu)$, with $\mu$ being the chemical potential). The essential dependence is the $1/(\omega - \epsilon_k)$ form, which indicates that the Green's function has a pole at the single-particle energy $\epsilon_k$.

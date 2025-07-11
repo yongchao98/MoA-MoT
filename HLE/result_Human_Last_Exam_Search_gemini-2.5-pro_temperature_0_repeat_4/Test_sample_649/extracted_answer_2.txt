@@ -1,0 +1,11 @@
+The tightest lower bound on the minimax risk \( R_n^* \) that can be proven under the given conditions is based on Le Cam's method. It involves reducing the estimation problem to a binary hypothesis test between the distribution \( P_0 \) and a mixture of the other distributions \( P_j \). The resulting bound is:
+\[
+R_n^* \ge \frac{1}{2} \Phi(\delta/2) \left(1 - \left\|\frac{1}{N}\sum_{j=1}^N P_j^n - P_0^n\right\|_{TV}\right)
+\]
+where \( \| \cdot \|_{TV} \) denotes the total variation distance.
+
+This bound can be further expressed using the Kullback-Leibler (KL) divergence, which is often more convenient for analysis. By applying Pinsker's inequality and the convexity of the KL divergence, we obtain a more explicit bound in terms of the average KL divergence from the distributions \( P_j \) to \( P_0 \):
+\[
+R_n^* \ge \frac{1}{2} \Phi(\delta/2) \left(1 - \sqrt{\frac{n}{2N} \sum_{j=1}^N D_{KL}(P_j \| P_0)}\right)
+\]
+This bound holds provided that the distributions \( P_j \) are absolutely continuous with respect to \( P_0 \). This form highlights the trade-off: for the bound to be non-trivial, the separation \( \delta \) must be large, while the number of samples \( n \) and the average KL divergence must be small enough so that the term inside the parenthesis remains positive.

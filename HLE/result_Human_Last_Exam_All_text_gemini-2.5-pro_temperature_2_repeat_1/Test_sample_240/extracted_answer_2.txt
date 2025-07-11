@@ -1,0 +1,6 @@
+The absence of a resonance dip on the VNA, despite the coil being functional, is due to a lack of magnetic coupling between your test probe and the MRI coil. This is not a fault in the coil but a consequence of its advanced design. The most common reasons for this are:
+
+1.  **Active Detuning:** The coil has a safety circuit that intentionally makes it non-resonant when it's not connected to the scanner and receiving a specific "receive-enable" DC voltage. On the bench, it is in a "safe," non-resonant state.
+2.  **Specialized Coil Geometry:** The coil is not a simple loop but a more complex design like a gradiometer (e.g., figure-8 shape). These coils are designed to reject uniform magnetic fields, like the one produced by your small probe, and will therefore not show a response. Similarly, volume coils (like a birdcage) confine their magnetic field internally, making them difficult to probe from the outside.
+3.  **RF Shielding:** An electrostatic (Faraday) shield may be built into the coil to reduce noise, and this shield can block the fields from your probe, preventing it from interacting with the coil's resonant conductor.
+4.  **Array Decoupling:** In phased-array coils, elements are actively decoupled from their neighbors. Your probe is treated like an external source, and the decoupling mechanism prevents energy transfer.

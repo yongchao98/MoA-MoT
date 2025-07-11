@@ -1,0 +1,43 @@
+The expected maximum earthquake magnitude is given by the expression `E[M_N] = π / (2 * ln(2)) - 1`.
+
+Let's break down the derivation:
+
+1.  **Define the distributions:**
+    *   The earthquake magnitude, `X`, follows a Pareto distribution with shape parameter `α = 2` and a standard scale parameter `x_m = 1`. The Cumulative Distribution Function (CDF) is `F_X(x) = 1 - (1/x)^2` for `x ≥ 1`.
+    *   The number of years of monitoring, `N`, follows a Logarithmic Series distribution with parameter `p = 1/2`. The Probability Mass Function (PMF) is `P(N = k) = -1/ln(1-p) * p^k/k = 1/ln(2) * 1/(k * 2^k)` for `k ≥ 1`.
+
+2.  **Expected maximum for a fixed number of years:**
+    Let `M_n = max(X_1, X_2, ..., X_n)` be the maximum magnitude in a fixed period of `n` years. The CDF of `M_n` is `F_{M_n}(x) = P(M_n ≤ x) = (F_X(x))^n = (1 - 1/x^2)^n`.
+    The expected value of `M_n` is given by the integral of its survival function:
+    `E[M_n] = ∫_1^∞ [1 - F_{M_n}(x)] dx = ∫_1^∞ [1 - (1 - 1/x^2)^n] dx`.
+
+3.  **Expected maximum for a random number of years:**
+    We use the law of total expectation to find the expected maximum over a random number of years `N`:
+    `E[M_N] = Σ_{k=1}^∞ E[M_k] * P(N=k)`
+    `E[M_N] = Σ_{k=1}^∞ (∫_1^∞ [1 - (1 - 1/x^2)^k] dx) * (1 / (ln(2) * k * 2^k))`
+
+4.  **Simplify the expression:**
+    By swapping the summation and integration (justified by Fubini's theorem as the terms are non-negative):
+    `E[M_N] = (1/ln(2)) * ∫_1^∞ [ Σ_{k=1}^∞ (1 - (1 - 1/x^2)^k) / (k * 2^k) ] dx`
+
+    Let's evaluate the inner sum. We know the Taylor series `Σ_{k=1}^∞ z^k/k = -ln(1-z)`.
+    The sum becomes:
+    `Σ [1/(k*2^k)] - Σ [(1-1/x^2)^k / (k*2^k)]`
+    `= [-ln(1 - 1/2)] - [-ln(1 - (1-1/x^2)/2)]`
+    `= ln(2) + ln((1+1/x^2)/2)`
+    `= ln(2 * (1+1/x^2)/2) = ln(1 + 1/x^2)`
+
+5.  **Evaluate the final integral:**
+    The expression simplifies to:
+    `E[M_N] = (1/ln(2)) * ∫_1^∞ ln(1 + 1/x^2) dx`
+
+    This integral is solved using integration by parts, which yields `π/2 - ln(2)`.
+
+6.  **Final Result:**
+    Substituting the value of the integral back:
+    `E[M_N] = (1/ln(2)) * (π/2 - ln(2))`
+    `E[M_N] = π / (2 * ln(2)) - 1`
+
+Calculating the numerical value:
+Using `π ≈ 3.14159` and `ln(2) ≈ 0.69315`, we get:
+`E[M_N] ≈ 3.14159 / (2 * 0.69315) - 1 ≈ 2.2661 - 1 = 1.2661`

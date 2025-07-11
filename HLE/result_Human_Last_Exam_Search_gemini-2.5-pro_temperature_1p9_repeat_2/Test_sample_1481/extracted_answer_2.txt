@@ -1,0 +1,8 @@
+In the theoretical framework of planar Birkhoff billiard dynamics, the generating function `H(s,s')`, representing the negative of the Euclidean distance between two points on the billiard boundary, exhibits a distinct asymptotic behavior as the arc-length separation `|s' - s|` approaches zero. A rigorous analysis reveals that the local curvature of the boundary, `κ(s)`, directly governs the leading-order correction to the linear term.
+
+The asymptotic expansion of `H(s,s')` is given by:
+`H(s,s') = -|s' - s| * [1 - (κ(s)²/24)(s' - s)² + O((s' - s)³)]`.
+
+This formula elucidates the nuanced interplay between the boundary's geometry and the system's dynamics. The leading-order term, `-|s' - s|`, represents the arc length, which would be the exact chord length on a flat boundary (zero curvature). The subsequent term, `+(κ(s)²/24)|s' - s|³`, is the crucial leading-order geometric correction. It demonstrates that for a given arc-length step, the actual Euclidean distance is slightly shorter, and this deviation is proportional to the square of the local curvature.
+
+From a dynamical perspective, this curvature-dependent term is of paramount importance. It dictates the "twist" of the billiard map for near-grazing trajectories. The twist, given by the mixed second partial derivative of `H`, is a fundamental property that influences the stability of orbits and the existence of invariant curves (caustics) near the boundary. The `κ(s)²` term, therefore, directly links the local geometric shape of the billiard table to the fundamental symplectic structure of its dynamical map in this asymptotic regime.

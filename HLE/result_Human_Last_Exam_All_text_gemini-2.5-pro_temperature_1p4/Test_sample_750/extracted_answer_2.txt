@@ -1,0 +1,5 @@
+1.  **Real solutions**: There are two real solutions, $z=1$ and $z=-1$.
+
+2.  **Purely imaginary solutions**: For each integer $k \le -1$, there is a unique solution of the form $z_k=iy_k$, where $y_k$ is the unique negative real solution to the equation $-y = e^{-y(\frac{\pi}{2} + 2k\pi)}$. These solutions can be expressed using the Lambert W function as $y_k = \frac{W_0(-\frac{\pi}{2}(1+4k))}{\frac{\pi}{2}(1+4k)}$.
+
+3.  **Other complex solutions**: There exists a doubly infinite set of non-real, non-purely imaginary complex solutions. For each integer $k$, the solutions are of the form $z=x+iy$ where $x = u/C_k$, $y=-(u/C_k)\cot u$, and $u$ is a real solution to the equation $\frac{u}{\sin u}e^{-u\cot u} = C_k$.

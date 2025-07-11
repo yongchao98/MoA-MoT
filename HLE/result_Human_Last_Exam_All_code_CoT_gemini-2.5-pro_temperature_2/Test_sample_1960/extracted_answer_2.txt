@@ -1,0 +1,7 @@
+The function `f` and formula `C` are defined as follows. Let `F^{\otimes k}` denote the formula `F ⊗ F ⊗ ... ⊗ F` for `k` times, with `F^{\otimes 0} = 1` and `F^{\otimes 1} = F`.
+
+- **Function `f`:** Maps a natural number `w` to a formula representing `w` resources:
+`f(w) = (1 ⊸ ⊥)^{\otimes w}`
+
+- **Formula `C`:** Represents the target state of `m` partitions each summing to `b`:
+`C(W, m, b) = ((1 ⊸ ⊥)^{\otimes b})^{\otimes m}`

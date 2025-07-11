@@ -1,0 +1,1 @@
+f(f(x, x), f(y, y)) -> f(x, x), f(f(y, y), g(z)) -> f(y, y), f(g(x), f(y, y)) -> g(x), f(g(x), g(y)) -> g(x), g(g(y)) -> f(y, y), h(x) -> g(x)

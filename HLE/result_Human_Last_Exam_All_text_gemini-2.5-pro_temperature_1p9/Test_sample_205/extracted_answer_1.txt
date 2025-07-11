@@ -1,0 +1,46 @@
+158[
+void main()
+{
+    // The result array must be in memory. 100! has 158 digits.
+    digit result[158];
+
+    // These scalar variables can be mapped to registers by the compiler.
+    char i;
+    char size;
+    char j;
+    char carry;
+
+    // Initialize the number to 1.
+    size = 1;
+    result[0] = 1;
+
+    // Main loop to compute factorial: result = result * i
+    for (i = 2; i <= 100; i++)
+    {
+        carry = 0;
+        // Multiply each digit by i, handling the carry.
+        for (j = 0; j < size; j++)
+        {
+            carry = result[j] * i + carry;
+            result[j] = carry % 10;
+            carry = carry / 10;
+        }
+
+        // Propagate any remaining carry, increasing the number's size.
+        while (carry > 0)
+        {
+            result[size] = carry % 10;
+            size++;
+            carry = carry / 10;
+        }
+    }
+
+    // Print the final result, which is stored in reverse order.
+    j = size;
+    while (j > 0)
+    {
+        j--;
+        printf("%d", result[j]);
+    }
+}
+]
