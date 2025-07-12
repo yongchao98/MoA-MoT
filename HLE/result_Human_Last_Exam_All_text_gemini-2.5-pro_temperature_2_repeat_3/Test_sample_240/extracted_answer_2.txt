@@ -1,9 +1,0 @@
-The reason some functional MRI coils do not show resonance when probed with a magnetic loop and a VNA is primarily due to their **active decoupling and preamplifier circuits**. These coils are complex systems, not simple passive resonators.
-
-1.  **Active Decoupling:** For safety and to prevent interference, MRI receive coils are designed to be "decoupled" (made non-resonant) during the high-power transmit phase of the MRI scan. Many modern coils use active circuits with PIN diodes to achieve this. These circuits require a DC bias voltage from the MRI scanner to switch the coil into its "receive" (resonant) state. When the coil is on a test bench and unpowered, it defaults to this safe, decoupled state, and therefore exhibits no resonance.
-
-2.  **Unpowered Preamplifiers:** Most coils have integrated low-noise preamplifiers (LNAs) that also require DC power from the scanner. When unpowered, the input of the LNA presents an impedance that prevents the coil loop from resonating correctly. This is often an intentional part of the decoupling design.
-
-3.  **Coil Geometry and Probe Placement:** MRI coils can have complex geometries (e.g., figure-8 gradiometers, phased arrays) that create regions where the magnetic field is null or where a probe will not couple effectively. If the probe is placed in one of these nulls or oriented incorrectly, no resonance will be detected even if the coil were active.
-
-In summary, a "functional" coil is only truly functional when it is part of the complete MRI system, receiving the necessary power and control signals. On the bench, it is in a default, non-resonant safety mode.

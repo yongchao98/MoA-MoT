@@ -1,5 +1,0 @@
-The set M is a closed ball of radius R in the space of continuous functions on [0, 1] that are zero at the endpoints. It is defined as:
-M = { u ∈ C([0, 1]) | u(0) = u(1) = 0 and ||u||_∞ ≤ R }
-where C([0, 1]) is the space of continuous functions with the supremum norm ||u||_∞ = max_{x∈[0,1]} |u(x)|, and R is any positive constant that satisfies the two conditions:
-1. exp(R) ≤ 8R  (for invariance)
-2. R < ln(8)     (for contraction)

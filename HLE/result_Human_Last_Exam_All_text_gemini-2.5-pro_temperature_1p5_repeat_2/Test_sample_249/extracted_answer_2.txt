@@ -1,7 +1,0 @@
-1.  If $m = n+1$, the diameter is **2**.
-2.  If $m=n$, the diameter is **3**.
-3.  If $m<n$ and $2m \ge n+1$, the diameter is **4**.
-4.  If $2m < n+1$, let $q = \lfloor\frac{n+1-m}{m}\rfloor$ and $r = (n+1-m) \pmod m$. The diameter is:
-    *   **$2q+2$**, if $r=0$.
-    *   **$2q+3$**, if $r=1$.
-    *   **$2q+4$**, if $r \ge 2$.

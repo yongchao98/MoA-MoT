@@ -1,3 +1,0 @@
-The number of sets \(T\), denoted by \(f_m\), is given by the recurrence relation:
-\(f_m = \frac{1}{m} \left( a - f_{m-1} - (2^n - m + 1) f_{m-2} \right)\)
-with the base cases \(f_1 = 0\) and \(f_2 = 0\). For \(m \leq 0\), one could define \(f_0=1\) as the empty set of subsets satisfies the sum condition vacuously.

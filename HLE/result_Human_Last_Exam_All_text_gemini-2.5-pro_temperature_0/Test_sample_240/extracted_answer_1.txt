@@ -1,7 +1,0 @@
-The most probable reason you cannot see a resonance on some functional MRI coils is that they are equipped with **active decoupling circuits** and/or **integrated preamplifiers**.
-
-1.  **Active Decoupling:** Modern coils have safety circuits (usually involving PIN diodes) that intentionally "detune" or "decouple" them when they are not actively receiving a signal. This is to prevent them from absorbing energy during the MRI's high-power transmit pulse. When you test the coil on a bench, it is not receiving the necessary control signal (a DC bias) from the scanner to switch it into its resonant "receive" mode. Therefore, you are measuring the coil in its default, non-resonant state.
-
-2.  **Unpowered Preamplifiers:** The coil is designed to be perfectly tuned and matched to the input impedance of its preamplifier *when the preamplifier is powered on*. When the preamp is unpowered (as it is during your test), its input impedance is completely different, which detunes the entire resonant circuit.
-
-In short, the coil is not a simple passive component. Its resonant behavior is actively controlled by the MRI scanner, and without those control signals and power, it will not exhibit its operational resonance.

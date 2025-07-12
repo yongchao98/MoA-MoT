@@ -1,7 +1,0 @@
-The conditions for the existence and uniqueness of an FGH-tripled fixed point are:
-1.  **Completeness of Spaces:** The sets X, Y, and Z are non-empty complete metric spaces.
-2.  **Lipschitz-type Conditions:** There exist non-negative constants (`α1,α2,α3`, `β1,β2`, `γ1,γ2,γ3`) such that for all `x1,x2 ∈ X`, `y1,y2 ∈ Y`, `z1,z2 ∈ Z`:
-    *   `d_X(F(x1,y1,z1), F(x2,y2,z2)) ≤ α1*d_X(x1,x2) + α2*d_Y(y1,y2) + α3*d_Z(z1,z2)`
-    *   `d_Y(G(y1,x1,y1), G(y2,x2,y2)) ≤ β1*d_Y(y1,y2) + β2*d_X(x1,x2)`
-    *   `d_Z(H(z1,y1,x1), H(z2,y2,x2)) ≤ γ1*d_Z(z1,z2) + γ2*d_Y(y1,y2) + γ3*d_X(x1,x2)`
-3.  **Contraction Criterion:** The sum of the coefficients, grouped by the variable whose distance they multiply, is less than 1. That is: `max { (α1 + β2 + γ3), (α2 + β1 + γ2), (α3 + γ1) } < 1`.

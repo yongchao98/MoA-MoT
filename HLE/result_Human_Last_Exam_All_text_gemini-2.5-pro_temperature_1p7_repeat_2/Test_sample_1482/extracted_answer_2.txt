@@ -1,5 +1,0 @@
-In the context of an Interval Type-3 Membership Function (IT3 MF), `Ã`, which is bounded by four Gaussian membership functions `g_1(x) = underline{μ}_{underline{Ã}}(x)`, `g_2(x) = overline{μ}_{underline{Ã}}(x)`, `g_3(x) = underline{μ}_{overline{Ã}}(x)`, and `g_4(x) = overline{μ}_{overline{Ã}}(x)`, the mathematical formulation that characterizes the vertical cross-section at a fixed primary input `x` is given by the inequality that defines its Footprint of Uncertainty (FOU). The FOU consists of all points `(u, w)`, where `u` is the primary membership value and `w` is the secondary membership value (`w ∈ [0, 1]`), that satisfy:
-
-`(1-w) ⋅ g_1(x) + w ⋅ g_3(x)   ≤   u   ≤   (1-w) ⋅ g_2(x) + w ⋅ g_4(x)`
-
-This formulation defines the uncertainty bounds for the primary membership `u` for every possible level of secondary membership `w`.

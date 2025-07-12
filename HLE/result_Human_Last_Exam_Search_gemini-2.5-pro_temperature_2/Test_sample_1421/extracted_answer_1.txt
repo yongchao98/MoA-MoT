@@ -1,5 +1,0 @@
-The formula for the fermionic partition function Z in the imaginary time representation using Feynman's path integral formalism is:
-
-`Z = ∫ D[ψ̅] D[ψ]  e^(-S_E[ψ̅, ψ])`
-
-where the integral is a functional integral over anticommuting Grassmann fields `ψ` and `ψ̅`. The fields must satisfy the anti-periodic boundary condition `ψ(x, τ) = -ψ(x, τ + β)`, where `β = 1/(k_B * T)` is the inverse temperature. The term `S_E` is the Euclidean action of the fermionic system, given by `S_E = ∫₀^β dτ ∫ dᵈx L_E`, with `L_E` being the Euclidean Lagrangian density.

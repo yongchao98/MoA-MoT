@@ -1,8 +1,0 @@
-The appropriate set `M` to define is the space of non-positive continuous functions on the interval `[0, 1]`, equipped with the supremum norm.
-
-Formally, the set `M` is defined as:
-**M = {u ∈ C() | u(x) ≤ 0 for all x ∈}**
-
-This set is a closed subset of the Banach space `C([0, 1])` (the space of all continuous functions on `[0, 1]`) and is therefore a complete metric space itself, satisfying the requirement of the theorem.
-
-On this set `M`, the operator `T` can be shown to be a contraction mapping with a contraction constant `k = 1/8`, thus guaranteeing the existence and uniqueness of a fixed point, which is the solution to the boundary value problem.

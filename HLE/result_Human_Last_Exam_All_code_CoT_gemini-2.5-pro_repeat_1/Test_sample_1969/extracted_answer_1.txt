@@ -1,6 +1,0 @@
-c_{k} = k^2 S_2 - 2k^3 S_1 + 2k^2 S_1^2 + 4k E[A^3]
-where:
-- $S_1 = \sum_{i=1}^n i = \frac{n(n+1)}{2}$
-- $S_2 = \sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$
-- $A = \sum_{j \in \text{Pred}(k)} j$ is the sum of indices of players in a random predecessor set of $p_k$.
-- $E[A^3]$ is the expected value of $A^3$.

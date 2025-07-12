@@ -1,9 +1,0 @@
-The density profile \(\rho(z)\) of the gas mixture as a function of height \(z\) (where \(z=0\) is the bottom of the container) is given by:
-\(\rho(z) = \rho(0) \exp(-\kappa z)\)
-with the following parameters:
-\(\rho(0) = 0.020267 \, \text{kg/m}^3\)
-\(\kappa = 7.814 \times 10^{-5} \, \text{m}^{-1}\)
-
-So, the explicit function is:
-\(\rho(z) = 0.020267 \exp(-7.814 \times 10^{-5} \cdot z)\)
-where \(\rho\) is in \(\text{kg/m}^3\) and \(z\) is in meters, valid for \(0 \le z \le 10 \, \text{m}\).

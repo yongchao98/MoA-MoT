@@ -1,9 +1,0 @@
-For `Ha > H0` and `|x| >> w`, the magnetic field components are given by:
-
-**z-component (perpendicular to the strips):**
-`Hz(x, z) ≈ Ha + 4 * H0 * sinh²(πw/D) * e^(-2π|x|/D) * cos(2πz/D)`
-
-**x-component (parallel to the strips' width):**
-`Hx(x, z) ≈ -sgn(x) * 4 * H0 * sinh²(πw/D) * e^(-2π|x|/D) * sin(2πz/D)`
-
-where `sgn(x)` is the sign function. These expressions show that far from the stack, the magnetic field approaches the applied field `Ha`, with a deviation that decays exponentially in the x-direction and has a periodic dependence in the z-direction reflecting the periodic structure of the stack.

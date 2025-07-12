@@ -1,1 +1,0 @@
-If $m = n+1$, the minimum diameter is 2. If $m \le n$, let $q = \lfloor \frac{n+1-m}{m} \rfloor$ and $r = (n+1-m) \pmod m$. The minimum diameter is: $2q+2$ if $r=0$; $2q+3$ if $r=1$; $2q+4$ if $r \ge 2$.

@@ -1,7 +1,0 @@
-a) The equation for the absorption cross-section, $\sigma_a(\omega)$, for a chain of N non-interacting molecules is given by:
-$\sigma_a(\omega) \propto N \omega |\vec{\mu}_{ge} \cdot \vec{\epsilon}|^2 \delta(\omega - \omega_0)$
-where $\omega_0$ is the transition frequency of a single molecule, $\vec{\mu}_{ge}$ is the single-molecule transition dipole moment, $\vec{\epsilon}$ is the laser field polarization, and the delta function enforces energy conservation. This represents a single absorption peak at $\omega_0$ with an intensity proportional to the number of molecules N.
-
-b) When nearest-neighbor interactions with coupling strength J are considered, the eigenstates become delocalized Frenkel excitons. The equation for the absorption cross-section, $\sigma_b(\omega)$, is then a sum over the exciton states $|\Psi_k\rangle$:
-$\sigma_b(\omega) \propto \omega |\vec{\mu}_{ge} \cdot \vec{\epsilon}|^2 \sum_{k=1}^{N} \left| \sum_{n=1}^{N} C_{kn}^* \right|^2 \delta(\omega - \omega_k)$
-where $C_{kn}$ are the wavefunction coefficients of the k-th exciton, and $\omega_k = \omega_0 + \frac{2J}{\hbar}\cos\left(\frac{k\pi}{N+1}\right)$ are the exciton transition frequencies for a fin

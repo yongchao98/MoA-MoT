@@ -1,7 +1,0 @@
-a) Neglecting interaction, the absorption cross-section $\sigma_a(\omega)$ is given by:
-$$ \sigma_a(\omega) = K \cdot N |\vec{\mu}_{eg}|^2 \cdot \omega_0 \cdot \exp\left[-\frac{(\omega - \omega_0)^2 \tau^2}{2}\right] $$
-where $\omega_0$ is the transition frequency of an isolated molecule, $\vec{\mu}_{eg}$ is its transition dipole moment, $N$ is the number of molecules, $\tau$ is the pulse duration parameter, and $K$ is a constant incorporating fundamental constants. The spectrum is a single Gaussian peak centered at $\omega_0$, with an intensity enhanced by a factor of $N$.
-
-b) Including near-neighbor interaction $J$, the absorption cross-section $\sigma_b(\omega)$ is given by:
-$$ \sigma_b(\omega) = K \cdot N |\vec{\mu}_{eg}|^2 \cdot \left(\omega_0 + \frac{2J}{\hbar}\right) \cdot \exp\left[-\frac{\left(\omega - \left(\omega_0 + \frac{2J}{\hbar}\right)\right)^2 \tau^2}{2}\right] $$
-The functional form remains a single Gaussian peak with an intensity proportional to $N$, but its center frequency is shifted from $\omega_0$ to $\omega_0 + 2J/\hbar$ due to the intermolecular coupling.

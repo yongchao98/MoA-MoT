@@ -1,1 +1,0 @@
-from re import*;print(@r'\d+', input())})or ["NO"])

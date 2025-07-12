@@ -1,7 +1,0 @@
-The tightest lower bound on the minimax risk \( R^*_n \) that can be proven from the given information is based on Le Cam's method for composite hypothesis testing. The bound relates the minimax estimation risk to the error probability of a test between the null hypothesis \( P_0^n \) and the average alternative hypothesis \( P = \frac{1}{N} \sum_{j=1}^N P_j^n \).
-
-The bound is given by:
-\[ R^*_n \ge \frac{1}{2}\Phi\left(\frac{\delta}{2}\right) \left(1 - d_{TV}\left(P_0^n, \frac{1}{N}\sum_{j=1}^N P_j^n\right)\right) \]
-where \(d_{TV}(Q, R) = \frac{1}{2}\int |q(x) - r(x)|dx\) is the total variation distance between the probability distributions Q and R.
-
-This bound is considered tight as it makes direct use of the quantities provided in the problem statement and relies on the fundamental relationship between estimation and testing. Further refinements would involve expressing the total variation distance in terms of other divergence measures like Hellinger distance or Kullback-Leibler divergence, which may result in a less tight but more explicit bound.

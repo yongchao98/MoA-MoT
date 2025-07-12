@@ -1,7 +1,0 @@
-Let `(X, d_X)`, `(Y, d_Y)`, and `(Z, d_Z)` be complete metric spaces. A sufficient set of conditions for the functions `F`, `G`, and `H` to have a unique FGH-tripled fixed point is that there exist non-negative constants `α, β, γ, δ, ε, η, θ, ι` that satisfy two requirements:
-1. For any points `(x₁, y₁, z₁)` and `(x₂, y₂, z₂)` in the space `X × Y × Z`, the functions must obey the following contractive inequalities:
-   - `d_X(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) ≤ α·d_X(x₁, x₂) + β·d_Y(y₁, y₂) + γ·d_Z(z₁, z₂)`
-   - `d_Y(G(y₁, x₁, y₁), G(y₂, x₂, y₂)) ≤ δ·d_Y(y₁, y₂) + ε·d_X(x₁, x₂)`
-   - `d_Z(H(z₁, y₁, x₁), H(z₂, y₂, x₂)) ≤ η·d_Z(z₁, z₂) + θ·d_Y(y₁, y₂) + ι·d_X(x₁, x₂)`
-2. These constants must collectively ensure a contraction on the product space, which is guaranteed if they satisfy the condition:
-   `max( (α + ε + ι), (β + δ + θ), (γ + η) ) < 1`

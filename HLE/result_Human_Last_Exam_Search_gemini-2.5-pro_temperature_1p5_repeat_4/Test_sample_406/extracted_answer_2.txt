@@ -1,8 +1,0 @@
-An FGH-tripled fixed point for functions F:X*Y*Z→X, G:Y*X*Y→Y, and H:Z*Y*X→Z is an element (x, y, z) ∈ X × Y × Z such that x = F(x, y, z), y = G(y, x, y), and z = H(z, y, x). The conditions for the existence and uniqueness of such a point are established in the framework of partially ordered complete metric spaces and require the functions to satisfy a mixed monotone property and a contractive condition.
-
-The primary conditions are:
-1.  **Space**: (X, d_X, ≤), (Y, d_Y, ≤), and (Z, d_Z, ≤) are partially ordered complete metric spaces.
-2.  **Mixed Monotone Property**: The mappings F, G, and H exhibit a form of monotonicity with respect to their arguments.
-3.  **Contractive Condition**: The functions must jointly satisfy a contraction inequality that limits the distance between the functions' outputs based on the distance between their inputs.
-4.  **Initial Point**: There must exist an initial set of points (x₀, y₀, z₀) that satisfy a starting condition, such as x₀ ≤ F(x₀, y₀, z₀), y₀ ≥ G(y₀, x₀, y₀), and z₀ ≤ H(z₀, y₀, x₀).
-5.  **Continuity or Regularity**: Either the mappings F, G, and H are continuous, or the space possesses a property ensuring that the limit of a convergent monotone sequence maintains the order relation.

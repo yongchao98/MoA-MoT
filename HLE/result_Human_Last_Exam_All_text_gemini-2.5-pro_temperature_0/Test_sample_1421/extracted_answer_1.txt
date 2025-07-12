@@ -1,9 +1,0 @@
-The formula for the fermionic partition function Z in the imaginary time path integral formalism is:
-$Z = \int_{\psi(\beta) = -\psi(0)} \mathcal{D}[\psi^*, \psi] \exp\left(-S_E[\psi^*, \psi]\right)$
-where:
-*   $\int \mathcal{D}[\psi^*, \psi]$ is the functional integral over all paths of the Grassmann-valued fields $\psi(\tau)$ and $\psi^*(\tau)$.
-*   The subscript $\psi(\beta) = -\psi(0)$ indicates that the integral is restricted to paths satisfying anti-periodic boundary conditions in imaginary time $\tau \in [0, \beta]$.
-*   $S_E[\psi^*, \psi]$ is the Euclidean action for the fermions, given by:
-    $S_E[\psi^*, \psi] = \int_0^\beta d\tau \left[ \psi^*(\tau) \partial_\tau \psi(\tau) + H(\psi^*(\tau), \psi(\tau)) \right]$
-*   $\beta = 1/(k_B T)$ is the inverse temperature.
-*   $H(\psi^*, \psi)$ is the classical Hamiltonian function corresponding to the normal-ordered quantum Hamiltonian operator, with fermion operators replaced by Grassmann fields.

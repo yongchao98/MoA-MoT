@@ -1,9 +1,0 @@
-The best choice for the pair of step sizes $(\gamma_1, \gamma_2)$ is:
-$\gamma_1 = \frac{4}{2(\kappa+1) - \sqrt{2}(\kappa-1)}$
-$\gamma_2 = \frac{4}{2(\kappa+1) + \sqrt{2}(\kappa-1)}$
-
-These can also be expressed as:
-$\gamma_1 = \frac{4(\kappa+1) + 2\sqrt{2}(\kappa-1)}{\kappa^2+6\kappa+1}$
-$\gamma_2 = \frac{4(\kappa+1) - 2\sqrt{2}(\kappa-1)}{\kappa^2+6\kappa+1}$
-
-Here, $\kappa = M/\mu$ is the condition number of the function. The notation $S$ defined in the problem statement does not appear in the standard derivation of the optimal step sizes.

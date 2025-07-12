@@ -1,5 +1,0 @@
-The set M is a closed ball of radius R in the space of continuous functions on [0,1] that are zero at the boundaries, equipped with the supremum norm. Specifically,
-M = { u ∈ C([0, 1]) | u(0) = u(1) = 0 and max_{x∈[0,1]} |u(x)| ≤ R },
-where R is a positive constant chosen to satisfy the two conditions for the Banach Fixed-Point Theorem to hold:
-1.  exp(R) / 8 ≤ R  (to ensure the operator maps M to itself)
-2.  exp(R) / 8 < 1, which is equivalent to R < ln(8) (to ensure the operator is a contraction on M).

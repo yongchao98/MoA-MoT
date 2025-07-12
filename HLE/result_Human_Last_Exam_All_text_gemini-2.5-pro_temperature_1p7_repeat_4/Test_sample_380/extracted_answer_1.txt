@@ -1,9 +1,0 @@
-The local magnetic field is not considered radial to calculate the normalized magnetic helicity at the L1 point. You are correct that for Alfvén Ion cyclotron (AIC) waves, which propagate along the local magnetic field ($\mathbf{B}_0$), the helicity must be calculated using the magnetic field components perpendicular to $\mathbf{B}_0$.
-
-The justification for using Y and Z components (likely referring to the Tangential and Normal components in a Radial-Tangential-Normal coordinate system) is based on a procedural step that is often simplified in descriptions. The actual analysis involves:
-1.  Measuring the local average magnetic field vector, $\mathbf{B}_0$, which is generally not pointed in the radial direction due to the Parker Spiral structure of the Interplanetary Magnetic Field.
-2.  Mathematically creating a new, temporary coordinate system (a Field-Aligned Coordinate system) where one axis is parallel to the measured $\mathbf{B}_0$.
-3.  Rotating the measured magnetic field fluctuation data into this new coordinate system.
-4.  Calculating the normalized magnetic helicity using the two components of the rotated data that are, by construction, perpendicular to the local magnetic field $\mathbf{B}_0$.
-
-Therefore, the analysis does use components perpendicular to the local magnetic field, as required by physics. The use of "Y and Z components perpendicular to the radial direction" is likely a misleading shorthand referring to the components in this rotated, field-aligned frame, not the original, un-rotated measurement frame.

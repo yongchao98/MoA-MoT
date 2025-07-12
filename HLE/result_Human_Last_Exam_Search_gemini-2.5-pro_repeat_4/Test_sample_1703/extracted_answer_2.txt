@@ -1,2 +1,0 @@
-The area of the triangle T(t) as a function of time t is given by the periodic function \( A(t) = \frac{3\sqrt{3}}{4} (75 + (\min(t \pmod{10}, 10 - (t \pmod{10})))^2) \). In a period of 10 seconds, this can be expressed as:
-\( A(t) = \begin{cases} \frac{3\sqrt{3}}{4} (75 + t^2) & \text{for } 0 \le t \pmod{10} \le 5 \\ \frac{3\sqrt{3}}{4} (75 + (10-(t \pmod{10}))^2) & \text{for } 5 < t \pmod{10} < 10 \end{cases} \)

@@ -1,2 +1,0 @@
-Let $n = \lfloor t/10 \rfloor$. The area of the triangle $T(t)$ is given by the function:
-$A(t) = \begin{cases} \frac{3\sqrt{3}}{4} (75 + (t - 10n)^2) & \text{if } 10n \le t \le 10n+5 \\ \frac{3\sqrt{3}}{4} (75 + (10(n+1) - t)^2) & \text{if } 10n+5 < t < 10(n+1) \end{cases}$

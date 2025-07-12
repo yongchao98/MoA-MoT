@@ -1,8 +1,0 @@
-The conditions for the existence of a unique FGH-tripled fixed point `(x, y, z)` satisfying `F(x, y, z) = x`, `G(y, x, y) = y`, and `H(z, y, x) = z` are:
-1.  **Space Condition:** The sets `X`, `Y`, and `Z` must be non-empty complete metric spaces with metrics `dx`, `dy`, and `dz` respectively.
-2.  **Function Condition (Contraction):** The functions `F`, `G`, and `H` must satisfy Lipschitz-type inequalities with non-negative constants `α_F, β_F, γ_F, α_G, β_G, γ_G, α_H, β_H, γ_H` such that the combined operator `T(x,y,z) = (F(x,y,z), G(y,x,y), H(z,y,x))` is a contraction on the product space `X * Y * Z`. This is guaranteed if the constant `k` defined below is less than 1:
-`k = max { (α_F + β_G + γ_H), (β_F + α_G + γ_G + β_H), (γ_F + α_H) } < 1`,
-where the constants are derived from the following inequalities holding for all points in their respective domains:
-`dx(F(x₁,y₁,z₁), F(x₂,y₂,z₂)) ≤ α_F⋅dx(x₁,x₂) + β_F⋅dy(y₁,y₂) + γ_F⋅dz(z₁,z₂)`
-`dy(G(y₁,x₁,u₁), G(y₂,x₂,u₂)) ≤ α_G⋅dy(y₁,y₂) + β_G⋅dx(x₁,x₂) + γ_G⋅dy(u₁,u₂)`
-`dz(H(z₁,y₁,x₁), H(z₂,y₂,x₂)) ≤ α_H⋅dz(z₁,z₂) + β_H⋅dy(y₁,y₂) + γ_H⋅dx(x₁,x₂)`

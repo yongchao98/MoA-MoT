@@ -1,5 +1,0 @@
-The one-step transformation of the probability distribution is given by the equation $P_{t+1}(j) = \frac{1}{2}P_t(j-1) + \frac{1}{2}P_t(j+1)$, where indices are taken modulo N.
-The transition probability matrix $\hat{A}$ has elements $A_{ij} = \frac{1}{2}(\delta_{i,j+1} + \delta_{i,j-1})$ (with indices mod N), which is a symmetric circulant matrix with values of 1/2 on the super-diagonal and sub-diagonal (and in the top-right and bottom-left corners) and 0 elsewhere.
-By applying $\hat{A}$ to the proposed eigenvectors $v^{(n)}$ with components $v_j^{(n)} = e^{ij k_n}$, we find the eigenvalues to be $\lambda_n = \cos(k_n) = \cos(2\pi n / N)$ for $n=0, 1, \dots, N-1$.
-The largest eigenvalue is $\lambda_0=1$. The second-largest eigenvalue (by value) is $\lambda_1 = \cos(2\pi/N)$. The decay of the mode corresponding to this eigenvalue is proportional to $(\lambda_1)^t$. The rate of relaxation $R$ is defined by $(\lambda_1)^t = e^{-Rt}$, which gives $R = -\ln(\lambda_1)$.
-Therefore, the rate of relaxation is $-\ln(\cos(2\pi/N))$.

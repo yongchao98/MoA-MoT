@@ -1,7 +1,0 @@
-`W = 100p - (2p-1) \left( m - 100 \sum_{k=p+1}^{n} \frac{1}{2k-1} \right)`
-
-where `p` is the unique integer from `{1, 2, ..., n}` that satisfies the condition:
-
-`100 \sum_{k=p+1}^{n} \frac{1}{2k-1} < m \le 100 \sum_{k=p}^{n} \frac{1}{2k-1}`
-
-*(Note: An empty sum, which occurs in the inequalities when p=n, is defined as 0.)*

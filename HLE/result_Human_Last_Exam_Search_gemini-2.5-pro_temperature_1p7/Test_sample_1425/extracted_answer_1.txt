@@ -1,9 +1,0 @@
-For a system with Hamiltonian Ĥ = -μN̂ in the grand canonical ensemble with reservoir chemical potential μ', the partition function Z expressed as a path integral is:
-
-**Z = ∫ D[ψ*, ψ] exp( - ∫<sub>0</sub><sup>β</sup> dτ ∫ d<sup>d</sup>x ψ*(**x**, τ) [ ∂/∂τ - (μ + μ') ] ψ(**x**, τ) )**
-
-where:
-*   ψ(**x**, τ) are the quantum fields (complex for bosons, Grassmann for fermions).
-*   ∫ D[ψ*, ψ] is the path integral measure.
-*   β = 1/(k<sub>B</sub>T) is the inverse temperature.
-*   The fields obey periodic boundary conditions (ψ(**x**, 0) = ψ(**x**, β)) for bosons and anti-periodic boundary conditions (ψ(**x**, 0) = -ψ(**x**, β)) for fermions.

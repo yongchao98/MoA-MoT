@@ -1,7 +1,0 @@
-**Equilibrium Mean Energy (U):**
-The equilibrium mean energy of a photon gas is given by the sum over all energy states `ε` of the energy of the state multiplied by its average occupation number according to the Bose-Einstein distribution with zero chemical potential:
-`U = Σ_ε (ε / (exp(ε / (k_B * T)) - 1))`
-
-**Equilibrium Entropy (S):**
-The equilibrium entropy of a photon gas is given by the sum over all energy states `ε` of the statistical entropy for bosons, using the equilibrium occupation numbers:
-`S = k_B * Σ_ε [ (1 + <n_ε>) * ln(1 + <n_ε>) - <n_ε> * ln(<n_ε>) ]`, where `<n_ε> = 1 / (exp(ε / (k_B * T)) - 1)`

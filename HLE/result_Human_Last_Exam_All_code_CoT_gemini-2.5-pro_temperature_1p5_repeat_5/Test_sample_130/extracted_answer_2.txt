@@ -1,7 +1,0 @@
-As $t \rightarrow \infty$, the iterative application of the local median filter causes the edges in the image to evolve in a process that approximates motion by mean curvature. This has several key effects:
-
-1.  **Smoothing and Corner Rounding:** The edges become progressively smoother. As demonstrated in the simulation, the sharp 90-degree corners of the square are immediately rounded off and become more curved with each iteration.
-2.  **Shrinking and Disappearing:** Closed shapes, like the square in the example, will shrink over time. Convex parts of an edge (like the corners of the square) recede faster. Eventually, any closed shape will shrink to a single point and disappear, leaving behind a uniform image.
-3.  **Straightening:** An edge that is not a closed loop (e.g., one that extends to the image boundaries) will tend to become as straight as possible over time, as this minimizes its curvature.
-
-In essence, the system evolves to minimize the total length of the edges. All complex shapes and high-curvature features are unstable and are smoothed out or eliminated, leading to a geometrically simpler image. The final state is typically an image that is either entirely uniform (all black or all white) or, in specific cases, divided by straight lines.

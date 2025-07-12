@@ -1,1 +1,0 @@
-While there is no simple, universally applicable lower bound in terms of just $\alpha$ and $\pi$, the exact expected score $E[S]$ can be calculated for any given text using the formula $E[S] = \sum_{t=1}^n \sum_{i=1}^K p_{t,i} (\gamma + \psi(1 + 1/p_{t,i}))$, as implemented in the provided Python code. For many distributions, it has been observed that $E[S] \ge n$.

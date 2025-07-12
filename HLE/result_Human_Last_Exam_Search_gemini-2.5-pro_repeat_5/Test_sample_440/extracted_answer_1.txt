@@ -1,8 +1,0 @@
-The density profile of the gas mixture is given by the solution to the system of coupled differential equations derived from the principle of constant chemical potential for each gas species in the gravitational field. The profile is determined by the equation \(\rho(z) = M_A \nu_A(z) + M_B \nu_B(z)\), where \(\nu_A(z)\) and \(\nu_B(z)\) are the molar density profiles of Gas A and Gas B, respectively. These profiles are obtained by numerically solving the following system of first-order ordinary differential equations:
-
-\( \frac{d\nu_A}{dz} = f_A(\nu_A, \nu_B) \)
-\( \frac{d\nu_B}{dz} = f_B(\nu_A, \nu_B) \)
-
-This system is derived from the local equilibrium conditions \( \frac{d\mu_A}{dz} = 0 \) and \( \frac{d\mu_B}{dz} = 0 \), where \(\mu_i\) is the total chemical potential of species *i*, incorporating both the van der Waals interactions and the gravitational potential energy.
-
-The solution requires a numerical approach, such as the shooting method, to satisfy the integral boundary conditions imposed by the total number of particles of each gas, \(N_A = 2 \times 10^{23}\) and \(N_B = 1.5 \times 10^{23}\), within the specified cylindrical volume. The resulting profile \(\rho(z)\) will show a non-exponential decrease with height and a continuous variation in composition, with the heavier Gas B being more concentrated towards the bottom of the container (\(z=0\)) and the lighter Gas A being more concentrated towards the top (\(z=10\)).

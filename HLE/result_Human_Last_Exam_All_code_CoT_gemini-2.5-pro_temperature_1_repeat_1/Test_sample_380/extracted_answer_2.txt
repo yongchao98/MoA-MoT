@@ -1,9 +1,0 @@
-You are correct. For a rigorous analysis of Alfvén Ion Cyclotron waves, which propagate along the local magnetic field, the magnetic helicity must be calculated using the magnetic field components perpendicular to the **local magnetic field**, not perpendicular to the radial direction.
-
-The local magnetic field at the L1 point is **not** radial. Due to the Sun's rotation, the Interplanetary Magnetic Field (IMF) is drawn out into a Parker Spiral. At 1 AU (the location of L1), the average angle between the IMF and the radial direction is about 45 degrees.
-
-Therefore, simply using the Y and Z components from a standard coordinate system (like GSE, where X is the Sun-Earth line) is only a rough approximation that can be inaccurate. The correct procedure, as demonstrated in the provided Python code, is to:
-1.  Determine the average local magnetic field vector, **B₀**.
-2.  Define a new Field-Aligned Coordinate (FAC) system where one axis is parallel to **B₀** and the other two are perpendicular to it.
-3.  Transform the fluctuating magnetic field data into this FAC system.
-4.  Calculate the normalized magnetic helicity using the two transformed perpendicular components. This correctly captures the wave's polarization in the plane perpendicular to its direction of propagation.

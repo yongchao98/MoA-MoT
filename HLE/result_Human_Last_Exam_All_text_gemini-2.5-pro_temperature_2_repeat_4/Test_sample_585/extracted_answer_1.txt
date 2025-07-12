@@ -1,1 +1,0 @@
-The post-reset covariance Σ' is computed from the pre-reset covariance Σ and the pre-reset attitude deviation δ using the formula: Σ' = J_l(δ) * Σ * J_l(δ)^T, where J_l(δ) is the left Jacobian of the SO(3) group.

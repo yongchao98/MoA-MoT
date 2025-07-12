@@ -1,1 +1,0 @@
-The optimal feedback adjustment factor `b` is given by `b = \text{median}(-\sqrt{P_2}, -\alpha P_1, \sqrt{P_2})`, or equivalently, `b = \max(-\sqrt{P_2}, \min(\sqrt{P_2}, -\alpha P_1))`. This expression ensures that `b` is chosen to be `- \alpha P_1` when possible, while respecting the power constraint `b^2 \le P_2`.

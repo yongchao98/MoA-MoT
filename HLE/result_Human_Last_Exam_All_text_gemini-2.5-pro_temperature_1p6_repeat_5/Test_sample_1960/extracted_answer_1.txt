@@ -1,8 +1,0 @@
-**Function f:**
-Let `K` and `U` be two distinct, literal-free formulas (e.g., `K = (1 ⊸ ⊥)` and `U = ⊥`). For a natural number `w`, the function `f` is defined as:
-$f(w) = K \multimap (K \otimes U^{\otimes w})$
-where `A^{\otimes n}` denotes the formula `A` tensored with itself `n` times.
-
-**Formula C:**
-The formula `C`, which depends on the natural numbers `m` and `b`, is defined as:
-$C(W, m, b) = K^{\otimes m} \multimap (K \otimes U^{\otimes b})^{\otimes m}$

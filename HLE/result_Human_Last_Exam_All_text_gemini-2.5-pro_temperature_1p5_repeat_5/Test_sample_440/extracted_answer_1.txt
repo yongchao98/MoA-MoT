@@ -1,4 +1,0 @@
-The density profile \(\rho(z)\) is given by the expression \(\rho(z) = m_A n_A(z) + m_B n_B(z)\), where the local number densities \(n_A(z)\) and \(n_B(z)\) are defined implicitly by the following system of coupled self-consistent equations:
-\[ n_A(z) = n_A(0) \exp\left[ \frac{2(a'_{AA} n_A(z) + a'_{AB} n_B(z)) - m_A g z}{k_B T} \right] \]
-\[ n_B(z) = n_B(0) \exp\left[ \frac{2(a'_{AB} n_A(z) + a'_{BB} n_B(z)) - m_B g z}{k_B T} \right] \]
-In these equations, \(m_i = M_i/N_{Av}\) are the particle masses, \(a'_{ij} = a_{ij}/N_{Av}^2\) are the per-particle interaction parameters, \(k_B\) is the Boltzmann constant, \(T\) is the temperature, \(g\) is the gravitational acceleration, and \(n_i(0)\) are the number densities at height \(z=0\) determined by normalization with the total particle numbers.

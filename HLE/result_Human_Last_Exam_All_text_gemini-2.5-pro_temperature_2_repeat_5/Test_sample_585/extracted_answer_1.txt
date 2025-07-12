@@ -1,1 +1,0 @@
-Σ' = J_l(δ) * Σ * J_l(δ)^T, where δ is the reset vector, Σ is the pre-reset covariance, and J_l(δ) is the left Jacobian of SO(3) defined as J_l(δ) = I + ( (1 - cos(||δ||)) / ||δ||² ) * hat(δ) + ( (||δ|| - sin(||δ||)) / ||δ||³ ) * hat(δ)².

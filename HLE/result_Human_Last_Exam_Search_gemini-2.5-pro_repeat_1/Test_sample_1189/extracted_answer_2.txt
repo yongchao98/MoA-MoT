@@ -1,7 +1,0 @@
-The number of such sets, let's call it \(f_m\), can be determined by the following recurrence relation:
-For \(m \ge 2\):
-\[ f_m = \frac{1}{m} \left( \binom{2^n-1}{m-1} - f_{m-1} - (2^n+1-m)f_{m-2} \right) \]
-The initial values are:
-\[ f_0 = 1 \]
-\[ f_1 = 0 \]
-where \(f_k\) represents the number of sets of size \(k\) satisfying the given conditions.

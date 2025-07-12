@@ -1,7 +1,0 @@
-The density profile \(\rho(z)\) is given by \(\rho(z) = m_A n_A(z) + m_B n_B(z)\), where the number density profiles \(n_A(z)\) and \(n_B(z)\) are the solutions to the system of coupled equations:
-1. \( kT \ln(n_A(z)) + m_A g z + \Delta\mu_A^{\text{ex}}(n_A(z), n_B(z)) = K_A \)
-2. \( kT \ln(n_B(z)) + m_B g z + \Delta\mu_B^{\text{ex}}(n_A(z), n_B(z)) = K_B \)
-with the excess chemical potentials given by:
-\( \Delta\mu_A^{\text{ex}} = -kT \ln(1 - (n_A b'_{AA} + n_B b'_{BB})) + \frac{(n_A+n_B)kT b'_{AA}}{1 - (n_A b'_{AA} + n_B b'_{BB})} - 2(n_A a'_{AA} + n_B a'_{AB}) \)
-\( \Delta\mu_B^{\text{ex}} = -kT \ln(1 - (n_A b'_{AA} + n_B b'_{BB})) + \frac{(n_A+n_B)kT b'_{BB}}{1 - (n_A b'_{AA} + n_B b'_{BB})} - 2(n_A a'_{AB} + n_B a'_{BB}) \)
-The constants \(K_A\) and \(K_B\) are determined by the integral constraints \(N_A = A \int_0^H n_A(z) dz\) and \(N_B = A \int_0^H n_B(z) dz\), and all parameters (\(m_i, a'_{ij}, b'_{ii}\)) are calculated from the given molar values using Avogadro's number.

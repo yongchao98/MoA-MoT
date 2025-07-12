@@ -1,7 +1,0 @@
-The conditions for the existence and uniqueness of an FGH-tripled fixed point are:
-1.  The spaces `(X, d_X)`, `(Y, d_Y)`, and `(Z, d_Z)` are complete metric spaces.
-2.  The functions `F`, `G`, and `H` satisfy a set of contraction-type inequalities. That is, there exist non-negative constants (`a₁`, `a₂`, `a₃`, `b₁`, `b₂`, `b₃`, `c₁`, `c₃`) such that for all relevant inputs:
-    *   `d_X(F(x₁,y₁,z₁), F(x₂,y₂,z₂)) ≤ a₁d_X(x₁,x₂) + b₁d_Y(y₁,y₂) + c₁d_Z(z₁,z₂)`
-    *   `d_Y(G(y₁,x₁,y₁), G(y₂,x₂,y₂)) ≤ a₂d_X(x₁,x₂) + b₂d_Y(y₁,y₂)`
-    *   `d_Z(H(z₁,y₁,x₁), H(z₂,y₂,x₂)) ≤ a₃d_X(x₁,x₂) + b₃d_Y(y₁,y₂) + c₃d_Z(z₁,z₂)`
-3.  The maximum of the sums of the coefficients for each dimension is less than 1. That is, `max(a₁+a₂+a₃, b₁+b₂+b₃, c₁+c₃) < 1`.

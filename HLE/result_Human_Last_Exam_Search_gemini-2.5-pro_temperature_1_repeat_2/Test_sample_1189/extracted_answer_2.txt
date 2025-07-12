@@ -1,7 +1,0 @@
-Let \(f_m\) be the number of sets for a given \(n\). The number of sets is determined by the following recurrence relation:
-**Base Cases:**
-\(f_1 = 0\)
-\(f_2 = 0\)
-
-**Recurrence for \(m \ge 3\):**
-\(f_m = \frac{1}{m} \left( \binom{2^n-1}{m-1} - f_{m-1} - (2^n-m+1)f_{m-2} \right)\)

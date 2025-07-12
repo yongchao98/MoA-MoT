@@ -1,5 +1,0 @@
-The post-reset covariance Σ' is computed by propagating the pre-reset covariance Σ through the Jacobian of the reset operation. The exact expression is:
-Σ' = J_l(δ_hat) * Σ * J_l(δ_hat)^T
-where δ_hat is the attitude deviation estimate used for the reset, and J_l(δ_hat) is the left Jacobian of the special orthogonal group SO(3), given by the formula:
-J_l(δ_hat) = I - ( (1 - cos(θ)) / θ^2 ) * [δ_hat]x + ( (θ - sin(θ)) / θ^3 ) * [δ_hat]x^2
-with θ = ||δ_hat|| being the magnitude of the rotation vector, I being the 3x3 identity matrix, and [δ_hat]x being the skew-symmetric matrix of δ_hat.

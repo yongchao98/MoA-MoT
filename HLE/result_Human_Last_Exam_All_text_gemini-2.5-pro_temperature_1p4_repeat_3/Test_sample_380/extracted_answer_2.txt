@@ -1,9 +1,0 @@
-The local magnetic field at the L1 point is generally not considered radial. Due to the Sun's rotation, the Interplanetary Magnetic Field (IMF) forms a Parker Spiral, which makes an angle of approximately 45 degrees with the radial direction at Earth's orbit.
-
-The justification for using magnetic components perpendicular to the radial direction (e.g., Y and Z in a GSE-like system) instead of components perpendicular to the local magnetic field is a matter of simplification and convention, not physical accuracy for AIC waves. This approach is common in broader solar wind turbulence studies and relies on two main points:
-
-1.  **Taylor's "Frozen-In" Hypothesis:** This is a simplifying assumption that treats plasma structures as being passively carried by the radially flowing solar wind. Under this hypothesis, the apparent direction of wave propagation from the spacecraft's perspective is radial. While this is a reasonable approximation for some low-frequency turbulence, it is physically incorrect for AIC waves, which propagate along the magnetic field.
-
-2.  **Practical Convenience:** Calculating helicity using a fixed coordinate system (like GSE) avoids the complex step of transforming the data into a new field-aligned coordinate system for every time interval. This simplifies the analysis but introduces inaccuracies.
-
-In summary, your expectation is correct. For a precise characterization of AIC waves, components perpendicular to the local magnetic field must be used. Using components perpendicular to the radial direction is an approximation that yields a projected, and therefore less accurate, value for the magnetic helicity.

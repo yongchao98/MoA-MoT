@@ -1,7 +1,0 @@
-a) For negligible interaction, the absorption cross-section is the sum of contributions from individual molecular transitions. The equation is:
-**σₐ(ω_L) ∝ ω_L * Σ_{i≤F, f>F} |⟨f|d|i⟩|² * exp(-((E_f - E_i)/ħ - ω_L)²τ²/2)**
-where *i* and *f* are single-molecule orbitals, E_i and E_f are their energies, **d** is the single-molecule dipole operator, and the sum is over all occupied initial states and unoccupied final states.
-
-b) When near-neighbor interactions are considered, delocalized exciton states are formed. Due to selection rules, absorption primarily occurs to the k=0 exciton state for each transition, leading to an energy shift and an enhanced intensity. The equation is:
-**σₑ(ω_L) ∝ ω_L * Σ_{i≤F, f>F} N|⟨f|d|i⟩|² * exp(-((E_fi + Δ_fi + 2J_fi)/ħ - ω_L)²τ²/2)**
-where *N* is the number of molecules, E_fi = E_f - E_i is the single-molecule transition energy, J_fi is the nearest-neighbor coupling energy for that transition, and Δ_fi is an environmental shift.

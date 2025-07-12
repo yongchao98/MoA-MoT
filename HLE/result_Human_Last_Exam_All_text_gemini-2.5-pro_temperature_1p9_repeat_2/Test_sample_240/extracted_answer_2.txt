@@ -1,9 +1,0 @@
-The absence of a visible resonance dip on a functional MRI coil is typically due to the coil's advanced design, which differs significantly from a simple passive LC circuit. The most common reasons are:
-
-1.  **Active Circuitry:** The coil contains preamplifiers that are integral to its tuning and resonance. These components are unpowered during a bench test. Without DC power, the preamplifier's impedance is incorrect, which either shifts the resonance to an unknown frequency or critically dampens ("spoils") the resonance, making the dip on the VNA too broad and shallow to detect.
-
-2.  **Advanced Decoupling:** In phased array coils, sophisticated decoupling networks (often involving the preamplifiers) are used to isolate coil elements from each other. This circuitry is designed to present a high impedance to external magnetic fields, which prevents your VNA probe from effectively coupling to the coil element and absorbing energy.
-
-3.  **RF Shielding:** The coil may incorporate an RF shield to block external noise. By reciprocity, this shield also blocks the magnetic field from your probe, preventing it from reaching the resonant element inside.
-
-In essence, the coil is only "functional" when connected to the MRI scanner, which provides the necessary power and control signals. Your test method, while perfect for simple coils, cannot properly assess these complex, active RF systems.

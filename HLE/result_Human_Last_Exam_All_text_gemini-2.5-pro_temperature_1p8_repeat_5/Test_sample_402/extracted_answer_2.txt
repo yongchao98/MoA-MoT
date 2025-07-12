@@ -1,7 +1,0 @@
-The proposed filtering strategy is as follows:
-1.  **Generate a Contaminant Gene List:** Create a list of genes that are highly and specifically expressed in the cancer cell line used for the co-culture but are known to have low or no expression in T-cells. This list should be stored in a simple text file.
-2.  **Perform Paired Differential Expression (DE) Analysis:** Run a standard DE analysis (e.g., using DESeq2) comparing your CAR-T-IL15 samples against your CAR-T samples, ensuring you model the four donors as a paired variable to control for inter-individual variability (e.g., `design = ~donor + condition`). This will produce a results table with gene names, log2 fold change (LFC), and p-values.
-3.  **Apply a Command-Line Filter:** Use a command-line tool like `awk` to process the DE results table. Implement a filter with two conditions that must both be met for a gene to be removed:
-    *   The gene's identifier must be present in your pre-defined contaminant gene list.
-    *   The gene's log2 fold change value must be below a strong negative threshold, such as -2, indicating it was highly abundant in the control (CAR-T) group and nearly absent in the treatment (CAR-T-IL15) group.
-4.  **Analyze the Cleaned Dataset:** The output of this filtering step is a new, cleaned DE results table. This table can then be used for all downstream visualization and pathway analysis to reveal the true biological differences driven by IL-15 expression, free from the confounding effects of the sample contamination.

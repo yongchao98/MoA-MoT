@@ -1,8 +1,0 @@
-The mathematical formulation for the lower bound of a vertical cross-section `Ã(x)` of an Interval Type-3 Membership Function, utilizing a Gaussian-based paradigm, is given by:
-`underline{f}_{x}(u) = exp[ -0.5 * ( (u - c_u(x)) / overline{σ}_u(x) )^2 ]`
-where:
-- `x` is the fixed primary input variable.
-- `u` is the secondary input variable (primary membership grade).
-- `underline{f}_{x}(u)` is the lower bound of the secondary membership function for the vertical slice at `x`.
-- `c_u(x)` is the center (mean) of the Gaussian secondary membership function at `x`.
-- `overline{σ}_u(x)` is the upper bound of the uncertain standard deviation for the secondary membership function at `x`, which defines the maximum "width" of the Gaussian shape and thus produces its lower bound.

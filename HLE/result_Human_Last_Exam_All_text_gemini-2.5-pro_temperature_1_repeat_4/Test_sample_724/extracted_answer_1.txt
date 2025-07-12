@@ -1,1 +1,0 @@
-Let `k` be the largest integer `i \in \{0, 1, ..., n-1\}` such that `100 \sum_{j=1}^{i} \frac{1}{2(n-j)+1} \le m` (where the sum is 0 if `i=0`). The maximum amount of water left is given by: `(n-k) \cdot 100 - (2(n-k)-1) \left( m - 100 \sum_{i=1}^{k} \frac{1}{2(n-i)+1} \right)`

@@ -1,1 +1,0 @@
-Let `D_j = 100 \sum_{i=1}^{j} \frac{1}{2n-2i+1}` for `j \in \{1, ..., n-1\}` and `D_0 = 0`. Let `k` be an integer such that if `m > D_{n-1}`, `k=n`, otherwise `k` is the integer for which `D_{k-1} < m \le D_k`. The maximum amount of water left is `(n-k+1) \times 100 - (2n-2k+1) \times (m - 100 \sum_{i=1}^{k-1} \frac{1}{2n-2i+1})`

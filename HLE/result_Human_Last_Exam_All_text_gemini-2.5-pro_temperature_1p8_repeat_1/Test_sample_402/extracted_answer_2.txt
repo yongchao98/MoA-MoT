@@ -1,7 +1,0 @@
-The proposed filtering strategy is a three-step command-line process that requires two input files: your differential expression (DGE) results table (e.g., `dge_results.tsv`) and a pre-defined list of cancer-specific genes (e.g., `cancer_specific_genes.txt`). The DGE analysis must be run with the CAR-only group as the reference.
-
-1.  **Identify Potential Contaminants:** Filter the DGE results table to select for genes with a very strong negative log2 fold change (LFC), as these genes are significantly more abundant in the contaminated CAR-only samples. A stringent threshold of LFC < -4 (representing a 16-fold reduction in the CAR-IL15 group) is recommended. Create a list of the gene IDs that meet this criterion.
-
-2.  **Confirm Contaminant Identity:** Find the intersection between the list of potential contaminants generated in Step 1 and your pre-defined list of `cancer_specific_genes.txt`. The genes that appear in both lists are considered high-confidence contaminants.
-
-3.  **Remove Confirmed Contaminants:** Use the final high-confidence contaminant list from Step 2 to remove these genes from your original DGE results table. The resulting filtered table is now cleaned of the major confounding signals from cancer cell contamination and is ready for downstream biological interpretation.

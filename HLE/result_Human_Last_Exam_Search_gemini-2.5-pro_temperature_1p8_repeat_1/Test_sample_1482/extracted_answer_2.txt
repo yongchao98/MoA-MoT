@@ -1,9 +1,0 @@
-In Interval Type-3 Fuzzy Logic systems utilizing Gaussian paradigms, the vertical cross-section for a fixed primary input `x` is an Interval Type-2 Fuzzy Set characterized by the interval `[µ_LMF(u; x), μ_UMF(u; x)]`. The mathematical formulations are:
-
-**1. Upper Membership Function (UMF):**
-`μ_UMF(u; x) = exp( -1/2 * ( (u - c(x)) / σ_U )^2 )`
-
-**2. Lower Membership Function (LMF):**
-`μ_LMF(u; x) = λ ⋅ exp( -1/2 * ( (u - c(x)) / σ_L )^2 )`
-
-Here, `u` is the secondary input variable, `c(x)` is the center of the Gaussian functions at `x`, `σ_U` and `σ_L` are the standard deviations for the upper and lower bounds respectively (where often `σ_L ≥ σ_U`), and `λ` is a scaling parameter (`0 ≤ λ ≤ 1`).

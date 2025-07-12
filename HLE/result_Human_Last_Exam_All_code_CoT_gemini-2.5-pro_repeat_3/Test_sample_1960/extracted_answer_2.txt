@@ -1,9 +1,0 @@
-Let `A` and `B` be two distinct formulas constructed without literals, for example, `A = (1 ⊸ ⊥)` and `B = A ⊸ A`. Let `⊗` denote the multiplicative tensor and `⊸` denote linear implication.
-
-The function `f` maps a natural number `w` to the linear logic formula:
-`f(w) = A ⊸ (A ⊸ ... (A ⊸ B)...)` where `A` appears `w` times. We can denote this as `A ⊸_w B`.
-
-The formula `C` for a given problem instance `EP(W, m, b)` is:
-`C(W, m, b) = ((\bigotimes_{i=1}^m (\bigotimes_{j=1}^b A)) \otimes ((\bigotimes_{k=1}^{|W|} B) ⊸ ⊥)) ⊸ ⊥`
-Using `A^k` as shorthand for `\bigotimes_{i=1}^k A`, this can be written more compactly as:
-`C(W, m, b) = ((A^b)^m \otimes (B^{|W|} \multimap \bot)) \multimap \bot`

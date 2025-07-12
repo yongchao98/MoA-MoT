@@ -1,9 +1,0 @@
-The absorption cross-section $\sigma(\omega_L)$ is derived using first-order time-dependent perturbation theory for a Gaussian pulse with central frequency $\omega_L$, duration parameter $\tau$, and polarization $\hat{e}$. The chain consists of $N$ molecules, each with an isolated transition frequency $\omega_0$ and transition dipole moment $\vec{\mu}_{eg}$. $J$ is the nearest-neighbor coupling energy.
-
-a) For a chain of non-interacting molecules, the cross-section is the sum of the individual molecular cross-sections:
-$$ \sigma_a(\omega_L) = N \left[ \frac{\sqrt{\pi}\tau \omega_L}{\hbar c\epsilon_0} |\vec{\mu}_{eg} \cdot \hat{e}|^2 e^{-(\omega_L - \omega_0)^2 \tau^2} \right] $$
-The spectrum shows a single Gaussian absorption peak centered at the molecular frequency $\omega_0$.
-
-b) When nearest-neighbor interactions are included, the collective excitations are Frenkel excitons. Optical selection rules permit transitions only to the $k=0$ exciton state. The equation becomes:
-$$ \sigma_b(\omega_L) = N \left[ \frac{\sqrt{\pi}\tau \omega_L}{\hbar c\epsilon_0} |\vec{\mu}_{eg} \cdot \hat{e}|^2 e^{-(\omega_L - (\omega_0 + 2J/\hbar))^2 \tau^2} \right] $$
-The interaction shifts the absorption peak to $\omega_0 + 2J/\hbar$. The absorption strength is concentrated in this single peak, and its total magnitude is enhanced by a factor of $N$ due to coherent coupling.

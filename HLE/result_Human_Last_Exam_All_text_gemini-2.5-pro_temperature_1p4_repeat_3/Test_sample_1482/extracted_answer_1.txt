@@ -1,4 +1,0 @@
-The mathematical formulation for the vertical cross-section at a fixed input `x` is an Interval Type-2 Membership Function defined over the primary membership `u`. Its lower and upper bounds, representing the secondary membership, are given by the functions `μ_{sec, L}(x, u)` and `μ_{sec, U}(x, u)` respectively:
-**Lower Bound:** `μ_{sec, L}(x, u) = ( (|x-c| / sqrt(-2 * ln(u))) - σ_{LL} ) / ( σ_{LU} - σ_{LL} )`
-**Upper Bound:** `μ_{sec, U}(x, u) = ( (|x-c| / sqrt(-2 * ln(u))) - σ_{UL} ) / ( σ_{UU} - σ_{UL} )`
-Here, `c` is the center of the Gaussian MFs, and `σ_UU, σ_UL, σ_LU, σ_LL` are the standard deviations of the four bounding Type-1 MFs.

@@ -1,9 +1,0 @@
-**For case a) (non-interacting molecules), the absorption cross-section per molecule is given by:**
-$$ \sigma_a(\omega) = \frac{\pi \omega_e |\mu_e|^2}{3\hbar c \epsilon_0} g_T(\omega - \omega_e) $$
-where $\omega_e$ is the transition frequency of an individual molecule, $\mu_e$ is its transition dipole moment, and $g_T(\Delta\omega)$ is a Gaussian lineshape function whose width is determined by the pulse duration $T$. The absorption is centered at the single-molecule frequency $\omega_e$.
-
-**For case b) (interacting near-neighbor molecules), the absorption cross-section per molecule is given by:**
-$$ \sigma_b(\omega) = \frac{\pi \omega_{ex} |\mu_e|^2}{3\hbar c \epsilon_0} g_T(\omega - \omega_{ex}) $$
-The equation is structurally identical, but the transition frequency $\omega_{ex}$ is now the energy of the optically active ($k=0$) exciton state, shifted from the monomer frequency by the interaction:
-$$ \omega_{ex} = \omega_e + \frac{2J}{\hbar} $$
-Here, $J$ is the near-neighbor coupling energy. All the absorption strength is concentrated at this new frequency, demonstrating a collective excitation of the molecular chain. The lineshape $g_T(\Delta\omega)$ is again a Gaussian function centered at the new exciton frequency $\omega_{ex}$.

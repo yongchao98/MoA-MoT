@@ -1,8 +1,0 @@
-
-**Function f:**
-Let `P_k = \bot^{\otimes k}` for `k=1, \dots, m` and `V_s = \bot^{\otimes (m+1+s)}` for `s=0, \dots, b`.
-The function `f` is defined as:
-`f(w) = \left( \bigotimes_{k=1}^{m} \left( \left( \bigotimes_{s=0}^{b-w} \left( (P_k \otimes V_s) \multimap (P_k \otimes V_{s+w}) \right) \right) \multimap \bot \right) \right) \multimap \bot`
-
-**Formula C:**
-`C(W, m, b) = \left( \bigotimes_{k=1}^{m} (P_k \otimes V_0) \right) \multimap \left( \bigotimes_{k=1}^{m} (P_k \otimes V_b) \right)`

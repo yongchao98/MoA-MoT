@@ -1,6 +1,0 @@
-The post-reset covariance `Σ'` is computed from the pre-reset covariance `Σ` using the transformation `Σ' = G Σ G^T`, where `G` is a block-diagonal Jacobian matrix `G = blkdiag(J_l(-δ̂), I)`. `δ̂` is the estimated attitude deviation vector being reset, and `J_l(φ)` is the left Jacobian of SO(3). This results in the following updates to the partitions of the covariance matrix:
-`Σ'_δδ = J_l(-δ̂) * Σ_δδ * J_l(-δ̂)^T`
-`Σ'_δz = J_l(-δ̂) * Σ_δz`
-`Σ'_zδ = Σ_zδ * J_l(-δ̂)^T`
-`Σ'_zz = Σ_zz`
-where `Σ_δδ` is the covariance of the attitude deviation, `Σ_zz` is the covariance of the other states, and `Σ_δz`, `Σ_zδ` are the cross-correlation terms.

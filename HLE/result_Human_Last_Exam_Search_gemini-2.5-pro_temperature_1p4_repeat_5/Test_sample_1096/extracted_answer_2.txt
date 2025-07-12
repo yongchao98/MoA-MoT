@@ -1,8 +1,0 @@
-**Optimal Step-Size Pair $(\gamma_1, \gamma_2)$:**
-
-The best choice for the pair of step sizes $(\gamma_1, \gamma_2)$, which minimizes the ratio $\frac{||x_2-x_*||^2}{||x_0-x*||^2}$ uniformly over the specified class of functions with condition number $M \ge 3$, is given by:
-$$ \gamma_1 = \frac{2(M+1 - \sqrt{(M-1)(M-3)})}{S^2+1} $$
-$$ \gamma_2 = \frac{2(M+1 + \sqrt{(M-1)(M-3)})}{S^2+1} $$
-where $M$ is the condition number ($\kappa$) and $S$ is defined as $\sqrt{M^2+(M-1)^2}$. The order of $\gamma_1$ and $\gamma_2$ is interchangeable.
-
-For cases where $1 < M < 3$, using two distinct step sizes provides no advantage over the standard single-step gradient descent. In this regime, the optimal choice is to have equal step sizes, $\gamma_1 = \gamma_2 = \frac{2}{M+1}$, which corresponds to the classical optimal step size for gradient descent.

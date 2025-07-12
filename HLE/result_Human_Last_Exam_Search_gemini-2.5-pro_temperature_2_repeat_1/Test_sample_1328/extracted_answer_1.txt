@@ -1,8 +1,0 @@
-The optimal feedback adjustment factor \(b\) is the value of \(-\alpha P_1\) clipped to the range \([-\sqrt{P_2}, \sqrt{P_2}]\). This can be expressed as:
-\[
-b_{opt} = \max(-\sqrt{P_2}, \min(\sqrt{P_2}, -\alpha P_1))
-\]
-In a piecewise form, the solution is:
-\[
-b_{opt} = \begin{cases} \sqrt{P_2}, & \text{if } -\alpha P_1 > \sqrt{P_2} \\ -\alpha P_1, & \text{if } |-\alpha P_1| \le \sqrt{P_2} \\ -\sqrt{P_2}, & \text{if } -\alpha P_1 < -\sqrt{P_2} \end{cases}
-\]

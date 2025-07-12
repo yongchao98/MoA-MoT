@@ -1,9 +1,0 @@
-The local magnetic field at the L1 point is generally not radial due to the Parker Spiral, which typically forms an angle of about 45 degrees with the radial direction.
-
-The reason for using magnetic field components perpendicular to the radial direction (e.g., in a GSE or RTN coordinate system) to calculate normalized magnetic helicity is a methodological choice based on simplification and the physical context of the solar wind. While the most accurate way to measure the helicity of an individual Alfvén Ion Cyclotron (AIC) wave is in a coordinate system aligned with the local magnetic field (which is the wave's propagation direction), using a fixed radial-based frame is common for large statistical studies.
-
-The justification is two-fold:
-1.  **Dominant Flow Direction**: The solar wind flows almost perfectly radially outward from the Sun. For statistical analysis and the application of Taylor's "frozen-in flow" hypothesis, a coordinate system aligned with this dominant flow (the radial direction) is a natural and convenient choice.
-2.  **Observed vs. Intrinsic Helicity**: This method measures the *observed* helicity, which is the projection of the wave's intrinsic helicity onto the plane perpendicular to the radial direction. This value is systematically lower than the intrinsic helicity by a factor of $\cos(\theta_{Br})$, where $\theta_{Br}$ is the angle between the local magnetic field and the radial direction.
-
-In short, using components perpendicular to the radial direction is an accepted approximation for large-scale analysis, trading the perfect accuracy of a field-aligned system for computational simplicity and alignment with the solar wind flow. It is not based on an assumption that the local magnetic field is radial.

@@ -1,8 +1,0 @@
-The most probable reason a functional MRI receive coil shows no resonance when probed is that modern coils are **active electronic systems**, not simple passive circuits. The coil's resonance is critically dependent on its integrated **low-noise preamplifier (LNA)** being powered on. When tested on a bench without power from the scanner, the LNA is off and presents an incorrect input impedance to the coil element. This incorrect impedance either shifts the resonant frequency dramatically or, more commonly, spoils the circuit's Quality Factor (Q) to the point where the resonance becomes undetectable.
-
-Other significant possibilities include:
-1.  **Electromagnetic Shielding:** The coil element is housed within an enclosure (e.g., a birdcage coil or a shielded housing) that blocks the magnetic field from your external probe.
-2.  **Low-Impedance Design:** The coil may be matched to a very low impedance for noise optimization, causing an "over-coupled" condition with your probe that washes out the sharp resonance signature.
-3.  **Active Decoupling:** The coil's decoupling circuit might default to a non-resonant or high-loss state when unpowered.
-
-In essence, you are testing the coil in a non-operational state where it is not designed to be resonant.

@@ -1,8 +1,0 @@
-The mathematical formulation for the upper bound (`μ̄_x(u)`) of a vertical cross-section of a Gaussian-based Interval Type-3 Membership Function at a fixed primary input `x` is given by:
-`μ̄_x(u) = exp( - (u - C(x))² / (2 * σ_u(x)²) )`
-where:
-1.  `u` is the secondary variable, defined over an interval `[μ̲_primary(x), μ̄_primary(x)]`, where `μ̄_primary(x)` and `μ̲_primary(x)` are the primary Gaussian bounds of the IT3 MF.
-2.  `C(x)` is the mean of the Gaussian for the vertical slice, defined as the center of the interval for `u`:
-    `C(x) = (μ̄_primary(x) + μ̲_primary(x)) / 2`
-3.  `σ_u(x)` is the standard deviation for the vertical slice's Gaussian, which is set to be proportional to the width of the uncertainty interval for `u`:
-    `σ_u(x) ∝ (μ̄_primary(x) - μ̲_primary(x))`

@@ -1,5 +1,0 @@
-A two-stage filtering strategy should be implemented post-differential expression analysis.
-
-**Stage 1: Initial Candidate Identification.** From the differential expression results comparing CAR-IL15 vs. CAR-only T cells, identify all genes that meet stringent statistical and effect-size criteria for apparent downregulation, which is indicative of contamination in the control group. A recommended starting point is a **log2 fold change < -2** and an **adjusted p-value < 0.05**.
-
-**Stage 2: Refinement with an External Gene List.** Create a definitive list of contaminant genes by finding the **intersection** between the candidate genes identified in Stage 1 and an a priori list of genes known to be highly expressed in the target cancer cell line but not in T cells. This refined list should then be used to filter the complete differential expression results table, removing the contaminant genes before any further downstream analysis like pathway enrichment or visualization.

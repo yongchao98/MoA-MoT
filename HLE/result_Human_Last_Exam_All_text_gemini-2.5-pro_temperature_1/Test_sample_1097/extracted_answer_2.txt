@@ -1,5 +1,0 @@
-The set M is a subset of the space of continuous functions on the interval [0,1], defined as:
-$M = \{ u \in C[0,1] \mid u(0)=u(1)=0, \text{ and } \max_{x \in [0,1]} |u(x)| \le R \}$
-where $R$ is a positive constant chosen to satisfy the two conditions:
-1. $\frac{e^R}{8} \le R$ (to ensure the operator maps M to itself)
-2. $R < \ln(8)$ (to ensure the operator is a contraction on M)

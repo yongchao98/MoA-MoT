@@ -1,8 +1,0 @@
-No, the local magnetic field at the L1 point is generally not considered radial; it follows the Parker Spiral, which is typically angled at about 45 degrees to the radial direction. The reason for using magnetic field components perpendicular to the radial direction (e.g., Y and Z in a GSE or RTN coordinate system) to calculate helicity is not based on the magnetic field's direction, but on the **solar wind's velocity direction**.
-
-The justification is as follows:
-1.  **Taylor's Hypothesis:** To analyze the spatial structure of waves from a single point time-series measurement, scientists use Taylor's "frozen-in" hypothesis, which assumes the wave structure is swept past the spacecraft by the solar wind.
-2.  **Radial Flow:** The solar wind velocity is almost perfectly radial from the Sun.
-3.  **Coordinate System Choice:** It is therefore standard practice to align one axis of the analysis coordinate system with the radial flow direction. The helicity is then calculated in the plane perpendicular to this axis.
-
-This method is a practical convenience, not a statement of ideal physics. It is a good approximation only when the magnetic field itself happens to be aligned with the radial flow. The most accurate method for a single wave event is to use Minimum Variance Analysis (MVA) to find the wave's own propagation direction and calculate helicity in the plane perpendicular to that direction.

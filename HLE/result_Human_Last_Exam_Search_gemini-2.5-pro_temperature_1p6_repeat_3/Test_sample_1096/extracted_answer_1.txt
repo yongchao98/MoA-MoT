@@ -1,7 +1,0 @@
-The best choice for the pair of step sizes $(\gamma_1, \gamma_2)$ that minimizes the uniform convergence rate $\frac{||x_2-x_*||^2}{||x_0-x*||^2}$ is given by the two roots of the quadratic equation $z^2 - \frac{8(\kappa+1)}{\kappa^2+6\kappa+1}z + \frac{8}{\kappa^2+6\kappa+1} = 0$.
-
-The explicit values for the step sizes are:
-$\gamma_1 = \frac{4(\kappa+1) - 2\sqrt{2}(\kappa-1)}{\kappa^2+6\kappa+1}$
-$\gamma_2 = \frac{4(\kappa+1) + 2\sqrt{2}(\kappa-1)}{\kappa^2+6\kappa+1}$
-
-The order of these two step sizes does not affect the overall two-step convergence rate.

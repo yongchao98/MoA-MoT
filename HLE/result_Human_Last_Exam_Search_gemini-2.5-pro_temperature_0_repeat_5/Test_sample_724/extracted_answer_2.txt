@@ -1,5 +1,0 @@
-Let `Lₖ = 100 * Σᵢ₌₁ᵏ (1 / (2n - 2i + 1))` for `k ≥ 1`, and `L₀ = 0`.
-First, find the integer `k` (`0 ≤ k ≤ n-1`) such that `Lₖ ≤ m < Lₖ₊₁` (where `Lₙ` is considered infinite).
-
-The maximum amount of water left at the destination is given by the formula:
-`100(n-k) - (2(n-k)-1) * (m - 100 * Σᵢ₌₁ᵏ (1 / (2n - 2i + 1)))`

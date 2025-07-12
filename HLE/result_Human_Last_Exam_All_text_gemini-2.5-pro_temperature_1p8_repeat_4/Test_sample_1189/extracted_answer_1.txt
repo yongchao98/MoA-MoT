@@ -1,5 +1,0 @@
-Let \(f_m\) be the desired number of sets. The value of \(f_m\) can be computed using the following recurrence relation for \(m \ge 2\):
-\[ f_m = \frac{1}{m} \left( \binom{2^n-1}{m-1} - f_{m-1} - (2^n-m+1)f_{m-2} \right) \]
-with the base cases:
-\[ f_0 = 1, \quad f_1 = 0 \]
-Since the question asks for positive integers \(m\), we can state the base cases as \(f_1 = 0\) and \(f_2 = 0\), and use the recurrence for \(m \ge 3\).

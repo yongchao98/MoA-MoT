@@ -1,7 +1,0 @@
-The formula for the fermionic partition function Z in the imaginary time path integral representation is:
-$Z = \int_{\psi(\beta) = -\psi(0)} \mathcal{D}[\psi^*(\tau)] \mathcal{D}[\psi(\tau)] \exp\left(-S_E[\psi^*, \psi]\right)$
-where:
-- $\psi(\tau)$ and $\psi^*(\tau)$ are anti-commuting Grassmann fields.
-- The integral is a functional integral over all paths of these fields in the imaginary time interval $\tau \in [0, \beta]$, where $\beta = 1/(k_BT)$.
-- The subscript on the integral sign specifies the crucial **anti-periodic boundary conditions**: $\psi(\beta) = -\psi(0)$ and $\psi^*(\beta) = -\psi^*(0)$.
-- $S_E[\psi^*, \psi] = \int_0^\beta d\tau \, \mathcal{L}_E(\psi^*, \psi)$ is the Euclidean action of the fermionic system.

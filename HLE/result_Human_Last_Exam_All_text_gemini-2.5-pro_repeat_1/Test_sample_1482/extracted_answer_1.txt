@@ -1,5 +1,0 @@
-For a Gaussian Interval Type-3 Membership Function with a fixed primary input `x`, mean `c`, and standard deviation parameters $(\underline{\sigma}_L, \bar{\sigma}_L, \underline{\sigma}_U, \bar{\sigma}_U)$, the vertical cross-section is an Interval Type-2 set over the secondary variable `u`. The uncertainty bounds of this set are given by the Lower Secondary Membership Function $\underline{f}_{x}(u)$ and the Upper Secondary Membership Function $\bar{f}_{x}(u)$:
-
-Upper Bound: $\bar{f}_{x}(u) = \frac{\underline{\sigma}_U - \frac{|x-c|}{\sqrt{-2 \ln u}}}{\underline{\sigma}_U - \underline{\sigma}_L}$
-
-Lower Bound: $\underline{f}_{x}(u) = \frac{\bar{\sigma}_U - \frac{|x-c|}{\sqrt{-2 \ln u}}}{\bar{\sigma}_U - \bar{\sigma}_L}$

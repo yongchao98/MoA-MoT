@@ -1,8 +1,0 @@
-The formula for the fermionic partition function Z in the imaginary time path integral representation is given by a functional integral over anti-commuting Grassmann fields $\psi(\tau)$ and $\bar{\psi}(\tau)$:
-$Z = \int \mathcal{D}\bar{\psi} \mathcal{D}\psi \, e^{-S_E[\bar{\psi}, \psi]}$
-The Euclidean action, $S_E$, is defined as:
-$S_E[\bar{\psi}, \psi] = \int_0^{\beta} d\tau \left[ \sum_i \bar{\psi}_i(\tau) \frac{\partial}{\partial \tau} \psi_i(\tau) + H(\{\bar{\psi}_i(\tau)\}, \{\psi_i(\tau)\}) \right]$
-where $\beta = 1/(k_B T)$ is the inverse temperature, $H$ is the Hamiltonian with creation/annihilation operators replaced by their corresponding Grassmann fields, and the sum over $i$ runs over all fermionic degrees of freedom (e.g., spin, site).
-A crucial aspect of this formula is that the path integral is performed over fields that satisfy **anti-periodic boundary conditions** in imaginary time:
-$\psi_i(\beta) = -\psi_i(0) \quad \text{and} \quad \bar{\psi}_i(\beta) = -\bar{\psi}_i(0)$
-for all $i$.

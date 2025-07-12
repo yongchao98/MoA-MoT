@@ -1,8 +1,0 @@
-The set of all solutions $z \in \mathbb{C}$ for the equation $z\cdot i=i^z$ is given by:
-$z_{k,n} = i \frac{W_n(-(\frac{\pi}{2} + 2k\pi))}{\frac{\pi}{2} + 2k\pi}$
-where $k$ and $n$ are any integers, and $W_n$ denotes the $n$-th branch of the Lambert W function.
-
-This complete solution set can be categorized as follows:
-1.  **Real solutions:** $z=1$ and $z=-1$.
-2.  **Purely imaginary solutions:** An infinite sequence of solutions $z_k = i \frac{W_0(-C_k)}{C_k}$ where $C_k = \frac{\pi}{2} + 2k\pi$, for each negative integer $k \in \{-1, -2, -3, \dots\}$. Each such solution $z_k = iy_k$ corresponds to the unique real number $y_k$ that solves $-y_k = e^{-y_k C_k}$.
-3.  **Other complex solutions:** All other pairs of integers $(k, n)$ generate complex solutions that are neither real nor purely imaginary.

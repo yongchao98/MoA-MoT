@@ -1,7 +1,0 @@
-The primary reason a functional MRI coil may not show a resonance when probed with a magnetic loop is the presence of a **transmit/receive (T/R) detuning circuit**. This is a safety feature designed to protect the patient, the coil, and the preamplifier from the high power of the scanner's transmit RF pulse.
-
-This circuit, typically using PIN diodes, actively de-tunes the coil by shorting its capacitor or shifting its resonant frequency. The circuit is controlled by a DC bias voltage from the scanner. When the coil is unplugged and sitting on a bench, it does not receive this bias. For safety, the circuit is designed to **fail-safe into the detuned state**. As a result, the coil is intentionally non-resonant, and your VNA test will correctly show no resonance peak. The coil only becomes resonant when connected to the scanner and the system provides the proper bias for "receive" mode.
-
-Other significant possibilities include:
-1.  **Poor Coupling/Field Orthogonality:** You may be placing the probe in a location or orientation where its magnetic field does not effectively link with the MRI coil element's sensitive axis, resulting in near-zero signal transfer.
-2.  **Complex Decoupling Networks:** In multi-element array coils, networks designed to isolate elements from each other might also inadvertently isolate an element from your external probe.

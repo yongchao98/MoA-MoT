@@ -1,9 +1,0 @@
-The corrector to the large-distance behavior of $\omega$ in polar coordinates modifies the pre-exponential factor by changing the power of the radial decay from $r^{-1/2}$ to $r^{-1/2+A}$ and introduces a phase shift dependent on $B$. The corrected asymptotic behavior is of the form:
-$$ \omega(r,\theta) \sim \frac{C(\theta)}{r^{1/2-A}}e^{-r(1-\cos\theta)+iB\phi(\theta)} $$
-where $C(\theta)$ and $\phi(\theta)$ are functions of the angle, with the leading behavior of $\phi(\theta)$ often being proportional to $\theta$. A more detailed calculation yields:
-$$ \frac{r^{-A} e^{2iB \int_0^\theta (1-\cos\theta') d\theta'}}{r^{1/2}}e^{-r(1-\cos\theta)} $$
-To leading order in the far-field wake, the most significant part of the corrector is the $r^{-A}$ term. The vortex term primarily introduces a phase, which affects the interference properties of the wave-like solution but not the decay of its magnitude. Therefore, the corrector to the amplitude decay is $r^{-A}$, and there is an additional phase correction due to the vortex term.
-
-The most commonly cited form for the corrected asymptotic magnitude is:
-$$ |\omega(r,\theta)| \sim \frac{|\text{const.}|}{r^{1/2-A}}e^{-r(1-\cos\theta)} $$
-The corrector to the behavior of the magnitude is therefore a factor of $r^{-A}$.

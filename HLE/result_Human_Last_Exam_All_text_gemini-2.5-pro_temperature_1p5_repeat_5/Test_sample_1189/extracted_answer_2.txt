@@ -1,3 +1,0 @@
-Let \(f_m\) denote the number of such sets \(T\). The value of \(f_m\) is given by the recurrence relation:
-For \(m \geq 2\), \(f_m = \frac{1}{m} \left( \binom{2^n-1}{m-1} - f_{m-1} - (2^n-m+1)f_{m-2} \right)\).
-This recurrence is initialized with the base cases \(f_0=1\) and \(f_1=0\). Since \(m\) is a positive integer, the answers for \(m=1\) and \(m=2\) are \(f_1 = 0\) and \(f_2 = 0\).

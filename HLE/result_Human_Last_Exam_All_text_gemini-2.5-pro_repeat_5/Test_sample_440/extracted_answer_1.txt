@@ -1,7 +1,0 @@
-The mass density profile \( \rho(z) \) is given by the expression \( \rho(z) = m_A n_A(z) + m_B n_B(z) \), where \( m_A \) and \( m_B \) are the masses of individual gas particles. The number densities \( n_A(z) \) and \( n_B(z) \) as a function of height \( z \) are implicitly defined by the following system of coupled self-consistent equations:
-\[ n_A(z) = C_A \exp\left( -\frac{m_A g z - 2(a'_{AA} n_A(z) + a'_{AB} n_B(z))}{k_B T} \right) \]
-\[ n_B(z) = C_B \exp\left( -\frac{m_B g z - 2(a'_{AB} n_A(z) + a'_{BB} n_B(z))}{k_B T} \right) \]
-The normalization constants \( C_A \) and \( C_B \) are determined by the integral constraints over the container's volume:
-\[ N_A = A \int_0^H n_A(z) \, dz \]
-\[ N_B = A \int_0^H n_B(z) \, dz \]
-The per-particle parameters \( m_i \) and \( a'_{ij} \) are derived from the given molar parameters \( M_i \) and \( a_{ij} \) using Avogadro's number (\(m_i = M_i / N_{Av}\), \(a'_{ij} = a_{ij} / N_{Av}^2\)).

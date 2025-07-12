@@ -1,8 +1,0 @@
-The formula for the fermionic partition function Z in the imaginary time path integral formalism is given by:
-$Z = \int_{\text{APBC}} \mathcal{D}\bar{\psi} \mathcal{D}\psi \, \exp\left( -S_E[\bar{\psi}, \psi] \right)$
-where the Euclidean action $S_E$ is:
-$S_E[\bar{\psi}, \psi] = \int_0^\beta d\tau \int d^d x \, \bar{\psi}(\tau, \mathbf{x}) \left( \partial_\tau + \hat{H} \right) \psi(\tau, \mathbf{x})$
-The symbol $\int_{\text{APBC}} \mathcal{D}\bar{\psi} \mathcal{D}\psi$ denotes a functional integral over all Grassmann-valued fields $\bar{\psi}$ and $\psi$ that satisfy the anti-periodic boundary conditions (APBC) in the imaginary time variable $\tau$:
-$\psi(0, \mathbf{x}) = -\psi(\beta, \mathbf{x})$
-$\bar{\psi}(0, \mathbf{x}) = -\bar{\psi}(\beta, \mathbf{x})$
-Here, $\beta=1/(k_B T)$ is the inverse temperature, and $\hat{H}$ is the single-particle Hamiltonian operator of the system.

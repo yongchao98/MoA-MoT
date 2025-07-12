@@ -1,3 +1,0 @@
-The optimal feedback adjustment factor b is given by the median of three values: \(-\sqrt{P_2}\), \(-\alpha P_1\), and \(\sqrt{P_2}\). Mathematically, this is expressed as:
-\[ b_{opt} = \text{median}(-\sqrt{P_2}, -\alpha P_1, \sqrt{P_2}) \]
-This means the value of b is \(-\alpha P_1\) if it falls within the range \([-\sqrt{P_2}, \sqrt{P_2}]\), otherwise it is clipped to the nearest boundary of this range.

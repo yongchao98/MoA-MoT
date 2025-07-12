@@ -1,7 +1,0 @@
-The local magnetic field at the L1 Lagrange point is generally not considered to be radial. Due to the Sun's rotation, the Interplanetary Magnetic Field (IMF) forms a Parker Spiral, making an average angle of about 45 degrees with the radial (Sun-Earth) direction at 1 AU.
-
-Your physical intuition is correct: for Alfvén Ion Cyclotron (AIC) waves propagating along the magnetic field, the helicity should be calculated using magnetic field components in the plane perpendicular to the *local magnetic field vector*, not the radial direction.
-
-The use of components perpendicular to the radial direction (e.g., Y and Z components in a GSE coordinate system) is a simplification or an approximation. This approach is only valid under the specific condition of **quasi-parallel propagation**, where the researchers have specifically selected data intervals during which the local IMF happens to be aligned with the radial direction. In this case, the Y-Z plane is a reasonable proxy for the plane perpendicular to the magnetic field.
-
-The more general and physically rigorous method, which works for any IMF orientation, is to first transform the magnetic field data into a **Field-Aligned Coordinate (FAC) system**, where one axis is parallel to the local average magnetic field. The helicity is then calculated using the components perpendicular to that axis. Therefore, the definition you encountered is likely either assuming quasi-parallel conditions or is an oversimplification of the more robust FAC method.

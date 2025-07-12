@@ -1,8 +1,0 @@
-An FGH-tripled fixed point exists and is unique for the functions `F: X*Y*Z→X`, `G: Y*X*Y→Y`, and `H: Z*Y*X→Z` if the following conditions are met:
-1.  **Space Requirement:** `(X, d_X)`, `(Y, d_Y)`, and `(Z, d_Z)` are complete metric spaces.
-2.  **Contraction Requirement:** There exist non-negative constants (`α, β, γ, ε, δ', ι, θ, η`) such that for any two points `(x₁, y₁, z₁)` and `(x₂, y₂, z₂)` in `X×Y×Z`, the functions satisfy the following inequalities:
-    a) `d_X(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) ≤ α*d_X(x₁, x₂) + β*d_Y(y₁, y₂) + γ*d_Z(z₁, z₂)`
-    b) `d_Y(G(y₁, x₁, y₁), G(y₂, x₂, y₂)) ≤ ε*d_X(x₁, x₂) + δ'*d_Y(y₁, y₂)`
-    c) `d_Z(H(z₁, y₁, x₁), H(z₂, y₂, x₂)) ≤ ι*d_X(x₁, x₂) + θ*d_Y(y₁, y₂) + η*d_Z(z₁, z₂)`
-3.  **Global Condition:** The sum of the contraction constants for each dimension of the product space is less than 1. Formally:
-    `max(α + ε + ι, β + δ' + θ, γ + η) < 1`

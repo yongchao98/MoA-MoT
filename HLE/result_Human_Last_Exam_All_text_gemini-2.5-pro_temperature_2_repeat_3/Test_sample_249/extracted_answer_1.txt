@@ -1,7 +1,0 @@
-*   If $m > n$: This forces $m=n+1$ (as a tree with $n+2$ vertices has at most $n+1$ leaves), so the minimum diameter is 2.
-*   If $m = n$: For $n \ge 2$, the minimum diameter is 3.
-*   If $m < n$:
-    *   If $2m \ge n+1$: The minimum diameter is 4.
-    *   If $2m < n+1$:
-        *   If $m=2$: The minimum diameter is $n+1$.
-        *   If $m \ge 3$: The minimum diameter is $n-m+2$.

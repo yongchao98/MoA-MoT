@@ -1,4 +1,0 @@
-Let `k` be the integer `(1 \le k \le n)` such that `m` falls within the `k`-th stage of the optimal travel plan, defined by the inequality:
-$$ \sum_{j=k+1}^{n} \frac{100}{2j-1} < m \le \sum_{j=k}^{n} \frac{100}{2j-1} $$
-The maximum amount of water left at the destination is then given by:
-$$ k \cdot 100 - (2k-1) \left( m - \sum_{j=k+1}^{n} \frac{100}{2j-1} \right) $$

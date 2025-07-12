@@ -1,4 +1,0 @@
-Let `s_1, s_2, \dots, s_k` be the distinct values in the partition `a_1, a_2, \dots, a_r`, and let `m_j` be the multiplicity of `s_j` (so that `\sum_{j=1}^k m_j = r`). The number of Tverberg partitions of `X` is given by the formula for partitioning a set of `n` labeled objects into `r` unlabeled subsets of specified sizes:
-` (n!) / ( (a_1! * a_2! * ... * a_r!) * (m_1! * m_2! * ... * m_k!) ) `
-This can also be written as:
-` (n!) / ( (\prod_{i=1}^{r} a_i!) * (\prod_{j=1}^{k} m_j!) ) `

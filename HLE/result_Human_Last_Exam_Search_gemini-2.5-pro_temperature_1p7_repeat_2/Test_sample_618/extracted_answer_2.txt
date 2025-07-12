@@ -1,9 +1,0 @@
-The Lie group of infinitesimal transformations on the spatial coordinate `x` that leaves the differential equation `u_t = u_{xx} + (k_1*ln(u) +k_2)u` invariant is given by the general representation:
-
-`x* = x + ε(c_1 + c_2*x + c_3*t + c_4*xt) + O(ε^2)`
-
-where `c_1`, `c_2`, `c_3`, and `c_4` are arbitrary constants. This representation includes:
-*   **Spatial Translations:** `x* = x + εc_1`
-*   **Spatial Scaling:** `x* = x + εc_2x`
-*   **Galilean Boosts:** `x* = x + εc_3t`
-*   **A form of projective transformation:** `x* = x + εc_4xt`

@@ -1,5 +1,0 @@
-In the frequency domain, the bare Green's function $G_0$ is a sum over all single-particle states $k$. For each state, its contribution is inversely proportional to the difference between the frequency variable and the state's single-particle energy eigenvalue, $\epsilon_k$. Specifically, in the eigenstate-frequency representation, the dependence is given by the expression:
-$G_0(k, i\omega_n) = \frac{1}{i\omega_n - \epsilon_k}$
-In real space, this translates to the spectral representation:
-$G_0(x, x'; i\omega_n) = \sum_k \frac{\phi_k(x) \phi_k^*(x')}{i\omega_n - \epsilon_k}$
-The key functional dependence is that the poles of the bare Green's function are located at the single-particle energy eigenvalues $\epsilon_k$.

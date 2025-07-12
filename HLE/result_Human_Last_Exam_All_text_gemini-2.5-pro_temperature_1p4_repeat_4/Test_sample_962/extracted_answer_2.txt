@@ -1,9 +1,0 @@
-To design a tightly secure t-out-of-n threshold signature scheme with a two-round signing protocol, the most effective approach is to use BLS (Boneh-Lynn-Shacham) signatures combined with a Verifiable Secret Sharing (VSS) scheme. The design consists of two main phases:
-
-1.  **Setup Phase (One-Time Distributed Key Generation - DKG):** All `n` parties collaboratively run a DKG protocol (e.g., based on Pederson VSS) to generate a single group public key (`PK`) and distribute secret key shares (`sk_i`) and corresponding public verification keys (`vk_i`) to each party. This is done without a trusted third party and ensures no `t-1` parties can reconstruct the master secret key.
-
-2.  **Two-Round Signing Phase:** To sign a message `m`, any group of `t` participants performs the following:
-    *   **Round 1 (Partial Signature Broadcast):** Each participant `i` computes its partial signature `σ_i` on the message hash `H(m)` using its secret share `sk_i`. It then broadcasts `σ_i` to the other participants.
-    *   **Round 2 (Verification & Aggregation):** Upon receiving the partial signatures, each participant verifies their correctness using the sender's public verification key `vk_j`. After confirming at least `t` valid partial signatures, an aggregator combines them using Lagrange interpolation to construct the final, single signature `σ`.
-
-This design is tightly secure because the security of threshold BLS can be directly reduced to the co-CDH problem with no security loss. It is robust because the verification step in Round 2 allows for the identification and exclusion of malicious parties. The resulting signature `σ` is a standard BLS signature, fully compatible with existing verification tools. An alternative for systems without pairing-friendly curves is to use a scheme like FROST, which achieves a two-round online signing phase for Schnorr signatures by using an offline pre-computation phase.

@@ -1,5 +1,0 @@
-The maximum amount of water left, `W_final`, is given by the expression:
-`W_{final} = (n - k + 1) \times 100 - \left( m - \sum_{i=1}^{k-1} \frac{100}{2n - (2i - 1)} \right) \times (2n - 2k + 1)`
-where `k` is the integer satisfying:
-`\sum_{i=1}^{k-1} \frac{100}{2n - (2i - 1)} < m \leq \sum_{i=1}^{k} \frac{100}{2n - (2i - 1)}`
-For `k=1`, the summation term from `i=1` to `0` is taken as 0.

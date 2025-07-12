@@ -1,1 +1,0 @@
-from re import*;print(' '.join(sorted(list(set(findall(r'\d+', input()))),key=int)) or ["NO"])

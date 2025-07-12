@@ -1,9 +1,0 @@
-# The user wants to know Liu Ban's exact evaluation of Zhang Ji's seven-character poems in Chinese.
-# The evaluation is found in Liu Ban's (刘攽) work, "Zhongshan Shihua" (《中山诗话》).
-# The script will print the original quote and a brief explanation in Chinese.
-
-evaluation_text = """北宋的刘攽在其著作《中山诗话》中对唐代诗人张籍的诗歌做出了评价。他认为张籍的乐府诗和宫词都非常杰出，但七言诗是其弱项，评价其“粗俗”。
-
-刘攽的评价原文是：“张籍乐府、宫词皆杰出，至为七言，乃粗俗，盖其短也。”"""
-
-print(evaluation_text)

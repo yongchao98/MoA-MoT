@@ -1,8 +1,0 @@
-Let $A$ and $S$ be two distinct formulas that can be constructed from the allowed connectives and constants, for instance, $A = \mathbf{1} \multimap \bot$ and $S = A \multimap A$.
-The function $f$ is defined as:
-$f(w) = A \multimap (S^w \otimes A)$
-where $S^k$ denotes the formula $S \otimes S \otimes \dots \otimes S$ ($k$ times), and $S^0 = \mathbf{1}$.
-
-The formula $C$ is defined as:
-$C(W, m, b) = (A \multimap (S^b \otimes A))^m$
-where the exponent $m$ denotes the $m$-fold tensor product, i.e., $F^m = F \otimes F \otimes \dots \otimes F$ ($m$ times).

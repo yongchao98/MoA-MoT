@@ -1,9 +1,0 @@
-The mathematical formulation that characterizes the vertical cross-sections of an Interval Type-3 Membership Function (IT3 MF), denoted as $\tilde{A}_x(u)$ for a fixed primary input `x` and a secondary variable `u`, is given by the upper and lower bounds of this secondary membership function. Using Gaussian paradigms, the formulation is:
-
-Upper Bound:
-$ \bar{\mu}_{\tilde{A}_x}(u) = \exp\left(-\frac{1}{2}\left(\frac{u - c(x)}{\bar{\sigma}_u(x)}\right)^2\right) $
-
-Lower Bound:
-$ \underline{\mu}_{\tilde{A}_x}(u) = a(x) \cdot \exp\left(-\frac{1}{2}\left(\frac{u - c(x)}{\underline{\sigma}_u(x)}\right)^2\right) $
-
-Here, the parameters $c(x)$, $\bar{\sigma}_u(x)$, $\underline{\sigma}_u(x)$, and $a(x)$ are all functions of the primary input variable `x`, allowing the shape and degree of uncertainty (the "blur") of the vertical slice to vary across the primary domain.

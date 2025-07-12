@@ -1,8 +1,0 @@
-Let `f_m` be the number of such sets `T`. The value of `f_m` is determined by the following recurrence relation:
-For `m \ge 2`,
-`f_m = \frac{1}{m} \left( a - f_{m-1} - (2^n - m + 1)f_{m-2} \right)`
-where `a = \binom{2^n-1}{m-1}`.
-The base cases for the recurrence are:
-`f_0 = 1`
-`f_1 = 0`
-The answer to the question for a given positive integer `m` is `f_m`.

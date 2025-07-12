@@ -1,3 +1,0 @@
-The post-reset covariance is given by the expression \Sigma' = J \Sigma J^T, where the Jacobian matrix J is the product of the rotation matrix corresponding to the reset vector \delta and the right Jacobian of SO(3) evaluated at \delta. The full expression is:
-\Sigma' = (exp(\hat{\delta}) J_r(\delta)) \Sigma (exp(\hat{\delta}) J_r(\delta))^T
-where exp(\hat{\delta}) is the rotation matrix from Rodrigues' formula and J_r(\delta) is the right Jacobian of the SO(3) group.

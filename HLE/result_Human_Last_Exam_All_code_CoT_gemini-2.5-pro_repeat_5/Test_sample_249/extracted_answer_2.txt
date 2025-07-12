@@ -1,1 +1,0 @@
-The minimum possible value for the diameter of G is given by the formula: $2\lceil n/m \rceil + [n \pmod m = 0]$, where the bracket is an Iverson bracket. This is equivalent to the piecewise function: $D = 2(n/m) + 1$ if $m$ divides $n$, and $D = 2\lceil n/m \rceil$ if $m$ does not divide $n$.

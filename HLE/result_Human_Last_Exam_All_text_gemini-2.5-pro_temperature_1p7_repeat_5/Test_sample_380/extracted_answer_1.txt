@@ -1,8 +1,0 @@
-The local magnetic field at the L1 point is generally not considered to be radial. It is the Interplanetary Magnetic Field (IMF), which follows the Parker Spiral and typically makes an angle of about 45 degrees with the radial direction at 1 AU.
-
-The use of a coordinate system based on the radial direction (like RTN, or GSE where the X-axis is effectively radial) to calculate helicity is a common and practical simplification, not a reflection of the physical magnetic field direction. The justification is twofold:
-
-1.  **Practicality:** Using a fixed, standard coordinate system (like GSE or RTN) is computationally much simpler for analyzing large datasets than constantly transforming into a local field-aligned frame.
-2.  **Physical Approximation:** The solar wind velocity is overwhelmingly radial. It is often assumed (under Taylor's "frozen-in flow" hypothesis) that waves are convected past the spacecraft in this radial direction. Therefore, the radial direction is used as the reference axis for the wave vector, **k**. This approximation is most valid when the angle between the magnetic field and the radial direction (θ_BR) is small. Rigorous studies often filter data for low θ_BR to ensure their analysis is physically meaningful.
-
-In short, it is a convenient approximation that relies on the solar wind flow being radial, not the magnetic field itself. A more precise analysis would indeed use a local field-aligned coordinate system, as you correctly inferred.

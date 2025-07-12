@@ -1,1 +1,0 @@
-$ \min(n - m + 3, 2\lfloor \frac{n+1}{m} \rfloor + \begin{cases} 0 & \text{if } (n+1) \pmod m = 0 \\ 1 & \text{if } (n+1) \pmod m = 1 \\ 2 & \text{if } (n+1) \pmod m \ge 2 \end{cases}) $

@@ -1,4 +1,0 @@
-The conditions for the existence and uniqueness of an FGH-tripled fixed point, based on the Banach Fixed-Point Theorem, are:
-1.  The sets X, Y, and Z must be **non-empty, complete metric spaces**. Let their respective metrics be `d_X`, `d_Y`, and `d_Z`.
-2.  The functions F, G, and H must collectively satisfy a **contraction condition** on the product space `X × Y × Z`. This means there must exist a single constant `k ∈ [0, 1)` such that for any two points `(x₁, y₁, z₁)` and `(x₂, y₂, z₂)` in `X × Y × Z`, the following inequality holds:
-    `d_X(F(x₁,y₁,z₁), F(x₂,y₂,z₂)) + d_Y(G(y₁,x₁,y₁), G(y₂,x₂,y₂)) + d_Z(H(z₁,y₁,x₁), H(z₂,y₂,x₂)) ≤ k * (d_X(x₁,x₂) + d_Y(y₁,y₂) + d_Z(z₁,z₂))`

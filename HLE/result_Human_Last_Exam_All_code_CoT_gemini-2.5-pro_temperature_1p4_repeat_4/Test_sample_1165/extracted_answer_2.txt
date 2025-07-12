@@ -1,5 +1,0 @@
-Based on the analytical derivation and numerical simulation, the maximum magnitude of fluctuations `R(ε)` scales with `ε` as a power law. The simulation estimates this function to be approximately **R(ε) ≈ 0.165 * ε^0.5**.
-
-The scaling exponent is `0.5`, which confirms the theoretical prediction.
-
-For the second part of the question, if `zᵢ` were independent random variables drawn from `Normal(i, 0.5)`, the scaling for `R(ε)` is **expected to remain the same**, i.e., `R(ε) ∝ ε^0.5`. The reasoning is that the scaling is determined by the variance of the integrated random point process. While the specific statistics of the process change (e.g., the mean density is no longer uniform), the fundamental property that the variance of the number of points in an interval scales with the size of the interval (`~L`) should hold. The double integration in the solution for the fluctuation `y_f` then leads to a variance scaling of `L³ = ε⁻³`, which results in the same `R(ε) ∝ ε^0.5` relationship.

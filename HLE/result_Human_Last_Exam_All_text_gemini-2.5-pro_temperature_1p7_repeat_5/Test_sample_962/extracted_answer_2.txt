@@ -1,8 +1,0 @@
-The most established and direct method is to design the scheme based on the **BLS (Boneh-Lynn-Shacham) signature scheme**. This approach meets all three requirements:
-1.  **t-out-of-n Threshold:** BLS signatures have a unique algebraic structure that allows non-interactive aggregation. A secret key `sk` can be split into shares `sk_i` using Shamir's Secret Sharing.
-2.  **Two-Round Signing (in fact, 1-Round):** The signing protocol is non-interactive and thus consists of a single round:
-    *   **Round 1:** Each of the `t` participating signers computes a partial signature `σ_i = H(m)^{sk_i}` on message `m` and broadcasts it.
-    *   **Aggregation:** An aggregator collects these `t` partial signatures and combines them into the final signature `σ` using Lagrange interpolation coefficients. No further communication between the original signers is needed.
-3.  **Tightly Secure:** The standard security proof for the BLS signature scheme in the Random Oracle Model provides a tight reduction to the Computational Diffie-Hellman (CDH) assumption. Unlike proofs for Schnorr-like schemes that use the Forking Lemma, the BLS proof does not suffer from a security loss dependent on the number of adversary queries. This tight security property directly extends to the threshold setting.
-
-Therefore, a threshold BLS scheme, implemented with a secure Distributed Key Generation (DKG) protocol for setup, perfectly fulfills the design criteria.

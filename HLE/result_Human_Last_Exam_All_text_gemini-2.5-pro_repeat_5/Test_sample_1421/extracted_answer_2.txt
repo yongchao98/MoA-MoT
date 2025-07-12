@@ -1,5 +1,0 @@
-The formula for the fermionic partition function Z is:
-$Z = \int_{\psi(\beta)=-\psi(0)} \mathcal{D}\bar{\psi} \mathcal{D}\psi \, \exp\left( -S_E[\bar{\psi}, \psi] \right)$
-where the Euclidean action $S_E$ is given by:
-$S_E[\bar{\psi}, \psi] = \int_0^\beta d\tau \left[ \bar{\psi}(\tau) \partial_\tau \psi(\tau) + H(\bar{\psi}(\tau), \psi(\tau)) \right]$
-Here, $\psi(\tau)$ and $\bar{\psi}(\tau)$ are Grassmann fields, $\mathcal{D}\bar{\psi} \mathcal{D}\psi$ is the functional integration measure, and $H(\bar{\psi}, \psi)$ is the Hamiltonian with operators replaced by their corresponding Grassmann fields. The subscript on the integral sign denotes the anti-periodic boundary conditions that the fields must satisfy.

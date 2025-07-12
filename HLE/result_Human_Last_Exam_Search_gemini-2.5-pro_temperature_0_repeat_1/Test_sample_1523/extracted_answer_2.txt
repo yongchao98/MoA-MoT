@@ -1,7 +1,0 @@
-In finite-temperature field theory for a neutral scalar field `ϕ`, the partition function `Z` is given by the functional integral `Z = ∫ Dϕ exp(-S_E[ϕ])`, where `S_E[ϕ]` is the Euclidean action. The action for a free scalar field can be written in the form `S_E[ϕ] = 1/2 (ϕ, D_ϕ)`.
-
-The inner product `(ϕ, D_ϕ)` is given by the integral over the Euclidean spacetime (with imaginary time `τ` having a period `β = 1/T`):
-
-`(ϕ, D_ϕ) = ∫₀^β dτ ∫ d³x ϕ(τ, **x**) [-∂_τ² - ∇² + m²] ϕ(τ, **x**)`
-
-Here, `m` is the mass of the scalar field, `∇²` is the spatial Laplacian operator, and `∂_τ²` is the second derivative with respect to the Euclidean time `τ`. The operator `D_ϕ = -∂_τ² - ∇² + m²` is the Euclidean Klein-Gordon operator.

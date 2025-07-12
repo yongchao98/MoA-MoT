@@ -1,1 +1,0 @@
-Let k be the unique integer (1 <= k <= n) that satisfies $\sum_{i=k+1}^{n} \frac{100}{2i-1} < m \le \sum_{i=k}^{n} \frac{100}{2i-1}$. The maximum amount of water left is $k \times 100 - (2k-1) \left( m - \sum_{i=k+1}^{n} \frac{100}{2i-1} \right)$.

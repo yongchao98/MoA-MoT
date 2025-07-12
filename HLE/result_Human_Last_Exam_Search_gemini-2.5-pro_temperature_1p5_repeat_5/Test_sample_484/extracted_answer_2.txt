@@ -1,4 +1,0 @@
-The simplified system is described by the variables $w_i$ (synaptic efficacy), $v_i$ (presynaptic accumulator, where $v_i=M_i$), and $u_i$ (postsynaptic accumulator, where $u_i=Y$). Through a quasi-steady-state analysis, the expression for the dynamics of the synaptic efficacy is given by:
-$$ \tau_w\frac{\mathrm{d}w_i}{\mathrm{d}t} = \beta u_i \frac{v_i - \rho}{1+v_i} $$
-where the constant $\rho$ is defined as:
-$$ \rho = -\frac{\alpha(1-\eta) + \beta\eta}{\beta} = \frac{|\alpha|(1-\eta) - \beta\eta}{\beta} $$

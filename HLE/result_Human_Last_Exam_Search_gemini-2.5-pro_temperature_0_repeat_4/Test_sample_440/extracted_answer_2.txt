@@ -1,5 +1,0 @@
-The density profile of the gas mixture is given by the function \(\rho(z) = \rho_{\text{ideal}}(z) + \rho_{\text{correction}}(z)\), where:
-\(\rho_{\text{ideal}}(z) = m_A n_{A, \text{ideal}}(0) e^{-m_A g z / (k_B T)} + m_B n_{B, \text{ideal}}(0) e^{-m_B g z / (k_B T)}\)
-and
-\(\rho_{\text{correction}}(z) = \frac{2}{k_B T} \left[ m_A a'_{AA} (n_{A, \text{ideal}}(z))^2 + (m_A a'_{AB} + m_B a'_{AB}) n_{A, \text{ideal}}(z) n_{B, \text{ideal}}(z) + m_B a'_{BB} (n_{B, \text{ideal}}(z))^2 \right]\)
-with \(n_{i, \text{ideal}}(z) = n_{i, \text{ideal}}(0) e^{-m_i g z / (k_B T)}\). The constants \(n_{i, \text{ideal}}(0)\) are determined by the total particle numbers, \(N_i = A \int_0^H n_{i, \text{ideal}}(z) dz\), and \(a'_{ij}\) are the per-particle van der Waals parameters.

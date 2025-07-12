@@ -1,5 +1,0 @@
-The solutions to the equation $z\cdot i=i^z$ fall into two main categories: real and purely imaginary solutions.
-1.  **Real solutions**: $z=1$ and $z=-1$.
-2.  **Purely imaginary solutions**: An infinite series of solutions $z_k = y_k i$ for each integer $k \le -1$. The value of $y_k$ is the negative real number that solves the equation $-y = e^{-y(\frac{\pi}{2}+2k\pi)}$. These can be expressed using the Lambert W function.
-
-The provided Python script calculates and verifies the real solutions and the first three purely imaginary solutions (for $k=-1, -2, -3$).

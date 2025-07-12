@@ -1,5 +1,0 @@
-The formula for the fermionic partition function Z is given by the functional integral over anticommuting Grassmann fields, $\psi$ and $\psi^*$, which satisfy anti-periodic boundary conditions in the imaginary time interval $[0, \beta]$. The formula is:
-$Z = \int_{\text{APBC}} \mathcal{D}[\psi^*, \psi] \, e^{-S[\psi^*, \psi]}$
-where the Euclidean action S is:
-$S[\psi^*, \psi] = \int_0^\beta d\tau \left[ \psi^*(\tau) (\partial_\tau) \psi(\tau) + H(\psi^*(\tau), \psi(\tau)) \right]$
-The boundary conditions are $\psi(\beta) = -\psi(0)$ and $\psi^*(\beta) = -\psi^*(0)$.

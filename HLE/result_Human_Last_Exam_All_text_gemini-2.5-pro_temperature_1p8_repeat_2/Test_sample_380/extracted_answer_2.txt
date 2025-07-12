@@ -1,7 +1,0 @@
-You are correct; the normalized magnetic helicity for Alfven Ion Cyclotron (AIC) waves should theoretically be calculated using magnetic field components perpendicular to the local background magnetic field, as these waves propagate along it.
-
-The local magnetic field at the L1 point is the Interplanetary Magnetic Field (IMF). Due to the Sun's rotation, the IMF forms a Parker Spiral structure and is **not generally radial** at L1. For a typical solar wind speed, it makes an angle of approximately 45 degrees with the radial (Sun-Earth) direction.
-
-Therefore, the practice of using magnetic field components perpendicular to the radial direction (e.g., Y and Z components in the GSE coordinate system) is an **approximation**. It is only accurate under the specific condition of a "radial IMF," where the magnetic field happens to align with the Sun-Earth line.
-
-The rigorous and standard scientific method is to perform a coordinate transformation into a **Mean-Field-Aligned (MFA) coordinate system**. In this local system, one axis is aligned with the local average magnetic field (the direction of wave propagation), and the helicity is calculated using the components in the plane perpendicular to this axis. Using a fixed radial-based system without justification is a simplification that can lead to inaccurate results for wave polarization.

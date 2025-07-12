@@ -1,8 +1,0 @@
-```latex
-\Sigma' = G \Sigma G^T
-```
-where
-```latex
-G = I - \frac{1}{2}[\mu]_{\times} + \left( \frac{1}{\|\mu\|^2} - \frac{1 + \cos(\|\mu\|)}{2\|\mu\|\sin(\|\mu\|)} \right) [\mu]_{\times}^2
-```
-Here, `\(I\)` is the 3x3 identity matrix, `\(\mu\)` is the mean of the pre-reset attitude deviation vector, `\(\|\mu\|\)` is its norm, and `\([\mu]_{\times}\)` is the skew-symmetric matrix of `\(\mu\)`.

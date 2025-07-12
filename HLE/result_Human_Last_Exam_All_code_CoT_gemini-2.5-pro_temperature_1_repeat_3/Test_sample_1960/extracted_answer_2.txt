@@ -1,9 +1,0 @@
-Let `A` be the formula `(\bot \multimap 1)`. We define the `n`-th tensor power of a formula `F` as $F^n = \underbrace{F \otimes \dots \otimes F}_{n \text{ times}}$, with the convention that $F^0 = 1$.
-
-The function `f` is defined as:
-$$ f(w) = A^w $$
-
-The formula `C = C(W, m, b)` is defined as:
-$$ C = P \multimap (P \multimap \dots (P \multimap 1)\dots) $$
-where the formula `P` appears `m` times in a right-nested implication structure, and `P` itself is defined as:
-$$ P = A^b \multimap 1 $$

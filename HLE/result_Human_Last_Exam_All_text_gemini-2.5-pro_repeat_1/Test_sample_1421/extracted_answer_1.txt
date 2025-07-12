@@ -1,6 +1,0 @@
-The formula for the fermionic partition function $Z$ is given by the functional integral over anti-commuting Grassmann fields $\psi(\mathbf{x}, \tau)$ and $\bar{\psi}(\mathbf{x}, \tau)$:
-$Z = \int \mathcal{D}\bar{\psi} \mathcal{D}\psi \, e^{-S[\bar{\psi}, \psi]}$
-The integral is performed over all field configurations that satisfy anti-periodic boundary conditions in imaginary time $\tau$: $\psi(\mathbf{x}, \tau=\beta) = -\psi(\mathbf{x}, \tau=0)$.
-The Euclidean action $S[\bar{\psi}, \psi]$ is given by:
-$S[\bar{\psi}, \psi] = \int_0^\beta d\tau \int d^d x \, \left[ \bar{\psi}(\mathbf{x}, \tau) \partial_\tau \psi(\mathbf{x}, \tau) + H(\bar{\psi}(\mathbf{x}, \tau), \psi(\mathbf{x}, \tau)) \right]$
-where $\beta=1/(k_B T)$ and $H(\bar{\psi}, \psi)$ is the classical Hamiltonian function corresponding to the quantum operator $\hat{H}$.

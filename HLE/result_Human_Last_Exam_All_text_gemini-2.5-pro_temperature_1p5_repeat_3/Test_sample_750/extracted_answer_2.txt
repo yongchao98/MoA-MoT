@@ -1,8 +1,0 @@
-The solutions for $z \in \mathbb{C}$ are given by the formula:
-$z_{k,n} = i \frac{W_n(-(\frac{\pi}{2} + 2k\pi))}{\frac{\pi}{2} + 2k\pi}$
-for all integers $k$ and $n$, where $W_n$ is the $n$-th branch of the Lambert W function.
-
-These solutions can be classified into three types:
-1.  **Real solutions**: $z=1$ and $z=-1$.
-2.  **Purely imaginary solutions**: An infinite series of solutions $z_m = -i \frac{W_0\left(\frac{(4m-1)\pi}{2}\right)}{\frac{(4m-1)\pi}{2}}$ for all positive integers $m=1, 2, 3, \ldots$.
-3.  **Other complex solutions**: An infinite number of complex solutions with non-zero real and imaginary parts, corresponding to all pairs of integers $(k, n)$ not covered by the cases above.

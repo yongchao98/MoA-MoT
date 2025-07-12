@@ -1,5 +1,0 @@
-The minimum possible value for the diameter of $G$ is given by:
-1.  If $m \ge n+1$ (which implies $m=n+1$ for $n \ge 1$): **2**
-2.  If $m = n$ (for $n \ge 2$): **3**
-3.  If $2m \ge n+1$ and $m \le n-1$: **4**
-4.  If $2m < n+1$ (for $m \ge 2$): $\lceil \frac{n+1-m}{m} \rceil + \lfloor \frac{n+1-m}{m} \rfloor + 2$

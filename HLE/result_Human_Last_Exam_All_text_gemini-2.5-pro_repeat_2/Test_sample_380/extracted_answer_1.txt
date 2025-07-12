@@ -1,7 +1,0 @@
-No, the local magnetic field at the L1 point is generally not considered radial. Due to the Sun's rotation, the Interplanetary Magnetic Field (IMF) forms a Parker Spiral, which at L1 makes an angle of approximately 45 degrees with the radial direction.
-
-The justification for using magnetic field components perpendicular to the radial direction (e.g., Y and Z components in a GSE or RTN coordinate system) instead of components perpendicular to the local magnetic field is based on one of two reasons:
-
-1.  **Data Selection:** Researchers often intentionally select specific time intervals for their study where the IMF happens to be oriented along the radial direction ("radial IMF" events). In these special cases, the solar wind flow, local magnetic field, and AIC wave propagation direction are all co-aligned, making a radial-based coordinate system a very good approximation of the ideal field-aligned system.
-
-2.  **Approximation for Polarization:** Even when the IMF is not radial, this method is often used as a practical approximation. The calculation is robust enough that it correctly determines the sign of the helicity (positive for right-hand, negative for left-hand polarization) as long as the magnetic field is not nearly perpendicular to the radial direction. Since AIC waves have a strongly negative helicity (~-1), a measurement in a non-ideal frame will still yield a clearly negative value, correctly identifying them as left-hand polarized waves.

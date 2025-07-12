@@ -1,8 +1,0 @@
-The general infinitesimal transformation for the spatial coordinate `x` is given by the generator:
-`ξ(t, x) = c₁ * e^(k₁t) * x + c₂ * e^(k₁t) + c₃`
-
-This generator describes the following three fundamental forms of transformations on `x`:
-1.  **Spatial Translation:** `x' = x + a`
-2.  **Time-Dependent Translation:** `x' = x + b * e^(k₁t)`
-3.  **Time-Dependent Scaling:** `x' = x / sqrt(1 - 2*c*e^(k₁t))`
-where a, b, and c are arbitrary constants. The general transformation on x is a composition of these three types.

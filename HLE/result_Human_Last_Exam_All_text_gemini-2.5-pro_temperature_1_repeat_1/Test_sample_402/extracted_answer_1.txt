@@ -1,7 +1,0 @@
-The proposed filtering strategy involves three criteria to identify a contaminating gene: 1) a large negative log2 fold change (e.g., < -5), indicating massive depletion in the `CAR-IL15` group compared to the `CAR-only` group; 2) high statistical significance (e.g., adjusted p-value < 0.01); and 3) near-zero absolute expression in the clean `CAR-IL15` samples (e.g., mean normalized count < 10).
-
-This can be implemented with the following command-line instruction, assuming you have a tab-separated results file named `DE_results_full.tsv` with columns for gene ID, mean normalized counts in the `CAR-IL15` group (column 2), log2FoldChange (column 3), and adjusted p-value (column 4):
-```bash
-awk 'BEGIN{FS="\t"; OFS="\t"} NR==1 || !($3 < -5 && $4 < 0.01 && $2 < 10)' DE_results_full.tsv > DE_results_filtered.tsv
-```
-This command will generate a new file, `DE_results_filtered.tsv`, containing the differential expression results with the contaminating genes removed.

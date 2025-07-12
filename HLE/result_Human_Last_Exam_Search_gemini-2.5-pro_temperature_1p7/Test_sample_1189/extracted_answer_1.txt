@@ -1,7 +1,0 @@
-Let \(f_m\) be the number of sets for a given size \(m\).
-The base case is \(f_0 = 1\).
-For \(m \geq 1\), the recurrence relation is defined as follows:
-If \(m\) is odd:
-\[ f_m = \frac{1}{m}\binom{2^n-1}{m-1} - f_{m-1} \]
-If \(m\) is even:
-\[ f_m = \frac{2^n - m}{m} f_{m-1} \]

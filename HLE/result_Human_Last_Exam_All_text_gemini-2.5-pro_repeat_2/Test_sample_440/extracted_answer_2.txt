@@ -1,4 +1,0 @@
-The density profile `ρ(z)` is given by the expression `ρ(z) = m_A n_A(z) + m_B n_B(z)`, where the number density functions `n_A(z)` and `n_B(z)` are determined as the solution to the system of coupled implicit equations derived from the principle of constant total chemical potential for each species in a van der Waals mixture under gravity. The governing equations are:
-`k_B T \ln\left(\frac{n_A(z)}{1 - (n_A(z)b'_A + n_B(z)b'_B)}\right) + \frac{k_B T b'_A}{1 - (n_A(z)b'_A + n_B(z)b'_B)} - 2(n_A(z)a'_{AA} + n_B(z)a'_{AB}) + m_A g z = C_A`
-`k_B T \ln\left(\frac{n_B(z)}{1 - (n_A(z)b'_A + n_B(z)b'_B)}\right) + \frac{k_B T b'_B}{1 - (n_A(z)b'_A + n_B(z)b'_B)} - 2(n_A(z)a'_{AB} + n_B(z)a'_{BB}) + m_B g z = C_B`
-The constants `C_A` and `C_B` are determined by the integral constraints `A \int_0^H n_A(z) dz = N_A` and `A \int_0^H n_B(z) dz = N_B`.

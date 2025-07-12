@@ -1,7 +1,0 @@
-The mathematical formulation for the lower bound of the vertical cross-section, denoted as `μ̃_lower(x, u)`, is given by a scaled Gaussian function of the secondary variable `u`:
-`μ̃_lower(x, u) = [α * μ_upper(x)] * exp( -0.5 * ( (u - c_u(x)) / σ_u(x) )² )`
-where:
-- `μ_upper(x)` is the Gaussian upper membership function of the primary variable `x`.
-- `α` is a scalar parameter `(0 < α ≤ 1)` defining the height of the secondary uncertainty.
-- `c_u(x) = 0.5 * [μ_upper(x) + μ_lower(x)]` is the center of the Gaussian, where `μ_lower(x)` is the primary lower membership function.
-- `σ_u(x) = β * [μ_upper(x) - μ_lower(x)]` is the standard deviation of the Gaussian, where `β` is a positive scalar design parameter controlling the spread of the secondary uncertainty.

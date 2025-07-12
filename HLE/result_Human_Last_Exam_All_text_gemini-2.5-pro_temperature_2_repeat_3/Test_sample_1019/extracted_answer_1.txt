@@ -1,2 +1,0 @@
-The \(d\)-threshold probability \(p\) is determined by the asymptotic behavior of \(\eta = \frac{n}{2} - d\). Within the range \(\frac{1}{2} \leq \eta \leq \frac{n}{64}\), the threshold has the following form:
-\[ p = \begin{cases} \Theta(1/\eta^2) & \text{if } \eta=O(\log n) \\ \Theta\left(\frac{\log n}{\eta n}\right) & \text{if } \eta=\omega(\log n) \text{ and } \eta=o(n) \\ \Theta(1/n) & \text{if } \eta=\Omega(n) \end{cases} \]

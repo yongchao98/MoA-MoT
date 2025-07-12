@@ -1,5 +1,0 @@
-Let $f_m$ be the desired number of sets for a given $n$. The recurrence relation for $f_m$ is:
-$f_m = \frac{1}{m} \left( \binom{2^n-1}{m-1} - f_{m-1} - (2^n-m+1)f_{m-2} \right)$
-with the base cases being $f_0=1$ and $f_1=0$. (Note: while $m$ must be positive, the recurrence needs $f_0$ and $f_1$ to compute values like $f_2$ and $f_3$).
-Using the hint's notation, $a = \binom{2^n-1}{m-1}$, the recurrence can be written as:
-$f_m = \frac{1}{m} (a - f_{m-1} - (2^n-m+1)f_{m-2})$

@@ -1,5 +1,0 @@
-**Theorem:** The minimax risk \(R_n^*\) is lower bounded by:
-\[
-R_n^* \ge \frac{1}{2} \Phi\left(\frac{\delta}{2}\right) \left(1 - \sqrt{\frac{1}{N} \sum_{j=1}^N \left[ (1 + \chi^2(P_j, P_0))^n - 1 \right]}\right)
-\]
-for any choice of distributions \(\{P_0, P_1, \dots, P_N\} \subset \mathcal{P}\), where \(\delta = \min_{j \in \{1, \dots, N\}} \rho(\theta(P_0), \theta(P_j))\) and \(\chi^2(P_j, P_0)\) is the chi-squared distance between \(P_j\) and \(P_0\).

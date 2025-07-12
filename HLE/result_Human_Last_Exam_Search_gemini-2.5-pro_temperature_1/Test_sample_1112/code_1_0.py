@@ -1,1 +1,0 @@
-def g(n,k,i):o,t=[n],0;exec('o+=[n]*o[t]+[k];t+=1;'*i);return-1-i/(o[1:i+1].count(n)-i)

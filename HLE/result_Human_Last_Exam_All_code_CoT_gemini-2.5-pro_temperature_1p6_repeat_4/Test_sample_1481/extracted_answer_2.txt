@@ -1,9 +1,0 @@
-Asymptotic Analysis of the Billiard Generating Function H(s, s')
-------------------------------------------------------------
-The generating function H(s, s') is the Euclidean distance between points r(s) and r(s').
-In the limit where the separation |s' - s| -> 0, its asymptotic expansion is:
-
-H(s, s') ≈ 1 * |s' - s|^1 - (1/24) * κ(s)^2 * |s' - s|^3
-
-Here, κ(s) is the local curvature of the boundary at s.
-This shows the first correction to the arc length |s' - s| is cubic and depends on the square of the curvature.

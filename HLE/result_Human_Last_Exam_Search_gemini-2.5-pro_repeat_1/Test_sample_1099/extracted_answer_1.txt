@@ -1,4 +1,0 @@
-To precisely answer the request for the minimal resources to simulate POVM measurements on a singlet state:
-
-*   **Non-signaling PR-Box:** For a general POVM, a finite number of PR-boxes is sufficient. For any POVM with two outcomes, the minimal resource is **one PR-box**. For POVMs with more than two outcomes, the exact minimal number is not universally fixed but is known to be finite.
-*   **Communication:** There is no single value for the minimal communication cost for all POVMs. It is generally higher than the single bit required for projective measurements, with at least **two bits** being necessary in some related simulation scenarios. The exact average amount of communication will depend on the complexity of the POVM being simulated.

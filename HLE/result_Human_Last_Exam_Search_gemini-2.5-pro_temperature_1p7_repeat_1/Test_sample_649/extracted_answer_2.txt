@@ -1,7 +1,0 @@
-The tightest lower bound on \( R^*_n \) that can be proven under the given general assumptions is:
-\[
-R^*_n \ge \frac{\Phi(\delta/2)}{2} \left( 1 - d_{TV}\left(P_0^n, \frac{1}{N} \sum_{j=1}^N P_j^n\right) \right)
-\]
-where \( d_{TV}(P, Q) = \frac{1}{2} \int |dP - dQ| \) is the total variation distance between two probability measures \( P \) and \( Q \).
-
-This bound is considered "tight" because it relies on the total variation distance, which precisely captures the statistical difficulty of distinguishing between the null hypothesis \( P_0^n \) and the mixture of alternatives. Further simplification or evaluation of this bound would require more specific assumptions on the family of distributions \( \mathcal{P} \). For instance, the total variation term can be further bounded using the Kullback-Leibler divergence or the Hellinger distance, which often leads to more explicit dependencies on \( n \), but yields a less universally tight bound.

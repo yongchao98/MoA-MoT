@@ -1,3 +1,0 @@
-The probability to draw a link \(y_{ij}\) between nodes \(i\) and \(j\) in a jointly exchangeable random graph, given a random measure \(F\) for the graphon \(W\) and a uniform measure \(U\) for the latent variables, is given by the expectation of the graphon function over both the latent variables and the distribution of the graphon itself. Mathematically, this is expressed as:
-\(P(y_{ij} = 1) = E_F\left[\int_{0}^{1} \int_{0}^{1} W(u, v) du dv\right]\)
-where \(W\) is the random graphon drawn from the distribution \(F\), and \(u\) and \(v\) are latent variables drawn from the uniform distribution on.

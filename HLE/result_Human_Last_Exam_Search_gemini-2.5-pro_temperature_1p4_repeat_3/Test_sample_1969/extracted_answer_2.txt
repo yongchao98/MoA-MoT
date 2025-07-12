@@ -1,7 +1,0 @@
-The formula for the exact amount of money, $c_k$, that person $p_k$ receives is:
-$c_k = k S_1^3 - k^2 S_1^2 + k S_1 S_2$
-where $S_1 = \sum_{i=1}^n i = \frac{n(n+1)}{2}$ and $S_2 = \sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$.
-This can be written as:
-$c_k = k \frac{n(n+1)}{2} \left[ \left(\frac{n(n+1)}{2}\right)^2 - k\frac{n(n+1)}{2} + \frac{n(n+1)(2n+1)}{6} \right]$
-or as a single polynomial expression:
-$c_k = \frac{k n^2(n+1)^2}{24} (3n^2+7n+2-6k)

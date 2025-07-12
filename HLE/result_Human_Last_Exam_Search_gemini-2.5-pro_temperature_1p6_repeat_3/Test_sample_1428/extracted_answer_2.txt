@@ -1,4 +1,0 @@
-The one-step transformation is given by $P_i(t+1) = \frac{1}{2} P_{i-1}(t) + \frac{1}{2} P_{i+1}(t)$.
-The transition matrix is a circulant matrix $\hat{A}$ with $A_{i,i-1}=1/2$ and $A_{i,i+1}=1/2$ (indices taken modulo N).
-The eigenvectors $(v_n)_j = e^{ijk_n}$ are correct, with eigenvalues $\lambda_n = \cos(2\pi n/N)$.
-The rate of relaxation is determined by the second-largest eigenvalue, which is $\lambda_{sl} = \cos(2\pi/N)$.

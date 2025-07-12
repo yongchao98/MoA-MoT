@@ -1,7 +1,0 @@
-The analytical solution for the density profile is:
-
-$$ \frac{\rho(x)}{\rho_0} = \frac{2}{1 + \tanh\left(\frac{2x}{L}\right)} $$
-
-Here, `ρ(x)` is the density at position `x`, `ρ₀` is the ambient density, and `L` is the specified ambient conductive length scale, `L = κ / (ρ₀ M c₀ C_v)`. The origin `x=0` is located at the point within the shock where `u = (u₀+u₂)/2`, which corresponds to a density of `4/3 ρ₀`.
-
-This solution describes a smooth transition from the upstream density `ρ = ρ₀` at `x -> -∞` to the downstream density `ρ = 2ρ₀` at `x -> +∞`.

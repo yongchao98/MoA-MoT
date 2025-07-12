@@ -1,3 +1,0 @@
-The maximum magnitude of fluctuations scales as `R(ε) ≈ sqrt(ε/192) = sqrt(ε) / (8 * sqrt(3))`, which is proportional to `ε^(1/2)`.
-
-No, the scaling for `R(ε)` would not remain the same. If `z_i ~ Normal(i, 0.5)`, the randomness in the position of each source term is much smaller. This leads to a total fluctuation variance that scales as `O(ε³)`, and therefore `R(ε)` would scale as `ε^(3/2)`.

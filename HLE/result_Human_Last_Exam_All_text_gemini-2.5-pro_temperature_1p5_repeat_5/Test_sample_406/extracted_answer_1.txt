@@ -1,8 +1,0 @@
-The existence of a unique FGH-tripled fixed point for the functions `F: X×Y×Z→X`, `G: Y×Z×X→Y`, and `H: Z×X×Y→Z` is guaranteed under the following conditions:
-1.  **Space Requirement:** `(X, d_X)`, `(Y, d_Y)`, and `(Z, d_Z)` are complete metric spaces.
-2.  **Contraction Requirement:** There exist non-negative constants `a₁, a₂, a₃, b₁, b₂, b₃, c₁, c₂, c₃` such that for all `xᵢ∈X, yᵢ∈Y, zᵢ∈Z`:
-    *   `d_X(F(x₁,y₁,z₁), F(x₂,y₂,z₂)) ≤ a₁·d_X(x₁,x₂) + a₂·d_Y(y₁,y₂) + a₃·d_Z(z₁,z₂)`
-    *   `d_Y(G(y₁,z₁,x₁), G(y₂,z₂,x₂)) ≤ b₁·d_Y(y₁,y₂) + b₂·d_Z(z₁,z₂) + b₃·d_X(x₁,x₂)`
-    *   `d_Z(H(z₁,x₁,y₁), H(z₂,x₂,y₂)) ≤ c₁·d_Z(z₁,z₂) + c₂·d_X(x₁,x₂) + c₃·d_Y(y₁,y₂)`
-    and the crucial condition on these constants is met:
-    `max { (a₁ + b₃ + c₂), (a₂ + b₁ + c₃), (a₃ + b₂ + c₁) } < 1`

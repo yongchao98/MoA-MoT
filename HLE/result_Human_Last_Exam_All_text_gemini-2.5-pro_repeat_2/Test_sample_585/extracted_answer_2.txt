@@ -1,1 +1,0 @@
-The post-reset covariance Σ' is computed from the pre-reset covariance Σ using the expression: Σ' = R(δ_est) * Σ * R(δ_est)^T, where R(δ_est) is the rotation matrix exp(hat(δ_est)) corresponding to the pre-reset attitude deviation estimate δ_est.

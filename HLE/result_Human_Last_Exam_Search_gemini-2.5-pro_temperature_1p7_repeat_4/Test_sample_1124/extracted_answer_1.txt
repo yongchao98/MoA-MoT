@@ -1,5 +1,0 @@
-The modified logistic map equation is:
-$X_{n+1} = R \cdot X_n(1-X_n) + X_n^4$
-
-This equation modifies the standard logistic map by adding a term $X_n^4$.
-At R=3.57, this map has a stable equilibrium point at $X_e = 1$. This value is approximately equal to 1.05 and the modification removes the chaotic behavior of the standard logistic map for this value of R. This solution does not require any additional parameters beyond R and X.

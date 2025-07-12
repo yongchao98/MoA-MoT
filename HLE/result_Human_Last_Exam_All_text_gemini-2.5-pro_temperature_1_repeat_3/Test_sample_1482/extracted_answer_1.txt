@@ -1,4 +1,0 @@
-The vertical cross-section of an Interval Type-3 Membership Function at a fixed primary input `x` is an Interval Type-2 (IT2) fuzzy set defined over the secondary variable `u`. This IT2 set is characterized by its Footprint of Uncertainty (FOU), which is bounded by an Upper Membership Function (UMF) `f_x¯(u)` and a Lower Membership Function (LMF) `_f_x(u)`. Using a Gaussian paradigm, this formulation is:
-`f_x¯(u) = exp( -0.5 * [ (u - μ_C(x)) / σ_{sec,U}(x) ]^2 )`
-`_f_x(u) = exp( -0.5 * [ (u - μ_C(x)) / σ_{sec,L}(x) ]^2 )`
-where `μ_C(x)` is the center of the Gaussian, and `σ_{sec,U}(x)` and `σ_{sec,L}(x)` are the standard deviations defining the bounds of the FOU, with `σ_{sec,L}(x) ≥ σ_{sec,U}(x)`.

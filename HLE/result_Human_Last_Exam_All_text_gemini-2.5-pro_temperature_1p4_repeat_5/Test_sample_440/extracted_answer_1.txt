@@ -1,9 +1,0 @@
-The density profile $\rho(z)$ of the gas mixture as a function of height $z$ is given by:
-$$ \rho(z) = M_A \nu_A(z) + M_B \nu_B(z) $$
-where the molar density profiles for each gas, $\nu_A(z)$ and $\nu_B(z)$, are implicitly defined as the solution to the following system of coupled, non-linear algebraic equations:
-1.  $RT \ln(\nu_A(z)) - RT \ln(1 - (\nu_A(z)b_{AA} + \nu_B(z)b_{BB})) + \frac{RT (\nu_A(z)+\nu_B(z)) b_{AA}}{1 - (\nu_A(z)b_{AA} + \nu_B(z)b_{BB})} - 2(a_{AA}\nu_A(z) + a_{AB}\nu_B(z)) + M_A g z = C'_A$
-2.  $RT \ln(\nu_B(z)) - RT \ln(1 - (\nu_A(z)b_{AA} + \nu_B(z)b_{BB})) + \frac{RT (\nu_A(z)+\nu_B(z)) b_{BB}}{1 - (\nu_A(z)b_{AA} + \nu_B(z)b_{BB})} - 2(a_{AB}\nu_A(z) + a_{BB}\nu_B(z)) + M_B g z = C'_B$
-
-The constants $C'_A$ and $C'_B$ are determined by the integral constraints on the total number of moles of each gas:
-$$ \frac{N_A}{N_{Avogadro}} = A \int_0^H \nu_A(z) dz \quad \text{and} \quad \frac{N_B}{N_{Avogadro}} = A \int_0^H \nu_B(z) dz $$
-Due to the transcendental and coupled nature of these equations, an explicit analytical function for $\rho(z)$ cannot be obtained, and its determination requires a numerical solution.

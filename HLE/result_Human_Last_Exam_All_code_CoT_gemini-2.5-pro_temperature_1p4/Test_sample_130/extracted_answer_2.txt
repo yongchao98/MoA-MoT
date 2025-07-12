@@ -1,7 +1,0 @@
-As $t \rightarrow \infty$, the iterative application of the local median filter causes the edges in the image to evolve in a way that minimizes their total length. This process is a discrete form of motion by mean curvature. The specific effects on the edges are:
-
-1.  **Smoothing**: The edges become progressively smoother. Sharp corners are rounded off, and any jagged or noisy parts of a boundary are removed.
-2.  **Shrinking and Filling**: Regions with convex boundaries (like a circle or the outside of a square) shrink over time. Regions with concave boundaries (like a fjord or the inside corner of a shape) get filled in.
-3.  **Annihilation or Straightening**: Because of the shrinking effect, any closed boundary defining an isolated shape will eventually contract to a point and disappear. The only edge configurations that are stable under this operation are perfectly straight lines.
-
-Therefore, as $t \rightarrow \infty$, any edges forming closed shapes will be eliminated, causing those shapes to vanish. The final image will either be a single solid color (all black or all white), meaning no edges remain, or it will be divided by one or more perfectly straight edges. For most initial images containing varied shapes, the end result is a featureless, single-color image.

@@ -1,9 +1,0 @@
-The formula for the fermionic partition function Z is:
-$Z = \int_{\psi(\beta)=-\psi(0)} \mathcal{D}\psi^* \mathcal{D}\psi \, \exp\left(-S_E[\psi^*, \psi]\right)$
-where:
-*   The integral is a functional path integral over all anti-commuting Grassmann fields $\psi(\mathbf{x}, \tau)$ and $\psi^*(\mathbf{x}, \tau)$.
-*   The subscript $\psi(\beta)=-\psi(0)$ denotes that the integral is taken over fields that satisfy **anti-periodic boundary conditions** in the imaginary time direction $\tau \in [0, \beta]$.
-*   $\mathcal{D}\psi^* \mathcal{D}\psi$ is the functional measure for the Grassmann fields.
-*   $S_E[\psi^*, \psi]$ is the Euclidean action, given by:
-    $S_E = \int_0^\beta d\tau \int d^d x \left[ \psi^*(\mathbf{x}, \tau) \partial_\tau \psi(\mathbf{x}, \tau) + \mathcal{H}(\psi^*(\mathbf{x}, \tau), \psi(\mathbf{x}, \tau)) \right]$
-    where $\mathcal{H}(\psi^*, \psi)$ is the system's Hamiltonian density with the fermionic creation and annihilation operators replaced by the corresponding Grassmann fields $\psi^*$ and $\psi$.

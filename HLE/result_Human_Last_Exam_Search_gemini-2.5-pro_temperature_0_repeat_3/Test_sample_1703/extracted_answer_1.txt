@@ -1,7 +1,0 @@
-Let \( \tau = t \pmod{20} \). The area of the triangle \( T(t) \) as a function of time \( t \) is given by the piecewise function:
-\[ \text{Area}(t) = \frac{\sqrt{3}}{4} \begin{cases} 225 + 3\tau^2 & \text{if } 0 \le \tau \le 5 \\ 225 + 3(10 - \tau)^2 & \text{if } 5 < \tau \le 15 \\ 225 + 3(20 - \tau)^2 & \text{if } 15 < \tau < 20 \end{cases} \]
-Alternatively, using the distance from the midpoint \( s(t) \), where \( s(t) \) is a triangular wave with period 20 and amplitude 5, the area is given by the single expression:
-\[ \text{Area}(t) = \frac{\sqrt{3}}{4} (225 + 3s(t)^2) \]
-where \( s(t) \) is defined as:
-\[ s(t) = \begin{cases} \tau & \text{if } 0 \le \tau \le 5 \\ 10 - \tau & \text{if } 5 < \tau \le 10 \\ \tau - 10 & \text{if } 10 < \tau \le 15 \\ 20 - \tau & \text{if } 15 < \tau < 20 \end{cases} \]
-with \( \tau = t \pmod{20} \).

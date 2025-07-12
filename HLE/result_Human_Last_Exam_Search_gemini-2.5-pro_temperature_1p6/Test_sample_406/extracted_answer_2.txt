@@ -1,4 +1,0 @@
-The core conditions for the functions F, G, and H to have a unique FGH-tripled fixed point are:
-1.  **(Complete Metric Spaces):** The sets X, Y, and Z must be complete metric spaces.
-2.  **(Contraction Condition):** There must be a constant \(k \in [0, 1)\) such that for all \(x_1, x_2 \in X\), \(y_1, y_2 \in Y\), and \(z_1, z_2 \in Z\), the following inequality is satisfied:
-    \(d_X(F(x_1, y_1, z_1), F(x_2, y_2, z_2)) + d_Y(G(y_1, x_1, y_1), G(y_2, x_2, y_2)) + d_Z(H(z_1, y_1, x_1), H(z_2, y_2, x_2)) \le k \cdot (d_X(x_1, x_2) + d_Y(y_1, y_2) + d_Z(z_1, z_2))\)

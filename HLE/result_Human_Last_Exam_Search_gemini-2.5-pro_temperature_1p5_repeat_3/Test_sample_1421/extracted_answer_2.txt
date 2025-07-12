@@ -1,6 +1,0 @@
-The fermionic partition function Z in the imaginary time path integral formalism is given by:
-$Z = \int \mathcal{D}\bar{\psi}\mathcal{D}\psi \, e^{-S_E[\bar{\psi}, \psi]}$
-where the integral is over Grassmann-valued fields $\psi$ and $\bar{\psi}$ that satisfy anti-periodic boundary conditions in imaginary time $\tau \in [0, \beta]$, i.e., $\psi(\tau) = -\psi(\tau+\beta)$. The Euclidean action $S_E$ for a system with Hamiltonian $H$ is:
-$S_E[\bar{\psi}, \psi] = \int_0^\beta d\tau \int d^d x \, \bar{\psi}(x, \tau) (\hbar \frac{\partial}{\partial \tau} + H) \psi(x, \tau)$
-For a quadratic action, this integral evaluates to the determinant of the fermionic operator:
-$Z = \text{det}(\hbar \frac{\partial}{\partial \tau} + H)

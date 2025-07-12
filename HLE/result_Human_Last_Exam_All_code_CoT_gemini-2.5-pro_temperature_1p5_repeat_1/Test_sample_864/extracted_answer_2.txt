@@ -1,6 +1,0 @@
-The problem as stated requires a numerical approach to factorize the channel correlation polynomial.
-The causal minimum-phase factor G(D) of the channel correlation Q(D) is found to be:
-G(D) = (0.7601 + 0.0000j)D^4 + (1.2789 + 0.0000j)D^3 + (-2.2747 + 0.0000j)D^2 + (-1.5517 + 0.0000j)D^1 + (1.4727 + 0.0000j)D^0
-The required whitening filter W(D) that makes the channel causal is W(D) = 1 / G(1/D).
-This results in the filter:
-W(D) = 1 / [(0.7601 + 0.0000j) + (1.2789 + 0.0000j)D^{-1} + (-2.2747 + 0.0000j)D^{-2} + (-1.5517 + 0.0000j)D^{-3} + (1.4727 + 0.0000j)D^{-4}]

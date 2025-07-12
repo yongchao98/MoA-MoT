@@ -1,8 +1,0 @@
-The set **M** should be defined as a closed ball of radius `R` in the space `C₀([0, 1])`:
-**M = {u ∈ C₀() | ||u||_∞ ≤ R}**
-
-where the constant `R > 0` must be chosen to satisfy two conditions:
-1.  **T maps M into M (T(M) ⊆ M):** For any function `u` in `M`, the norm of `Tu` must not exceed `R`. This leads to the condition: `exp(R)/8 ≤ R`.
-2.  **T is a contraction on M:** There must exist a constant `k < 1` such that `||Tu - Tv||_∞ ≤ k ||u - v||_∞` for all `u, v ∈ M`. This yields the condition `exp(R)/8 < 1`, which simplifies to `R < ln(8)`.
-
-Any `R` that satisfies both `exp(R)/8 ≤ R` and `R < ln(8)` will define a valid set `M`. For example, `R = 1` is a suitable choice since `e/8 ≈ 0.34 ≤ 1` and `1 < ln(8) ≈ 2.079`.

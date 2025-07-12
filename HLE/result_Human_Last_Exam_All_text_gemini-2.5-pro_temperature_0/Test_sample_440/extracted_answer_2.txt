@@ -1,7 +1,0 @@
-The density profile of the mixture is given by \( \rho(z) = m_A \nu_A(z) + m_B \nu_B(z) \), where \( \nu_A(z) \) and \( \nu_B(z) \) are the number densities of Gas A and Gas B at height \( z \). These number densities are determined by the solution to the following system of coupled, self-consistent equations:
-\[ \nu_A(z) = C_A \exp\left(-\frac{m_A g z - 2(a'_{AA} \nu_A(z) + a'_{AB} \nu_B(z))}{k_B T}\right) \]
-\[ \nu_B(z) = C_B \exp\left(-\frac{m_B g z - 2(a'_{AB} \nu_A(z) + a'_{BB} \nu_B(z))}{k_B T}\right) \]
-The per-particle parameters are defined as \( m_i = M_i / N_{Av} \) and \( a'_{ij} = a_{ij} / N_{Av}^2 \), where \( N_{Av} \) is Avogadro's number. The normalization constants \( C_A \) and \( C_B \) are determined by the total particle number constraints:
-\[ N_A = A \int_0^H \nu_A(z) \, dz \]
-\[ N_B = A \int_0^H \nu_B(z) \, dz \]
-This system of equations implicitly defines the density profile \( \rho(z) \).

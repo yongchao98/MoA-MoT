@@ -1,6 +1,0 @@
-The design is a t-out-of-n threshold signature scheme based on the BLS (Boneh-Lynn-Shacham) signature scheme.
-1.  **Key Generation:** A distributed key generation (DKG) protocol based on Pedersen's Verifiable Secret Sharing (VSS) is used. The n parties generate shares `sk_i` of a master secret key `sk` and a corresponding master public key `PK = g^sk`, such that no party knows `sk` itself.
-2.  **Signing Protocol (Two Rounds):** To sign a message `m` with a group of `t` participants:
-    *   **Round 1:** Each of the `t` participating parties `P_i` computes a partial signature `σ_i = H(m)^sk_i` (where H is a hash-to-curve function) and broadcasts it to a central aggregator or to all other participants.
-    *   **Round 2:** The aggregator receives `t` partial signatures. It computes the final signature `σ` by combining the partial signatures using Lagrange interpolation in the exponent: `σ = Π (σ_i)^L_i`, where `L_i` are the public Lagrange coefficients corresponding to the `t` participants. This step requires no further communication.
-3.  **Security:** This scheme is tightly secure. Its security can be tightly reduced to the Computational Diffie-Hellman (co-CDH) assumption in the underlying pairing-friendly group. This is because the underlying BLS scheme admits a tight security proof, and the thresholding mechanism does not introduce any security loss.

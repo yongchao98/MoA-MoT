@@ -1,4 +1,0 @@
-`W_{max} = k \cdot 100 - \left( m - \sum_{i=k+1}^{n} \frac{100}{2i-1} \right) \cdot (2k-1)`
-where `k` is the unique integer in `{1, 2, ..., n}` such that:
-`\sum_{i=k+1}^{n} \frac{100}{2i-1} < m \le \sum_{i=k}^{n} \frac{100}{2i-1}`
-(The summation `\sum_{i=n+1}^{n}` is defined to be 0).

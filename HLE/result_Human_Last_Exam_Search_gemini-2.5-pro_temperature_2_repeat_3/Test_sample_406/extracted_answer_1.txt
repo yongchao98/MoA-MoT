@@ -1,8 +1,0 @@
-The core conditions for the functions F: X × Y × Z → X, G: Y × X × Y → Y, and H: Z × Y × X → Z to have an FGH-tripled fixed point are:
-1.  **(Complete Metric Spaces)**: The spaces (X, d_X), (Y, d_Y), and (Z, d_Z) must be complete metric spaces.
-2.  **(Contraction Condition)**: The functions must collectively satisfy a contraction condition on the product space X × Y × Z. Specifically, there must exist non-negative constants satisfying certain inequalities such that a combined operator T(x, y, z) = (F(x, y, z), G(y, x, y), H(z, y, x)) becomes a contraction mapping on the product space endowed with a suitable metric. For instance, if for all x₁, x₂ ∈ X, y₁, y₂ ∈ Y, z₁, z₂ ∈ Z, the following inequalities hold:
-    *   d_X(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) ≤ α₁ d_X(x₁, x₂) + α₂ d_Y(y₁, y₂) + α₃ d_Z(z₁, z₂)
-    *   d_Y(G(y₁, x₁, y₁), G(y₂, x₂, y₂)) ≤ β₁ d_Y(y₁, y₂) + β₂ d_X(x₁, x₂)
-    *   d_Z(H(z₁, y₁, x₁), H(z₂, y₂, x₂)) ≤ γ₁ d_Z(z₁, z₂) + γ₂ d_Y(y₁, y₂) + γ₃ d_X(x₁, x₂)
-    and the sum of these coefficients in each dimension is less than one (i.e., max{α₁ + β₂ + γ₃, α₂ + β₁ + γ₂, α₃ + γ₁} < 1), then a unique FGH-tripled fixed point is guaranteed to exist.
-Alternative frameworks involve conditions of monotonicity on partially ordered metric spaces.

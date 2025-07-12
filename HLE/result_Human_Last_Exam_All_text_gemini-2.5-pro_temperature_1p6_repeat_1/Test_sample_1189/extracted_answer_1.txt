@@ -1,3 +1,0 @@
-Let \(f_m\) be the number of such sets of size \(m\). The value can be computed using the recurrence relation:
-\[ f_m = \frac{1}{m} \left( \binom{2^n-1}{m-1} - f_{m-1} - (2^n+1-m)f_{m-2} \right) \]
-with the base cases \(f_0 = 1\) and \(f_1 = 0\).

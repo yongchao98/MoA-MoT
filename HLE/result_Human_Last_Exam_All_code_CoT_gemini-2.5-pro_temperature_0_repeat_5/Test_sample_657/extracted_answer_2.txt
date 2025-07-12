@@ -1,7 +1,0 @@
-The set of all stabilizing controllers H_2(s) is given by:
-H_2(s) = ((s**2 - 1))*K(s) + s) / (-s*K(s) + -1)
-
-Where K(s) is a parameter function.
-
-For the closed-loop system to be stable, K(s) must be a stable and proper rational function.
-For the controller H_2(s) itself to be proper, K(s) must satisfy additional constraints (e.g., be strictly proper with specific leading coefficients).

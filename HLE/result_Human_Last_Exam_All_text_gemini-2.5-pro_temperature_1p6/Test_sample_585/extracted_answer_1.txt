@@ -1,5 +1,0 @@
-The post-reset covariance Σ' is computed from the pre-reset covariance Σ and the reset rotation vector δ via the similarity transform:
-
-Σ' = exp(hat(δ)) * Σ * exp(hat(-δ))
-
-where exp() is the matrix exponential for SO(3) and hat(δ) is the skew-symmetric matrix associated with the vector δ.

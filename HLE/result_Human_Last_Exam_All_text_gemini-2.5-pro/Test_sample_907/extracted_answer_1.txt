@@ -1,9 +1,0 @@
-The equations for the absorption cross-section $\sigma(\omega)$ are as follows, where $\omega$ is the photon frequency, $N$ is the number of molecules, $\mu_{eg}$ is the transition dipole moment of a single molecule, $\omega_{eg}$ is the transition frequency of a single molecule, $J$ is the near-neighbor interaction energy, and $g(\dots)$ is the lineshape function.
-
-**a) No interaction between molecules:**
-The absorption cross-section is the incoherent sum of the absorptions of individual molecules.
-$\sigma_a(\omega) = N \frac{\pi \omega |\mu_{eg}|^2}{3 \epsilon_0 c \hbar} g(\omega - \omega_{eg})$
-
-**b) Near-neighbor interaction is considered:**
-The interaction leads to delocalized exciton states and a selection rule that allows transitions only to the $k=0$ exciton state.
-$\sigma_b(\omega) = N \frac{\pi \omega |\mu_{eg}|^2}{3 \epsilon_0 c \hbar} g\left(\omega - \left(\omega_{eg} + \frac{2J}{\hbar}\right)\right)$

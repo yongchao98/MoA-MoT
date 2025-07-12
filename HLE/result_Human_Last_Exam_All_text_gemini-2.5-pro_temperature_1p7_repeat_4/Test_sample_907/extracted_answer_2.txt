@@ -1,9 +1,0 @@
-**a) The interaction between molecules can be neglected.**
-The absorption cross-section per molecule, `σ_a(ω_L)`, is given by:
-`σ_a(ω_L) = C * ω_0 * e^(-(ω_0 - ω_L)^2 τ_p^2)`
-where `C = (√π τ_p μ^2) / (3ħ c ε_0)`. Here, `ω_0` is the transition frequency and `μ` is the transition dipole moment of a single isolated molecule.
-
-**b) The interaction between near-neighbors should be considered.**
-The absorption cross-section per molecule, `σ_b(ω_L)`, for a transition to the optically-active `k=0` exciton state is given by:
-`σ_b(ω_L) = C * (ω_0 + 2J/ħ) * e^(-(ω_0 + 2J/ħ - ω_L)^2 τ_p^2)`
-where `J` is the near-neighbor coupling energy. The interaction results in a shift of the absorption peak from `ω_0` to `ω_0 + 2J/ħ`.

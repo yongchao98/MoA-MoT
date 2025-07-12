@@ -1,7 +1,0 @@
-As the local median function is applied iteratively to a binary image ($t\rightarrow\infty$), the edges of the image undergo a process that is a discrete approximation of motion by mean curvature. This means that each point on an edge moves in its normal direction with a speed proportional to the local curvature.
-
-The consequences for the edges are as follows:
-*   **Smoothing:** Sharp corners are rounded off. Convex corners (points of a shape) are eroded, while concave corners (dents in a shape) are filled in. The edges become progressively smoother.
-*   **Annihilation of small features:** Small isolated regions of black or white pixels and thin lines tend to shrink and disappear. This happens because the filter's output in those areas is determined by the majority color of the larger surrounding region.
-*   **Perimeter reduction:** The total length of the edges in the image decreases over time, as the shapes evolve to become more compact.
-*   **Convergence to a stable state:** The process will eventually stop, converging in a finite number of steps to a "root" or "fixed-point" image. This final image is invariant to further applications of the median filter. The edges in this final state are smooth and locally convex.

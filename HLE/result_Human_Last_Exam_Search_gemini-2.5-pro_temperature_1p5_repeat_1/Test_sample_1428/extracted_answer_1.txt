@@ -1,7 +1,0 @@
-The one-step transformation of the probability distribution is given by the formula $P_{t+1}(i) = \frac{1}{2} P_t(i-1) + \frac{1}{2} P_t(i+1)$, where indices are taken modulo N.
-
-The transition probability matrix $\hat{A}$ is a circulant matrix with the first row being $(\begin{matrix} 0 & 1/2 & 0 & \dots & 0 & 1/2 \end{matrix})$.
-
-The eigenvectors of this matrix are indeed of the form $e^{ijk_n}$ with $k_n = 2\pi n/N$. The corresponding eigenvalues are $\lambda_n = \cos(2\pi n/N)$ for $n=0, 1, \dots, N-1$.
-
-The rate of relaxation is determined by the second-largest eigenvalue, which is $\lambda_1 = \lambda_{N-1} = \cos(2\pi/N)$.

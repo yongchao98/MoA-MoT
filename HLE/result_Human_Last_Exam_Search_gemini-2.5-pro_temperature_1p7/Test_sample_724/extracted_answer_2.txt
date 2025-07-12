@@ -1,8 +1,0 @@
-Let $k$ be an integer, where $1 \le k \le n$, that is determined by the travel distance $m$ according to the following condition:
-$$100 \sum_{j=k+1}^{n} \frac{1}{2j - 1} \le m < 100 \sum_{j=k}^{n} \frac{1}{2j - 1}$$
-For the edge case where $k=n$, the lower bound of the inequality is 0, as the summation $\sum_{j=n+1}^{n}$ is empty.
-
-The maximum amount of water left at the destination is given by the expression:
-$$100k - (2k-1)\left(m - 100 \sum_{j=k+1}^{n} \frac{1}{2j - 1}\right)$$
-
-This formula is derived from the optimal strategy for this type of transport problem, often referred to as the "jeep problem" or "desert crossing problem". The core of the strategy is to establish depots of water at specific intervals to minimize the water consumed by the horse on return trips. The journey is broken down into segments. In the first segment, all `n` 100-liter units of water are moved, requiring `2n-1` trips over that segment (n forward trips and n-1 return trips). At the end of this segment, one 100-liter unit of water has been consumed, and a depot is effectively established. For the next segment, only `n-1` units need to be moved, reducing the number of trips and thus the rate of water consumption. This process continues, with the number of trips decreasing at each depot. The formula calculates the water remaining by identifying which segment the destination `m` falls into and then subtracting the water consumed on that final leg of the journey.

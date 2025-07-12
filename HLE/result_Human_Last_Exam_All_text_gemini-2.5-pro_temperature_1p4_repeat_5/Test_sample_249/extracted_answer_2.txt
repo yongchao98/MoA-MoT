@@ -1,9 +1,0 @@
-The minimum possible value for the diameter of G is given as follows:
-1. If $m \ge n+1$, the diameter is 2. (This only occurs when $m=n+1$, for a star graph).
-2. If $m = n$, the diameter is 3.
-3. If $\frac{n+1}{2} \le m \le n-1$, the diameter is 4.
-4. If $m < \frac{n+1}{2}$, let $l = \lfloor \frac{n+1-m}{m} \rfloor$ and $r = (n+1-m) \pmod m$. The minimum diameter is:
-   - $2l+2$ if $r = 0$.
-   - $2l+3$ if $r = 1$.
-   - $2l+4$ if $r \ge 2$.
-(Note: we must have $m \ge 2$ for a tree with $n+2 \ge 3$ vertices).
